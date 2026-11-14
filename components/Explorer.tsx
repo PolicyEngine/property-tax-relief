@@ -132,6 +132,7 @@ function StatePicker({
           Housing
           <select
             id="tenure-filter"
+            aria-label="Housing"
             value={tenure}
             onChange={(event) =>
               onChange({ tenure: event.target.value as Tenure | "all" })
@@ -146,6 +147,7 @@ function StatePicker({
           Program type
           <select
             id="category-filter"
+            aria-label="Program type"
             value={category}
             onChange={(event) => {
               const value = event.target.value as Category | "all";
@@ -353,6 +355,7 @@ function Comparison({
             State {index + 1}
             <select
               id={`comparison-state-${index}`}
+              aria-label={`State ${index + 1}`}
               value={code}
               onChange={(event) => onChange(index, event.target.value)}
             >

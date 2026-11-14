@@ -6007,7 +6007,7 @@
     "code": "WI",
     "name": "Wisconsin",
     "taxYear": 2025,
-    "verifiedAt": "2026-11-13",
+    "verifiedAt": "2026-11-14",
     "overview": "Wisconsin combines refundable homestead relief, a nonrefundable income-tax property/rent credit, veteran refunds and several separate property-bill credits.",
     "inventoryStatus": "researched",
     "statewideCreditStatus": "identified",
@@ -6064,9 +6064,9 @@
         ],
         "refundable": false,
         "ageRule": "No general age restriction.",
-        "incomeDefinition": "See program rules.",
+        "incomeDefinition": "Not income-tested.",
         "incomeLimits": "Not income-tested.",
-        "maximumBenefit": "$300, limited by income-tax liability.",
+        "maximumBenefit": "$300 ordinarily, or $150 for married filing separately and married head-of-household filers, limited by income-tax liability.",
         "formulaSummary": "Income-tax credit based on eligible property taxes or rent; owner and renter amounts are combined subject to one cap, with rent table depending on heat inclusion.",
         "application": "Claim Form 1 line 16 using 2025 tables.",
         "eligibilityNotes": [
@@ -6099,13 +6099,14 @@
         ],
         "refundable": true,
         "ageRule": "WDVA-certified eligible veteran or unremarried surviving spouse.",
-        "incomeDefinition": "See program rules.",
+        "incomeDefinition": "Not income-tested.",
         "incomeLimits": "Not income-tested.",
-        "maximumBenefit": "Eligible property taxes paid on principal dwelling and up to one acre.",
+        "maximumBenefit": "Eligible principal-dwelling taxes. DOR guidance limits land to one acre; disputed statutory acreage cases remain unresolved.",
         "formulaSummary": "Refunds qualifying paid property taxes; excludes special assessments, interest, service charges and business-use taxes.",
         "application": "Obtain WDVA certification and claim through income-tax return.",
         "eligibilityNotes": [
-          "An otherwise qualified renter may claim actual property taxes required by a written landlord agreement and paid directly to the municipality. Ordinary rent is not a percentage-based tax proxy."
+          "An otherwise qualified renter may claim actual property taxes required by a written landlord agreement and paid directly to the municipality. Ordinary rent is not a percentage-based tax proxy.",
+          "DOR instructions specify one acre, while the statute cross-refers to a principal-dwelling definition without a numeric acreage limit. This draft does not adjudicate disputed acreage claims."
         ],
         "interactions": [
           "The claimant or spouse cannot claim School Property Tax, Homestead or farmland preservation credits for the same taxable year when claiming this veterans credit."
@@ -6132,6 +6133,11 @@
             "title": "Wisconsin Statutes \u00a771.07(6e)(c) \u2014 same-taxable-year credit limitations",
             "url": "https://docs.legis.wisconsin.gov/statutes/statutes/71/i/07/6e",
             "kind": "statute"
+          },
+          {
+            "title": "Wis. Stat. \u00a771.07(9)(a)2: principal dwelling definition",
+            "url": "https://docs.legis.wisconsin.gov/statutes/statutes/71/i/07/9/a/2",
+            "kind": "statute"
           }
         ],
         "modelVariables": []
@@ -6146,15 +6152,21 @@
         ],
         "refundable": false,
         "ageRule": "No general age restriction.",
-        "incomeDefinition": "See program rules.",
+        "incomeDefinition": "Not income-tested; household income is not used to calculate this bill credit.",
         "incomeLimits": "Not income-tested.",
-        "maximumBenefit": "Applicable school rate times credit value up to $27,000 for 2025/26.",
-        "formulaSummary": "Bill-level credit based on the smaller of qualifying property value and state maximum credit value.",
-        "application": "File application with county or eligible municipal treasurer.",
+        "maximumBenefit": "Applicable annual equalized school-tax rate \u00d7 the smaller of the qualifying dwelling\u2019s estimated fair market value and $27,000. The $27,000 figure is a value base for December2025 bills, not a cash maximum.",
+        "formulaSummary": "Parcel bill reduction using the annual municipality/school-district rate and capped value base, subject to valid claim, parcel tax liability and installment rules.",
+        "application": "Apply to the county or eligible city treasurer. A missing2025bill credit may be claimed through the municipal treasurer by January31,2026, or by late DOR application through October1,2026.",
         "eligibilityNotes": [
-          "Wisconsin resident owner using property as primary residence on January 1, 2025."
+          "Wisconsin resident-owner principal dwelling on January1,2025; a documented buyer-after-January1 exception can preserve a predecessor-qualified parcel\u2019s credit.",
+          "A new dwelling must be completed and occupied on the relevant January1. First Dollar eligibility alone does not establish Lottery eligibility.",
+          "Credit stays with a qualifying parcel on sale; multiple-property and separate-spouse cases require their specific facts."
         ],
-        "interactions": [],
+        "interactions": [
+          "May coexist with First Dollar and School Levy credits.",
+          "Bill reductions affect net general taxes actually paid; the veterans credit uses its separate qualified municipal-payment ledger and calendar year.",
+          "Do not subtract the credit again from an already-net tax payment or count a correction refund as a second award."
+        ],
         "programYear": "2025 property-tax bills, payable 2026.",
         "rentProxy": null,
         "sources": [
@@ -6181,13 +6193,20 @@
         ],
         "refundable": false,
         "ageRule": "No general age restriction.",
-        "incomeDefinition": "See program rules.",
+        "incomeDefinition": "Not income-tested; household income is not used to calculate this bill credit.",
         "incomeLimits": "Not income-tested.",
-        "maximumBenefit": "Local calculated credit based on maximum credit value of $9,000 in 2025/26.",
-        "formulaSummary": "Automatic property-bill credit on qualifying improved parcels, varying by school tax rate.",
+        "maximumBenefit": "Applicable annual equalized school-tax rate \u00d7 the smaller of total qualifying parcel estimated fair market value and $9,000. The $9,000 figure is a value base for December2025 bills, not a cash maximum.",
+        "formulaSummary": "Automatic credit for taxable real-estate parcels with a real-property improvement. The improvement establishes eligibility; total parcel value determines the capped base.",
         "application": "Automatically applied to qualifying parcels.",
-        "eligibilityNotes": [],
-        "interactions": [],
+        "eligibilityNotes": [
+          "Business, commercial, rental and nonprincipal improved real-estate parcels can qualify; one owner can receive credits on multiple parcels.",
+          "Personal-property improvements do not qualify. Manufactured homes qualify only when correctly classified as real property; monthly-permit-fee homes do not receive First Dollar."
+        ],
+        "interactions": [
+          "May coexist with Lottery and School Levy credits.",
+          "Applied evenly across installments; Lottery applies to the first installment before First Dollar, subject to nonnegative tax liability.",
+          "No separate renter payment or income-tax-return credit."
+        ],
         "programYear": "2025 property-tax bills, payable 2026.",
         "rentProxy": null,
         "sources": [
@@ -6199,6 +6218,11 @@
           {
             "title": "First Dollar Credit report",
             "url": "https://www.revenue.wi.gov/DORReports/First_Dollar_Paper_2025.pdf",
+            "kind": "agency"
+          },
+          {
+            "title": "First Dollar Credit eligibility, value base and installments",
+            "url": "https://www.revenue.wi.gov/Pages/FAQS/slf-fdolcred.aspx",
             "kind": "agency"
           }
         ],
@@ -6214,21 +6238,31 @@
         ],
         "refundable": false,
         "ageRule": "No general age restriction.",
-        "incomeDefinition": "See program rules.",
+        "incomeDefinition": "Not income-tested; household income is not used to calculate this bill credit.",
         "incomeLimits": "Not income-tested.",
         "maximumBenefit": "Local allocated bill-level amount.",
-        "formulaSummary": "State payments to counties and municipalities reduce property-tax bills; allocation depends on school levies.",
+        "formulaSummary": "The state allocates School Levy funding using each municipality\u2019s share of three-year average school levies. The parcel amount is allocated by assessed value within the municipality and is already reflected in net levy/tax figures.",
         "application": "Applied through local property-tax billing, not income-tax return.",
         "eligibilityNotes": [
-          "Property-owner relief can cover rental property; it is not a direct renter payment."
+          "Applies to every taxable real-property parcel, including vacant, rental and commercial property; no primary-residence requirement.",
+          "This is property-owner bill relief, not a direct renter payment."
         ],
-        "interactions": [],
-        "programYear": "2025",
+        "interactions": [
+          "May coexist with Lottery and First Dollar credits.",
+          "Already reflected in net school levies and the bill\u2019s net tax/rate; do not subtract the informational School Levy box again.",
+          "The separate School Property income-tax credit and the veterans income-tax credit have different rules."
+        ],
+        "programYear": "2025 assessment/property-tax bills issued in December2025, normally payable in2026. State May/July2026 distributions finance the same bill credit.",
         "rentProxy": null,
         "sources": [
           {
             "title": "School Levy Tax Credit",
             "url": "https://www.revenue.wi.gov/Pages/FAQS/slf-slevytcr.aspx",
+            "kind": "agency"
+          },
+          {
+            "title": "2025 School Levy Tax Credit notice and 2026 distribution",
+            "url": "https://www.revenue.wi.gov/Pages/SLF/COTVC-News/2025-11-20a.aspx",
             "kind": "agency"
           }
         ],
@@ -6239,7 +6273,8 @@
     "researchNotes": [
       "Lottery/Gaming, First Dollar, and School Levy credits normally already reduce net property-tax bills; do not add them again to an input already measured after bill credits.",
       "School Property Tax Credit and School Levy Tax Credit are different programs.",
-      "Veteran eligibility requires WDVA certification; this inventory does not infer eligibility from a single disability-percentage input."
+      "Veteran eligibility requires WDVA certification; this inventory does not infer eligibility from a single disability-percentage input.",
+      "For the three bill credits, 2025 assessment and December billing generally precede 2026 collection. Full local parameter records, ownership history, installment limits and corrected bills remain calculation gaps; the listed value caps are not cash awards."
     ],
     "sources": [
       {
@@ -6276,6 +6311,26 @@
         "title": "School Levy Tax Credit",
         "url": "https://www.revenue.wi.gov/Pages/FAQS/slf-slevytcr.aspx",
         "kind": "agency"
+      },
+      {
+        "title": "First Dollar Credit eligibility, value base and installments",
+        "url": "https://www.revenue.wi.gov/Pages/FAQS/slf-fdolcred.aspx",
+        "kind": "agency"
+      },
+      {
+        "title": "2025 School Levy Tax Credit notice and 2026 distribution",
+        "url": "https://www.revenue.wi.gov/Pages/SLF/COTVC-News/2025-11-20a.aspx",
+        "kind": "agency"
+      },
+      {
+        "title": "Wis. Stat. \u00a771.07(6e): veterans credit and dwelling cross-reference",
+        "url": "https://docs.legis.wisconsin.gov/statutes/statutes/71/i/07/6e",
+        "kind": "statute"
+      },
+      {
+        "title": "Wis. Stat. \u00a771.07(9)(a)2: principal dwelling definition",
+        "url": "https://docs.legis.wisconsin.gov/statutes/statutes/71/i/07/9/a/2",
+        "kind": "statute"
       }
     ]
   },

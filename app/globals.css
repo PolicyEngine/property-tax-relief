@@ -17,8 +17,10 @@ body {
   box-sizing: border-box;
 }
 a {
-  color: var(--primary);
   text-underline-offset: 3px;
+}
+main a {
+  color: var(--primary);
 }
 button,
 input,
