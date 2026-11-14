@@ -2,7 +2,7 @@
   "code": "NY",
   "name": "New York",
   "taxYear": 2025,
-  "verifiedAt": "2026-11-13",
+  "verifiedAt": "2026-11-14",
   "overview": "New York offers a small refundable low-income owner/renter credit and separate Basic/Enhanced STAR school-property-tax relief.",
   "inventoryStatus": "researched",
   "statewideCreditStatus": "identified",
@@ -49,19 +49,22 @@
       "category": "property-tax-credit",
       "scope": "statewide",
       "tenures": ["owner"],
-      "refundable": null,
+      "refundable": true,
       "ageRule": "Basic has no age restriction; Enhanced generally requires age 65+, with spouse/sibling and survivor exceptions.",
       "incomeDefinition": "STAR income generally equals FAGI minus taxable IRA distributions; 2025 benefits use 2023 income.",
       "incomeLimits": "2025 Basic credit income limit $500,000; Enhanced income limit $107,300. Legacy Basic exemption limit $250,000.",
       "maximumBenefit": "Location-specific school-tax savings; no uniform statewide dollar credit.",
-      "formulaSummary": "State-calculated credit based on eligible STAR school-tax relief; Basic and Enhanced are alternatives.",
+      "formulaSummary": "Basic or Enhanced STAR is paid as a state check/direct deposit using location-specific school-tax savings and qualifying-tax limits. Legacy STAR exemption is a separate bill reduction; the two delivery forms cannot be added.",
       "application": "Register for the STAR credit; existing exemption recipients follow separate rules.",
       "eligibilityNotes": [
-        "Owned principal residence and owner-specific income rules apply.",
-        "2025 Enhanced eligibility can include income of nonresident owners."
+        "2025 Basic uses resident owners and their spouses; Enhanced includes all owners, including nonresident owners, plus resident spouses.",
+        "2025 Enhanced generally requires every owner to be 65 by December 31, with specified married-couple, sibling and survivor exceptions. The relaxed 2026 rule is separate.",
+        "A dated September 15, 2025 Tax Department bulletin uses the last day to pay local school taxes without penalty for 2025 credit ownership and primary-residence eligibility. The current July 1 rule must not be applied backward.",
+        "Joint returns must be counted once. STAR income subtracts taxable IRA distributions included in federal AGI, not all pensions, gross IRA withdrawals or Social Security."
       ],
       "interactions": [
-        "Cannot receive both STAR credit and STAR exemption on the same property."
+        "Cannot receive STAR credit and STAR exemption on the same property for the same associated fiscal year. Basic and Enhanced are alternatives.",
+        "Separate eligibility, exemption savings, cash advances and any recovery; do not reduce an already-net property-tax bill and count the same credit again as income."
       ],
       "programYear": "2025 benefit year uses 2023 income; property/school-district facts are necessary.",
       "rentProxy": null,
@@ -75,6 +78,16 @@
           "title": "2025 STAR information update",
           "url": "https://www.tax.ny.gov/research/property/acw/2025/01062025.htm",
           "kind": "agency"
+        },
+        {
+          "title": "Dated September 15, 2025 STAR registration and eligibility bulletin",
+          "url": "https://content.govdelivery.com/accounts/NYTAX/bulletins/3f2b17a",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 enacted budget Part O: STAR amendments and effective dates",
+          "url": "https://legislation.nysenate.gov/pdf/bills/2025/A3009C",
+          "kind": "statute"
         }
       ],
       "modelVariables": []
@@ -86,7 +99,8 @@
   "researchNotes": [
     "The IT-214 formula changed materially in 2025; presence of an older model variable does not validate the new calculation.",
     "IT-229 real property tax relief credit is discontinued; it is not an additional 2025 program. Source: https://www.tax.ny.gov/forms/form_number_order_income.htm.",
-    "Local senior/disability exemptions require separate local adoption and are not enumerated here."
+    "Local senior/disability exemptions require separate local adoption and are not enumerated here.",
+    "STAR credit and legacy exemption have distinct income limits, ownership histories, qualifying dates and local amount tables. The initial source pass does not validate every school-district segment or partial-payment/advance reconciliation."
   ],
   "sources": [
     {
@@ -113,6 +127,16 @@
       "title": "Current income-tax form status",
       "url": "https://www.tax.ny.gov/forms/form_number_order_income.htm",
       "kind": "agency"
+    },
+    {
+      "title": "Dated September 15, 2025 STAR registration and eligibility bulletin",
+      "url": "https://content.govdelivery.com/accounts/NYTAX/bulletins/3f2b17a",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 enacted budget Part O: STAR amendments and effective dates",
+      "url": "https://legislation.nysenate.gov/pdf/bills/2025/A3009C",
+      "kind": "statute"
     }
   ]
 }

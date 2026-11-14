@@ -2842,7 +2842,7 @@
     "code": "MS",
     "name": "Mississippi",
     "taxYear": 2025,
-    "verifiedAt": "2026-11-13",
+    "verifiedAt": "2026-11-14",
     "overview": "Mississippi\u2019s homestead system includes a regular property-tax bill credit and larger age/disability exemptions; it is not a refundable income-based renter circuit breaker.",
     "inventoryStatus": "researched",
     "statewideCreditStatus": "identified",
@@ -2860,7 +2860,7 @@
         "incomeDefinition": "Not income-tested.",
         "incomeLimits": "No income limit.",
         "maximumBenefit": "Up to $300 reduction in taxes under the assessed-value table.",
-        "formulaSummary": "Apply the regular homestead tax-credit table to eligible assessed value.",
+        "formulaSummary": "Statutory assessed-value table provides a nominal $6\u2013$300 bill credit, split equally between school and county general-fund taxes. Actual component liabilities and shared ownership can limit relief.",
         "application": "Apply to the county tax assessor January 1\u2013April 1; reapply after relevant changes.",
         "eligibilityNotes": [
           "Own and occupy the principal residence on January 1.",
@@ -2878,9 +2878,19 @@
             "kind": "agency"
           },
           {
-            "title": "Homestead regulations",
-            "url": "https://www.dor.ms.gov/sites/default/files/Property/prop_partVI08302012.pdf",
+            "title": "Mississippi SOS Title 35, Part VI property-tax rules",
+            "url": "https://www.sos.ms.gov/adminsearch/ACCode/00000161c.pdf",
+            "kind": "regulation"
+          },
+          {
+            "title": "2025 HB 812: as-signed homestead provisions and credit table",
+            "url": "https://billstatus.ls.state.ms.us/documents/2025/pdf/HB/0800-0899/HB0812SG.pdf",
             "kind": "statute"
+          },
+          {
+            "title": "2025 HB 812 official enactment record",
+            "url": "https://billstatus.ls.state.ms.us/2025/pdf/history/HB/HB0812.xml",
+            "kind": "agency"
           }
         ],
         "modelVariables": []
@@ -2914,9 +2924,9 @@
             "kind": "agency"
           },
           {
-            "title": "Homestead regulations",
-            "url": "https://www.dor.ms.gov/sites/default/files/Property/prop_partVI08302012.pdf",
-            "kind": "statute"
+            "title": "Mississippi SOS Title 35, Part VI property-tax rules",
+            "url": "https://www.sos.ms.gov/adminsearch/ACCode/00000161c.pdf",
+            "kind": "regulation"
           }
         ],
         "modelVariables": [
@@ -2925,10 +2935,13 @@
         ]
       }
     ],
-    "laterChanges": [],
+    "laterChanges": [
+      "HB 812 distinguishes veteran age-90 relief for 2025 claims from specified surviving-spouse additions beginning with 2026 claims; do not backcast current guidance into 2025."
+    ],
     "researchNotes": [
       "No general statewide renter credit was identified in reviewed DOR materials.",
-      "The regular tier is called an exemption but operates as a bill credit; do not treat it as a cash refund."
+      "The regular tier is called an exemption but operates as a bill credit; do not treat it as a cash refund.",
+      "The replaced DOR regulation link returned 404. The retained SOS rulebook includes later changes; the dated enacted act anchors the 2025 table. Shared-ownership ordering and low component-liability treatment remain unresolved."
     ],
     "sources": [
       {
@@ -2937,9 +2950,19 @@
         "kind": "agency"
       },
       {
-        "title": "Homestead regulations",
-        "url": "https://www.dor.ms.gov/sites/default/files/Property/prop_partVI08302012.pdf",
+        "title": "Mississippi SOS Title 35, Part VI property-tax rules",
+        "url": "https://www.sos.ms.gov/adminsearch/ACCode/00000161c.pdf",
+        "kind": "regulation"
+      },
+      {
+        "title": "2025 HB 812: as-signed homestead provisions and credit table",
+        "url": "https://billstatus.ls.state.ms.us/documents/2025/pdf/HB/0800-0899/HB0812SG.pdf",
         "kind": "statute"
+      },
+      {
+        "title": "2025 HB 812 official enactment record",
+        "url": "https://billstatus.ls.state.ms.us/2025/pdf/history/HB/HB0812.xml",
+        "kind": "agency"
       }
     ]
   },
@@ -3849,7 +3872,7 @@
     "code": "NY",
     "name": "New York",
     "taxYear": 2025,
-    "verifiedAt": "2026-11-13",
+    "verifiedAt": "2026-11-14",
     "overview": "New York offers a small refundable low-income owner/renter credit and separate Basic/Enhanced STAR school-property-tax relief.",
     "inventoryStatus": "researched",
     "statewideCreditStatus": "identified",
@@ -3903,19 +3926,22 @@
         "tenures": [
           "owner"
         ],
-        "refundable": null,
+        "refundable": true,
         "ageRule": "Basic has no age restriction; Enhanced generally requires age 65+, with spouse/sibling and survivor exceptions.",
         "incomeDefinition": "STAR income generally equals FAGI minus taxable IRA distributions; 2025 benefits use 2023 income.",
         "incomeLimits": "2025 Basic credit income limit $500,000; Enhanced income limit $107,300. Legacy Basic exemption limit $250,000.",
         "maximumBenefit": "Location-specific school-tax savings; no uniform statewide dollar credit.",
-        "formulaSummary": "State-calculated credit based on eligible STAR school-tax relief; Basic and Enhanced are alternatives.",
+        "formulaSummary": "Basic or Enhanced STAR is paid as a state check/direct deposit using location-specific school-tax savings and qualifying-tax limits. Legacy STAR exemption is a separate bill reduction; the two delivery forms cannot be added.",
         "application": "Register for the STAR credit; existing exemption recipients follow separate rules.",
         "eligibilityNotes": [
-          "Owned principal residence and owner-specific income rules apply.",
-          "2025 Enhanced eligibility can include income of nonresident owners."
+          "2025 Basic uses resident owners and their spouses; Enhanced includes all owners, including nonresident owners, plus resident spouses.",
+          "2025 Enhanced generally requires every owner to be 65 by December 31, with specified married-couple, sibling and survivor exceptions. The relaxed 2026 rule is separate.",
+          "A dated September 15, 2025 Tax Department bulletin uses the last day to pay local school taxes without penalty for 2025 credit ownership and primary-residence eligibility. The current July 1 rule must not be applied backward.",
+          "Joint returns must be counted once. STAR income subtracts taxable IRA distributions included in federal AGI, not all pensions, gross IRA withdrawals or Social Security."
         ],
         "interactions": [
-          "Cannot receive both STAR credit and STAR exemption on the same property."
+          "Cannot receive STAR credit and STAR exemption on the same property for the same associated fiscal year. Basic and Enhanced are alternatives.",
+          "Separate eligibility, exemption savings, cash advances and any recovery; do not reduce an already-net property-tax bill and count the same credit again as income."
         ],
         "programYear": "2025 benefit year uses 2023 income; property/school-district facts are necessary.",
         "rentProxy": null,
@@ -3929,6 +3955,16 @@
             "title": "2025 STAR information update",
             "url": "https://www.tax.ny.gov/research/property/acw/2025/01062025.htm",
             "kind": "agency"
+          },
+          {
+            "title": "Dated September 15, 2025 STAR registration and eligibility bulletin",
+            "url": "https://content.govdelivery.com/accounts/NYTAX/bulletins/3f2b17a",
+            "kind": "agency"
+          },
+          {
+            "title": "2025 enacted budget Part O: STAR amendments and effective dates",
+            "url": "https://legislation.nysenate.gov/pdf/bills/2025/A3009C",
+            "kind": "statute"
           }
         ],
         "modelVariables": []
@@ -3940,7 +3976,8 @@
     "researchNotes": [
       "The IT-214 formula changed materially in 2025; presence of an older model variable does not validate the new calculation.",
       "IT-229 real property tax relief credit is discontinued; it is not an additional 2025 program. Source: https://www.tax.ny.gov/forms/form_number_order_income.htm.",
-      "Local senior/disability exemptions require separate local adoption and are not enumerated here."
+      "Local senior/disability exemptions require separate local adoption and are not enumerated here.",
+      "STAR credit and legacy exemption have distinct income limits, ownership histories, qualifying dates and local amount tables. The initial source pass does not validate every school-district segment or partial-payment/advance reconciliation."
     ],
     "sources": [
       {
@@ -3967,6 +4004,16 @@
         "title": "Current income-tax form status",
         "url": "https://www.tax.ny.gov/forms/form_number_order_income.htm",
         "kind": "agency"
+      },
+      {
+        "title": "Dated September 15, 2025 STAR registration and eligibility bulletin",
+        "url": "https://content.govdelivery.com/accounts/NYTAX/bulletins/3f2b17a",
+        "kind": "agency"
+      },
+      {
+        "title": "2025 enacted budget Part O: STAR amendments and effective dates",
+        "url": "https://legislation.nysenate.gov/pdf/bills/2025/A3009C",
+        "kind": "statute"
       }
     ]
   },
@@ -5347,7 +5394,7 @@
     "code": "VT",
     "name": "Vermont",
     "taxYear": 2025,
-    "verifiedAt": "2026-11-13",
+    "verifiedAt": "2026-11-14",
     "overview": "Vermont provides an income-sensitive homeowner property-tax credit and a refundable renter credit using county and family-size benchmarks.",
     "inventoryStatus": "researched",
     "statewideCreditStatus": "identified",
@@ -5360,18 +5407,21 @@
         "tenures": [
           "owner"
         ],
-        "refundable": false,
+        "refundable": true,
         "ageRule": "No general age restriction.",
         "incomeDefinition": "2025 household income on HI-144, covering taxable and specified nontaxable income of household members.",
         "incomeLimits": "Up to $115,400 for 2025 income used in the 2026 claim.",
         "maximumBenefit": "$5,600 education portion plus $2,400 municipal portion.",
         "formulaSummary": "Income-sensitive education and municipal credits using eligible housesite taxes, household income, property value and local tax parameters.",
-        "application": "File HS-122 and HI-144 with Homestead Declaration, generally by April 15, 2026.",
+        "application": "File HS-122 and HI-144, generally by April 15, 2026. Statutory late-claim and direct-payment rules require separate review.",
         "eligibilityNotes": [
           "Domiciled in Vermont all of 2025, not another person's dependent.",
           "Own and occupy declared homestead on April 1, 2026."
         ],
-        "interactions": [],
+        "interactions": [
+          "Normally applied to the property-tax bill and specified current/prior liabilities; excess is refunded under 32 V.S.A. \u00a76066a(f)(4). Do not count the same dollar as both bill relief and cash.",
+          "Under \u00a76068(b), a claim filed after October 15 through March 15 of the following year is reduced by $150, not below zero, and paid directly. This statutory route qualifies the instructions\u2019 general October 15 cutoff."
+        ],
         "programYear": "2025 income and 2025/26 housesite taxes; credit applied to 2026/27 property-tax bill.",
         "rentProxy": null,
         "sources": [
@@ -5384,6 +5434,21 @@
             "title": "Vermont Property Tax Credit",
             "url": "https://tax.vermont.gov/ptc",
             "kind": "agency"
+          },
+          {
+            "title": "32 V.S.A. \u00a76066a: application and excess refunds",
+            "url": "https://legislature.vermont.gov/statutes/section/32/154/06066a",
+            "kind": "statute"
+          },
+          {
+            "title": "32 V.S.A. \u00a76068: late claims and direct payment",
+            "url": "https://legislature.vermont.gov/statutes/section/32/154/06068",
+            "kind": "statute"
+          },
+          {
+            "title": "2026 Homestead Declaration and Property Tax Credit instructions",
+            "url": "https://tax.vermont.gov/sites/tax/files/documents/HS-122-Instr-2025.pdf",
+            "kind": "form"
           }
         ],
         "modelVariables": []
@@ -5434,7 +5499,8 @@
     ],
     "researchNotes": [
       "Owner credit and renter credit use different timing; the owner claim based on 2025 income is formally a 2026 property-tax credit.",
-      "Current renter webpage describes 65% county-median eligibility; the exact 2025 income-limit file needs validation before calculation."
+      "Current renter webpage describes 65% county-median eligibility; the exact 2025 income-limit file needs validation before calculation.",
+      "Owner relief includes conditional excess-cash and late-claim payment routes. Local rate/value inputs, household-income adjustments, filing history and debt allocation remain unvalidated; a general refundable label does not imply an automatic full cash payment."
     ],
     "sources": [
       {
@@ -5456,6 +5522,21 @@
         "title": "2025 Renter Credit calculator and credit amounts",
         "url": "https://tax.vermont.gov/individuals/renter-credit/calculator-and-credit-amounts",
         "kind": "agency"
+      },
+      {
+        "title": "32 V.S.A. \u00a76066a: application and excess refunds",
+        "url": "https://legislature.vermont.gov/statutes/section/32/154/06066a",
+        "kind": "statute"
+      },
+      {
+        "title": "32 V.S.A. \u00a76068: late claims and direct payment",
+        "url": "https://legislature.vermont.gov/statutes/section/32/154/06068",
+        "kind": "statute"
+      },
+      {
+        "title": "2026 Homestead Declaration and Property Tax Credit instructions",
+        "url": "https://tax.vermont.gov/sites/tax/files/documents/HS-122-Instr-2025.pdf",
+        "kind": "form"
       }
     ]
   },
@@ -5696,7 +5777,7 @@
     "code": "WV",
     "name": "West Virginia",
     "taxYear": 2025,
-    "verifiedAt": "2026-11-13",
+    "verifiedAt": "2026-11-14",
     "overview": "West Virginia provides separate refundable senior, excess-property-tax and disabled-veteran credits, with rules preventing duplicate relief.",
     "inventoryStatus": "researched",
     "statewideCreditStatus": "identified",
@@ -5711,19 +5792,22 @@
         ],
         "refundable": true,
         "ageRule": "Homestead Exemption participant: 65 or older, or permanently and totally disabled.",
-        "incomeDefinition": "SCTC-A household income under program rules.",
+        "incomeDefinition": "Current payment-year federal adjusted gross income; the poverty threshold uses the statutory family unit residing in the homestead, not automatically the federal tax-unit count.",
         "incomeLimits": "150% federal poverty guidelines: $23,475 for one person in 2025, plus $8,250 for each additional person.",
         "maximumBenefit": "Eligible taxes on the next $20,000 taxable assessed value above the homestead exemption.",
         "formulaSummary": "Refunds qualifying Class II tax paid on that assessed-value slice.",
         "application": "Use original SCTC-A from Tax Division, separately for eligible nonfilers or with IT-140.",
         "eligibilityNotes": [
           "Must owe and pay qualifying homestead tax.",
-          "Original agency SCTC-A required."
+          "Original agency SCTC-A required.",
+          "Actual entitlement to the homestead exemption is required; assessed value alone does not establish participation.",
+          "Federal alternative minimum tax liability disqualifies the claimant. The statutory restriction differs from the overview webpage\u2019s AMT wording.",
+          "A calculated credit below $10 is subject to a statutory refund restriction; this does not by itself establish that every offset against income tax is zero."
         ],
         "interactions": [
           "Reduces HEPTC; cannot combine with Disabled Veteran Property Tax Credit."
         ],
-        "programYear": "2025",
+        "programYear": "2025 income and qualifying tax payments during 2025; underlying property-tax assessment years may differ.",
         "rentProxy": null,
         "sources": [
           {
@@ -5735,9 +5819,16 @@
             "title": "West Virginia Senior Citizens Tax Credit and HEPTC",
             "url": "https://tax.wv.gov/Individuals/SeniorCitizens/Pages/SeniorCitizensTaxCredit.aspx",
             "kind": "agency"
+          },
+          {
+            "title": "W. Va. Code \u00a711-21-21: Senior Citizens Tax Credit",
+            "url": "https://code.wvlegislature.gov/11-21-21/",
+            "kind": "statute"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [
+          "wv_sctc"
+        ]
       },
       {
         "id": "wv-excess-property-tax-credit",
@@ -5749,20 +5840,22 @@
         ],
         "refundable": true,
         "ageRule": "No general age restriction.",
-        "incomeDefinition": "Gross household income including Social Security for burden calculation; eligibility has separate low-income rules.",
+        "incomeDefinition": "2025 federal AGI plus statutory additions, tax-exempt interest, workers\u2019 compensation/loss-of-earnings insurance and nontaxable Social Security for the burden calculation. Separately filed household members\u2019 income requires reconciliation.",
         "incomeLimits": "Program low-income test based on 300% federal poverty guidelines.",
         "maximumBenefit": "$1,000.",
         "formulaSummary": "Eligible owner-occupied real-property taxes, after senior credit, exceeding 4% of gross household income, capped at $1,000.",
         "application": "File HEPTC-1 with IT-140 and property-tax receipt.",
         "eligibilityNotes": [
           "Homestead Exemption participation is not required.",
-          "Income-year treatment must be checked against 2025 form, not generic webpage."
+          "Every whole or partial owner must satisfy the low-income test; the claimant\u2019s own income alone is insufficient.",
+          "Federal alternative minimum tax liability disqualifies the claimant.",
+          "The statute and dedicated 2025 form use 2025 income and payments. The overview webpage\u2019s 2024-income sentence is inconsistent."
         ],
         "interactions": [
           "Calculate senior credit first; subtract it.",
           "Cannot combine with Disabled Veteran Property Tax Credit."
         ],
-        "programYear": "2025",
+        "programYear": "2025 income and qualifying property-tax payments during 2025.",
         "rentProxy": null,
         "sources": [
           {
@@ -5779,6 +5872,11 @@
             "title": "West Virginia Senior Citizens Tax Credit and HEPTC",
             "url": "https://tax.wv.gov/Individuals/SeniorCitizens/Pages/SeniorCitizensTaxCredit.aspx",
             "kind": "agency"
+          },
+          {
+            "title": "W. Va. Code \u00a711-21-23: Homestead Excess Property Tax Credit",
+            "url": "https://code.wvlegislature.gov/11-21-23/",
+            "kind": "statute"
           }
         ],
         "modelVariables": [
@@ -5801,18 +5899,29 @@
         "formulaSummary": "Refundable credit for qualifying homestead taxes, limited by statutory veteran criteria and timely payment.",
         "application": "File DV-1 with property-tax receipts and VA disability-rating letter.",
         "eligibilityNotes": [
-          "At least 90% totally and permanently disabled due solely to service-connected disabilities under cited guidance."
+          "2025 law requires an honorably discharged veteran with at least 90% permanent and total disability solely due to service-connected disabilities.",
+          "The July 11, 2025 amendment adds qualifying unmarried surviving spouses of veterans who previously received this credit. Midyear payment and termination treatment remains unresolved."
         ],
         "interactions": [
           "Alternative to Senior Citizens Tax Credit and HEPTC."
         ],
-        "programYear": "2025",
+        "programYear": "Qualifying timely payments during income-tax year 2025, including specified payments on underlying 2024 and 2025 property-tax bills.",
         "rentProxy": null,
         "sources": [
           {
             "title": "West Virginia Tax Credits, revised October 2025",
             "url": "https://tax.wv.gov/Documents/TSD/tsd110.pdf",
             "kind": "agency"
+          },
+          {
+            "title": "2025 DV-1: Disabled Veteran Real Property Tax Credit",
+            "url": "https://tax.wv.gov/Documents/PropertyTax/2025/dv1.2025.pdf",
+            "kind": "form"
+          },
+          {
+            "title": "2025 signed HB 2121: dated veteran and surviving-spouse rules",
+            "url": "https://code.wvlegislature.gov/signed_bills/2025/2025-RS-HB2121-SUB%20ENR_signed.pdf",
+            "kind": "statute"
           }
         ],
         "modelVariables": []
@@ -5848,10 +5957,13 @@
         ]
       }
     ],
-    "laterChanges": [],
+    "laterChanges": [
+      "Current veteran definitions include later 2026 changes, including individual-unemployability wording. Those changes are not evidence of 2025 entitlement."
+    ],
     "researchNotes": [
-      "Agency overview says 2025 paid taxes compared with 2024 income, while dedicated 2025 form uses tax-year inputs; final calculation audit must resolve this against the form/statute.",
-      "The three credits are not independent amounts that may simply be added."
+      "The statute controls the 2025 income year and AMT disqualification where the overview conflicts. Partial payments, mixed assessment cohorts, legal family membership and some household-income attribution require additional facts.",
+      "The existing senior-credit formula at the audited canonical commit uses assessed value as a dollar credit. Its source mapping is now identified, but that formula is not validated. A separate model correction is in progress.",
+      "Compute SCTC before HEPTC. Disabled-veteran relief excludes both. Sub-$10 refund settlement and any combined-cap interpretation remain explicit calculation gaps."
     ],
     "sources": [
       {
@@ -5868,6 +5980,26 @@
         "title": "West Virginia Tax Credits, revised October 2025",
         "url": "https://tax.wv.gov/Documents/TSD/tsd110.pdf",
         "kind": "agency"
+      },
+      {
+        "title": "W. Va. Code \u00a711-21-21: Senior Citizens Tax Credit",
+        "url": "https://code.wvlegislature.gov/11-21-21/",
+        "kind": "statute"
+      },
+      {
+        "title": "W. Va. Code \u00a711-21-23: Homestead Excess Property Tax Credit",
+        "url": "https://code.wvlegislature.gov/11-21-23/",
+        "kind": "statute"
+      },
+      {
+        "title": "2025 DV-1: Disabled Veteran Real Property Tax Credit",
+        "url": "https://tax.wv.gov/Documents/PropertyTax/2025/dv1.2025.pdf",
+        "kind": "form"
+      },
+      {
+        "title": "2025 signed HB 2121: dated veteran and surviving-spouse rules",
+        "url": "https://code.wvlegislature.gov/signed_bills/2025/2025-RS-HB2121-SUB%20ENR_signed.pdf",
+        "kind": "statute"
       }
     ]
   },

@@ -15,3 +15,10 @@ jobs:
       - run: bun run test
       - run: uv run pytest
       - run: bun run build
+      - run: bun run playwright-cli install-browser chrome --with-deps
+      - run: bun run scripts/browser_qa.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-qa
+          path: output/playwright/

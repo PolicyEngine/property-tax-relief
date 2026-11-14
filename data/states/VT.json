@@ -2,7 +2,7 @@
   "code": "VT",
   "name": "Vermont",
   "taxYear": 2025,
-  "verifiedAt": "2026-11-13",
+  "verifiedAt": "2026-11-14",
   "overview": "Vermont provides an income-sensitive homeowner property-tax credit and a refundable renter credit using county and family-size benchmarks.",
   "inventoryStatus": "researched",
   "statewideCreditStatus": "identified",
@@ -13,18 +13,21 @@
       "category": "threshold-circuit-breaker",
       "scope": "statewide",
       "tenures": ["owner"],
-      "refundable": false,
+      "refundable": true,
       "ageRule": "No general age restriction.",
       "incomeDefinition": "2025 household income on HI-144, covering taxable and specified nontaxable income of household members.",
       "incomeLimits": "Up to $115,400 for 2025 income used in the 2026 claim.",
       "maximumBenefit": "$5,600 education portion plus $2,400 municipal portion.",
       "formulaSummary": "Income-sensitive education and municipal credits using eligible housesite taxes, household income, property value and local tax parameters.",
-      "application": "File HS-122 and HI-144 with Homestead Declaration, generally by April 15, 2026.",
+      "application": "File HS-122 and HI-144, generally by April 15, 2026. Statutory late-claim and direct-payment rules require separate review.",
       "eligibilityNotes": [
         "Domiciled in Vermont all of 2025, not another person's dependent.",
         "Own and occupy declared homestead on April 1, 2026."
       ],
-      "interactions": [],
+      "interactions": [
+        "Normally applied to the property-tax bill and specified current/prior liabilities; excess is refunded under 32 V.S.A. §6066a(f)(4). Do not count the same dollar as both bill relief and cash.",
+        "Under §6068(b), a claim filed after October 15 through March 15 of the following year is reduced by $150, not below zero, and paid directly. This statutory route qualifies the instructions’ general October 15 cutoff."
+      ],
       "programYear": "2025 income and 2025/26 housesite taxes; credit applied to 2026/27 property-tax bill.",
       "rentProxy": null,
       "sources": [
@@ -37,6 +40,21 @@
           "title": "Vermont Property Tax Credit",
           "url": "https://tax.vermont.gov/ptc",
           "kind": "agency"
+        },
+        {
+          "title": "32 V.S.A. §6066a: application and excess refunds",
+          "url": "https://legislature.vermont.gov/statutes/section/32/154/06066a",
+          "kind": "statute"
+        },
+        {
+          "title": "32 V.S.A. §6068: late claims and direct payment",
+          "url": "https://legislature.vermont.gov/statutes/section/32/154/06068",
+          "kind": "statute"
+        },
+        {
+          "title": "2026 Homestead Declaration and Property Tax Credit instructions",
+          "url": "https://tax.vermont.gov/sites/tax/files/documents/HS-122-Instr-2025.pdf",
+          "kind": "form"
         }
       ],
       "modelVariables": []
@@ -83,7 +101,8 @@
   ],
   "researchNotes": [
     "Owner credit and renter credit use different timing; the owner claim based on 2025 income is formally a 2026 property-tax credit.",
-    "Current renter webpage describes 65% county-median eligibility; the exact 2025 income-limit file needs validation before calculation."
+    "Current renter webpage describes 65% county-median eligibility; the exact 2025 income-limit file needs validation before calculation.",
+    "Owner relief includes conditional excess-cash and late-claim payment routes. Local rate/value inputs, household-income adjustments, filing history and debt allocation remain unvalidated; a general refundable label does not imply an automatic full cash payment."
   ],
   "sources": [
     {
@@ -105,6 +124,21 @@
       "title": "2025 Renter Credit calculator and credit amounts",
       "url": "https://tax.vermont.gov/individuals/renter-credit/calculator-and-credit-amounts",
       "kind": "agency"
+    },
+    {
+      "title": "32 V.S.A. §6066a: application and excess refunds",
+      "url": "https://legislature.vermont.gov/statutes/section/32/154/06066a",
+      "kind": "statute"
+    },
+    {
+      "title": "32 V.S.A. §6068: late claims and direct payment",
+      "url": "https://legislature.vermont.gov/statutes/section/32/154/06068",
+      "kind": "statute"
+    },
+    {
+      "title": "2026 Homestead Declaration and Property Tax Credit instructions",
+      "url": "https://tax.vermont.gov/sites/tax/files/documents/HS-122-Instr-2025.pdf",
+      "kind": "form"
     }
   ]
 }

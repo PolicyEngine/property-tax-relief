@@ -2,7 +2,7 @@
   "code": "WV",
   "name": "West Virginia",
   "taxYear": 2025,
-  "verifiedAt": "2026-11-13",
+  "verifiedAt": "2026-11-14",
   "overview": "West Virginia provides separate refundable senior, excess-property-tax and disabled-veteran credits, with rules preventing duplicate relief.",
   "inventoryStatus": "researched",
   "statewideCreditStatus": "identified",
@@ -15,19 +15,22 @@
       "tenures": ["owner"],
       "refundable": true,
       "ageRule": "Homestead Exemption participant: 65 or older, or permanently and totally disabled.",
-      "incomeDefinition": "SCTC-A household income under program rules.",
+      "incomeDefinition": "Current payment-year federal adjusted gross income; the poverty threshold uses the statutory family unit residing in the homestead, not automatically the federal tax-unit count.",
       "incomeLimits": "150% federal poverty guidelines: $23,475 for one person in 2025, plus $8,250 for each additional person.",
       "maximumBenefit": "Eligible taxes on the next $20,000 taxable assessed value above the homestead exemption.",
       "formulaSummary": "Refunds qualifying Class II tax paid on that assessed-value slice.",
       "application": "Use original SCTC-A from Tax Division, separately for eligible nonfilers or with IT-140.",
       "eligibilityNotes": [
         "Must owe and pay qualifying homestead tax.",
-        "Original agency SCTC-A required."
+        "Original agency SCTC-A required.",
+        "Actual entitlement to the homestead exemption is required; assessed value alone does not establish participation.",
+        "Federal alternative minimum tax liability disqualifies the claimant. The statutory restriction differs from the overview webpage’s AMT wording.",
+        "A calculated credit below $10 is subject to a statutory refund restriction; this does not by itself establish that every offset against income tax is zero."
       ],
       "interactions": [
         "Reduces HEPTC; cannot combine with Disabled Veteran Property Tax Credit."
       ],
-      "programYear": "2025",
+      "programYear": "2025 income and qualifying tax payments during 2025; underlying property-tax assessment years may differ.",
       "rentProxy": null,
       "sources": [
         {
@@ -39,9 +42,14 @@
           "title": "West Virginia Senior Citizens Tax Credit and HEPTC",
           "url": "https://tax.wv.gov/Individuals/SeniorCitizens/Pages/SeniorCitizensTaxCredit.aspx",
           "kind": "agency"
+        },
+        {
+          "title": "W. Va. Code §11-21-21: Senior Citizens Tax Credit",
+          "url": "https://code.wvlegislature.gov/11-21-21/",
+          "kind": "statute"
         }
       ],
-      "modelVariables": []
+      "modelVariables": ["wv_sctc"]
     },
     {
       "id": "wv-excess-property-tax-credit",
@@ -51,20 +59,22 @@
       "tenures": ["owner"],
       "refundable": true,
       "ageRule": "No general age restriction.",
-      "incomeDefinition": "Gross household income including Social Security for burden calculation; eligibility has separate low-income rules.",
+      "incomeDefinition": "2025 federal AGI plus statutory additions, tax-exempt interest, workers’ compensation/loss-of-earnings insurance and nontaxable Social Security for the burden calculation. Separately filed household members’ income requires reconciliation.",
       "incomeLimits": "Program low-income test based on 300% federal poverty guidelines.",
       "maximumBenefit": "$1,000.",
       "formulaSummary": "Eligible owner-occupied real-property taxes, after senior credit, exceeding 4% of gross household income, capped at $1,000.",
       "application": "File HEPTC-1 with IT-140 and property-tax receipt.",
       "eligibilityNotes": [
         "Homestead Exemption participation is not required.",
-        "Income-year treatment must be checked against 2025 form, not generic webpage."
+        "Every whole or partial owner must satisfy the low-income test; the claimant’s own income alone is insufficient.",
+        "Federal alternative minimum tax liability disqualifies the claimant.",
+        "The statute and dedicated 2025 form use 2025 income and payments. The overview webpage’s 2024-income sentence is inconsistent."
       ],
       "interactions": [
         "Calculate senior credit first; subtract it.",
         "Cannot combine with Disabled Veteran Property Tax Credit."
       ],
-      "programYear": "2025",
+      "programYear": "2025 income and qualifying property-tax payments during 2025.",
       "rentProxy": null,
       "sources": [
         {
@@ -81,6 +91,11 @@
           "title": "West Virginia Senior Citizens Tax Credit and HEPTC",
           "url": "https://tax.wv.gov/Individuals/SeniorCitizens/Pages/SeniorCitizensTaxCredit.aspx",
           "kind": "agency"
+        },
+        {
+          "title": "W. Va. Code §11-21-23: Homestead Excess Property Tax Credit",
+          "url": "https://code.wvlegislature.gov/11-21-23/",
+          "kind": "statute"
         }
       ],
       "modelVariables": ["wv_homestead_excess_property_tax_credit"]
@@ -99,16 +114,27 @@
       "formulaSummary": "Refundable credit for qualifying homestead taxes, limited by statutory veteran criteria and timely payment.",
       "application": "File DV-1 with property-tax receipts and VA disability-rating letter.",
       "eligibilityNotes": [
-        "At least 90% totally and permanently disabled due solely to service-connected disabilities under cited guidance."
+        "2025 law requires an honorably discharged veteran with at least 90% permanent and total disability solely due to service-connected disabilities.",
+        "The July 11, 2025 amendment adds qualifying unmarried surviving spouses of veterans who previously received this credit. Midyear payment and termination treatment remains unresolved."
       ],
       "interactions": ["Alternative to Senior Citizens Tax Credit and HEPTC."],
-      "programYear": "2025",
+      "programYear": "Qualifying timely payments during income-tax year 2025, including specified payments on underlying 2024 and 2025 property-tax bills.",
       "rentProxy": null,
       "sources": [
         {
           "title": "West Virginia Tax Credits, revised October 2025",
           "url": "https://tax.wv.gov/Documents/TSD/tsd110.pdf",
           "kind": "agency"
+        },
+        {
+          "title": "2025 DV-1: Disabled Veteran Real Property Tax Credit",
+          "url": "https://tax.wv.gov/Documents/PropertyTax/2025/dv1.2025.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "2025 signed HB 2121: dated veteran and surviving-spouse rules",
+          "url": "https://code.wvlegislature.gov/signed_bills/2025/2025-RS-HB2121-SUB%20ENR_signed.pdf",
+          "kind": "statute"
         }
       ],
       "modelVariables": []
@@ -140,10 +166,13 @@
       "modelVariables": ["wv_homestead_exemption"]
     }
   ],
-  "laterChanges": [],
+  "laterChanges": [
+    "Current veteran definitions include later 2026 changes, including individual-unemployability wording. Those changes are not evidence of 2025 entitlement."
+  ],
   "researchNotes": [
-    "Agency overview says 2025 paid taxes compared with 2024 income, while dedicated 2025 form uses tax-year inputs; final calculation audit must resolve this against the form/statute.",
-    "The three credits are not independent amounts that may simply be added."
+    "The statute controls the 2025 income year and AMT disqualification where the overview conflicts. Partial payments, mixed assessment cohorts, legal family membership and some household-income attribution require additional facts.",
+    "The existing senior-credit formula at the audited canonical commit uses assessed value as a dollar credit. Its source mapping is now identified, but that formula is not validated. A separate model correction is in progress.",
+    "Compute SCTC before HEPTC. Disabled-veteran relief excludes both. Sub-$10 refund settlement and any combined-cap interpretation remain explicit calculation gaps."
   ],
   "sources": [
     {
@@ -160,6 +189,26 @@
       "title": "West Virginia Tax Credits, revised October 2025",
       "url": "https://tax.wv.gov/Documents/TSD/tsd110.pdf",
       "kind": "agency"
+    },
+    {
+      "title": "W. Va. Code §11-21-21: Senior Citizens Tax Credit",
+      "url": "https://code.wvlegislature.gov/11-21-21/",
+      "kind": "statute"
+    },
+    {
+      "title": "W. Va. Code §11-21-23: Homestead Excess Property Tax Credit",
+      "url": "https://code.wvlegislature.gov/11-21-23/",
+      "kind": "statute"
+    },
+    {
+      "title": "2025 DV-1: Disabled Veteran Real Property Tax Credit",
+      "url": "https://tax.wv.gov/Documents/PropertyTax/2025/dv1.2025.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "2025 signed HB 2121: dated veteran and surviving-spouse rules",
+      "url": "https://code.wvlegislature.gov/signed_bills/2025/2025-RS-HB2121-SUB%20ENR_signed.pdf",
+      "kind": "statute"
     }
   ]
 }

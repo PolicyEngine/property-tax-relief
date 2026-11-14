@@ -14,7 +14,7 @@ export type Category =
 export interface Source {
   title: string;
   url: string;
-  kind: "agency" | "statute" | "form";
+  kind: "agency" | "statute" | "form" | "regulation";
 }
 
 export interface Program {

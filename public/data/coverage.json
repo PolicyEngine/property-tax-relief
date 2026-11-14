@@ -1,8 +1,8 @@
 {
   "interfaceVersion": "6.19.0",
   "modelVersion": "2.2.1",
-  "canonicalModelCommit": "93444c30522226f8719af23249a266ebcf331ea4",
-  "canonicalModelRef": "93444c30522226f8719af23249a266ebcf331ea4",
+  "canonicalModelCommit": "3ab9b19a11ff8e5e95ff737e80de8c946e587f87",
+  "canonicalModelRef": "3ab9b19a11ff8e5e95ff737e80de8c946e587f87",
   "canonicalModelSource": "committed-git-tree",
   "programs": [
     {
@@ -1670,12 +1670,24 @@
     {
       "id": "wv-senior-tax-credit",
       "state": "WV",
-      "variables": [],
+      "variables": [
+        "wv_sctc"
+      ],
       "missingVariables": [],
       "inputOnlyOrLaterFormula": [],
-      "variableDetails": {},
-      "status": "implementation-missing",
-      "canonicalVariables": [],
+      "variableDetails": {
+        "wv_sctc": {
+          "file": "gov/states/wv/tax/income/credits/sctc/wv_sctc.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "wv_sctc"
+      ],
       "validated": false
     },
     {

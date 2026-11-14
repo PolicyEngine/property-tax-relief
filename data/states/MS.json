@@ -2,7 +2,7 @@
   "code": "MS",
   "name": "Mississippi",
   "taxYear": 2025,
-  "verifiedAt": "2026-11-13",
+  "verifiedAt": "2026-11-14",
   "overview": "Mississippi’s homestead system includes a regular property-tax bill credit and larger age/disability exemptions; it is not a refundable income-based renter circuit breaker.",
   "inventoryStatus": "researched",
   "statewideCreditStatus": "identified",
@@ -18,7 +18,7 @@
       "incomeDefinition": "Not income-tested.",
       "incomeLimits": "No income limit.",
       "maximumBenefit": "Up to $300 reduction in taxes under the assessed-value table.",
-      "formulaSummary": "Apply the regular homestead tax-credit table to eligible assessed value.",
+      "formulaSummary": "Statutory assessed-value table provides a nominal $6–$300 bill credit, split equally between school and county general-fund taxes. Actual component liabilities and shared ownership can limit relief.",
       "application": "Apply to the county tax assessor January 1–April 1; reapply after relevant changes.",
       "eligibilityNotes": [
         "Own and occupy the principal residence on January 1.",
@@ -36,9 +36,19 @@
           "kind": "agency"
         },
         {
-          "title": "Homestead regulations",
-          "url": "https://www.dor.ms.gov/sites/default/files/Property/prop_partVI08302012.pdf",
+          "title": "Mississippi SOS Title 35, Part VI property-tax rules",
+          "url": "https://www.sos.ms.gov/adminsearch/ACCode/00000161c.pdf",
+          "kind": "regulation"
+        },
+        {
+          "title": "2025 HB 812: as-signed homestead provisions and credit table",
+          "url": "https://billstatus.ls.state.ms.us/documents/2025/pdf/HB/0800-0899/HB0812SG.pdf",
           "kind": "statute"
+        },
+        {
+          "title": "2025 HB 812 official enactment record",
+          "url": "https://billstatus.ls.state.ms.us/2025/pdf/history/HB/HB0812.xml",
+          "kind": "agency"
         }
       ],
       "modelVariables": []
@@ -70,9 +80,9 @@
           "kind": "agency"
         },
         {
-          "title": "Homestead regulations",
-          "url": "https://www.dor.ms.gov/sites/default/files/Property/prop_partVI08302012.pdf",
-          "kind": "statute"
+          "title": "Mississippi SOS Title 35, Part VI property-tax rules",
+          "url": "https://www.sos.ms.gov/adminsearch/ACCode/00000161c.pdf",
+          "kind": "regulation"
         }
       ],
       "modelVariables": [
@@ -81,10 +91,13 @@
       ]
     }
   ],
-  "laterChanges": [],
+  "laterChanges": [
+    "HB 812 distinguishes veteran age-90 relief for 2025 claims from specified surviving-spouse additions beginning with 2026 claims; do not backcast current guidance into 2025."
+  ],
   "researchNotes": [
     "No general statewide renter credit was identified in reviewed DOR materials.",
-    "The regular tier is called an exemption but operates as a bill credit; do not treat it as a cash refund."
+    "The regular tier is called an exemption but operates as a bill credit; do not treat it as a cash refund.",
+    "The replaced DOR regulation link returned 404. The retained SOS rulebook includes later changes; the dated enacted act anchors the 2025 table. Shared-ownership ordering and low component-liability treatment remain unresolved."
   ],
   "sources": [
     {
@@ -93,9 +106,19 @@
       "kind": "agency"
     },
     {
-      "title": "Homestead regulations",
-      "url": "https://www.dor.ms.gov/sites/default/files/Property/prop_partVI08302012.pdf",
+      "title": "Mississippi SOS Title 35, Part VI property-tax rules",
+      "url": "https://www.sos.ms.gov/adminsearch/ACCode/00000161c.pdf",
+      "kind": "regulation"
+    },
+    {
+      "title": "2025 HB 812: as-signed homestead provisions and credit table",
+      "url": "https://billstatus.ls.state.ms.us/documents/2025/pdf/HB/0800-0899/HB0812SG.pdf",
       "kind": "statute"
+    },
+    {
+      "title": "2025 HB 812 official enactment record",
+      "url": "https://billstatus.ls.state.ms.us/2025/pdf/history/HB/HB0812.xml",
+      "kind": "agency"
     }
   ]
 }
