@@ -10,9 +10,20 @@ if (process.platform !== "linux") {
 }
 
 const basePath = process.env.QA_BASE_PATH ?? "";
-const appUrl = "http://127.0.0.1:3075" + basePath + "/";
+const liveUrl = process.env.QA_LIVE_URL;
+if (
+  liveUrl &&
+  (new URL(liveUrl).origin !== "https://www.policyengine.org" ||
+    new URL(liveUrl).pathname !== "/us/rent-and-property-taxes/")
+)
+  throw new Error("Live QA is restricted to the published PolicyEngine tool");
+const appUrl = liveUrl ?? "http://127.0.0.1:3075" + basePath + "/";
 const output = resolve(
-  basePath ? "output/playwright-zone" : "output/playwright",
+  liveUrl
+    ? "output/playwright-live"
+    : basePath
+      ? "output/playwright-zone"
+      : "output/playwright",
 );
 mkdirSync(output, { recursive: true });
 const cli = resolve("node_modules/@playwright/cli/playwright-cli.js");
@@ -53,6 +64,16 @@ async function servedCheck(page, options) {
   await page.getByLabel("State or program", { exact: true }).fill("Wisconsin");
   await page.getByRole("heading", { name: "Wisconsin", exact: true }).waitFor();
   await page.screenshot({ path: options.screenshot, fullPage: true });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.evaluate(() => new Promise(requestAnimationFrame));
+  if (
+    await page.evaluate(
+      () => document.documentElement.scrollWidth > window.innerWidth,
+    )
+  )
+    throw new Error("Served mobile layout overflows horizontally");
+  await page.screenshot({ path: options.mobileScreenshot, fullPage: true });
+  await page.setViewportSize({ width: 1280, height: 900 });
   const escapedLinks = await page
     .locator('a[href^="/"]')
     .evaluateAll(
@@ -146,17 +167,19 @@ async function offlineInteractions(page, options) {
     .waitFor();
 }
 
-const server = spawn(process.execPath, ["run", "start"], {
-  stdio: ["ignore", "pipe", "pipe"],
-});
+const server = liveUrl
+  ? null
+  : spawn(process.execPath, ["run", "start"], {
+      stdio: ["ignore", "pipe", "pipe"],
+    });
 let serverLog = "";
-server.stdout.on("data", (chunk) => (serverLog += chunk));
-server.stderr.on("data", (chunk) => (serverLog += chunk));
+server?.stdout.on("data", (chunk) => (serverLog += chunk));
+server?.stderr.on("data", (chunk) => (serverLog += chunk));
 try {
   let ready = false;
   for (let attempt = 0; attempt < 60; attempt++) {
     try {
-      const response = await fetch("http://127.0.0.1:3075", {
+      const response = await fetch(appUrl, {
         signal: AbortSignal.timeout(500),
       });
       if (response.ok) {
@@ -173,6 +196,7 @@ try {
   command("snapshot");
   runCode(servedCheck, {
     screenshot: resolve(output, "served-desktop.png"),
+    mobileScreenshot: resolve(output, "served-mobile.png"),
     basePath,
   });
   command("snapshot");
@@ -207,7 +231,7 @@ try {
   try {
     command("close");
   } finally {
-    server.kill();
+    server?.kill();
     writeFileSync(resolve(output, "server.log"), serverLog);
   }
 }

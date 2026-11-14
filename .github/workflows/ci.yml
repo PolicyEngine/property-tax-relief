@@ -1,5 +1,8 @@
 name: Verify research and interactive
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
 jobs:
   verify:
     runs-on: ubuntu-latest
@@ -19,6 +22,9 @@ jobs:
       - run: bun run scripts/browser_qa.mjs
       - run: bun run build:zone
       - run: QA_BASE_PATH=/us/rent-and-property-taxes bun run scripts/browser_qa.mjs
+      - name: Verify published PolicyEngine route
+        if: github.event_name == 'workflow_dispatch'
+        run: QA_LIVE_URL=https://www.policyengine.org/us/rent-and-property-taxes/ QA_BASE_PATH=/us/rent-and-property-taxes bun run scripts/browser_qa.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -26,3 +32,4 @@ jobs:
           path: |
             output/playwright/
             output/playwright-zone/
+            output/playwright-live/
