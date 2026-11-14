@@ -1,6 +1,6 @@
 # Calculation audit findings
 
-Research draft, November 13, 2026. The source-level coverage audit covers every inventory record. These additional checks inspect selected rules in the pinned `policyengine-us==2.2.1` release and canonical commit `f0c77fdedf8f8d4beba5dfb6b7a0facd5ce49178`. They do not certify the remaining formulas or report household impacts.
+Research draft, November 13, 2026. The source-level coverage audit covers every inventory record. These historical additional checks inspected selected rules in the pinned `policyengine-us==2.2.1` release and canonical commit `f0c77fdedf8f8d4beba5dfb6b7a0facd5ce49178`. The generated declaration audit was subsequently rebuilt from committed upstream source `1b71d43a631d10794f0f4ca973b61f32fb28563f`; its immutable provenance is recorded separately in `public/data/coverage.json`. Neither pass certifies the remaining formulas or reports household impacts.
 
 ## Minnesota homeowner refund
 
@@ -26,4 +26,8 @@ No matching PTC or Disability Assistance Credit implementation was located in th
 
 Minnesota renter calculations require a qualifying Certificate of Rent Paid input, which defaults false in the inspected model. The New York real-property credit uses assessed-value and rent inputs that need reconciliation with the [official 2025 IT-214 definitions](https://www.tax.ny.gov/pdf/2025/inc/it214i_2025.pdf). Ordinary isolated household examples and broader household claims require different checks.
 
-These findings explain why declaration presence alone cannot validate the national calculator. Model corrections and new policy encoding must follow the applicable PolicyEngine and Axiom workflows, with source-derived tests and independent review. No country-model files were changed by this research project.
+These findings explain why declaration presence alone cannot validate the national calculator. Model corrections and new policy encoding must follow the applicable PolicyEngine and Axiom workflows, with source-derived tests and independent review. Country-model work proceeds in separate draft PRs; the generated upstream audit excludes those unmerged branches.
+
+## Model corrections in progress
+
+[PolicyEngine-US PR 10909](https://github.com/PolicyEngine/policyengine-us/pull/10909) addresses Minnesota homeowner refunds, the New York market-value test, DC historical household and bill facts, and Colorado Disability Assistance Credit. Its focused local run passed 111 YAML cases. [PR 10913](https://github.com/PolicyEngine/policyengine-us/pull/10913) adds the Arkansas homestead bill credit for assessment 2025–2026; its focused local run passed 17 cases covering 52 scenario/tax-unit rows. These results are local test evidence, not independent legal validation or a national calculator certification. Both PRs remain drafts awaiting independent review and remote CI. New source-qualified inputs also require data that the national household dataset does not currently supply.
