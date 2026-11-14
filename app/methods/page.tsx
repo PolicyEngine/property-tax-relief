@@ -39,11 +39,11 @@ export default function Methods() {
           </p>
           <p>
             Each profile records a 2025 program reference and a source-check
-            date of November 13, 2026. The program-year field identifies
-            differences among assessment, income, tax-payment, filing and
-            benefit-payment years. The profile includes later changes where
-            research identified them. A source-check date does not establish
-            that every provision has received a legal audit.
+            date; sources were checked on November 13–14, 2026. The program-year
+            field identifies differences among assessment, income, tax-payment,
+            filing and benefit-payment years. The profile includes later changes
+            where research identified them. A source-check date does not
+            establish that every provision has received a legal audit.
           </p>
           <p>
             Official agency guidance, forms and statutes supply the program

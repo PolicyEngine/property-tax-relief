@@ -18,7 +18,7 @@ export default function Report() {
             definitions of income, housing costs and eligibility. This review
             records the rules in all 50 states and the District of Columbia,
             using program-specific 2025 reference periods and official sources
-            checked on November 13, 2026.
+            checked on November 13–14, 2026.
           </p>
         </section>
         <div className="draft-note">
