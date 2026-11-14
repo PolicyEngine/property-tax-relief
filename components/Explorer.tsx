@@ -211,7 +211,8 @@ function StatePicker({
       </div>
       <p className="small-note">
         The grid lists states alphabetically. A state without an identified
-        statewide cash credit may offer exemptions, deferrals or local relief.
+        statewide credit or rebate may offer exemptions, deferrals or local
+        relief.
       </p>
       <Button
         variant="outline"
@@ -433,8 +434,8 @@ function Comparison({
               ))}
               {state && programs.length === 0 && (
                 <p>
-                  No statewide cash-credit program recorded; see the state
-                  profile for other relief.
+                  No statewide credit or rebate recorded; see the state profile
+                  for other relief.
                 </p>
               )}
             </article>

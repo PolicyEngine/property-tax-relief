@@ -3,7 +3,7 @@
   "name": "Louisiana",
   "taxYear": 2025,
   "verifiedAt": "2026-11-13",
-  "overview": "Louisiana provides a homestead exemption, an income-tested assessment freeze, and a narrow statutory tax credit for people who own their residence but lease its land.",
+  "overview": "Louisiana provides a homestead exemption, an income-tested assessment freeze, and a narrow property-tax bill credit for qualifying dwelling owners who lease the land and are not otherwise entitled to homestead exemption.",
   "inventoryStatus": "researched",
   "statewideCreditStatus": "identified",
   "programs": [
@@ -70,27 +70,40 @@
       "category": "property-tax-credit",
       "scope": "statewide",
       "tenures": ["owner"],
-      "refundable": null,
+      "refundable": false,
       "ageRule": "No general age restriction.",
       "incomeDefinition": "Not income-tested.",
       "incomeLimits": "No income limit.",
       "maximumBenefit": "Covered tax on $7,500 assessed value or actual covered tax, whichever is less.",
-      "formulaSummary": "Credit ad valorem tax on a qualifying residence owned by the occupant where the underlying land is leased.",
-      "application": "Apply to the local assessing authority.",
+      "formulaSummary": "Reduce the qualifying residence's ad valorem tax bill by the lesser of actual covered tax and tax on $7,500 assessed value. This provision does not provide a separate cash payment or income-tax refund.",
+      "application": "Bill-level credit under R.S. 47:1710; local claim procedures were not established by this source review.",
       "eligibilityNotes": [
         "Residential lessee means a person who owns and occupies the residence, including a mobile home, but does not own its land.",
-        "Ordinary apartment renters are not eligible through this provision."
+        "Ordinary apartment renters are not eligible through this provision.",
+        "Non-entitlement to homestead exemption must be established separately; failing to apply for that exemption does not by itself establish credit eligibility.",
+        "Covered residence tax, applicable rates and local parcel facts must be established; unknown facts do not establish a zero award."
       ],
       "interactions": [
-        "Available only where the claimant is not otherwise entitled to the homestead exemption."
+        "Available only where the claimant is not otherwise entitled to the homestead exemption.",
+        "Article VII §20(A)(1) already extends homestead exemption to many owner-occupied primary dwellings on leased land. The remaining eligible claimant population is unresolved."
       ],
-      "programYear": "2025 property-tax year.",
+      "programYear": "2025 residence ad valorem tax bill; distinct from calendar-year cash payments and the income-tax return.",
       "rentProxy": null,
       "sources": [
         {
           "title": "R.S. 47:1710 — residential lessees’ tax credit",
           "url": "https://www.legis.la.gov/legis/Law.aspx?d=101342",
           "kind": "statute"
+        },
+        {
+          "title": "Louisiana Constitution, Article VII §20(A)(1) and (B) — homestead overlap and lessee relief",
+          "url": "https://www.legis.la.gov/legis/Law.aspx?d=206550",
+          "kind": "statute"
+        },
+        {
+          "title": "June 2025 Louisiana Administrative Code, 61:V §101(F)(2), physical page 292",
+          "url": "https://dam.ldr.la.gov/lawspolicies/61v01.pdf#page=292",
+          "kind": "agency"
         }
       ],
       "modelVariables": []
@@ -100,7 +113,9 @@
   "researchNotes": [
     "The narrow lessee credit must not be advertised as a general renter credit.",
     "Housing filters classify ownership of the dwelling: a dwelling owner who rents the underlying land appears under homeowners.",
-    "Current constitutional pages contain future-effective amendments; a 2025 comparison must use provisions in force for 2025."
+    "Current constitutional pages contain future-effective amendments; a 2025 comparison must use provisions in force for 2025.",
+    "R.S. 47:1710 remains in the statute and June 2025 administrative compilation. Act 11 of the 2024 Third Extraordinary Session does not repeal it. Act 12's contingent changes did not become operative after voters rejected the required Article VII amendment on March 29, 2025.",
+    "The lessee entry identifies a nonrefundable property-bill offset. Homestead entitlement, remaining eligible claimant scenarios, covered levies and local claim procedures remain unresolved; initial source-pass completion does not validate a household award."
   ],
   "sources": [
     {
@@ -117,6 +132,26 @@
       "title": "R.S. 47:1710 — residential lessees’ tax credit",
       "url": "https://www.legis.la.gov/legis/Law.aspx?d=101342",
       "kind": "statute"
+    },
+    {
+      "title": "June 2025 Louisiana Administrative Code, 61:V §101(F)(2), physical page 292",
+      "url": "https://dam.ldr.la.gov/lawspolicies/61v01.pdf#page=292",
+      "kind": "agency"
+    },
+    {
+      "title": "2024 Third Extraordinary Session Act 11 (HB10), repeal list and applicability, page 161",
+      "url": "https://www.legis.la.gov/legis/ViewDocument.aspx?d=1391656#page=161",
+      "kind": "statute"
+    },
+    {
+      "title": "2024 Third Extraordinary Session Act 12 (HB11), contingent operation, page 41",
+      "url": "https://www.legis.la.gov/legis/ViewDocument.aspx?d=1391657#page=41",
+      "kind": "statute"
+    },
+    {
+      "title": "Governor's April 2, 2025 statement confirming Amendment 2 rejection on March 29, 2025",
+      "url": "https://gov.louisiana.gov/news/4820",
+      "kind": "agency"
     }
   ]
 }

@@ -14,6 +14,7 @@ import importlib.metadata
 import io
 import json
 import subprocess
+import tarfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -79,46 +80,92 @@ CONTEXT_CATEGORIES = {
 }
 
 
+def source_variable_index(source: str, filename: str) -> dict[str, dict]:
+    """Index declarations from one source file without executing its code."""
+    result = {}
+    try:
+        tree = ast.parse(source)
+    except SyntaxError:
+        return result
+    for node in tree.body:
+        if isinstance(node, ast.ClassDef) and any(
+            isinstance(base, ast.Name) and base.id == "Variable" for base in node.bases
+        ):
+            methods = [
+                item.name
+                for item in node.body
+                if isinstance(item, (ast.FunctionDef, ast.AsyncFunctionDef))
+            ]
+            formulas = [name for name in methods if name.startswith("formula")]
+            dated = [
+                int(name.split("_")[1])
+                for name in formulas
+                if name.startswith("formula_") and name.split("_")[1].isdigit()
+            ]
+            declarative = any(
+                isinstance(item, ast.Assign)
+                and any(
+                    isinstance(t, ast.Name) and t.id in {"adds", "subtracts"}
+                    for t in item.targets
+                )
+                for item in node.body
+            ) or any(name in {"adds", "subtracts"} for name in methods)
+            result[node.name] = {
+                "file": filename,
+                "methods": formulas,
+                "computableIn2025": "formula" in formulas
+                or any(year <= 2025 for year in dated)
+                or declarative,
+            }
+    return result
+
+
 def variable_index(directory: Path) -> dict[str, dict]:
-    """Read declared Variable classes without executing country-model code."""
+    """Read installed Variable classes without executing country-model code."""
     result = {}
     for path in directory.rglob("*.py"):
         try:
-            tree = ast.parse(path.read_text())
-        except (SyntaxError, UnicodeDecodeError):
+            source = path.read_text()
+        except UnicodeDecodeError:
             continue
-        for node in tree.body:
-            if isinstance(node, ast.ClassDef) and any(
-                isinstance(base, ast.Name) and base.id == "Variable"
-                for base in node.bases
-            ):
-                methods = [
-                    item.name
-                    for item in node.body
-                    if isinstance(item, (ast.FunctionDef, ast.AsyncFunctionDef))
-                ]
-                formulas = [name for name in methods if name.startswith("formula")]
-                dated = [
-                    int(name.split("_")[1])
-                    for name in formulas
-                    if name.startswith("formula_") and name.split("_")[1].isdigit()
-                ]
-                declarative = any(
-                    isinstance(item, ast.Assign)
-                    and any(
-                        isinstance(t, ast.Name) and t.id in {"adds", "subtracts"}
-                        for t in item.targets
-                    )
-                    for item in node.body
-                ) or any(name in {"adds", "subtracts"} for name in methods)
-                result[node.name] = {
-                    "file": str(path.relative_to(directory)),
-                    "methods": formulas,
-                    "computableIn2025": "formula" in formulas
-                    or any(year <= 2025 for year in dated)
-                    or declarative,
-                }
+        result.update(source_variable_index(source, str(path.relative_to(directory))))
     return result
+
+
+def canonical_variable_index(
+    directory: Path, ref: str = "HEAD"
+) -> tuple[str, dict[str, dict]]:
+    """Index a resolved Git commit, excluding staged, dirty and untracked files."""
+    commit = subprocess.check_output(
+        ["git", "rev-parse", "--verify", "--end-of-options", f"{ref}^{{commit}}"],
+        cwd=directory,
+        text=True,
+        timeout=60,
+    ).strip()
+    prefix = "policyengine_us/variables/"
+    content = subprocess.check_output(
+        ["git", "archive", "--format=tar", commit, prefix.rstrip("/")],
+        cwd=directory,
+        timeout=60,
+    )
+    result = {}
+    with tarfile.open(fileobj=io.BytesIO(content), mode="r:") as archive:
+        for member in archive:
+            if not (
+                member.isfile()
+                and member.name.startswith(prefix)
+                and member.name.endswith(".py")
+            ):
+                continue
+            source_file = archive.extractfile(member)
+            if source_file is None:
+                continue
+            try:
+                source = source_file.read().decode("utf-8")
+            except UnicodeDecodeError:
+                continue
+            result.update(source_variable_index(source, member.name[len(prefix) :]))
+    return commit, result
 
 
 def main() -> None:
@@ -127,9 +174,16 @@ def main() -> None:
     parser.add_argument(
         "--canonical-model",
         type=Path,
-        help="Optional clean canonical model checkout to compare with the pinned release",
+        help="Optional Git model checkout to compare with the installed release",
+    )
+    parser.add_argument(
+        "--canonical-ref",
+        default="HEAD",
+        help="Committed model ref to inspect with --canonical-model (default: HEAD)",
     )
     args = parser.parse_args()
+    if args.canonical_model is None and args.canonical_ref != "HEAD":
+        parser.error("--canonical-ref requires --canonical-model")
     states = [
         json.loads(p.read_text()) for p in sorted((ROOT / "data/states").glob("*.json"))
     ]
@@ -145,17 +199,10 @@ def main() -> None:
         )
     )
     index = variable_index(released)
-    canonical_index = (
-        variable_index(args.canonical_model / "policyengine_us/variables")
+    commit, canonical_index = (
+        canonical_variable_index(args.canonical_model, args.canonical_ref)
         if args.canonical_model
-        else {}
-    )
-    commit = (
-        subprocess.check_output(
-            ["git", "rev-parse", "HEAD"], cwd=args.canonical_model, text=True
-        ).strip()
-        if args.canonical_model
-        else "not-inspected"
+        else ("not-inspected", {})
     )
     rows = []
     for state in states:
@@ -193,12 +240,18 @@ def main() -> None:
         "interfaceVersion": importlib.metadata.version("policyengine"),
         "modelVersion": importlib.metadata.version("policyengine-us"),
         "canonicalModelCommit": commit,
+        "canonicalModelRef": args.canonical_ref
+        if args.canonical_model
+        else "not-inspected",
+        "canonicalModelSource": "committed-git-tree"
+        if args.canonical_model
+        else "not-inspected",
         "programs": rows,
         "releaseReady": False,
         "limitations": [
             "A matching formula declaration available by 2025 confirms source-level implementation presence only; it does not validate legal correctness, parameters, eligibility or interactions.",
             "Research records program-specific 2025 reference periods. Assessment, tax-payment, income and filing years can differ; read each program-year field.",
-            "The national cash-credit calculator requires missing implementations, tax-year checks, source-derived household tests, interaction checks and independent review.",
+            "The national relief calculator requires missing implementations, tax-year checks, source-derived household tests, interaction checks and independent review.",
             "Source research describes identified statewide programs and selected context; it does not enumerate every local program or establish exhaustive absence.",
         ],
     }
@@ -222,7 +275,7 @@ def main() -> None:
     ]:
         (out / f"{name}.json").write_text(json.dumps(content, indent=2) + "\n")
     stream = io.StringIO(newline="")
-    writer = csv.writer(stream)
+    writer = csv.writer(stream, lineterminator="\n")
     writer.writerow(
         [
             "state",

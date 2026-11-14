@@ -25,7 +25,8 @@
         "2025 application uses calendar-year 2024 income and year-end 2024 assets."
       ],
       "interactions": [
-        "Eligible taxes reflect the homestead assessment credit; fixed water/sewer charges, excess acreage and business portions are excluded."
+        "Eligible taxes reflect the Homestead assessment reduction; fixed water/sewer charges, excess acreage and business portions are excluded.",
+        "State, county and municipal Homestead assessment bases can differ. Their aggregation with the Homeowners' $300,000 assessment cap remains unresolved for a general calculation."
       ],
       "programYear": "2025 property-tax credit uses 2024 household income; do not equate the credit year with the income year.",
       "rentProxy": null,
@@ -39,6 +40,16 @@
           "title": "Homeowners’ Property Tax Credit Program",
           "url": "https://dat.maryland.gov/realproperty/Pages/Homeowners%27-Property-Tax-Credit-Program.aspx",
           "kind": "agency"
+        },
+        {
+          "title": "2025 Tax–Property §9-104 — Homeowners' eligible tax base",
+          "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-104.pdf",
+          "kind": "statute"
+        },
+        {
+          "title": "2025 Tax–Property §9-105 — differing State, county and municipal Homestead bases",
+          "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-105.pdf",
+          "kind": "statute"
         }
       ],
       "modelVariables": []
@@ -59,16 +70,32 @@
       "eligibilityNotes": [
         "At least six months in a qualifying Maryland principal residence.",
         "Occupancy rent excludes heat, utilities and fees.",
-        "Tax-exempt dwellings are excluded; younger applicants have additional subsidy restrictions."
+        "Tax-exempt dwellings are excluded; younger applicants have additional subsidy restrictions.",
+        "The under-60 route has an unresolved source conflict: statute specifies Census poverty thresholds, while the 2025/2026 forms use HHS poverty guidelines. Exact reference-year and family-composition treatment remain unresolved for eligibility calculations."
       ],
       "interactions": [],
-      "programYear": "The current 2026 application uses 2025 rent and income. Keep this one-year lag explicit.",
+      "programYear": "The 2025 application uses 2024 rent and income; the 2026 application uses 2025. Rent year and application/payment year must remain separate.",
       "rentProxy": 0.15,
       "sources": [
         {
           "title": "Renters’ Tax Credits",
           "url": "https://dat.maryland.gov/realproperty/pages/renters%27-tax-credits.aspx",
           "kind": "agency"
+        },
+        {
+          "title": "2025 Tax–Property §9-102(a)(9) — statutory under-60 eligibility threshold",
+          "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-102.pdf",
+          "kind": "statute"
+        },
+        {
+          "title": "2025 Renters' Tax Credit application — 2024 rent and income",
+          "url": "https://dat.maryland.gov/SDAT%20Forms/2025RTCApplication.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "2026 Renters' Tax Credit application — 2025 rent and income",
+          "url": "https://dat.maryland.gov/SDAT%20Forms/2026%20Renters%E2%80%99%20Tax%20Credit%20Application%20RTC-1%20Form.pdf",
+          "kind": "form"
         }
       ],
       "modelVariables": []
@@ -91,7 +118,7 @@
       ],
       "interactions": [
         "This assessment-growth credit is distinct from the income-based Homeowners’ Tax Credit.",
-        "Use the actual net bill when computing other credits; do not add this credit again to already-reduced tax."
+        "Do not count bill relief twice. The income-based Homeowners' Credit uses its statutory Homestead-adjusted assessment basis; aggregation of differing jurisdictional bases remains unresolved."
       ],
       "programYear": "2025 property-tax year.",
       "rentProxy": null,
@@ -108,7 +135,8 @@
   "laterChanges": [],
   "researchNotes": [
     "No Maryland credit variable was identified in the inspected model paths; this is a model-coverage flag, not proof of legal absence.",
-    "Homeowner credit is bill relief, so income-tax refundability is not a meaningful classification."
+    "Homeowner credit is bill relief, so income-tax refundability is not a meaningful classification.",
+    "The under-60 renter Census/HHS threshold conflict and the Homeowners' differing-jurisdiction Homestead bases remain unresolved calculation limits. Initial source-pass completion does not certify population eligibility or household amounts."
   ],
   "sources": [
     {
@@ -129,6 +157,41 @@
     {
       "title": "Maryland Homestead Property Tax Credit Program",
       "url": "https://dat.maryland.gov/realproperty/Pages/Maryland-Homestead-Tax-Credit.aspx",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 Tax–Property §9-104 — Homeowners' eligible tax base",
+      "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-104.pdf",
+      "kind": "statute"
+    },
+    {
+      "title": "2025 Tax–Property §9-105 — differing State, county and municipal Homestead bases",
+      "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-105.pdf",
+      "kind": "statute"
+    },
+    {
+      "title": "2025 Tax–Property §9-102(a)(9) — statutory under-60 eligibility threshold",
+      "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-102.pdf",
+      "kind": "statute"
+    },
+    {
+      "title": "2025 Renters' Tax Credit application — 2024 rent and income",
+      "url": "https://dat.maryland.gov/SDAT%20Forms/2025RTCApplication.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "2026 Renters' Tax Credit application — 2025 rent and income",
+      "url": "https://dat.maryland.gov/SDAT%20Forms/2026%20Renters%E2%80%99%20Tax%20Credit%20Application%20RTC-1%20Form.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "2024 HHS poverty guidelines — comparison with 2025 renter-form table",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2024-01-17/pdf/2024-00796.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "Census historical poverty thresholds — distinct from HHS guidelines",
+      "url": "https://www.census.gov/data/tables/time-series/demo/income-poverty/historical-poverty-thresholds.html",
       "kind": "agency"
     }
   ]

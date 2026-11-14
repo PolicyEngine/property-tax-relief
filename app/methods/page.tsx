@@ -34,7 +34,8 @@ export default function Methods() {
             focuses on statewide property-tax credits, circuit breakers, rebates
             and renter credits. It includes selected exemptions, deductions,
             deferrals, tax limits and local options to explain relief outside
-            the cash-credit comparison.
+            the credit and rebate comparison. Relief can reduce a property-tax
+            bill or income-tax liability, or arrive as a separate payment.
           </p>
           <p>
             Each profile records a 2025 program reference and a source-check

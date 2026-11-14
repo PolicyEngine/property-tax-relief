@@ -188,7 +188,9 @@
     "taxYear": 2025,
     "verifiedAt": "2026-11-13",
     "inventoryStatus": "researched",
-    "laterChanges": [],
+    "laterChanges": [
+      "Act 174 of the 2026 Fiscal Session raises the cap to $675 beginning with assessment year 2026, normally collected in 2027. It does not replace the $600 cap for assessment year 2025."
+    ],
     "code": "AR",
     "name": "Arkansas",
     "overview": "The homestead credit reduces qualifying homeowners' property-tax liability without an income test.",
@@ -206,15 +208,17 @@
         "ageRule": "No general minimum age.",
         "incomeDefinition": "Not income-tested.",
         "incomeLimits": "No income limit identified.",
-        "maximumBenefit": "$600 for assessment year 2025.",
-        "formulaSummary": "Reduces the qualifying homestead's assessed real-property tax by up to the annual credit.",
+        "maximumBenefit": "Lesser of $600 and qualifying homestead tax for assessment year 2025, normally collected in 2026.",
+        "formulaSummary": "Nonrefundable bill credit equal to the lesser of qualified homestead real-property ad valorem tax before this credit and the assessment-year cap. Any unused cap is not a cash payment.",
         "application": "Register the homestead and establish eligibility with the county assessor.",
         "eligibilityNotes": [
           "Applies to a qualifying owner-occupied homestead.",
-          "Assessment year and bill-payment year differ."
+          "Assessment year and bill-payment year differ; the assessment-year cap governs even if payment is early or late.",
+          "Actual county parcel qualification, valid registration, annual property history and qualified pre-credit tax must be established; current owner tenure or generic tax paid alone does not establish the credit."
         ],
         "interactions": [
-          "Assessment limitations and disability/veteran exemptions are separate forms of relief."
+          "Assessment limitations and disability/veteran exemptions are separate forms of relief.",
+          "A person claiming the disabled-veteran property-tax exemption cannot also claim this credit; veteran status alone is not the exclusion."
         ],
         "programYear": "2025 assessments, generally collected in 2026.",
         "rentProxy": null,
@@ -228,6 +232,31 @@
             "title": "Arkansas Assessment Coordination annual report 2025",
             "url": "https://www.dfa.arkansas.gov/wp-content/uploads/AACD_AnnualReport_2025.pdf",
             "kind": "agency"
+          },
+          {
+            "title": "Act 330 of 2025, \u00a7\u00a71\u20132 \u2014 $600 beginning assessment year 2025",
+            "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2025R%2FPublic%2FACT330.pdf",
+            "kind": "statute"
+          },
+          {
+            "title": "Act 174 of the 2026 Fiscal Session, \u00a7\u00a71\u20132 \u2014 $675 beginning assessment year 2026",
+            "url": "https://arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2026F%2FPublic%2FACT174.pdf",
+            "kind": "statute"
+          },
+          {
+            "title": "Act 541 of 2023 \u2014 registration proof and qualifying homestead interests",
+            "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2023R%2FPublic%2FACT541.pdf",
+            "kind": "statute"
+          },
+          {
+            "title": "Act 1268 of 2005, \u00a71 \u2014 parcel qualification and annual credit history",
+            "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2005%2FPublic%2FACT1268.pdf",
+            "kind": "statute"
+          },
+          {
+            "title": "Act 1544 of 2001, \u00a71 \u2014 disabled-veteran exemption interaction",
+            "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2001%2FPublic%2FACT1544.pdf",
+            "kind": "statute"
           }
         ],
         "modelVariables": []
@@ -235,7 +264,9 @@
     ],
     "researchNotes": [
       "DFA confirms Act 330 of 2025 increased the credit; the fiscal statement specifies 2025 assessment-year applicability.",
-      "Do not substitute a 2025 cash-payment comparison for the 2025 assessment-year credit."
+      "Do not substitute a 2025 cash-payment comparison for the 2025 assessment-year credit. Assessment 2025 normally appears on the 2026 bill; assessment 2026 normally appears on the 2027 bill.",
+      "Verified recent cap history is $425 for assessment 2023, $500 for assessment 2024, $600 for assessment 2025 and $675 from assessment 2026. A tax paid during 2025 ordinarily relates to assessment 2024 and its $500 cap.",
+      "County-confirmed parcel and claim facts are required. Unknown liability, registration or property history is not a verified zero award, and initial source-pass completion does not validate a household calculation."
     ],
     "sources": [
       {
@@ -247,6 +278,41 @@
         "title": "Arkansas Assessment Coordination annual report 2025",
         "url": "https://www.dfa.arkansas.gov/wp-content/uploads/AACD_AnnualReport_2025.pdf",
         "kind": "agency"
+      },
+      {
+        "title": "Act 330 of 2025, \u00a7\u00a71\u20132 \u2014 $600 beginning assessment year 2025",
+        "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2025R%2FPublic%2FACT330.pdf",
+        "kind": "statute"
+      },
+      {
+        "title": "Act 174 of the 2026 Fiscal Session, \u00a7\u00a71\u20132 \u2014 $675 beginning assessment year 2026",
+        "url": "https://arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2026F%2FPublic%2FACT174.pdf",
+        "kind": "statute"
+      },
+      {
+        "title": "Act 315 of 2023 \u2014 $425 beginning assessment year 2023",
+        "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2023R%2FPublic%2FACT315.pdf",
+        "kind": "statute"
+      },
+      {
+        "title": "Act 3 of the 2024 Second Extraordinary Session \u2014 $500 beginning assessment year 2024",
+        "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2024S2%2FPublic%2FACT3.pdf",
+        "kind": "statute"
+      },
+      {
+        "title": "Act 541 of 2023 \u2014 registration proof and qualifying homestead interests",
+        "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2023R%2FPublic%2FACT541.pdf",
+        "kind": "statute"
+      },
+      {
+        "title": "Act 1268 of 2005, \u00a71 \u2014 parcel qualification and annual credit history",
+        "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2005%2FPublic%2FACT1268.pdf",
+        "kind": "statute"
+      },
+      {
+        "title": "Act 1544 of 2001, \u00a71 \u2014 disabled-veteran exemption interaction",
+        "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2001%2FPublic%2FACT1544.pdf",
+        "kind": "statute"
       }
     ]
   },
@@ -618,7 +684,7 @@
     "laterChanges": [],
     "code": "DE",
     "name": "Delaware",
-    "overview": "A statewide senior credit offsets part of regular school property taxes on a principal residence.",
+    "overview": "Delaware's statewide senior-credit framework allows school districts to authorize a credit against regular school property taxes on a qualifying principal residence.",
     "statewideCreditStatus": "identified",
     "programs": [
       {
@@ -630,40 +696,73 @@
           "owner"
         ],
         "refundable": false,
-        "ageRule": "Age 65+.",
+        "ageRule": "Age 65+ as of June 30 immediately before the county fiscal year.",
         "incomeDefinition": "Not income-tested under the statewide program.",
         "incomeLimits": "No income limit listed for the statewide credit.",
-        "maximumBenefit": "50% of regular school property tax, up to $500.",
-        "formulaSummary": "Lesser of half the qualifying school levy or $500, deducted from bill.",
-        "application": "Apply to county by April 30; annual reapplication generally unnecessary.",
+        "maximumBenefit": "Statutory ceiling is 50% of eligible regular school property tax, up to $500; district authorization can provide less.",
+        "formulaSummary": "District-authorized nonrefundable bill credit, no greater than the lesser of half the eligible regular school levy after applicable reductions or $500.",
+        "application": "Apply to county ordinarily by April 30; annual reapplication generally unnecessary. A statutory financial-disability filing-date waiver may apply.",
         "eligibilityNotes": [
           "Primary residence only.",
-          "Residency waiting periods depend on when Delaware domicile began; newer arrivals generally require ten consecutive years.",
-          "Prior-year property taxes must have been paid in full."
+          "Residency waiting periods depend on when Delaware domicile began; newer arrivals generally require ten consecutive years. Statute measures the required duration on June 30 immediately before the county fiscal year.",
+          "Prior-year property taxes must have been paid in full.",
+          "Actual school-district authorization and eligible school-tax amounts must be established; the statewide ceiling is not an automatic award."
         ],
         "interactions": [
           "County exemptions and disabled-veteran relief require separate review."
         ],
-        "programYear": "Annual school-property-tax billing; 2025 baseline.",
+        "programYear": "2025 application cohort: ordinary filing by April 30, 2025 and age/domicile qualification on June 30, 2025 for the upcoming county fiscal year. County bill periods require separate identification.",
         "rentProxy": null,
         "sources": [
           {
             "title": "Senior school property-tax relief",
             "url": "https://finance.delaware.gov/senior-relief/",
             "kind": "agency"
+          },
+          {
+            "title": "14 Del. C. \u00a71917(c) \u2014 district authorization and June 30 qualification",
+            "url": "https://delcode.delaware.gov/title14/c019/sc01/index.html#1917",
+            "kind": "statute"
+          },
+          {
+            "title": "29 Del. C. \u00a76102(q)(3) \u2014 statutory ceiling and lesser district authorization",
+            "url": "https://delcode.delaware.gov/title29/c061/index.html#6102",
+            "kind": "statute"
+          },
+          {
+            "title": "Senior School Property Tax Credit application \u2014 residency wording differs from statute",
+            "url": "https://financefiles.delaware.gov/docs/ssptc_app_revised092523.pdf",
+            "kind": "form"
           }
         ],
         "modelVariables": []
       }
     ],
     "researchNotes": [
-      "A legislative fiscal note proposing a higher cap is not evidence of enactment; the agency overview states $500."
+      "A legislative fiscal note proposing a higher cap is not evidence of enactment; the agency overview states $500.",
+      "Statewide framework describes the governing law, not verified adoption in every district. No complete 2025 district-authorization registry was established by this source review.",
+      "The linked form measures domicile duration before application, while statute uses June 30 before the county fiscal year. This inventory follows the statutory date; district, property and billing facts remain necessary for any calculation."
     ],
     "sources": [
       {
         "title": "Senior school property-tax relief",
         "url": "https://finance.delaware.gov/senior-relief/",
         "kind": "agency"
+      },
+      {
+        "title": "14 Del. C. \u00a71917(c) \u2014 district authorization and June 30 qualification",
+        "url": "https://delcode.delaware.gov/title14/c019/sc01/index.html#1917",
+        "kind": "statute"
+      },
+      {
+        "title": "29 Del. C. \u00a76102(q)(3) \u2014 statutory ceiling and lesser district authorization",
+        "url": "https://delcode.delaware.gov/title29/c061/index.html#6102",
+        "kind": "statute"
+      },
+      {
+        "title": "Senior School Property Tax Credit application \u2014 residency wording differs from statute",
+        "url": "https://financefiles.delaware.gov/docs/ssptc_app_revised092523.pdf",
+        "kind": "form"
       }
     ]
   },
@@ -1975,7 +2074,7 @@
     "name": "Louisiana",
     "taxYear": 2025,
     "verifiedAt": "2026-11-13",
-    "overview": "Louisiana provides a homestead exemption, an income-tested assessment freeze, and a narrow statutory tax credit for people who own their residence but lease its land.",
+    "overview": "Louisiana provides a homestead exemption, an income-tested assessment freeze, and a narrow property-tax bill credit for qualifying dwelling owners who lease the land and are not otherwise entitled to homestead exemption.",
     "inventoryStatus": "researched",
     "statewideCreditStatus": "identified",
     "programs": [
@@ -2048,27 +2147,40 @@
         "tenures": [
           "owner"
         ],
-        "refundable": null,
+        "refundable": false,
         "ageRule": "No general age restriction.",
         "incomeDefinition": "Not income-tested.",
         "incomeLimits": "No income limit.",
         "maximumBenefit": "Covered tax on $7,500 assessed value or actual covered tax, whichever is less.",
-        "formulaSummary": "Credit ad valorem tax on a qualifying residence owned by the occupant where the underlying land is leased.",
-        "application": "Apply to the local assessing authority.",
+        "formulaSummary": "Reduce the qualifying residence's ad valorem tax bill by the lesser of actual covered tax and tax on $7,500 assessed value. This provision does not provide a separate cash payment or income-tax refund.",
+        "application": "Bill-level credit under R.S. 47:1710; local claim procedures were not established by this source review.",
         "eligibilityNotes": [
           "Residential lessee means a person who owns and occupies the residence, including a mobile home, but does not own its land.",
-          "Ordinary apartment renters are not eligible through this provision."
+          "Ordinary apartment renters are not eligible through this provision.",
+          "Non-entitlement to homestead exemption must be established separately; failing to apply for that exemption does not by itself establish credit eligibility.",
+          "Covered residence tax, applicable rates and local parcel facts must be established; unknown facts do not establish a zero award."
         ],
         "interactions": [
-          "Available only where the claimant is not otherwise entitled to the homestead exemption."
+          "Available only where the claimant is not otherwise entitled to the homestead exemption.",
+          "Article VII \u00a720(A)(1) already extends homestead exemption to many owner-occupied primary dwellings on leased land. The remaining eligible claimant population is unresolved."
         ],
-        "programYear": "2025 property-tax year.",
+        "programYear": "2025 residence ad valorem tax bill; distinct from calendar-year cash payments and the income-tax return.",
         "rentProxy": null,
         "sources": [
           {
             "title": "R.S. 47:1710 \u2014 residential lessees\u2019 tax credit",
             "url": "https://www.legis.la.gov/legis/Law.aspx?d=101342",
             "kind": "statute"
+          },
+          {
+            "title": "Louisiana Constitution, Article VII \u00a720(A)(1) and (B) \u2014 homestead overlap and lessee relief",
+            "url": "https://www.legis.la.gov/legis/Law.aspx?d=206550",
+            "kind": "statute"
+          },
+          {
+            "title": "June 2025 Louisiana Administrative Code, 61:V \u00a7101(F)(2), physical page 292",
+            "url": "https://dam.ldr.la.gov/lawspolicies/61v01.pdf#page=292",
+            "kind": "agency"
           }
         ],
         "modelVariables": []
@@ -2078,7 +2190,9 @@
     "researchNotes": [
       "The narrow lessee credit must not be advertised as a general renter credit.",
       "Housing filters classify ownership of the dwelling: a dwelling owner who rents the underlying land appears under homeowners.",
-      "Current constitutional pages contain future-effective amendments; a 2025 comparison must use provisions in force for 2025."
+      "Current constitutional pages contain future-effective amendments; a 2025 comparison must use provisions in force for 2025.",
+      "R.S. 47:1710 remains in the statute and June 2025 administrative compilation. Act 11 of the 2024 Third Extraordinary Session does not repeal it. Act 12's contingent changes did not become operative after voters rejected the required Article VII amendment on March 29, 2025.",
+      "The lessee entry identifies a nonrefundable property-bill offset. Homestead entitlement, remaining eligible claimant scenarios, covered levies and local claim procedures remain unresolved; initial source-pass completion does not validate a household award."
     ],
     "sources": [
       {
@@ -2095,6 +2209,26 @@
         "title": "R.S. 47:1710 \u2014 residential lessees\u2019 tax credit",
         "url": "https://www.legis.la.gov/legis/Law.aspx?d=101342",
         "kind": "statute"
+      },
+      {
+        "title": "June 2025 Louisiana Administrative Code, 61:V \u00a7101(F)(2), physical page 292",
+        "url": "https://dam.ldr.la.gov/lawspolicies/61v01.pdf#page=292",
+        "kind": "agency"
+      },
+      {
+        "title": "2024 Third Extraordinary Session Act 11 (HB10), repeal list and applicability, page 161",
+        "url": "https://www.legis.la.gov/legis/ViewDocument.aspx?d=1391656#page=161",
+        "kind": "statute"
+      },
+      {
+        "title": "2024 Third Extraordinary Session Act 12 (HB11), contingent operation, page 41",
+        "url": "https://www.legis.la.gov/legis/ViewDocument.aspx?d=1391657#page=41",
+        "kind": "statute"
+      },
+      {
+        "title": "Governor's April 2, 2025 statement confirming Amendment 2 rejection on March 29, 2025",
+        "url": "https://gov.louisiana.gov/news/4820",
+        "kind": "agency"
       }
     ]
   },
@@ -2199,7 +2333,8 @@
           "2025 application uses calendar-year 2024 income and year-end 2024 assets."
         ],
         "interactions": [
-          "Eligible taxes reflect the homestead assessment credit; fixed water/sewer charges, excess acreage and business portions are excluded."
+          "Eligible taxes reflect the Homestead assessment reduction; fixed water/sewer charges, excess acreage and business portions are excluded.",
+          "State, county and municipal Homestead assessment bases can differ. Their aggregation with the Homeowners' $300,000 assessment cap remains unresolved for a general calculation."
         ],
         "programYear": "2025 property-tax credit uses 2024 household income; do not equate the credit year with the income year.",
         "rentProxy": null,
@@ -2213,6 +2348,16 @@
             "title": "Homeowners\u2019 Property Tax Credit Program",
             "url": "https://dat.maryland.gov/realproperty/Pages/Homeowners%27-Property-Tax-Credit-Program.aspx",
             "kind": "agency"
+          },
+          {
+            "title": "2025 Tax\u2013Property \u00a79-104 \u2014 Homeowners' eligible tax base",
+            "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-104.pdf",
+            "kind": "statute"
+          },
+          {
+            "title": "2025 Tax\u2013Property \u00a79-105 \u2014 differing State, county and municipal Homestead bases",
+            "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-105.pdf",
+            "kind": "statute"
           }
         ],
         "modelVariables": []
@@ -2235,16 +2380,32 @@
         "eligibilityNotes": [
           "At least six months in a qualifying Maryland principal residence.",
           "Occupancy rent excludes heat, utilities and fees.",
-          "Tax-exempt dwellings are excluded; younger applicants have additional subsidy restrictions."
+          "Tax-exempt dwellings are excluded; younger applicants have additional subsidy restrictions.",
+          "The under-60 route has an unresolved source conflict: statute specifies Census poverty thresholds, while the 2025/2026 forms use HHS poverty guidelines. Exact reference-year and family-composition treatment remain unresolved for eligibility calculations."
         ],
         "interactions": [],
-        "programYear": "The current 2026 application uses 2025 rent and income. Keep this one-year lag explicit.",
+        "programYear": "The 2025 application uses 2024 rent and income; the 2026 application uses 2025. Rent year and application/payment year must remain separate.",
         "rentProxy": 0.15,
         "sources": [
           {
             "title": "Renters\u2019 Tax Credits",
             "url": "https://dat.maryland.gov/realproperty/pages/renters%27-tax-credits.aspx",
             "kind": "agency"
+          },
+          {
+            "title": "2025 Tax\u2013Property \u00a79-102(a)(9) \u2014 statutory under-60 eligibility threshold",
+            "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-102.pdf",
+            "kind": "statute"
+          },
+          {
+            "title": "2025 Renters' Tax Credit application \u2014 2024 rent and income",
+            "url": "https://dat.maryland.gov/SDAT%20Forms/2025RTCApplication.pdf",
+            "kind": "form"
+          },
+          {
+            "title": "2026 Renters' Tax Credit application \u2014 2025 rent and income",
+            "url": "https://dat.maryland.gov/SDAT%20Forms/2026%20Renters%E2%80%99%20Tax%20Credit%20Application%20RTC-1%20Form.pdf",
+            "kind": "form"
           }
         ],
         "modelVariables": []
@@ -2269,7 +2430,7 @@
         ],
         "interactions": [
           "This assessment-growth credit is distinct from the income-based Homeowners\u2019 Tax Credit.",
-          "Use the actual net bill when computing other credits; do not add this credit again to already-reduced tax."
+          "Do not count bill relief twice. The income-based Homeowners' Credit uses its statutory Homestead-adjusted assessment basis; aggregation of differing jurisdictional bases remains unresolved."
         ],
         "programYear": "2025 property-tax year.",
         "rentProxy": null,
@@ -2286,7 +2447,8 @@
     "laterChanges": [],
     "researchNotes": [
       "No Maryland credit variable was identified in the inspected model paths; this is a model-coverage flag, not proof of legal absence.",
-      "Homeowner credit is bill relief, so income-tax refundability is not a meaningful classification."
+      "Homeowner credit is bill relief, so income-tax refundability is not a meaningful classification.",
+      "The under-60 renter Census/HHS threshold conflict and the Homeowners' differing-jurisdiction Homestead bases remain unresolved calculation limits. Initial source-pass completion does not certify population eligibility or household amounts."
     ],
     "sources": [
       {
@@ -2307,6 +2469,41 @@
       {
         "title": "Maryland Homestead Property Tax Credit Program",
         "url": "https://dat.maryland.gov/realproperty/Pages/Maryland-Homestead-Tax-Credit.aspx",
+        "kind": "agency"
+      },
+      {
+        "title": "2025 Tax\u2013Property \u00a79-104 \u2014 Homeowners' eligible tax base",
+        "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-104.pdf",
+        "kind": "statute"
+      },
+      {
+        "title": "2025 Tax\u2013Property \u00a79-105 \u2014 differing State, county and municipal Homestead bases",
+        "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-105.pdf",
+        "kind": "statute"
+      },
+      {
+        "title": "2025 Tax\u2013Property \u00a79-102(a)(9) \u2014 statutory under-60 eligibility threshold",
+        "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-102.pdf",
+        "kind": "statute"
+      },
+      {
+        "title": "2025 Renters' Tax Credit application \u2014 2024 rent and income",
+        "url": "https://dat.maryland.gov/SDAT%20Forms/2025RTCApplication.pdf",
+        "kind": "form"
+      },
+      {
+        "title": "2026 Renters' Tax Credit application \u2014 2025 rent and income",
+        "url": "https://dat.maryland.gov/SDAT%20Forms/2026%20Renters%E2%80%99%20Tax%20Credit%20Application%20RTC-1%20Form.pdf",
+        "kind": "form"
+      },
+      {
+        "title": "2024 HHS poverty guidelines \u2014 comparison with 2025 renter-form table",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2024-01-17/pdf/2024-00796.pdf",
+        "kind": "agency"
+      },
+      {
+        "title": "Census historical poverty thresholds \u2014 distinct from HHS guidelines",
+        "url": "https://www.census.gov/data/tables/time-series/demo/income-poverty/historical-poverty-thresholds.html",
         "kind": "agency"
       }
     ]
@@ -4489,9 +4686,9 @@
     "name": "South Dakota",
     "taxYear": 2025,
     "verifiedAt": "2026-11-13",
-    "overview": "South Dakota has an income-tested assessment freeze and local relief. Its historical statewide property-tax refund was repealed in 2026, requiring careful claim-year treatment for this comparison.",
-    "inventoryStatus": "partial",
-    "statewideCreditStatus": "uncertain",
+    "overview": "South Dakota's 2025 application cycle included an income-tested homeowner property-tax refund alongside assessment freezes, deferral and local relief. The state repealed the property-refund chapter effective July 1, 2026. The advertised 2026 cycle refunds 2025 sales tax.",
+    "inventoryStatus": "researched",
+    "statewideCreditStatus": "identified",
     "programs": [
       {
         "id": "sd-assessment-freeze",
@@ -4584,7 +4781,7 @@
       },
       {
         "id": "sd-historical-property-tax-refund",
-        "name": "Property Tax Refund for Elderly and Disabled Persons (historical; repealed 2026)",
+        "name": "Property Tax Refund for Elderly and Disabled Persons (2025 application cycle; repealed July 1, 2026)",
         "category": "income-tested-relief",
         "scope": "statewide",
         "tenures": [
@@ -4592,18 +4789,19 @@
         ],
         "refundable": true,
         "ageRule": "Senior or qualifying disability.",
-        "incomeDefinition": "Program household income.",
-        "incomeLimits": "2025 claims on 2024 taxes used $16,566 single/$22,484 multi-member household; this is not certified as a 2025-tax claim limit.",
-        "maximumBenefit": "Do not calculate until claim-year and repeal treatment are resolved.",
-        "formulaSummary": "Historical property-tax refund subject to annual appropriation; the state paid the greater of eligible sales-tax and property-tax refunds.",
-        "application": "Historical annual claim May 1\u2013July 1.",
+        "incomeDefinition": "Historical program household income includes specified nontaxable receipts and an up-to-$400 deduction for principal-residence property taxes payable in the application year; federal adjusted gross income alone does not establish this amount.",
+        "incomeLimits": "2025 application cycle: program household income up to $16,566 for a single-member household or $22,484 for a multiple-member household. These are not the 2026 sales-refund limits.",
+        "maximumBenefit": "Historical schedule up to 35% of qualified property tax for a single-member household or 55% for a multiple-member household, subject to annual appropriation and proration. No validated dollar entitlement is supplied.",
+        "formulaSummary": "The historical program applied an income-based percentage to qualified real-property taxes, subject to appropriation and proration. Revenue calculated the sales-tax and property-tax refunds and paid the larger award once.",
+        "application": "Historical 2025 cycle: May 1\u2013July 1, 2025. The advertised 2026 cycle offers sales-tax refunds; it does not advertise an ongoing property-tax application.",
         "eligibilityNotes": [
-          "Historical homeownership/residency requirements applied."
+          "For the historical 2025 cycle, the homeowner must have owned the residence for at least three years or have been a South Dakota resident for at least five years.",
+          "The 2025 announcement uses 2024 residency, age/disability and income facts. The historical record does not certify every transitional 2026 property claim."
         ],
         "interactions": [
-          "Alternative to sales-tax refund, not additive."
+          "Revenue pays the larger eligible sales-tax or property-tax refund once; the two awards are not additive."
         ],
-        "programYear": "2025 application for 2024 taxes; 2026 repeal affects later claims.",
+        "programYear": "2025 application cycle; 2024 reference taxes/facts. Chapter 10-18A was repealed July 1, 2026. Transitional 2026 property-claim rights and the precise assessment/payable-year mapping are not certified.",
         "rentProxy": null,
         "sources": [
           {
@@ -4615,18 +4813,41 @@
             "title": "2026 SB21 enrolled: property-refund repeal",
             "url": "https://mylrc.sdlegislature.gov/api/Documents/305059.pdf",
             "kind": "statute"
+          },
+          {
+            "title": "2026 chapter 37 (SB 21), enacted property-refund repeal",
+            "url": "https://mylrc.sdlegislature.gov/api/Documents/SessionLaw/305067.pdf?Year=2026",
+            "kind": "statute"
+          },
+          {
+            "title": "SDCL 2-14-16: default effective date of legislative acts",
+            "url": "https://sdlegislature.gov/api/Statutes/2-14-16.html",
+            "kind": "statute"
+          },
+          {
+            "title": "SDCL 2-14-18: liabilities surviving repeal",
+            "url": "https://sdlegislature.gov/api/Statutes/2-14-18.html",
+            "kind": "statute"
+          },
+          {
+            "title": "SDCL 10-21-4: property-tax due date after assessment and levy",
+            "url": "https://sdlegislature.gov/api/Statutes/10-21-4.html",
+            "kind": "statute"
           }
         ],
         "modelVariables": []
       }
     ],
     "laterChanges": [
-      "2026 SB21 repealed property-tax-refund chapter 10-18A. The current application for 2025 taxes is described by Revenue as a sales-tax refund.",
+      "The governor signed 2026 SB 21, enacted as chapter 37, on March 4, 2026. Its repeal of property-refund chapter 10-18A took effect July 1, 2026 under the default effective-date law.",
+      "The advertised 2026 application cycle refunds 2025 sales tax. It uses program household-income limits of $17,215 for a single-member household or $23,265 for a multiple-member household, with appropriation-based pro-rata awards capped at $500 or $1,000 respectively. These sales-tax refunds are outside the property/renter-credit comparison.",
       "2026 assessment-freeze income/value thresholds and residency rules differ from 2025 applications."
     ],
     "researchNotes": [
-      "Do not label the current senior/disability sales-tax refund as a property-tax credit.",
-      "A tax-year-2025 household property-refund result needs explicit legal treatment of 2026 repeal and claim timing; inventory documents the unresolved issue."
+      "The identified historical property-refund record covers the 2025 application cycle. Initial source-pass completion does not validate a household award or adjudicate all transitional claims.",
+      "SDCL 2-14-18 generally preserves liabilities incurred before repeal unless the repealing act expressly provides otherwise. SB 21 has no specific accrued-claim transition clause; these sources do not settle whether a particular pre-repeal 2026 property claim was an incurred liability.",
+      "The historical statute defines tax year as assessment and levy year, while SDCL 10-21-4 makes taxes due January 1 of the following year. The 2025 announcement describes previous-year 2024 taxes/facts; the original claim form and exact assessment/payable-year mapping remain unverified.",
+      "The current senior/disability sales-tax refund is separate from the historical property-tax refund. A property-tax or rent deduction in its income test does not make it a property/renter reimbursement."
     ],
     "sources": [
       {
@@ -4648,6 +4869,41 @@
         "title": "2026 SB21 enrolled: property-refund repeal",
         "url": "https://mylrc.sdlegislature.gov/api/Documents/305059.pdf",
         "kind": "statute"
+      },
+      {
+        "title": "2026 chapter 37 (SB 21), enacted property-refund repeal",
+        "url": "https://mylrc.sdlegislature.gov/api/Documents/SessionLaw/305067.pdf?Year=2026",
+        "kind": "statute"
+      },
+      {
+        "title": "SDCL 2-14-16: default effective date of legislative acts",
+        "url": "https://sdlegislature.gov/api/Statutes/2-14-16.html",
+        "kind": "statute"
+      },
+      {
+        "title": "SDCL 2-14-18: liabilities surviving repeal",
+        "url": "https://sdlegislature.gov/api/Statutes/2-14-18.html",
+        "kind": "statute"
+      },
+      {
+        "title": "SDCL 10-21-4: property-tax due date after assessment and levy",
+        "url": "https://sdlegislature.gov/api/Statutes/10-21-4.html",
+        "kind": "statute"
+      },
+      {
+        "title": "2026 Department of Revenue sales-tax-refund announcement",
+        "url": "https://dor.sd.gov/newsroom/tax-refund-program-open-to-senior-citizens-and-citizens-with-disabilities/",
+        "kind": "agency"
+      },
+      {
+        "title": "Current sales-tax-refund statute, chapter 10-45A",
+        "url": "https://sdlegislature.gov/api/Statutes/10-45A.html?all=true",
+        "kind": "statute"
+      },
+      {
+        "title": "2026 sales-tax-refund frequently asked questions",
+        "url": "https://dor.sd.gov/media/ndtle35l/treads-faq.pdf",
+        "kind": "agency"
       }
     ]
   },
@@ -5876,7 +6132,8 @@
         "application": "Annual application through Department of Revenue or official refund portal; supporting tax-payment and household-income records required.",
         "eligibilityNotes": [
           "Wyoming resident at least five years; primary residence.",
-          "2025 refund portal lists asset limit below $169,866 per adult, with program exclusions."
+          "For 2025, combined countable household assets must not exceed $169,866 times the number of adult household members, with program exclusions.",
+          "The asset test is waived when the person's tax liability is strictly greater than 10% of household income; equality does not trigger the waiver."
         ],
         "interactions": [],
         "programYear": "2025 property taxes, refund application in 2026.",
@@ -5890,6 +6147,16 @@
           {
             "title": "Wyoming Property Tax Refund System: 2025 refunds",
             "url": "https://wptrs.wyo.gov/",
+            "kind": "agency"
+          },
+          {
+            "title": "W.S. 39-13-109(c)(v)(B) \u2014 combined asset test and tax-liability waiver, physical pages 98\u201399",
+            "url": "https://wyoleg.gov/statutes/compress/title39.pdf#page=98",
+            "kind": "statute"
+          },
+          {
+            "title": "Wyoming property-tax refund rules, Chapter 19 \u00a74(c), physical page 4",
+            "url": "https://drive.google.com/uc?export=download&id=1w2f2AJ4jONlAiGkoI5_li4tdZ04_7mRY#page=4",
             "kind": "agency"
           }
         ],
@@ -5968,7 +6235,8 @@
     ],
     "researchNotes": [
       "County median-income and median-tax-bill tables are required to calculate an exact refund.",
-      "The 25% and 50% exemptions are not additive in 2025/26."
+      "The 25% and 50% exemptions are not additive in 2025/26.",
+      "The statute and rules use an inclusive combined-adult asset limit with a tax-liability waiver. The form/portal's strict per-adult wording differs; the statutory test governs this inventory description. The waiver's liability basis must be established separately from timely-paid refundable tax, and household/county facts remain necessary for an award."
     ],
     "sources": [
       {
@@ -5990,6 +6258,16 @@
         "title": "Wyoming HB0003 enacted long-term homeowner exemption",
         "url": "https://www.wyoleg.gov/Legislation/2024/HB0003",
         "kind": "statute"
+      },
+      {
+        "title": "W.S. 39-13-109(c)(v)(B) \u2014 combined asset test and tax-liability waiver, physical pages 98\u201399",
+        "url": "https://wyoleg.gov/statutes/compress/title39.pdf#page=98",
+        "kind": "statute"
+      },
+      {
+        "title": "Wyoming property-tax refund rules, Chapter 19 \u00a74(c), physical page 4",
+        "url": "https://drive.google.com/uc?export=download&id=1w2f2AJ4jONlAiGkoI5_li4tdZ04_7mRY#page=4",
+        "kind": "agency"
       }
     ]
   }

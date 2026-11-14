@@ -1,7 +1,9 @@
 {
   "interfaceVersion": "6.19.0",
   "modelVersion": "2.2.1",
-  "canonicalModelCommit": "f0c77fdedf8f8d4beba5dfb6b7a0facd5ce49178",
+  "canonicalModelCommit": "045d1aee97c6849bf515fe120cc76e52df750926",
+  "canonicalModelRef": "upstream/main",
+  "canonicalModelSource": "committed-git-tree",
   "programs": [
     {
       "id": "al-homestead-exemptions",
@@ -1861,7 +1863,7 @@
   "limitations": [
     "A matching formula declaration available by 2025 confirms source-level implementation presence only; it does not validate legal correctness, parameters, eligibility or interactions.",
     "Research records program-specific 2025 reference periods. Assessment, tax-payment, income and filing years can differ; read each program-year field.",
-    "The national cash-credit calculator requires missing implementations, tax-year checks, source-derived household tests, interaction checks and independent review.",
+    "The national relief calculator requires missing implementations, tax-year checks, source-derived household tests, interaction checks and independent review.",
     "Source research describes identified statewide programs and selected context; it does not enumerate every local program or establish exhaustive absence."
   ]
 }

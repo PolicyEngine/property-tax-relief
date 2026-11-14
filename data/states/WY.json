@@ -22,7 +22,8 @@
       "application": "Annual application through Department of Revenue or official refund portal; supporting tax-payment and household-income records required.",
       "eligibilityNotes": [
         "Wyoming resident at least five years; primary residence.",
-        "2025 refund portal lists asset limit below $169,866 per adult, with program exclusions."
+        "For 2025, combined countable household assets must not exceed $169,866 times the number of adult household members, with program exclusions.",
+        "The asset test is waived when the person's tax liability is strictly greater than 10% of household income; equality does not trigger the waiver."
       ],
       "interactions": [],
       "programYear": "2025 property taxes, refund application in 2026.",
@@ -36,6 +37,16 @@
         {
           "title": "Wyoming Property Tax Refund System: 2025 refunds",
           "url": "https://wptrs.wyo.gov/",
+          "kind": "agency"
+        },
+        {
+          "title": "W.S. 39-13-109(c)(v)(B) — combined asset test and tax-liability waiver, physical pages 98–99",
+          "url": "https://wyoleg.gov/statutes/compress/title39.pdf#page=98",
+          "kind": "statute"
+        },
+        {
+          "title": "Wyoming property-tax refund rules, Chapter 19 §4(c), physical page 4",
+          "url": "https://drive.google.com/uc?export=download&id=1w2f2AJ4jONlAiGkoI5_li4tdZ04_7mRY#page=4",
           "kind": "agency"
         }
       ],
@@ -108,7 +119,8 @@
   ],
   "researchNotes": [
     "County median-income and median-tax-bill tables are required to calculate an exact refund.",
-    "The 25% and 50% exemptions are not additive in 2025/26."
+    "The 25% and 50% exemptions are not additive in 2025/26.",
+    "The statute and rules use an inclusive combined-adult asset limit with a tax-liability waiver. The form/portal's strict per-adult wording differs; the statutory test governs this inventory description. The waiver's liability basis must be established separately from timely-paid refundable tax, and household/county facts remain necessary for an award."
   ],
   "sources": [
     {
@@ -130,6 +142,16 @@
       "title": "Wyoming HB0003 enacted long-term homeowner exemption",
       "url": "https://www.wyoleg.gov/Legislation/2024/HB0003",
       "kind": "statute"
+    },
+    {
+      "title": "W.S. 39-13-109(c)(v)(B) — combined asset test and tax-liability waiver, physical pages 98–99",
+      "url": "https://wyoleg.gov/statutes/compress/title39.pdf#page=98",
+      "kind": "statute"
+    },
+    {
+      "title": "Wyoming property-tax refund rules, Chapter 19 §4(c), physical page 4",
+      "url": "https://drive.google.com/uc?export=download&id=1w2f2AJ4jONlAiGkoI5_li4tdZ04_7mRY#page=4",
+      "kind": "agency"
     }
   ]
 }

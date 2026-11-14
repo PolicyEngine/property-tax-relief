@@ -3,9 +3,9 @@
   "name": "South Dakota",
   "taxYear": 2025,
   "verifiedAt": "2026-11-13",
-  "overview": "South Dakota has an income-tested assessment freeze and local relief. Its historical statewide property-tax refund was repealed in 2026, requiring careful claim-year treatment for this comparison.",
-  "inventoryStatus": "partial",
-  "statewideCreditStatus": "uncertain",
+  "overview": "South Dakota's 2025 application cycle included an income-tested homeowner property-tax refund alongside assessment freezes, deferral and local relief. The state repealed the property-refund chapter effective July 1, 2026. The advertised 2026 cycle refunds 2025 sales tax.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
   "programs": [
     {
       "id": "sd-assessment-freeze",
@@ -92,22 +92,25 @@
     },
     {
       "id": "sd-historical-property-tax-refund",
-      "name": "Property Tax Refund for Elderly and Disabled Persons (historical; repealed 2026)",
+      "name": "Property Tax Refund for Elderly and Disabled Persons (2025 application cycle; repealed July 1, 2026)",
       "category": "income-tested-relief",
       "scope": "statewide",
       "tenures": ["owner"],
       "refundable": true,
       "ageRule": "Senior or qualifying disability.",
-      "incomeDefinition": "Program household income.",
-      "incomeLimits": "2025 claims on 2024 taxes used $16,566 single/$22,484 multi-member household; this is not certified as a 2025-tax claim limit.",
-      "maximumBenefit": "Do not calculate until claim-year and repeal treatment are resolved.",
-      "formulaSummary": "Historical property-tax refund subject to annual appropriation; the state paid the greater of eligible sales-tax and property-tax refunds.",
-      "application": "Historical annual claim May 1–July 1.",
+      "incomeDefinition": "Historical program household income includes specified nontaxable receipts and an up-to-$400 deduction for principal-residence property taxes payable in the application year; federal adjusted gross income alone does not establish this amount.",
+      "incomeLimits": "2025 application cycle: program household income up to $16,566 for a single-member household or $22,484 for a multiple-member household. These are not the 2026 sales-refund limits.",
+      "maximumBenefit": "Historical schedule up to 35% of qualified property tax for a single-member household or 55% for a multiple-member household, subject to annual appropriation and proration. No validated dollar entitlement is supplied.",
+      "formulaSummary": "The historical program applied an income-based percentage to qualified real-property taxes, subject to appropriation and proration. Revenue calculated the sales-tax and property-tax refunds and paid the larger award once.",
+      "application": "Historical 2025 cycle: May 1\u2013July 1, 2025. The advertised 2026 cycle offers sales-tax refunds; it does not advertise an ongoing property-tax application.",
       "eligibilityNotes": [
-        "Historical homeownership/residency requirements applied."
+        "For the historical 2025 cycle, the homeowner must have owned the residence for at least three years or have been a South Dakota resident for at least five years.",
+        "The 2025 announcement uses 2024 residency, age/disability and income facts. The historical record does not certify every transitional 2026 property claim."
       ],
-      "interactions": ["Alternative to sales-tax refund, not additive."],
-      "programYear": "2025 application for 2024 taxes; 2026 repeal affects later claims.",
+      "interactions": [
+        "Revenue pays the larger eligible sales-tax or property-tax refund once; the two awards are not additive."
+      ],
+      "programYear": "2025 application cycle; 2024 reference taxes/facts. Chapter 10-18A was repealed July 1, 2026. Transitional 2026 property-claim rights and the precise assessment/payable-year mapping are not certified.",
       "rentProxy": null,
       "sources": [
         {
@@ -119,18 +122,41 @@
           "title": "2026 SB21 enrolled: property-refund repeal",
           "url": "https://mylrc.sdlegislature.gov/api/Documents/305059.pdf",
           "kind": "statute"
+        },
+        {
+          "title": "2026 chapter 37 (SB 21), enacted property-refund repeal",
+          "url": "https://mylrc.sdlegislature.gov/api/Documents/SessionLaw/305067.pdf?Year=2026",
+          "kind": "statute"
+        },
+        {
+          "title": "SDCL 2-14-16: default effective date of legislative acts",
+          "url": "https://sdlegislature.gov/api/Statutes/2-14-16.html",
+          "kind": "statute"
+        },
+        {
+          "title": "SDCL 2-14-18: liabilities surviving repeal",
+          "url": "https://sdlegislature.gov/api/Statutes/2-14-18.html",
+          "kind": "statute"
+        },
+        {
+          "title": "SDCL 10-21-4: property-tax due date after assessment and levy",
+          "url": "https://sdlegislature.gov/api/Statutes/10-21-4.html",
+          "kind": "statute"
         }
       ],
       "modelVariables": []
     }
   ],
   "laterChanges": [
-    "2026 SB21 repealed property-tax-refund chapter 10-18A. The current application for 2025 taxes is described by Revenue as a sales-tax refund.",
+    "The governor signed 2026 SB 21, enacted as chapter 37, on March 4, 2026. Its repeal of property-refund chapter 10-18A took effect July 1, 2026 under the default effective-date law.",
+    "The advertised 2026 application cycle refunds 2025 sales tax. It uses program household-income limits of $17,215 for a single-member household or $23,265 for a multiple-member household, with appropriation-based pro-rata awards capped at $500 or $1,000 respectively. These sales-tax refunds are outside the property/renter-credit comparison.",
     "2026 assessment-freeze income/value thresholds and residency rules differ from 2025 applications."
   ],
   "researchNotes": [
-    "Do not label the current senior/disability sales-tax refund as a property-tax credit.",
-    "A tax-year-2025 household property-refund result needs explicit legal treatment of 2026 repeal and claim timing; inventory documents the unresolved issue."
+    "The identified historical property-refund record covers the 2025 application cycle. Initial source-pass completion does not validate a household award or adjudicate all transitional claims.",
+    "SDCL 2-14-18 generally preserves liabilities incurred before repeal unless the repealing act expressly provides otherwise. SB 21 has no specific accrued-claim transition clause; these sources do not settle whether a particular pre-repeal 2026 property claim was an incurred liability.",
+    "The historical statute defines tax year as assessment and levy year, while SDCL 10-21-4 makes taxes due January 1 of the following year. The 2025 announcement describes previous-year 2024 taxes/facts; the original claim form and exact assessment/payable-year mapping remain unverified.",
+    "The current senior/disability sales-tax refund is separate from the historical property-tax refund. A property-tax or rent deduction in its income test does not make it a property/renter reimbursement."
   ],
   "sources": [
     {
@@ -152,6 +178,41 @@
       "title": "2026 SB21 enrolled: property-refund repeal",
       "url": "https://mylrc.sdlegislature.gov/api/Documents/305059.pdf",
       "kind": "statute"
+    },
+    {
+      "title": "2026 chapter 37 (SB 21), enacted property-refund repeal",
+      "url": "https://mylrc.sdlegislature.gov/api/Documents/SessionLaw/305067.pdf?Year=2026",
+      "kind": "statute"
+    },
+    {
+      "title": "SDCL 2-14-16: default effective date of legislative acts",
+      "url": "https://sdlegislature.gov/api/Statutes/2-14-16.html",
+      "kind": "statute"
+    },
+    {
+      "title": "SDCL 2-14-18: liabilities surviving repeal",
+      "url": "https://sdlegislature.gov/api/Statutes/2-14-18.html",
+      "kind": "statute"
+    },
+    {
+      "title": "SDCL 10-21-4: property-tax due date after assessment and levy",
+      "url": "https://sdlegislature.gov/api/Statutes/10-21-4.html",
+      "kind": "statute"
+    },
+    {
+      "title": "2026 Department of Revenue sales-tax-refund announcement",
+      "url": "https://dor.sd.gov/newsroom/tax-refund-program-open-to-senior-citizens-and-citizens-with-disabilities/",
+      "kind": "agency"
+    },
+    {
+      "title": "Current sales-tax-refund statute, chapter 10-45A",
+      "url": "https://sdlegislature.gov/api/Statutes/10-45A.html?all=true",
+      "kind": "statute"
+    },
+    {
+      "title": "2026 sales-tax-refund frequently asked questions",
+      "url": "https://dor.sd.gov/media/ndtle35l/treads-faq.pdf",
+      "kind": "agency"
     }
   ]
 }
