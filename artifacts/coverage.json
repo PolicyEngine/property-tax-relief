@@ -1,8 +1,8 @@
 {
   "interfaceVersion": "6.19.0",
   "modelVersion": "2.2.1",
-  "canonicalModelCommit": "1b71d43a631d10794f0f4ca973b61f32fb28563f",
-  "canonicalModelRef": "upstream/main",
+  "canonicalModelCommit": "93444c30522226f8719af23249a266ebcf331ea4",
+  "canonicalModelRef": "93444c30522226f8719af23249a266ebcf331ea4",
   "canonicalModelSource": "committed-git-tree",
   "programs": [
     {

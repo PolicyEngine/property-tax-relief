@@ -23,7 +23,7 @@
       "application": "Apply January 1–April 15, 2025 through assessor/Tax Commission.",
       "eligibilityNotes": [
         "Idaho primary residence and homeowner exemption required.",
-        "Property-value limit applies; fees are not eligible."
+        "The assessed-home-value limit has an exception for certified 100%/individual-unemployability veterans. Fees are not eligible."
       ],
       "interactions": [
         "Other homeowner relief affects remaining taxes; avoid double counting."
@@ -40,6 +40,11 @@
           "title": "Idaho 2025 PTR income brackets",
           "url": "https://tax.idaho.gov/wp-content/uploads/pubs/EPB00168/EPB00168_10-07-2024.pdf",
           "kind": "agency"
+        },
+        {
+          "title": "Idaho Code §63-705, value-limit exception and annual schedule",
+          "url": "https://legislature.idaho.gov/statutesrules/idstat/Title63/T63CH7/SECT63-705/",
+          "kind": "statute"
         }
       ],
       "modelVariables": []
@@ -113,7 +118,9 @@
   "researchNotes": [
     "The 2025 PTR income limit is not the 2026 limit based on 2025 income.",
     "Universal bill-credit calculations need county/tax-code-area inputs; a single statewide flat payment would be incorrect.",
-    "Context: homeowner assessed-value exemption and deferral programs also exist."
+    "Context: homeowner assessed-value exemption and deferral programs also exist.",
+    "The actual published 2025 PTR income table contains overlapping and omitted interior ranges. Those source anomalies and income-rounding rules require clarification before a full calculator can assign awards at every boundary.",
+    "The December 2025 homeowner-relief report lists county semiannual FY2026 transfers, not parcel awards. Actual certified rolls, eligible levies and county allocations remain necessary."
   ],
   "sources": [
     {

@@ -1,6 +1,6 @@
 # Calculation audit findings
 
-Research draft, November 13, 2026. The source-level coverage audit covers every inventory record. These historical additional checks inspected selected rules in the pinned `policyengine-us==2.2.1` release and canonical commit `f0c77fdedf8f8d4beba5dfb6b7a0facd5ce49178`. The generated declaration audit was subsequently rebuilt from committed upstream source `1b71d43a631d10794f0f4ca973b61f32fb28563f`; its immutable provenance is recorded separately in `public/data/coverage.json`. Neither pass certifies the remaining formulas or reports household impacts.
+Research draft, November 13, 2026. The source-level coverage audit covers every inventory record. These historical additional checks inspected selected rules in the pinned `policyengine-us==2.2.1` release and canonical commit `f0c77fdedf8f8d4beba5dfb6b7a0facd5ce49178`. The generated declaration audit was subsequently rebuilt from committed upstream source `93444c30522226f8719af23249a266ebcf331ea4`; its immutable provenance is recorded separately in `public/data/coverage.json`. Neither pass certifies the remaining formulas or reports household impacts.
 
 ## Minnesota homeowner refund
 

@@ -4,7 +4,7 @@
   "inventoryStatus": "researched",
   "laterChanges": [
     "Enacted 2026 law replaces the general credit with a homestead exemption from assessment2026/pay2027 onward.",
-    "2026 rent-reimbursement changes raise the maximum for 2026 claims; retain the 2025 $1,000 cap."
+    "For rent base year 2026, claimed in 2027, the enacted law raises the tax-equivalent base to $1,500. The owner base increases for fiscal-year 2027–2028 taxes; these changes do not apply to 2025 rent."
   ],
   "code": "IA",
   "name": "Iowa",
@@ -21,11 +21,12 @@
       "ageRule": "No general age restriction.",
       "incomeDefinition": "Not income-tested.",
       "incomeLimits": "No income limit.",
-      "maximumBenefit": "Applicable levy on the first $4,850 of actual homestead value; limited to taxes due.",
+      "maximumBenefit": "Before funding adjustments: levy on the first $4,850 of homestead value, with a $62.50 minimum, limited to qualified ordinary taxes.",
       "formulaSummary": "Levy-based credit, separate from assessed-value exemptions.",
       "application": "File homestead claim with local assessor; qualifying claims continue.",
       "eligibilityNotes": [
-        "Ownership, occupancy, and Iowa-residency conditions apply."
+        "Ownership, occupancy, and Iowa-residency conditions apply.",
+        "The statutory minimum cannot exceed ordinary homestead tax; special assessments do not enlarge that cap."
       ],
       "interactions": [],
       "programYear": "Assessment-year 2025 baseline; property-tax fiscal payment cycle differs.",
@@ -35,6 +36,11 @@
           "title": "Iowa homestead credit and exemption",
           "url": "https://revenue.iowa.gov/taxes/tax-guidance/property-tax/homestead-tax-credit-and-exemption",
           "kind": "agency"
+        },
+        {
+          "title": "2025 Iowa Code §425.1, credit amount and tax limit",
+          "url": "https://www.legis.iowa.gov/docs/code/2025/425.pdf#page=1",
+          "kind": "statute"
         }
       ],
       "modelVariables": []
@@ -86,13 +92,15 @@
       "incomeDefinition": "Annual household income under HHS instructions.",
       "incomeLimits": "Claim year2025: below $26,895.",
       "maximumBenefit": "2025 maximum $1,000, subject to income schedule and qualifying rent.",
-      "formulaSummary": "Income-table reimbursement based on 23% of qualifying gross rent.",
+      "formulaSummary": "Apply the income-table percentage to the lesser of 23% of qualified rent and the $1,000 tax-equivalent base.",
       "application": "Apply through Iowa HHS beginning January 2026 for 2025 rent.",
       "eligibilityNotes": [
         "Taxable-property and residence conditions apply.",
         "Statutory broader age23/head-of-household extension has distinct funding rules; HHS currently describes senior/disabled eligibility."
       ],
-      "interactions": [],
+      "interactions": [
+        "A dual owner/renter claim shares the $1,000 tax-equivalent base, with owner taxes applied first. Rent base year 2025 pairs with owner claim year 2026."
+      ],
       "programYear": "2025 rent and income; applications open in 2026.",
       "rentProxy": 0.23,
       "sources": [
@@ -109,6 +117,11 @@
         {
           "title": "2026 rent-reimbursement rulemaking notice",
           "url": "https://rules.iowa.gov/Notice/Details/0661D",
+          "kind": "agency"
+        },
+        {
+          "title": "Iowa HHS rent-reimbursement manual, January 2026",
+          "url": "https://hhs.iowa.gov/media/3992/download?inline=",
           "kind": "agency"
         }
       ],
@@ -179,7 +192,8 @@
   ],
   "researchNotes": [
     "Owner 2025 claims use 2024 income; renter claim-year2025 uses 2025 income. These are not the same income window.",
-    "Levy and prior-tax-liability inputs are necessary for complete owner calculations."
+    "Levy and prior-tax-liability inputs are necessary for complete owner calculations.",
+    "The HHS manual’s $17,000-income example uses 50%, matching its 2024 table, without naming a base year. Its 2025 table lists 70% at that income. Funding, final rounding and specified age-70 source conflicts remain unresolved; this profile does not provide a validated award."
   ],
   "sources": [
     {
@@ -221,6 +235,11 @@
       "title": "Iowa property-tax credits and exemptions",
       "url": "https://revenue.iowa.gov/taxes/tax-guidance/tax-credits-deductions-exemption/tax-credits-and-exemptions",
       "kind": "agency"
+    },
+    {
+      "title": "2026 Iowa SF 2472, property-tax credit and exemption changes",
+      "url": "https://www.legis.iowa.gov/docs/publications/LGE/91/SF2472.pdf",
+      "kind": "statute"
     }
   ]
 }
