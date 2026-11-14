@@ -1,0 +1,65 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [],
+  "code": "CO",
+  "name": "Colorado",
+  "overview": "The 2025 PTC rebate supports qualifying seniors' property-tax, rent, and heat costs; disabled residents may instead qualify for DAC.",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "co-ptc-rebate",
+      "name": "Property Tax/Rent/Heat Credit rebate",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner", "renter"],
+      "refundable": true,
+      "ageRule": "Age 65+ or surviving spouse age 58+ for 2025 PTC.",
+      "incomeDefinition": "Total income from all sources under the PTC instructions.",
+      "incomeLimits": "2025: below $19,094 single or $25,788 joint.",
+      "maximumBenefit": "Combined property/rent/heat rebate up to $1,178; property/rent component follows its own schedule.",
+      "formulaSummary": "Income- and expense-based property/rent and heat rebates; combined maximum is not solely property-tax relief.",
+      "application": "File 2025 DR 0104PTC; applications accepted through December 31, 2027.",
+      "eligibilityNotes": [
+        "Full-year Colorado residence; cannot be another taxpayer's dependent.",
+        "Alternate identification procedure is available without SSN/ITIN."
+      ],
+      "interactions": [
+        "PTC and Disability Assistance Credit cannot both be claimed for the same year."
+      ],
+      "programYear": "2025 expenses/income; installments generally start in 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Colorado PTC rebate",
+          "url": "https://tax.colorado.gov/PTC-rebate",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "researchNotes": [
+    "From tax year 2025, disabled residents of any age may receive the refundable DAC ($400–$1,200 by income/status); it replaces their former PTC route and is income-based rather than a housing-expense credit.",
+    "DAC federal-AGI limits: $20,000 single/$32,000 joint; full-year qualifying disability benefits required.",
+    "Senior Housing Income Tax Credit is unavailable for tax year 2025; do not extrapolate 2024 rules."
+  ],
+  "sources": [
+    {
+      "title": "Colorado PTC rebate",
+      "url": "https://tax.colorado.gov/PTC-rebate",
+      "kind": "agency"
+    },
+    {
+      "title": "Disability Assistance Credit",
+      "url": "https://tax.colorado.gov/dac",
+      "kind": "agency"
+    },
+    {
+      "title": "December 2025 tax updates",
+      "url": "https://tax.colorado.gov/december-2025-updates",
+      "kind": "agency"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "code": "NV",
+  "name": "Nevada",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Nevada’s residential property-tax abatement limits tax-bill growth. It is distinct from a refundable household credit.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "none-identified",
+  "programs": [
+    {
+      "id": "nv-residential-tax-abatement",
+      "name": "Residential Property Tax Partial Abatement",
+      "category": "assessment-limit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Tax-bill-growth protection; generally 3% for a qualifying principal residence, with statutory exceptions.",
+      "formulaSummary": "Abate qualifying tax above the statutory increase cap relative to the prior bill. The cap applies to taxes, not the assessed valuation.",
+      "application": "Principal-residence or qualifying-rental declarations through the county assessor.",
+      "eligibilityNotes": [
+        "Certain rental property qualifies under rent limits, but the benefit is to the taxed property owner.",
+        "New improvements and changes in use can affect the calculation."
+      ],
+      "interactions": [],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 property-tax elements and applications",
+          "url": "https://tax.nv.gov/wp-content/uploads/2025/03/2025-Property-Tax-Elements-Applications.pdf",
+          "kind": "agency"
+        },
+        {
+          "title": "Local government property-tax publications",
+          "url": "https://tax.nv.gov/news-publications/local-government-services-publications/",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [
+    "No statewide refundable renter credit or income-based circuit-breaker credit was identified in the reviewed Department of Taxation materials.",
+    "Veteran, surviving-spouse, disability and other property exemptions are separate context; county-specific tax rates are not estimated."
+  ],
+  "sources": [
+    {
+      "title": "2025 property-tax elements and applications",
+      "url": "https://tax.nv.gov/wp-content/uploads/2025/03/2025-Property-Tax-Elements-Applications.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "Local government property-tax publications",
+      "url": "https://tax.nv.gov/news-publications/local-government-services-publications/",
+      "kind": "agency"
+    }
+  ]
+}

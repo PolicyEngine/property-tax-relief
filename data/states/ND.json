@@ -1,0 +1,131 @@
+{
+  "code": "ND",
+  "name": "North Dakota",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "North Dakota combines a broad primary-residence credit with income-tested senior and disability relief for owners and renters.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "nd-primary-residence-credit",
+      "name": "Primary Residence Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "See program-specific rules.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "Up to $1,600 against property tax due for tax year 2025.",
+      "formulaSummary": "Approved primary residences receive a credit limited by remaining property tax liability.",
+      "application": "Annual online application to the Office of State Tax Commissioner.",
+      "eligibilityNotes": [
+        "One credit per household; owner must occupy the home as the primary residence."
+      ],
+      "interactions": [
+        "Applied after Homestead or Disabled Veterans credits to any remaining property tax balance."
+      ],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Primary Residence Credit",
+          "url": "https://www.tax.nd.gov/prc",
+          "kind": "agency"
+        },
+        {
+          "title": "Primary Residence Application History: 2025 retroactive increase",
+          "url": "https://ndlegis.gov/sites/default/files/pdf/committees/69-2025/27.5089.03000appendixg.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": ["nd_primary_residence_credit"]
+    },
+    {
+      "id": "nd-homestead-credit",
+      "name": "Homestead Property Tax Credit",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "65 or older, or permanently and totally disabled.",
+      "incomeDefinition": "Applicant, spouse and dependents' income, with specified medical-expense deductions; preceding calendar year.",
+      "incomeLimits": "Up to $70,000.",
+      "maximumBenefit": "Reduces taxable value by up to $9,000, equivalent to $200,000 true and full value.",
+      "formulaSummary": "Income through $40,000 receives 100% of eligible value reduction; $40,001–$70,000 receives 50%. Tax savings depend on local rates.",
+      "application": "Apply to local assessor or county director of tax equalization.",
+      "eligibilityNotes": [
+        "Must live in and hold an interest in the homestead."
+      ],
+      "interactions": ["Primary Residence Credit may offset remaining taxes."],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Homestead Property Tax Credit and Renter's Refund",
+          "url": "https://www.tax.nd.gov/homestead-property-tax-credit-and-renters-refund",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "nd-renters-refund",
+      "name": "Renter's Refund",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["renter"],
+      "refundable": true,
+      "ageRule": "65 or older, or permanently and totally disabled.",
+      "incomeDefinition": "Applicant, spouse and dependents' income after permitted deductions.",
+      "incomeLimits": "Up to $70,000.",
+      "maximumBenefit": "$600.",
+      "formulaSummary": "Refunds the amount by which 20% of eligible annual rent exceeds 4% of annual income, capped at $600.",
+      "application": "Apply to Tax Commissioner by May 31 following the rent year.",
+      "eligibilityNotes": [
+        "Exclude utility and furnishing charges.",
+        "Generally unavailable for tax-exempt rental property; payments in lieu of taxes can qualify."
+      ],
+      "interactions": [
+        "Homeowner homestead credit and renter refund generally cannot both be claimed, except qualifying mobile-home lot rent."
+      ],
+      "programYear": "2025",
+      "rentProxy": 0.2,
+      "sources": [
+        {
+          "title": "Homestead Property Tax Credit and Renter's Refund",
+          "url": "https://www.tax.nd.gov/homestead-property-tax-credit-and-renters-refund",
+          "kind": "agency"
+        },
+        {
+          "title": "Credits for North Dakota Homeowners and Renters: revised July 2025",
+          "url": "https://www.tax.nd.gov/sites/www/files/documents/guidelines/homestead-veterans-renters/credits-for-nd-homeowners-renters-guideline.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["nd_renters_refund"]
+    }
+  ],
+  "laterChanges": [
+    "The primary-residence credit increase to $1,600 was made retroactive to the 2025 property-tax year; do not use the original $500 amount."
+  ],
+  "researchNotes": [],
+  "sources": [
+    {
+      "title": "Homestead Property Tax Credit and Renter's Refund",
+      "url": "https://www.tax.nd.gov/homestead-property-tax-credit-and-renters-refund",
+      "kind": "agency"
+    },
+    {
+      "title": "Primary Residence Credit",
+      "url": "https://www.tax.nd.gov/prc",
+      "kind": "agency"
+    },
+    {
+      "title": "Primary Residence Application History: 2025 retroactive increase",
+      "url": "https://ndlegis.gov/sites/default/files/pdf/committees/69-2025/27.5089.03000appendixg.pdf",
+      "kind": "agency"
+    }
+  ]
+}

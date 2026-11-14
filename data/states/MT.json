@@ -1,0 +1,133 @@
+{
+  "code": "MT",
+  "name": "Montana",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Montana combines a refundable elderly homeowner/renter credit with separate property-tax assistance and a time-limited homeowner rebate.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "mt-elderly-homeowner-renter-credit",
+      "name": "Elderly Homeowner/Renter Credit",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["owner", "renter"],
+      "refundable": true,
+      "ageRule": "Age 62 or older by December 31, 2025.",
+      "incomeDefinition": "Gross income of all household members, including specified nontaxable sources; a $12,600 exclusion and income multipliers enter the formula.",
+      "incomeLimits": "Gross household income below $45,000 for 2025.",
+      "maximumBenefit": "$1,150 before the gross-income credit multiplier.",
+      "formulaSummary": "Qualifying billed property taxes plus 15% of rent, less calculated household-income contribution; cap preliminary credit, then apply the gross-income multiplier.",
+      "application": "Schedule 2EC with Form 2, including when filing only for the refundable credit.",
+      "eligibilityNotes": [
+        "Montana residence at least nine months and qualifying occupancy at least six months.",
+        "Only one household member may claim."
+      ],
+      "interactions": [],
+      "programYear": "Tax year 2025, filed in 2026.",
+      "rentProxy": 0.15,
+      "sources": [
+        {
+          "title": "2025 Schedule 2EC — Elderly Homeowner/Renter Credit",
+          "url": "https://revenue.mt.gov/files/Forms/Montana-Individual-Income-Tax-Return-Form-2/Form_2_2025_Schedule_2EC.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "2025 Form 2 instructions",
+          "url": "https://revenue.mt.gov/files/forms/Montana-Individual-Income-Tax-Return-Form-2-Instructions/2025_Montana_Individual_Income_Tax_Return_Form_2_Instructions.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["mt_elderly_homeowner_or_renter_credit"]
+    },
+    {
+      "id": "mt-2025-homeowner-rebate",
+      "name": "2025 Property Tax Rebate for Homeowners",
+      "category": "rebate",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "No age restriction stated.",
+      "incomeDefinition": "No income test stated.",
+      "incomeLimits": "No income test stated.",
+      "maximumBenefit": "Up to $400 for the 2025 application program.",
+      "formulaSummary": "One-time rebate limited by qualifying tax and the program cap; statutory tax-year/payment-year treatment must be checked against the rebate claim.",
+      "application": "Application window August 15–October 1, 2025.",
+      "eligibilityNotes": [
+        "Owned and occupied principal residence for at least seven months in 2024.",
+        "Entity ownership exclusions apply."
+      ],
+      "interactions": [],
+      "programYear": "Payment/application program in 2025 with 2024 occupancy; not a recurring 2025 income-tax credit.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 property-tax information",
+          "url": "https://www.revenue.mt.gov/property/property-tax-changes/2025-property-tax-information",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": ["mt_property_tax_rebate"]
+    },
+    {
+      "id": "mt-property-tax-assistance-program",
+      "name": "Property Tax Assistance Program (PTAP)",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Prior reference-year federal AGI under the 2025 application rules.",
+      "incomeLimits": "July 2025 legislative summary lists maximum 2023 FAGI of $28,329 single or $37,968 married/head of household.",
+      "maximumBenefit": "Reduce taxable value on up to $350,000 of market value to 20%, 50%, or 70%, depending on income.",
+      "formulaSummary": "Income-tiered reduction of taxable homestead value rather than a refundable renter credit.",
+      "application": "Apply to Montana DOR under the applicable PTAP-year process.",
+      "eligibilityNotes": [
+        "Ownership and occupancy for at least seven months of the year."
+      ],
+      "interactions": [
+        "Separate from the Elderly Homeowner/Renter Credit and one-time homeowner rebate."
+      ],
+      "programYear": "2025 program description uses 2023 FAGI; do not substitute the current 2027 application’s 2025-income thresholds.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Montana Legislature property-tax overview, July 2025, page 8",
+          "url": "https://static.legmt.gov/Divisions/LFD/PFL/Prop-Tax/LSD-Property-Tax-Overview-July 2025.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "laterChanges": [
+    "Homestead and long-term-rental reduced property-tax rates apply in 2026 under separate property-classification reforms; they are not renter cash credits."
+  ],
+  "researchNotes": [
+    "The agency overview labels the rebate as 2025 but uses 2024 occupancy. Verify the claim’s tax-payment reference before including it in a tax-year-2025 total.",
+    "PTAP and disabled-veteran rate reductions are separate from refundable income-tax credits."
+  ],
+  "sources": [
+    {
+      "title": "2025 Schedule 2EC — Elderly Homeowner/Renter Credit",
+      "url": "https://revenue.mt.gov/files/Forms/Montana-Individual-Income-Tax-Return-Form-2/Form_2_2025_Schedule_2EC.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "2025 Form 2 instructions",
+      "url": "https://revenue.mt.gov/files/forms/Montana-Individual-Income-Tax-Return-Form-2-Instructions/2025_Montana_Individual_Income_Tax_Return_Form_2_Instructions.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "2025 property-tax information",
+      "url": "https://www.revenue.mt.gov/property/property-tax-changes/2025-property-tax-information",
+      "kind": "agency"
+    },
+    {
+      "title": "Montana Legislature property-tax overview, July 2025, page 8",
+      "url": "https://static.legmt.gov/Divisions/LFD/PFL/Prop-Tax/LSD-Property-Tax-Overview-July 2025.pdf",
+      "kind": "agency"
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [],
+  "code": "DC",
+  "name": "District of Columbia",
+  "overview": "Schedule H provides refundable income-based relief to qualifying homeowners and renters.",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "dc-schedule-h",
+      "name": "Homeowner and Renter Property Tax Credit (Schedule H)",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["owner", "renter"],
+      "refundable": true,
+      "ageRule": "All ages; more generous income eligibility at age 70+.",
+      "incomeDefinition": "Federal adjusted gross income of the tax filing unit.",
+      "incomeLimits": "2025: $66,000; $90,000 if age 70+.",
+      "maximumBenefit": "$1,425 for 2025.",
+      "formulaSummary": "Qualifying property tax, or 20% of rent, enters the income-based Schedule H worksheet.",
+      "application": "Attach Schedule H to D-40 or file it as a standalone claim.",
+      "eligibilityNotes": [
+        "Full-year DC residence and qualifying occupancy required.",
+        "Public/tax-exempt housing and certain dependent claims are excluded."
+      ],
+      "interactions": [
+        "Separate homestead and senior/disabled property-tax reductions affect the underlying owner tax bill."
+      ],
+      "programYear": "2025 housing costs and income; normally filed by April 15, 2026.",
+      "rentProxy": 0.2,
+      "sources": [
+        {
+          "title": "2025 Schedule H instructions",
+          "url": "https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_Schedule_H_021226.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "DC real-property relief, credits and deductions",
+          "url": "https://otr.cfo.dc.gov/am/page/real-property-tax-reliefs-credits-and-deductions",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": ["dc_ptc"]
+    },
+    {
+      "id": "dc-senior-disabled-property-tax-relief",
+      "name": "Senior Citizen or Disabled Property Owner Tax Relief",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "Age65+ or qualifying disability; qualifying owner must own at least50%.",
+      "incomeDefinition": "Total federal AGI of household residents excluding fair-market tenants with written leases.",
+      "incomeLimits": "2025 real-property-tax relief uses 2023 household AGI below $159,750.",
+      "maximumBenefit": "50% reduction of qualifying property tax.",
+      "formulaSummary": "Halves qualifying liability after applicable property-tax assessment provisions.",
+      "application": "Apply through OTR/MyTax.DC.gov.",
+      "eligibilityNotes": [
+        "Principal-residence and ownership conditions apply."
+      ],
+      "interactions": [
+        "Disabled-veteran homestead deduction cannot be combined with this relief."
+      ],
+      "programYear": "2025 real-property tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "ASD-100 instructions for tax year 2025",
+          "url": "https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/ASD%20100%20Instructions.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "DC Tax Facts 2025",
+          "url": "https://ora-cfo.dc.gov/sites/default/files/dc/sites/ora-cfo/publication/attachments/Tax%20Facts%202025%20Report.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": ["dc_senior_disabled_property_tax_relief"]
+    },
+    {
+      "id": "dc-homestead-deduction",
+      "name": "Homestead Deduction",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "$89,850 reduction in assessed value for tax year2025.",
+      "formulaSummary": "Reduces qualifying assessed value before tax is computed.",
+      "application": "Apply through OTR/MyTax.DC.gov.",
+      "eligibilityNotes": ["Owner occupancy and no more than five units."],
+      "interactions": [],
+      "programYear": "2025 real-property tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "OTR October 2025 tax changes",
+          "url": "https://otr.cfo.dc.gov/ko/node/1800521",
+          "kind": "agency"
+        },
+        {
+          "title": "DC Tax Facts 2025",
+          "url": "https://ora-cfo.dc.gov/sites/default/files/dc/sites/ora-cfo/publication/attachments/Tax%20Facts%202025%20Report.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "dc-assessment-cap-credits",
+      "name": "Assessment Cap Credits",
+      "category": "assessment-limit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "General homeowner cap; lower taxable-assessment growth cap for qualifying seniors/disabled owners.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Taxable-assessment growth generally limited to10%; qualifying senior/disabled property to2%.",
+      "formulaSummary": "Credits limit tax based on prior taxable assessed value; new-owner and improvement rules apply.",
+      "application": "Generally automatic for property receiving required homestead/senior benefits.",
+      "eligibilityNotes": [],
+      "interactions": [],
+      "programYear": "2025 real-property tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "DC Tax Facts 2025",
+          "url": "https://ora-cfo.dc.gov/sites/default/files/dc/sites/ora-cfo/publication/attachments/Tax%20Facts%202025%20Report.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "researchNotes": [
+    "Additional direct property-tax relief includes homestead deductions and senior/disabled relief; it is distinct from Schedule H.",
+    "20% of rent is a statutory calculation proxy, not measured economic incidence.",
+    "The direct senior/disabled owner reduction uses 2023 household AGI for tax year2025; Schedule H uses 2025 tax-unit AGI."
+  ],
+  "sources": [
+    {
+      "title": "2025 Schedule H instructions",
+      "url": "https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_Schedule_H_021226.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "DC real-property relief, credits and deductions",
+      "url": "https://otr.cfo.dc.gov/am/page/real-property-tax-reliefs-credits-and-deductions",
+      "kind": "agency"
+    },
+    {
+      "title": "ASD-100 instructions for tax year 2025",
+      "url": "https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/ASD%20100%20Instructions.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "DC Tax Facts 2025",
+      "url": "https://ora-cfo.dc.gov/sites/default/files/dc/sites/ora-cfo/publication/attachments/Tax%20Facts%202025%20Report.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "OTR October 2025 tax changes",
+      "url": "https://otr.cfo.dc.gov/ko/node/1800521",
+      "kind": "agency"
+    }
+  ]
+}

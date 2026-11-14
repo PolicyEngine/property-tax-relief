@@ -1,0 +1,122 @@
+{
+  "code": "LA",
+  "name": "Louisiana",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Louisiana provides a homestead exemption, an income-tested assessment freeze, and a narrow statutory tax credit for people who own their residence but lease its land.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "la-homestead-exemption",
+      "name": "Homestead Exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "$7,500 of assessed value, with tax and property limitations.",
+      "formulaSummary": "Exempt the eligible assessed-value portion from covered ad valorem taxes.",
+      "application": "Apply to the local assessing authority.",
+      "eligibilityNotes": [
+        "Bona fide owner-occupied homestead; municipal and other constitutional limitations apply."
+      ],
+      "interactions": [],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Louisiana Constitution, Article VII §20",
+          "url": "https://www.legis.la.gov/legis/LawPrint.aspx?d=206550",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "la-special-assessment-level",
+      "name": "Special Assessment Level",
+      "category": "assessment-limit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "Age 65+ or specified military, disability or surviving-family categories.",
+      "incomeDefinition": "Prior-year federal AGI under the constitutional rules.",
+      "incomeLimits": "Statutory income ceiling applies; use the tax-year-specific application threshold.",
+      "maximumBenefit": "Future eligible assessed-value increases are limited; the amount depends on the frozen assessment and tax rates.",
+      "formulaSummary": "Freeze qualifying assessed value at the first eligible year while conditions continue.",
+      "application": "Apply to the local assessing authority.",
+      "eligibilityNotes": [
+        "Property must qualify for the homestead exemption.",
+        "An assessment freeze does not freeze tax rates or necessarily the total bill."
+      ],
+      "interactions": [],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Louisiana Constitution, Article VII §18(G)",
+          "url": "https://www.legis.la.gov/legis/Law.aspx?d=206545",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "la-residential-lessee-property-tax-credit",
+      "name": "Residential Lessees’ Property Tax Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Covered tax on $7,500 assessed value or actual covered tax, whichever is less.",
+      "formulaSummary": "Credit ad valorem tax on a qualifying residence owned by the occupant where the underlying land is leased.",
+      "application": "Apply to the local assessing authority.",
+      "eligibilityNotes": [
+        "Residential lessee means a person who owns and occupies the residence, including a mobile home, but does not own its land.",
+        "Ordinary apartment renters are not eligible through this provision."
+      ],
+      "interactions": [
+        "Available only where the claimant is not otherwise entitled to the homestead exemption."
+      ],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "R.S. 47:1710 — residential lessees’ tax credit",
+          "url": "https://www.legis.la.gov/legis/Law.aspx?d=101342",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [
+    "The narrow lessee credit must not be advertised as a general renter credit.",
+    "Housing filters classify ownership of the dwelling: a dwelling owner who rents the underlying land appears under homeowners.",
+    "Current constitutional pages contain future-effective amendments; a 2025 comparison must use provisions in force for 2025."
+  ],
+  "sources": [
+    {
+      "title": "Louisiana Constitution, Article VII §20",
+      "url": "https://www.legis.la.gov/legis/LawPrint.aspx?d=206550",
+      "kind": "statute"
+    },
+    {
+      "title": "Louisiana Constitution, Article VII §18(G)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=206545",
+      "kind": "statute"
+    },
+    {
+      "title": "R.S. 47:1710 — residential lessees’ tax credit",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=101342",
+      "kind": "statute"
+    }
+  ]
+}

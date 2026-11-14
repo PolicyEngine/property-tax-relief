@@ -1,0 +1,177 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [
+    "For 2025 assessments/pay2026, SEA 1 adds a supplemental homestead credit of the lesser of $300 or 10% of liability, a $150 over-65 credit, and a $125 blind/disabled credit; it changes senior eligibility and deductions."
+  ],
+  "code": "IN",
+  "name": "Indiana",
+  "overview": "Indiana's statutory circuit-breaker labels include assessed-value tax caps and a separate income-limited senior tax-growth credit.",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "in-property-tax-cap-credit",
+      "name": "Property Tax Cap / Circuit Breaker Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Credit offsets covered homestead taxes exceeding 1% of gross assessed value.",
+      "formulaSummary": "Caps covered homestead tax at 1% of gross assessed value; other residential property generally has a 2% cap.",
+      "application": "Calculated through property-tax billing.",
+      "eligibilityNotes": [
+        "Certain voter-approved levies can remain outside the caps."
+      ],
+      "interactions": [],
+      "programYear": "2025 payable property-tax bills; value-based rather than income-based cap.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Indiana property-tax circuit-breaker caps fact sheet",
+          "url": "https://www.in.gov/dlgf/files/240429-Fact-Sheet-Circuit-Breaker-Caps.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "in-over-65-circuit-breaker",
+      "name": "Over 65 Circuit Breaker Credit",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "Qualifying senior homeowner age 65+; surviving-spouse rules apply.",
+      "incomeDefinition": "Federal adjusted gross income from the calendar year two years before taxes are payable.",
+      "incomeLimits": "Indexed limits depend on pay year; use the DLGF historical table for pay 2025.",
+      "maximumBenefit": "Qualifying reduction needed to limit annual homestead tax growth to 2%.",
+      "formulaSummary": "Uses prior-year liability, age/income tests, and the applicable assessment-year eligibility rules.",
+      "application": "Apply through county auditor using senior property-tax benefits form.",
+      "eligibilityNotes": [
+        "2024 assessment/pay2025 has a $240,000 assessed-value eligibility limit.",
+        "2025 assessment/pay2026 rules materially differ."
+      ],
+      "interactions": [],
+      "programYear": "Pay 2025 baseline; assessment 2024, generally uses 2023 AGI.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Over-65 credit income thresholds, pay-year table",
+          "url": "https://www.in.gov/dlgf/files/2025-memos/250407-Cockerill-Memo-Over-65-Circuit-Breaker-Income-Threshold-Calculation-for-Pay-2026.pdf",
+          "kind": "agency"
+        },
+        {
+          "title": "2024 deductions/exemptions changes for pay 2025",
+          "url": "https://www.in.gov/dlgf/files/2024-memos/240618-Shackle-Memo-Legislation-Affecting-Deductions-and-Exemptions.pdf",
+          "kind": "agency"
+        },
+        {
+          "title": "DLGF July 2025 auditor presentation",
+          "url": "https://www.in.gov/dlgf/files/2025-presentations/250723-Bolser-Presentation-Auditor-Conference.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "in-renters-income-tax-deduction",
+      "name": "Renter's income-tax deduction",
+      "category": "deduction",
+      "scope": "statewide",
+      "tenures": ["renter"],
+      "refundable": null,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Deduction of up to $3,000, or $1,500 married filing separately; this is not the tax saving.",
+      "formulaSummary": "Lesser of qualifying rent or the filing-status deduction cap reduces taxable income.",
+      "application": "Claim on IT-40/IT-40PNR deduction schedule.",
+      "eligibilityNotes": [
+        "Principal Indiana residence subject to property tax required."
+      ],
+      "interactions": [],
+      "programYear": "2025 rent and income-tax return.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Renter's deduction, Bulletin 38",
+          "url": "https://www.in.gov/dor/files/reference/ib38.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": ["in_renters_deduction"]
+    },
+    {
+      "id": "in-homeowner-income-tax-deduction",
+      "name": "Homeowner residential property-tax deduction",
+      "category": "deduction",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Deduction up to $2,500, or $1,250 married filing separately.",
+      "formulaSummary": "Lesser of principal-residence property taxes paid or deduction cap reduces taxable income.",
+      "application": "Claim on the Indiana income-tax return.",
+      "eligibilityNotes": [],
+      "interactions": [],
+      "programYear": "2025 qualifying property-tax payments.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Indiana income-tax deductions",
+          "url": "https://www.in.gov/dor/i-am-a/individual/deductions/",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": ["in_homeowners_property_tax_deduction"]
+    }
+  ],
+  "researchNotes": [
+    "A value-based cap is not an income-threshold circuit breaker despite the shared statutory name.",
+    "New model variables beginning 2026 must not be applied to pay2025 bills.",
+    "Assessment year versus payable year must remain visible in comparisons."
+  ],
+  "sources": [
+    {
+      "title": "Indiana property-tax circuit-breaker caps fact sheet",
+      "url": "https://www.in.gov/dlgf/files/240429-Fact-Sheet-Circuit-Breaker-Caps.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "Over-65 credit income thresholds, pay-year table",
+      "url": "https://www.in.gov/dlgf/files/2025-memos/250407-Cockerill-Memo-Over-65-Circuit-Breaker-Income-Threshold-Calculation-for-Pay-2026.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "2024 deductions/exemptions changes for pay 2025",
+      "url": "https://www.in.gov/dlgf/files/2024-memos/240618-Shackle-Memo-Legislation-Affecting-Deductions-and-Exemptions.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "DLGF July 2025 auditor presentation",
+      "url": "https://www.in.gov/dlgf/files/2025-presentations/250723-Bolser-Presentation-Auditor-Conference.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 DLGF legislative overview",
+      "url": "https://www.in.gov/sboa/files/Department-of-Local-Government-Finance-2025.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "Indiana income-tax deductions",
+      "url": "https://www.in.gov/dor/i-am-a/individual/deductions/",
+      "kind": "agency"
+    },
+    {
+      "title": "Renter's deduction, Bulletin 38",
+      "url": "https://www.in.gov/dor/files/reference/ib38.pdf",
+      "kind": "agency"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "code": "SD",
+  "name": "South Dakota",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "South Dakota has an income-tested assessment freeze and local relief. Its historical statewide property-tax refund was repealed in 2026, requiring careful claim-year treatment for this comparison.",
+  "inventoryStatus": "partial",
+  "statewideCreditStatus": "uncertain",
+  "programs": [
+    {
+      "id": "sd-assessment-freeze",
+      "name": "Assessment Freeze for the Elderly and Disabled",
+      "category": "assessment-limit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "65 or older, or disabled; qualifying surviving spouses may continue.",
+      "incomeDefinition": "Program household income in the previous year.",
+      "incomeLimits": "2025 applications: $41,579 single-member or $53,459 multiple-member household.",
+      "maximumBenefit": "Assessed value above a qualifying base is excluded; tax savings depend on local rates.",
+      "formulaSummary": "Freezes qualifying dwelling assessment, subject to income, value and occupancy tests.",
+      "application": "Annual application to county treasurer by April 1.",
+      "eligibilityNotes": [
+        "2025 application dwelling-value limit $356,391.",
+        "Prior-year occupancy of at least 200 days."
+      ],
+      "interactions": [],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Department of Revenue property-tax information guide",
+          "url": "https://mylrc.sdlegislature.gov/api/Documents/Attachment/281928.pdf?Year=2025",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "sd-homestead-deferral",
+      "name": "Property Tax Homestead Exemption (deferral)",
+      "category": "deferral",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "At least 70, or a qualifying surviving spouse.",
+      "incomeDefinition": "See program rules.",
+      "incomeLimits": "Income and residency tests apply.",
+      "maximumBenefit": "Eligible property-tax payments postponed.",
+      "formulaSummary": "Taxes become a lien and must be repaid with interest on transfer; this is a deferral despite its title.",
+      "application": "Apply annually to county treasurer by April 1.",
+      "eligibilityNotes": [],
+      "interactions": [
+        "Recipients cannot also receive the historical sales/property tax refund."
+      ],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "South Dakota Property Tax Relief Programs",
+          "url": "https://dor.sd.gov/individuals/taxes/property-tax/relief-programs/",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "sd-municipal-reduction",
+      "name": "Municipal property-tax relief for elderly and disabled owners",
+      "category": "local-option",
+      "scope": "local-option",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "65 or older, or disabled; certain surviving spouses.",
+      "incomeDefinition": "See program rules.",
+      "incomeLimits": "Local income limits apply.",
+      "maximumBenefit": "Varies.",
+      "formulaSummary": "City property-tax reductions require municipal adoption; availability is not statewide.",
+      "application": "Apply through local county treasurer.",
+      "eligibilityNotes": [],
+      "interactions": [],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "South Dakota Property Tax Relief Programs",
+          "url": "https://dor.sd.gov/individuals/taxes/property-tax/relief-programs/",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "sd-historical-property-tax-refund",
+      "name": "Property Tax Refund for Elderly and Disabled Persons (historical; repealed 2026)",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "Senior or qualifying disability.",
+      "incomeDefinition": "Program household income.",
+      "incomeLimits": "2025 claims on 2024 taxes used $16,566 single/$22,484 multi-member household; this is not certified as a 2025-tax claim limit.",
+      "maximumBenefit": "Do not calculate until claim-year and repeal treatment are resolved.",
+      "formulaSummary": "Historical property-tax refund subject to annual appropriation; the state paid the greater of eligible sales-tax and property-tax refunds.",
+      "application": "Historical annual claim May 1–July 1.",
+      "eligibilityNotes": [
+        "Historical homeownership/residency requirements applied."
+      ],
+      "interactions": ["Alternative to sales-tax refund, not additive."],
+      "programYear": "2025 application for 2024 taxes; 2026 repeal affects later claims.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 tax-refund announcement: refunds of 2024 taxes",
+          "url": "https://news.sd.gov/news?id=news_kb_article_view&sys_id=75bef39c4751225022dc4080236d4386",
+          "kind": "agency"
+        },
+        {
+          "title": "2026 SB21 enrolled: property-refund repeal",
+          "url": "https://mylrc.sdlegislature.gov/api/Documents/305059.pdf",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "laterChanges": [
+    "2026 SB21 repealed property-tax-refund chapter 10-18A. The current application for 2025 taxes is described by Revenue as a sales-tax refund.",
+    "2026 assessment-freeze income/value thresholds and residency rules differ from 2025 applications."
+  ],
+  "researchNotes": [
+    "Do not label the current senior/disability sales-tax refund as a property-tax credit.",
+    "A tax-year-2025 household property-refund result needs explicit legal treatment of 2026 repeal and claim timing; inventory documents the unresolved issue."
+  ],
+  "sources": [
+    {
+      "title": "South Dakota Property Tax Relief Programs",
+      "url": "https://dor.sd.gov/individuals/taxes/property-tax/relief-programs/",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 Department of Revenue property-tax information guide",
+      "url": "https://mylrc.sdlegislature.gov/api/Documents/Attachment/281928.pdf?Year=2025",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 tax-refund announcement: refunds of 2024 taxes",
+      "url": "https://news.sd.gov/news?id=news_kb_article_view&sys_id=75bef39c4751225022dc4080236d4386",
+      "kind": "agency"
+    },
+    {
+      "title": "2026 SB21 enrolled: property-refund repeal",
+      "url": "https://mylrc.sdlegislature.gov/api/Documents/305059.pdf",
+      "kind": "statute"
+    }
+  ]
+}

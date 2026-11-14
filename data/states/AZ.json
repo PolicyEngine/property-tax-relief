@@ -1,0 +1,74 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [],
+  "code": "AZ",
+  "name": "Arizona",
+  "overview": "A refundable property-tax credit serves qualifying older residents and SSI recipients, including renters.",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "az-property-tax-credit",
+      "name": "Property Tax Refund (Credit)",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner", "renter"],
+      "refundable": true,
+      "ageRule": "Claimant or joint spouse age 65+; younger applicants qualify through SSI receipt.",
+      "incomeDefinition": "Household income; Social Security and railroad retirement are excluded.",
+      "incomeLimits": "Under $3,751 living alone; under $5,501 living with others.",
+      "maximumBenefit": "$502 for 2025.",
+      "formulaSummary": "Income-table credit limited by qualifying property taxes; renters use landlord-certified property taxes attributable to their unit.",
+      "application": "File 2025 Form 140PTC or attach it to an eligible Arizona income-tax return.",
+      "eligibilityNotes": [
+        "Full-year Arizona residence and qualifying housing payments required.",
+        "Rent-only claimants generally must have rented throughout the year."
+      ],
+      "interactions": [
+        "Deferred property taxes cannot support the same credit."
+      ],
+      "programYear": "2025 expenses and income; filing in 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Arizona Form 140PTC instructions",
+          "url": "https://azdor.gov/sites/default/files/document/FORMS_INDIVIDUAL_2025_140PTCi.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "2025 Arizona Form 140PTC",
+          "url": "https://azdor.gov/sites/default/files/document/FORMS_INDIVIDUAL_2025_140PTC_f.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "Property Tax Refund claim form overview",
+          "url": "https://azdor.gov/forms/tax-credits-forms/property-tax-refund-credit-claim-form-fillable",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": ["az_property_tax_credit"]
+    }
+  ],
+  "researchNotes": [
+    "PDF direct fetch returned 403; official indexed instructions and form excerpts were readable.",
+    "Renters do not use a uniform statewide percentage proxy in this program."
+  ],
+  "sources": [
+    {
+      "title": "2025 Arizona Form 140PTC instructions",
+      "url": "https://azdor.gov/sites/default/files/document/FORMS_INDIVIDUAL_2025_140PTCi.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "2025 Arizona Form 140PTC",
+      "url": "https://azdor.gov/sites/default/files/document/FORMS_INDIVIDUAL_2025_140PTC_f.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "Property Tax Refund claim form overview",
+      "url": "https://azdor.gov/forms/tax-credits-forms/property-tax-refund-credit-claim-form-fillable",
+      "kind": "agency"
+    }
+  ]
+}

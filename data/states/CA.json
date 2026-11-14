@@ -1,0 +1,119 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [],
+  "code": "CA",
+  "name": "California",
+  "overview": "California offers an income-limited, flat nonrefundable renter credit.",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "ca-nonrefundable-renters-credit",
+      "name": "Nonrefundable renter's credit",
+      "category": "renter-credit",
+      "scope": "statewide",
+      "tenures": ["renter"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "California adjusted gross income; filing-status rules apply.",
+      "incomeLimits": "2025: $53,994 single/separate; $107,987 joint, head of household, or qualifying surviving spouse.",
+      "maximumBenefit": "$60 single/separate; $120 for other eligible filing statuses.",
+      "formulaSummary": "Fixed credit subject to eligibility and available state income-tax liability.",
+      "application": "Claim on the California income-tax return.",
+      "eligibilityNotes": [
+        "Generally must pay California rent for at least half the year.",
+        "Tax-exempt housing, dependent status, and property-tax-exemption restrictions apply."
+      ],
+      "interactions": [],
+      "programYear": "2025 income-tax return, normally filed in 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Nonrefundable renter's credit — California FTB",
+          "url": "https://www.ftb.ca.gov/file/personal/credits/nonrefundable-renters-credit.html",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": ["ca_renter_credit"]
+    },
+    {
+      "id": "ca-homeowners-exemption",
+      "name": "Homeowners' exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "$7,000 of qualifying taxable property value.",
+      "formulaSummary": "Reduces taxable value before applying property-tax rates.",
+      "application": "One-time BOE-266 claim to county assessor.",
+      "eligibilityNotes": [
+        "Owner's principal residence on January 1; full-exemption deadline generally February 15."
+      ],
+      "interactions": [],
+      "programYear": "2025 baseline.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "California homeowners' exemption",
+          "url": "https://www.boe.ca.gov/proptaxes/homeowners_exemption.htm?mod=article_inline",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "ca-property-tax-postponement",
+      "name": "Property Tax Postponement",
+      "category": "deferral",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "Age62+ or blind or disabled.",
+      "incomeDefinition": "Program household income from the prior calendar year.",
+      "incomeLimits": "2025–2026 filing period uses 2024 income no greater than $55,181.",
+      "maximumBenefit": "Approved current-year taxes deferred; must be repaid.",
+      "formulaSummary": "State advances tax payments, secured by a lien; this is a loan.",
+      "application": "Apply annually through State Controller during the published filing period.",
+      "eligibilityNotes": [
+        "Principal residence, at least40% equity, and no reverse mortgage.",
+        "Funding/ownership and other conditions apply."
+      ],
+      "interactions": [],
+      "programYear": "2025–2026 property-tax postponement period; 2024 income.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025–2026 Property Tax Postponement application",
+          "url": "https://www.sco.ca.gov/Files-EO/2025-26_PTP_Application_Package.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "researchNotes": [
+    "The nominal credit may exceed usable savings because it is nonrefundable.",
+    "Owner relief is represented as exemptions/deferrals rather than cash credits."
+  ],
+  "sources": [
+    {
+      "title": "Nonrefundable renter's credit — California FTB",
+      "url": "https://www.ftb.ca.gov/file/personal/credits/nonrefundable-renters-credit.html",
+      "kind": "agency"
+    },
+    {
+      "title": "California homeowners' exemption",
+      "url": "https://www.boe.ca.gov/proptaxes/homeowners_exemption.htm?mod=article_inline",
+      "kind": "agency"
+    },
+    {
+      "title": "2025–2026 Property Tax Postponement application",
+      "url": "https://www.sco.ca.gov/Files-EO/2025-26_PTP_Application_Package.pdf",
+      "kind": "form"
+    }
+  ]
+}

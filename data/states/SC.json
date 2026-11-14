@@ -1,0 +1,89 @@
+{
+  "code": "SC",
+  "name": "South Carolina",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "South Carolina's principal statewide residential relief uses value exemptions and school-operating-tax exemptions, rather than refundable property or renter credits.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "none-identified",
+  "programs": [
+    {
+      "id": "sc-homestead-exemption",
+      "name": "Homestead Exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "65 or older, totally and permanently disabled, or legally blind before the tax year.",
+      "incomeDefinition": "See program rules.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "Tax exemption on the first $50,000 of fair market value in 2025.",
+      "formulaSummary": "Excludes qualifying home value from county, municipal, school and special-assessment property taxes; fees remain.",
+      "application": "Apply to county auditor.",
+      "eligibilityNotes": [
+        "At least one year of South Carolina legal residence before the tax year.",
+        "Qualifying spouse can meet age/disability condition."
+      ],
+      "interactions": [],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 South Carolina Tax Incentives for Economic Development, residential property-tax exemptions",
+          "url": "https://dor.sc.gov/sites/dor/files/Documents/Policy%20Manuals/SCTIED-2025%20Edition-Complete.pdf",
+          "kind": "agency"
+        },
+        {
+          "title": "Property Tax Exemptions",
+          "url": "https://www.dor.sc.gov/property/property-tax-exemptions",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": ["sc_homestead_property_tax_reduction"]
+    },
+    {
+      "id": "sc-school-operating-exemption",
+      "name": "Legal-residence school operating tax exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "See program rules.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "School operating property taxes on qualifying legal-residence value.",
+      "formulaSummary": "Qualifying owner-occupied legal residences are exempt from school operating millage, with debt millage and county/municipal taxes outside the exemption.",
+      "application": "Apply for legal-residence 4% assessment classification with county assessor; no separate school-exemption application.",
+      "eligibilityNotes": ["Primary residence; second homes do not qualify."],
+      "interactions": [],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 South Carolina Tax Incentives for Economic Development, residential property-tax exemptions",
+          "url": "https://dor.sc.gov/sites/dor/files/Documents/Policy%20Manuals/SCTIED-2025%20Edition-Complete.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "laterChanges": [
+    "2026 adds a temporary additional homestead exemption for some recipients; do not apply it to 2025."
+  ],
+  "researchNotes": [
+    "A statewide exemption can provide significant relief even where no statewide refundable property/renter credit was identified."
+  ],
+  "sources": [
+    {
+      "title": "2025 South Carolina Tax Incentives for Economic Development, residential property-tax exemptions",
+      "url": "https://dor.sc.gov/sites/dor/files/Documents/Policy%20Manuals/SCTIED-2025%20Edition-Complete.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "Property Tax Exemptions",
+      "url": "https://www.dor.sc.gov/property/property-tax-exemptions",
+      "kind": "agency"
+    }
+  ]
+}

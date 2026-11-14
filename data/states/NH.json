@@ -1,0 +1,61 @@
+{
+  "code": "NH",
+  "name": "New Hampshire",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Income-tested relief refunds part of the State Education Property Tax to qualifying homeowners; local exemptions are separate.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "nh-low-moderate-income-property-tax-relief",
+      "name": "Low and Moderate Income Homeowners Property Tax Relief",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "No age restriction stated.",
+      "incomeDefinition": "Adjusted gross income under DP-8 rules; use the claim-year instructions.",
+      "incomeLimits": "$37,000 single; $47,000 married or head of New Hampshire household.",
+      "maximumBenefit": "Income-tiered relief on qualifying homestead value, capped at $220,000 of value.",
+      "formulaSummary": "Refund qualifying State Education Property Tax using eligible homestead value and income-tier factors; this is not a refund of the whole local property-tax bill.",
+      "application": "Form DP-8 or Granite Tax Connect, May 1–June 30 following the property-tax year.",
+      "eligibilityNotes": [
+        "Own a qualifying homestead and reside there April 1 of the claim year."
+      ],
+      "interactions": [],
+      "programYear": "2025 property-tax relief uses April 1, 2025 residence; applications May–June 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025-property-tax relief application guidance (2026 filing)",
+          "url": "https://www.revenue.nh.gov/news-and-media/tax-relief-program-aids-low-and-moderate-income-nh-homeowners",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 submission window (for 2024 property tax)",
+          "url": "https://www.revenue.nh.gov/news-and-media/nh-department-revenue-administration-tax-relief-program-provides-support-low-and",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [
+    "The 2025 application window concerned 2024 property taxes; keep filing year separate.",
+    "No statewide renter credit was identified in the reviewed agency sources."
+  ],
+  "sources": [
+    {
+      "title": "2025-property-tax relief application guidance (2026 filing)",
+      "url": "https://www.revenue.nh.gov/news-and-media/tax-relief-program-aids-low-and-moderate-income-nh-homeowners",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 submission window (for 2024 property tax)",
+      "url": "https://www.revenue.nh.gov/news-and-media/nh-department-revenue-administration-tax-relief-program-provides-support-low-and",
+      "kind": "agency"
+    }
+  ]
+}

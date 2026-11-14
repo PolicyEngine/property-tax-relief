@@ -1,0 +1,52 @@
+{
+  "code": "RI",
+  "name": "Rhode Island",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Rhode Island has a refundable senior and disability circuit breaker for both homeowners and renters.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "ri-property-tax-relief",
+      "name": "Property Tax Relief Claim (RI-1040H)",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["owner", "renter"],
+      "refundable": true,
+      "ageRule": "Claimant or spouse age 65 or older, or receiving Social Security Disability benefits.",
+      "incomeDefinition": "Taxable and nontaxable income of all household members, with specified adjustments and loss addbacks.",
+      "incomeLimits": "$40,730 for 2025.",
+      "maximumBenefit": "$700.",
+      "formulaSummary": "Property taxes or 20% of qualifying rent, less an income-based threshold of 3%–6%; threshold depends on household income and size.",
+      "application": "File RI-1040H by April 15, 2026, with RI-1040 or separately. An income-tax filing extension does not extend this deadline.",
+      "eligibilityNotes": [
+        "Full-year Rhode Island domicile.",
+        "Current on rent and property taxes.",
+        "Exclude rent or taxes funded by public assistance and utility or furnishing charges."
+      ],
+      "interactions": [
+        "Only one household member claims; rented land can be combined with taxes on an owned home."
+      ],
+      "programYear": "2025",
+      "rentProxy": 0.2,
+      "sources": [
+        {
+          "title": "2025 Form RI-1040H and instructions",
+          "url": "https://tax.ri.gov/sites/g/files/xkgbur541/files/2026-01/2025%201040H_w.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["ri_property_tax_credit"]
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [],
+  "sources": [
+    {
+      "title": "2025 Form RI-1040H and instructions",
+      "url": "https://tax.ri.gov/sites/g/files/xkgbur541/files/2026-01/2025%201040H_w.pdf",
+      "kind": "form"
+    }
+  ]
+}

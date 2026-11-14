@@ -1,0 +1,110 @@
+{
+  "code": "VT",
+  "name": "Vermont",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Vermont provides an income-sensitive homeowner property-tax credit and a refundable renter credit using county and family-size benchmarks.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "vt-property-tax-credit",
+      "name": "Property Tax Credit",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "2025 household income on HI-144, covering taxable and specified nontaxable income of household members.",
+      "incomeLimits": "Up to $115,400 for 2025 income used in the 2026 claim.",
+      "maximumBenefit": "$5,600 education portion plus $2,400 municipal portion.",
+      "formulaSummary": "Income-sensitive education and municipal credits using eligible housesite taxes, household income, property value and local tax parameters.",
+      "application": "File HS-122 and HI-144 with Homestead Declaration, generally by April 15, 2026.",
+      "eligibilityNotes": [
+        "Domiciled in Vermont all of 2025, not another person's dependent.",
+        "Own and occupy declared homestead on April 1, 2026."
+      ],
+      "interactions": [],
+      "programYear": "2025 income and 2025/26 housesite taxes; credit applied to 2026/27 property-tax bill.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "HS-122 instructions: 2026 claim based on 2025 income",
+          "url": "https://tax.vermont.gov/instructions/form-HS-122",
+          "kind": "agency"
+        },
+        {
+          "title": "Vermont Property Tax Credit",
+          "url": "https://tax.vermont.gov/ptc",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "vt-renter-credit",
+      "name": "Renter Credit",
+      "category": "renter-credit",
+      "scope": "statewide",
+      "tenures": ["renter"],
+      "refundable": true,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Claimant/family program income; special rules for shared housing and subsidies.",
+      "incomeLimits": "Published county- and family-size-specific limits; verify the 2025 schedule.",
+      "maximumBenefit": "$2,500 for the 2025 rent year.",
+      "formulaSummary": "Up to 10% of HUD fair market rent for county and family size, with income phaseout, month proration, and shared-housing/subsidy adjustments.",
+      "application": "File RCC-146 through myVTax, income-tax software, or paper; final 2025 claim deadline October 15, 2026.",
+      "eligibilityNotes": [
+        "Full-year Vermont domicile; at least six months renting.",
+        "Not claimed as another taxpayer's dependent.",
+        "Landlord must submit certificate; claimant does not need to obtain it."
+      ],
+      "interactions": [],
+      "programYear": "2025 rent and income; claim filed 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Vermont Renter Credit",
+          "url": "https://tax.vermont.gov/renter-credit",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 Renter Credit calculator and credit amounts",
+          "url": "https://tax.vermont.gov/individuals/renter-credit/calculator-and-credit-amounts",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": ["vt_renter_credit"]
+    }
+  ],
+  "laterChanges": [
+    "A one-year renter increase applies to claims filed in 2027, not the 2025 rent comparison.",
+    "Owner credit cap changes for claims filed beginning in 2028 are tracked separately."
+  ],
+  "researchNotes": [
+    "Owner credit and renter credit use different timing; the owner claim based on 2025 income is formally a 2026 property-tax credit.",
+    "Current renter webpage describes 65% county-median eligibility; the exact 2025 income-limit file needs validation before calculation."
+  ],
+  "sources": [
+    {
+      "title": "HS-122 instructions: 2026 claim based on 2025 income",
+      "url": "https://tax.vermont.gov/instructions/form-HS-122",
+      "kind": "agency"
+    },
+    {
+      "title": "Vermont Property Tax Credit",
+      "url": "https://tax.vermont.gov/ptc",
+      "kind": "agency"
+    },
+    {
+      "title": "Vermont Renter Credit",
+      "url": "https://tax.vermont.gov/renter-credit",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 Renter Credit calculator and credit amounts",
+      "url": "https://tax.vermont.gov/individuals/renter-credit/calculator-and-credit-amounts",
+      "kind": "agency"
+    }
+  ]
+}

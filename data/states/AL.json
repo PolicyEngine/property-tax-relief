@@ -1,0 +1,51 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [],
+  "code": "AL",
+  "name": "Alabama",
+  "overview": "Relief identified in this review operates through homestead exemptions rather than statewide renter or circuit-breaker credits.",
+  "statewideCreditStatus": "none-identified",
+  "programs": [
+    {
+      "id": "al-homestead-exemptions",
+      "name": "Homestead exemptions",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "General homestead relief; additional exemptions for age 65+, disability, or blindness.",
+      "incomeDefinition": "Additional relief uses state adjusted gross income or combined federal taxable income, depending on exemption.",
+      "incomeLimits": "Several additional exemptions use a $12,000 income limit; disability rules differ.",
+      "maximumBenefit": "Exempt assessed value or the full qualifying tax bill, depending on exemption.",
+      "formulaSummary": "Reduces taxable assessed value or exempts specified state/county levies.",
+      "application": "Apply to the local county taxing official.",
+      "eligibilityNotes": [
+        "Owner-occupied principal residence; acreage limits apply.",
+        "County and municipal relief can differ."
+      ],
+      "interactions": [],
+      "programYear": "2025; annual county administration.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Homestead exemptions — Alabama Department of Revenue",
+          "url": "https://www.revenue.alabama.gov/property-tax/homestead-exemptions/",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "researchNotes": [
+    "No statewide renter or property-tax credit identified in the reviewed state overview; exemptions remain important relief."
+  ],
+  "sources": [
+    {
+      "title": "Homestead exemptions — Alabama Department of Revenue",
+      "url": "https://www.revenue.alabama.gov/property-tax/homestead-exemptions/",
+      "kind": "agency"
+    }
+  ]
+}

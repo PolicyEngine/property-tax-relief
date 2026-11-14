@@ -1,0 +1,63 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [],
+  "code": "HI",
+  "name": "Hawaii",
+  "overview": "The state income-tax system provides a refundable low-income renter credit; owner property-tax relief is county-specific.",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "hi-low-income-household-renters-credit",
+      "name": "Credit for Low-Income Household Renters",
+      "category": "renter-credit",
+      "scope": "statewide",
+      "tenures": ["renter"],
+      "refundable": true,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Hawaii adjusted gross income.",
+      "incomeLimits": "Less than $30,000 for 2025.",
+      "maximumBenefit": "$50 per qualified exemption, including an additional exemption for qualifying age-65+ taxpayers.",
+      "formulaSummary": "Flat amount times qualified exemptions, subject to qualifying rent and other eligibility conditions.",
+      "application": "Complete Schedule X Part I with N-11/N-15; 2025 calendar-year claims deadline December 31, 2026.",
+      "eligibilityNotes": [
+        "Hawaii presence for more than nine months.",
+        "Qualifying rent must exceed $1,000 after exclusions.",
+        "Dependent, tax-exempt rental-property, reimbursed-rent, and subsidy restrictions apply."
+      ],
+      "interactions": [],
+      "programYear": "2025 rent and income, claimed on 2025 return.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 N-11 instructions, Schedule X",
+          "url": "https://files.hawaii.gov/tax/forms/current/n11ins.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "2025 N-11 and Schedule X",
+          "url": "https://files.hawaii.gov/tax/forms/current/n11_f.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["hi_tax_credit_for_low_income_household_renters"]
+    }
+  ],
+  "researchNotes": [
+    "County homeowner circuit breakers and exemptions are local rather than a uniform statewide owner benefit.",
+    "The credit uses qualified exemptions, not a percentage of rent."
+  ],
+  "sources": [
+    {
+      "title": "2025 N-11 instructions, Schedule X",
+      "url": "https://files.hawaii.gov/tax/forms/current/n11ins.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "2025 N-11 and Schedule X",
+      "url": "https://files.hawaii.gov/tax/forms/current/n11_f.pdf",
+      "kind": "form"
+    }
+  ]
+}

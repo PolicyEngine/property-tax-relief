@@ -1,0 +1,101 @@
+{
+  "code": "MS",
+  "name": "Mississippi",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Mississippi’s homestead system includes a regular property-tax bill credit and larger age/disability exemptions; it is not a refundable income-based renter circuit breaker.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "ms-regular-homestead-credit",
+      "name": "Regular Homestead Exemption — bill credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "Ordinary tier for eligible owners under age 65 who do not qualify for the disability tiers.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Up to $300 reduction in taxes under the assessed-value table.",
+      "formulaSummary": "Apply the regular homestead tax-credit table to eligible assessed value.",
+      "application": "Apply to the county tax assessor January 1–April 1; reapply after relevant changes.",
+      "eligibilityNotes": [
+        "Own and occupy the principal residence on January 1.",
+        "Ownership, head-of-family and state-tax compliance rules apply."
+      ],
+      "interactions": [
+        "Age/disability and total-exemption tiers replace the ordinary tier."
+      ],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Mississippi homestead exemption",
+          "url": "https://www.dor.ms.gov/county-services/homestead-exemption",
+          "kind": "agency"
+        },
+        {
+          "title": "Homestead regulations",
+          "url": "https://www.dor.ms.gov/sites/default/files/Property/prop_partVI08302012.pdf",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "ms-age-disability-homestead-exemption",
+      "name": "Age/Disability Homestead Exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "Age 65+ or qualifying total disability as of January 1.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Covered taxes on the first $7,500 assessed value; certain qualifying veterans/survivors receive full exemption.",
+      "formulaSummary": "Exempt eligible homestead value from covered property taxes under the applicable tier.",
+      "application": "Apply to the local assessing authority.",
+      "eligibilityNotes": [
+        "Apply proof-of-age or disability requirements.",
+        "Current agency guidance contains further value-protection rules; use 2025 law for calculation."
+      ],
+      "interactions": [],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Mississippi homestead exemption",
+          "url": "https://www.dor.ms.gov/county-services/homestead-exemption",
+          "kind": "agency"
+        },
+        {
+          "title": "Homestead regulations",
+          "url": "https://www.dor.ms.gov/sites/default/files/Property/prop_partVI08302012.pdf",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": [
+        "ms_age_disability_homestead_exemption",
+        "ms_age_disability_homestead_property_tax_reduction"
+      ]
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [
+    "No general statewide renter credit was identified in reviewed DOR materials.",
+    "The regular tier is called an exemption but operates as a bill credit; do not treat it as a cash refund."
+  ],
+  "sources": [
+    {
+      "title": "Mississippi homestead exemption",
+      "url": "https://www.dor.ms.gov/county-services/homestead-exemption",
+      "kind": "agency"
+    },
+    {
+      "title": "Homestead regulations",
+      "url": "https://www.dor.ms.gov/sites/default/files/Property/prop_partVI08302012.pdf",
+      "kind": "statute"
+    }
+  ]
+}

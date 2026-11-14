@@ -1,0 +1,64 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [],
+  "code": "AR",
+  "name": "Arkansas",
+  "overview": "The homestead credit reduces qualifying homeowners' property-tax liability without an income test.",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "ar-homestead-property-tax-credit",
+      "name": "Homestead Property Tax Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general minimum age.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit identified.",
+      "maximumBenefit": "$600 for assessment year 2025.",
+      "formulaSummary": "Reduces the qualifying homestead's assessed real-property tax by up to the annual credit.",
+      "application": "Register the homestead and establish eligibility with the county assessor.",
+      "eligibilityNotes": [
+        "Applies to a qualifying owner-occupied homestead.",
+        "Assessment year and bill-payment year differ."
+      ],
+      "interactions": [
+        "Assessment limitations and disability/veteran exemptions are separate forms of relief."
+      ],
+      "programYear": "2025 assessments, generally collected in 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "DFA fiscal impact: SB263",
+          "url": "https://arkleg.state.ar.us/Home/FTPDocument?path=%2FAssembly%2F2025%2F2025R%2FFiscal+Impacts%2FSB263-DFA2.pdf",
+          "kind": "agency"
+        },
+        {
+          "title": "Arkansas Assessment Coordination annual report 2025",
+          "url": "https://www.dfa.arkansas.gov/wp-content/uploads/AACD_AnnualReport_2025.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "researchNotes": [
+    "DFA confirms Act 330 of 2025 increased the credit; the fiscal statement specifies 2025 assessment-year applicability.",
+    "Do not substitute a 2025 cash-payment comparison for the 2025 assessment-year credit."
+  ],
+  "sources": [
+    {
+      "title": "DFA fiscal impact: SB263",
+      "url": "https://arkleg.state.ar.us/Home/FTPDocument?path=%2FAssembly%2F2025%2F2025R%2FFiscal+Impacts%2FSB263-DFA2.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "Arkansas Assessment Coordination annual report 2025",
+      "url": "https://www.dfa.arkansas.gov/wp-content/uploads/AACD_AnnualReport_2025.pdf",
+      "kind": "agency"
+    }
+  ]
+}

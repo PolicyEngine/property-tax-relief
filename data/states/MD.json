@@ -1,0 +1,135 @@
+{
+  "code": "MD",
+  "name": "Maryland",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Maryland operates separate homeowner and renter circuit-breaker programs with different income thresholds, asset/age rules and application timing.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "md-homeowners-tax-credit",
+      "name": "Homeowners’ Property Tax Credit",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "No general minimum age.",
+      "incomeDefinition": "Combined gross household income, including nontaxable income, with exclusions for specified occupants.",
+      "incomeLimits": "Gross household income no more than $60,000; net worth excluding the residence and qualifying retirement savings no more than $200,000.",
+      "maximumBenefit": "Eligible property tax above the statutory income-based limit; eligible assessed value is limited to $300,000.",
+      "formulaSummary": "Credit eligible tax above a graduated income limit: 0% of first $8,000, 4% of next $4,000, 6.5% of next $4,000, and 9% above $16,000.",
+      "application": "Apply annually to SDAT; the 2025 application deadline was October 1, 2025.",
+      "eligibilityNotes": [
+        "Legal interest and principal-residence occupancy conditions apply.",
+        "2025 application uses calendar-year 2024 income and year-end 2024 assets."
+      ],
+      "interactions": [
+        "Eligible taxes reflect the homestead assessment credit; fixed water/sewer charges, excess acreage and business portions are excluded."
+      ],
+      "programYear": "2025 property-tax credit uses 2024 household income; do not equate the credit year with the income year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Homeowners’ Property Tax Credit Application",
+          "url": "https://dat.maryland.gov/SDAT%20Forms/2025HTCApplication.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "Homeowners’ Property Tax Credit Program",
+          "url": "https://dat.maryland.gov/realproperty/Pages/Homeowners%27-Property-Tax-Credit-Program.aspx",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "md-renters-tax-credit",
+      "name": "Renters’ Tax Credit",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["renter"],
+      "refundable": true,
+      "ageRule": "Age 60+, fully disabled, or younger renter meeting dependent-child, income and housing conditions.",
+      "incomeDefinition": "Combined gross household income, including nontaxable retirement income.",
+      "incomeLimits": "Younger applicants face household-size limits; older/disabled applicants use the rent-to-income calculation. Apply the applicable-year application rules.",
+      "maximumBenefit": "$1,000.",
+      "formulaSummary": "15% of occupancy rent minus 0% of first $4,000 of income, 2.5% of next $4,000, and 5.5% above $8,000, subject to eligibility and cap.",
+      "application": "Apply annually to SDAT by October 1 of the application year; payment is a direct state check.",
+      "eligibilityNotes": [
+        "At least six months in a qualifying Maryland principal residence.",
+        "Occupancy rent excludes heat, utilities and fees.",
+        "Tax-exempt dwellings are excluded; younger applicants have additional subsidy restrictions."
+      ],
+      "interactions": [],
+      "programYear": "The current 2026 application uses 2025 rent and income. Keep this one-year lag explicit.",
+      "rentProxy": 0.15,
+      "sources": [
+        {
+          "title": "Renters’ Tax Credits",
+          "url": "https://dat.maryland.gov/realproperty/pages/renters%27-tax-credits.aspx",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "md-homestead-assessment-credit",
+      "name": "Homestead Property Tax Credit",
+      "category": "assessment-limit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Credit on annual taxable-assessment increases above 10% for State property tax, or the local cap of 10% or less.",
+      "formulaSummary": "Credit the property tax attributable to eligible assessment growth above the applicable cap; market-value assessment itself is not frozen.",
+      "application": "One-time principal-residence application to SDAT.",
+      "eligibilityNotes": [
+        "Applies to one qualifying principal residence; ownership and occupancy conditions apply."
+      ],
+      "interactions": [
+        "This assessment-growth credit is distinct from the income-based Homeowners’ Tax Credit.",
+        "Use the actual net bill when computing other credits; do not add this credit again to already-reduced tax."
+      ],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Maryland Homestead Property Tax Credit Program",
+          "url": "https://dat.maryland.gov/realproperty/Pages/Maryland-Homestead-Tax-Credit.aspx",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [
+    "No Maryland credit variable was identified in the inspected model paths; this is a model-coverage flag, not proof of legal absence.",
+    "Homeowner credit is bill relief, so income-tax refundability is not a meaningful classification."
+  ],
+  "sources": [
+    {
+      "title": "2025 Homeowners’ Property Tax Credit Application",
+      "url": "https://dat.maryland.gov/SDAT%20Forms/2025HTCApplication.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "Homeowners’ Property Tax Credit Program",
+      "url": "https://dat.maryland.gov/realproperty/Pages/Homeowners%27-Property-Tax-Credit-Program.aspx",
+      "kind": "agency"
+    },
+    {
+      "title": "Renters’ Tax Credits",
+      "url": "https://dat.maryland.gov/realproperty/pages/renters%27-tax-credits.aspx",
+      "kind": "agency"
+    },
+    {
+      "title": "Maryland Homestead Property Tax Credit Program",
+      "url": "https://dat.maryland.gov/realproperty/Pages/Maryland-Homestead-Tax-Credit.aspx",
+      "kind": "agency"
+    }
+  ]
+}

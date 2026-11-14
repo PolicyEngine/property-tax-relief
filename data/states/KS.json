@@ -1,0 +1,134 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [],
+  "code": "KS",
+  "name": "Kansas",
+  "overview": "Kansas offers three mutually exclusive homeowner refund routes, with different income definitions.",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "ks-homestead-refund",
+      "name": "Homestead Refund (K-40H)",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "Born before January1,1970; or qualifying disability/blindness; or qualifying dependent child.",
+      "incomeDefinition": "Household income, including 50% of Social Security under K-40H rules.",
+      "incomeLimits": "2025: $43,389 or less.",
+      "maximumBenefit": "Up to $700.",
+      "formulaSummary": "Income-table percentage of qualifying property taxes, subject to program cap.",
+      "application": "File K-40H with Kansas Revenue.",
+      "eligibilityNotes": [
+        "Full-year Kansas residence, owner occupancy, and $350,000 home-value limit."
+      ],
+      "interactions": ["Only one of K-40H, K-40PT and K-40SVR per household."],
+      "programYear": "2025 property taxes/income; claim normally due April15,2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Kansas homestead refund instructions",
+          "url": "https://www.ksrevenue.gov/homesteadbook25.html",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 property-tax refund eligibility notice CR-20",
+          "url": "https://www.ksrevenue.gov/pdf/cr20.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "ks-safesr",
+      "name": "SAFESR (K-40PT)",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "Age65+ throughout 2025.",
+      "incomeDefinition": "SAFESR household-income definition; not the newer K-40SVR KAGI definition.",
+      "incomeLimits": "2025: $25,380 or less.",
+      "maximumBenefit": "75% of qualifying taxes actually and timely paid.",
+      "formulaSummary": "Refunds 75% of eligible homestead property taxes.",
+      "application": "File K-40PT with Kansas Revenue.",
+      "eligibilityNotes": [
+        "Full-year residence, owner occupancy, and $350,000 home-value limit."
+      ],
+      "interactions": ["Mutually exclusive with K-40H and K-40SVR."],
+      "programYear": "2025 taxes; filed in 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Kansas homestead refund programs",
+          "url": "https://ksrevenue.gov/perstaxtypeshs.html",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "ks-senior-disabled-veteran-refund",
+      "name": "Seniors and Disabled Veterans Refund (K-40SVR)",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "Qualifying senior age65+, disabled veteran, or eligible surviving spouse.",
+      "incomeDefinition": "From 2025: total Kansas adjusted gross income of all household members.",
+      "incomeLimits": "2025: $58,041 or less.",
+      "maximumBenefit": "Qualifying tax increase over the program base year.",
+      "formulaSummary": "Current eligible homestead tax minus eligible base-year tax.",
+      "application": "File K-40SVR; establish base-year information.",
+      "eligibilityNotes": [
+        "Full-year Kansas residence and owner occupancy.",
+        "Base-year home value cannot exceed $350,000."
+      ],
+      "interactions": ["Mutually exclusive with K-40H and K-40PT."],
+      "programYear": "2025 current-year taxes/income and applicable historical base year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Kansas homestead refund programs",
+          "url": "https://ksrevenue.gov/perstaxtypeshs.html",
+          "kind": "agency"
+        },
+        {
+          "title": "Notice 25-05: SVR household-income definition",
+          "url": "https://www.ksrevenue.gov/taxnotices/notice25-05.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "researchNotes": [
+    "Renters are not eligible for these three programs.",
+    "K-40SVR changed household income in 2025; K-40H and SAFESR definitions did not change.",
+    "Claims can be advanced to pay property taxes, so cash timing can precede filing."
+  ],
+  "sources": [
+    {
+      "title": "2025 Kansas homestead refund instructions",
+      "url": "https://www.ksrevenue.gov/homesteadbook25.html",
+      "kind": "agency"
+    },
+    {
+      "title": "Kansas homestead refund programs",
+      "url": "https://ksrevenue.gov/perstaxtypeshs.html",
+      "kind": "agency"
+    },
+    {
+      "title": "Notice 25-05: SVR household-income definition",
+      "url": "https://www.ksrevenue.gov/taxnotices/notice25-05.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 property-tax refund eligibility notice CR-20",
+      "url": "https://www.ksrevenue.gov/pdf/cr20.pdf",
+      "kind": "agency"
+    }
+  ]
+}

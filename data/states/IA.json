@@ -1,0 +1,226 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [
+    "Enacted 2026 law replaces the general credit with a homestead exemption from assessment2026/pay2027 onward.",
+    "2026 rent-reimbursement changes raise the maximum for 2026 claims; retain the 2025 $1,000 cap."
+  ],
+  "code": "IA",
+  "name": "Iowa",
+  "overview": "Iowa combines a general homestead credit with income-tested owner relief and rent reimbursement.",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "ia-homestead-tax-credit",
+      "name": "Homestead Tax Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Applicable levy on the first $4,850 of actual homestead value; limited to taxes due.",
+      "formulaSummary": "Levy-based credit, separate from assessed-value exemptions.",
+      "application": "File homestead claim with local assessor; qualifying claims continue.",
+      "eligibilityNotes": [
+        "Ownership, occupancy, and Iowa-residency conditions apply."
+      ],
+      "interactions": [],
+      "programYear": "Assessment-year 2025 baseline; property-tax fiscal payment cycle differs.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Iowa homestead credit and exemption",
+          "url": "https://revenue.iowa.gov/taxes/tax-guidance/property-tax/homestead-tax-credit-and-exemption",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "ia-elderly-disabled-property-tax-credit",
+      "name": "Property Tax Credit for Senior and Disabled Citizens",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "Age 65+, or totally disabled age 18+; expanded calculation at age 70+.",
+      "incomeDefinition": "Prior-year household income under claim instructions, including specified nontaxable amounts.",
+      "incomeLimits": "2025 claim: ordinary income table below $26,219; age70+ route below 250% of poverty guideline.",
+      "maximumBenefit": "Ordinary credit uses up to $1,000 of taxes; age70+ tax-growth alternative can differ.",
+      "formulaSummary": "Income-table percentage of capped tax base, less general homestead credit; age70+ may use greater tax-growth calculation.",
+      "application": "File 2025 Form 54-001 with county treasurer by June 1, subject to extension.",
+      "eligibilityNotes": [
+        "2025 claim form uses 2024 income and age.",
+        "Eligible mobile homes may follow a separate reduced-tax-rate route."
+      ],
+      "interactions": [
+        "General Homestead Credit is subtracted in the claim calculation; do not sum unadjusted credits."
+      ],
+      "programYear": "2025 claim using 2024 income, applied to fiscal-year 2025–2026 taxes.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Iowa Property Tax Credit Claim 54-001",
+          "url": "https://revenue.iowa.gov/media/2657/download",
+          "kind": "form"
+        },
+        {
+          "title": "Expanded property-tax credit age 70+",
+          "url": "https://revenue.iowa.gov/taxes/tax-guidance/tax-credits-deductions-exemption/property-tax-credit-expanded",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "ia-rent-reimbursement",
+      "name": "Rent Reimbursement",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["renter"],
+      "refundable": true,
+      "ageRule": "Funded HHS program serves age65+ residents and qualifying disabled adults.",
+      "incomeDefinition": "Annual household income under HHS instructions.",
+      "incomeLimits": "Claim year2025: below $26,895.",
+      "maximumBenefit": "2025 maximum $1,000, subject to income schedule and qualifying rent.",
+      "formulaSummary": "Income-table reimbursement based on 23% of qualifying gross rent.",
+      "application": "Apply through Iowa HHS beginning January 2026 for 2025 rent.",
+      "eligibilityNotes": [
+        "Taxable-property and residence conditions apply.",
+        "Statutory broader age23/head-of-household extension has distinct funding rules; HHS currently describes senior/disabled eligibility."
+      ],
+      "interactions": [],
+      "programYear": "2025 rent and income; applications open in 2026.",
+      "rentProxy": 0.23,
+      "sources": [
+        {
+          "title": "Iowa HHS rent reimbursement",
+          "url": "https://hhs.iowa.gov/programs/programs-and-services/rent-reimbursement",
+          "kind": "agency"
+        },
+        {
+          "title": "Iowa rent-reimbursement rules, adopted 2023",
+          "url": "https://rules.iowa.gov/Notice/Details/6557C",
+          "kind": "statute"
+        },
+        {
+          "title": "2026 rent-reimbursement rulemaking notice",
+          "url": "https://rules.iowa.gov/Notice/Details/0661D",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "ia-senior-homestead-exemption",
+      "name": "Additional senior homestead exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "Age65+ by January1 of assessment year.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "$6,500 of taxable value.",
+      "formulaSummary": "Reduces taxable value before levy-based credits.",
+      "application": "Apply through local tax officials.",
+      "eligibilityNotes": [],
+      "interactions": [],
+      "programYear": "2025 baseline.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Iowa homestead credit and exemption",
+          "url": "https://revenue.iowa.gov/taxes/tax-guidance/property-tax/homestead-tax-credit-and-exemption",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "ia-disabled-veteran-homestead-credit",
+      "name": "Disabled Veteran Homestead Property Tax Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "Qualifying permanent100% service-connected disability, compensated individual unemployability, or eligible survivor.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "100% of qualifying homestead property-tax levy.",
+      "formulaSummary": "Offsets qualifying taxes on the eligible homestead.",
+      "application": "File disabled-veteran claim with assessor by July1.",
+      "eligibilityNotes": [
+        "Veteran ownership/occupancy, VA documentation, and surviving-beneficiary rules apply.",
+        "For pre-July2026 applications, acreage/appurtenance rules differ from new2026 applications."
+      ],
+      "interactions": [
+        "Coordinate credits on the underlying bill; relief cannot exceed eligible taxes."
+      ],
+      "programYear": "2025 qualifying homestead; preserve assessment/payable year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Iowa disabled-veteran homestead credit",
+          "url": "https://revenue.iowa.gov/taxes/tax-guidance/tax-credits-deductions-exemption/disabled-veteran-homestead-property-tax-credit",
+          "kind": "agency"
+        },
+        {
+          "title": "Iowa property-tax credits and exemptions",
+          "url": "https://revenue.iowa.gov/taxes/tax-guidance/tax-credits-deductions-exemption/tax-credits-and-exemptions",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "researchNotes": [
+    "Owner 2025 claims use 2024 income; renter claim-year2025 uses 2025 income. These are not the same income window.",
+    "Levy and prior-tax-liability inputs are necessary for complete owner calculations."
+  ],
+  "sources": [
+    {
+      "title": "Iowa homestead credit and exemption",
+      "url": "https://revenue.iowa.gov/taxes/tax-guidance/property-tax/homestead-tax-credit-and-exemption",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 Iowa Property Tax Credit Claim 54-001",
+      "url": "https://revenue.iowa.gov/media/2657/download",
+      "kind": "form"
+    },
+    {
+      "title": "Expanded property-tax credit age 70+",
+      "url": "https://revenue.iowa.gov/taxes/tax-guidance/tax-credits-deductions-exemption/property-tax-credit-expanded",
+      "kind": "agency"
+    },
+    {
+      "title": "Iowa HHS rent reimbursement",
+      "url": "https://hhs.iowa.gov/programs/programs-and-services/rent-reimbursement",
+      "kind": "agency"
+    },
+    {
+      "title": "Iowa rent-reimbursement rules, adopted 2023",
+      "url": "https://rules.iowa.gov/Notice/Details/6557C",
+      "kind": "statute"
+    },
+    {
+      "title": "2026 rent-reimbursement rulemaking notice",
+      "url": "https://rules.iowa.gov/Notice/Details/0661D",
+      "kind": "agency"
+    },
+    {
+      "title": "Iowa disabled-veteran homestead credit",
+      "url": "https://revenue.iowa.gov/taxes/tax-guidance/tax-credits-deductions-exemption/disabled-veteran-homestead-property-tax-credit",
+      "kind": "agency"
+    },
+    {
+      "title": "Iowa property-tax credits and exemptions",
+      "url": "https://revenue.iowa.gov/taxes/tax-guidance/tax-credits-deductions-exemption/tax-credits-and-exemptions",
+      "kind": "agency"
+    }
+  ]
+}

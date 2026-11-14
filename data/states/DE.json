@@ -1,0 +1,54 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [],
+  "code": "DE",
+  "name": "Delaware",
+  "overview": "A statewide senior credit offsets part of regular school property taxes on a principal residence.",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "de-senior-school-property-tax-credit",
+      "name": "Senior School Property Tax Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "Age 65+.",
+      "incomeDefinition": "Not income-tested under the statewide program.",
+      "incomeLimits": "No income limit listed for the statewide credit.",
+      "maximumBenefit": "50% of regular school property tax, up to $500.",
+      "formulaSummary": "Lesser of half the qualifying school levy or $500, deducted from bill.",
+      "application": "Apply to county by April 30; annual reapplication generally unnecessary.",
+      "eligibilityNotes": [
+        "Primary residence only.",
+        "Residency waiting periods depend on when Delaware domicile began; newer arrivals generally require ten consecutive years.",
+        "Prior-year property taxes must have been paid in full."
+      ],
+      "interactions": [
+        "County exemptions and disabled-veteran relief require separate review."
+      ],
+      "programYear": "Annual school-property-tax billing; 2025 baseline.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Senior school property-tax relief",
+          "url": "https://finance.delaware.gov/senior-relief/",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "researchNotes": [
+    "A legislative fiscal note proposing a higher cap is not evidence of enactment; the agency overview states $500."
+  ],
+  "sources": [
+    {
+      "title": "Senior school property-tax relief",
+      "url": "https://finance.delaware.gov/senior-relief/",
+      "kind": "agency"
+    }
+  ]
+}

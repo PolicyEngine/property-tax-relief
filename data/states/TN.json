@@ -1,0 +1,117 @@
+{
+  "code": "TN",
+  "name": "Tennessee",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Tennessee reimburses qualifying elderly and disabled owners for property taxes and separately authorizes local-option senior tax freezes.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "tn-elderly-disabled-relief",
+      "name": "Property Tax Relief for Elderly and Disabled Homeowners",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "65 or older by December 31, 2025, or qualifying disability by that date.",
+      "incomeDefinition": "Previous-year income from all sources of applicant, spouse, co-owner and resident remainderman.",
+      "incomeLimits": "$37,530 of 2024 income for 2025 tax relief.",
+      "maximumBenefit": "Tax attributable to up to $32,700 market value, limited to eligible property taxes.",
+      "formulaSummary": "State reimburses qualifying paid residential property tax on the statutory value limit; local rates determine the payment.",
+      "application": "Apply through county trustee or city collecting official after the tax bill; deadline generally 35 days after delinquency.",
+      "eligibilityNotes": ["Owner-occupied primary residence."],
+      "interactions": [],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Tennessee Property Tax Relief",
+          "url": "https://comptroller.tn.gov/office-functions/pa/property-taxes/property-tax-programs/tax-relief",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 state Tax Relief brochure hosted by Bristol",
+          "url": "https://www.bristoltn.gov/DocumentCenter/View/11579/Tax-Relief-Brochure-2025",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["tn_elderly_property_tax_relief"]
+    },
+    {
+      "id": "tn-disabled-veteran-relief",
+      "name": "Disabled Veteran and Surviving Spouse Property Tax Relief",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "Qualifying disabled veteran or surviving spouse; age-independent.",
+      "incomeDefinition": "See program rules.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "Tax attributable to up to $175,000 market value.",
+      "formulaSummary": "Reimbursement based on qualifying property taxes and veteran disability or survivor requirements.",
+      "application": "Apply through county trustee/city collecting official with VA consent and evidence.",
+      "eligibilityNotes": [],
+      "interactions": [],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 state Tax Relief brochure hosted by Bristol",
+          "url": "https://www.bristoltn.gov/DocumentCenter/View/11579/Tax-Relief-Brochure-2025",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "tn-local-tax-freeze",
+      "name": "Property Tax Freeze",
+      "category": "local-option",
+      "scope": "local-option",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "65 or older.",
+      "incomeDefinition": "All owners' program-defined annual income.",
+      "incomeLimits": "County-specific; local optional limits can differ.",
+      "maximumBenefit": "Qualifying taxes above established base amount are frozen.",
+      "formulaSummary": "Available only in adopting counties and municipalities; improvements and ownership changes can affect base.",
+      "application": "Annual application with participating local collecting official.",
+      "eligibilityNotes": [],
+      "interactions": [],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Property Tax Freeze",
+          "url": "https://www.comptroller.tn.gov/office-functions/pa/property-taxes/property-tax-programs/property-tax-freeze.html",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "laterChanges": [
+    "2026 relief uses a $38,470 2025-income ceiling and $33,600 elderly/disabled market-value cap; do not apply those values to 2025."
+  ],
+  "researchNotes": [
+    "Tax relief is reimbursement, not an assessed-value exemption; local tax freeze is a separate program."
+  ],
+  "sources": [
+    {
+      "title": "Tennessee Property Tax Relief",
+      "url": "https://comptroller.tn.gov/office-functions/pa/property-taxes/property-tax-programs/tax-relief",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 state Tax Relief brochure hosted by Bristol",
+      "url": "https://www.bristoltn.gov/DocumentCenter/View/11579/Tax-Relief-Brochure-2025",
+      "kind": "form"
+    },
+    {
+      "title": "Property Tax Freeze",
+      "url": "https://www.comptroller.tn.gov/office-functions/pa/property-taxes/property-tax-programs/property-tax-freeze.html",
+      "kind": "agency"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "code": "ME",
+  "name": "Maine",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "The refundable Property Tax Fairness Credit covers qualifying homeowners and renters, with higher caps for seniors and certain disabled veterans.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "me-property-tax-fairness-credit",
+      "name": "Property Tax Fairness Credit",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["owner", "renter"],
+      "refundable": true,
+      "ageRule": "All ages; higher maximum at age 65 or older.",
+      "incomeDefinition": "Federal AGI plus statutory additions, including specified nontaxable income and losses; Schedule PTFC/STFC defines adjustments.",
+      "incomeLimits": "2025: $63,750 single; $82,500–$101,250 for head-of-household/joint/surviving-spouse filers depending on dependents; $102,500 for eligible seniors.",
+      "maximumBenefit": "2025 ordinary cap $1,000 under age 65 or $2,000 age 65+; eligible 100% permanently disabled veterans can receive an additional matching credit, subject to housing-tax expense limits.",
+      "formulaSummary": "Eligible property taxes or 15% of occupancy rent, capped by the benefit base, minus 4% of program income; then apply the credit cap.",
+      "application": "File Schedule PTFC/STFC with Form 1040ME, including when filing only to claim refundable credits.",
+      "eligibilityNotes": [
+        "Maine principal residence and resident/part-year resident rules apply.",
+        "Married filing separately is ineligible.",
+        "Rent allowances require utility and subsidy adjustments."
+      ],
+      "interactions": [
+        "The disabled-veteran additional credit cannot raise combined credit above qualifying taxes and rent constituting taxes."
+      ],
+      "programYear": "Tax year 2025, filed in 2026.",
+      "rentProxy": 0.15,
+      "sources": [
+        {
+          "title": "2025 Schedule PTFC/STFC and instructions",
+          "url": "https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/25_1040me_sch_ptfc_fillable.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "36 M.R.S. § 5219-KK",
+          "url": "https://www.legis.maine.gov/legis/statutes/36/title36sec5219-KK.html",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": ["me_property_tax_fairness_credit"]
+    }
+  ],
+  "laterChanges": [
+    "For tax years beginning in 2026, the ordinary under-65 maximum rises to $1,500; the senior maximum remains $2,000. Source: Maine Revenue Services 2026 legislative changes, https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/legischange26.pdf."
+  ],
+  "researchNotes": [
+    "The benefit base limits the housing expenses used in the formula; comparing only headline maximum credits is insufficient.",
+    "General homestead exemptions and deferrals are separate property-tax mechanisms."
+  ],
+  "sources": [
+    {
+      "title": "2025 Schedule PTFC/STFC and instructions",
+      "url": "https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/25_1040me_sch_ptfc_fillable.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "36 M.R.S. § 5219-KK",
+      "url": "https://www.legis.maine.gov/legis/statutes/36/title36sec5219-KK.html",
+      "kind": "statute"
+    }
+  ]
+}

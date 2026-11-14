@@ -1,0 +1,165 @@
+{
+  "code": "WV",
+  "name": "West Virginia",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "West Virginia provides separate refundable senior, excess-property-tax and disabled-veteran credits, with rules preventing duplicate relief.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "wv-senior-tax-credit",
+      "name": "Senior Citizens Tax Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "Homestead Exemption participant: 65 or older, or permanently and totally disabled.",
+      "incomeDefinition": "SCTC-A household income under program rules.",
+      "incomeLimits": "150% federal poverty guidelines: $23,475 for one person in 2025, plus $8,250 for each additional person.",
+      "maximumBenefit": "Eligible taxes on the next $20,000 taxable assessed value above the homestead exemption.",
+      "formulaSummary": "Refunds qualifying Class II tax paid on that assessed-value slice.",
+      "application": "Use original SCTC-A from Tax Division, separately for eligible nonfilers or with IT-140.",
+      "eligibilityNotes": [
+        "Must owe and pay qualifying homestead tax.",
+        "Original agency SCTC-A required."
+      ],
+      "interactions": [
+        "Reduces HEPTC; cannot combine with Disabled Veteran Property Tax Credit."
+      ],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 West Virginia Personal Income Tax forms and instructions",
+          "url": "https://tax.wv.gov/Documents/PIT/2025/it140.PersonalIncomeTaxFormsAndInstructions.2025.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "West Virginia Senior Citizens Tax Credit and HEPTC",
+          "url": "https://tax.wv.gov/Individuals/SeniorCitizens/Pages/SeniorCitizensTaxCredit.aspx",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "wv-excess-property-tax-credit",
+      "name": "Homestead Excess Property Tax Credit",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Gross household income including Social Security for burden calculation; eligibility has separate low-income rules.",
+      "incomeLimits": "Program low-income test based on 300% federal poverty guidelines.",
+      "maximumBenefit": "$1,000.",
+      "formulaSummary": "Eligible owner-occupied real-property taxes, after senior credit, exceeding 4% of gross household income, capped at $1,000.",
+      "application": "File HEPTC-1 with IT-140 and property-tax receipt.",
+      "eligibilityNotes": [
+        "Homestead Exemption participation is not required.",
+        "Income-year treatment must be checked against 2025 form, not generic webpage."
+      ],
+      "interactions": [
+        "Calculate senior credit first; subtract it.",
+        "Cannot combine with Disabled Veteran Property Tax Credit."
+      ],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 West Virginia Personal Income Tax forms and instructions",
+          "url": "https://tax.wv.gov/Documents/PIT/2025/it140.PersonalIncomeTaxFormsAndInstructions.2025.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "West Virginia Tax Credits, revised October 2025",
+          "url": "https://tax.wv.gov/Documents/TSD/tsd110.pdf",
+          "kind": "agency"
+        },
+        {
+          "title": "West Virginia Senior Citizens Tax Credit and HEPTC",
+          "url": "https://tax.wv.gov/Individuals/SeniorCitizens/Pages/SeniorCitizensTaxCredit.aspx",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": ["wv_homestead_excess_property_tax_credit"]
+    },
+    {
+      "id": "wv-disabled-veteran-credit",
+      "name": "Disabled Veteran Real Property Tax Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "Honorably discharged veteran with qualifying service-connected disability; qualifying unremarried surviving spouse.",
+      "incomeDefinition": "See program rules.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "Eligible homestead real-property taxes timely paid during the income-tax year.",
+      "formulaSummary": "Refundable credit for qualifying homestead taxes, limited by statutory veteran criteria and timely payment.",
+      "application": "File DV-1 with property-tax receipts and VA disability-rating letter.",
+      "eligibilityNotes": [
+        "At least 90% totally and permanently disabled due solely to service-connected disabilities under cited guidance."
+      ],
+      "interactions": ["Alternative to Senior Citizens Tax Credit and HEPTC."],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "West Virginia Tax Credits, revised October 2025",
+          "url": "https://tax.wv.gov/Documents/TSD/tsd110.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "wv-homestead-exemption",
+      "name": "Homestead Exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "65 or older or permanently and totally disabled.",
+      "incomeDefinition": "See program rules.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "First $20,000 of assessed homestead value.",
+      "formulaSummary": "Assessed-value exemption administered by county assessor; it precedes senior-credit calculations.",
+      "application": "Apply through county assessor.",
+      "eligibilityNotes": [],
+      "interactions": [],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 West Virginia Personal Income Tax forms and instructions",
+          "url": "https://tax.wv.gov/Documents/PIT/2025/it140.PersonalIncomeTaxFormsAndInstructions.2025.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["wv_homestead_exemption"]
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [
+    "Agency overview says 2025 paid taxes compared with 2024 income, while dedicated 2025 form uses tax-year inputs; final calculation audit must resolve this against the form/statute.",
+    "The three credits are not independent amounts that may simply be added."
+  ],
+  "sources": [
+    {
+      "title": "2025 West Virginia Personal Income Tax forms and instructions",
+      "url": "https://tax.wv.gov/Documents/PIT/2025/it140.PersonalIncomeTaxFormsAndInstructions.2025.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "West Virginia Senior Citizens Tax Credit and HEPTC",
+      "url": "https://tax.wv.gov/Individuals/SeniorCitizens/Pages/SeniorCitizensTaxCredit.aspx",
+      "kind": "agency"
+    },
+    {
+      "title": "West Virginia Tax Credits, revised October 2025",
+      "url": "https://tax.wv.gov/Documents/TSD/tsd110.pdf",
+      "kind": "agency"
+    }
+  ]
+}

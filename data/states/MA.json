@@ -1,0 +1,60 @@
+{
+  "code": "MA",
+  "name": "Massachusetts",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "A refundable senior circuit breaker covers qualifying homeowners and renters; it is distinct from locally administered property-tax exemptions.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "ma-senior-circuit-breaker",
+      "name": "Senior Circuit Breaker Tax Credit",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["owner", "renter"],
+      "refundable": true,
+      "ageRule": "At least one eligible taxpayer must be 65 or older by the end of the tax year.",
+      "incomeDefinition": "Massachusetts adjusted gross income with statutory additions and subtractions; excludes specified personal exemptions.",
+      "incomeLimits": "2025 total income: $75,000 single, $94,000 head of household, $112,000 joint; married filing separately is ineligible.",
+      "maximumBenefit": "$2,820 for tax year 2025.",
+      "formulaSummary": "Credit qualifying housing payments above 10% of program income, limited to the annual maximum. Owner expenses include property taxes after reductions and half of separately stated water/sewer charges. Renters use 25% of annual qualifying rent.",
+      "application": "File Schedule CB with the Massachusetts income-tax return; a return is required even when no tax would otherwise be due.",
+      "eligibilityNotes": [
+        "Principal residence required.",
+        "2025 assessed-value ceiling for homeowners is $1,298,000, before residential exemptions and after abatements.",
+        "Dependents, nonresidents, subsidized renters and tenants of tax-exempt property are excluded."
+      ],
+      "interactions": [
+        "Subtract property-tax abatements, exemptions and other reductions when measuring owner payments."
+      ],
+      "programYear": "Tax year 2025; claimed with the return filed in 2026.",
+      "rentProxy": 0.25,
+      "sources": [
+        {
+          "title": "Senior Circuit Breaker Tax Credit",
+          "url": "https://www.mass.gov/info-details/senior-circuit-breaker-tax-credit",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 tax tips for seniors and retirees",
+          "url": "https://www.mass.gov/doc/dor-tax-tips-for-seniors-and-retirees/download",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["ma_senior_circuit_breaker"]
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [
+    "The legal household income definition differs from federal AGI.",
+    "Locally administered exemptions are context, not an additional statewide cash credit. The inventory does not enumerate every municipal option."
+  ],
+  "sources": [
+    {
+      "title": "Senior Circuit Breaker Tax Credit",
+      "url": "https://www.mass.gov/info-details/senior-circuit-breaker-tax-credit",
+      "kind": "agency"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "code": "NM",
+  "name": "New Mexico",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "A statewide refundable senior property-tax rebate covers owners and renters. A separate county-option rebate covers qualifying owners in participating counties.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "nm-senior-property-tax-rebate",
+      "name": "Property Tax Rebate for Persons 65 or Older",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["owner", "renter"],
+      "refundable": true,
+      "ageRule": "Age 65+ at year-end.",
+      "incomeDefinition": "Modified gross income of taxpayer, spouse and dependents, including nontaxable income and excluding specified sources; losses do not offset income.",
+      "incomeLimits": "$16,000 or less.",
+      "maximumBenefit": "$250, or $125 married filing separately.",
+      "formulaSummary": "Qualifying property tax billed plus 6% of rent, less the maximum tax liability in Table 2; apply the cap.",
+      "application": "PIT-RC Section 3 with PIT-1, including when filing only for refundable relief.",
+      "eligibilityNotes": [
+        "At least six months’ physical presence and qualifying New Mexico residency.",
+        "Dependency, institutional residence and tax-exempt housing restrictions apply."
+      ],
+      "interactions": [],
+      "programYear": "2025 property tax billed/rent paid; income-tax return filed in 2026.",
+      "rentProxy": 0.06,
+      "sources": [
+        {
+          "title": "2025 PIT-RC Rebate and Credit Schedule",
+          "url": "https://realfile.tax.newmexico.gov/2025pit-rc.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "2025 PIT-RC instructions",
+          "url": "https://realfile.tax.newmexico.gov/2025pit-rc-ins.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["nm_property_tax_rebate"]
+    },
+    {
+      "id": "nm-local-low-income-property-tax-rebate",
+      "name": "Additional Low Income Property Tax Rebate",
+      "category": "local-option",
+      "scope": "local-option",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "PIT-RC modified gross income.",
+      "incomeLimits": "$24,000 or less.",
+      "maximumBenefit": "$350, or $175 married filing separately.",
+      "formulaSummary": "Multiply qualifying billed property tax by the Table 3 income-tier percentage; apply cap.",
+      "application": "PIT-RC Section 4 with PIT-1; identify the qualifying county.",
+      "eligibilityNotes": [
+        "The 2025 form lists Los Alamos, Santa Fe, Doña Ana and Bernalillo counties."
+      ],
+      "interactions": [
+        "Separate from the statewide senior rebate; apply PIT-RC coordination rules."
+      ],
+      "programYear": "2025 tax year; county adoption is required.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 PIT-RC Rebate and Credit Schedule",
+          "url": "https://realfile.tax.newmexico.gov/2025pit-rc.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "2025 PIT-RC instructions",
+          "url": "https://realfile.tax.newmexico.gov/2025pit-rc-ins.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [
+    "The agency’s general county-rebate webpage lists only three counties, but the actual 2025 PIT-RC explicitly includes Bernalillo; the annual form governs this inventory.",
+    "Do not confuse the general low-income comprehensive rebate with property-tax-specific relief."
+  ],
+  "sources": [
+    {
+      "title": "2025 PIT-RC Rebate and Credit Schedule",
+      "url": "https://realfile.tax.newmexico.gov/2025pit-rc.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "2025 PIT-RC instructions",
+      "url": "https://realfile.tax.newmexico.gov/2025pit-rc-ins.pdf",
+      "kind": "form"
+    }
+  ]
+}

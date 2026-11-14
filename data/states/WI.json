@@ -1,0 +1,241 @@
+{
+  "code": "WI",
+  "name": "Wisconsin",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Wisconsin combines refundable homestead relief, a nonrefundable income-tax property/rent credit, veteran refunds and several separate property-bill credits.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "wi-homestead-credit",
+      "name": "Homestead Credit",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner", "renter"],
+      "refundable": true,
+      "ageRule": "18 or older; positive earned income, disability, or claimant/spouse age 62 or older also required.",
+      "incomeDefinition": "Broad taxable/nontaxable household income, loss/depreciation adjustments and $500 qualifying-dependent deduction.",
+      "incomeLimits": "Less than $24,680 for 2025.",
+      "maximumBenefit": "$1,168.",
+      "formulaSummary": "Income-adjusted credit based on allowable assessed property taxes or rent constituting property taxes; rent share depends on heat inclusion.",
+      "application": "File Schedule H or H-EZ with tax bill/rent certificate; most 2025 claims due April 15, 2030.",
+      "eligibilityNotes": [
+        "Full-year Wisconsin resident.",
+        "Public assistance and tax-exempt housing can affect allowance."
+      ],
+      "interactions": [
+        "Cannot claim with veterans/surviving-spouses property-tax credit on same 2025 taxes or farmland preservation credit."
+      ],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Wisconsin Homestead Credit FAQ, 2025 claims",
+          "url": "https://www.revenue.wi.gov/Pages/FAQS/ise-home.aspx",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 Schedule H instructions",
+          "url": "https://www.revenue.wi.gov/TaxForms2025/2025-ScheduleH-Inst.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["wi_homestead_credit"]
+    },
+    {
+      "id": "wi-school-property-tax-credit",
+      "name": "School Property Tax Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner", "renter"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "See program rules.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "$300, limited by income-tax liability.",
+      "formulaSummary": "Income-tax credit based on eligible property taxes or rent; owner and renter amounts are combined subject to one cap, with rent table depending on heat inclusion.",
+      "application": "Claim Form 1 line 16 using 2025 tables.",
+      "eligibilityNotes": [
+        "Uses taxes paid in 2025, unlike Homestead's assessed-tax basis."
+      ],
+      "interactions": [],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Wisconsin Form 1 instructions",
+          "url": "https://www.revenue.wi.gov/TaxForms2025/2025-Form1-Inst.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["wi_property_tax_credit"]
+    },
+    {
+      "id": "wi-veterans-property-tax-credit",
+      "name": "Veterans and Surviving Spouses Property Tax Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "WDVA-certified eligible veteran or unremarried surviving spouse.",
+      "incomeDefinition": "See program rules.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "Eligible property taxes paid on principal dwelling and up to one acre.",
+      "formulaSummary": "Refunds qualifying paid property taxes; excludes special assessments, interest, service charges and business-use taxes.",
+      "application": "Obtain WDVA certification and claim through income-tax return.",
+      "eligibilityNotes": [],
+      "interactions": ["Cannot combine on same taxes with Homestead credit."],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Veterans and surviving spouses property-tax credit",
+          "url": "https://www.revenue.wi.gov/Pages/FAQS/ise-vetprop.aspx",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 Wisconsin Form 1 instructions",
+          "url": "https://www.revenue.wi.gov/TaxForms2025/2025-Form1-Inst.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "wi-lottery-gaming-credit",
+      "name": "Lottery and Gaming Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "See program rules.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "Applicable school rate times credit value up to $27,000 for 2025/26.",
+      "formulaSummary": "Bill-level credit based on the smaller of qualifying property value and state maximum credit value.",
+      "application": "File application with county or eligible municipal treasurer.",
+      "eligibilityNotes": [
+        "Wisconsin resident owner using property as primary residence on January 1, 2025."
+      ],
+      "interactions": [],
+      "programYear": "2025 property-tax bills, payable 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Lottery and Gaming Credit Program",
+          "url": "https://www.revenue.wi.gov/Pages/FAQS/slf-lottcr.aspx",
+          "kind": "agency"
+        },
+        {
+          "title": "2025–26 Lottery and First Dollar maximum credit values",
+          "url": "https://www.revenue.wi.gov/Pages/SLF/COTVC-News/2025-11-20.aspx",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "wi-first-dollar-credit",
+      "name": "First Dollar Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "See program rules.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "Local calculated credit based on maximum credit value of $9,000 in 2025/26.",
+      "formulaSummary": "Automatic property-bill credit on qualifying improved parcels, varying by school tax rate.",
+      "application": "Automatically applied to qualifying parcels.",
+      "eligibilityNotes": [],
+      "interactions": [],
+      "programYear": "2025 property-tax bills, payable 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025–26 Lottery and First Dollar maximum credit values",
+          "url": "https://www.revenue.wi.gov/Pages/SLF/COTVC-News/2025-11-20.aspx",
+          "kind": "agency"
+        },
+        {
+          "title": "First Dollar Credit report",
+          "url": "https://www.revenue.wi.gov/DORReports/First_Dollar_Paper_2025.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    },
+    {
+      "id": "wi-school-levy-credit",
+      "name": "School Levy Tax Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "See program rules.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "Local allocated bill-level amount.",
+      "formulaSummary": "State payments to counties and municipalities reduce property-tax bills; allocation depends on school levies.",
+      "application": "Applied through local property-tax billing, not income-tax return.",
+      "eligibilityNotes": [
+        "Property-owner relief can cover rental property; it is not a direct renter payment."
+      ],
+      "interactions": [],
+      "programYear": "2025",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "School Levy Tax Credit",
+          "url": "https://www.revenue.wi.gov/Pages/FAQS/slf-slevytcr.aspx",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": []
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [
+    "Lottery/Gaming, First Dollar, and School Levy credits normally already reduce net property-tax bills; do not add them again to an input already measured after bill credits.",
+    "School Property Tax Credit and School Levy Tax Credit are different programs.",
+    "Veteran eligibility requires WDVA certification; this inventory does not infer eligibility from a single disability-percentage input."
+  ],
+  "sources": [
+    {
+      "title": "Wisconsin Homestead Credit FAQ, 2025 claims",
+      "url": "https://www.revenue.wi.gov/Pages/FAQS/ise-home.aspx",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 Schedule H instructions",
+      "url": "https://www.revenue.wi.gov/TaxForms2025/2025-ScheduleH-Inst.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "2025 Wisconsin Form 1 instructions",
+      "url": "https://www.revenue.wi.gov/TaxForms2025/2025-Form1-Inst.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "Veterans and surviving spouses property-tax credit",
+      "url": "https://www.revenue.wi.gov/Pages/FAQS/ise-vetprop.aspx",
+      "kind": "agency"
+    },
+    {
+      "title": "Lottery and Gaming Credit Program",
+      "url": "https://www.revenue.wi.gov/Pages/FAQS/slf-lottcr.aspx",
+      "kind": "agency"
+    },
+    {
+      "title": "2025–26 Lottery and First Dollar maximum credit values",
+      "url": "https://www.revenue.wi.gov/Pages/SLF/COTVC-News/2025-11-20.aspx",
+      "kind": "agency"
+    },
+    {
+      "title": "School Levy Tax Credit",
+      "url": "https://www.revenue.wi.gov/Pages/FAQS/slf-slevytcr.aspx",
+      "kind": "agency"
+    }
+  ]
+}
