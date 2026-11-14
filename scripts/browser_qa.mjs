@@ -9,7 +9,11 @@ if (process.platform !== "linux") {
   throw new Error("Browser QA runs on Linux CI to preserve desktop sessions.");
 }
 
-const output = resolve("output/playwright");
+const basePath = process.env.QA_BASE_PATH ?? "";
+const appUrl = "http://127.0.0.1:3075" + basePath + "/";
+const output = resolve(
+  basePath ? "output/playwright-zone" : "output/playwright",
+);
 mkdirSync(output, { recursive: true });
 const cli = resolve("node_modules/@playwright/cli/playwright-cli.js");
 function command(...args) {
@@ -49,6 +53,28 @@ async function servedCheck(page, options) {
   await page.getByLabel("State or program", { exact: true }).fill("Wisconsin");
   await page.getByRole("heading", { name: "Wisconsin", exact: true }).waitFor();
   await page.screenshot({ path: options.screenshot, fullPage: true });
+  const escapedLinks = await page
+    .locator('a[href^="/"]')
+    .evaluateAll(
+      (links, prefix) =>
+        links
+          .map((link) => link.getAttribute("href"))
+          .filter((href) => prefix && !href.startsWith(prefix + "/")),
+      options.basePath,
+    );
+  if (escapedLinks.length)
+    throw new Error("Links escaped zone: " + escapedLinks.join(","));
+  await page
+    .getByRole("link", { name: "Read the report", exact: true })
+    .click();
+  if ((await page.locator(".report-profile").count()) !== 51)
+    throw new Error("Served report must include all profiles");
+  await page
+    .getByRole("link", { name: "Data and methods", exact: true })
+    .click();
+  await page
+    .getByRole("heading", { name: "Sources and methods.", exact: true })
+    .waitFor();
 }
 
 async function offlineLoad(page, options) {
@@ -62,6 +88,8 @@ async function offlineLoad(page, options) {
 }
 
 async function offlineInteractions(page, options) {
+  if (await page.locator('a[href="/methods/"]').count())
+    throw new Error("Offline audit links must stay in saved HTML");
   const search = page.getByLabel("State or program", { exact: true });
   await search.fill("Wisconsin");
   await page.getByRole("heading", { name: "Wisconsin", exact: true }).waitFor();
@@ -141,9 +169,12 @@ try {
     await new Promise((done) => setTimeout(done, 500));
   }
   if (!ready) throw new Error("Server did not start: " + serverLog);
-  command("open", "http://127.0.0.1:3075", "--browser=chrome");
+  command("open", appUrl, "--browser=chrome");
   command("snapshot");
-  runCode(servedCheck, { screenshot: resolve(output, "served-desktop.png") });
+  runCode(servedCheck, {
+    screenshot: resolve(output, "served-desktop.png"),
+    basePath,
+  });
   command("snapshot");
   runCode(offlineLoad, {
     url: pathToFileURL(resolve("artifacts/index.html")).href,
@@ -167,7 +198,7 @@ try {
   writeFileSync(
     resolve(output, "result.json"),
     JSON.stringify(
-      { status: "PASS", jurisdictions: 51, offline: true },
+      { status: "PASS", jurisdictions: 51, offline: true, basePath },
       null,
       2,
     ),

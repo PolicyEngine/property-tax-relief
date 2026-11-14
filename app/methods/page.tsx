@@ -1,5 +1,11 @@
+import { appPath, PUBLIC_TOOL_URL } from "@/lib/paths";
 import { loadCoverage, loadStates } from "@/lib/loadResearch";
 import { isComparisonProgram } from "@/lib/inventory";
+
+export const metadata = {
+  alternates: { canonical: PUBLIC_TOOL_URL + "/methods" },
+  openGraph: { url: PUBLIC_TOOL_URL + "/methods" },
+};
 
 export default function Methods() {
   const coverage = loadCoverage();
@@ -30,12 +36,13 @@ export default function Methods() {
         <section>
           <h2>Research scope</h2>
           <p>
-            The inventory covers all 50 states and the District of Columbia. It
-            focuses on statewide property-tax credits, circuit breakers, rebates
-            and renter credits. It includes selected exemptions, deductions,
-            deferrals, tax limits and local options to explain relief outside
-            the credit and rebate comparison. Relief can reduce a property-tax
-            bill or income-tax liability, or arrive as a separate payment.
+            The inventory has profiles for all 50 states and the District of
+            Columbia. Its scope covers income-tax credits, deductions and
+            subtractions tied to rent or property taxes, alongside separate
+            rebates and property-tax bill programs. Current records cover
+            selected provisions; a systematic state-return and statute audit
+            remains open. Exemptions, deferrals, assessment limits and local
+            options appear as context outside the main comparison.
           </p>
           <p>
             Each profile records a 2025 program reference and a source-check
@@ -47,9 +54,9 @@ export default function Methods() {
           </p>
           <p>
             Official agency guidance, forms and statutes supply the program
-            descriptions. “No statewide credit identified” describes the
-            research result, not proof that no relief exists. The inventory does
-            not enumerate every local program, military benefit, disaster
+            descriptions. An unrecorded program does not establish that no
+            provision exists. The inventory does not enumerate every income-tax
+            deduction or subtraction, local program, military benefit, disaster
             provision or parcel-specific exemption. Housing tenure refers to
             ownership or rental of the dwelling. Owners of a dwelling on leased
             land appear under homeowners.
@@ -59,22 +66,22 @@ export default function Methods() {
           <h2>Downloads</h2>
           <ul>
             <li>
-              <a href="/data/inventory.json" download>
+              <a href={appPath("/data/inventory.json")} download>
                 Program inventory (JSON)
               </a>
             </li>
             <li>
-              <a href="/data/inventory.csv" download>
+              <a href={appPath("/data/inventory.csv")} download>
                 Program inventory (CSV)
               </a>
             </li>
             <li>
-              <a href="/data/coverage.json" download>
+              <a href={appPath("/data/coverage.json")} download>
                 Model-presence audit (JSON)
               </a>
             </li>
             <li>
-              <a href="/data/summary.json" download>
+              <a href={appPath("/data/summary.json")} download>
                 Inventory counts and definitions (JSON)
               </a>
             </li>
@@ -110,7 +117,7 @@ export default function Methods() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Statewide credit/rebate records in the comparison</td>
+                    <td>Statewide program records in the main comparison</td>
                     <td>{comparison.length}</td>
                   </tr>
                   <tr>
@@ -141,7 +148,7 @@ export default function Methods() {
               <tr>
                 <th>State</th>
                 <th>
-                  Recorded credit/rebate programs requiring implementation or
+                  Recorded comparison programs requiring implementation or
                   mapping
                 </th>
               </tr>
@@ -167,11 +174,13 @@ export default function Methods() {
           <h2>Household-calculation requirements</h2>
           <p>
             Every displayed household amount must come from an actual
-            PolicyEngine run for that scenario. A usable credit requires the
+            PolicyEngine run for that scenario. A tax calculation requires the
             correct income definition, household composition, age, disability
             status, housing expenses, prior-year facts and filing assumptions.
-            Nonrefundable credits also require tax-liability calculations.
-            Program interactions need explicit checks.
+            Nonrefundable credits require tax-liability calculations. Deductions
+            and subtractions require the relevant taxable-income, itemization,
+            election and conformity rules. An allowed deduction is not itself a
+            tax saving. Program interactions need explicit checks.
           </p>
           <p>
             Source-derived examples, boundary tests, accounting and cap
@@ -193,6 +202,16 @@ export default function Methods() {
                 </li>
               ))}
             <li>
+              Complete the systematic inventory of rent and property-tax
+              income-tax credits, deductions, subtractions and itemization
+              conformity for each state.
+            </li>
+            <li>
+              Resolve named gaps in the external inventories, including local
+              programs and exemptions, without treating differently defined
+              record counts as directly comparable.
+            </li>
+            <li>
               Reconcile retrospective law changes and form revisions with the
               relevant program year.
             </li>
@@ -200,7 +219,10 @@ export default function Methods() {
               Verify interactions and parcel or local-levy requirements before
               combining benefits.
             </li>
-            <li>Complete independent review before public release.</li>
+            <li>
+              Complete legal validation and independent review before publishing
+              national household calculations.
+            </li>
           </ul>
         </section>
       </div>

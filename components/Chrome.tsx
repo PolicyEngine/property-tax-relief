@@ -1,19 +1,37 @@
 "use client";
 
 import { Header, Footer } from "@policyengine/ui-kit";
+import { appPath } from "@/lib/paths";
 
 export function SiteHeader() {
   return (
-    <Header
-      logoHref="https://www.policyengine.org/us"
-      countries={[{ id: "us", label: "United States" }]}
-      currentCountry="us"
-      navItems={[
-        { label: "Explore states", href: "/" },
-        { label: "Read the report", href: "/report/" },
-        { label: "Data and methods", href: "/methods/" },
-      ]}
-    />
+    <>
+      <Header
+        logoHref="https://www.policyengine.org/us"
+        countries={[{ id: "us", label: "United States" }]}
+        currentCountry="us"
+        navItems={[
+          {
+            label: "Research",
+            href: "https://www.policyengine.org/us/research",
+          },
+          {
+            label: "Model",
+            href: "https://www.policyengine.org/us/model/rules",
+          },
+          { label: "API", href: "https://www.policyengine.org/us/api" },
+          { label: "Donate", href: "https://www.policyengine.org/us/donate" },
+        ]}
+      />
+      <nav
+        className="page-width report-toc"
+        aria-label="Rent and property tax research"
+      >
+        <a href={appPath("/")}>Explore states</a>
+        <a href={appPath("/report/")}>Read the report</a>
+        <a href={appPath("/methods/")}>Data and methods</a>
+      </nav>
+    </>
   );
 }
 
@@ -22,8 +40,11 @@ export function SiteFooter() {
     <Footer
       links={[
         { text: "PolicyEngine", href: "https://www.policyengine.org/us" },
-        { text: "Sources and methods", href: "/methods/" },
-        { text: "Download the inventory", href: "/data/inventory.csv" },
+        { text: "Sources and methods", href: appPath("/methods/") },
+        {
+          text: "Download the inventory",
+          href: appPath("/data/inventory.csv"),
+        },
       ]}
     />
   );

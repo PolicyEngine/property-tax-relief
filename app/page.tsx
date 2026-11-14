@@ -1,5 +1,11 @@
+import { appPath, PUBLIC_TOOL_URL } from "@/lib/paths";
 import { Explorer } from "@/components/Explorer";
 import { loadCoverage, loadStates } from "@/lib/loadResearch";
+
+export const metadata = {
+  alternates: { canonical: PUBLIC_TOOL_URL + "" },
+  openGraph: { url: PUBLIC_TOOL_URL + "" },
+};
 
 export default function Home() {
   const states = loadStates();
@@ -9,15 +15,15 @@ export default function Home() {
       <section className="intro">
         <div className="eyebrow">United States · 2025 program reference</div>
         <h1>
-          Property tax relief
+          Rent and property taxes
           <br />
-          across America.
+          across states
         </h1>
         <div className="intro-bottom">
           <p>
-            Explore who qualifies for property-tax credits, circuit breakers and
-            renter credits. Compare eligibility, benefit rules and claiming
-            requirements across states.
+            Compare selected income-tax credits and deductions for rent and
+            property taxes, alongside rebates and property-tax bill programs.
+            Subtractions and itemization rules remain under review.
           </p>
           <div className="intro-stat">
             <strong>{states.length}</strong>
@@ -26,9 +32,10 @@ export default function Home() {
         </div>
       </section>
       <div className="draft-note">
-        <strong>Research draft.</strong> State profiles describe sourced rules.
-        Household calculations and the independent review remain incomplete.{" "}
-        <a href="/methods/">Read the coverage audit ↗</a>
+        <strong>Research draft.</strong> The profiles cover selected provisions;
+        the systematic scope audit and validated national household calculations
+        remain incomplete.{" "}
+        <a href={appPath("/methods/")}>Read the coverage audit ↗</a>
       </div>
       <Explorer states={states} coverage={coverage} />
     </main>

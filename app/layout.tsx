@@ -3,9 +3,9 @@ import { SiteHeader, SiteFooter } from "@/components/Chrome";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Property tax relief across America | PolicyEngine",
+  title: "Rent and property taxes across states | PolicyEngine",
   description:
-    "Explore sourced property-tax credits, circuit breakers and renter credits in all 50 states and the District of Columbia.",
+    "Review selected income-tax credits and deductions for rent and property taxes, alongside rebates and bill programs. Subtractions and itemization remain under review.",
   robots: { index: false, follow: false },
 };
 

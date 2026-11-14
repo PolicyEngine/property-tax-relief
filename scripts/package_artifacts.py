@@ -50,7 +50,9 @@ def document(name: str) -> None:
     if main is None:
         raise ValueError(f"No report content in {name}")
     title = (
-        "Who gets property tax relief?" if name == "report" else "Sources and methods"
+        "Rent and property taxes across states"
+        if name == "report"
+        else "Sources and methods"
     )
     source = (
         '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>'
@@ -78,7 +80,7 @@ def main() -> None:
     styles = "\n".join(re.findall(r"<style>.*?</style>", shell, flags=re.DOTALL))
     bundle = (ARTIFACTS / "standalone.js").read_text().replace("</script", "<\\/script")
     (ARTIFACTS / "index.html").write_text(
-        '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Property tax relief across America — research draft</title>'
+        '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Rent and property taxes across states — research draft</title>'
         + styles
         + '</head><body><div id="root"></div><script type="module">'
         + bundle

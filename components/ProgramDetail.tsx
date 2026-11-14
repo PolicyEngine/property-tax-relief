@@ -1,3 +1,4 @@
+import { appPath } from "@/lib/paths";
 import { CATEGORY_LABELS, isComparisonProgram } from "@/lib/inventory";
 import type { Program, ProgramCoverage, Source } from "@/lib/types";
 
@@ -33,7 +34,7 @@ function paymentMechanism(program: Program) {
   if (program.category === "exemption")
     return "Reduction in taxable property value";
   if (program.category === "deduction")
-    return "Reduction in taxable income or property value; see the program rules";
+    return "Reduction in taxable income; the deduction amount is not a cash credit";
   if (program.category === "assessment-limit")
     return "Limit on assessment or tax growth";
   if (program.refundable === true) return "Refundable credit or cash rebate";
@@ -45,9 +46,11 @@ function paymentMechanism(program: Program) {
 function CalculationNote({
   program,
   coverage,
+  methodsHref,
 }: {
   program: Program;
   coverage?: ProgramCoverage;
+  methodsHref: string;
 }) {
   if (!isComparisonProgram(program)) return null;
   return (
@@ -56,7 +59,7 @@ function CalculationNote({
       {coverage?.status === "implementation-found"
         ? "A model implementation was found. Its eligibility rules, timing and interactions still need validation."
         : "No audited household calculation is available for this program."}{" "}
-      <a href="/methods/">View the coverage audit</a>.
+      <a href={methodsHref}>View the coverage audit</a>.
     </p>
   );
 }
@@ -64,9 +67,11 @@ function CalculationNote({
 export function ProgramDetail({
   program,
   coverage,
+  methodsHref = appPath("/methods/"),
 }: {
   program: Program;
   coverage?: ProgramCoverage;
+  methodsHref?: string;
 }) {
   const headingId = `program-${program.id}`;
   return (
@@ -133,7 +138,11 @@ export function ProgramDetail({
               <strong>Interactions.</strong> {program.interactions.join(" ")}
             </p>
           )}
-          <CalculationNote program={program} coverage={coverage} />
+          <CalculationNote
+            program={program}
+            coverage={coverage}
+            methodsHref={methodsHref}
+          />
         </div>
       </details>
       <SourceLinks sources={program.sources} />

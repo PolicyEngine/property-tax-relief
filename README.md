@@ -1,10 +1,10 @@
-# Property tax relief across America
+# Rent and property taxes across states
 
-A source-linked review and interactive comparison of property-tax credits, circuit breakers, and renter credits in all 50 US states and the District of Columbia.
+A source-linked research review of income-tax credits and deductions, circuit breakers, renter credits, separate rebates and property-bill programs across all 50 US states and the District of Columbia.
 
 ## Scope
 
-The comparison uses program-specific 2025 reference periods, with official sources checked on November 13–14, 2026. A program's income, assessment, tax-payment, filing and benefit-payment years can differ; its `programYear` field records that distinction. Later changes are identified separately. Statewide credits and rebates are the calculation scope; exemptions, assessment limits, deductions, deferrals, and local programs provide context and are not interchangeable with credits. Every jurisdiction appears in the inventory, including those without an identified statewide credit.
+The comparison uses program-specific 2025 reference periods, with official sources checked on November 13–14, 2026. A program's income, assessment, tax-payment, filing and benefit-payment years can differ; its `programYear` field records that distinction. Later changes are identified separately. The main comparison includes identified statewide credits, rebates and income-tax deductions. Deductions reduce taxable income; their dollar limits are not cash benefits or tax savings. Selected exemptions, assessment limits, deferrals and local programs provide separate context. The inventory is not exhaustive, and state-return subtractions, itemization rules and federal-state conformity still require a systematic audit. Every jurisdiction appears in the inventory, including those without an identified statewide credit.
 
 `inventoryStatus: researched` records completion of an initial source pass, the label shown in the report. `statewideCreditStatus: identified` records an identified program in its stated reference cycle. These fields do not establish exhaustive coverage, validated calculations or adjudication of transitional claims. South Dakota's historical entry describes its 2025 application cycle; its property-refund repeal took effect July 1, 2026, and accrued-claim and assessment/payable-year questions remain explicit in that profile.
 
@@ -43,7 +43,15 @@ The generator resolves the requested ref to an immutable commit and reads its va
 
 Tests cover all 51 jurisdiction records, unique program IDs, source/year metadata, category separation, filter invariants, downloads, generated-data consistency, and separation of shared chrome from tool-specific provenance. The source-level audit distinguishes available calculation declarations from missing references, input-only variables, and later-starting formulas. Declaration presence does not validate legal correctness.
 
-Run `bun run release:check` to inspect the outstanding national-calculator requirements. Implementation/mapping gaps, calculation validation and independent review remain open. Completing each state's initial source pass does not resolve every transitional claim or establish calculator readiness. No production deployment or public release is configured.
+Run `bun run release:check` to inspect the outstanding national-calculator requirements. Implementation/mapping gaps, calculation validation and independent review remain open. Completing each state's initial source pass does not resolve every transitional claim or establish calculator readiness. Independent review and the website integration must finish before public publication. No validated national household calculator is provided.
+
+## Coverage benchmarks
+
+This inventory is not a replacement for an exhaustive program register. It is being reconciled against the [Lincoln Institute residential-program database](https://apps.lincolninst.edu/data/significant-features-property-tax/access-database/residential-property-tax-relief-programs), [ITEP’s November 2026 circuit-breaker report](https://itep.org/circuit-breaker-credits-the-best-tools-for-property-tax-affordability/) and [AARP Foundation’s Property Tax-Aide guides](https://my.aarpfoundation.org/property-taxes/programs-by-state/). Their years, grouping and inclusion rules differ; subtracting their record counts does not measure omissions. The [PPI/CLE Maine report](https://legislature.maine.gov/doc/12515) provides a state-focused comparison of credits, exemptions and deferrals. The report page records confirmed omissions and remaining scope gaps.
+
+## Website integration
+
+The planned site path is `/us/rent-and-property-taxes`, with assets under `/_zones/property-tax-relief`. `bun run build:zone` sets the build-time base path; `vercel.json` maps those paths onto the static export. Ordinary `bun run build` keeps root URLs for local and offline review. The host’s route and registry changes are tracked in [policyengine-app-v2 PR #1568](https://github.com/PolicyEngine/policyengine-app-v2/pull/1568). The route is not live until that change is reviewed, merged and deployed. Add the direct-host redirect only after verifying the policyengine.org route, following the host repository’s deployment guidance.
 
 ## Data and results invariants
 
@@ -53,3 +61,18 @@ Run `bun run release:check` to inspect the outstanding national-calculator requi
 - Exemptions, deductions, assessment limits and deferrals stay separate from the credit and rebate comparison.
 - Missing calculations never become $0 benefits; a source-level variable match never becomes a validation claim.
 - Future benefit totals must obey statutory caps and program interactions. Each displayed scenario must run through the PolicyEngine interface with its actual inputs; interpolation and side models cannot replace runs.
+
+## Running costs
+
+The Vercel preview serves the existing static export. It does not run an application server, PolicyEngine calculation service, database, scheduled task or serverless function.
+
+| Question                        | Answer                                                                                                                                                                                               |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| What runs while nobody uses it? | No application compute or background work. Vercel retains the static deployment.                                                                                                                     |
+| Most it can cost in an hour     | No compute capacity is reserved. Request and transfer charges depend on traffic and the existing PolicyEngine Vercel team plan; no numeric hourly ceiling or project spending cap has been verified. |
+| How the bill is checked         | Review Vercel project usage and team billing on November 21, 2026, and before a public launch. Static hosting does not imply unlimited free traffic.                                                 |
+| Copies and how each one ends    | Preview deployments are immutable copies. The project owner removes obsolete previews when superseded and retires the project when this tool is retired.                                             |
+| Where secrets live              | The static app requires no secrets. Deployment-account credentials remain in the local Vercel credential store and are excluded from uploads.                                                        |
+| Owner and review                | PolicyEngine; Max Ghenis. Review the preview and continued hosting by November 21, 2026.                                                                                                             |
+
+No Modal, Cloud Run, database or warm-compute exception is configured. Preview access uses Vercel authentication. Hosting this research draft does not certify comprehensive program coverage or household calculations.

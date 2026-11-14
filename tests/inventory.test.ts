@@ -7,6 +7,7 @@ import {
   inventoryCsv,
   isComparisonProgram,
   STATE_CODES,
+  selectPrograms,
 } from "../lib/inventory";
 import type { StateProfile } from "../lib/types";
 
@@ -41,13 +42,12 @@ describe("national source inventory", () => {
       }
     }
   });
-  it("never labels exemptions, deferrals or deductions as comparable cash credits", () => {
+  it("keeps exemptions, deferrals and limits outside the tax-program comparison", () => {
     for (const state of states)
       for (const p of state.programs) {
         if (
           [
             "exemption",
-            "deduction",
             "deferral",
             "assessment-limit",
             "local-option",
@@ -55,6 +55,14 @@ describe("national source inventory", () => {
         )
           expect(isComparisonProgram(p)).toBe(false);
       }
+  });
+  it("shows the Massachusetts rental deduction without enabling property-tax context", () => {
+    const massachusetts = states.find((state) => state.code === "MA")!;
+    expect(
+      selectPrograms(massachusetts, "renter", "deduction", false).map(
+        (p) => p.id,
+      ),
+    ).toContain("ma-renters-income-tax-deduction");
   });
   it("keeps filtering deterministic and within the inventory for every query", () => {
     fc.assert(

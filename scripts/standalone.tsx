@@ -24,15 +24,16 @@ function OfflineResearch() {
         <section className="intro">
           <div className="eyebrow">United States · 2025 program reference</div>
           <h1>
-            Property tax relief
+            Rent and property taxes
             <br />
-            across America.
+            across states.
           </h1>
           <div className="intro-bottom">
             <p>
-              Explore who qualifies for property-tax credits, circuit breakers
-              and renter credits. Compare eligibility, benefit rules and
-              claiming requirements across states.
+              Explore income-tax credits and deductions, circuit breakers,
+              renter credits, separate rebates and property-bill programs.
+              Compare eligibility, benefit rules and claiming requirements
+              across states.
             </p>
             <div className="intro-stat">
               <strong>{states.length}</strong>

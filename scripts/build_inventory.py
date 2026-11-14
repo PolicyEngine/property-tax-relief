@@ -73,7 +73,6 @@ STATE_CODES = {
 }
 CONTEXT_CATEGORIES = {
     "exemption",
-    "deduction",
     "deferral",
     "local-option",
     "assessment-limit",

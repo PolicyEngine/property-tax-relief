@@ -403,7 +403,7 @@
           "computableIn2025": true
         }
       },
-      "status": "context",
+      "status": "implementation-found",
       "canonicalVariables": [
         "in_renters_deduction"
       ],
@@ -426,7 +426,7 @@
           "computableIn2025": true
         }
       },
-      "status": "context",
+      "status": "implementation-found",
       "canonicalVariables": [
         "in_homeowners_property_tax_deduction"
       ],
@@ -661,6 +661,29 @@
       "status": "implementation-found",
       "canonicalVariables": [
         "ma_senior_circuit_breaker"
+      ],
+      "validated": false
+    },
+    {
+      "id": "ma-renters-income-tax-deduction",
+      "state": "MA",
+      "variables": [
+        "ma_part_b_taxable_income_deductions"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "ma_part_b_taxable_income_deductions": {
+          "file": "gov/states/ma/tax/income/taxable_income/ma_part_b_taxable_income_deductions.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "ma_part_b_taxable_income_deductions"
       ],
       "validated": false
     },
@@ -1051,7 +1074,7 @@
           "computableIn2025": true
         }
       },
-      "status": "context",
+      "status": "implementation-found",
       "canonicalVariables": [
         "nj_property_tax_deduction"
       ],

@@ -6,13 +6,14 @@
   "scripts": {
     "dev": "next dev --port 3075",
     "build": "next build",
-    "start": "uv run python -m http.server 3075 --bind 127.0.0.1 --directory out",
+    "start": "uv run --no-sync python scripts/serve_export.py",
     "data:build": "uv run python scripts/build_inventory.py",
-    "artifacts:build": "bun run build && bun build scripts/standalone.tsx --outfile artifacts/standalone.js --minify && uv run python scripts/package_artifacts.py",
+    "artifacts:build": "bun run build && NEXT_PUBLIC_BASE_PATH= bun build --env='NEXT_PUBLIC_*' scripts/standalone.tsx --outfile artifacts/standalone.js --minify && uv run python scripts/package_artifacts.py",
     "release:check": "uv run python scripts/check_release.py",
     "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run --maxWorkers=4",
-    "format": "prettier --write app components lib scripts tests data package.json tsconfig.json next.config.ts postcss.config.mjs vitest.config.ts README.md"
+    "format": "prettier --write app components lib scripts tests data package.json tsconfig.json next.config.ts postcss.config.mjs vitest.config.ts README.md",
+    "build:zone": "NEXT_PUBLIC_BASE_PATH=/us/rent-and-property-taxes bun run build"
   },
   "dependencies": {
     "@policyengine/ui-kit": "0.12.1",

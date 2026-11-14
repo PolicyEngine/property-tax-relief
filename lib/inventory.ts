@@ -21,13 +21,9 @@ export const CATEGORY_LABELS: Record<Category, string> = {
 export function isComparisonProgram(program: Program): boolean {
   return (
     program.scope === "statewide" &&
-    ![
-      "exemption",
-      "deduction",
-      "deferral",
-      "assessment-limit",
-      "local-option",
-    ].includes(program.category)
+    !["exemption", "deferral", "assessment-limit", "local-option"].includes(
+      program.category,
+    )
   );
 }
 

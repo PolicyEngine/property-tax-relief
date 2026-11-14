@@ -1,52 +1,63 @@
+import { appPath, PUBLIC_TOOL_URL } from "@/lib/paths";
 import { ProgramDetail } from "@/components/ProgramDetail";
 import { isComparisonProgram } from "@/lib/inventory";
 import { loadCoverage, loadStates } from "@/lib/loadResearch";
 
+export const metadata = {
+  alternates: { canonical: PUBLIC_TOOL_URL + "/report" },
+  openGraph: { url: PUBLIC_TOOL_URL + "/report" },
+};
+
 export default function Report() {
   const states = loadStates();
   const coverage = loadCoverage();
-  const cash = states.flatMap((s) => s.programs.filter(isComparisonProgram));
+  const comparison = states.flatMap((s) =>
+    s.programs.filter(isComparisonProgram),
+  );
   const records = states.reduce((n, s) => n + s.programs.length, 0);
   return (
     <main className="page-width">
       <div className="reading-width">
         <section className="intro">
           <div className="eyebrow">National review · Research draft</div>
-          <h1>Who gets property tax relief?</h1>
+          <h1>Rent and property taxes across states</h1>
           <p>
-            State credits, circuit breakers and renter credits use different
-            definitions of income, housing costs and eligibility. This review
-            records the rules in all 50 states and the District of Columbia,
-            using program-specific 2025 reference periods and official sources
-            checked on November 13–14, 2026.
+            State income-tax credits, deductions and subtractions for rent and
+            property taxes sit alongside separate rebates and property-tax bill
+            programs. This review records selected provisions in all 50 states
+            and the District of Columbia, using program-specific 2025 reference
+            periods and official sources checked on November 13–14, 2026.
           </p>
         </section>
         <div className="draft-note">
           <strong>Scope of this draft.</strong> The inventory covers{" "}
           {states.length} jurisdictions and records {records} programs,
-          including selected context. The {cash.length} statewide credit/rebate
-          records describe legal rules; validated national household
-          calculations remain outstanding. The inventory does not establish
-          exhaustive program coverage.
+          including selected context. The {comparison.length} statewide records
+          in the main comparison describe program rules; validated national
+          household calculations remain outstanding. The systematic audit of
+          deductions, subtractions and itemization rules remains open. This
+          inventory does not establish exhaustive program coverage.
         </div>
         <nav className="report-toc" aria-label="Report contents">
           <a href="#findings">Findings</a>
           <a href="#comparison">Comparison framework</a>
           <a href="#timing">Timing and interactions</a>
+          <a href="#benchmarks">Other research and coverage gaps</a>
           <a href="#profiles">All state profiles</a>
-          <a href="/methods/">Methods and model audit</a>
-          <a href="/data/inventory.csv" download>
+          <a href={appPath("/methods/")}>Methods and model audit</a>
+          <a href={appPath("/data/inventory.csv")} download>
             Download CSV
           </a>
         </nav>
         <section id="findings">
           <h2>Program names conceal different mechanisms</h2>
           <p>
-            A threshold circuit breaker links relief to housing costs above a
-            specified share of program income. Flat credits, income-tiered
-            rebates, exemptions and repayable deferrals measure relief
-            differently. The inventory classifies the mechanism separately from
-            the program name.
+            A threshold circuit breaker links a credit to housing costs above a
+            specified share of program income. Other credits reduce tax
+            liability, deductions and subtractions reduce taxable income, and
+            rebates may arrive as separate payments. Exemptions, tax limits and
+            repayable deferrals have their own effects. The inventory records
+            the mechanism separately from the program name.
           </p>
           <p>
             North Carolina calls one program a circuit breaker but{" "}
@@ -65,7 +76,7 @@ export default function Report() {
           </p>
         </section>
         <section id="comparison">
-          <h2>Compare eligibility and usable relief</h2>
+          <h2>Compare eligibility and tax treatment</h2>
           <table className="report-table">
             <thead>
               <tr>
@@ -107,6 +118,14 @@ export default function Report() {
                 <td>
                   Income-tax liability may limit the value of a nonrefundable
                   credit.
+                </td>
+              </tr>
+              <tr>
+                <td>Deduction or subtraction</td>
+                <td>Allowed income reduction and its limits</td>
+                <td>
+                  A deductible amount is not a dollar-for-dollar tax reduction;
+                  its value depends on the tax return.
                 </td>
               </tr>
               <tr>
@@ -179,20 +198,69 @@ export default function Report() {
             .
           </p>
         </section>
-        <section>
-          <h2>Build from existing national research</h2>
+        <section id="benchmarks">
+          <h2>Other research and coverage gaps</h2>
           <p>
-            <a href="https://itep.org/circuit-breaker-credits-the-best-tools-for-property-tax-affordability/">
-              ITEP&apos;s November 2026 circuit-breaker report
-            </a>{" "}
-            summarizes national policy features. The{" "}
-            <a href="https://www.lincolninst.edu/data/">
-              Lincoln Institute&apos;s Significant Features of the Property Tax
-              database
-            </a>{" "}
-            provides state policy information and historical context. This
-            inventory links program-level official sources and records the
-            implementation work required for household comparisons.
+            Existing inventories provide different views of rent and property
+            taxes. Their dates, program definitions and geographic coverage
+            differ, so their totals cannot be compared directly with this
+            inventory&apos;s record count.
+          </p>
+          <ul>
+            <li>
+              The{" "}
+              <a href="https://apps.lincolninst.edu/data/significant-features-property-tax/access-database/residential-property-tax-relief-programs">
+                Lincoln Institute&apos;s Significant Features of the Property
+                Tax residential database
+              </a>{" "}
+              supplies 2024 program records spanning credits, exemptions,
+              assessment freezes, deferrals and local options. A record can
+              describe an umbrella program or a subgroup.
+            </li>
+            <li>
+              <a href="https://itep.org/circuit-breaker-credits-the-best-tools-for-property-tax-affordability/">
+                ITEP&apos;s November 9, 2026 circuit-breaker report
+              </a>{" "}
+              lists 47 program rows in Appendix B, with income limits described
+              as current in July 2026 and some older source data. Its
+              circuit-breaker definition includes some income-based exemptions.
+            </li>
+            <li>
+              <a href="https://my.aarpfoundation.org/property-taxes/programs-by-state/">
+                AARP Foundation&apos;s Property Tax-Aide state guides
+              </a>{" "}
+              update on a rolling basis and combine statewide programs with
+              county variants. They do not supply a single comparable reference
+              year or normalized national program total.
+            </li>
+            <li>
+              The{" "}
+              <a href="https://legislature.maine.gov/doc/12515">
+                Progress and Poverty Institute and Center for Land Economics
+                mid-2026 Maine report
+              </a>{" "}
+              examines Maine&apos;s Property Tax Fairness Credit, homestead
+              exemption and state property-tax deferral. Its Maine focus does
+              not constitute a national program inventory.
+            </li>
+          </ul>
+          <p>
+            Current income-tax coverage includes selected renter credits,
+            Massachusetts and Indiana rent deductions, and Indiana and New
+            Jersey property-tax deductions. Separate records describe selected
+            circuit breakers, rebates and bill credits. Exemptions, deferrals,
+            assessment limits and local options remain contextual categories.
+            State-return subtractions, itemization rules and federal-state
+            conformity still require a systematic audit.
+          </p>
+          <p>
+            Cross-checks also identify programs that this draft has not yet
+            enumerated, including Montana disabled-veteran assistance,
+            Washington veteran-survivor grants, South Dakota&apos;s paraplegic
+            tax reduction, Hawaii county circuit breakers, and Maine&apos;s
+            homestead exemption and property-tax deferral. Some existing records
+            group several qualifying categories. These differences prevent an
+            exhaustive-coverage claim or a national completeness percentage.
           </p>
         </section>
         <section id="profiles">
@@ -247,11 +315,12 @@ export default function Report() {
         <section className="method-footnote">
           <p>
             Sources and definitions accompany each program. The inventory
-            includes selected exemptions, deferrals, deductions, assessment
-            limits and local options as context. Local relief and program
-            interactions require further validation. See{" "}
-            <a href="/methods/">the calculation audit and methods</a> for the
-            release boundary.
+            includes selected income-tax provisions, rebates and bill programs,
+            with exemptions, deferrals, assessment limits and local options as
+            context. Coverage, local rules and program interactions require
+            further validation. See{" "}
+            <a href={appPath("/methods/")}>the calculation audit and methods</a>{" "}
+            for the release boundary.
           </p>
         </section>
       </div>

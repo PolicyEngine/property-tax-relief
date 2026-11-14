@@ -1,5 +1,7 @@
 "use client";
 
+import { appPath } from "@/lib/paths";
+
 import { useMemo, useState } from "react";
 import { Button, Input } from "@policyengine/ui-kit";
 import {
@@ -32,7 +34,6 @@ const INITIAL_FILTERS: Filters = {
 };
 const CONTEXT_CATEGORIES = [
   "exemption",
-  "deduction",
   "deferral",
   "assessment-limit",
   "local-option",
@@ -70,8 +71,8 @@ function StateTiles({
       {states.map((state) => {
         const hasCredit = state.programs.some(isComparisonProgram);
         const status = hasCredit
-          ? "statewide credit or rebate identified"
-          : "see relief context";
+          ? "statewide tax program recorded"
+          : "see other property-tax provisions";
         return (
           <button
             key={state.code}
@@ -160,7 +161,7 @@ function StatePicker({
             }}
           >
             <option value="all">
-              {includeContext ? "All program types" : "All credit types"}
+              {includeContext ? "All program types" : "Main comparison types"}
             </option>
             {Object.entries(CATEGORY_LABELS).map(([value, label]) => (
               <option key={value} value={value}>
@@ -183,7 +184,7 @@ function StatePicker({
             })
           }
         />{" "}
-        Include exemptions, deductions, limits and deferrals
+        Include exemptions, limits, deferrals and local options
       </label>
       <StateTiles
         states={filtered}
@@ -204,17 +205,17 @@ function StatePicker({
       )}
       <div className="legend">
         <span>
-          <i className="legend-credit" aria-hidden="true" /> Credit / rebate
-          identified
+          <i className="legend-credit" aria-hidden="true" /> Tax program
+          recorded
         </span>
         <span>
-          <i aria-hidden="true" /> Relief context
+          <i aria-hidden="true" /> Other property-tax provisions
         </span>
       </div>
       <p className="small-note">
-        The grid lists states alphabetically. A state without an identified
-        statewide credit or rebate may offer exemptions, deferrals or local
-        relief.
+        The grid lists states alphabetically. The main comparison includes
+        selected income-tax credits and deductions, rebates and bill programs.
+        Other property-tax provisions appear with context enabled.
       </p>
       <Button
         variant="outline"
@@ -235,6 +236,7 @@ function StateDetail({
   comparisonFull,
   onCompare,
   onShowAll,
+  methodsHref,
 }: {
   state: StateProfile;
   programs: ReturnType<typeof selectPrograms>;
@@ -243,6 +245,7 @@ function StateDetail({
   comparisonFull: boolean;
   onCompare: () => void;
   onShowAll: () => void;
+  methodsHref: string;
 }) {
   const cannotAdd = comparisonFull && !isCompared;
   return (
@@ -281,20 +284,21 @@ function StateDetail({
       {programs.map((program) => (
         <ProgramDetail
           key={program.id}
+          methodsHref={methodsHref}
           program={program}
           coverage={coverage?.programs.find((row) => row.id === program.id)}
         />
       ))}
       {programs.length === 0 && (
         <div className="no-credit">
-          <h3>No matching credit recorded</h3>
+          <h3>No matching program recorded</h3>
           <p>
-            See this state&apos;s relief context and official sources. This
-            result does not establish that a household receives no property-tax
-            relief.
+            See this state&apos;s other provisions and official sources. This
+            result does not establish that a household has no applicable rent or
+            property-tax provision.
           </p>
           <button type="button" className="text-button" onClick={onShowAll}>
-            Show all recorded relief
+            Show all recorded programs
           </button>
         </div>
       )}
@@ -437,8 +441,8 @@ function Comparison({
               ))}
               {state && programs.length === 0 && (
                 <p>
-                  No statewide credit or rebate recorded; see the state profile
-                  for other relief.
+                  No statewide program recorded in the main comparison; see the
+                  state profile for other provisions.
                 </p>
               )}
             </article>
@@ -449,8 +453,8 @@ function Comparison({
         <strong>Research draft.</strong> These columns compare documented
         program rules. No validated national household estimates are available.
         Program maxima describe different eligibility rules and payment
-        mechanisms; they do not rank states or estimate a household&apos;s
-        usable relief. <a href={methodsHref}>Read the calculation audit</a>.
+        mechanisms; they do not rank states or estimate a household&apos;s tax
+        change. <a href={methodsHref}>Read the calculation audit</a>.
       </p>
     </section>
   );
@@ -459,7 +463,7 @@ function Comparison({
 export function Explorer({
   states,
   coverage,
-  methodsHref = "/methods/",
+  methodsHref = appPath("/methods/"),
 }: {
   states: StateProfile[];
   coverage: CoverageAudit | null;
@@ -531,6 +535,7 @@ export function Explorer({
         />
         {selected ? (
           <StateDetail
+            methodsHref={methodsHref}
             state={selected}
             programs={programs}
             coverage={coverage}
