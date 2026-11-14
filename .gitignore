@@ -1,0 +1,13 @@
+.venv/
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.tsbuildinfo
+.DS_Store
+.vercel/
+research/raw/
