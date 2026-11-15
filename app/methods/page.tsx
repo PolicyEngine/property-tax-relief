@@ -66,19 +66,20 @@ export default function Methods() {
           <h2>Household calculations</h2>
           <p>
             The calculator supports 2025 scenarios for one adult filing as
-            single, with no spouse or dependents. Eight programs support
-            calculations in California, Hawaii, Illinois, Indiana, Michigan, and
-            New Jersey. Users supply qualified expenses and the specified
-            tax-form inputs; the estimate assumes the remaining qualification
-            requirements hold. Deduction results measure reductions in taxable
-            income. The California credit result precedes the limit from
-            available income-tax liability. These results do not measure tax
-            savings on a completed return.
+            single, with no spouse or dependents. Ten programs support
+            calculations in California, Hawaii, Illinois, Indiana, Michigan, New
+            Jersey, Oklahoma, and Pennsylvania. Users supply qualified expenses
+            and the specified tax-form inputs; the estimate assumes the
+            remaining qualification requirements hold. Deduction results measure
+            reductions in taxable income. The California credit result precedes
+            the limit from available income-tax liability. These results do not
+            measure tax savings on a completed return.
           </p>
           <p>
-            Michigan calculations cover renters; homeowner calculations remain
-            unavailable. For New Jersey, PolicyEngine selects either the
-            deduction or credit; a zero for one can reflect selection of the
+            Michigan and Pennsylvania calculations cover renters; Pennsylvania's
+            preview excludes mixed owner-renter claims. Oklahoma calculations
+            cover homestead owners. For New Jersey, PolicyEngine selects either
+            the deduction or credit; a zero for one can reflect selection of the
             other. Enter the stated form-line values, including Michigan's total
             household resources and New Jersey's income before the property-tax
             deduction.
@@ -95,7 +96,7 @@ export default function Methods() {
           </p>
           <p>
             All 50 states and DC appear in the selector alongside 119 selected
-            program and context records. Eight programs currently support
+            program and context records. Ten programs currently support
             calculations; the other records remain visible with their
             availability status. This inventory does not establish exhaustive
             program coverage or a validated national calculator.

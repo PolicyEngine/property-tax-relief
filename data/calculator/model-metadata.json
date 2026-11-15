@@ -154,6 +154,14 @@
       "unit": null,
       "isInputVariable": true
     },
+    "is_permanently_and_totally_disabled": {
+      "entity": "person",
+      "valueType": "bool",
+      "definitionPeriod": "year",
+      "name": "is_permanently_and_totally_disabled",
+      "unit": null,
+      "isInputVariable": true
+    },
     "is_ssi_disabled": {
       "entity": "person",
       "valueType": "bool",
@@ -161,6 +169,14 @@
       "name": "is_ssi_disabled",
       "unit": null,
       "isInputVariable": false
+    },
+    "is_surviving_spouse": {
+      "entity": "person",
+      "valueType": "bool",
+      "definitionPeriod": "year",
+      "name": "is_surviving_spouse",
+      "unit": null,
+      "isInputVariable": true
     },
     "is_tax_unit_dependent": {
       "entity": "person",
@@ -231,6 +247,38 @@
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "nj_taxable_income_before_property_tax_deduction",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ok_gross_income": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ok_gross_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ok_ptc": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ok_ptc",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "pa_property_tax_or_rent_rebate": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "pa_property_tax_or_rent_rebate",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "pa_property_tax_or_rent_rebate_income": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "pa_property_tax_or_rent_rebate_income",
       "unit": "currency-USD",
       "isInputVariable": false
     },

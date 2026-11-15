@@ -478,6 +478,149 @@
       },
       "resultLabel": "Modeled refundable credit",
       "resultNote": "Check Hawaii's residence, housing, and dependency requirements before claiming this credit. The estimate does not check every requirement."
+    },
+    {
+      "id": "pa-property-tax-rent-rebate",
+      "state": "PA",
+      "year": 2025,
+      "modelVariable": "pa_property_tax_or_rent_rebate",
+      "entity": "tax_unit",
+      "kind": "rebate",
+      "inputs": [
+        {
+          "variable": "pa_property_tax_or_rent_rebate_income",
+          "label": "Pennsylvania rebate-program income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter 2025 Form PA-1000, line 13, which also carries to line 23. This calculation supports nonnegative amounts.",
+          "minimum": 0
+        },
+        {
+          "variable": "age",
+          "label": "Age at year end",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 18,
+          "maximum": 120
+        },
+        {
+          "variable": "is_permanently_and_totally_disabled",
+          "label": "Permanent and total disability",
+          "entity": "person",
+          "kind": "boolean",
+          "period": 2025,
+          "description": "Use the disability qualifications in the PA-1000 instructions."
+        },
+        {
+          "variable": "is_surviving_spouse",
+          "label": "Are you a widow or widower?",
+          "entity": "person",
+          "kind": "boolean",
+          "period": 2025
+        },
+        {
+          "variable": "rent",
+          "label": "Qualified annual rent paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter eligible rent from 2025 Form PA-1000, line 16, after any required schedules.",
+          "minimum": 0
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Property taxes for a homeowner claim",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "This renter calculation requires an explicit zero. Homeowner claims need a separate calculation.",
+          "minimum": 0,
+          "maximum": 0
+        }
+      ],
+      "notes": [
+        "This estimate covers a full-year Pennsylvania renter who meets the residence and housing requirements and receives no cash public assistance.",
+        "Enter program income from Form PA-1000, line 13. The form treats Social Security and other income sources differently from federal adjusted gross income.",
+        "Enter your eligible rent after subsidies and any adjustments on the rent certificate or required schedules. The estimate omits homeowner and owner-renter claims."
+      ],
+      "resultLabel": "Modeled rent rebate",
+      "resultNote": "Check the PA-1000 qualifications and supporting documents before claiming the rebate.",
+      "sources": [
+        {
+          "title": "2025 PA-1000 instructions, renter calculation and rebate table",
+          "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforindividuals/ptrr/documents/2025_pa-1000_inst.pdf"
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.1",
+        "file": "variables/gov/states/pa/tax/property/property_tax_or_rent_rebate/pa_property_tax_or_rent_rebate.py",
+        "sha256": "249d361846b79f08fdd43691d1fd6204c9d804f28ac0b310aa4646870aa3678f"
+      }
+    },
+    {
+      "id": "ok-property-tax-refund",
+      "state": "OK",
+      "year": 2025,
+      "modelVariable": "ok_ptc",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "inputs": [
+        {
+          "variable": "ok_gross_income",
+          "label": "Gross household income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter 2025 Oklahoma Form 538-H, line 14, including the taxable and nontaxable income and assistance the form requires.",
+          "minimum": 0
+        },
+        {
+          "variable": "age",
+          "label": "Age at year end",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 18,
+          "maximum": 120
+        },
+        {
+          "variable": "is_disabled",
+          "label": "Totally disabled for the full year",
+          "entity": "person",
+          "kind": "boolean",
+          "period": 2025,
+          "description": "Use question C on 2025 Form 538-H. The form requires proof when you qualify through disability."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualified homestead property taxes paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter the qualified taxes from 2025 Form 538-H, line 15.",
+          "minimum": 0
+        }
+      ],
+      "notes": [
+        "This estimate covers a full-year Oklahoma resident who owns or jointly owns the homestead and meets the property-qualification requirements.",
+        "Enter gross household income from Form 538-H, line 14. The form includes income and assistance that federal adjusted gross income can exclude.",
+        "Enter qualified real estate taxes paid on your homestead during 2025. Renters do not qualify for this program."
+      ],
+      "resultLabel": "Modeled property tax credit or refund",
+      "resultNote": "Check Form 538-H before filing. Claimants who must file an Oklahoma income-tax return claim this credit through Form 511.",
+      "sources": [
+        {
+          "title": "2025 Oklahoma Form 538-H and instructions",
+          "url": "https://oklahoma.gov/content/dam/ok/en/tax/documents/forms/individuals/current/538-H.pdf"
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.1",
+        "file": "variables/gov/states/ok/tax/income/credits/ok_ptc.py",
+        "sha256": "caba65e52d8d4b9e68cbb9a36799c01783c884d77ac7e4b182318963b7932a14"
+      }
     }
   ]
 }

@@ -16,7 +16,7 @@ The `artifacts/` directory contains a self-contained interactive (`index.html`),
 
 ## Household calculator preview
 
-The `/calculator/` page calculates 2025 scenarios for one adult filing as single, with no spouse or dependents. Its selector includes all 50 states and DC and 119 selected program and context records. Eight programs support calculations across six states:
+The `/calculator/` page calculates 2025 scenarios for one adult filing as single, with no spouse or dependents. Its selector includes all 50 states and DC and 119 selected program and context records. Ten programs support calculations across eight states:
 
 - California: nonrefundable renter credit before its tax-liability limit.
 - Hawaii: low-income household renter credit.
@@ -24,8 +24,10 @@ The `/calculator/` page calculates 2025 scenarios for one adult filing as single
 - Indiana: renter and homeowner income-tax deductions.
 - Michigan: homestead property-tax credit for renters.
 - New Jersey: property-tax deduction or credit, as PolicyEngine selects.
+- Oklahoma: property-tax credit or refund for homestead owners.
+- Pennsylvania: property-tax/rent rebate for renters.
 
-Other records show why calculations remain unavailable. Users supply qualified expenses and specified tax-form inputs; the estimate assumes the remaining qualification requirements hold. Michigan homeowner claims remain outside this calculator's scope. New Jersey selects one provision, so a zero deduction can accompany a credit or vice versa. Deduction amounts and California's credit before its liability limit do not measure tax savings on a completed return.
+Other records show why calculations remain unavailable. Users supply qualified expenses and specified tax-form inputs; the estimate assumes the remaining qualification requirements hold. Michigan and Pennsylvania calculations cover renters; Pennsylvania's preview excludes mixed owner-renter claims. Oklahoma calculations cover homestead owners. New Jersey selects one provision, so a zero deduction can accompany a credit or vice versa. Deduction amounts and California's credit before its liability limit do not measure tax savings on a completed return.
 
 The browser uses `@policyengine/api-client` to send entered scenarios to the website's household-calculation API. Calculations require a network connection and use the shared API's capacity. The app adds no calculation backend or frontend benefit formulas. The adapter rejects missing or invalid outputs, preserves finite returned numbers, cancels obsolete requests, reuses unchanged requests, and caps new requests at 15 per minute per page.
 

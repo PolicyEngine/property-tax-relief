@@ -71,6 +71,7 @@
   margin-bottom: 24px;
 }
 
+.selectionField > label,
 .field > label {
   display: block;
   margin-bottom: 8px;

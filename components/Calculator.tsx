@@ -250,31 +250,37 @@ export function Calculator({ programs, states }: CalculatorProps) {
         </p>
         <form onSubmit={submit} noValidate>
           <div className={styles.selectionFields}>
-            <SelectInput
-              id="calculator-state"
-              label="State or District of Columbia"
-              value={stateCode}
-              onChange={selectState}
-              placeholder="Choose a state"
-              options={states.map((state) => ({
-                value: state.code,
-                label: state.name,
-              }))}
-              className={styles.select}
-            />
-            {stateCode && statePrograms.length > 0 && (
+            <div className={styles.selectionField}>
+              <label htmlFor="calculator-state">
+                State or District of Columbia
+              </label>
               <SelectInput
-                id="calculator-program"
-                label="Program"
-                value={programId}
-                onChange={selectProgram}
-                placeholder="Choose a program"
-                options={statePrograms.map((program) => ({
-                  value: program.id,
-                  label: `${program.name}${program.unavailableReason ? " — unavailable" : ""}`,
+                id="calculator-state"
+                value={stateCode}
+                onChange={selectState}
+                placeholder="Choose a state"
+                options={states.map((state) => ({
+                  value: state.code,
+                  label: state.name,
                 }))}
                 className={styles.select}
               />
+            </div>
+            {stateCode && statePrograms.length > 0 && (
+              <div className={styles.selectionField}>
+                <label htmlFor="calculator-program">Program</label>
+                <SelectInput
+                  id="calculator-program"
+                  value={programId}
+                  onChange={selectProgram}
+                  placeholder="Choose a program"
+                  options={statePrograms.map((program) => ({
+                    value: program.id,
+                    label: `${program.name}${program.unavailableReason ? " — unavailable" : ""}`,
+                  }))}
+                  className={styles.select}
+                />
+              </div>
             )}
           </div>
 
