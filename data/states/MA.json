@@ -3,7 +3,7 @@
   "name": "Massachusetts",
   "taxYear": 2025,
   "verifiedAt": "2026-11-14",
-  "overview": "A refundable senior circuit breaker covers qualifying homeowners and renters; it is distinct from locally administered property-tax exemptions.",
+  "overview": "Massachusetts provides a refundable senior circuit breaker for qualifying homeowners and renters and an income-tax deduction for qualifying rent. Locally administered property-tax exemptions are separate.",
   "inventoryStatus": "researched",
   "statewideCreditStatus": "identified",
   "programs": [
@@ -62,7 +62,7 @@
         "A third party paying rent while maintaining a principal residence elsewhere cannot generate the deduction for either party.",
         "Exclude separately charged utilities, furnishings and parking, and exclude deposits or prepaid rent until applied as rent. Condominium association payments and tenant-stockholder payments to a cooperative corporation do not qualify.",
         "Vacation homes, temporary-assignment lodging and student or faculty housing do not qualify when the taxpayer has a principal residence elsewhere. Hotel, motel or rooming-house occupancy requires a rental agreement.",
-        "Part-year residents use qualifying rent paid while Massachusetts residents. A nonresident's Massachusetts rental must be the sole principal residence, with no outside dwelling to which the taxpayer normally returns or intends to return."
+        "Part-year residents use qualifying rent paid while Massachusetts residents. A nonresident's Massachusetts rental must be the sole principal residence, with no outside dwelling to which the taxpayer normally returns or could return in the future."
       ],
       "interactions": [
         "The consent statement for a married-filing-separately allocation must identify the consenting spouse's name, address, Social Security number and deduction amount.",
@@ -105,6 +105,26 @@
     {
       "title": "Senior Circuit Breaker Tax Credit",
       "url": "https://www.mass.gov/info-details/senior-circuit-breaker-tax-credit",
+      "kind": "agency"
+    },
+    {
+      "title": "Massachusetts General Laws, chapter 62, section 3(B)(a)(9)",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIX/Chapter62/Section3",
+      "kind": "statute"
+    },
+    {
+      "title": "2025 Form 1 instructions, printed page 12, line 14",
+      "url": "https://www.mass.gov/doc/2025-form-1-instructions/download",
+      "kind": "form"
+    },
+    {
+      "title": "2025 Form 1-NR/PY instructions, printed pages 16\u201317, line 18",
+      "url": "https://www.mass.gov/doc/2025-form-1-nrpy-instructions/download",
+      "kind": "form"
+    },
+    {
+      "title": "Deductions on rent paid in Massachusetts",
+      "url": "https://www.mass.gov/info-details/deductions-on-rent-paid-in-massachusetts",
       "kind": "agency"
     }
   ]

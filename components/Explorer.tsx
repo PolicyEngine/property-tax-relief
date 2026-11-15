@@ -424,7 +424,7 @@ function Comparison({
                       <dd>{program.incomeLimits}</dd>
                     </div>
                     <div>
-                      <dt>Benefit measure</dt>
+                      <dt>Benefit or deduction measure</dt>
                       <dd>{program.maximumBenefit}</dd>
                     </div>
                     <div>
@@ -452,9 +452,11 @@ function Comparison({
       <p className="method-footnote">
         <strong>Research draft.</strong> These columns compare documented
         program rules. No validated national household estimates are available.
-        Program maxima describe different eligibility rules and payment
-        mechanisms; they do not rank states or estimate a household&apos;s tax
-        change. <a href={methodsHref}>Read the calculation audit</a>.
+        Deduction limits cap reductions in taxable income; they do not measure
+        cash benefits or tax savings. Program maxima describe different
+        eligibility rules and payment mechanisms; they do not rank states or
+        estimate a household&apos;s tax change.{" "}
+        <a href={methodsHref}>Read the calculation audit</a>.
       </p>
     </section>
   );

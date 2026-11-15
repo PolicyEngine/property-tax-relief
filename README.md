@@ -1,6 +1,6 @@
 # Rent and property taxes across states
 
-A source-linked research review of income-tax credits and deductions, circuit breakers, renter credits, separate rebates and property-bill programs across all 50 US states and the District of Columbia.
+A source-linked research review of selected income-tax credits and deductions, circuit breakers, renter credits, separate rebates and property-bill programs across all 50 US states and the District of Columbia.
 
 ## Scope
 
@@ -8,7 +8,7 @@ The comparison uses program-specific 2025 reference periods, with official sourc
 
 `inventoryStatus: researched` records completion of an initial source pass, the label shown in the report. `statewideCreditStatus: identified` records an identified program in its stated reference cycle. These fields do not establish exhaustive coverage, validated calculations or adjudication of transitional claims. South Dakota's historical entry describes its 2025 application cycle; its property-refund repeal took effect July 1, 2026, and accrued-claim and assessment/payable-year questions remain explicit in that profile.
 
-Every numerical household result must come from the PolicyEngine model for that exact scenario. Model coverage and legal coverage are audited separately. Missing implementations must not appear as zero benefits. Public release requires complete national research, validated applicable calculations, and independent review.
+Every numerical household result must come from the PolicyEngine model for that exact scenario. Model coverage and legal coverage are audited separately. Missing implementations must not appear as zero benefits. Publishing this research draft requires independent review and website integration checks. A national household calculator additionally requires a completed scope audit and validated models, scenarios and interactions.
 
 ## Review artifacts
 
@@ -43,7 +43,7 @@ The generator resolves the requested ref to an immutable commit and reads its va
 
 Tests cover all 51 jurisdiction records, unique program IDs, source/year metadata, category separation, filter invariants, downloads, generated-data consistency, and separation of shared chrome from tool-specific provenance. The source-level audit distinguishes available calculation declarations from missing references, input-only variables, and later-starting formulas. Declaration presence does not validate legal correctness.
 
-Run `bun run release:check` to inspect the outstanding national-calculator requirements. Implementation/mapping gaps, calculation validation and independent review remain open. Completing each state's initial source pass does not resolve every transitional claim or establish calculator readiness. Independent review and the website integration must finish before public publication. No validated national household calculator is provided.
+Run `bun run release:check` to inspect the outstanding national-calculator requirements. Calculator implementation/mapping and calculation-validation gaps remain open. Completing each state's initial source pass does not resolve every transitional claim or establish calculator readiness. Independent review and the website integration must finish before public publication. No validated national household calculator is provided.
 
 ## Coverage benchmarks
 
@@ -58,7 +58,8 @@ The planned site path is `/us/rent-and-property-taxes`, with assets under `/_zon
 - Every national export contains exactly the 50 state codes and DC, with unique program IDs.
 - Filtering returns only existing records, preserves order and introduces no duplicates.
 - Exported records exactly reproduce the source JSON; displayed counts derive from those records.
-- Exemptions, deductions, assessment limits and deferrals stay separate from the credit and rebate comparison.
+- The main comparison includes identified statewide income-tax deductions alongside credits and rebates. Deduction limits describe reductions in taxable income, not cash benefits or tax savings.
+- Exemptions, assessment limits, deferrals and local-option programs provide separate context.
 - Missing calculations never become $0 benefits; a source-level variable match never becomes a validation claim.
 - Future benefit totals must obey statutory caps and program interactions. Each displayed scenario must run through the PolicyEngine interface with its actual inputs; interpolation and side models cannot replace runs.
 

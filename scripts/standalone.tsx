@@ -30,10 +30,9 @@ function OfflineResearch() {
           </h1>
           <div className="intro-bottom">
             <p>
-              Explore income-tax credits and deductions, circuit breakers,
-              renter credits, separate rebates and property-bill programs.
-              Compare eligibility, benefit rules and claiming requirements
-              across states.
+              Compare selected income-tax credits and deductions for rent and
+              property taxes, alongside rebates and property-tax bill programs.
+              Subtractions and itemization rules remain under review.
             </p>
             <div className="intro-stat">
               <strong>{states.length}</strong>
@@ -42,9 +41,10 @@ function OfflineResearch() {
           </div>
         </section>
         <div className="draft-note">
-          <strong>Research draft.</strong> State profiles describe sourced
-          rules. Household calculations and independent review remain
-          incomplete. <a href="methods.html">Read the coverage audit ↗</a>
+          <strong>Research draft.</strong> The profiles cover selected
+          provisions; the systematic scope audit and validated national
+          household calculations remain incomplete.{" "}
+          <a href="methods.html">Read the coverage audit ↗</a>
         </div>
         <Explorer
           states={states}
