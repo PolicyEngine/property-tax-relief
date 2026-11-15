@@ -2644,7 +2644,7 @@
     "researchNotes": [
       "The legal household income definition differs from federal AGI.",
       "Locally administered exemptions are context, not an additional statewide cash credit. The inventory does not enumerate every municipal option.",
-      "The rental deduction maps to the rent component inside ma_part_b_taxable_income_deductions, which combines several deductions. This mapping is not validated; its fixed MFS cap does not represent consent-based allocation, and qualifying-rent and residency rules require further model review."
+      "Separate filers must check the allocation and spouse-consent conditions when claiming the rental deduction. The declaration audit does not validate the recorded model-variable mapping or a household deduction calculation."
     ],
     "sources": [
       {
@@ -6037,7 +6037,7 @@
     ],
     "researchNotes": [
       "The statute controls the 2025 income year and AMT disqualification where the overview conflicts. Partial payments, mixed assessment cohorts, legal family membership and some household-income attribution require additional facts.",
-      "The existing senior-credit formula at the audited canonical commit uses assessed value as a dollar credit. Its source mapping is now identified, but that formula is not validated. A separate model correction is in progress.",
+      "Claimants must follow the tax-year claiming and coordination rules for the senior and excess-property-tax credits. The declaration audit does not validate the recorded model-variable mappings, amounts or a combined household calculation.",
       "Compute SCTC before HEPTC. Disabled-veteran relief excludes both. Sub-$10 refund settlement and any combined-cap interpretation remain explicit calculation gaps."
     ],
     "sources": [
