@@ -146,7 +146,10 @@ async function calculatorCheck(page, options) {
     exact: true,
   });
   await calculate.click();
-  await page.getByRole("alert").waitFor();
+  await page
+    .getByRole("alert")
+    .getByRole("heading", { name: "Check the calculation", exact: true })
+    .waitFor();
   if ((await rent.inputValue()) !== "")
     throw new Error("Missing rent must remain blank");
   await rent.fill("3400");
