@@ -1,0 +1,300 @@
+[
+  {
+    "id": "in-bulletin-38-example-1",
+    "programId": "in-renters-income-tax-deduction",
+    "inputs": {
+      "rent": "1200"
+    },
+    "expectedValue": 1200,
+    "source": "https://www.in.gov/dor/files/reference/ib38.pdf",
+    "sourceLocation": "Example 1, page 1"
+  },
+  {
+    "id": "in-bulletin-38-example-2",
+    "programId": "in-renters-income-tax-deduction",
+    "inputs": {
+      "rent": "3400"
+    },
+    "expectedValue": 3000,
+    "source": "https://www.in.gov/dor/files/reference/ib38.pdf",
+    "sourceLocation": "Example 2, page 1"
+  },
+  {
+    "id": "in-rent-zero",
+    "programId": "in-renters-income-tax-deduction",
+    "inputs": {
+      "rent": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://www.in.gov/dor/files/reference/ib38.pdf",
+    "sourceLocation": "Limitation of deduction, page 1; actual qualified rent is zero"
+  },
+  {
+    "id": "in-homeowner-cap",
+    "programId": "in-homeowner-income-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "4000"
+    },
+    "expectedValue": 2500,
+    "source": "https://www.in.gov/dor/i-am-a/individual/deductions/",
+    "sourceLocation": "Residential homeowner's property tax deduction; single filer with qualified expenses exceeding cap"
+  },
+  {
+    "id": "in-homeowner-zero",
+    "programId": "in-homeowner-income-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://www.in.gov/dor/i-am-a/individual/deductions/",
+    "sourceLocation": "Residential homeowner's property tax deduction; no qualified payments"
+  },
+  {
+    "id": "ca-at-income-cap",
+    "programId": "ca-nonrefundable-renters-credit",
+    "inputs": {
+      "rent": "12000",
+      "ca_agi": "53994"
+    },
+    "expectedValue": 60,
+    "source": "https://www.ftb.ca.gov/file/personal/credits/nonrefundable-renters-credit.html",
+    "sourceLocation": "Single filer, all nonmonetary qualifications assumed; income at 2025 ceiling; credit before liability limit"
+  },
+  {
+    "id": "ca-above-income-cap",
+    "programId": "ca-nonrefundable-renters-credit",
+    "inputs": {
+      "rent": "12000",
+      "ca_agi": "53995"
+    },
+    "expectedValue": 0,
+    "source": "https://www.ftb.ca.gov/file/personal/credits/nonrefundable-renters-credit.html",
+    "sourceLocation": "Single filer, all nonmonetary qualifications assumed; income one dollar above 2025 ceiling"
+  },
+  {
+    "id": "mi-general-renter",
+    "programId": "mi-homestead-property-tax-credit",
+    "inputs": {
+      "mi_household_resources": "20000",
+      "age": "40",
+      "is_disabled": "false",
+      "rent": "12000",
+      "real_estate_taxes": "0",
+      "assessed_property_value": "0"
+    },
+    "expectedValue": 1272,
+    "source": "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Tax-Professional/2025-Taxpayer-Assistance-Manual.pdf?hash=1CF91F0ADA922792D961A1A4569437C7&rev=1c6289d2935b4fc3a8e88eac2ee3d7e8",
+    "sourceLocation": "Printed page64/PDFpage70: 12000\u00d70.23=2760;20000\u00d70.032=640;(2760\u2212640)\u00d70.60=1272;below1900cap and62500phaseout. Full-year qualified general renter; no public-assistance or special-status adjustments."
+  },
+  {
+    "id": "mi-general-renter-cap",
+    "programId": "mi-homestead-property-tax-credit",
+    "inputs": {
+      "mi_household_resources": "62500",
+      "age": "40",
+      "is_disabled": "false",
+      "rent": "50000",
+      "real_estate_taxes": "0",
+      "assessed_property_value": "0"
+    },
+    "expectedValue": 1900,
+    "source": "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Tax-Professional/2025-Taxpayer-Assistance-Manual.pdf?hash=1CF91F0ADA922792D961A1A4569437C7&rev=1c6289d2935b4fc3a8e88eac2ee3d7e8",
+    "sourceLocation": "Printed page64/PDFpage70:50000\u00d70.23=11500;62500\u00d70.032=2000;(11500\u22122000)\u00d70.60=5700,capped1900;resourcesat62500retain100percent."
+  },
+  {
+    "id": "mi-above-resource-limit",
+    "programId": "mi-homestead-property-tax-credit",
+    "inputs": {
+      "mi_household_resources": "71501",
+      "age": "40",
+      "is_disabled": "false",
+      "rent": "50000",
+      "real_estate_taxes": "0",
+      "assessed_property_value": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://www.michigan.gov/taxes/iit/tax-guidance/credits-exemptions/hptc/tax-year-credit-information/2025",
+    "sourceLocation": "2025THRlimit71500;71501exceedsit. Manualprintedp64/PDFp70 independently states no credit over71500."
+  },
+  {
+    "id": "nj-senior-low-income-renter-credit",
+    "programId": "nj-income-tax-property-tax-credit",
+    "inputs": {
+      "nj_agi": "0",
+      "nj_taxable_income_before_property_tax_deduction": "0",
+      "age": "70",
+      "is_blind": "false",
+      "is_ssi_disabled": "false",
+      "rent": "12000",
+      "real_estate_taxes": "0"
+    },
+    "expectedValue": 50,
+    "source": "https://www.nj.gov/treasury/taxation/njit35.shtml",
+    "sourceLocation": "Agency eligibility/credit/nonfiler sections;2025NJ1040HWPartIage65test andNJ1040instructionsprintedp25/PDFp27:singleage70qualifiedfull-yearrenter,AGI0,credit50. Assume no duplicateANCHORcredit."
+  },
+  {
+    "id": "nj-owner-deduction-selection",
+    "programId": "nj-income-tax-property-tax-deduction",
+    "inputs": {
+      "nj_agi": "50000",
+      "nj_taxable_income_before_property_tax_deduction": "40000",
+      "age": "40",
+      "is_blind": "false",
+      "is_ssi_disabled": "false",
+      "rent": "0",
+      "real_estate_taxes": "6000"
+    },
+    "expectedValue": 6000,
+    "source": "https://www.nj.gov/treasury/taxation/pdf/current/1040i.pdf",
+    "sourceLocation": "WorksheetHprintedp29/PDFp31:6000<15000cap;40000\u22126000=34000. Singletax tableprintedpp57\u201358/PDFpp59\u201360 gives719at40000and525at34000;194savingexceeds50credit,soenter6000deduction. Assumesolequalifiedowner,noSeniorFreeze/nootherjurisdictioncredit."
+  },
+  {
+    "id": "il-property-5percent",
+    "programId": "il-property-tax-credit",
+    "inputs": {
+      "adjusted_gross_income": "50000",
+      "real_estate_taxes": "6000",
+      "il_income_tax_before_non_refundable_credits": "500"
+    },
+    "expectedValue": 300,
+    "source": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html",
+    "sourceLocation": "Publication 108: five-percent amount, single-filer $250,000 income ceiling, nonrefundability limit; properties and payments assumed qualified.",
+    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
+  },
+  {
+    "id": "il-property-liability-cap",
+    "programId": "il-property-tax-credit",
+    "inputs": {
+      "adjusted_gross_income": "50000",
+      "real_estate_taxes": "6000",
+      "il_income_tax_before_non_refundable_credits": "100"
+    },
+    "expectedValue": 100,
+    "source": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html",
+    "sourceLocation": "Publication 108: five-percent amount, single-filer $250,000 income ceiling, nonrefundability limit; properties and payments assumed qualified.",
+    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
+  },
+  {
+    "id": "il-property-agi-at-cap",
+    "programId": "il-property-tax-credit",
+    "inputs": {
+      "adjusted_gross_income": "250000",
+      "real_estate_taxes": "6000",
+      "il_income_tax_before_non_refundable_credits": "500"
+    },
+    "expectedValue": 300,
+    "source": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html",
+    "sourceLocation": "Publication 108: five-percent amount, single-filer $250,000 income ceiling, nonrefundability limit; properties and payments assumed qualified.",
+    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
+  },
+  {
+    "id": "il-property-agi-above-cap",
+    "programId": "il-property-tax-credit",
+    "inputs": {
+      "adjusted_gross_income": "250001",
+      "real_estate_taxes": "6000",
+      "il_income_tax_before_non_refundable_credits": "500"
+    },
+    "expectedValue": 0,
+    "source": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html",
+    "sourceLocation": "Publication 108: five-percent amount, single-filer $250,000 income ceiling, nonrefundability limit; properties and payments assumed qualified.",
+    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
+  },
+  {
+    "id": "il-property-no-liability",
+    "programId": "il-property-tax-credit",
+    "inputs": {
+      "adjusted_gross_income": "50000",
+      "real_estate_taxes": "6000",
+      "il_income_tax_before_non_refundable_credits": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html",
+    "sourceLocation": "Publication 108: five-percent amount, single-filer $250,000 income ceiling, nonrefundability limit; properties and payments assumed qualified.",
+    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
+  },
+  {
+    "id": "hi-renter-single",
+    "programId": "hi-low-income-household-renters-credit",
+    "inputs": {
+      "age": "40",
+      "hi_agi": "20000",
+      "rent": "12000",
+      "claimed_as_dependent_on_another_return": "false"
+    },
+    "expectedValue": 50,
+    "source": "https://files.hawaii.gov/tax/forms/current/n11ins.pdf",
+    "sourceLocation": "2025 N-11 instructions printed page 26: Schedule X Part I conditions and lines 1, 3, 7, 8; $50 per qualifying exemption and extra age-65 exemption.",
+    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
+  },
+  {
+    "id": "hi-renter-age65",
+    "programId": "hi-low-income-household-renters-credit",
+    "inputs": {
+      "age": "65",
+      "hi_agi": "20000",
+      "rent": "12000",
+      "claimed_as_dependent_on_another_return": "false"
+    },
+    "expectedValue": 100,
+    "source": "https://files.hawaii.gov/tax/forms/current/n11ins.pdf",
+    "sourceLocation": "2025 N-11 instructions printed page 26: Schedule X Part I conditions and lines 1, 3, 7, 8; $50 per qualifying exemption and extra age-65 exemption.",
+    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
+  },
+  {
+    "id": "hi-renter-agi-at-cap",
+    "programId": "hi-low-income-household-renters-credit",
+    "inputs": {
+      "age": "40",
+      "hi_agi": "30000",
+      "rent": "12000",
+      "claimed_as_dependent_on_another_return": "false"
+    },
+    "expectedValue": 0,
+    "source": "https://files.hawaii.gov/tax/forms/current/n11ins.pdf",
+    "sourceLocation": "2025 N-11 instructions printed page 26: Schedule X Part I conditions and lines 1, 3, 7, 8; $50 per qualifying exemption and extra age-65 exemption.",
+    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
+  },
+  {
+    "id": "hi-renter-rent-at-minimum",
+    "programId": "hi-low-income-household-renters-credit",
+    "inputs": {
+      "age": "40",
+      "hi_agi": "20000",
+      "rent": "1000",
+      "claimed_as_dependent_on_another_return": "false"
+    },
+    "expectedValue": 0,
+    "source": "https://files.hawaii.gov/tax/forms/current/n11ins.pdf",
+    "sourceLocation": "2025 N-11 instructions printed page 26: Schedule X Part I conditions and lines 1, 3, 7, 8; $50 per qualifying exemption and extra age-65 exemption.",
+    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
+  },
+  {
+    "id": "hi-renter-thresholds-pass",
+    "programId": "hi-low-income-household-renters-credit",
+    "inputs": {
+      "age": "40",
+      "hi_agi": "29999",
+      "rent": "1001",
+      "claimed_as_dependent_on_another_return": "false"
+    },
+    "expectedValue": 50,
+    "source": "https://files.hawaii.gov/tax/forms/current/n11ins.pdf",
+    "sourceLocation": "2025 N-11 instructions printed page 26: Schedule X Part I conditions and lines 1, 3, 7, 8; $50 per qualifying exemption and extra age-65 exemption.",
+    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
+  },
+  {
+    "id": "hi-renter-dependent-elsewhere",
+    "programId": "hi-low-income-household-renters-credit",
+    "inputs": {
+      "age": "40",
+      "hi_agi": "20000",
+      "rent": "12000",
+      "claimed_as_dependent_on_another_return": "true"
+    },
+    "expectedValue": 0,
+    "source": "https://files.hawaii.gov/tax/forms/current/n11ins.pdf",
+    "sourceLocation": "2025 N-11 instructions printed page 26: Schedule X Part I conditions and lines 1, 3, 7, 8; $50 per qualifying exemption and extra age-65 exemption.",
+    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
+  }
+]

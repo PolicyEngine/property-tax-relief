@@ -46,7 +46,7 @@ export default function Methods() {
           </p>
           <p>
             Each profile records a 2025 program reference and a source-check
-            date; sources were checked on November 13–14, 2026. The program-year
+            date; we checked sources on November 13–14, 2026. The program-year
             field identifies differences among assessment, income, tax-payment,
             filing and benefit-payment years. The profile includes later changes
             where research identified them. A source-check date does not
@@ -60,6 +60,45 @@ export default function Methods() {
             provision or parcel-specific exemption. Housing tenure refers to
             ownership or rental of the dwelling. Owners of a dwelling on leased
             land appear under homeowners.
+          </p>
+        </section>
+        <section>
+          <h2>Household calculations</h2>
+          <p>
+            The calculator supports 2025 scenarios for one adult filing as
+            single, with no spouse or dependents. Eight programs support
+            calculations in California, Hawaii, Illinois, Indiana, Michigan, and
+            New Jersey. Users supply qualified expenses and the specified
+            tax-form inputs; the estimate assumes the remaining qualification
+            requirements hold. Deduction results measure reductions in taxable
+            income. The California credit result precedes the limit from
+            available income-tax liability. These results do not measure tax
+            savings on a completed return.
+          </p>
+          <p>
+            Michigan calculations cover renters; homeowner calculations remain
+            unavailable. For New Jersey, PolicyEngine selects either the
+            deduction or credit; a zero for one can reflect selection of the
+            other. Enter the stated form-line values, including Michigan's total
+            household resources and New Jersey's income before the property-tax
+            deduction.
+          </p>
+          <p>
+            The calculator sends each entered scenario to PolicyEngine's rules
+            engine through the website's household-calculation API. On November
+            15, 2026, the API's metadata reported PolicyEngine US 2.2.1. We
+            recorded that snapshot and inspected the matching source for each
+            enabled calculation. The calculation response supplies no
+            model-version receipt, so the metadata snapshot does not pin a
+            release to each later answer. Missing, null, and nonnumeric outputs
+            remain unavailable.
+          </p>
+          <p>
+            All 50 states and DC appear in the selector alongside 119 selected
+            program and context records. Eight programs currently support
+            calculations; the other records remain visible with their
+            availability status. This inventory does not establish exhaustive
+            program coverage or a validated national calculator.
           </p>
         </section>
         <section>
@@ -95,8 +134,8 @@ export default function Methods() {
             It requires a formula or declarative calculation available by 2025;
             input-only variables and formulas that begin later enter the gap
             list. It does not execute formulas, establish legal equivalence or
-            verify all eligibility conditions. Newer canonical source presence
-            is recorded separately.
+            verify all eligibility conditions. We record newer canonical source
+            presence separately.
           </p>
           {coverage && (
             <>
@@ -129,7 +168,7 @@ export default function Methods() {
                     <td>{missing.length}</td>
                   </tr>
                   <tr>
-                    <td>Validated household-calculation coverage</td>
+                    <td>National household-calculation validation</td>
                     <td>Outstanding</td>
                   </tr>
                 </tbody>

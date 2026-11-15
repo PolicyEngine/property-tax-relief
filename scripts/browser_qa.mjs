@@ -108,6 +108,80 @@ async function offlineLoad(page, options) {
     throw new Error("Offline artifact must show all 51 jurisdictions");
 }
 
+async function calculatorCheck(page, options) {
+  await page
+    .getByRole("link", { name: "Household estimates", exact: true })
+    .click();
+  await page
+    .getByRole("heading", { name: "Household estimates", exact: true })
+    .waitFor();
+  const state = page.getByLabel("State or District of Columbia", {
+    exact: true,
+  });
+  const choices = await state
+    .locator("option")
+    .evaluateAll((options) => options.filter((option) => option.value).length);
+  if (choices !== 51)
+    throw new Error("Calculator must retain all 51 jurisdictions");
+
+  await state.selectOption("TX");
+  await page.getByLabel("Program", { exact: true }).selectOption({ index: 1 });
+  await page
+    .getByRole("heading", { name: "Calculation unavailable", exact: true })
+    .waitFor();
+  if (await page.getByText(/^\$0(?:\.00)?$/).count())
+    throw new Error("Unavailable is not a zero result");
+
+  await state.selectOption("IN");
+  await page
+    .getByLabel("Program", { exact: true })
+    .selectOption("in-renters-income-tax-deduction");
+  const rent = page.getByLabel("Qualified annual rent paid", { exact: true });
+  const calculate = page.getByRole("button", {
+    name: "Calculate estimate",
+    exact: true,
+  });
+  await calculate.click();
+  await page.getByRole("alert").waitFor();
+  if ((await rent.inputValue()) !== "")
+    throw new Error("Missing rent must remain blank");
+  await rent.fill("3400");
+  await calculate.click();
+  await page
+    .getByText("$3,000.00", { exact: true })
+    .waitFor({ timeout: 130_000 });
+  await page
+    .getByText("Deduction from taxable income", { exact: true })
+    .waitFor();
+  await page.screenshot({ path: options.screenshot, fullPage: true });
+  await rent.fill("1200");
+  await page
+    .getByText(
+      "Previous estimate. Calculate again to use your current inputs.",
+      { exact: true },
+    )
+    .waitFor();
+  await calculate.click();
+  await page
+    .getByText("$1,200.00", { exact: true })
+    .waitFor({ timeout: 130_000 });
+  if (
+    !(await page
+      .getByRole("button", { name: "Estimate up to date", exact: true })
+      .isDisabled())
+  )
+    throw new Error("Unchanged inputs must not recalculate");
+  await page.setViewportSize({ width: 390, height: 844 });
+  if (
+    await page.evaluate(
+      () => document.documentElement.scrollWidth > innerWidth + 1,
+    )
+  )
+    throw new Error("Calculator mobile layout overflows");
+  await page.screenshot({ path: options.mobileScreenshot, fullPage: true });
+  await page.setViewportSize({ width: 1280, height: 900 });
+}
+
 async function offlineInteractions(page, options) {
   if (await page.locator('a[href="/methods/"]').count())
     throw new Error("Offline audit links must stay in saved HTML");
@@ -200,6 +274,10 @@ try {
     basePath,
   });
   command("snapshot");
+  runCode(calculatorCheck, {
+    screenshot: resolve(output, "calculator-desktop.png"),
+    mobileScreenshot: resolve(output, "calculator-mobile.png"),
+  });
   runCode(offlineLoad, {
     url: pathToFileURL(resolve("artifacts/index.html")).href,
   });

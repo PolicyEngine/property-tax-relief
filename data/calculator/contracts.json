@@ -1,0 +1,483 @@
+{
+  "referenceYear": 2025,
+  "metadataVersion": "2.2.1",
+  "metadataSha256": "670b553ff1eb2307bcb7edf529a03f40826c7beb1b8b057a1fc4e92b53b8de92",
+  "contracts": [
+    {
+      "id": "in-renters-income-tax-deduction",
+      "state": "IN",
+      "year": 2025,
+      "modelVariable": "in_renters_deduction",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "rent",
+          "label": "Qualified annual rent paid",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money"
+        }
+      ],
+      "notes": [
+        "Enter rent you paid for your principal Indiana home, which must be subject to Indiana property tax. Exclude utilities and other non-rent charges.",
+        "The estimate assumes you meet the residence and property-qualification requirements. Indiana's Bulletin 38 also covers mobile homes and cooperative housing."
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.1",
+        "file": "variables/gov/states/in/tax/income/deductions/in_renters_deduction.py",
+        "sha256": "599db50ba3d574efea7a7f3db261b6cbd9954aa50e1390a3ae9b11a68596ba4d"
+      },
+      "resultLabel": "Deduction from taxable income",
+      "resultNote": "A deduction reduces taxable income. Your tax savings depend on your tax return; the deduction amount does not measure a cash payment."
+    },
+    {
+      "id": "in-homeowner-income-tax-deduction",
+      "state": "IN",
+      "year": 2025,
+      "modelVariable": "in_homeowners_property_tax_deduction",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualified annual residential property taxes paid",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money"
+        }
+      ],
+      "notes": [
+        "Enter qualifying property taxes you paid for your principal Indiana home during 2025. Check the Department of Revenue's rules before entering the amount."
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.1",
+        "file": "variables/gov/states/in/tax/income/deductions/in_homeowners_property_tax_deduction.py",
+        "sha256": "86ade95cda55b23f4350c6d7ea5f3681200dd1a4e23636363cd16695656f75db"
+      },
+      "resultLabel": "Deduction from taxable income",
+      "resultNote": "A deduction reduces taxable income. Your tax savings depend on your tax return; the deduction amount does not measure a cash payment."
+    },
+    {
+      "id": "ca-nonrefundable-renters-credit",
+      "state": "CA",
+      "year": 2025,
+      "modelVariable": "ca_renter_credit",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "inputs": [
+        {
+          "variable": "rent",
+          "label": "Qualified annual rent paid",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money"
+        },
+        {
+          "variable": "ca_agi",
+          "label": "California adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "description": "Enter California adjusted gross income from your 2025 state return. Gross wages and total household income can differ from this amount."
+        }
+      ],
+      "notes": [
+        "This estimate assumes you meet California's renter-credit requirements, including the rent-duration, housing, dependent-status, and property-tax-exemption rules. Check the Franchise Tax Board's qualification record.",
+        "Enter California adjusted gross income from your tax return. Gross wages and total household income can differ from this amount."
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.1",
+        "file": "variables/gov/states/ca/tax/income/credits/ca_renter_credit.py",
+        "sha256": "c41613f4aaff3a9279c2043429daf63ddae32c8cec82cc8ca679635cb88a0eb6"
+      },
+      "resultLabel": "Credit before tax-liability limit",
+      "resultNote": "Your California income-tax liability can limit the credit you claim. The calculator does not apply that limit."
+    },
+    {
+      "id": "mi-homestead-property-tax-credit",
+      "state": "MI",
+      "year": 2025,
+      "modelVariable": "mi_homestead_property_tax_credit",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "inputs": [
+        {
+          "variable": "mi_household_resources",
+          "label": "Michigan total household resources",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter total household resources from 2025 Michigan Form MI-1040CR, line 33.",
+          "minimum": 0
+        },
+        {
+          "variable": "age",
+          "label": "Age at year end",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 18,
+          "maximum": 120
+        },
+        {
+          "variable": "is_disabled",
+          "label": "Qualifying disability status",
+          "entity": "person",
+          "kind": "boolean",
+          "period": 2025,
+          "description": "Use the special-status conditions on Michigan Form MI-1040CR, box 5b. Leave the answer blank if you need to check them."
+        },
+        {
+          "variable": "rent",
+          "label": "Qualified annual rent paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Property taxes for a homeowner claim",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "maximum": 0,
+          "description": "Enter zero for this renter scenario. This calculator does not cover Michigan homeowner claims."
+        },
+        {
+          "variable": "assessed_property_value",
+          "label": "Property value for a homeowner claim",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter zero for this renter scenario. This calculator does not cover Michigan homeowner claims.",
+          "minimum": 0,
+          "maximum": 0
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.1",
+        "file": "variables/gov/states/mi/tax/income/credits/homestead_property_tax/mi_homestead_property_tax_credit.py",
+        "sha256": "051ee8226e01c5e008146bb1490cc97e1380d9bc98d212f907b8412911f37483"
+      },
+      "notes": [
+        "This estimate covers a full-year Michigan renter who meets the homestead requirements and pays ordinary rent for housing subject to property tax.",
+        "The estimate assumes no Family Independence Program or other Michigan Department of Health and Human Services benefits. It omits special-housing and veteran alternatives.",
+        "Enter the total household resources amount from Form MI-1040CR, line 33. Wages and federal adjusted gross income can differ from this amount.",
+        "Enter only rent you paid. Exclude subsidies, services and other charges. Enter zero for both homeowner fields; homeowner calculations need further treatment."
+      ],
+      "resultLabel": "Modeled property tax credit",
+      "resultNote": "The estimate assumes you meet the residence and housing qualifications. Check Michigan Form MI-1040CR before claiming the credit.",
+      "sources": [
+        {
+          "title": "2025 Michigan Taxpayer Assistance Manual, general claimant calculation",
+          "url": "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Tax-Professional/2025-Taxpayer-Assistance-Manual.pdf?hash=1CF91F0ADA922792D961A1A4569437C7&rev=1c6289d2935b4fc3a8e88eac2ee3d7e8"
+        },
+        {
+          "title": "2025 Michigan homestead credit limits",
+          "url": "https://www.michigan.gov/taxes/iit/tax-guidance/credits-exemptions/hptc/tax-year-credit-information/2025"
+        }
+      ]
+    },
+    {
+      "id": "nj-income-tax-property-tax-credit",
+      "state": "NJ",
+      "year": 2025,
+      "modelVariable": "nj_property_tax_credit",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "inputs": [
+        {
+          "variable": "nj_agi",
+          "label": "New Jersey gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter 2025 Form NJ-1040, line 29. Enter zero if the form leaves that line blank because the amount does not exceed zero.",
+          "minimum": 0
+        },
+        {
+          "variable": "nj_taxable_income_before_property_tax_deduction",
+          "label": "New Jersey taxable income before property tax deduction",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter 2025 Form NJ-1040, line 39, before the property tax deduction.",
+          "minimum": 0
+        },
+        {
+          "variable": "age",
+          "label": "Age at year end",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 18,
+          "maximum": 120
+        },
+        {
+          "variable": "is_blind",
+          "label": "Are you blind?",
+          "entity": "person",
+          "kind": "boolean",
+          "period": 2025
+        },
+        {
+          "variable": "is_ssi_disabled",
+          "label": "Do you have qualifying SSI disability status?",
+          "entity": "person",
+          "kind": "boolean",
+          "period": 2025,
+          "description": "This estimate covers the Supplemental Security Income (SSI) disability definition. Check the New Jersey instructions if another definition applies."
+        },
+        {
+          "variable": "rent",
+          "label": "Qualified annual rent paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualified annual property taxes",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.1",
+        "file": "variables/gov/states/nj/tax/income/credits/property_tax_credit/nj_property_tax_credit.py",
+        "sha256": "186c50b1ec1bf3fa017d0af18c12cb42d5a37d2b9c52d7ea23750e6795162cfa"
+      },
+      "notes": [
+        "This estimate assumes a full-year New Jersey resident who meets the principal-residence and property-qualification requirements.",
+        "Enter qualified property taxes or your share of rent from Worksheet G. The estimate assumes no Senior Freeze application and no credit for income taxes paid to another jurisdiction.",
+        "The engine chooses between the deduction and the credit. A zero for one provision can mean it chose the other."
+      ],
+      "sources": [
+        {
+          "title": "New Jersey property tax deduction and credit",
+          "url": "https://www.nj.gov/treasury/taxation/njit35.shtml"
+        },
+        {
+          "title": "2025 NJ-1040 instructions, Worksheet H",
+          "url": "https://www.nj.gov/treasury/taxation/pdf/current/1040i.pdf"
+        },
+        {
+          "title": "ANCHOR payment and property tax credit coordination",
+          "url": "https://www.nj.gov/treasury/taxation/anchor/calculated.shtml"
+        }
+      ],
+      "resultLabel": "Modeled refundable credit",
+      "resultNote": "Review New Jersey claim instructions and any ANCHOR credit already paid before filing a separate claim."
+    },
+    {
+      "id": "nj-income-tax-property-tax-deduction",
+      "state": "NJ",
+      "year": 2025,
+      "modelVariable": "nj_property_tax_deduction",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "nj_agi",
+          "label": "New Jersey gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter 2025 Form NJ-1040, line 29. Enter zero if the form leaves that line blank because the amount does not exceed zero.",
+          "minimum": 0
+        },
+        {
+          "variable": "nj_taxable_income_before_property_tax_deduction",
+          "label": "New Jersey taxable income before property tax deduction",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter 2025 Form NJ-1040, line 39, before the property tax deduction.",
+          "minimum": 0
+        },
+        {
+          "variable": "age",
+          "label": "Age at year end",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 18,
+          "maximum": 120
+        },
+        {
+          "variable": "is_blind",
+          "label": "Are you blind?",
+          "entity": "person",
+          "kind": "boolean",
+          "period": 2025
+        },
+        {
+          "variable": "is_ssi_disabled",
+          "label": "Do you have qualifying SSI disability status?",
+          "entity": "person",
+          "kind": "boolean",
+          "period": 2025,
+          "description": "This estimate covers the Supplemental Security Income (SSI) disability definition. Check the New Jersey instructions if another definition applies."
+        },
+        {
+          "variable": "rent",
+          "label": "Qualified annual rent paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualified annual property taxes",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.1",
+        "file": "variables/gov/states/nj/tax/income/property_tax/nj_property_tax_deduction.py",
+        "sha256": "4104b635d417670da1e548f255d49c50b485427600fcd8ad038226300cfbf765"
+      },
+      "notes": [
+        "This estimate assumes a full-year New Jersey resident who meets the principal-residence and property-qualification requirements.",
+        "Enter qualified property taxes or your share of rent from Worksheet G. The estimate assumes no Senior Freeze application and no credit for income taxes paid to another jurisdiction.",
+        "The engine chooses between the deduction and the credit. A zero for one provision can mean it chose the other."
+      ],
+      "sources": [
+        {
+          "title": "New Jersey property tax deduction and credit",
+          "url": "https://www.nj.gov/treasury/taxation/njit35.shtml"
+        },
+        {
+          "title": "2025 NJ-1040 instructions, Worksheet H",
+          "url": "https://www.nj.gov/treasury/taxation/pdf/current/1040i.pdf"
+        }
+      ],
+      "resultLabel": "Deduction from taxable income",
+      "resultNote": "A deduction reduces taxable income. Your tax savings depend on your tax return; the deduction amount does not measure a cash payment."
+    },
+    {
+      "id": "il-property-tax-credit",
+      "state": "IL",
+      "year": 2025,
+      "modelVariable": "il_property_tax_credit",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "inputs": [
+        {
+          "variable": "adjusted_gross_income",
+          "label": "Federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter federal adjusted gross income from your 2025 return, including a negative amount. Wages and total household income can differ from this amount."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualified property taxes paid during 2025",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter your share of eligible payments for an Illinois principal residence you owned. Exclude fees, penalties, nonresidential shares, and other ineligible payments."
+        },
+        {
+          "variable": "il_income_tax_before_non_refundable_credits",
+          "label": "Illinois income tax before nonrefundable credits",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter the Illinois income tax you owe before nonrefundable credits, from your 2025 return."
+        }
+      ],
+      "notes": [
+        "This estimate assumes you meet Illinois's ownership and residence requirements. Check Publication 108 for rules covering purchases, sales, and shared property.",
+        "For a 2025 claim, qualifying payments generally cover 2024 property taxes you paid during 2025. Enter only your share of qualifying payments."
+      ],
+      "sources": [
+        {
+          "title": "Illinois Publication 108, December 2025",
+          "url": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html"
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.1",
+        "file": "variables/gov/states/il/tax/income/credits/il_property_tax_credit.py",
+        "sha256": "f238adef000461757781ac140469ee1d0580d23a93c78cb10f4b59f505ede945"
+      },
+      "resultLabel": "Nonrefundable credit after income-tax limit",
+      "resultNote": "The estimate cannot exceed the Illinois income tax you enter. It assumes your property and payments qualify."
+    },
+    {
+      "id": "hi-low-income-household-renters-credit",
+      "state": "HI",
+      "year": 2025,
+      "modelVariable": "hi_tax_credit_for_low_income_household_renters",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age at the end of 2025",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 18,
+          "maximum": 120
+        },
+        {
+          "variable": "hi_agi",
+          "label": "Hawaii adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter Hawaii adjusted gross income from 2025 Form N-11, line 20, including a negative amount."
+        },
+        {
+          "variable": "rent",
+          "label": "Qualified annual rent personally paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter qualified rent from Schedule X, Part I, line 7. Exclude utilities, rent subsidies, reimbursements, and other ineligible payments."
+        },
+        {
+          "variable": "claimed_as_dependent_on_another_return",
+          "label": "Claimed as a dependent on another return",
+          "entity": "person",
+          "kind": "boolean",
+          "period": 2025,
+          "description": "Answer whether another taxpayer actually claimed you. The calculator does not check whether someone could claim you without doing so."
+        }
+      ],
+      "notes": [
+        "This estimate assumes you meet Hawaii's residence and housing requirements, including physical presence in Hawaii for more than nine months during 2025.",
+        "You cannot claim this credit if another taxpayer could claim you as a dependent, even if nobody actually claims you. The calculator tests actual claims and does not check whether someone could claim you.",
+        "Enter qualified rent you personally paid for 2025 after excluding utilities, subsidies, reimbursements, and other ineligible payments. Check Schedule X, Part I, before entering the amount."
+      ],
+      "sources": [
+        {
+          "title": "2025 N-11 instructions, printed page 26, Schedule X Part I",
+          "url": "https://files.hawaii.gov/tax/forms/current/n11ins.pdf"
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.1",
+        "file": "variables/gov/states/hi/tax/income/credits/hi_low_income_household_renters/hi_low_income_household_renters_tax_credit.py",
+        "sha256": "c0e74ebd07388349e3d0e4a803c83d766b7a94218c929973d70fe20dd6088d67"
+      },
+      "resultLabel": "Modeled refundable credit",
+      "resultNote": "Check Hawaii's residence, housing, and dependency requirements before claiming this credit. The estimate does not check every requirement."
+    }
+  ]
+}
