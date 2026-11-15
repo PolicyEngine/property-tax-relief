@@ -118,11 +118,15 @@ async function calculatorCheck(page, options) {
   const state = page.getByLabel("State or District of Columbia", {
     exact: true,
   });
+  await state.waitFor();
+  await state.locator('option[value="WY"]').waitFor({ state: "attached" });
   const choices = await state
     .locator("option")
     .evaluateAll((options) => options.filter((option) => option.value).length);
   if (choices !== 51)
-    throw new Error("Calculator must retain all 51 jurisdictions");
+    throw new Error(
+      `Calculator must retain all 51 jurisdictions; found ${choices}`,
+    );
 
   await state.selectOption("TX");
   await page.getByLabel("Program", { exact: true }).selectOption({ index: 1 });
