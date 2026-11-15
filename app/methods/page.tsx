@@ -67,22 +67,34 @@ export default function Methods() {
           <p>
             The calculator supports 2025 scenarios for one adult filing as
             single, with no spouse or dependents. Ten programs support
-            calculations in California, Hawaii, Illinois, Indiana, Michigan, New
-            Jersey, Oklahoma, and Pennsylvania. Users supply qualified expenses
-            and the specified tax-form inputs; the estimate assumes the
-            remaining qualification requirements hold. Deduction results measure
-            reductions in taxable income. The California credit result precedes
-            the limit from available income-tax liability. These results do not
-            measure tax savings on a completed return.
+            calculations in California, Connecticut, Illinois, Indiana,
+            Michigan, New Jersey, Oklahoma, and Pennsylvania. Users supply
+            qualified expenses and the specified tax-form inputs; the estimate
+            assumes the remaining qualification requirements hold. Deduction
+            results measure reductions in taxable income. The California credit
+            result precedes the limit from available income-tax liability. These
+            results do not measure tax savings on a completed return.
           </p>
           <p>
-            Michigan and Pennsylvania calculations cover renters; Pennsylvania's
-            preview excludes mixed owner-renter claims. Oklahoma calculations
-            cover homestead owners. For New Jersey, PolicyEngine selects either
-            the deduction or credit; a zero for one can reflect selection of the
+            Connecticut calculations cover qualified primary-residence taxes
+            only, with the tax-liability limit from CT-1040, line 10.
+            Motor-vehicle tax claims require the full Schedule 3. Michigan and
+            Pennsylvania calculations cover renters; Pennsylvania's preview
+            excludes mixed owner-renter claims. Oklahoma calculations cover
+            homestead owners. For New Jersey, PolicyEngine selects either the
+            deduction or credit; a zero for one can reflect selection of the
             other. Enter the stated form-line values, including Michigan's total
             household resources and New Jersey's income before the property-tax
             deduction.
+          </p>
+          <p>
+            Hawaii excludes taxpayers whom another taxpayer could claim as a
+            dependent, even if nobody claims them. The preview cannot evaluate
+            that condition, so Hawaii's renter credit remains unavailable. See{" "}
+            <a href="https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=26">
+              2025 Schedule X, Part I
+            </a>
+            .
           </p>
           <p>
             The calculator sends each entered scenario to PolicyEngine's rules
@@ -93,6 +105,11 @@ export default function Methods() {
             model-version receipt, so the metadata snapshot does not pin a
             release to each later answer. Missing, null, and nonnumeric outputs
             remain unavailable.
+          </p>
+          <p>
+            Saved API responses match the expected amounts in 31 source-derived
+            cases for the enabled calculations. These checks cover the listed
+            scenarios.
           </p>
           <p>
             All 50 states and DC appear in the selector alongside 119 selected

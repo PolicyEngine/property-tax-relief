@@ -72,6 +72,8 @@ function calculationError(error: unknown): string {
 
 function availabilityReason(reason: string | null): string {
   switch (reason) {
+    case "unverified-dependency-rule":
+      return "This preview cannot evaluate whether another taxpayer could claim you as a dependent.";
     case "missing-model":
       return "PolicyEngine does not yet provide a calculation for this program here.";
     case "aggregate-output":

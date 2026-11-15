@@ -214,90 +214,6 @@
     "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
   },
   {
-    "id": "hi-renter-single",
-    "programId": "hi-low-income-household-renters-credit",
-    "inputs": {
-      "age": "40",
-      "hi_agi": "20000",
-      "rent": "12000",
-      "claimed_as_dependent_on_another_return": "false"
-    },
-    "expectedValue": 50,
-    "source": "https://files.hawaii.gov/tax/forms/current/n11ins.pdf",
-    "sourceLocation": "2025 N-11 instructions printed page 26: Schedule X Part I conditions and lines 1, 3, 7, 8; $50 per qualifying exemption and extra age-65 exemption.",
-    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
-  },
-  {
-    "id": "hi-renter-age65",
-    "programId": "hi-low-income-household-renters-credit",
-    "inputs": {
-      "age": "65",
-      "hi_agi": "20000",
-      "rent": "12000",
-      "claimed_as_dependent_on_another_return": "false"
-    },
-    "expectedValue": 100,
-    "source": "https://files.hawaii.gov/tax/forms/current/n11ins.pdf",
-    "sourceLocation": "2025 N-11 instructions printed page 26: Schedule X Part I conditions and lines 1, 3, 7, 8; $50 per qualifying exemption and extra age-65 exemption.",
-    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
-  },
-  {
-    "id": "hi-renter-agi-at-cap",
-    "programId": "hi-low-income-household-renters-credit",
-    "inputs": {
-      "age": "40",
-      "hi_agi": "30000",
-      "rent": "12000",
-      "claimed_as_dependent_on_another_return": "false"
-    },
-    "expectedValue": 0,
-    "source": "https://files.hawaii.gov/tax/forms/current/n11ins.pdf",
-    "sourceLocation": "2025 N-11 instructions printed page 26: Schedule X Part I conditions and lines 1, 3, 7, 8; $50 per qualifying exemption and extra age-65 exemption.",
-    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
-  },
-  {
-    "id": "hi-renter-rent-at-minimum",
-    "programId": "hi-low-income-household-renters-credit",
-    "inputs": {
-      "age": "40",
-      "hi_agi": "20000",
-      "rent": "1000",
-      "claimed_as_dependent_on_another_return": "false"
-    },
-    "expectedValue": 0,
-    "source": "https://files.hawaii.gov/tax/forms/current/n11ins.pdf",
-    "sourceLocation": "2025 N-11 instructions printed page 26: Schedule X Part I conditions and lines 1, 3, 7, 8; $50 per qualifying exemption and extra age-65 exemption.",
-    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
-  },
-  {
-    "id": "hi-renter-thresholds-pass",
-    "programId": "hi-low-income-household-renters-credit",
-    "inputs": {
-      "age": "40",
-      "hi_agi": "29999",
-      "rent": "1001",
-      "claimed_as_dependent_on_another_return": "false"
-    },
-    "expectedValue": 50,
-    "source": "https://files.hawaii.gov/tax/forms/current/n11ins.pdf",
-    "sourceLocation": "2025 N-11 instructions printed page 26: Schedule X Part I conditions and lines 1, 3, 7, 8; $50 per qualifying exemption and extra age-65 exemption.",
-    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
-  },
-  {
-    "id": "hi-renter-dependent-elsewhere",
-    "programId": "hi-low-income-household-renters-credit",
-    "inputs": {
-      "age": "40",
-      "hi_agi": "20000",
-      "rent": "12000",
-      "claimed_as_dependent_on_another_return": "true"
-    },
-    "expectedValue": 0,
-    "source": "https://files.hawaii.gov/tax/forms/current/n11ins.pdf",
-    "sourceLocation": "2025 N-11 instructions printed page 26: Schedule X Part I conditions and lines 1, 3, 7, 8; $50 per qualifying exemption and extra age-65 exemption.",
-    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
-  },
-  {
     "id": "pa-renter-first-income-band",
     "programId": "pa-property-tax-rent-rebate",
     "inputs": {
@@ -380,5 +296,109 @@
     "expectedValue": 200,
     "source": "https://oklahoma.gov/content/dam/ok/en/tax/documents/forms/individuals/current/538-H.pdf",
     "sourceLocation": "2025Form538Hp2lines15\u201317:500tax\u221210000\u00d71%=400;maximum200."
+  },
+  {
+    "id": "ct-at-full-credit-income-limit",
+    "programId": "ct-income-tax-property-credit",
+    "inputs": {
+      "ct_agi": "49500",
+      "ct_income_tax_after_amt": "1000",
+      "real_estate_taxes": "1000",
+      "age": "40"
+    },
+    "expectedValue": 300,
+    "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
+    "sourceLocation": "CT-1040 Schedule 3 lines 63\u201365 cap $1,000 qualifying residence taxes at $300. Instructions page 27 gives zero reduction at single CT AGI $49,500. Line 10 tax $1,000 does not limit the $300 credit. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
+  },
+  {
+    "id": "ct-first-phaseout-band",
+    "programId": "ct-income-tax-property-credit",
+    "inputs": {
+      "ct_agi": "49501",
+      "ct_income_tax_after_amt": "1000",
+      "real_estate_taxes": "1000",
+      "age": "40"
+    },
+    "expectedValue": 255,
+    "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
+    "sourceLocation": "Instructions page 27 places single CT AGI $49,501 in the 15% reduction band. Schedule 3 lines 65\u201368: $300 - ($300 \u00d7 15%) = $255; line 10 tax $1,000 does not bind. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
+  },
+  {
+    "id": "ct-second-phaseout-band",
+    "programId": "ct-income-tax-property-credit",
+    "inputs": {
+      "ct_agi": "59501",
+      "ct_income_tax_after_amt": "1000",
+      "real_estate_taxes": "1000",
+      "age": "40"
+    },
+    "expectedValue": 210,
+    "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
+    "sourceLocation": "Instructions page 27 places single CT AGI $59,501 in the 30% reduction band. Schedule 3: $300 - ($300 \u00d7 30%) = $210. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
+  },
+  {
+    "id": "ct-limited-by-qualified-taxes",
+    "programId": "ct-income-tax-property-credit",
+    "inputs": {
+      "ct_agi": "49501",
+      "ct_income_tax_after_amt": "1000",
+      "real_estate_taxes": "200",
+      "age": "40"
+    },
+    "expectedValue": 170,
+    "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
+    "sourceLocation": "Schedule 3 line 65 limits the base to $200 qualified residence taxes. Instructions page 27 gives a 15% reduction: $200 - ($200 \u00d7 15%) = $170. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
+  },
+  {
+    "id": "ct-limited-by-income-tax",
+    "programId": "ct-income-tax-property-credit",
+    "inputs": {
+      "ct_agi": "49500",
+      "ct_income_tax_after_amt": "80",
+      "real_estate_taxes": "1000",
+      "age": "40"
+    },
+    "expectedValue": 80,
+    "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
+    "sourceLocation": "Instructions page 14 limits the credit to CT-1040 line 10 tax. Schedule 3 produces $300 before the liability limit; line 10 tax $80 limits the applied nonrefundable credit to $80. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
+  },
+  {
+    "id": "ct-last-partial-phaseout-band",
+    "programId": "ct-income-tax-property-credit",
+    "inputs": {
+      "ct_agi": "109499",
+      "ct_income_tax_after_amt": "1000",
+      "real_estate_taxes": "1000",
+      "age": "40"
+    },
+    "expectedValue": 30,
+    "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
+    "sourceLocation": "Instructions page 27 places single CT AGI $109,499 in the 90% reduction band. Schedule 3: $300 - ($300 \u00d7 90%) = $30. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
+  },
+  {
+    "id": "ct-fully-phased-out",
+    "programId": "ct-income-tax-property-credit",
+    "inputs": {
+      "ct_agi": "109501",
+      "ct_income_tax_after_amt": "1000",
+      "real_estate_taxes": "1000",
+      "age": "40"
+    },
+    "expectedValue": 0,
+    "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
+    "sourceLocation": "Instructions page 27 assigns a 100% reduction at single CT AGI $109,501. Schedule 3: $300 - ($300 \u00d7 100%) = $0. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
+  },
+  {
+    "id": "ct-zero-income-tax",
+    "programId": "ct-income-tax-property-credit",
+    "inputs": {
+      "ct_agi": "49500",
+      "ct_income_tax_after_amt": "0",
+      "real_estate_taxes": "1000",
+      "age": "40"
+    },
+    "expectedValue": 0,
+    "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
+    "sourceLocation": "Instructions page 2 directs a filer with CT-1040 line 10 tax of zero to skip the property tax credit. The allowed nonrefundable credit is $0. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
   }
 ]

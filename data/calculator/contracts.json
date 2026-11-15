@@ -418,68 +418,6 @@
       "resultNote": "The estimate cannot exceed the Illinois income tax you enter. It assumes your property and payments qualify."
     },
     {
-      "id": "hi-low-income-household-renters-credit",
-      "state": "HI",
-      "year": 2025,
-      "modelVariable": "hi_tax_credit_for_low_income_household_renters",
-      "entity": "tax_unit",
-      "kind": "credit",
-      "inputs": [
-        {
-          "variable": "age",
-          "label": "Age at the end of 2025",
-          "entity": "person",
-          "kind": "number",
-          "period": 2025,
-          "minimum": 18,
-          "maximum": 120
-        },
-        {
-          "variable": "hi_agi",
-          "label": "Hawaii adjusted gross income",
-          "entity": "tax_unit",
-          "kind": "money",
-          "period": 2025,
-          "description": "Enter Hawaii adjusted gross income from 2025 Form N-11, line 20, including a negative amount."
-        },
-        {
-          "variable": "rent",
-          "label": "Qualified annual rent personally paid",
-          "entity": "person",
-          "kind": "money",
-          "period": 2025,
-          "minimum": 0,
-          "description": "Enter qualified rent from Schedule X, Part I, line 7. Exclude utilities, rent subsidies, reimbursements, and other ineligible payments."
-        },
-        {
-          "variable": "claimed_as_dependent_on_another_return",
-          "label": "Claimed as a dependent on another return",
-          "entity": "person",
-          "kind": "boolean",
-          "period": 2025,
-          "description": "Answer whether another taxpayer actually claimed you. The calculator does not check whether someone could claim you without doing so."
-        }
-      ],
-      "notes": [
-        "This estimate assumes you meet Hawaii's residence and housing requirements, including physical presence in Hawaii for more than nine months during 2025.",
-        "You cannot claim this credit if another taxpayer could claim you as a dependent, even if nobody actually claims you. The calculator tests actual claims and does not check whether someone could claim you.",
-        "Enter qualified rent you personally paid for 2025 after excluding utilities, subsidies, reimbursements, and other ineligible payments. Check Schedule X, Part I, before entering the amount."
-      ],
-      "sources": [
-        {
-          "title": "2025 N-11 instructions, printed page 26, Schedule X Part I",
-          "url": "https://files.hawaii.gov/tax/forms/current/n11ins.pdf"
-        }
-      ],
-      "sourceEvidence": {
-        "packageVersion": "2.2.1",
-        "file": "variables/gov/states/hi/tax/income/credits/hi_low_income_household_renters/hi_low_income_household_renters_tax_credit.py",
-        "sha256": "c0e74ebd07388349e3d0e4a803c83d766b7a94218c929973d70fe20dd6088d67"
-      },
-      "resultLabel": "Modeled refundable credit",
-      "resultNote": "Check Hawaii's residence, housing, and dependency requirements before claiming this credit. The estimate does not check every requirement."
-    },
-    {
       "id": "pa-property-tax-rent-rebate",
       "state": "PA",
       "year": 2025,
@@ -620,6 +558,97 @@
         "packageVersion": "2.2.1",
         "file": "variables/gov/states/ok/tax/income/credits/ok_ptc.py",
         "sha256": "caba65e52d8d4b9e68cbb9a36799c01783c884d77ac7e4b182318963b7932a14"
+      }
+    },
+    {
+      "id": "ct-income-tax-property-credit",
+      "state": "CT",
+      "year": 2025,
+      "modelVariable": "ct_property_tax_credit",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "inputs": [
+        {
+          "variable": "ct_agi",
+          "label": "Connecticut adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter 2025 Form CT-1040, line 5. This calculation supports nonnegative amounts."
+        },
+        {
+          "variable": "ct_income_tax_after_amt",
+          "label": "Income tax before the property tax credit",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter 2025 Form CT-1040, line 10. This amount includes alternative minimum tax and reflects the line 7 credit for income taxes paid to qualifying jurisdictions."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualified primary-residence property taxes paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter qualifying taxes from 2025 Form CT-1040, Schedule 3, line 60. Exclude motor-vehicle taxes, late payments, interest, fees and other charges."
+        },
+        {
+          "variable": "age",
+          "label": "Age at year end",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 18,
+          "maximum": 120
+        }
+      ],
+      "notes": [
+        "This estimate covers a full-year Connecticut resident who paid qualifying property taxes on a primary residence.",
+        "This calculation covers primary-residence taxes only. Use the full Schedule 3 if you also paid qualifying motor-vehicle taxes.",
+        "Connecticut caps the credit at $300 and reduces it as Connecticut adjusted gross income rises. The credit cannot generate a refund or carry forward."
+      ],
+      "resultLabel": "Modeled nonrefundable property tax credit",
+      "resultNote": "The credit cannot exceed the income tax on CT-1040, line 10. Complete Schedule 3 to claim it.",
+      "sources": [
+        {
+          "title": "2025 Connecticut Form CT-1040, lines 5, 10 and Schedule 3",
+          "url": "https://portal.ct.gov/-/media/drs/forms/2025/income/ct-1040_1225.pdf"
+        },
+        {
+          "title": "2025 CT-1040 instructions, property tax credit and income table",
+          "url": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf"
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.1",
+        "file": "variables/gov/states/ct/tax/income/credits/property_tax/ct_property_tax_credit.py",
+        "sha256": "666607b961917d36c205baf5ec17ba8b1713f8f2c335885ebd85917138202b15"
+      }
+    }
+  ],
+  "heldPrograms": [
+    {
+      "id": "hi-low-income-household-renters-credit",
+      "state": "HI",
+      "year": 2025,
+      "reason": "unverified-dependency-rule",
+      "notes": [
+        "Hawaii excludes you from this credit if another taxpayer could claim you as a dependent, even if nobody claims you.",
+        "Use 2025 Schedule X, Part I, to check the credit\u2019s residence, housing and dependent requirements."
+      ],
+      "sources": [
+        {
+          "title": "2025 N-11 instructions, Schedule X Part I, line 3",
+          "url": "https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=26"
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.1",
+        "file": "variables/gov/states/hi/tax/income/credits/hi_low_income_household_renters/hi_low_income_household_renters_tax_credit.py",
+        "sha256": "c0e74ebd07388349e3d0e4a803c83d766b7a94218c929973d70fe20dd6088d67"
       }
     }
   ]

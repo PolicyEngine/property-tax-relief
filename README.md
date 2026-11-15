@@ -19,7 +19,7 @@ The `artifacts/` directory contains a self-contained interactive (`index.html`),
 The `/calculator/` page calculates 2025 scenarios for one adult filing as single, with no spouse or dependents. Its selector includes all 50 states and DC and 119 selected program and context records. Ten programs support calculations across eight states:
 
 - California: nonrefundable renter credit before its tax-liability limit.
-- Hawaii: low-income household renter credit.
+- Connecticut: nonrefundable credit for qualified primary-residence property taxes.
 - Illinois: property-tax credit after its income-tax limit.
 - Indiana: renter and homeowner income-tax deductions.
 - Michigan: homestead property-tax credit for renters.
@@ -27,11 +27,13 @@ The `/calculator/` page calculates 2025 scenarios for one adult filing as single
 - Oklahoma: property-tax credit or refund for homestead owners.
 - Pennsylvania: property-tax/rent rebate for renters.
 
-Other records show why calculations remain unavailable. Users supply qualified expenses and specified tax-form inputs; the estimate assumes the remaining qualification requirements hold. Michigan and Pennsylvania calculations cover renters; Pennsylvania's preview excludes mixed owner-renter claims. Oklahoma calculations cover homestead owners. New Jersey selects one provision, so a zero deduction can accompany a credit or vice versa. Deduction amounts and California's credit before its liability limit do not measure tax savings on a completed return.
+Other records show why calculations remain unavailable. Users supply qualified expenses and specified tax-form inputs; the estimate assumes the remaining qualification requirements hold. Connecticut covers primary-residence taxes and uses CT-1040, line 10, as its tax-liability limit; motor-vehicle tax claims require the full Schedule 3. Michigan and Pennsylvania calculations cover renters; Pennsylvania's preview excludes mixed owner-renter claims. Oklahoma calculations cover homestead owners. New Jersey selects one provision, so a zero deduction can accompany a credit or vice versa. Deduction amounts and California's credit before its liability limit do not measure tax savings on a completed return.
+
+Hawaii excludes taxpayers whom another taxpayer could claim as a dependent, even if nobody claims them. The preview cannot evaluate that condition, so Hawaii's renter credit remains unavailable. See [2025 Schedule X, Part I](https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=26).
 
 The browser uses `@policyengine/api-client` to send entered scenarios to the website's household-calculation API. Calculations require a network connection and use the shared API's capacity. The app adds no calculation backend or frontend benefit formulas. The adapter rejects missing or invalid outputs, preserves finite returned numbers, cancels obsolete requests, reuses unchanged requests, and caps new requests at 15 per minute per page.
 
-`data/calculator/contracts.json` records input mappings and source evidence. The metadata snapshot reported PolicyEngine US 2.2.1 on November 15, 2026; each calculation response supplies no model-version receipt. `data/calculator/validation-cases.json` contains source-derived cases, which `scripts/calculator_live_qa.ts` explicitly checks against the API. The offline unit suite sends no live requests.
+`data/calculator/contracts.json` records input mappings and source evidence. The metadata snapshot reported PolicyEngine US 2.2.1 on November 15, 2026; each calculation response supplies no model-version receipt. `data/calculator/validation-cases.json` contains 31 source-derived cases for enabled programs. Saved API responses match their expected values; `scripts/calculator_live_qa.ts` can rerun those checks. The offline unit suite sends no live requests.
 
 Independent review and publication checks remain open. The preview does not establish exhaustive coverage or national-calculator readiness.
 

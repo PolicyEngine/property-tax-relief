@@ -242,6 +242,39 @@ async function calculatorCheck(page, options) {
   )
     throw new Error("Calculator mobile layout overflows");
   await screenshotFromTop(options.mobileScreenshot);
+  await state.selectOption("HI");
+  await page
+    .getByLabel("Program", { exact: true })
+    .selectOption("hi-low-income-household-renters-credit");
+  await page
+    .getByRole("heading", { name: "Calculation unavailable", exact: true })
+    .waitFor();
+  await page
+    .getByText(
+      "This preview cannot evaluate whether another taxpayer could claim you as a dependent.",
+      { exact: true },
+    )
+    .waitFor();
+  if (
+    await page
+      .getByRole("complementary", { name: "Model estimate", exact: true })
+      .getByText(/^\$[\d,]+(?:\.\d{2})?$/)
+      .count()
+  )
+    throw new Error("A held program must clear the prior monetary estimate");
+  if (
+    await page
+      .getByRole("button", { name: "Calculate estimate", exact: true })
+      .count()
+  )
+    throw new Error("A held program must not offer a calculation");
+  await page
+    .getByRole("link", {
+      name: "2025 N-11 instructions, Schedule X Part I, line 3",
+      exact: true,
+    })
+    .waitFor();
+  await screenshotFromTop(options.holdScreenshot);
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.emulateMedia({ reducedMotion: "no-preference" });
 }
@@ -341,6 +374,7 @@ try {
   runCode(calculatorCheck, {
     screenshot: resolve(output, "calculator-desktop.png"),
     mobileScreenshot: resolve(output, "calculator-mobile.png"),
+    holdScreenshot: resolve(output, "calculator-hawaii-unavailable.png"),
   });
   runCode(offlineLoad, {
     url: pathToFileURL(resolve("artifacts/index.html")).href,

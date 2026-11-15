@@ -14,6 +14,22 @@ import metadata from "../data/calculator/model-metadata.json";
 import receipt from "../data/calculator/validation-receipt.json";
 
 describe("calculator source contracts", () => {
+  it("keeps Hawaii unavailable when the preview cannot represent claimability", () => {
+    const program = loadCalculatorPrograms().find(
+      (item) => item.id === "hi-low-income-household-renters-credit",
+    )!;
+    expect(program).toMatchObject({
+      state: "HI",
+      modelVariable: null,
+      entity: null,
+      inputs: [],
+      unavailableReason: "unverified-dependency-rule",
+    });
+    expect(program.sources[0].url).toContain("/forms/2025/n11ins.pdf");
+    expect(program.notes.join(" ")).toContain("could claim you");
+    expect(() => buildHousehold(program, {})).toThrow("unsupported-program");
+  });
+
   it("preserves every selected inventory record and all 51 jurisdictions", () => {
     const states = loadStates();
     const programs = loadCalculatorPrograms();

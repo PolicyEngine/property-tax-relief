@@ -1,6 +1,6 @@
 {
   "source": "https://www.policyengine.org/api/metadata/us",
-  "checkedAt": "2026-11-15",
+  "checkedAt": "2026-11-15T15:41:05.213853Z",
   "modelVersion": "2.2.1",
   "sourceSha256": "670b553ff1eb2307bcb7edf529a03f40826c7beb1b8b057a1fc4e92b53b8de92",
   "variables": {
@@ -44,14 +44,6 @@
       "unit": "currency-USD",
       "isInputVariable": false
     },
-    "claimed_as_dependent_on_another_return": {
-      "entity": "person",
-      "valueType": "bool",
-      "definitionPeriod": "year",
-      "name": "claimed_as_dependent_on_another_return",
-      "unit": null,
-      "isInputVariable": true
-    },
     "cohabitating_spouses": {
       "entity": "tax_unit",
       "valueType": "bool",
@@ -59,6 +51,30 @@
       "name": "cohabitating_spouses",
       "unit": null,
       "isInputVariable": true
+    },
+    "ct_agi": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ct_agi",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ct_income_tax_after_amt": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ct_income_tax_after_amt",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ct_property_tax_credit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ct_property_tax_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
     },
     "filing_status": {
       "entity": "tax_unit",
@@ -89,22 +105,6 @@
           "label": "Surviving spouse"
         }
       ]
-    },
-    "hi_agi": {
-      "entity": "tax_unit",
-      "valueType": "float",
-      "definitionPeriod": "year",
-      "name": "hi_agi",
-      "unit": "currency-USD",
-      "isInputVariable": false
-    },
-    "hi_tax_credit_for_low_income_household_renters": {
-      "entity": "tax_unit",
-      "valueType": "float",
-      "definitionPeriod": "year",
-      "name": "hi_tax_credit_for_low_income_household_renters",
-      "unit": "currency-USD",
-      "isInputVariable": false
     },
     "il_income_tax_before_non_refundable_credits": {
       "entity": "tax_unit",
