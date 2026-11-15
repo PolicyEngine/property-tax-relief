@@ -109,6 +109,59 @@ async function offlineLoad(page, options) {
 }
 
 async function calculatorCheck(page, options) {
+  async function assertResultInViewport(text) {
+    await page.waitForFunction(
+      (amount) => {
+        const result = document
+          .getElementById("estimate-heading")
+          ?.closest("aside");
+        const element = [...(result?.querySelectorAll("p") ?? [])].find(
+          (paragraph) => paragraph.textContent.trim() === amount,
+        );
+        if (!element) return false;
+        const headerEdges = [...document.querySelectorAll("body *")].flatMap(
+          (element) => {
+            const style = getComputedStyle(element);
+            const box = element.getBoundingClientRect();
+            return ["sticky", "fixed"].includes(style.position) &&
+              style.top === "0px" &&
+              box.top <= 1 &&
+              box.bottom > 0 &&
+              box.width >= document.documentElement.clientWidth - 1
+              ? [box.bottom]
+              : [];
+          },
+        );
+        if (!headerEdges.length) return false;
+        const headerBottom = Math.max(...headerEdges);
+        const box = element.getBoundingClientRect();
+        return (
+          box.height > 0 &&
+          box.top >= headerBottom &&
+          box.bottom <= innerHeight &&
+          box.left >= 0 &&
+          box.right <= innerWidth
+        );
+      },
+      text,
+      { timeout: 5_000 },
+    );
+  }
+
+  async function screenshotFromTop(path) {
+    await page.evaluate(() =>
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" }),
+    );
+    await page.waitForFunction(() => scrollY === 0);
+    await page.evaluate(
+      () =>
+        new Promise((done) =>
+          requestAnimationFrame(() => requestAnimationFrame(done)),
+        ),
+    );
+    await page.screenshot({ path, fullPage: true });
+  }
+
   await page
     .getByRole("link", { name: "Household estimates", exact: true })
     .click();
@@ -160,7 +213,8 @@ async function calculatorCheck(page, options) {
   await page
     .getByText("Deduction from taxable income", { exact: true })
     .waitFor();
-  await page.screenshot({ path: options.screenshot, fullPage: true });
+  await assertResultInViewport("$3,000.00");
+  await screenshotFromTop(options.screenshot);
   await rent.fill("1200");
   await page
     .getByText(
@@ -168,25 +222,28 @@ async function calculatorCheck(page, options) {
       { exact: true },
     )
     .waitFor();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ reducedMotion: "reduce" });
   await calculate.click();
   await page
     .getByText("$1,200.00", { exact: true })
     .waitFor({ timeout: 130_000 });
+  await assertResultInViewport("$1,200.00");
   if (
     !(await page
       .getByRole("button", { name: "Estimate up to date", exact: true })
       .isDisabled())
   )
     throw new Error("Unchanged inputs must not recalculate");
-  await page.setViewportSize({ width: 390, height: 844 });
   if (
     await page.evaluate(
       () => document.documentElement.scrollWidth > innerWidth + 1,
     )
   )
     throw new Error("Calculator mobile layout overflows");
-  await page.screenshot({ path: options.mobileScreenshot, fullPage: true });
+  await screenshotFromTop(options.mobileScreenshot);
   await page.setViewportSize({ width: 1280, height: 900 });
+  await page.emulateMedia({ reducedMotion: "no-preference" });
 }
 
 async function offlineInteractions(page, options) {

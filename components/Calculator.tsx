@@ -121,6 +121,7 @@ export function Calculator({ programs, states }: CalculatorProps) {
   const requestRef = useRef<AbortController | null>(null);
   const requestNumber = useRef(0);
   const errorsRef = useRef<HTMLDivElement>(null);
+  const resultRef = useRef<HTMLElement>(null);
 
   const statePrograms = programs.filter(
     (program) => program.state === stateCode,
@@ -149,6 +150,17 @@ export function Calculator({ programs, states }: CalculatorProps) {
   useEffect(() => {
     if (errors.length) errorsRef.current?.focus();
   }, [errors]);
+
+  useEffect(() => {
+    if (!estimate) return;
+    resultRef.current?.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "instant"
+        : "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+  }, [estimate]);
 
   function cancelCalculation() {
     requestNumber.current += 1;
@@ -446,7 +458,11 @@ export function Calculator({ programs, states }: CalculatorProps) {
         </form>
       </section>
 
-      <aside className={styles.results} aria-labelledby="estimate-heading">
+      <aside
+        className={styles.results}
+        aria-labelledby="estimate-heading"
+        ref={resultRef}
+      >
         <div className={styles.resultHeading}>
           <span className="eyebrow">PolicyEngine</span>
           <span className={styles.status} aria-live="polite">
