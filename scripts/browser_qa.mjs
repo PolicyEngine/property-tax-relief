@@ -250,6 +250,10 @@ async function calculatorDeferredCheck(existingPage, options) {
       await Promise.race([
         (async () => {
           await page.goto(options.url);
+          await page.waitForFunction(() => {
+            const state = document.getElementById("calculator-state");
+            return state instanceof HTMLSelectElement && !state.disabled;
+          });
           await state.selectOption("IN");
           await program.selectOption("in-renters-income-tax-deduction");
           await rent.fill("111");
@@ -546,6 +550,7 @@ async function offlineLoad(page, options) {
 async function calculatorCheck(page, options) {
   const clientPageErrors = [];
   const failedAssetUrls = [];
+  const failedAssetResponses = [];
   function diagnosticUrl(value) {
     try {
       const url = new URL(value);
@@ -562,7 +567,7 @@ async function calculatorCheck(page, options) {
         ].some((prefix) => url.pathname.startsWith(prefix))
       )
         return null;
-      return url.origin + url.pathname;
+      return (url.origin + url.pathname).slice(0, 2048);
     } catch {
       return null;
     }
@@ -590,8 +595,21 @@ async function calculatorCheck(page, options) {
     if (url && failedAssetUrls.length < 15 && !failedAssetUrls.includes(url))
       failedAssetUrls.push(url);
   };
+  const onResponse = (response) => {
+    if (
+      response.status() < 400 ||
+      !["script", "stylesheet", "font", "image"].includes(
+        response.request().resourceType(),
+      )
+    )
+      return;
+    const url = diagnosticUrl(response.url());
+    if (url && failedAssetResponses.length < 15)
+      failedAssetResponses.push({ url, status: response.status() });
+  };
   page.on("pageerror", onPageError);
   page.on("requestfailed", onRequestFailed);
+  page.on("response", onResponse);
   let diagnosticPhase = "calculator navigation";
   async function assertResultInViewport(text) {
     await page.waitForFunction(
@@ -682,17 +700,19 @@ async function calculatorCheck(page, options) {
       pageUrl: diagnosticUrl(page.url()),
       clientPageErrors,
       failedAssetUrls,
+      failedAssetResponses,
       controls: await page
-        .evaluate(() =>
-          [...document.querySelectorAll("select")]
+        .evaluate(() => ({
+          selectCount: document.querySelectorAll("select").length,
+          selects: [...document.querySelectorAll("select")]
             .slice(0, 10)
             .map((select) => ({
-              id: select.id,
-              value: select.value,
+              id: select.id.slice(0, 200),
+              value: select.value.slice(0, 200),
               optionCount: select.options.length,
               selectedOptionCount: select.selectedOptions.length,
             })),
-        )
+        }))
         .catch(() => null),
       bodyText: diagnosticText(
         await page
@@ -724,6 +744,7 @@ async function calculatorCheck(page, options) {
   } finally {
     page.off("pageerror", onPageError);
     page.off("requestfailed", onRequestFailed);
+    page.off("response", onResponse);
   }
   await page
     .getByRole("heading", { name: "Calculation unavailable", exact: true })
