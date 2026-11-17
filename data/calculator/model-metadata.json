@@ -1,6 +1,6 @@
 {
   "source": "https://www.policyengine.org/api/metadata/us",
-  "checkedAt": "2026-11-17T19:11:00Z",
+  "checkedAt": "2026-11-17T19:11:24Z",
   "modelVersion": "2.2.2",
   "sourceSha256": "8f8b944c3d91a84a891a01274282688fb80f1113a55ce09931ba83f42e25091e",
   "variables": {
@@ -97,6 +97,14 @@
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "ct_property_tax_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "dc_ptc": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "dc_ptc",
       "unit": "currency-USD",
       "isInputVariable": false
     },
@@ -234,6 +242,22 @@
       "unit": "currency-USD",
       "isInputVariable": false
     },
+    "ma_scb_total_income": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ma_scb_total_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ma_senior_circuit_breaker": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ma_senior_circuit_breaker",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
     "mi_homestead_property_tax_credit": {
       "entity": "tax_unit",
       "valueType": "float",
@@ -255,6 +279,22 @@
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "ms_age_disability_homestead_exemption",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "mt_elderly_homeowner_or_renter_credit": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "mt_elderly_homeowner_or_renter_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "mt_elderly_homeowner_or_renter_credit_gross_household_income": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "mt_elderly_homeowner_or_renter_credit_gross_household_income",
       "unit": "currency-USD",
       "isInputVariable": false
     },
@@ -298,6 +338,30 @@
       "unit": "currency-USD",
       "isInputVariable": false
     },
+    "ny_real_property_tax_credit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ny_real_property_tax_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "oh_homestead_exemption": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "oh_homestead_exemption",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "oh_homestead_exemption_total_income": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "oh_homestead_exemption_total_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
     "ok_gross_income": {
       "entity": "tax_unit",
       "valueType": "float",
@@ -329,6 +393,14 @@
       "name": "pa_property_tax_or_rent_rebate_income",
       "unit": "currency-USD",
       "isInputVariable": false
+    },
+    "primary_residence_value": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "primary_residence_value",
+      "unit": "currency-USD",
+      "isInputVariable": true
     },
     "real_estate_taxes": {
       "entity": "person",
@@ -600,11 +672,51 @@
         }
       ]
     },
+    "tn_elderly_property_tax_relief": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "tn_elderly_property_tax_relief",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "tn_elderly_property_tax_relief_income": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "tn_elderly_property_tax_relief_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
     "tx_school_district_homestead_exemption": {
       "entity": "tax_unit",
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "tx_school_district_homestead_exemption",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ut_homeowner_renter_relief": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ut_homeowner_renter_relief",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ut_homeowner_renter_relief_household_income": {
+      "entity": "household",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ut_homeowner_renter_relief_household_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "wv_homestead_exemption": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "wv_homestead_exemption",
       "unit": "currency-USD",
       "isInputVariable": false
     }

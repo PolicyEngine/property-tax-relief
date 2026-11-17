@@ -1265,7 +1265,8 @@
       "id": "oh-homestead-exemption",
       "state": "OH",
       "variables": [
-        "oh_homestead_property_tax_reduction"
+        "oh_homestead_property_tax_reduction",
+        "oh_homestead_exemption"
       ],
       "missingVariables": [],
       "inputOnlyOrLaterFormula": [],
@@ -1276,11 +1277,19 @@
             "formula"
           ],
           "computableIn2025": true
+        },
+        "oh_homestead_exemption": {
+          "file": "gov/states/oh/tax/property/homestead_exemption/oh_homestead_exemption.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
         }
       },
       "status": "context",
       "canonicalVariables": [
-        "oh_homestead_property_tax_reduction"
+        "oh_homestead_property_tax_reduction",
+        "oh_homestead_exemption"
       ],
       "validated": false
     },

@@ -1008,6 +1008,480 @@
         "file": "variables/gov/states/al/tax/property/senior_homestead_exemption/al_senior_homestead_exemption.py",
         "sha256": "4ccdcd67aad3dbe60942257ffd984932be740e2ab611caafb8f4ef9c8c37f0e9"
       }
+    },
+    {
+      "id": "dc-schedule-h",
+      "state": "DC",
+      "modelVariable": "dc_ptc",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/dc/tax/income/credits/dc_ptc.py",
+        "sha256": "163e7c0b89aa6bf92a4b9430e55918ff2880dcbb72470d4eb9bfe642d770ce96"
+      },
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age on December 31, 2025",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 70,
+          "description": "This estimate covers the Schedule H rules for renters age 70 or older."
+        },
+        {
+          "variable": "adjusted_gross_income",
+          "label": "Federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter the amount from Schedule H, Section A, line 1."
+        },
+        {
+          "variable": "rent",
+          "label": "Qualifying annual rent paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter the qualifying rent you paid before multiplying by 20% on Schedule H, Section A, line 2."
+        }
+      ],
+      "notes": [
+        "Use this estimate if you rented your main home in D.C. throughout 2025 and received no rental subsidy. Check the remaining Schedule H eligibility requirements before filing."
+      ],
+      "resultNote": "Schedule H rounds the credit to the nearest whole dollar.",
+      "sources": [
+        {
+          "title": "2025 Schedule H and instructions",
+          "url": "https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_Schedule_H_021226.pdf"
+        },
+        {
+          "title": "D.C. Code § 47-1806.06",
+          "url": "https://code.dccouncil.gov/us/dc/council/code/sections/47-1806.06"
+        }
+      ]
+    },
+    {
+      "id": "ny-real-property-tax-credit",
+      "state": "NY",
+      "modelVariable": "ny_real_property_tax_credit",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ny/tax/income/credits/ny_real_property_tax_credit.py",
+        "sha256": "10ec76405eef5d499939f38e9447c974b8679a7325607da7f0253287d373be42"
+      },
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age on December 31, 2025",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 18,
+          "description": "Use your age at the end of the tax year."
+        },
+        {
+          "variable": "adjusted_gross_income",
+          "label": "Federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter Form IT-214, line 8. Enter zero if that amount falls below zero."
+        },
+        {
+          "variable": "rent",
+          "label": "Adjusted annual rent",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter Form IT-214, line 12. Use the form to adjust rent for included utilities, furnishings or board."
+        }
+      ],
+      "notes": [
+        "Use this estimate if you rented and occupied the same taxable New York home for all 12 months of 2025 and owned no real property. Check the remaining Form IT-214 eligibility requirements before filing."
+      ],
+      "sources": [
+        {
+          "title": "2025 Form IT-214",
+          "url": "https://www.tax.ny.gov/pdf/current_forms/it/it214_fill_in.pdf"
+        },
+        {
+          "title": "2025 Form IT-214 instructions",
+          "url": "https://www.tax.ny.gov/pdf/2025/inc/it214i_2025.pdf"
+        },
+        {
+          "title": "New York Tax Law § 606(e)",
+          "url": "https://www.nysenate.gov/legislation/laws/TAX/606"
+        }
+      ]
+    },
+    {
+      "id": "oh-homestead-exemption",
+      "state": "OH",
+      "year": 2025,
+      "modelVariable": "oh_homestead_exemption",
+      "entity": "tax_unit",
+      "kind": "assessed-value-exemption",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age at the end of 2025",
+          "entity": "person",
+          "minimum": 65,
+          "kind": "number"
+        },
+        {
+          "variable": "oh_homestead_exemption_total_income",
+          "label": "2024 Ohio modified adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "description": "Use line 3 of your 2024 Ohio IT 1040 and add the business income deduction from line 13 of the Ohio Schedule of Adjustments."
+        },
+        {
+          "variable": "assessed_property_value",
+          "label": "Assessed home value before this exemption",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Enter the 2025 taxable value from your county auditor before this exemption. Ohio assesses homes at 35% of appraised value."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "2025 property tax before this exemption",
+          "entity": "person",
+          "minimum": 0.01,
+          "kind": "money",
+          "description": "Enter the positive tax on your home before the homestead exemption. The model uses this field to identify owner-occupied homes."
+        }
+      ],
+      "notes": [
+        "This estimate covers the standard senior exemption for an Ohio home you owned and occupied on January 1, 2025. It uses the 2025 real-property tax year and a 2025 application.",
+        "Your county auditor can explain the separate disability, surviving spouse, veteran, manufactured home and grandfathered routes."
+      ],
+      "resultLabel": "Assessed home value exempt from property tax",
+      "resultNote": "The exemption removes up to $10,150 of assessed value from the calculation for eligible homeowners. Your county auditor calculates the bill using the rules for your taxing district.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/oh/tax/property/homestead_exemption/oh_homestead_exemption.py",
+        "sha256": "829d7ef98fe290d1ddb78cd9c42548055c820a61bad1f418234e40ef9986046e"
+      },
+      "sources": [
+        {
+          "title": "Ohio Department of Taxation 2025 annual report on real property tax",
+          "url": "https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/communications/publications/annual_reports/2025annualreport.pdf"
+        },
+        {
+          "title": "Ohio Department of Taxation homestead means testing",
+          "url": "https://tax.ohio.gov/help-center/faqs/real-property-tax-homestead-means-testing"
+        },
+        {
+          "title": "Ohio 2025 homestead exemption certification",
+          "url": "https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/government/newdocs/25-09-0346-HomesteadIncomeThreshold2026.pdf"
+        },
+        {
+          "title": "Fulton County auditor 2025 homestead income instructions",
+          "url": "https://www.fultoncountyoh.com/147/Homestead-Exemption"
+        },
+        {
+          "title": "Ohio Revised Code §323.151",
+          "url": "https://codes.ohio.gov/ohio-revised-code/section-323.151"
+        }
+      ]
+    },
+    {
+      "id": "wv-homestead-exemption",
+      "state": "WV",
+      "year": 2025,
+      "modelVariable": "wv_homestead_exemption",
+      "entity": "tax_unit",
+      "kind": "assessed-value-exemption",
+      "inputs": [
+        {
+          "variable": "assessed_property_value",
+          "label": "Assessed home value before the exemption",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Enter the assessed value from your county for the 2025 property tax year, which uses the July 1, 2024 assessment date."
+        }
+      ],
+      "notes": [
+        "Use this estimate if you turned 65 by June 30, 2025 and owned and occupied your qualifying West Virginia primary home on July 1, 2024.",
+        "Your county assessor can confirm your age, residency and ownership requirements and explain the separate disability route."
+      ],
+      "resultLabel": "Assessed home value exempt from property tax",
+      "resultNote": "Your county subtracts this amount from the assessed value used to calculate your property taxes.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/wv/tax/income/exemptions/homestead_exemption/wv_homestead_exemption.py",
+        "sha256": "46a54a2ae4860886219db1f9da501b2e61efd4c5f0887216795f97fe4fb951ea"
+      },
+      "sources": [
+        {
+          "title": "West Virginia Code §11-6B-3 homestead exemption",
+          "url": "https://code.wvlegislature.gov/11-6B-3/"
+        },
+        {
+          "title": "West Virginia Code §11-6B-7 taxable assessed value and no-tax rule",
+          "url": "https://code.wvlegislature.gov/11-6B-7/"
+        },
+        {
+          "title": "West Virginia Code §11-6B-2 homestead exemption definitions",
+          "url": "https://code.wvlegislature.gov/11-6B-2/"
+        },
+        {
+          "title": "Ohio County, West Virginia assessor assessment and tax years",
+          "url": "https://ohio.wvassessor.com/GeneralInfo.aspx"
+        }
+      ]
+    },
+    {
+      "id": "tn-elderly-disabled-relief",
+      "state": "TN",
+      "year": 2025,
+      "modelVariable": "tn_elderly_property_tax_relief",
+      "entity": "tax_unit",
+      "kind": "rebate",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age at the end of 2025",
+          "entity": "person",
+          "minimum": 65,
+          "kind": "number"
+        },
+        {
+          "variable": "tn_elderly_property_tax_relief_income",
+          "label": "2024 income for Tennessee Property Tax Relief",
+          "entity": "tax_unit",
+          "kind": "money",
+          "description": "Use your 2024 income from all sources under the program rules. Ask your county trustee which amounts to include."
+        },
+        {
+          "variable": "primary_residence_value",
+          "label": "Full market value of your home for 2025",
+          "entity": "person",
+          "minimum": 0.01,
+          "kind": "money",
+          "description": "Ask your county trustee for the full market value it uses for this program. Tennessee adjusts the county's appraised value using the official appraisal ratio."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "2025 property tax on your home before this payment",
+          "entity": "person",
+          "minimum": 0.01,
+          "kind": "money",
+          "description": "Enter the tax for one qualified residential bill, before any payment or credit from this program. Exclude penalties, interest and separate fees."
+        }
+      ],
+      "notes": [
+        "This estimate covers sole owners who qualify by age and use the property as their Tennessee primary home. Use a bill without a tax freeze or other local adjustments to the home value or tax.",
+        "Apply through the county trustee or city collecting official. The trustee can confirm which property value and tax amounts qualify."
+      ],
+      "resultLabel": "Estimated state property tax payment before adjustments",
+      "resultNote": "Tennessee can reimburse you or pay the collecting official. State funding adjustments, prior credits and local supplements can change the amount you receive.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/tn/tax/property/elderly_property_tax_relief/tn_elderly_property_tax_relief.py",
+        "sha256": "2e5b591137f5df2835dd556ac42d1a90a47e2b526d75833dcd2acd1f95c13947"
+      },
+      "sources": [
+        {
+          "title": "2025 Tennessee Property Tax Relief brochure",
+          "url": "https://www.weakleycountytn.gov/uploads/1/0/7/5/107537459/2025_property_ttax_relief_program.pdf#page=2"
+        },
+        {
+          "title": "Tennessee Code §67-5-702 elderly low-income homeowners",
+          "url": "https://comptroller.tn.gov/content/dam/cot/pa/documents/tax-relief/TCA%2067-5-701%20through%2067-5-704.pdf#page=3"
+        },
+        {
+          "title": "Tennessee Code §67-5-701 payment and administration",
+          "url": "https://comptroller.tn.gov/content/dam/cot/pa/documents/tax-relief/TCA%2067-5-701%20through%2067-5-704.pdf#page=1"
+        },
+        {
+          "title": "Tennessee Comptroller tax relief applications and payment guidance",
+          "url": "https://comptroller.tn.gov/office-functions/pa/property-taxes/property-tax-programs/tax-relief.html"
+        }
+      ]
+    },
+    {
+      "id": "mt-elderly-homeowner-renter-credit",
+      "state": "MT",
+      "modelVariable": "mt_elderly_homeowner_or_renter_credit",
+      "entity": "person",
+      "kind": "credit",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/mt/tax/income/credits/mt_elderly_homeowner_or_renter/mt_elderly_homeowner_or_renter_credit.py",
+        "sha256": "3f43adeab5b47d241053e66f01695c5ea55349f2cc8602b9bd5baf19d3c4ee6a"
+      },
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age on December 31, 2025",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 18
+        },
+        {
+          "variable": "mt_elderly_homeowner_or_renter_credit_gross_household_income",
+          "label": "Gross household income",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter the amount from 2025 Schedule 2EC, line 18."
+        },
+        {
+          "variable": "rent",
+          "label": "Qualifying annual rent paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter the amount from 2025 Schedule 2EC, line 24."
+        }
+      ],
+      "notes": [
+        "Use this estimate if you rented and occupied your main home in Montana throughout 2025. Check the remaining Schedule 2EC eligibility requirements before filing."
+      ],
+      "sources": [
+        {
+          "title": "2025 Schedule 2EC",
+          "url": "https://revenue.mt.gov/files/Forms/Montana-Individual-Income-Tax-Return-Form-2/Form_2_2025_Schedule_2EC.pdf"
+        },
+        {
+          "title": "2025 Form 2 instructions",
+          "url": "https://revenue.mt.gov/files/forms/Montana-Individual-Income-Tax-Return-Form-2-Instructions/2025_Montana_Individual_Income_Tax_Return_Form_2_Instructions.pdf"
+        },
+        {
+          "title": "Montana Code § 15-30-2340",
+          "url": "https://mca.legmt.gov/bills/mca/title_0150/chapter_0300/part_0230/section_0400/0150-0300-0230-0400.html"
+        }
+      ]
+    },
+    {
+      "id": "ma-senior-circuit-breaker",
+      "state": "MA",
+      "modelVariable": "ma_senior_circuit_breaker",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ma/tax/income/credits/senior_circuit_breaker/ma_senior_circuit_breaker.py",
+        "sha256": "35c5d5bf94cdbd38451654165a5c4b972837cc38eed94c4df7d1b906be490c27"
+      },
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age on December 31, 2025",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 18
+        },
+        {
+          "variable": "ma_scb_total_income",
+          "label": "Qualifying income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter the amount from 2025 Schedule CB, line 9."
+        },
+        {
+          "variable": "rent",
+          "label": "Qualifying annual rent paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter rent from 2025 Schedule CB, line 18a, before dividing by four."
+        }
+      ],
+      "notes": [
+        "Use this estimate if you rented your main home in Massachusetts throughout 2025 from a landlord who pays property tax. Check the remaining Schedule CB eligibility requirements, including the rules for rental subsidies."
+      ],
+      "sources": [
+        {
+          "title": "2025 Schedule CB",
+          "url": "https://www.mass.gov/doc/2025-schedule-cb-circuit-breaker-credit/download"
+        },
+        {
+          "title": "Massachusetts General Laws, chapter 62, section 6(k)",
+          "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIX/Chapter62/Section6"
+        }
+      ]
+    },
+    {
+      "id": "ut-renter-refund",
+      "state": "UT",
+      "modelVariable": "ut_homeowner_renter_relief",
+      "entity": "tax_unit",
+      "kind": "rebate",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ut/tax/property/homeowner_renter_relief/ut_homeowner_renter_relief.py",
+        "sha256": "7f1391f0274553c57c504ef0d6605b68accc8e2284ecd3a90ad9be2d2c543c4e"
+      },
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age on December 31, 2025",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 18
+        },
+        {
+          "variable": "ut_homeowner_renter_relief_household_income",
+          "label": "Total household income",
+          "entity": "household",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter total income from Form TC-90CB, line 10, for the 2025 rent year."
+        },
+        {
+          "variable": "rent",
+          "label": "Qualifying annual rent paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter your out-of-pocket rent from Form TC-90CB, section 3. Use this estimate for rent that excludes gas and electricity."
+        }
+      ],
+      "notes": [
+        "Use this estimate if you rented your main home and lived in Utah throughout 2025, supported yourself financially, and meet the remaining Form TC-90CB requirements."
+      ],
+      "sources": [
+        {
+          "title": "Form TC-90CB for the 2025 rent year",
+          "url": "https://files.tax.utah.gov/tax/forms/current/tc-90cb.pdf"
+        },
+        {
+          "title": "Utah State Tax Commission Renter’s Credit",
+          "url": "https://tax.utah.gov/relief/renter-refund/"
+        },
+        {
+          "title": "Utah Code § 59-2a-205",
+          "url": "https://le.utah.gov/xcode/Title59/Chapter2A/C59-2a_2026010120250507.pdf#page=11"
+        }
+      ]
     }
   ],
   "heldPrograms": [

@@ -643,5 +643,293 @@
     "expectedValue": 0,
     "source": "https://admincode.legislature.state.al.us/administrative-code/810-4-1-.23",
     "sourceLocation": "Rule 810-4-1-.23(3)(a)–(b). The age-65 state levy exemption does not apply at age 64 with no other qualifying status. The ordinary exemption is a separate provision."
+  },
+  {
+    "id": "dc-senior-renter-cap",
+    "programId": "dc-schedule-h",
+    "inputs": {
+      "age": "70",
+      "adjusted_gross_income": "20000",
+      "rent": "12000"
+    },
+    "expectedValue": 1425,
+    "source": "https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_Schedule_H_021226.pdf#page=3",
+    "sourceLocation": "2025 Schedule H worksheet, lines 2–6: 20% × $12,000 − 3% × $20,000 = $1,800. The $1,425 limit applies."
+  },
+  {
+    "id": "dc-senior-renter-income-ceiling",
+    "programId": "dc-schedule-h",
+    "inputs": {
+      "age": "70",
+      "adjusted_gross_income": "90000",
+      "rent": "16000"
+    },
+    "expectedValue": 500,
+    "source": "https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_Schedule_H_021226.pdf#page=3",
+    "sourceLocation": "2025 Schedule H worksheet, lines 2–6: income of $90,000 qualifies for the senior rate. 20% × $16,000 − 3% × $90,000 = $500."
+  },
+  {
+    "id": "dc-senior-renter-over-ceiling",
+    "programId": "dc-schedule-h",
+    "inputs": {
+      "age": "70",
+      "adjusted_gross_income": "90001",
+      "rent": "16000"
+    },
+    "expectedValue": 0,
+    "source": "https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_Schedule_H_021226.pdf#page=3",
+    "sourceLocation": "2025 Schedule H worksheet, age 70 or older income band: $90,001 exceeds the $90,000 ceiling."
+  },
+  {
+    "id": "ny-it214-renter-senior-band-top",
+    "programId": "ny-real-property-tax-credit",
+    "inputs": {
+      "age": "65",
+      "adjusted_gross_income": "3000",
+      "rent": "1200"
+    },
+    "expectedValue": 375,
+    "source": "https://www.tax.ny.gov/pdf/current_forms/it/it214_fill_in.pdf#page=3",
+    "sourceLocation": "2025 IT-214 lines 10, 14, and 18–20, Tables 1 and A: 25% × $1,200 = $300 exceeds 3.5% × $3,000 = $105. Table A pays $375 at $3,000."
+  },
+  {
+    "id": "ny-it214-renter-nonsenior-income-ceiling",
+    "programId": "ny-real-property-tax-credit",
+    "inputs": {
+      "age": "64",
+      "adjusted_gross_income": "18000",
+      "rent": "5400"
+    },
+    "expectedValue": 50,
+    "source": "https://www.tax.ny.gov/pdf/current_forms/it/it214_fill_in.pdf#page=3",
+    "sourceLocation": "2025 IT-214 lines 8–14 and 18–20, Tables 1 and B: $18,000 income and $450 average monthly rent meet the limits. 25% × $5,400 = $1,350 exceeds 6.5% × $18,000 = $1,170. Table B pays $50."
+  },
+  {
+    "id": "ny-it214-renter-equal-excess",
+    "programId": "ny-real-property-tax-credit",
+    "inputs": {
+      "age": "65",
+      "adjusted_gross_income": "3000",
+      "rent": "420"
+    },
+    "expectedValue": 0,
+    "source": "https://www.tax.ny.gov/pdf/current_forms/it/it214_fill_in.pdf#page=2",
+    "sourceLocation": "2025 IT-214 lines 14 and 18–20: 25% × $420 equals 3.5% × $3,000 at $105. Line 19 requires strict excess."
+  },
+  {
+    "id": "oh-homestead-2024-magi-40000",
+    "programId": "oh-homestead-exemption",
+    "inputs": {
+      "age": "65",
+      "oh_homestead_exemption_total_income": "40000",
+      "assessed_property_value": "35000",
+      "real_estate_taxes": "1000"
+    },
+    "expectedValue": 10150,
+    "source": "https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/communications/publications/annual_reports/2025annualreport.pdf",
+    "sourceLocation": "Real property tax, homestead exemption section. At age 65 and 2024 MAGI of $40,000, the standard exemption covers $10,150 of assessed value. The Ohio means testing FAQ and Fulton County confirm eligibility at the $40,000 income limit."
+  },
+  {
+    "id": "oh-homestead-2024-magi-40001",
+    "programId": "oh-homestead-exemption",
+    "inputs": {
+      "age": "65",
+      "oh_homestead_exemption_total_income": "40001",
+      "assessed_property_value": "35000",
+      "real_estate_taxes": "1000"
+    },
+    "expectedValue": 0,
+    "source": "https://www.fultoncountyoh.com/147/Homestead-Exemption",
+    "sourceLocation": "2025 real-property applicants who do not qualify for grandfathering cannot exceed $40,000 in 2024 Ohio modified adjusted gross income. The homeowner exceeds the threshold by $1."
+  },
+  {
+    "id": "oh-homestead-assessment-8750",
+    "programId": "oh-homestead-exemption",
+    "inputs": {
+      "age": "70",
+      "oh_homestead_exemption_total_income": "30000",
+      "assessed_property_value": "8750",
+      "real_estate_taxes": "250"
+    },
+    "expectedValue": 8750,
+    "source": "https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/communications/publications/annual_reports/2025annualreport.pdf",
+    "sourceLocation": "Real property tax, homestead exemption section. The $10,150 assessed-value limit covers the eligible home's entire $8,750 assessed value."
+  },
+  {
+    "id": "wv-homestead-assessment-60000",
+    "programId": "wv-homestead-exemption",
+    "inputs": {
+      "assessed_property_value": "60000"
+    },
+    "expectedValue": 20000,
+    "source": "https://code.wvlegislature.gov/11-6B-3/",
+    "sourceLocation": "§11-6B-3(a). The county exempts the first $20,000 of the qualifying home's $60,000 assessed value."
+  },
+  {
+    "id": "wv-homestead-assessment-20000",
+    "programId": "wv-homestead-exemption",
+    "inputs": {
+      "assessed_property_value": "20000"
+    },
+    "expectedValue": 20000,
+    "source": "https://code.wvlegislature.gov/11-6B-3/",
+    "sourceLocation": "§11-6B-3(a). The exemption removes the whole eligible assessment when it equals the $20,000 limit."
+  },
+  {
+    "id": "wv-homestead-assessment-12500",
+    "programId": "wv-homestead-exemption",
+    "inputs": {
+      "assessed_property_value": "12500"
+    },
+    "expectedValue": 12500,
+    "source": "https://code.wvlegislature.gov/11-6B-7/",
+    "sourceLocation": "§11-6B-7(b). When the $20,000 exemption exceeds the $12,500 assessment, the entire assessment falls within the exemption and the county levies no tax."
+  },
+  {
+    "id": "tn-elderly-relief-equalized-value-250000",
+    "programId": "tn-elderly-disabled-relief",
+    "inputs": {
+      "age": "65",
+      "tn_elderly_property_tax_relief_income": "37530",
+      "primary_residence_value": "250000",
+      "real_estate_taxes": "1000"
+    },
+    "expectedValue": 130.8,
+    "source": "https://comptroller.tn.gov/content/dam/cot/pa/documents/tax-relief/TCA%2067-5-701%20through%2067-5-704.pdf#page=3",
+    "sourceLocation": "§67-5-702(b), with 2025 brochure cap $32,700 and income maximum $37,530. Hypothetical county appraisal $200,000, appraisal ratio 0.8 and nominal 2% rate produce $1,000 tax. State amount before adjustments is $32,700 × 25% × 2% × 0.8 = $130.80."
+  },
+  {
+    "id": "tn-elderly-relief-income-37531",
+    "programId": "tn-elderly-disabled-relief",
+    "inputs": {
+      "age": "65",
+      "tn_elderly_property_tax_relief_income": "37531",
+      "primary_residence_value": "250000",
+      "real_estate_taxes": "1000"
+    },
+    "expectedValue": 0,
+    "source": "https://www.weakleycountytn.gov/uploads/1/0/7/5/107537459/2025_property_ttax_relief_program.pdf#page=2",
+    "sourceLocation": "2025 eligibility requirements, elderly route. The $37,531 of prior-year income exceeds the $37,530 maximum."
+  },
+  {
+    "id": "tn-elderly-relief-value-30000",
+    "programId": "tn-elderly-disabled-relief",
+    "inputs": {
+      "age": "74",
+      "tn_elderly_property_tax_relief_income": "25000",
+      "primary_residence_value": "30000",
+      "real_estate_taxes": "150"
+    },
+    "expectedValue": 150,
+    "source": "https://comptroller.tn.gov/content/dam/cot/pa/documents/tax-relief/TCA%2067-5-701%20through%2067-5-704.pdf#page=3",
+    "sourceLocation": "§67-5-702(b) with 2025 brochure cap $32,700. A qualifying $30,000 full market value falls below the cap. With a 1.0 appraisal ratio and 2% tax rate, the state amount before adjustments covers the $150 tax."
+  },
+  {
+    "id": "mt-2ec-renter-age-threshold",
+    "programId": "mt-elderly-homeowner-renter-credit",
+    "inputs": {
+      "age": "62",
+      "mt_elderly_homeowner_or_renter_credit_gross_household_income": "10000",
+      "rent": "6000"
+    },
+    "expectedValue": 900,
+    "source": "https://revenue.mt.gov/files/Forms/Montana-Individual-Income-Tax-Return-Form-2/Form_2_2025_Schedule_2EC.pdf",
+    "sourceLocation": "2025 Schedule 2EC attestation and lines 18–30. Age 62 qualifies, the standard exclusion reduces $10,000 to zero, and 15% of $6,000 is $900."
+  },
+  {
+    "id": "mt-2ec-renter-multiplier-boundary",
+    "programId": "mt-elderly-homeowner-renter-credit",
+    "inputs": {
+      "age": "62",
+      "mt_elderly_homeowner_or_renter_credit_gross_household_income": "35000",
+      "rent": "16000"
+    },
+    "expectedValue": 460,
+    "source": "https://revenue.mt.gov/files/Forms/Montana-Individual-Income-Tax-Return-Form-2/Form_2_2025_Schedule_2EC.pdf",
+    "sourceLocation": "2025 Schedule 2EC lines 18–30 and Instructions Credit Multiplier Table. $2,400 rent equivalent minus 5% × ($35,000 − $12,600) leaves $1,280. Line 28 uses the $1,150 cap, and line 30 multiplies it by 40%."
+  },
+  {
+    "id": "mt-2ec-renter-income-limit",
+    "programId": "mt-elderly-homeowner-renter-credit",
+    "inputs": {
+      "age": "62",
+      "mt_elderly_homeowner_or_renter_credit_gross_household_income": "45000",
+      "rent": "16000"
+    },
+    "expectedValue": 0,
+    "source": "https://revenue.mt.gov/files/Forms/Montana-Individual-Income-Tax-Return-Form-2/Form_2_2025_Schedule_2EC.pdf",
+    "sourceLocation": "2025 Schedule 2EC attestation requires gross household income below $45,000."
+  },
+  {
+    "id": "ma-cb-renter-cap",
+    "programId": "ma-senior-circuit-breaker",
+    "inputs": {
+      "age": "65",
+      "ma_scb_total_income": "30000",
+      "rent": "30000"
+    },
+    "expectedValue": 2820,
+    "source": "https://www.mass.gov/doc/2025-schedule-cb-circuit-breaker-credit/download",
+    "sourceLocation": "2025 Schedule CB lines 18–21. 25% × $30,000 rent minus 10% × $30,000 qualifying income gives $4,500. Line 21 caps the credit at $2,820."
+  },
+  {
+    "id": "ma-cb-renter-income-ceiling",
+    "programId": "ma-senior-circuit-breaker",
+    "inputs": {
+      "age": "65",
+      "ma_scb_total_income": "75000",
+      "rent": "36000"
+    },
+    "expectedValue": 1500,
+    "source": "https://www.mass.gov/doc/2025-schedule-cb-circuit-breaker-credit/download",
+    "sourceLocation": "2025 Schedule CB line 9 and lines 18–21. A single filer with $75,000 qualifies. 25% × $36,000 rent minus 10% × $75,000 is $1,500."
+  },
+  {
+    "id": "ma-cb-renter-over-income-ceiling",
+    "programId": "ma-senior-circuit-breaker",
+    "inputs": {
+      "age": "65",
+      "ma_scb_total_income": "75001",
+      "rent": "36000"
+    },
+    "expectedValue": 0,
+    "source": "https://www.mass.gov/doc/2025-schedule-cb-circuit-breaker-credit/download",
+    "sourceLocation": "2025 Schedule CB line 9. $75,001 exceeds the $75,000 single-filer limit."
+  },
+  {
+    "id": "ut-tc90cb-renter-rate-break",
+    "programId": "ut-renter-refund",
+    "inputs": {
+      "age": "66",
+      "ut_homeowner_renter_relief_household_income": "15034",
+      "rent": "10000"
+    },
+    "expectedValue": 850,
+    "source": "https://files.tax.utah.gov/tax/forms/current/tc-90cb.pdf#page=4",
+    "sourceLocation": "2025 Renter Refund Schedule. An applicant with $15,034 household income uses the 8.5% rate, yielding $850 on $10,000 rent below the $1,245 cap."
+  },
+  {
+    "id": "ut-tc90cb-renter-income-ceiling",
+    "programId": "ut-renter-refund",
+    "inputs": {
+      "age": "66",
+      "ut_homeowner_renter_relief_household_income": "44221",
+      "rent": "12000"
+    },
+    "expectedValue": 262,
+    "source": "https://files.tax.utah.gov/tax/forms/current/tc-90cb.pdf#page=4",
+    "sourceLocation": "2025 Renter Refund Schedule. $44,221 falls in the 2.5% band. $300 exceeds the $262 cap, so the credit equals $262."
+  },
+  {
+    "id": "ut-tc90cb-renter-over-income-ceiling",
+    "programId": "ut-renter-refund",
+    "inputs": {
+      "age": "66",
+      "ut_homeowner_renter_relief_household_income": "44222",
+      "rent": "12000"
+    },
+    "expectedValue": 0,
+    "source": "https://files.tax.utah.gov/tax/forms/current/tc-90cb.pdf#page=4",
+    "sourceLocation": "2025 Renter Refund Schedule. $44,222 exceeds the $44,221 eligibility limit."
   }
 ]

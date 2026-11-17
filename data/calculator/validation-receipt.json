@@ -1,19 +1,19 @@
 {
   "schemaVersion": 2,
   "evidenceKind": "live-dashboard",
-  "checkedAt": "2026-11-17T19:20:06.747Z",
+  "checkedAt": "2026-11-17T19:30:54.445Z",
   "metadataSnapshotSha256": "8f8b944c3d91a84a891a01274282688fb80f1113a55ce09931ba83f42e25091e",
   "qualificationScope": "Source-qualified single-adult scenarios; validation covers only the listed cases.",
   "validationIdentity": {
-    "contractsSha256": "01811eb0cbf3913b9ca9b38f7f2e79a5adf9de4653a8a88e94ea1c001c9161bc",
+    "contractsSha256": "52560cf9be89e7c2ac707a9df5c03ce8e3121256e0b9cd365434d1f3b11d5f0e",
     "adapterSha256": "68ce1214e37d972c315fce970023e9fc4188e3e7b9277ba068720ea27a6a5444",
-    "casesSha256": "e44a8574a8b153eced11e37e5786acf13bd2db7fc9ce8ff898c1325dd66a575a",
-    "metadataFileSha256": "fd05cb25e380c3f0858ebba37f3e411d44c2b11b4b398cd58e6919f37870b3c0",
+    "casesSha256": "3973e55bd1867feff7b0b19b6bb4d0cea5284755a68b6f7832e48d48cc03dcb9",
+    "metadataFileSha256": "a0ae7dbdd6d05055fc516cf93740260419cb59c3a2505116f49d9645aa5aff8a",
     "harnessSha256": "704a7838755e2ac35e33fba41604b08240c4abba8c36dad6e49d6a47b190954c",
     "helperSha256": "77cbac21987fc49c7f82e4ee8a2f619ddad90ec0308daaec4de3644a03449678",
     "apiClientSha256": "dbf0856939219da0752788c3c13b42d0e98f8dea61560f1bae92ca5615678660"
   },
-  "manifestSha256": "42a079ade05a4cc5139df38d2c511b0b8981a5c6c2708576dd70889aec5fd160",
+  "manifestSha256": "241f1a7a3f5683d82e8be4ffbb96d97fbb52ee9fc2c297421c2c9c32c30643b9",
   "runtimeModelVersion": null,
   "results": [
     {
@@ -29,7 +29,7 @@
       "sourceLocation": "Rule 810-4-1-.23(3)(a)–(b). The age-65 state levy exemption does not apply at age 64 with no other qualifying status. The ordinary exemption is a separate provision.",
       "value": 0,
       "modelVariable": "al_senior_homestead_exemption",
-      "calculatedAt": "2026-11-17T19:16:19.891Z",
+      "calculatedAt": "2026-11-17T19:25:23.472Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -58,7 +58,7 @@
       "sourceLocation": "Rule 810-4-1-.23(3)(b) and Department of Revenue state tax rate. At 6.5 mills, $32,000 of assessed value carries a state levy of $208 before exemptions.",
       "value": 208,
       "modelVariable": "al_senior_homestead_exemption",
-      "calculatedAt": "2026-11-17T19:16:24.223Z",
+      "calculatedAt": "2026-11-17T19:25:27.748Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -87,7 +87,7 @@
       "sourceLocation": "Rule 810-4-1-.23(3)(b) exempts all state-levied property taxes at age 65. At the Department of Revenue’s 6.5 mills, $10,000 of assessed value carries a state levy of $65 before exemptions.",
       "value": 65,
       "modelVariable": "al_senior_homestead_exemption",
-      "calculatedAt": "2026-11-17T19:16:28.544Z",
+      "calculatedAt": "2026-11-17T19:25:32.008Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -116,7 +116,7 @@
       "sourceLocation": "Subsection A(3)(a) requires income below $3,751 for someone who lived alone.",
       "value": 0,
       "modelVariable": "az_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:16:33.385Z",
+      "calculatedAt": "2026-11-17T19:25:36.559Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -145,7 +145,7 @@
       "sourceLocation": "Subsection B(1), $1,751–$1,850 bracket. The $479 table amount controls.",
       "value": 479,
       "modelVariable": "az_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:16:38.205Z",
+      "calculatedAt": "2026-11-17T19:25:41.100Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -174,7 +174,7 @@
       "sourceLocation": "Subsection B limits the credit to the $120 paid when the table gives $502.",
       "value": 120,
       "modelVariable": "az_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:16:42.769Z",
+      "calculatedAt": "2026-11-17T19:25:45.611Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -203,7 +203,7 @@
       "sourceLocation": "Subsection B(1), $0–$1,750 bracket. $502 is below the $1,000 paid.",
       "value": 502,
       "modelVariable": "az_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:16:47.575Z",
+      "calculatedAt": "2026-11-17T19:25:50.180Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -231,7 +231,7 @@
       "sourceLocation": "2025 Form 540 booklet, renter credit qualification record, questions 1–2 and Form 540 line 46; Single filer, all nonmonetary qualifications assumed; income one dollar above 2025 ceiling",
       "value": 0,
       "modelVariable": "ca_renter_credit",
-      "calculatedAt": "2026-11-17T19:16:51.881Z",
+      "calculatedAt": "2026-11-17T19:25:54.450Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -259,7 +259,7 @@
       "sourceLocation": "2025 Form 540 booklet, renter credit qualification record, questions 1–2 and Form 540 line 46; Single filer, all nonmonetary qualifications assumed; income at 2025 ceiling; credit before liability limit",
       "value": 60,
       "modelVariable": "ca_renter_credit",
-      "calculatedAt": "2026-11-17T19:16:56.361Z",
+      "calculatedAt": "2026-11-17T19:25:58.728Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -289,7 +289,7 @@
       "sourceLocation": "CT-1040 Schedule 3 lines 63–65 cap $1,000 qualifying residence taxes at $300. Instructions page 27 gives zero reduction at single CT AGI $49,500. Line 10 tax $1,000 does not limit the $300 credit. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim.",
       "value": 300,
       "modelVariable": "ct_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:17:00.673Z",
+      "calculatedAt": "2026-11-17T19:26:03.023Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -319,7 +319,7 @@
       "sourceLocation": "Instructions page 27 places single CT AGI $49,501 in the 15% reduction band. Schedule 3 lines 65–68: $300 - ($300 × 15%) = $255; line 10 tax $1,000 does not bind. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim.",
       "value": 255,
       "modelVariable": "ct_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:17:04.965Z",
+      "calculatedAt": "2026-11-17T19:26:07.360Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -349,7 +349,7 @@
       "sourceLocation": "Instructions page 27 assigns a 100% reduction at single CT AGI $109,501. Schedule 3: $300 - ($300 × 100%) = $0. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim.",
       "value": 0,
       "modelVariable": "ct_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:17:09.274Z",
+      "calculatedAt": "2026-11-17T19:26:11.665Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -379,7 +379,7 @@
       "sourceLocation": "Instructions page 27 places single CT AGI $109,499 in the 90% reduction band. Schedule 3: $300 - ($300 × 90%) = $30. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim.",
       "value": 30,
       "modelVariable": "ct_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:17:13.554Z",
+      "calculatedAt": "2026-11-17T19:26:15.955Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -409,7 +409,7 @@
       "sourceLocation": "Instructions page 14 limits the credit to CT-1040 line 10 tax. Schedule 3 produces $300 before the liability limit; line 10 tax $80 limits the applied nonrefundable credit to $80. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim.",
       "value": 80,
       "modelVariable": "ct_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:17:17.849Z",
+      "calculatedAt": "2026-11-17T19:26:20.225Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -439,7 +439,7 @@
       "sourceLocation": "Schedule 3 line 65 limits the base to $200 qualified residence taxes. Instructions page 27 gives a 15% reduction: $200 - ($200 × 15%) = $170. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim.",
       "value": 170,
       "modelVariable": "ct_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:17:22.149Z",
+      "calculatedAt": "2026-11-17T19:26:24.544Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -469,7 +469,7 @@
       "sourceLocation": "Instructions page 27 places single CT AGI $59,501 in the 30% reduction band. Schedule 3: $300 - ($300 × 30%) = $210. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim.",
       "value": 210,
       "modelVariable": "ct_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:17:26.560Z",
+      "calculatedAt": "2026-11-17T19:26:28.935Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -499,7 +499,7 @@
       "sourceLocation": "Instructions page 2 directs a filer with CT-1040 line 10 tax of zero to skip the property tax credit. The allowed nonrefundable credit is $0. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim.",
       "value": 0,
       "modelVariable": "ct_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:17:30.824Z",
+      "calculatedAt": "2026-11-17T19:26:33.213Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -516,6 +516,93 @@
       }
     },
     {
+      "id": "dc-senior-renter-cap",
+      "programId": "dc-schedule-h",
+      "inputs": {
+        "age": "70",
+        "adjusted_gross_income": "20000",
+        "rent": "12000"
+      },
+      "expectedValue": 1425,
+      "source": "https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_Schedule_H_021226.pdf#page=3",
+      "sourceLocation": "2025 Schedule H worksheet, lines 2–6: 20% × $12,000 − 3% × $20,000 = $1,800. The $1,425 limit applies.",
+      "value": 1425,
+      "modelVariable": "dc_ptc",
+      "calculatedAt": "2026-11-17T19:26:37.483Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":70},\"rent\":{\"2025\":12000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"adjusted_gross_income\":{\"2025\":20000},\"dc_ptc\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"DC\"}}}}}",
+        "bodySha256": "b3ba01646a1713351fe981fa58e12a03426159011218d71fda51b0ade83ff920",
+        "semanticSha256": "0110c788cbb8d489a2a97eb7224c91c2d4ad53ecdee8ae3194cbcbaa27b4b3bc"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"DC\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":70},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"rent\":{\"2025\":12000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"adjusted_gross_income\":{\"2025\":20000},\"cohabitating_spouses\":{\"2025\":false},\"dc_ptc\":{\"2025\":1425.0},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "658b127b2041fd94c048900af0c4dbdd9a1aad6b16d511483b0efa1cc23cafc8"
+      }
+    },
+    {
+      "id": "dc-senior-renter-income-ceiling",
+      "programId": "dc-schedule-h",
+      "inputs": {
+        "age": "70",
+        "adjusted_gross_income": "90000",
+        "rent": "16000"
+      },
+      "expectedValue": 500,
+      "source": "https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_Schedule_H_021226.pdf#page=3",
+      "sourceLocation": "2025 Schedule H worksheet, lines 2–6: income of $90,000 qualifies for the senior rate. 20% × $16,000 − 3% × $90,000 = $500.",
+      "value": 500,
+      "modelVariable": "dc_ptc",
+      "calculatedAt": "2026-11-17T19:26:41.777Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":70},\"rent\":{\"2025\":16000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"adjusted_gross_income\":{\"2025\":90000},\"dc_ptc\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"DC\"}}}}}",
+        "bodySha256": "290a352311eed5c3424a6c779fe9037fd673a5d745dca4d29a8fb353b919e35b",
+        "semanticSha256": "5213857c928ba5685646ae829f6d4125e278dd3b4619d2be3014a5d3300e95a5"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"DC\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":70},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"rent\":{\"2025\":16000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"adjusted_gross_income\":{\"2025\":90000},\"cohabitating_spouses\":{\"2025\":false},\"dc_ptc\":{\"2025\":500.0},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "e1461cad6235b2f56d6e9a7606a305f6928aa565d2537c6abfa7ea54738523c4"
+      }
+    },
+    {
+      "id": "dc-senior-renter-over-ceiling",
+      "programId": "dc-schedule-h",
+      "inputs": {
+        "age": "70",
+        "adjusted_gross_income": "90001",
+        "rent": "16000"
+      },
+      "expectedValue": 0,
+      "source": "https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_Schedule_H_021226.pdf#page=3",
+      "sourceLocation": "2025 Schedule H worksheet, age 70 or older income band: $90,001 exceeds the $90,000 ceiling.",
+      "value": 0,
+      "modelVariable": "dc_ptc",
+      "calculatedAt": "2026-11-17T19:26:46.091Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":70},\"rent\":{\"2025\":16000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"adjusted_gross_income\":{\"2025\":90001},\"dc_ptc\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"DC\"}}}}}",
+        "bodySha256": "2ad07adfd682dd427873d12abea7893d04ae6a670a17b797bd6e0dd49bfb5832",
+        "semanticSha256": "3855d9c0c6f7cb3b17efa4f7346eecb340d0f91c3418a0478c81f81ad30034c6"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"DC\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":70},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"rent\":{\"2025\":16000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"adjusted_gross_income\":{\"2025\":90001},\"cohabitating_spouses\":{\"2025\":false},\"dc_ptc\":{\"2025\":0.0},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "51e9794dcae42aad445db06fa8bc76c35a88a943bf5cf20dd749ba234889f48a"
+      }
+    },
+    {
       "id": "il-property-5percent",
       "programId": "il-property-tax-credit",
       "inputs": {
@@ -529,7 +616,7 @@
       "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules.",
       "value": 300,
       "modelVariable": "il_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:17:35.108Z",
+      "calculatedAt": "2026-11-17T19:26:50.372Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -559,7 +646,7 @@
       "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules.",
       "value": 0,
       "modelVariable": "il_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:17:39.606Z",
+      "calculatedAt": "2026-11-17T19:26:54.732Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -589,7 +676,7 @@
       "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules.",
       "value": 300,
       "modelVariable": "il_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:17:43.874Z",
+      "calculatedAt": "2026-11-17T19:26:59.056Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -619,7 +706,7 @@
       "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules.",
       "value": 100,
       "modelVariable": "il_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:17:48.161Z",
+      "calculatedAt": "2026-11-17T19:27:03.378Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -649,7 +736,7 @@
       "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules.",
       "value": 0,
       "modelVariable": "il_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:17:52.441Z",
+      "calculatedAt": "2026-11-17T19:27:07.659Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -676,7 +763,7 @@
       "sourceLocation": "Example 1, page 1",
       "value": 1200,
       "modelVariable": "in_renters_deduction",
-      "calculatedAt": "2026-11-17T19:17:56.730Z",
+      "calculatedAt": "2026-11-17T19:27:11.810Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -703,7 +790,7 @@
       "sourceLocation": "Example 2, page 1",
       "value": 3000,
       "modelVariable": "in_renters_deduction",
-      "calculatedAt": "2026-11-17T19:18:01.009Z",
+      "calculatedAt": "2026-11-17T19:27:15.949Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -730,7 +817,7 @@
       "sourceLocation": "2025 IT-40 booklet, page 16, Schedule 2 line 2; Residential homeowner's property tax deduction; single filer with qualified expenses exceeding cap",
       "value": 2500,
       "modelVariable": "in_homeowners_property_tax_deduction",
-      "calculatedAt": "2026-11-17T19:18:05.364Z",
+      "calculatedAt": "2026-11-17T19:27:20.242Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -757,7 +844,7 @@
       "sourceLocation": "2025 IT-40 booklet, page 16, Schedule 2 line 2; Residential homeowner's property tax deduction; no qualified payments",
       "value": 0,
       "modelVariable": "in_homeowners_property_tax_deduction",
-      "calculatedAt": "2026-11-17T19:18:09.647Z",
+      "calculatedAt": "2026-11-17T19:27:24.519Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -784,7 +871,7 @@
       "sourceLocation": "Limitation of deduction, page 1; actual qualified rent is zero",
       "value": 0,
       "modelVariable": "in_renters_deduction",
-      "calculatedAt": "2026-11-17T19:18:13.914Z",
+      "calculatedAt": "2026-11-17T19:27:28.813Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -812,7 +899,7 @@
       "sourceLocation": "Kentucky DOR's 2025–2026 example exempts $49,100 of a $200,000 assessment. §132.810(2)(a) permits applicants who reach age 65 during 2025.",
       "value": 49100,
       "modelVariable": "ky_homestead_exemption",
-      "calculatedAt": "2026-11-17T19:18:18.223Z",
+      "calculatedAt": "2026-11-17T19:27:33.245Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -840,7 +927,7 @@
       "sourceLocation": "The $49,100 exemption applies to the assessed value. It exempts the full $40,000 assessment of this eligible home.",
       "value": 40000,
       "modelVariable": "ky_homestead_exemption",
-      "calculatedAt": "2026-11-17T19:18:22.504Z",
+      "calculatedAt": "2026-11-17T19:27:37.545Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -868,7 +955,7 @@
       "sourceLocation": "2025–2026 maximum exemption. The assessed value and exemption limit each equal $49,100.",
       "value": 49100,
       "modelVariable": "ky_homestead_exemption",
-      "calculatedAt": "2026-11-17T19:18:27.039Z",
+      "calculatedAt": "2026-11-17T19:27:41.844Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -882,6 +969,93 @@
         "status": 200,
         "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"KY\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":70},\"assessed_property_value\":{\"2025\":49100},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"ky_homestead_exemption\":{\"2025\":49100.0},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
         "bodySha256": "b83057677d5e10b664176430c9101cbef3edf06d06ffa32da869e6e1a82e97fe"
+      }
+    },
+    {
+      "id": "ma-cb-renter-cap",
+      "programId": "ma-senior-circuit-breaker",
+      "inputs": {
+        "age": "65",
+        "ma_scb_total_income": "30000",
+        "rent": "30000"
+      },
+      "expectedValue": 2820,
+      "source": "https://www.mass.gov/doc/2025-schedule-cb-circuit-breaker-credit/download",
+      "sourceLocation": "2025 Schedule CB lines 18–21. 25% × $30,000 rent minus 10% × $30,000 qualifying income gives $4,500. Line 21 caps the credit at $2,820.",
+      "value": 2820,
+      "modelVariable": "ma_senior_circuit_breaker",
+      "calculatedAt": "2026-11-17T19:27:46.128Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":65},\"rent\":{\"2025\":30000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"ma_scb_total_income\":{\"2025\":30000},\"ma_senior_circuit_breaker\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MA\"}}}}}",
+        "bodySha256": "cdca5929c914ed6453941f8c5e5be83a91f7d0af8268a158216dba7798c88672",
+        "semanticSha256": "3472d85a577fb58bcf1215d1b9cd145dc5cefd787c36be410c438fe0d71734b0"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MA\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":65},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"rent\":{\"2025\":30000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"ma_scb_total_income\":{\"2025\":30000},\"ma_senior_circuit_breaker\":{\"2025\":2820.0},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "09a8abdf98c740aad9aaf9b58543205cc73c6bfab43b2912abc7c2aa0e7b220d"
+      }
+    },
+    {
+      "id": "ma-cb-renter-income-ceiling",
+      "programId": "ma-senior-circuit-breaker",
+      "inputs": {
+        "age": "65",
+        "ma_scb_total_income": "75000",
+        "rent": "36000"
+      },
+      "expectedValue": 1500,
+      "source": "https://www.mass.gov/doc/2025-schedule-cb-circuit-breaker-credit/download",
+      "sourceLocation": "2025 Schedule CB line 9 and lines 18–21. A single filer with $75,000 qualifies. 25% × $36,000 rent minus 10% × $75,000 is $1,500.",
+      "value": 1500,
+      "modelVariable": "ma_senior_circuit_breaker",
+      "calculatedAt": "2026-11-17T19:27:50.422Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":65},\"rent\":{\"2025\":36000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"ma_scb_total_income\":{\"2025\":75000},\"ma_senior_circuit_breaker\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MA\"}}}}}",
+        "bodySha256": "099b32017422174164952112ac5249b9af1fdaa9176f15909f87e4f959b17491",
+        "semanticSha256": "1b5f0ea6b19c0dc4558a37840f05eb5f4ab88a45b52b84ce53517322d4c792d1"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MA\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":65},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"rent\":{\"2025\":36000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"ma_scb_total_income\":{\"2025\":75000},\"ma_senior_circuit_breaker\":{\"2025\":1500.0},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "6dc6135c81289d99c73457df15b0cb64685f11100545e86d74efd9e4a386b5bd"
+      }
+    },
+    {
+      "id": "ma-cb-renter-over-income-ceiling",
+      "programId": "ma-senior-circuit-breaker",
+      "inputs": {
+        "age": "65",
+        "ma_scb_total_income": "75001",
+        "rent": "36000"
+      },
+      "expectedValue": 0,
+      "source": "https://www.mass.gov/doc/2025-schedule-cb-circuit-breaker-credit/download",
+      "sourceLocation": "2025 Schedule CB line 9. $75,001 exceeds the $75,000 single-filer limit.",
+      "value": 0,
+      "modelVariable": "ma_senior_circuit_breaker",
+      "calculatedAt": "2026-11-17T19:27:54.720Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":65},\"rent\":{\"2025\":36000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"ma_scb_total_income\":{\"2025\":75001},\"ma_senior_circuit_breaker\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MA\"}}}}}",
+        "bodySha256": "516adca1ddf8e12d64a050167837790b70162e242fa162a214366b4226b50d75",
+        "semanticSha256": "7fb109aa144bf96e67efa7248b5d7852488e745951267fb6d4ad8fc2d2e753b6"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MA\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":65},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"rent\":{\"2025\":36000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"ma_scb_total_income\":{\"2025\":75001},\"ma_senior_circuit_breaker\":{\"2025\":0.0},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "d6ae1dadfdf3d02369473f168dd2c0cd4fb0f9110b4a791d5cbcb3e38493acc1"
       }
     },
     {
@@ -900,7 +1074,7 @@
       "sourceLocation": "2025THRlimit71500;71501exceedsit. Manualprintedp64/PDFp70 independently states no credit over71500.",
       "value": 0,
       "modelVariable": "mi_homestead_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:18:31.471Z",
+      "calculatedAt": "2026-11-17T19:27:59.004Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -932,7 +1106,7 @@
       "sourceLocation": "Printed page64/PDFpage70: 12000×0.23=2760;20000×0.032=640;(2760−640)×0.60=1272;below1900cap and62500phaseout. Full-year qualified general renter; no public-assistance or special-status adjustments.",
       "value": 1272,
       "modelVariable": "mi_homestead_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:18:35.764Z",
+      "calculatedAt": "2026-11-17T19:28:03.273Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -964,7 +1138,7 @@
       "sourceLocation": "Printed page64/PDFpage70:50000×0.23=11500;62500×0.032=2000;(11500−2000)×0.60=5700,capped1900;resourcesat62500retain100percent.",
       "value": 1900,
       "modelVariable": "mi_homestead_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:18:40.047Z",
+      "calculatedAt": "2026-11-17T19:28:07.558Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -992,7 +1166,7 @@
       "sourceLocation": "Tier 2. An applicant age 64 on January 1, 2025 without disability or other qualifying status has no age-based exemption. Tier 1 is a separate provision.",
       "value": 0,
       "modelVariable": "ms_age_disability_homestead_exemption",
-      "calculatedAt": "2026-11-17T19:18:44.339Z",
+      "calculatedAt": "2026-11-17T19:28:11.854Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1020,7 +1194,7 @@
       "sourceLocation": "§ 27-33-75(2)(a). Entire $6,000 qualifying assessed value falls within the base $7,500 exemption.",
       "value": 6000,
       "modelVariable": "ms_age_disability_homestead_exemption",
-      "calculatedAt": "2026-11-17T19:18:48.613Z",
+      "calculatedAt": "2026-11-17T19:28:16.244Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1048,7 +1222,7 @@
       "sourceLocation": "§ 27-33-75(2)(a), and Department of Revenue Homestead Exemption tier 2. Age 65 on January 1, 2025 and qualifying $15,000 assessment. The base exemption is the first $7,500 of assessed value.",
       "value": 7500,
       "modelVariable": "ms_age_disability_homestead_exemption",
-      "calculatedAt": "2026-11-17T19:18:53.107Z",
+      "calculatedAt": "2026-11-17T19:28:20.532Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1065,6 +1239,93 @@
       }
     },
     {
+      "id": "mt-2ec-renter-age-threshold",
+      "programId": "mt-elderly-homeowner-renter-credit",
+      "inputs": {
+        "age": "62",
+        "mt_elderly_homeowner_or_renter_credit_gross_household_income": "10000",
+        "rent": "6000"
+      },
+      "expectedValue": 900,
+      "source": "https://revenue.mt.gov/files/Forms/Montana-Individual-Income-Tax-Return-Form-2/Form_2_2025_Schedule_2EC.pdf",
+      "sourceLocation": "2025 Schedule 2EC attestation and lines 18–30. Age 62 qualifies, the standard exclusion reduces $10,000 to zero, and 15% of $6,000 is $900.",
+      "value": 900,
+      "modelVariable": "mt_elderly_homeowner_or_renter_credit",
+      "calculatedAt": "2026-11-17T19:28:24.826Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":62},\"mt_elderly_homeowner_or_renter_credit_gross_household_income\":{\"2025\":10000},\"rent\":{\"2025\":6000},\"mt_elderly_homeowner_or_renter_credit\":{\"2025\":null}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MT\"}}}}}",
+        "bodySha256": "1dda5534f7f33939bf1cba85a47dcfebb2c1ba08fb10acd72ff57c57671f4ad5",
+        "semanticSha256": "f99ed32d36f60bd5ee71943b0b6b5c756e8602d205e807571044940e110703bd"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MT\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":62},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"mt_elderly_homeowner_or_renter_credit\":{\"2025\":900.0},\"mt_elderly_homeowner_or_renter_credit_gross_household_income\":{\"2025\":10000},\"rent\":{\"2025\":6000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "71da3621ad4677a7dde5267acbd0e2348812f4be69223edb3dd8469bd643407a"
+      }
+    },
+    {
+      "id": "mt-2ec-renter-income-limit",
+      "programId": "mt-elderly-homeowner-renter-credit",
+      "inputs": {
+        "age": "62",
+        "mt_elderly_homeowner_or_renter_credit_gross_household_income": "45000",
+        "rent": "16000"
+      },
+      "expectedValue": 0,
+      "source": "https://revenue.mt.gov/files/Forms/Montana-Individual-Income-Tax-Return-Form-2/Form_2_2025_Schedule_2EC.pdf",
+      "sourceLocation": "2025 Schedule 2EC attestation requires gross household income below $45,000.",
+      "value": 0,
+      "modelVariable": "mt_elderly_homeowner_or_renter_credit",
+      "calculatedAt": "2026-11-17T19:28:29.149Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":62},\"mt_elderly_homeowner_or_renter_credit_gross_household_income\":{\"2025\":45000},\"rent\":{\"2025\":16000},\"mt_elderly_homeowner_or_renter_credit\":{\"2025\":null}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MT\"}}}}}",
+        "bodySha256": "4d811551bd0a80834fb7b3204c0e3c616f83913d295fe389833dba33727ee8f8",
+        "semanticSha256": "ec313d4c1e13b14d84a46d2b91c1e9705d0d58e7df035eea319254762dc5d2a6"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MT\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":62},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"mt_elderly_homeowner_or_renter_credit\":{\"2025\":0.0},\"mt_elderly_homeowner_or_renter_credit_gross_household_income\":{\"2025\":45000},\"rent\":{\"2025\":16000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "a70807fcc5856e72013039270ebed872b12e9e97992a45f67113aa746efde153"
+      }
+    },
+    {
+      "id": "mt-2ec-renter-multiplier-boundary",
+      "programId": "mt-elderly-homeowner-renter-credit",
+      "inputs": {
+        "age": "62",
+        "mt_elderly_homeowner_or_renter_credit_gross_household_income": "35000",
+        "rent": "16000"
+      },
+      "expectedValue": 460,
+      "source": "https://revenue.mt.gov/files/Forms/Montana-Individual-Income-Tax-Return-Form-2/Form_2_2025_Schedule_2EC.pdf",
+      "sourceLocation": "2025 Schedule 2EC lines 18–30 and Instructions Credit Multiplier Table. $2,400 rent equivalent minus 5% × ($35,000 − $12,600) leaves $1,280. Line 28 uses the $1,150 cap, and line 30 multiplies it by 40%.",
+      "value": 460,
+      "modelVariable": "mt_elderly_homeowner_or_renter_credit",
+      "calculatedAt": "2026-11-17T19:28:33.461Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":62},\"mt_elderly_homeowner_or_renter_credit_gross_household_income\":{\"2025\":35000},\"rent\":{\"2025\":16000},\"mt_elderly_homeowner_or_renter_credit\":{\"2025\":null}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MT\"}}}}}",
+        "bodySha256": "2a456a6b5b5f79ada041c4f333795815a1d7285b248945abe483dbb8907cfc35",
+        "semanticSha256": "9a73db6a7bead00537fc669770a735dedb3e1fe271ea247e300829ec1fec6d1a"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MT\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":62},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"mt_elderly_homeowner_or_renter_credit\":{\"2025\":460.0},\"mt_elderly_homeowner_or_renter_credit_gross_household_income\":{\"2025\":35000},\"rent\":{\"2025\":16000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "43fcfc9e757e3e75bce87f6db1eec654a4fcd6f1fb04adea1bc452584dbc8d2c"
+      }
+    },
+    {
       "id": "nd-primary-credit-tax-due-1500",
       "programId": "nd-primary-residence-credit",
       "inputs": {
@@ -1075,7 +1336,7 @@
       "sourceLocation": "Section 10, §57-02-08.9(1)(a)–(d), 2025 property tax year. An approved applicant with $1,500 of eligible tax due receives $1,500 because the credit cannot exceed the tax due.",
       "value": 1500,
       "modelVariable": "nd_primary_residence_credit",
-      "calculatedAt": "2026-11-17T19:18:57.570Z",
+      "calculatedAt": "2026-11-17T19:28:38.503Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1102,7 +1363,7 @@
       "sourceLocation": "Section 10, §57-02-08.9(1)(a)–(d), 2025 property tax year. The eligible tax due and maximum credit each equal $1,600.",
       "value": 1600,
       "modelVariable": "nd_primary_residence_credit",
-      "calculatedAt": "2026-11-17T19:19:01.871Z",
+      "calculatedAt": "2026-11-17T19:28:42.827Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1129,7 +1390,7 @@
       "sourceLocation": "Section 10, §57-02-08.9(1)(a)–(d), 2025 property tax year. The $1,600 statutory maximum limits the credit on $2,500 of eligible tax due.",
       "value": 1600,
       "modelVariable": "nd_primary_residence_credit",
-      "calculatedAt": "2026-11-17T19:19:06.342Z",
+      "calculatedAt": "2026-11-17T19:28:47.212Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1162,7 +1423,7 @@
       "sourceLocation": "WorksheetHprintedp29/PDFp31:6000<15000cap;40000−6000=34000. Singletax tableprintedpp57–58/PDFpp59–60 gives719at40000and525at34000;194savingexceeds50credit,soenter6000deduction. Assumesolequalifiedowner,noSeniorFreeze/nootherjurisdictioncredit.",
       "value": 6000,
       "modelVariable": "nj_property_tax_deduction",
-      "calculatedAt": "2026-11-17T19:19:10.611Z",
+      "calculatedAt": "2026-11-17T19:28:51.511Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1195,7 +1456,7 @@
       "sourceLocation": "Agency eligibility/credit/nonfiler sections;2025NJ1040HWPartIage65test andNJ1040instructionsprintedp25/PDFp27:singleage70qualifiedfull-yearrenter,AGI0,credit50. Assume no duplicateANCHORcredit.",
       "value": 50,
       "modelVariable": "nj_property_tax_credit",
-      "calculatedAt": "2026-11-17T19:19:14.884Z",
+      "calculatedAt": "2026-11-17T19:28:55.867Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1212,6 +1473,183 @@
       }
     },
     {
+      "id": "ny-it214-renter-equal-excess",
+      "programId": "ny-real-property-tax-credit",
+      "inputs": {
+        "age": "65",
+        "adjusted_gross_income": "3000",
+        "rent": "420"
+      },
+      "expectedValue": 0,
+      "source": "https://www.tax.ny.gov/pdf/current_forms/it/it214_fill_in.pdf#page=2",
+      "sourceLocation": "2025 IT-214 lines 14 and 18–20: 25% × $420 equals 3.5% × $3,000 at $105. Line 19 requires strict excess.",
+      "value": 0,
+      "modelVariable": "ny_real_property_tax_credit",
+      "calculatedAt": "2026-11-17T19:29:00.193Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":65},\"rent\":{\"2025\":420}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"adjusted_gross_income\":{\"2025\":3000},\"ny_real_property_tax_credit\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"NY\"}}}}}",
+        "bodySha256": "2fd943a4b67467d2528bbd0a2df0c52ae7c96ae0c9a639aa90edffdbf70324ea",
+        "semanticSha256": "064c7c4932d3c21cc8d355e996fcb9929e600764ee2c631643a9a442eeed3275"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"NY\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":65},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"rent\":{\"2025\":420}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"adjusted_gross_income\":{\"2025\":3000},\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"ny_real_property_tax_credit\":{\"2025\":0.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "02005419e0be9cb902e870e11b794eaacbeb45098c91fa1c0bbe3c59528d0bfb"
+      }
+    },
+    {
+      "id": "ny-it214-renter-nonsenior-income-ceiling",
+      "programId": "ny-real-property-tax-credit",
+      "inputs": {
+        "age": "64",
+        "adjusted_gross_income": "18000",
+        "rent": "5400"
+      },
+      "expectedValue": 50,
+      "source": "https://www.tax.ny.gov/pdf/current_forms/it/it214_fill_in.pdf#page=3",
+      "sourceLocation": "2025 IT-214 lines 8–14 and 18–20, Tables 1 and B: $18,000 income and $450 average monthly rent meet the limits. 25% × $5,400 = $1,350 exceeds 6.5% × $18,000 = $1,170. Table B pays $50.",
+      "value": 50,
+      "modelVariable": "ny_real_property_tax_credit",
+      "calculatedAt": "2026-11-17T19:29:04.543Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":64},\"rent\":{\"2025\":5400}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"adjusted_gross_income\":{\"2025\":18000},\"ny_real_property_tax_credit\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"NY\"}}}}}",
+        "bodySha256": "dfa0df9662466d45e04ceb4c43db1036402a4e5279fc2fca9997ea383b83f01b",
+        "semanticSha256": "798fadea6d3bb5f77e90227b4c795a9b9ecafa9ecd3f9829bb12577b63df8f84"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"NY\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":64},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"rent\":{\"2025\":5400}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"adjusted_gross_income\":{\"2025\":18000},\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"ny_real_property_tax_credit\":{\"2025\":50.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "b924cb83e9ad96b8590315388663193d5a7a5b9f8427a0613aa583fc4ea198f0"
+      }
+    },
+    {
+      "id": "ny-it214-renter-senior-band-top",
+      "programId": "ny-real-property-tax-credit",
+      "inputs": {
+        "age": "65",
+        "adjusted_gross_income": "3000",
+        "rent": "1200"
+      },
+      "expectedValue": 375,
+      "source": "https://www.tax.ny.gov/pdf/current_forms/it/it214_fill_in.pdf#page=3",
+      "sourceLocation": "2025 IT-214 lines 10, 14, and 18–20, Tables 1 and A: 25% × $1,200 = $300 exceeds 3.5% × $3,000 = $105. Table A pays $375 at $3,000.",
+      "value": 375,
+      "modelVariable": "ny_real_property_tax_credit",
+      "calculatedAt": "2026-11-17T19:29:08.904Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":65},\"rent\":{\"2025\":1200}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"adjusted_gross_income\":{\"2025\":3000},\"ny_real_property_tax_credit\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"NY\"}}}}}",
+        "bodySha256": "b00b20a8bb30892ffb3a1e5da1cda81c428844cb2a5d4bc50477b1a139827576",
+        "semanticSha256": "5faae89e9e2dd03257d1474c959b452cae9f0664b67387c22335a9a6544f01dc"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"NY\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":65},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"rent\":{\"2025\":1200}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"adjusted_gross_income\":{\"2025\":3000},\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"ny_real_property_tax_credit\":{\"2025\":375.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "f99829f14205273a31f8114b1cd894b3ec93e06d32cc4cf2be0b16108a9f24af"
+      }
+    },
+    {
+      "id": "oh-homestead-2024-magi-40000",
+      "programId": "oh-homestead-exemption",
+      "inputs": {
+        "age": "65",
+        "oh_homestead_exemption_total_income": "40000",
+        "assessed_property_value": "35000",
+        "real_estate_taxes": "1000"
+      },
+      "expectedValue": 10150,
+      "source": "https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/communications/publications/annual_reports/2025annualreport.pdf",
+      "sourceLocation": "Real property tax, homestead exemption section. At age 65 and 2024 MAGI of $40,000, the standard exemption covers $10,150 of assessed value. The Ohio means testing FAQ and Fulton County confirm eligibility at the $40,000 income limit.",
+      "value": 10150,
+      "modelVariable": "oh_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:29:13.223Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":65},\"assessed_property_value\":{\"2025\":35000},\"real_estate_taxes\":{\"2025\":1000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"oh_homestead_exemption_total_income\":{\"2025\":40000},\"oh_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"OH\"}}}}}",
+        "bodySha256": "0f0dd94dc458b30bcaa9779e9cee499fd9183a2f549552e38f27d022b49d7d48",
+        "semanticSha256": "b56c35cce53e7ce0d77e80015dd2da8834de1583ad6653f90970176f1c936e54"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"OH\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":65},\"assessed_property_value\":{\"2025\":35000},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":1000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"oh_homestead_exemption\":{\"2025\":10150.0},\"oh_homestead_exemption_total_income\":{\"2025\":40000}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "c5df60fb9cb08c9852f6f5c8697b3f311e2ae3c261cb891afe8a86f83c06fe39"
+      }
+    },
+    {
+      "id": "oh-homestead-2024-magi-40001",
+      "programId": "oh-homestead-exemption",
+      "inputs": {
+        "age": "65",
+        "oh_homestead_exemption_total_income": "40001",
+        "assessed_property_value": "35000",
+        "real_estate_taxes": "1000"
+      },
+      "expectedValue": 0,
+      "source": "https://www.fultoncountyoh.com/147/Homestead-Exemption",
+      "sourceLocation": "2025 real-property applicants who do not qualify for grandfathering cannot exceed $40,000 in 2024 Ohio modified adjusted gross income. The homeowner exceeds the threshold by $1.",
+      "value": 0,
+      "modelVariable": "oh_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:29:17.624Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":65},\"assessed_property_value\":{\"2025\":35000},\"real_estate_taxes\":{\"2025\":1000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"oh_homestead_exemption_total_income\":{\"2025\":40001},\"oh_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"OH\"}}}}}",
+        "bodySha256": "aa9102e9a7b59cf0cef8bd47b8093ce776e2af1cf38f51695e6f602781eff8ba",
+        "semanticSha256": "764aac399e4cd1b5ae3662746d7b1e0a9ab4a36863a9eb7520026d38a093abbe"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"OH\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":65},\"assessed_property_value\":{\"2025\":35000},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":1000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"oh_homestead_exemption\":{\"2025\":0.0},\"oh_homestead_exemption_total_income\":{\"2025\":40001}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "67854767864099b8844f0893cd50ab390fe7553ed953d5b22ab77639bb14db0f"
+      }
+    },
+    {
+      "id": "oh-homestead-assessment-8750",
+      "programId": "oh-homestead-exemption",
+      "inputs": {
+        "age": "70",
+        "oh_homestead_exemption_total_income": "30000",
+        "assessed_property_value": "8750",
+        "real_estate_taxes": "250"
+      },
+      "expectedValue": 8750,
+      "source": "https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/communications/publications/annual_reports/2025annualreport.pdf",
+      "sourceLocation": "Real property tax, homestead exemption section. The $10,150 assessed-value limit covers the eligible home's entire $8,750 assessed value.",
+      "value": 8750,
+      "modelVariable": "oh_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:29:21.897Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":70},\"assessed_property_value\":{\"2025\":8750},\"real_estate_taxes\":{\"2025\":250}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"oh_homestead_exemption_total_income\":{\"2025\":30000},\"oh_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"OH\"}}}}}",
+        "bodySha256": "023a132326bb3da9709dced8d4037f39f27d4f89c04cbc09d7d8404ea651add3",
+        "semanticSha256": "bfee51a27470606773e9a0cf000aa300e5c687b1edd3f902fa0a21b55788b821"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"OH\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":70},\"assessed_property_value\":{\"2025\":8750},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":250}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"oh_homestead_exemption\":{\"2025\":8750.0},\"oh_homestead_exemption_total_income\":{\"2025\":30000}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "e840c573350e13fc75047ab360bb5270ae3471345485c2dd933fccd8d2717f71"
+      }
+    },
+    {
       "id": "ok-above-income-limit",
       "programId": "ok-property-tax-refund",
       "inputs": {
@@ -1225,7 +1663,7 @@
       "sourceLocation": "2025Form538Hp1line14:incomeover12000doesnotqualify;12001exceedslimit.",
       "value": 0,
       "modelVariable": "ok_ptc",
-      "calculatedAt": "2026-11-17T19:19:19.153Z",
+      "calculatedAt": "2026-11-17T19:29:26.208Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1255,7 +1693,7 @@
       "sourceLocation": "2025Form538Hp1line14allows12000;p2lines15–17:200tax−12000×1%=80,below200cap. Qualifiedfull-yearage70homesteadowner.",
       "value": 80,
       "modelVariable": "ok_ptc",
-      "calculatedAt": "2026-11-17T19:19:23.449Z",
+      "calculatedAt": "2026-11-17T19:29:30.929Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1285,7 +1723,7 @@
       "sourceLocation": "2025Form538Hp2lines15–17:500tax−10000×1%=400;maximum200.",
       "value": 200,
       "modelVariable": "ok_ptc",
-      "calculatedAt": "2026-11-17T19:19:27.732Z",
+      "calculatedAt": "2026-11-17T19:29:35.455Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1317,7 +1755,7 @@
       "sourceLocation": "2025bookletprinted/PDFp11line17:6000rent×20%=1200;printed/PDFp13table:income8550cap1000;lesser=1000. Qualifiedfull-yearsolorenter,noassistance.",
       "value": 1000,
       "modelVariable": "pa_property_tax_or_rent_rebate",
-      "calculatedAt": "2026-11-17T19:19:32.069Z",
+      "calculatedAt": "2026-11-17T19:29:39.741Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1349,7 +1787,7 @@
       "sourceLocation": "2025bookletp11line17:3000×20%=600;p13income8550cap1000;lesser600.",
       "value": 600,
       "modelVariable": "pa_property_tax_or_rent_rebate",
-      "calculatedAt": "2026-11-17T19:19:36.531Z",
+      "calculatedAt": "2026-11-17T19:29:44.233Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1381,7 +1819,7 @@
       "sourceLocation": "2025bookletp13table:8551enters770band;p11line17:6000rent×20%=1200;lesser770.",
       "value": 770,
       "modelVariable": "pa_property_tax_or_rent_rebate",
-      "calculatedAt": "2026-11-17T19:19:40.865Z",
+      "calculatedAt": "2026-11-17T19:29:48.556Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1409,7 +1847,7 @@
       "sourceLocation": "§ 12-37-250(A)(1)(i), (A)(2). An applicant age 64 on December 31, 2024, without other qualifying status misses the 2025 age-based exemption.",
       "value": 0,
       "modelVariable": "sc_homestead_exemption",
-      "calculatedAt": "2026-11-17T19:19:45.149Z",
+      "calculatedAt": "2026-11-17T19:29:52.865Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1437,7 +1875,7 @@
       "sourceLocation": "§ 12-37-250(A)(1) and § 12-43-220(c). An eligible $30,000 residence lies below the $50,000 fair-market-value exemption cap. At 4% the entire $1,200 assessment is exempt.",
       "value": 1200,
       "modelVariable": "sc_homestead_exemption",
-      "calculatedAt": "2026-11-17T19:19:49.452Z",
+      "calculatedAt": "2026-11-17T19:29:57.215Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1465,7 +1903,7 @@
       "sourceLocation": "§ 12-37-250(A)(1)(i) exempts the first $50,000 in fair market value. § 12-43-220(c) applies the 4% assessment ratio. For an eligible $80,000 legal residence, $2,000 of the $3,200 assessed value is exempt.",
       "value": 2000,
       "modelVariable": "sc_homestead_exemption",
-      "calculatedAt": "2026-11-17T19:19:53.736Z",
+      "calculatedAt": "2026-11-17T19:30:01.523Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1482,6 +1920,96 @@
       }
     },
     {
+      "id": "tn-elderly-relief-equalized-value-250000",
+      "programId": "tn-elderly-disabled-relief",
+      "inputs": {
+        "age": "65",
+        "tn_elderly_property_tax_relief_income": "37530",
+        "primary_residence_value": "250000",
+        "real_estate_taxes": "1000"
+      },
+      "expectedValue": 130.8,
+      "source": "https://comptroller.tn.gov/content/dam/cot/pa/documents/tax-relief/TCA%2067-5-701%20through%2067-5-704.pdf#page=3",
+      "sourceLocation": "§67-5-702(b), with 2025 brochure cap $32,700 and income maximum $37,530. Hypothetical county appraisal $200,000, appraisal ratio 0.8 and nominal 2% rate produce $1,000 tax. State amount before adjustments is $32,700 × 25% × 2% × 0.8 = $130.80.",
+      "value": 130.8,
+      "modelVariable": "tn_elderly_property_tax_relief",
+      "calculatedAt": "2026-11-17T19:30:06.064Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":65},\"primary_residence_value\":{\"2025\":250000},\"real_estate_taxes\":{\"2025\":1000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"tn_elderly_property_tax_relief_income\":{\"2025\":37530},\"tn_elderly_property_tax_relief\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"TN\"}}}}}",
+        "bodySha256": "82702d57fd111e63c3b2355fba13f7d4edc675574a2160ea14ed5efff366ddda",
+        "semanticSha256": "5670fce54d5ae3c2e4fc01a0898bd6e48f789b75865e5eaa57f58e6b3b2317a0"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"TN\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":65},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"primary_residence_value\":{\"2025\":250000},\"real_estate_taxes\":{\"2025\":1000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"tn_elderly_property_tax_relief\":{\"2025\":130.8},\"tn_elderly_property_tax_relief_income\":{\"2025\":37530}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "9904f29b3572a295d2e4a70edd188da10d494d88e8b1c1bab4aa27a110306ef5"
+      }
+    },
+    {
+      "id": "tn-elderly-relief-income-37531",
+      "programId": "tn-elderly-disabled-relief",
+      "inputs": {
+        "age": "65",
+        "tn_elderly_property_tax_relief_income": "37531",
+        "primary_residence_value": "250000",
+        "real_estate_taxes": "1000"
+      },
+      "expectedValue": 0,
+      "source": "https://www.weakleycountytn.gov/uploads/1/0/7/5/107537459/2025_property_ttax_relief_program.pdf#page=2",
+      "sourceLocation": "2025 eligibility requirements, elderly route. The $37,531 of prior-year income exceeds the $37,530 maximum.",
+      "value": 0,
+      "modelVariable": "tn_elderly_property_tax_relief",
+      "calculatedAt": "2026-11-17T19:30:10.662Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":65},\"primary_residence_value\":{\"2025\":250000},\"real_estate_taxes\":{\"2025\":1000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"tn_elderly_property_tax_relief_income\":{\"2025\":37531},\"tn_elderly_property_tax_relief\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"TN\"}}}}}",
+        "bodySha256": "9573aac1fae7fcbdeea61690d6c28c78661df7cbacae5b5e80a786a09dfd46c1",
+        "semanticSha256": "daf387e062e0b05c9e23eb96e8939daa11d4a6acd17dcf6c6677fc3c8c88c363"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"TN\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":65},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"primary_residence_value\":{\"2025\":250000},\"real_estate_taxes\":{\"2025\":1000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"tn_elderly_property_tax_relief\":{\"2025\":0.0},\"tn_elderly_property_tax_relief_income\":{\"2025\":37531}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "138abb62c295fa850f2a616c8440de9b6b4c0a234d9b6d73ba8d65ee69c182c5"
+      }
+    },
+    {
+      "id": "tn-elderly-relief-value-30000",
+      "programId": "tn-elderly-disabled-relief",
+      "inputs": {
+        "age": "74",
+        "tn_elderly_property_tax_relief_income": "25000",
+        "primary_residence_value": "30000",
+        "real_estate_taxes": "150"
+      },
+      "expectedValue": 150,
+      "source": "https://comptroller.tn.gov/content/dam/cot/pa/documents/tax-relief/TCA%2067-5-701%20through%2067-5-704.pdf#page=3",
+      "sourceLocation": "§67-5-702(b) with 2025 brochure cap $32,700. A qualifying $30,000 full market value falls below the cap. With a 1.0 appraisal ratio and 2% tax rate, the state amount before adjustments covers the $150 tax.",
+      "value": 150,
+      "modelVariable": "tn_elderly_property_tax_relief",
+      "calculatedAt": "2026-11-17T19:30:15.293Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":74},\"primary_residence_value\":{\"2025\":30000},\"real_estate_taxes\":{\"2025\":150}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"tn_elderly_property_tax_relief_income\":{\"2025\":25000},\"tn_elderly_property_tax_relief\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"TN\"}}}}}",
+        "bodySha256": "3cf05bc9e3ba2cd2678dcb7bf2afecd589612adf0dfa1819410628771cee70df",
+        "semanticSha256": "21cfe4a8b690bd390f3f7cb3c25bfc3e43f649a968dd73e4d9ccc1a78fe5b53d"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"TN\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":74},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"primary_residence_value\":{\"2025\":30000},\"real_estate_taxes\":{\"2025\":150}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"tn_elderly_property_tax_relief\":{\"2025\":150.0},\"tn_elderly_property_tax_relief_income\":{\"2025\":25000}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "53cdec02d164cb28ffc648c4f18fdda93c96b5171976547aa352c3eb7718d9b6"
+      }
+    },
+    {
       "id": "tx-school-homestead-appraisal-140000",
       "programId": "tx-school-homestead",
       "inputs": {
@@ -1492,7 +2020,7 @@
       "sourceLocation": "General mandatory school district exemption. The qualifying appraised value and exemption amount each equal $140,000.",
       "value": 140000,
       "modelVariable": "tx_school_district_homestead_exemption",
-      "calculatedAt": "2026-11-17T19:19:58.103Z",
+      "calculatedAt": "2026-11-17T19:30:19.571Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1519,7 +2047,7 @@
       "sourceLocation": "2025 School District Exemptions Example. The general mandatory component exempts $140,000 of the $300,000 appraised value.",
       "value": 140000,
       "modelVariable": "tx_school_district_homestead_exemption",
-      "calculatedAt": "2026-11-17T19:20:02.420Z",
+      "calculatedAt": "2026-11-17T19:30:23.872Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1546,7 +2074,7 @@
       "sourceLocation": "General mandatory school district exemption. The exemption removes the entire $60,000 appraised value, which falls under the $140,000 limit.",
       "value": 60000,
       "modelVariable": "tx_school_district_homestead_exemption",
-      "calculatedAt": "2026-11-17T19:20:06.747Z",
+      "calculatedAt": "2026-11-17T19:30:28.172Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -1560,6 +2088,174 @@
         "status": 200,
         "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"TX\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"assessed_property_value\":{\"2025\":60000},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"tx_school_district_homestead_exemption\":{\"2025\":60000.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
         "bodySha256": "b3d9d52f3eb0a951aeddfa262685cc890f44da4bf9cd95e5b382cf98c60f6ccb"
+      }
+    },
+    {
+      "id": "ut-tc90cb-renter-income-ceiling",
+      "programId": "ut-renter-refund",
+      "inputs": {
+        "age": "66",
+        "ut_homeowner_renter_relief_household_income": "44221",
+        "rent": "12000"
+      },
+      "expectedValue": 262,
+      "source": "https://files.tax.utah.gov/tax/forms/current/tc-90cb.pdf#page=4",
+      "sourceLocation": "2025 Renter Refund Schedule. $44,221 falls in the 2.5% band. $300 exceeds the $262 cap, so the credit equals $262.",
+      "value": 262,
+      "modelVariable": "ut_homeowner_renter_relief",
+      "calculatedAt": "2026-11-17T19:30:32.489Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":66},\"rent\":{\"2025\":12000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"ut_homeowner_renter_relief\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"UT\"},\"ut_homeowner_renter_relief_household_income\":{\"2025\":44221}}}}}",
+        "bodySha256": "28a11f82179c97e3a998816c6dfd6c79b9093c1902405190539960e5095f25c9",
+        "semanticSha256": "fee4fc58ede63de12c21563be25f9c874d35930e0c691f987c5ccb49cde16f0d"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"UT\"},\"ut_homeowner_renter_relief_household_income\":{\"2025\":44221}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":66},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"rent\":{\"2025\":12000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"ut_homeowner_renter_relief\":{\"2025\":262.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "331c126e06acab356299726756d66eaf517603822421ae03e2a6501b2be7eee0"
+      }
+    },
+    {
+      "id": "ut-tc90cb-renter-over-income-ceiling",
+      "programId": "ut-renter-refund",
+      "inputs": {
+        "age": "66",
+        "ut_homeowner_renter_relief_household_income": "44222",
+        "rent": "12000"
+      },
+      "expectedValue": 0,
+      "source": "https://files.tax.utah.gov/tax/forms/current/tc-90cb.pdf#page=4",
+      "sourceLocation": "2025 Renter Refund Schedule. $44,222 exceeds the $44,221 eligibility limit.",
+      "value": 0,
+      "modelVariable": "ut_homeowner_renter_relief",
+      "calculatedAt": "2026-11-17T19:30:36.800Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":66},\"rent\":{\"2025\":12000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"ut_homeowner_renter_relief\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"UT\"},\"ut_homeowner_renter_relief_household_income\":{\"2025\":44222}}}}}",
+        "bodySha256": "794eb6bfc5402edfdf91cf67ecce52fc4015704fbac241d9595d33e8403f8deb",
+        "semanticSha256": "d4fa3f10b5c28e40b214a15a20af614ac97dc67d91b61d9d9f312d8231e8382b"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"UT\"},\"ut_homeowner_renter_relief_household_income\":{\"2025\":44222}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":66},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"rent\":{\"2025\":12000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"ut_homeowner_renter_relief\":{\"2025\":0.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "c3215653a0a69348ae410603f88740ae6c59b17fcc5147f71613fabb9e44122b"
+      }
+    },
+    {
+      "id": "ut-tc90cb-renter-rate-break",
+      "programId": "ut-renter-refund",
+      "inputs": {
+        "age": "66",
+        "ut_homeowner_renter_relief_household_income": "15034",
+        "rent": "10000"
+      },
+      "expectedValue": 850,
+      "source": "https://files.tax.utah.gov/tax/forms/current/tc-90cb.pdf#page=4",
+      "sourceLocation": "2025 Renter Refund Schedule. An applicant with $15,034 household income uses the 8.5% rate, yielding $850 on $10,000 rent below the $1,245 cap.",
+      "value": 850,
+      "modelVariable": "ut_homeowner_renter_relief",
+      "calculatedAt": "2026-11-17T19:30:41.243Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":66},\"rent\":{\"2025\":10000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"ut_homeowner_renter_relief\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"UT\"},\"ut_homeowner_renter_relief_household_income\":{\"2025\":15034}}}}}",
+        "bodySha256": "7acefc63a6a77ad283bc2dc65ed4b0dbea36ba152c24527d2d8d09df366478f3",
+        "semanticSha256": "219022739bdf6dfab40f41c6bc2e9e955ae47008f065b17f36caf552b9fa4708"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"UT\"},\"ut_homeowner_renter_relief_household_income\":{\"2025\":15034}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":66},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"rent\":{\"2025\":10000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"ut_homeowner_renter_relief\":{\"2025\":850.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "686f871b74b91ca0048b3605472f6de336239164eb1284217c77b17e1221194a"
+      }
+    },
+    {
+      "id": "wv-homestead-assessment-12500",
+      "programId": "wv-homestead-exemption",
+      "inputs": {
+        "assessed_property_value": "12500"
+      },
+      "expectedValue": 12500,
+      "source": "https://code.wvlegislature.gov/11-6B-7/",
+      "sourceLocation": "§11-6B-7(b). When the $20,000 exemption exceeds the $12,500 assessment, the entire assessment falls within the exemption and the county levies no tax.",
+      "value": 12500,
+      "modelVariable": "wv_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:30:45.540Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"assessed_property_value\":{\"2025\":12500}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"wv_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"WV\"}}}}}",
+        "bodySha256": "4546380508329c6254f9b8d6d9a719edb871e72e987e478be2b7b15f5569033a",
+        "semanticSha256": "fdff39882eb9b9cba8cb0bfe07044ee4e4d2ed4cab2c6be28a6b4013f051e1f2"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"WV\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"assessed_property_value\":{\"2025\":12500},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"wv_homestead_exemption\":{\"2025\":12500.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "c16aa1b2981885ede9f3ef46ac02e15b45a0cd2f5a596f5c69ffc5eb1f83c187"
+      }
+    },
+    {
+      "id": "wv-homestead-assessment-20000",
+      "programId": "wv-homestead-exemption",
+      "inputs": {
+        "assessed_property_value": "20000"
+      },
+      "expectedValue": 20000,
+      "source": "https://code.wvlegislature.gov/11-6B-3/",
+      "sourceLocation": "§11-6B-3(a). The exemption removes the whole eligible assessment when it equals the $20,000 limit.",
+      "value": 20000,
+      "modelVariable": "wv_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:30:50.164Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"assessed_property_value\":{\"2025\":20000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"wv_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"WV\"}}}}}",
+        "bodySha256": "fd3a9a0fc372ddc7385d0e5386c308a4cdba5c60759cb55fd7c76a666cd345e8",
+        "semanticSha256": "2440689aed1c8e7e8ca64df20e16e5e63409eb2ff81ed8b39e84133afcd045f8"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"WV\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"assessed_property_value\":{\"2025\":20000},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"wv_homestead_exemption\":{\"2025\":20000.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "d5d1d0f4e3642be4313ddc330fc6ce112eaae82bfe1498e0037aa9e63625aca7"
+      }
+    },
+    {
+      "id": "wv-homestead-assessment-60000",
+      "programId": "wv-homestead-exemption",
+      "inputs": {
+        "assessed_property_value": "60000"
+      },
+      "expectedValue": 20000,
+      "source": "https://code.wvlegislature.gov/11-6B-3/",
+      "sourceLocation": "§11-6B-3(a). The county exempts the first $20,000 of the qualifying home's $60,000 assessed value.",
+      "value": 20000,
+      "modelVariable": "wv_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:30:54.445Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"assessed_property_value\":{\"2025\":60000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"wv_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"WV\"}}}}}",
+        "bodySha256": "5d3310af2b1a6da4940396b02379db5e95c38483e7f5557506753dc18a9726d7",
+        "semanticSha256": "90c4ac1c97e0e5f19c9a0037850186ac8ce5d2640fae1035cba25d4b67dd06b3"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"WV\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"assessed_property_value\":{\"2025\":60000},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"wv_homestead_exemption\":{\"2025\":20000.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "18b992d362c1d5c0bb10f4fee1e205baae050111d4839fadaddec67827dffc15"
       }
     }
   ]
