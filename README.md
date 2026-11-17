@@ -12,7 +12,7 @@ This report describes program rules and matching model declarations. It provides
 
 ## Review artifacts
 
-The `artifacts/` directory contains a self-contained interactive (`index.html`), a report (`report.html`), methods (`methods.html`), and the matching JSON/CSV downloads. These files run without a server and describe program rules. The calculator preview on this branch adds live estimates for selected programs. The inventory does not establish exhaustive program coverage or provide a filing determination.
+The `artifacts/` directory contains a self-contained interactive (`index.html`), a report (`report.html`), methods (`methods.html`), and the matching JSON/CSV downloads. These files run without a server and describe program rules. The public calculator preview adds live estimates for selected programs. The inventory does not establish exhaustive program coverage or provide a filing determination.
 
 ## Household calculator preview
 
@@ -82,7 +82,7 @@ The [Lincoln Institute residential-program database](https://apps.lincolninst.ed
 
 ## Website integration
 
-The [public report](https://www.policyengine.org/us/rent-and-property-taxes/) serves at `/us/rent-and-property-taxes`, with assets under `/_zones/property-tax-relief`. Production serves the [report source at `a2354c2d`](https://github.com/PolicyEngine/property-tax-relief/tree/a2354c2d31ff8bcfb6a1f9a19edb8a54af2ca378). [policyengine-app-v2 PR #1568](https://github.com/PolicyEngine/policyengine-app-v2/pull/1568) supplies the host’s route and registry changes. The calculator on this branch remains a scoped preview pending separate publication.
+The [public report](https://www.policyengine.org/us/rent-and-property-taxes) and [scoped calculator preview](https://www.policyengine.org/us/rent-and-property-taxes/calculator) serve under `/us/rent-and-property-taxes`, with assets under `/_zones/property-tax-relief`. Production serves the [deployed source at `623d2d1`](https://github.com/PolicyEngine/property-tax-relief/tree/623d2d15993ec07e553353b5f4dd273bee0d1a1a). [policyengine-app-v2 PR #1568](https://github.com/PolicyEngine/policyengine-app-v2/pull/1568) and [PR #1570](https://github.com/PolicyEngine/policyengine-app-v2/pull/1570) supply the host’s route and registry changes.
 
 `bun run build:zone` sets the build-time base path; `vercel.json` maps those paths onto the static export. Ordinary `bun run build` keeps root URLs for local and offline review.
 
@@ -104,9 +104,9 @@ The Vercel app serves a static export and runs no application server, calculatio
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | What runs while nobody uses it? | No application compute or background work. Vercel retains the static deployment.                                                                                                                            |
 | Most it can cost in an hour     | The app reserves no compute capacity. Request and transfer charges depend on traffic and the existing PolicyEngine Vercel team plan; we have not verified a numeric hourly ceiling or project spending cap. |
-| Bill review                     | Review Vercel project usage and team billing on November 21, 2026, and before a public calculator launch. Static hosting does not imply unlimited free traffic.                                             |
+| Bill review                     | We reviewed Vercel project usage on November 17, 2026; review usage and team billing on November 21. Static hosting does not imply unlimited free traffic.                                                  |
 | Copies and how each one ends    | Vercel retains immutable preview copies. The project owner removes obsolete previews after replacing them and retires the project when retiring the tool.                                                   |
 | Where secrets live              | The static app requires no secrets. Deployment-account credentials remain in the local Vercel credential store. We exclude them from uploads.                                                               |
 | Owner and review                | PolicyEngine; Max Ghenis. Review continued hosting and the calculator preview by November 21, 2026.                                                                                                         |
 
-We configure no Modal, Cloud Run, database or warm-compute exception. Calculator previews use Vercel authentication. The public report describes selected programs; it provides no household estimates.
+We configure no Modal, Cloud Run, database or warm-compute exception. Generated deployment URLs and the team alias require Vercel authentication. The public report describes selected programs; it provides no household estimates. The public calculator preview provides estimates for the supported 2025 single-adult scenarios.
