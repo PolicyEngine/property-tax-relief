@@ -39,13 +39,13 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "assessment-or-tax-limit"
     }
   ],
   "laterChanges": [],
   "researchNotes": [
-    "No statewide refundable renter credit or income-based circuit-breaker credit was identified in the reviewed Department of Taxation materials.",
-    "Veteran, surviving-spouse, disability and other property exemptions are separate context; county-specific tax rates are not estimated."
+    "The listed program covers residential tax-growth abatement. Veteran, surviving-spouse and disability exemptions follow separate rules. Tax savings depend on county-specific rates and qualifying bill history."
   ],
   "sources": [
     {

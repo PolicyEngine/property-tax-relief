@@ -26,13 +26,14 @@ function OfflineResearch() {
           <h1>
             Rent and property taxes
             <br />
-            across states.
+            across states
           </h1>
           <div className="intro-bottom">
             <p>
               Compare selected income-tax credits and deductions for rent and
               property taxes, alongside rebates and property-tax bill programs.
-              Subtractions and itemization rules remain under review.
+              The inventory does not enumerate every subtraction or itemization
+              rule.
             </p>
             <div className="intro-stat">
               <strong>{states.length}</strong>
@@ -42,9 +43,8 @@ function OfflineResearch() {
         </section>
         <div className="draft-note">
           <strong>Research draft.</strong> The profiles cover selected
-          provisions; the systematic scope audit and validated national
-          household calculations remain incomplete.{" "}
-          <a href="methods.html">Read the coverage audit</a>
+          provisions. The report provides no validated national household
+          calculations. <a href="methods.html">Read the model-presence audit</a>
         </div>
         <Explorer
           states={states}

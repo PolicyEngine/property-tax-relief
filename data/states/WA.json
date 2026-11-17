@@ -37,11 +37,6 @@
           "title": "Washington income thresholds, tax years 2024–2026",
           "url": "https://dor.wa.gov/sites/default/files/2023-08/Income_ThreshTY24-26.pdf",
           "kind": "agency"
-        },
-        {
-          "title": "2023 legislative changes to exemption and deferral programs",
-          "url": "https://dor.wa.gov/forms-publications/publications-subject/special-notices/legislative-changes-property-tax-relief-programs",
-          "kind": "agency"
         }
       ],
       "modelVariables": ["wa_senior_disabled_property_tax_exemption"],
@@ -120,11 +115,6 @@
     {
       "title": "Washington income thresholds, tax years 2024–2026",
       "url": "https://dor.wa.gov/sites/default/files/2023-08/Income_ThreshTY24-26.pdf",
-      "kind": "agency"
-    },
-    {
-      "title": "2023 legislative changes to exemption and deferral programs",
-      "url": "https://dor.wa.gov/forms-publications/publications-subject/special-notices/legislative-changes-property-tax-relief-programs",
       "kind": "agency"
     },
     {

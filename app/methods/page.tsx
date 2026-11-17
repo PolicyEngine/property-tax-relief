@@ -27,15 +27,15 @@ export default function Methods() {
           <div className="eyebrow">Data, provenance and boundaries</div>
           <h1>Sources and methods.</h1>
           <p>
-            The legal inventory describes official program rules. The source
-            audit checks for matching model declarations; it does not determine
-            whether a calculation reproduces those rules.
+            The legal inventory describes official program rules. The
+            model-presence audit checks for matching model declarations; it does
+            not determine whether a calculation reproduces those rules.
           </p>
         </section>
         <div className="draft-note">
-          <strong>National calculation release remains closed.</strong> The
-          draft reports program rules and matching model declarations. It
-          contains no validated national household benefit estimates.
+          <strong>No national household calculations.</strong> The report
+          describes program rules and matching model declarations. It contains
+          no validated national household benefit estimates.
         </div>
         <section>
           <h2>Research scope</h2>
@@ -44,9 +44,9 @@ export default function Methods() {
             Columbia. Its scope covers income-tax credits, deductions and
             subtractions tied to rent or property taxes, alongside separate
             rebates and property-tax bill programs. Current records cover
-            selected provisions; a systematic state-return and statute audit
-            remains open. Exemptions, deferrals, assessment limits and local
-            options appear as context outside the main comparison.
+            selected provisions and do not enumerate every state-return or
+            statutory provision. Exemptions, deferrals, assessment limits and
+            local options appear as context outside the main comparison.
           </p>
           <p>
             Each profile records a 2025 program reference and its initial
@@ -87,7 +87,7 @@ export default function Methods() {
             </li>
             <li>
               <a href={appPath("/data/summary.json")} download>
-                Inventory counts and definitions (JSON)
+                Inventory counts (JSON)
               </a>
             </li>
           </ul>
@@ -140,10 +140,10 @@ export default function Methods() {
             It requires an undated formula, a formula starting by 2025, or an
             adds/subtracts declaration; input-only variables and formulas that
             begin later enter the gap list. It does not execute formulas,
-            establish legal equivalence or verify all eligibility conditions. We
-            record newer canonical source presence separately. This syntactic
-            check ignores end dates and does not establish that a declaration
-            applies to a claim in 2025.
+            establish legal equivalence or verify all eligibility conditions.
+            The audit records newer canonical source presence separately. This
+            syntactic check ignores end dates and does not establish that a
+            declaration applies to a claim in 2025.
           </p>
           {coverage && (
             <>
@@ -180,13 +180,13 @@ export default function Methods() {
                   </tr>
                   <tr>
                     <td>Validated household-calculation coverage</td>
-                    <td>Outstanding</td>
+                    <td>No household calculations</td>
                   </tr>
                 </tbody>
               </table>
               <p className="small-note">
-                Counts describe inventory records, not a count of independently
-                validated laws or an exhaustive count of state relief programs.
+                Counts describe inventory records. They do not count
+                independently validated laws or every state relief program.
               </p>
             </>
           )}
@@ -242,7 +242,7 @@ export default function Methods() {
           </p>
         </section>
         <section>
-          <h2>Open research</h2>
+          <h2>Research boundaries</h2>
           <ul>
             {states
               .filter((s) => s.inventoryStatus === "partial")
@@ -252,23 +252,25 @@ export default function Methods() {
                 </li>
               ))}
             <li>
-              The inventory does not yet enumerate every state-return credit,
+              The inventory does not enumerate every state-return credit,
               deduction, subtraction, itemization rule or conformity provision.
             </li>
             <li>
-              Coverage of local programs and exemptions remains selective.
+              The inventory covers selected local programs and exemptions.
               External inventories use different program definitions and
               grouping.
             </li>
             <li>
-              Some profiles retain unresolved questions about law changes and
-              form versions for their stated reference years.
+              Some profiles identify uncertain law changes and form versions for
+              their stated reference years.
             </li>
             <li>
               The report does not calculate how program interactions, parcel
               details or local levies affect household amounts.
             </li>
-            <li>National household calculations remain unvalidated.</li>
+            <li>
+              The report provides no validated national household calculations.
+            </li>
           </ul>
         </section>
       </div>

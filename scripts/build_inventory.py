@@ -78,6 +78,14 @@ CONTEXT_CATEGORIES = {
 }
 
 
+def is_comparison_program(program: dict) -> bool:
+    """Classify a record without computing eligibility or a household amount."""
+    return (
+        program["scope"] == "statewide"
+        and program["category"] not in CONTEXT_CATEGORIES
+    )
+
+
 def source_variable_index(source: str, filename: str) -> dict[str, dict]:
     """Index declarations from one source file without executing its code."""
     result = {}
@@ -223,10 +231,7 @@ def main() -> None:
     rows = []
     for state in states:
         for program in state["programs"]:
-            context = (
-                program["scope"] != "statewide"
-                or program["category"] in CONTEXT_CATEGORIES
-            )
+            context = not is_comparison_program(program)
             variables = program["modelVariables"]
             missing = [v for v in variables if v not in index]
             unsupported = [

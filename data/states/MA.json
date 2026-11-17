@@ -42,7 +42,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["ma_senior_circuit_breaker"]
+      "modelVariables": ["ma_senior_circuit_breaker"],
+      "paymentMechanism": "income-tax-credit"
     },
     {
       "id": "ma-renters-income-tax-deduction",
@@ -82,7 +83,7 @@
           "kind": "form"
         },
         {
-          "title": "2025 Form 1-NR/PY instructions, printed pages 16\u201317, line 18",
+          "title": "2025 Form 1-NR/PY instructions, printed pages 16–17, line 18",
           "url": "https://www.mass.gov/doc/2025-form-1-nrpy-instructions/download",
           "kind": "form"
         },
@@ -92,14 +93,15 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["ma_part_b_taxable_income_deductions"]
+      "modelVariables": ["ma_part_b_taxable_income_deductions"],
+      "paymentMechanism": "income-tax-deduction"
     }
   ],
   "laterChanges": [],
   "researchNotes": [
     "The legal household income definition differs from federal AGI.",
-    "Locally administered exemptions are context, not an additional statewide cash credit. The inventory does not enumerate every municipal option.",
-    "Separate filers must check the allocation and spouse-consent conditions when claiming the rental deduction. The declaration audit does not validate the recorded model-variable mapping or a household deduction calculation."
+    "Municipalities administer local exemptions; this inventory does not enumerate every municipal option.",
+    "Separate filers need the other spouse’s consent to allocate more than $2,000 of the rental deduction to one spouse, within the combined limit."
   ],
   "sources": [
     {
@@ -118,7 +120,7 @@
       "kind": "form"
     },
     {
-      "title": "2025 Form 1-NR/PY instructions, printed pages 16\u201317, line 18",
+      "title": "2025 Form 1-NR/PY instructions, printed pages 16–17, line 18",
       "url": "https://www.mass.gov/doc/2025-form-1-nrpy-instructions/download",
       "kind": "form"
     },

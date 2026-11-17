@@ -48,7 +48,7 @@
       "refundable": false,
       "ageRule": "Qualifying senior homeowner age 65+; surviving-spouse rules apply.",
       "incomeDefinition": "The October 2025 DLGF FAQ describes federal AGI from two calendar years before taxes are first due and payable; its explicit example is assessment 2025/pay 2026 using 2024 AGI. The historical pay-2025 reference year remains unverified.",
-      "incomeLimits": "Indexed limits depend on pay year. The supplied DLGF historical pay-2025 row prints $33,563.52 while its formula row prints $33,653.52; the discrepancy remains unresolved.",
+      "incomeLimits": "Indexed limits depend on pay year. DLGF’s April 7, 2025 memo prints $33,563.52 in its historical pay-2025 row and $33,653.52 in its formula row; the discrepancy remains unresolved.",
       "maximumBenefit": "Qualifying reduction needed to limit annual homestead tax growth to 2%.",
       "formulaSummary": "Uses prior-year liability, age/income tests, and the applicable assessment-year eligibility rules.",
       "application": "Apply through county auditor using senior property-tax benefits form.",
@@ -144,7 +144,7 @@
   "researchNotes": [
     "A value-based cap and an income-threshold circuit breaker follow different rules despite the shared statutory name.",
     "The 2024 assessment/pay-2025 baseline predates the changes for 2025 assessments/pay 2026.",
-    "Assessment year and payable year identify different periods. The supplied memo prints $33,563.52 in its historical pay-2025 row and $33,653.52 in its formula row; that discrepancy remains unresolved."
+    "Assessment year and payable year identify different periods. DLGF’s April 7, 2025 memo prints $33,563.52 in its historical pay-2025 row and $33,653.52 in its formula row; that discrepancy remains unresolved."
   ],
   "sources": [
     {

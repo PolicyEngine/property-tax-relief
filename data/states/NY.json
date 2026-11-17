@@ -97,13 +97,13 @@
     }
   ],
   "laterChanges": [
-    "For 2026 Enhanced STAR, the income limit becomes $110,750 and owner-income eligibility rules change; the 2025 description retains its separate rules."
+    "For 2026 Enhanced STAR, the income limit becomes $110,750 and owner-income eligibility rules change. The 2025 benefit rules use their separate income limits and ownership conditions."
   ],
   "researchNotes": [
-    "The IT-214 rules changed in 2025. A variable name alone does not establish that a calculation follows those rules.",
-    "IT-229 is discontinued and does not provide an additional 2025 benefit. Source: https://www.tax.ny.gov/forms/form_number_order_income.htm.",
+    "The IT-214 rules changed in 2025.",
+    "IT-229 is discontinued and does not provide an additional 2025 benefit.",
     "Local senior and disability exemptions depend on local adoption and are not enumerated here.",
-    "STAR credit and legacy exemption have distinct income limits, ownership histories, qualifying dates and local amount tables. School-district segments and partial-payment or advance reconciliations remain unvalidated."
+    "STAR credit and legacy exemption have distinct income limits, ownership histories, qualifying dates and local amount tables. School-district segments, partial payments and advance recoveries require separate property and payment details."
   ],
   "sources": [
     {

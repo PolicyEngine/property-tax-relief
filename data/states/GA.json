@@ -7,7 +7,7 @@
   ],
   "code": "GA",
   "name": "Georgia",
-  "overview": "State-law and local homestead exemptions provide relief; a 2026 grant is kept separate from the 2025 comparison.",
+  "overview": "Georgia combines statewide minimum homestead exemptions with locally adopted exemptions.",
   "statewideCreditStatus": "none-identified",
   "programs": [
     {
@@ -37,11 +37,12 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
     }
   ],
   "researchNotes": [
-    "No recurring statewide renter or circuit-breaker credit identified for the 2025 baseline; periodic homeowner grants must be assigned to their actual year."
+    "The listed 2025 program covers homestead exemptions. Periodic homeowner grants use their own tax years."
   ],
   "sources": [
     {

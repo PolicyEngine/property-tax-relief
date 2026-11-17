@@ -4,6 +4,7 @@ import csv
 import importlib.util
 import io
 import json
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -121,7 +122,7 @@ def test_static_csv_uses_browser_schema_and_escaping():
                 "category": "rebate",
                 "scope": "statewide",
                 "tenures": ["renter"],
-                "refundable": None,
+                "refundable": False,
                 "paymentMechanism": "property-tax-bill-reduction",
                 "ageRule": 'First\n"second"',
                 "incomeDefinition": "",
@@ -129,6 +130,8 @@ def test_static_csv_uses_browser_schema_and_escaping():
                 "maximumBenefit": "",
                 "formulaSummary": "",
                 "application": "",
+                "eligibilityNotes": ['First,\n"condition"', "Second condition"],
+                "interactions": ["=SUM(A1:A2)", 'Coordination, "quoted"'],
                 "programYear": "2025",
                 "sources": [
                     {"url": "https://example.invalid/program"},
@@ -143,11 +146,13 @@ def test_static_csv_uses_browser_schema_and_escaping():
     assert b"\r\n" in content
     rows = list(csv.DictReader(io.StringIO(content.decode("utf-8-sig"), newline="")))
     assert len(rows) == 2
-    assert all(len(row) == 20 for row in rows)
+    assert all(len(row) == 22 for row in rows)
     assert rows[0]["program_id"] == "fixture-id"
     assert rows[0]["state"] == fixture["name"]
     assert rows[0]["age_rule"] == fixture["programs"][0]["ageRule"]
     assert rows[0]["program"] == "'=1+1"
+    assert rows[0]["eligibility_notes"] == 'First,\n"condition" | Second condition'
+    assert rows[0]["interactions"] == '\'=SUM(A1:A2) | Coordination, "quoted"'
     assert rows[0]["refundable"] == ""
     assert rows[0]["payment_mechanism"] == "property-tax-bill-reduction"
     assert rows[0]["state_research_notes"] == "Fixture boundary"
@@ -156,4 +161,85 @@ def test_static_csv_uses_browser_schema_and_escaping():
         == "https://example.invalid/program | https://example.invalid/state"
     )
     assert rows[1]["program_id"] == ""
+    assert rows[1]["eligibility_notes"] == rows[1]["interactions"] == ""
     assert rows[1]["state_research_notes"] == "Fixture boundary"
+
+
+def test_comparison_classification_matches_browser_and_all_category_scope_pairs():
+    """Prevent source/export/browser drift at the context-comparison boundary."""
+    categories = {
+        "threshold-circuit-breaker": True,
+        "income-tested-relief": True,
+        "property-tax-credit": True,
+        "renter-credit": True,
+        "rebate": True,
+        "deduction": True,
+        "exemption": False,
+        "deferral": False,
+        "assessment-limit": False,
+        "local-option": False,
+    }
+    fixtures = [
+        {"category": category, "scope": scope}
+        for scope in ("statewide", "local-option")
+        for category in categories
+    ]
+    expected = [
+        item["scope"] == "statewide" and categories[item["category"]]
+        for item in fixtures
+    ]
+    states = json.loads((ROOT / "public/data/inventory.json").read_text())
+    programs = [program for state in states for program in state["programs"]]
+    audit = json.loads((ROOT / "public/data/coverage.json").read_text())
+    comparison_ids = {
+        program["id"] for program in audit["programs"] if program["status"] != "context"
+    }
+    expected.extend(program["id"] in comparison_ids for program in programs)
+    cases = fixtures + programs
+    browser = subprocess.run(
+        [
+            "bun",
+            "--eval",
+            (
+                'import { isComparisonProgram } from "./lib/inventory.ts"; '
+                "const cases = JSON.parse(await Bun.stdin.text()); "
+                "process.stdout.write(JSON.stringify(cases.map(isComparisonProgram)));"
+            ),
+        ],
+        input=json.dumps(cases),
+        capture_output=True,
+        text=True,
+        check=True,
+        cwd=ROOT,
+        timeout=30,
+    )
+    build = load_builder()
+    python_results = [build.is_comparison_program(item) for item in cases]
+    assert python_results == json.loads(browser.stdout) == expected
+
+
+def test_csv_preserves_program_eligibility_and_interactions():
+    """Export the actual conditions, including Idaho's home-value bar and exception."""
+    states = json.loads((ROOT / "public/data/inventory.json").read_text())
+    programs = [program for state in states for program in state["programs"]]
+    content = load_builder().inventory_csv(states)
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig"), newline=""))
+    rows = list(reader)
+    assert len(rows) == len(programs) == 119
+    assert len(reader.fieldnames) == 22
+    assert reader.fieldnames[15:19] == [
+        "application",
+        "eligibility_notes",
+        "interactions",
+        "program_year",
+    ]
+    for row, program in zip(rows, programs, strict=True):
+        assert row["program_id"] == program["id"]
+        assert row["eligibility_notes"] == " | ".join(program["eligibilityNotes"])
+        assert row["interactions"] == " | ".join(program["interactions"])
+    idaho = next(
+        row for row in rows if row["program_id"] == "id-property-tax-reduction"
+    )
+    idaho_program = next(p for p in programs if p["id"] == idaho["program_id"])
+    for condition in idaho_program["eligibilityNotes"][1:3]:
+        assert condition in idaho["eligibility_notes"]

@@ -1,6 +1,7 @@
 import { appPath } from "@/lib/paths";
 import {
   CATEGORY_LABELS,
+  displayedRefundability,
   isComparisonProgram,
   PAYMENT_MECHANISM_LABELS,
 } from "@/lib/inventory";
@@ -45,12 +46,48 @@ function CalculationNote({
   if (!isComparisonProgram(program)) return null;
   return (
     <p className="model-note">
-      <strong>Calculation coverage.</strong>{" "}
+      <strong>Model-presence audit.</strong>{" "}
       {coverage?.status === "implementation-found"
-        ? "The source audit found a matching model declaration. It does not validate the program mapping, eligibility rules, timing or interactions."
-        : "No audited household calculation is available for this program."}{" "}
-      <a href={methodsHref}>View the coverage audit</a>.
+        ? "The model-presence audit found a matching model declaration. It does not validate the program mapping, eligibility rules, timing or interactions."
+        : "The report provides no validated household calculation for this program."}{" "}
+      <a href={methodsHref}>View the model-presence audit</a>.
     </p>
+  );
+}
+
+export function PaymentFacts({ program }: { program: Program }) {
+  const refundability = displayedRefundability(program);
+  return (
+    <>
+      <div>
+        <dt>Payment mechanism</dt>
+        <dd>
+          {
+            PAYMENT_MECHANISM_LABELS[
+              program.paymentMechanism ?? "not-established"
+            ]
+          }
+        </dd>
+      </div>
+      {refundability !== null && (
+        <div>
+          <dt>
+            {program.paymentMechanism === "income-tax-credit"
+              ? "Income-tax credit refundability"
+              : "Recorded refundability"}
+          </dt>
+          <dd>
+            {program.paymentMechanism === "income-tax-credit"
+              ? refundability
+                ? "Refundable"
+                : "Limited to income-tax liability"
+              : refundability
+                ? "Refundable; payment mechanism not established"
+                : "Nonrefundable; payment mechanism not established"}
+          </dd>
+        </div>
+      )}
+    </>
   );
 }
 
@@ -97,27 +134,7 @@ export function ProgramDetail({
           <dt>Reference period</dt>
           <dd>{program.programYear}</dd>
         </div>
-        <div>
-          <dt>Payment mechanism</dt>
-          <dd>
-            {
-              PAYMENT_MECHANISM_LABELS[
-                program.paymentMechanism ?? "not-established"
-              ]
-            }
-          </dd>
-        </div>
-        {program.paymentMechanism === "income-tax-credit" &&
-          program.refundable !== null && (
-            <div>
-              <dt>Income-tax credit refundability</dt>
-              <dd>
-                {program.refundable
-                  ? "Refundable"
-                  : "Limited to income-tax liability"}
-              </dd>
-            </div>
-          )}
+        <PaymentFacts program={program} />
       </dl>
       <details>
         <summary>Eligibility, claiming and calculation notes</summary>

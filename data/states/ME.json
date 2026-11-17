@@ -42,11 +42,12 @@
           "kind": "statute"
         }
       ],
-      "modelVariables": ["me_property_tax_fairness_credit"]
+      "modelVariables": ["me_property_tax_fairness_credit"],
+      "paymentMechanism": "income-tax-credit"
     }
   ],
   "laterChanges": [
-    "For tax years beginning in 2026, the ordinary under-65 maximum rises to $1,500; the senior maximum remains $2,000. Source: Maine Revenue Services 2026 legislative changes, https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/legischange26.pdf."
+    "For tax years beginning in 2026, section 5219-KK(2-D) raises the under-65 maximum from $1,000 to $1,500; the age-65-or-older maximum remains $2,000."
   ],
   "researchNotes": [
     "The benefit base limits the housing expenses used in the formula; comparing only headline maximum credits is insufficient.",

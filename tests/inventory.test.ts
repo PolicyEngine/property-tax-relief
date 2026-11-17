@@ -3,6 +3,7 @@ import fc from "fast-check";
 import { readFileSync, readdirSync } from "node:fs";
 import {
   CATEGORY_LABELS,
+  displayedRefundability,
   PAYMENT_MECHANISM_LABELS,
   filterStates,
   inventoryCsv,
@@ -30,10 +31,9 @@ describe("national source inventory", () => {
       expect(state.overview.length).toBeGreaterThan(15);
       for (const p of state.programs) {
         expect(Object.keys(CATEGORY_LABELS)).toContain(p.category);
-        if (p.paymentMechanism !== undefined)
-          expect(Object.keys(PAYMENT_MECHANISM_LABELS)).toContain(
-            p.paymentMechanism,
-          );
+        expect(Object.keys(PAYMENT_MECHANISM_LABELS)).toContain(
+          p.paymentMechanism,
+        );
         expect(p.sources.length, p.id).toBeGreaterThan(0);
         expect(p.programYear.trim().length, p.id).toBeGreaterThanOrEqual(4);
         if (isComparisonProgram(p))
@@ -104,6 +104,11 @@ describe("national source inventory", () => {
       expect(nationalCsv).toContain(`"${state.code}"`);
     const fixture = structuredClone(states[0]);
     fixture.programs[0].name = 'Quote,\n"line"';
+    fixture.programs[0].eligibilityNotes = [
+      'First,\n"condition"',
+      "Second condition",
+    ];
+    fixture.programs[0].interactions = ['Coordinate "credits"'];
     fixture.programs[0].refundable = false;
     fixture.programs[0].paymentMechanism = "property-tax-bill-reduction";
     const csv = inventoryCsv([fixture]);
@@ -113,17 +118,39 @@ describe("national source inventory", () => {
     expect(csv).toContain(`"${fixture.programs[0].id}"`);
     expect(csv).toContain('"payment_mechanism"');
     expect(csv).toContain('"state_research_notes"');
+    expect(csv).toContain(
+      '"application","eligibility_notes","interactions","program_year"',
+    );
+    expect(csv).toContain('"First,\n""condition"" | Second condition"');
+    expect(csv).toContain('"Coordinate ""credits"""');
     expect(csv).toContain('"property-tax-bill-reduction"');
-    expect(csv).toContain('"false"');
+    expect(csv).not.toContain('"false"');
     expect(csv).toContain('"Quote,\n""line"""');
     expect(csv).toContain("\r\n");
+  });
+  it("retains unclassified refundability without calling bill reductions income-tax credits", () => {
+    const program = structuredClone(states[0].programs[0]);
+    program.paymentMechanism = "income-tax-credit";
+    program.refundable = false;
+    expect(displayedRefundability(program)).toBe(false);
+    program.paymentMechanism = "not-established";
+    program.refundable = true;
+    expect(displayedRefundability(program)).toBe(true);
+    program.paymentMechanism = "property-tax-bill-reduction";
+    expect(displayedRefundability(program)).toBeNull();
+    program.paymentMechanism = "cash-rebate";
+    expect(displayedRefundability(program)).toBeNull();
   });
   it.each(["=x", "+x", "-x", "@x", "\tx", "\rx", "  =x"])(
     "guards spreadsheet-leading content %j",
     (value) => {
       const fixture = structuredClone(states[0]);
       fixture.programs[0].name = value;
-      expect(inventoryCsv([fixture])).toContain(`"'${value}"`);
+      fixture.programs[0].eligibilityNotes = [value, "Another condition"];
+      fixture.programs[0].interactions = [value];
+      const csv = inventoryCsv([fixture]);
+      expect(csv).toContain(`"'${value}"`);
+      expect(csv).toContain(`"'${value} | Another condition"`);
     },
   );
   it("preserves the not-inspected sentinel and abbreviates only actual commit IDs", () => {

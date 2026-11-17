@@ -36,12 +36,17 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   "local-option": "Local option",
 };
 
+export const CONTEXT_CATEGORIES: readonly string[] = [
+  "exemption",
+  "deferral",
+  "assessment-limit",
+  "local-option",
+];
+
 export function isComparisonProgram(program: Program): boolean {
   return (
     program.scope === "statewide" &&
-    !["exemption", "deferral", "assessment-limit", "local-option"].includes(
-      program.category,
-    )
+    !CONTEXT_CATEGORIES.includes(program.category)
   );
 }
 
@@ -80,6 +85,13 @@ export function filterStates(
   });
 }
 
+export function displayedRefundability(program: Program): boolean | null {
+  const mechanism = program.paymentMechanism ?? "not-established";
+  return mechanism === "income-tax-credit" || mechanism === "not-established"
+    ? program.refundable
+    : null;
+}
+
 function csvCell(value: unknown): string {
   const text = String(value ?? "");
   const safe = /^(?:\s*[=+@-]|[\t\r\n])/.test(text) ? `'${text}` : text;
@@ -104,6 +116,8 @@ export function inventoryCsv(states: StateProfile[]): string {
     "maximum_benefit",
     "formula",
     "application",
+    "eligibility_notes",
+    "interactions",
     "program_year",
     "source_urls",
     "research_status",
@@ -130,6 +144,8 @@ export function inventoryCsv(states: StateProfile[]): string {
           "",
           "",
           "",
+          "",
+          "",
           [...new Set(state.sources.map((source) => source.url))].join(" | "),
           state.inventoryStatus,
           state.researchNotes.join(" | "),
@@ -144,7 +160,9 @@ export function inventoryCsv(states: StateProfile[]): string {
       p.category,
       p.scope,
       p.tenures.join(" | "),
-      p.refundable === null ? "" : String(p.refundable),
+      displayedRefundability(p) === null
+        ? ""
+        : String(displayedRefundability(p)),
       p.paymentMechanism ?? "not-established",
       p.ageRule,
       p.incomeDefinition,
@@ -152,6 +170,8 @@ export function inventoryCsv(states: StateProfile[]): string {
       p.maximumBenefit,
       p.formulaSummary,
       p.application,
+      p.eligibilityNotes.join(" | "),
+      p.interactions.join(" | "),
       p.programYear,
       [
         ...new Set(
