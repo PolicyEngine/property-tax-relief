@@ -112,15 +112,25 @@ export default function Methods() {
           </p>
           <p>
             The calculator sends each entered scenario to PolicyEngine's rules
-            engine through the website's household-calculation API. On November
-            15, 2026, the API's metadata reported PolicyEngine US 2.2.1. Saved
-            responses retain the API's provenance fields; requests do not pin a
-            model version. Missing, null, and nonnumeric outputs remain
-            unavailable.
+            engine through the website's household-calculation API. Missing,
+            null, and nonnumeric outputs remain unavailable.
+          </p>
+          <p>
+            The November 15, 2026 metadata snapshot reported PolicyEngine US
+            2.2.1. All 31 saved response bodies record{" "}
+            <code>spm_provenance.runtime_versions</code> labels for PolicyEngine
+            US 2.2.2 and the <code>policyengine</code> wrapper 6.20.0 in the{" "}
+            <a href="https://github.com/PolicyEngine/property-tax-relief/blob/ea011237f5a2b51c71ad01db9371fe0c66ae1a14/data/calculator/validation-receipt.json">
+              validation receipt
+            </a>
+            . The receipt also records <code>runtimeModelVersion: null</code>;
+            its raw response bodies preserve those labels. Requests do not pin a
+            model version, and the recorded labels do not independently
+            establish the runtime that produced each answer.
           </p>
           <p>
             Saved API responses match the expected amounts in{" "}
-            <a href="https://github.com/PolicyEngine/property-tax-relief/blob/codex/household-calculator/data/calculator/validation-cases.json">
+            <a href="https://github.com/PolicyEngine/property-tax-relief/blob/ea011237f5a2b51c71ad01db9371fe0c66ae1a14/data/calculator/validation-cases.json">
               31 source-derived cases
             </a>{" "}
             for the enabled calculations. Those cases do not validate other
