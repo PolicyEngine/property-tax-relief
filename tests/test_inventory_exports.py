@@ -69,6 +69,43 @@ def test_shared_chrome_excludes_tool_specific_provenance():
         assert text not in chrome
 
 
+def test_housing_expense_csv_resolves_its_source_references():
+    """Committed CSV records resolve cited sources and retain validation limits."""
+    canonical = json.loads(
+        (ROOT / "data/housing-expense-model-routes.json").read_text(encoding="utf-8")
+    )
+    sources = {source["id"]: source for source in canonical["sources"]}
+    with (ROOT / "public/data/housing-expense-model-routes.csv").open(
+        encoding="utf-8"
+    ) as stream:
+        rows = list(csv.DictReader(stream))
+    assert {row["state"] for row in rows} == {
+        row["state"] for row in canonical["jurisdictions"]
+    }
+    observed = set()
+    for row in rows:
+        assert json.loads(row["validation"]) == canonical["audit"]["validation"]
+        assert json.loads(row["calculator_coverage_added"]) is False
+        assert json.loads(row["interpretation"]) == canonical["audit"]["interpretation"]
+        records = json.loads(row["source_records"])
+        assert [record["id"] for record in records] == json.loads(row["source_refs"])
+        for record in records:
+            assert set(record) == {
+                "id",
+                "path",
+                "url",
+                "sha256",
+                "git_blob",
+                "line_ranges",
+            }
+            assert all(
+                sources[record["id"]][key] == value for key, value in record.items()
+            )
+            assert f"/blob/{canonical['audit']['model_commit']}/" in record["url"]
+            observed.add(record["id"])
+    assert observed == set(sources)
+
+
 def test_static_csv_uses_browser_schema_and_escaping():
     build = load_builder()
     fixture = {

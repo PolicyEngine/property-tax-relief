@@ -14,7 +14,21 @@ This report describes program rules and matching model declarations. It provides
 
 The `artifacts/` directory contains a self-contained interactive (`index.html`), a report (`report.html`), methods (`methods.html`), and the matching JSON/CSV downloads. These local research drafts do not require a running server. They describe program rules and provide no household calculations. The inventory does not establish exhaustive program coverage or provide a filing determination.
 
-Browser and static CSV downloads use the same serializer and 22-column schema. `program_id` joins each program to the JSON inventory and model-presence audit. `payment_mechanism` records the explicit mechanism separately from `refundable`; an unclassified mechanism uses `not-established`. `eligibility_notes` and `interactions` retain each program’s condition and coordination notes, joining each source array with `|`. These columns follow `application` and precede `program_year`. `state_research_notes` carries profile boundaries and omissions on each program row; `source_urls` combines program and state references without duplicates. CSVs use UTF-8 with a byte-order mark, CRLF row endings, quoted cells, lowercase booleans and empty cells for null refundability. The serializer escapes embedded quotes and guards spreadsheet formula prefixes. For income-tax credits, `refundable` indicates whether the credit can exceed income-tax liability. For an unclassified mechanism, it carries the recorded flag without identifying how the program pays. The CSV leaves this cell empty for other mechanisms; the JSON retains the recorded flag.
+Browser and static inventory CSV downloads use the same serializer and 22-column schema. `program_id` joins each program to the JSON inventory and model-presence audit. `payment_mechanism` records the explicit mechanism separately from `refundable`; an unclassified mechanism uses `not-established`. `eligibility_notes` and `interactions` retain each program’s condition and coordination notes, joining each source array with `|`. These columns follow `application` and precede `program_year`. `state_research_notes` carries profile boundaries and omissions on each program row; `source_urls` combines program and state references without duplicates. CSVs use UTF-8 with a byte-order mark, CRLF row endings, quoted cells, lowercase booleans and empty cells for null refundability. The serializer escapes embedded quotes and guards spreadsheet formula prefixes. For income-tax credits, `refundable` indicates whether the credit can exceed income-tax liability. For an unclassified mechanism, it carries the recorded flag without identifying how the program pays. The CSV leaves this cell empty for other mechanisms; the JSON retains the recorded flag.
+
+## Housing-expense model-route index
+
+The source index in `data/housing-expense-model-routes.json` maps selected 2025 declaration dependencies for personal rent and property-tax expenses across all 50 states and DC. Route kinds separate deductions, credits and credit components, rebates, property-bill reductions and income add-backs. Itemization and base fields describe selected state and federal source paths. Each entry links to the inspected PolicyEngine US source at commit `5b18694981c758e0ae52042eb103e55e0333c7ef`.
+
+The index does not validate legal entitlement, household amounts, runtime behavior or the model version serving a live calculation. A missing route does not establish legal absence or a zero benefit. CSV rows retain these limits and the false validation flags alongside their source records; structured fields use nested JSON.
+
+Check the canonical, public and offline JSON/CSV copies without importing a tax model:
+
+```sh
+uv run python scripts/build_housing_expense_routes.py --check
+```
+
+Add `--model-repo /absolute/path/to/policyengine-us` to verify the source hashes and line references against that immutable commit. Use `--write` to regenerate the public and offline JSON/CSV copies from the source index. After editing the methods page, run `bun run artifacts:build` to rebuild the offline HTML. The check rejects stale committed data copies; it does not certify spreadsheet import behavior.
 
 ## Reproduce
 
@@ -39,7 +53,7 @@ uv run python scripts/build_inventory.py \
   --canonical-ref upstream/main
 ```
 
-The generator resolves the requested ref to an immutable commit and reads its variable files with `git archive`. Staged, modified and untracked working files cannot change that snapshot. `--canonical-ref` defaults to `HEAD`; select `upstream/main` to exclude an unmerged local branch. The audit records the requested ref, resolved commit and committed-source mode separately from the installed-package audit. Without `--canonical-model`, it records canonical source as not inspected. Fetch the intended canonical ref before running the command when a newer remote snapshot is required.
+The generator resolves the requested ref to an immutable commit and reads its variable files with `git archive`. Staged, modified and untracked working files cannot change that snapshot. `--canonical-ref` defaults to `HEAD`; select `upstream/main` to exclude an unmerged local branch. The audit records the requested ref, resolved commit and committed-source mode separately from the installed-package audit. Without `--canonical-model`, it records canonical source as not inspected. Fetch the intended canonical ref before running the command when you need a newer remote snapshot.
 
 `bun run dev` serves the Next.js development version at `http://localhost:3075`; after building, `bun run start` serves the static export there. Linux CI exercises the served app and the saved HTML with networking disabled, including search, comparison limits, renter filters, full CSV downloads and mobile layout. CI retains screenshots and the browser result as artifacts. The project uses Next App Router, Tailwind and `@policyengine/ui-kit`. The model-presence audit reads the country-model dependency pinned by `policyengine[us]==6.19.0`; the generated audit records its resolved version. It parses declarations without importing country-model code or calculating household amounts.
 
@@ -55,7 +69,7 @@ The [Lincoln Institute residential-program database](https://apps.lincolninst.ed
 
 ## Website integration
 
-The planned site path is `/us/rent-and-property-taxes`, with assets under `/_zones/property-tax-relief`. `bun run build:zone` sets the build-time base path; `vercel.json` maps those paths onto the static export. Ordinary `bun run build` keeps root URLs for local and offline review. The host’s route and registry changes are tracked in [policyengine-app-v2 PR #1568](https://github.com/PolicyEngine/policyengine-app-v2/pull/1568). The route is not live until that change is reviewed, merged and deployed. Add the direct-host redirect only after verifying the policyengine.org route, following the host repository’s deployment guidance.
+The planned site path is `/us/rent-and-property-taxes`, with assets under `/_zones/property-tax-relief`. `bun run build:zone` sets the build-time base path; `vercel.json` maps those paths onto the static export. Ordinary `bun run build` keeps root URLs for local and offline review. [policyengine-app-v2 PR #1568](https://github.com/PolicyEngine/policyengine-app-v2/pull/1568) tracks the host’s route and registry changes. Maintainers must review, merge and deploy that change before the route goes live. Add the direct-host redirect only after verifying the policyengine.org route, following the host repository’s deployment guidance.
 
 ## Data and results invariants
 
@@ -71,13 +85,13 @@ The planned site path is `/us/rent-and-property-taxes`, with assets under `/_zon
 
 The Vercel preview serves the existing static export. It does not run an application server, PolicyEngine calculation service, database, scheduled task or serverless function.
 
-| Question                        | Answer                                                                                                                                                                                               |
-| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| What runs while nobody uses it? | No application compute or background work. Vercel retains the static deployment.                                                                                                                     |
-| Most it can cost in an hour     | No compute capacity is reserved. Request and transfer charges depend on traffic and the existing PolicyEngine Vercel team plan; no numeric hourly ceiling or project spending cap has been verified. |
-| Bill review                     | Review Vercel project usage and team billing on November 21, 2026, and before a public launch. Static hosting does not imply unlimited free traffic.                                                 |
-| Copies and how each one ends    | Preview deployments are immutable copies. The project owner removes obsolete previews when superseded and retires the project when this tool is retired.                                             |
-| Where secrets live              | The static app requires no secrets. Deployment-account credentials remain in the local Vercel credential store and are excluded from uploads.                                                        |
-| Owner and review                | PolicyEngine; Max Ghenis. Review the preview and continued hosting by November 21, 2026.                                                                                                             |
+| Question                        | Answer                                                                                                                                                                                                      |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| What runs while nobody uses it? | No application compute or background work. Vercel retains the static deployment.                                                                                                                            |
+| Most it can cost in an hour     | The app reserves no compute capacity. Request and transfer charges depend on traffic and the existing PolicyEngine Vercel team plan; we have not verified a numeric hourly ceiling or project spending cap. |
+| Bill review                     | Review Vercel project usage and team billing on November 21, 2026, and before a public launch. Static hosting does not imply unlimited free traffic.                                                        |
+| Copies and how each one ends    | Vercel retains immutable preview copies. The project owner removes obsolete previews after replacing them and retires the project when retiring the tool.                                                   |
+| Where secrets live              | The static app requires no secrets. Deployment-account credentials remain in the local Vercel credential store. We exclude them from uploads.                                                               |
+| Owner and review                | PolicyEngine; Max Ghenis. Review the preview and continued hosting by November 21, 2026.                                                                                                                    |
 
-No Modal, Cloud Run, database or warm-compute exception is configured. Preview access uses Vercel authentication. Hosting this research draft does not certify comprehensive program coverage or household calculations.
+We configure no Modal, Cloud Run, database or warm-compute exception. Preview access uses Vercel authentication. Hosting this research draft does not certify comprehensive program coverage or household calculations.
