@@ -28,11 +28,13 @@ const output = resolve(
 );
 mkdirSync(output, { recursive: true });
 const cli = resolve("node_modules/@playwright/cli/playwright-cli.js");
-function command(...args) {
+const commandTimeoutMs = 90_000;
+const calculatorResponseTimeoutMs = 130_000;
+function commandWithTimeout(timeout, ...args) {
   const raw = execFileSync(
     "node",
     [cli, "-s=property-relief-ci", "--json", ...args],
-    { encoding: "utf8", timeout: 90_000 },
+    { encoding: "utf8", timeout },
   );
   console.log(raw);
   const result = JSON.parse(raw);
@@ -45,8 +47,12 @@ function command(...args) {
     throw new Error("Browser command failed: " + raw);
   return result;
 }
-function runCode(action, options = {}) {
-  return command(
+function command(...args) {
+  return commandWithTimeout(commandTimeoutMs, ...args);
+}
+function runCode(action, options = {}, timeout = commandTimeoutMs) {
+  return commandWithTimeout(
+    timeout,
     "run-code",
     "async (page) => (" +
       action.toString() +
@@ -638,7 +644,7 @@ async function calculatorCheck(page, options) {
   await calculate.click();
   await page
     .getByText("$3,000.00", { exact: true })
-    .waitFor({ timeout: 130_000 });
+    .waitFor({ timeout: options.responseTimeoutMs });
   await page
     .getByText("Deduction from taxable income", { exact: true })
     .waitFor();
@@ -656,7 +662,7 @@ async function calculatorCheck(page, options) {
   await calculate.click();
   await page
     .getByText("$1,200.00", { exact: true })
-    .waitFor({ timeout: 130_000 });
+    .waitFor({ timeout: options.responseTimeoutMs });
   await assertResultInViewport("$1,200.00");
   if (
     !(await page
@@ -800,11 +806,17 @@ try {
     basePath,
   });
   command("snapshot");
-  runCode(calculatorCheck, {
-    screenshot: resolve(output, "calculator-desktop.png"),
-    mobileScreenshot: resolve(output, "calculator-mobile.png"),
-    holdScreenshot: resolve(output, "calculator-hawaii-unavailable.png"),
-  });
+  runCode(
+    calculatorCheck,
+    {
+      screenshot: resolve(output, "calculator-desktop.png"),
+      mobileScreenshot: resolve(output, "calculator-mobile.png"),
+      holdScreenshot: resolve(output, "calculator-hawaii-unavailable.png"),
+      responseTimeoutMs: calculatorResponseTimeoutMs,
+    },
+    // Two response waits plus the ordinary navigation/assertion budget.
+    commandTimeoutMs + 2 * calculatorResponseTimeoutMs,
+  );
   const componentFixture = buildCalculatorFixture();
   const componentResult = runCode(calculatorDeferredCheck, {
     ...componentFixture,

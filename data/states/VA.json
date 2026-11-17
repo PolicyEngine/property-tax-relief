@@ -15,7 +15,7 @@
       "tenures": ["owner"],
       "refundable": null,
       "ageRule": "65 or older, or permanently and totally disabled if local ordinance includes disability.",
-      "incomeDefinition": "Preceding-year income under local ordinance; household inclusion and exclusions specified locally.",
+      "incomeDefinition": "If a locality sets an income limit, the cited statute counts preceding-year income of owners who use the dwelling as their principal residence and relatives who live there, except bona fide caregivers. Localities may include resident nonrelatives except bona fide tenants or caregivers. Localities may exclude disability income of permanently and totally disabled resident relatives or nonrelatives, and other specified income sources or portions. The inventory does not establish the effective-date history for every 2025 application.",
       "incomeLimits": "Local income and net-worth limits.",
       "maximumBenefit": "Local ordinance determines exempted taxes, deferral, or combination.",
       "formulaSummary": "Localities may exempt taxes, defer them, or limit increases; relief is not uniform statewide.",
@@ -69,9 +69,7 @@
     }
   ],
   "laterChanges": [],
-  "researchNotes": [
-    "Local ordinances determine elderly/disability relief. Real-estate relief follows separate rules from Virginia’s personal-property vehicle-tax relief."
-  ],
+  "researchNotes": ["Local ordinances determine elderly/disability relief."],
   "sources": [
     {
       "title": "Virginia Code: local elderly and disability real-estate relief",

@@ -12,7 +12,7 @@ This report describes program rules and matching model declarations. It provides
 
 ## Review artifacts
 
-The `artifacts/` directory contains a self-contained interactive (`index.html`), a report (`report.html`), methods (`methods.html`), and the matching JSON/CSV downloads. These local research drafts do not require a running server. These artifacts describe program rules. The served calculator preview adds live estimates for selected programs; independent review remains outstanding. The inventory does not establish exhaustive program coverage or provide a filing determination.
+The `artifacts/` directory contains a self-contained interactive (`index.html`), a report (`report.html`), methods (`methods.html`), and the matching JSON/CSV downloads. These local research drafts do not require a running server. These artifacts describe program rules. The served calculator preview adds live estimates for selected programs. The inventory does not establish exhaustive program coverage or provide a filing determination.
 
 ## Household calculator preview
 
@@ -29,13 +29,15 @@ The `/calculator/` page calculates 2025 scenarios for one adult filing as single
 
 Other records show why calculations remain unavailable. Users supply qualified expenses and specified tax-form inputs; the estimate assumes the remaining qualification requirements hold. Connecticut covers primary-residence taxes and uses CT-1040, line 10, as its tax-liability limit; motor-vehicle tax claims require the full Schedule 3. Michigan and Pennsylvania calculations cover renters; Pennsylvania's preview excludes mixed owner-renter claims. Oklahoma calculations cover homestead owners. New Jersey selects one provision, so a zero deduction can accompany a credit or vice versa. Deduction amounts and California's credit before its liability limit do not measure tax savings on a completed return.
 
+Michigan's preview excludes claims that use the senior status for an unremarried surviving spouse whose spouse was 65 or older at death. See [2025 Form MI-1040CR, box 5a](https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/IIT/TY2025/MI-1040CR.pdf#page=1).
+
 Hawaii excludes taxpayers whom another taxpayer could claim as a dependent, even if nobody claims them. The preview cannot evaluate that condition, so Hawaii's renter credit remains unavailable. See [2025 Schedule X, Part I](https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=26).
 
 The browser uses `@policyengine/api-client` to send entered scenarios to the website's household-calculation API. Calculations require a network connection and use the shared API's capacity. The app adds no calculation backend or frontend benefit formulas. The adapter rejects missing or invalid outputs, preserves finite returned numbers, cancels obsolete requests, reuses unchanged requests, and caps new requests at 15 per minute per page.
 
 `data/calculator/contracts.json` records input mappings and source evidence. The metadata snapshot reported PolicyEngine US 2.2.1 on November 15, 2026. Saved responses retain the API's provenance fields; requests do not pin a model version. `data/calculator/validation-cases.json` contains 31 source-derived cases for enabled programs. Saved API responses match their expected values; `scripts/calculator_live_qa.ts` can rerun those checks. The offline unit suite sends no live requests.
 
-Independent review and publication checks remain open. The preview does not establish exhaustive coverage or national-calculator readiness.
+The preview does not establish exhaustive coverage or national-calculator readiness.
 
 Browser and static CSV downloads use the same serializer and 22-column schema. `program_id` joins each program to the JSON inventory and model-presence audit. `payment_mechanism` records the explicit mechanism separately from `refundable`; an unclassified mechanism uses `not-established`. `eligibility_notes` and `interactions` retain each program’s condition and coordination notes, joining each source array with `|`. These columns follow `application` and precede `program_year`. `state_research_notes` carries profile boundaries and omissions on each program row; `source_urls` combines program and state references without duplicates. CSVs use UTF-8 with a byte-order mark, CRLF row endings, quoted cells, lowercase booleans and empty cells for null refundability. The serializer escapes embedded quotes and guards spreadsheet formula prefixes. For income-tax credits, `refundable` indicates whether the credit can exceed income-tax liability. For an unclassified mechanism, it carries the recorded flag without identifying how the program pays. The CSV leaves this cell empty for other mechanisms; the JSON retains the recorded flag.
 
@@ -70,7 +72,7 @@ The generator resolves the requested ref to an immutable commit and reads its va
 
 Tests cover all 51 jurisdiction records, unique program IDs, source/year metadata, category separation, filter invariants, downloads, generated-data consistency, and separation of shared chrome from tool-specific provenance. The syntactic audit matches undated formulas, formulas starting by 2025, and `adds`/`subtracts` declarations; missing references, input-only variables and later-only formulas enter the gap list. It ignores declaration end dates and does not establish applicability to a 2025 claim or legal correctness.
 
-Run `bun run release:check` to inspect the outstanding national-calculator requirements. The audit lists implementation, mapping and calculation-validation gaps. Completing each state's initial source pass does not resolve every transitional claim or establish calculator readiness. Independent review and the website integration must finish before public publication. The report provides no validated national household calculator.
+Run `bun run release:check` to inspect the outstanding national-calculator requirements. The audit lists implementation, mapping and calculation-validation gaps. Completing each state's initial source pass does not resolve every transitional claim or establish calculator readiness. The report provides no validated national household calculator.
 
 ## Coverage benchmarks
 

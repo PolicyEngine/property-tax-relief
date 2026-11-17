@@ -54,7 +54,8 @@
         }
       ],
       "notes": [
-        "Enter qualifying property taxes you paid for your principal Indiana home during 2025. Check the Department of Revenue's rules before entering the amount."
+        "Enter qualifying property taxes you paid for your principal Indiana home during 2025. Check the Department of Revenue's rules before entering the amount.",
+        "This preview excludes claims that use the Lake County residential income-tax credit on 2025 Schedule 5, line 7."
       ],
       "sourceEvidence": {
         "packageVersion": "2.2.1",
@@ -62,7 +63,13 @@
         "sha256": "86ade95cda55b23f4350c6d7ea5f3681200dd1a4e23636363cd16695656f75db"
       },
       "resultLabel": "Deduction from taxable income",
-      "resultNote": "A deduction reduces taxable income. Your tax savings depend on your tax return; the deduction amount does not measure a cash payment."
+      "resultNote": "A deduction reduces taxable income. Your tax savings depend on your tax return; the deduction amount does not measure a cash payment.",
+      "sources": [
+        {
+          "title": "2025 Indiana IT-40 booklet, page 16, Schedule 2, line 2: homeowner’s residential property-tax deduction",
+          "url": "https://forms.in.gov/Download.aspx?id=16915#page=16"
+        }
+      ]
     },
     {
       "id": "ca-nonrefundable-renters-credit",
@@ -137,7 +144,7 @@
           "entity": "person",
           "kind": "boolean",
           "period": 2025,
-          "description": "Use the special-status conditions on Michigan Form MI-1040CR, box 5b. Leave the answer blank if you need to check them."
+          "description": "Check the special-status conditions on 2025 Michigan Form MI-1040CR, box 5b, then choose Yes or No."
         },
         {
           "variable": "rent",
@@ -176,6 +183,7 @@
       "notes": [
         "This estimate covers a full-year Michigan renter who meets the homestead requirements and pays ordinary rent for housing subject to property tax.",
         "The estimate assumes no Family Independence Program or other Michigan Department of Health and Human Services benefits. It omits special-housing and veteran alternatives.",
+        "This preview excludes claims that use the senior status for an unremarried surviving spouse whose spouse was 65 or older at death. See 2025 Form MI-1040CR, box 5a.",
         "Enter total household resources from 2025 Form MI-1040CR, page 2, line 33. Wages and federal adjusted gross income can differ from this amount.",
         "Enter only rent you paid. Exclude subsidies, services and other charges. Enter zero for both homeowner fields; homeowner calculations need further treatment."
       ],
@@ -193,6 +201,10 @@
         {
           "title": "2025 Michigan Form MI-1040CR, page 2, line 33: total household resources",
           "url": "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/IIT/TY2025/MI-1040CR.pdf#page=2"
+        },
+        {
+          "title": "2025 Michigan Form MI-1040CR, page 1, boxes 5a–5b: senior and disability status",
+          "url": "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/IIT/TY2025/MI-1040CR.pdf#page=1"
         }
       ]
     },
@@ -426,7 +438,11 @@
           "url": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html"
         },
         {
-          "title": "2025 Illinois Form IL-1040 instructions, page 9: federal AGI and nonrefundable credits",
+          "title": "2025 Illinois Form IL-1040 instructions, page 7: federal adjusted gross income",
+          "url": "https://tax.illinois.gov/content/dam/soi/en/web/tax/forms/incometax/documents/currentyear/individual/il-1040-instr.pdf#page=7"
+        },
+        {
+          "title": "2025 Illinois Form IL-1040 instructions, page 9: nonrefundable credits",
           "url": "https://tax.illinois.gov/content/dam/soi/en/web/tax/forms/incometax/documents/currentyear/individual/il-1040-instr.pdf#page=9"
         },
         {

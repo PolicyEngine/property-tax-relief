@@ -3,7 +3,7 @@
   "name": "New Hampshire",
   "taxYear": 2025,
   "verifiedAt": "2026-11-13",
-  "overview": "Income-tested relief refunds part of the State Education Property Tax to qualifying homeowners; local exemptions are separate.",
+  "overview": "Income-tested relief refunds part of the State Education Property Tax to qualifying homeowners.",
   "inventoryStatus": "researched",
   "statewideCreditStatus": "identified",
   "programs": [
@@ -15,7 +15,7 @@
       "tenures": ["owner"],
       "refundable": true,
       "ageRule": "No age restriction stated.",
-      "incomeDefinition": "Adjusted gross income under DP-8 rules; use the claim-year instructions.",
+      "incomeDefinition": "Total household income, including income of the claimant and adult household members. RSA 198:57 establishes the household scope; the inventory does not establish the precise adjusted-gross-income basis for the claim year.",
       "incomeLimits": "$37,000 single; $47,000 married or head of New Hampshire household.",
       "maximumBenefit": "Income-tiered relief on qualifying homestead value, capped at $220,000 of value.",
       "formulaSummary": "Refund qualifying State Education Property Tax using eligible homestead value and income-tier factors; this is not a refund of the whole local property-tax bill.",
@@ -36,6 +36,11 @@
           "title": "2025 submission window (for 2024 property tax)",
           "url": "https://www.revenue.nh.gov/news-and-media/nh-department-revenue-administration-tax-relief-program-provides-support-low-and",
           "kind": "agency"
+        },
+        {
+          "title": "New Hampshire RSA 198:57: household income and application requirements",
+          "url": "https://gc.nh.gov/rsa/html/XV/198/198-57.htm",
+          "kind": "statute"
         }
       ],
       "modelVariables": [],

@@ -93,6 +93,15 @@ export default function Methods() {
             deduction.
           </p>
           <p>
+            Michigan's preview excludes claims that use the senior status for an
+            unremarried surviving spouse whose spouse was 65 or older at death.
+            See{" "}
+            <a href="https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/IIT/TY2025/MI-1040CR.pdf#page=1">
+              2025 Form MI-1040CR, box 5a
+            </a>
+            .
+          </p>
+          <p>
             Hawaii excludes taxpayers whom another taxpayer could claim as a
             dependent, even if nobody claims them. The preview cannot evaluate
             that condition, so Hawaii's renter credit remains unavailable. See{" "}
@@ -104,16 +113,18 @@ export default function Methods() {
           <p>
             The calculator sends each entered scenario to PolicyEngine's rules
             engine through the website's household-calculation API. On November
-            15, 2026, the API's metadata reported PolicyEngine US 2.2.1. We
-            recorded that snapshot and inspected the matching source for each
-            enabled calculation. Saved responses retain the API's provenance
-            fields; requests do not pin a model version. Missing, null, and
-            nonnumeric outputs remain unavailable.
+            15, 2026, the API's metadata reported PolicyEngine US 2.2.1. Saved
+            responses retain the API's provenance fields; requests do not pin a
+            model version. Missing, null, and nonnumeric outputs remain
+            unavailable.
           </p>
           <p>
-            Saved API responses match the expected amounts in 31 source-derived
-            cases for the enabled calculations. These checks cover the listed
-            scenarios.
+            Saved API responses match the expected amounts in{" "}
+            <a href="https://github.com/PolicyEngine/property-tax-relief/blob/codex/household-calculator/data/calculator/validation-cases.json">
+              31 source-derived cases
+            </a>{" "}
+            for the enabled calculations. Those cases do not validate other
+            household scenarios.
           </p>
           <p>
             All 50 states and DC appear in the selector alongside 119 selected

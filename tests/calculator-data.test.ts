@@ -258,7 +258,7 @@ describe("calculator validation receipt provenance", () => {
     );
     expect(mergeBatchReceipts([...batches].reverse(), m)).toEqual(merged);
     expect(validateMergedReceipt(merged, m)).toEqual(merged);
-    expect(() => selectBatch(m, 0, 16)).toThrow();
+    expect(() => selectBatch(m, 0, 16)).toThrow("invalid-batch-selection");
   });
   it("rejects duplicate, missing, unknown, failed and unobserved tuples", () => {
     const m = mockManifest();
@@ -269,50 +269,79 @@ describe("calculator validation receipt provenance", () => {
     expect(() => mergeBatchReceipts(batches.slice(0, 2), m)).toThrow(
       "incomplete-validation-receipt",
     );
-    for (const change of [
-      (b: typeof batches) => {
-        b[0].results[0].id = "unknown";
-      },
-      (b: typeof batches) => {
-        b[0].results[0].pass = false;
-      },
-      (b: typeof batches) => {
-        delete (b[0].results[0] as Partial<(typeof b)[0]["results"][0]>)
-          .request;
-      },
-      (b: typeof batches) => {
-        b[0].results[0].response.body += " ";
-      },
-      (b: typeof batches) => {
-        b[0].results[0].expectedValue = 99;
-      },
-    ]) {
+    for (const [error, change] of [
+      [
+        "unknown-observation",
+        (b: typeof batches) => {
+          b[0].results[0].id = "unknown";
+        },
+      ],
+      [
+        "validation-observation-differs",
+        (b: typeof batches) => {
+          b[0].results[0].pass = false;
+        },
+      ],
+      [
+        "unobserved-validation-tuple",
+        (b: typeof batches) => {
+          delete (b[0].results[0] as Partial<(typeof b)[0]["results"][0]>)
+            .request;
+        },
+      ],
+      [
+        "observation-bytes-differ",
+        (b: typeof batches) => {
+          b[0].results[0].response.body += " ";
+        },
+      ],
+      [
+        "validation-observation-differs",
+        (b: typeof batches) => {
+          b[0].results[0].expectedValue = 99;
+        },
+      ],
+    ] as const) {
       const changed = clone(batches);
       change(changed);
-      expect(() => mergeBatchReceipts(changed, m)).toThrow();
+      expect(() => mergeBatchReceipts(changed, m)).toThrow(error);
     }
-    expect(() => validateMergedReceipt({ results: [] }, m)).toThrow();
+    expect(() => validateMergedReceipt({ results: [] }, m)).toThrow(
+      "no-validation-batches",
+    );
   });
   it("rejects mixed scopes, metadata, manifests and source identities", () => {
     const m = mockManifest();
     const batches = mockBatches();
-    for (const change of [
-      (b: typeof batches) => {
-        b[0].qualificationScope = "other scope";
-      },
-      (b: typeof batches) => {
-        b[0].metadataSnapshotSha256 = "f".repeat(64);
-      },
-      (b: typeof batches) => {
-        b[0].validationIdentity.adapterSha256 = "f".repeat(64);
-      },
-      (b: typeof batches) => {
-        b[0].manifestSha256 = "f".repeat(64);
-      },
-    ]) {
+    for (const [error, change] of [
+      [
+        "validation-context-differs",
+        (b: typeof batches) => {
+          b[0].qualificationScope = "other scope";
+        },
+      ],
+      [
+        "validation-context-differs",
+        (b: typeof batches) => {
+          b[0].metadataSnapshotSha256 = "f".repeat(64);
+        },
+      ],
+      [
+        "validation-source-changed",
+        (b: typeof batches) => {
+          b[0].validationIdentity.adapterSha256 = "f".repeat(64);
+        },
+      ],
+      [
+        "validation-context-differs",
+        (b: typeof batches) => {
+          b[0].manifestSha256 = "f".repeat(64);
+        },
+      ],
+    ] as const) {
       const changed = clone(batches);
       change(changed);
-      expect(() => mergeBatchReceipts(changed, m)).toThrow();
+      expect(() => mergeBatchReceipts(changed, m)).toThrow(error);
     }
     const changedProgram = clone(MOCK_PROGRAM);
     changedProgram.inputs[0].entity = "tax_unit";
@@ -324,7 +353,9 @@ describe("calculator validation receipt provenance", () => {
       m.qualificationScope,
       "mock-transport",
     );
-    expect(() => mergeBatchReceipts(batches, changed)).toThrow();
+    expect(() => mergeBatchReceipts(batches, changed)).toThrow(
+      "validation-context-differs",
+    );
   });
   it("keeps semantic hashes stable under object-key ordering", () => {
     fc.assert(
@@ -450,6 +481,6 @@ describe("calculator validation receipt provenance", () => {
       }),
     ).rejects.toThrow("observed-request-differs");
     expect(fakeFetch).not.toHaveBeenCalled();
-    expect(() => observed.observation()).toThrow();
+    expect(() => observed.observation()).toThrow("unobserved-validation-tuple");
   });
 });
