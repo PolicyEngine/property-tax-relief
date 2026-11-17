@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import { ProgramDetail } from "../components/ProgramDetail";
 import { Explorer } from "../components/Explorer";
+import { Calculator } from "../components/Calculator";
 import { inventoryCsv, PAYMENT_MECHANISM_LABELS } from "../lib/inventory";
 import type { PaymentMechanism, StateProfile } from "../lib/types";
 
@@ -15,6 +16,24 @@ const mechanisms = Object.keys(PAYMENT_MECHANISM_LABELS) as PaymentMechanism[];
 const cases = mechanisms.flatMap((mechanism) =>
   [true, false, null].map((flag) => ({ mechanism, flag })),
 );
+
+describe("calculator interactive readiness", () => {
+  it("keeps the server-rendered state picker disabled until client listeners mount", () => {
+    // https://playwright.dev/docs/navigations#hydration
+    const html = renderToStaticMarkup(
+      createElement(Calculator, {
+        programs: [],
+        states: [{ code: "TX", name: "Texas" }],
+      }),
+    );
+    const statePicker = html.match(
+      /<select\b[^>]*\bid="calculator-state"[^>]*>/,
+    )?.[0];
+    expect(statePicker).toBeDefined();
+    expect(statePicker).toContain('disabled=""');
+    expect(html).not.toContain('id="calculator-program"');
+  });
+});
 
 function fixture(mechanism: PaymentMechanism, flag: boolean | null) {
   const state = structuredClone(original);

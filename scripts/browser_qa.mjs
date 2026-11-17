@@ -250,6 +250,10 @@ async function calculatorDeferredCheck(existingPage, options) {
       await Promise.race([
         (async () => {
           await page.goto(options.url);
+          await page.waitForFunction(() => {
+            const state = document.getElementById("calculator-state");
+            return state instanceof HTMLSelectElement && !state.disabled;
+          });
           await state.selectOption("IN");
           await program.selectOption("in-renters-income-tax-deduction");
           await rent.fill("111");
@@ -544,6 +548,69 @@ async function offlineLoad(page, options) {
 }
 
 async function calculatorCheck(page, options) {
+  const clientPageErrors = [];
+  const failedAssetUrls = [];
+  const failedAssetResponses = [];
+  function diagnosticUrl(value) {
+    try {
+      const url = new URL(value);
+      if (
+        !["https://www.policyengine.org", "http://127.0.0.1:3075"].includes(
+          url.origin,
+        ) ||
+        url.username ||
+        url.password ||
+        ![
+          "/us/rent-and-property-taxes",
+          "/_zones/property-tax-relief/_next/",
+          "/_next/",
+        ].some((prefix) => url.pathname.startsWith(prefix))
+      )
+        return null;
+      return (url.origin + url.pathname).slice(0, 2048);
+    } catch {
+      return null;
+    }
+  }
+  function diagnosticText(value, limit) {
+    return String(value)
+      .replace(
+        /https?:\/\/[^\s"'<>]+/g,
+        (url) => diagnosticUrl(url) ?? "[other URL]",
+      )
+      .slice(0, limit);
+  }
+  const onPageError = (error) => {
+    if (clientPageErrors.length < 10)
+      clientPageErrors.push(diagnosticText(error.message, 1000));
+  };
+  const onRequestFailed = (request) => {
+    if (
+      !["script", "stylesheet", "font", "image"].includes(
+        request.resourceType(),
+      )
+    )
+      return;
+    const url = diagnosticUrl(request.url());
+    if (url && failedAssetUrls.length < 15 && !failedAssetUrls.includes(url))
+      failedAssetUrls.push(url);
+  };
+  const onResponse = (response) => {
+    if (
+      response.status() < 400 ||
+      !["script", "stylesheet", "font", "image"].includes(
+        response.request().resourceType(),
+      )
+    )
+      return;
+    const url = diagnosticUrl(response.url());
+    if (url && failedAssetResponses.length < 15)
+      failedAssetResponses.push({ url, status: response.status() });
+  };
+  page.on("pageerror", onPageError);
+  page.on("requestfailed", onRequestFailed);
+  page.on("response", onResponse);
+  let diagnosticPhase = "calculator navigation";
   async function assertResultInViewport(text) {
     await page.waitForFunction(
       (amount) => {
@@ -597,27 +664,88 @@ async function calculatorCheck(page, options) {
     await page.screenshot({ path, fullPage: true });
   }
 
-  await page
-    .getByRole("link", { name: "Household estimates", exact: true })
-    .click();
-  await page
-    .getByRole("heading", { name: "Household estimates", exact: true })
-    .waitFor();
   const state = page.getByLabel("State or District of Columbia", {
     exact: true,
   });
-  await state.waitFor();
-  await state.locator('option[value="WY"]').waitFor({ state: "attached" });
-  const choices = await state
-    .locator("option")
-    .evaluateAll((options) => options.filter((option) => option.value).length);
-  if (choices !== 51)
-    throw new Error(
-      `Calculator must retain all 51 jurisdictions; found ${choices}`,
-    );
+  try {
+    await page
+      .getByRole("link", { name: "Household estimates", exact: true })
+      .click();
+    await page
+      .getByRole("heading", { name: "Household estimates", exact: true })
+      .waitFor();
+    diagnosticPhase = "state choices";
+    await state.waitFor();
+    await state.locator('option[value="WY"]').waitFor({ state: "attached" });
+    const choices = await state
+      .locator("option")
+      .evaluateAll(
+        (options) => options.filter((option) => option.value).length,
+      );
+    if (choices !== 51)
+      throw new Error(
+        `Calculator must retain all 51 jurisdictions; found ${choices}`,
+      );
 
-  await state.selectOption("TX");
-  await page.getByLabel("Program", { exact: true }).selectOption({ index: 1 });
+    diagnosticPhase = "TX state selection";
+    await state.selectOption("TX");
+    diagnosticPhase = "Program selector after TX";
+    await page
+      .getByLabel("Program", { exact: true })
+      .selectOption({ index: 1 });
+  } catch (error) {
+    const diagnostic = {
+      kind: "CALCULATOR_SELECTOR_FAILURE",
+      phase: diagnosticPhase,
+      pageUrl: diagnosticUrl(page.url()),
+      clientPageErrors,
+      failedAssetUrls,
+      failedAssetResponses,
+      controls: await page
+        .evaluate(() => ({
+          selectCount: document.querySelectorAll("select").length,
+          selects: [...document.querySelectorAll("select")]
+            .slice(0, 10)
+            .map((select) => ({
+              id: select.id.slice(0, 200),
+              value: select.value.slice(0, 200),
+              optionCount: select.options.length,
+              selectedOptionCount: select.selectedOptions.length,
+            })),
+        }))
+        .catch(() => null),
+      bodyText: diagnosticText(
+        await page
+          .locator("body")
+          .innerText({ timeout: 2000 })
+          .catch(() => "[body unavailable]"),
+        8000,
+      ),
+      screenshot: options.diagnosticScreenshot,
+      screenshotCaptured: false,
+    };
+    try {
+      await page.screenshot({
+        path: options.diagnosticScreenshot,
+        fullPage: true,
+        timeout: 5000,
+      });
+      diagnostic.screenshotCaptured = true;
+    } catch (screenshotError) {
+      diagnostic.screenshotError = diagnosticText(
+        screenshotError.message,
+        1000,
+      );
+    }
+    // The existing CLI prints this error JSON; preserve the original timeout failure.
+    error.message +=
+      "\nCALCULATOR_SELECTOR_DIAGNOSTIC " + JSON.stringify(diagnostic);
+    throw error;
+  } finally {
+    page.off("pageerror", onPageError);
+    page.off("requestfailed", onRequestFailed);
+    page.off("response", onResponse);
+  }
   await page
     .getByRole("heading", { name: "Calculation unavailable", exact: true })
     .waitFor();
@@ -812,6 +940,10 @@ try {
       screenshot: resolve(output, "calculator-desktop.png"),
       mobileScreenshot: resolve(output, "calculator-mobile.png"),
       holdScreenshot: resolve(output, "calculator-hawaii-unavailable.png"),
+      diagnosticScreenshot: resolve(
+        output,
+        "calculator-selector-diagnostic.png",
+      ),
       responseTimeoutMs: calculatorResponseTimeoutMs,
     },
     // Two response waits plus the ordinary navigation/assertion budget.

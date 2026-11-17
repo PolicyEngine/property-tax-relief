@@ -88,6 +88,7 @@ function availabilityReason(reason: string | null): string {
 }
 
 export function Calculator({ programs, states }: CalculatorProps) {
+  const [interactive, setInteractive] = useState(false);
   const [stateCode, setStateCode] = useState("");
   const [programId, setProgramId] = useState("");
   const [values, setValues] = useState<CalculatorValues>({});
@@ -123,6 +124,10 @@ export function Calculator({ programs, states }: CalculatorProps) {
   const upToDate = Boolean(displayedEstimate && !stale);
 
   useEffect(() => () => requestRef.current?.abort(), []);
+
+  useEffect(() => {
+    setInteractive(true);
+  }, []);
 
   useEffect(() => {
     if (errors.length) errorsRef.current?.focus();
@@ -245,6 +250,7 @@ export function Calculator({ programs, states }: CalculatorProps) {
               </label>
               <SelectInput
                 id="calculator-state"
+                disabled={!interactive}
                 value={stateCode}
                 onChange={selectState}
                 placeholder="Choose a state"
