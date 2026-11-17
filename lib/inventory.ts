@@ -116,6 +116,8 @@ export function inventoryCsv(states: StateProfile[]): string {
     "maximum_benefit",
     "formula",
     "application",
+    "eligibility_notes",
+    "interactions",
     "program_year",
     "source_urls",
     "research_status",
@@ -130,6 +132,8 @@ export function inventoryCsv(states: StateProfile[]): string {
           state.taxYear,
           "",
           "No program recorded",
+          "",
+          "",
           "",
           "",
           "",
@@ -166,6 +170,8 @@ export function inventoryCsv(states: StateProfile[]): string {
       p.maximumBenefit,
       p.formulaSummary,
       p.application,
+      p.eligibilityNotes.join(" | "),
+      p.interactions.join(" | "),
       p.programYear,
       [
         ...new Set(

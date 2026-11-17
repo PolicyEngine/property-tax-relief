@@ -4512,7 +4512,7 @@
         "incomeLimits": "Not income-tested.",
         "maximumBenefit": "2.5% of qualifying levies for the 2025 baseline.",
         "formulaSummary": "Owner-occupancy reduction applies to eligible levies, not necessarily the complete property-tax bill.",
-        "application": "Apply to county auditor.",
+        "application": "County auditors administer this credit. The inventory does not establish the 2025 application procedure.",
         "eligibilityNotes": [
           "Principal residence requirement."
         ],
@@ -4694,7 +4694,7 @@
         "application": "Apply through county assessor by April 15; late applications through December 1 require a fee.",
         "eligibilityNotes": [
           "Generally five years of ownership and occupancy.",
-          "Property-value, assets, insurance, and mortgage requirements apply."
+          "Property-value and mortgage requirements apply. The inventory does not establish the 2025 asset or insurance requirements."
         ],
         "interactions": [],
         "programYear": "2025 program enrollment; standard applications due April 15, 2025.",
@@ -5010,6 +5010,11 @@
             "title": "2025 Department of Revenue property-tax information guide",
             "url": "https://mylrc.sdlegislature.gov/api/Documents/Attachment/281928.pdf?Year=2025",
             "kind": "agency"
+          },
+          {
+            "title": "South Dakota Codified Laws 10-6A-1 and 10-6A-4: household income and annual applications",
+            "url": "https://sdlegislature.gov/api/Statutes/10-6A.html?all=true",
+            "kind": "statute"
           }
         ],
         "modelVariables": [],
@@ -5927,11 +5932,6 @@
             "title": "Washington income thresholds, tax years 2024\u20132026",
             "url": "https://dor.wa.gov/sites/default/files/2023-08/Income_ThreshTY24-26.pdf",
             "kind": "agency"
-          },
-          {
-            "title": "2023 legislative changes to exemption and deferral programs",
-            "url": "https://dor.wa.gov/forms-publications/publications-subject/special-notices/legislative-changes-property-tax-relief-programs",
-            "kind": "agency"
           }
         ],
         "modelVariables": [
@@ -6018,11 +6018,6 @@
       {
         "title": "Washington income thresholds, tax years 2024\u20132026",
         "url": "https://dor.wa.gov/sites/default/files/2023-08/Income_ThreshTY24-26.pdf",
-        "kind": "agency"
-      },
-      {
-        "title": "2023 legislative changes to exemption and deferral programs",
-        "url": "https://dor.wa.gov/forms-publications/publications-subject/special-notices/legislative-changes-property-tax-relief-programs",
         "kind": "agency"
       },
       {
@@ -6676,7 +6671,7 @@
         "incomeLimits": "Not income-tested.",
         "maximumBenefit": "25% of the first $1 million of qualifying residence and improved-land fair market value.",
         "formulaSummary": "Value exemption introduced for tax year 2025; owner-occupancy limitation applies beginning in 2026.",
-        "application": "2025 application treatment differs from owner-occupancy applications in later years; consult county assessor.",
+        "application": "The inventory does not establish the 2025 application procedure.",
         "eligibilityNotes": [],
         "interactions": [
           "Cannot combine with long-term homeowner exemption for 2025/26."

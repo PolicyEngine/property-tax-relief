@@ -32,6 +32,11 @@
           "title": "2025 Department of Revenue property-tax information guide",
           "url": "https://mylrc.sdlegislature.gov/api/Documents/Attachment/281928.pdf?Year=2025",
           "kind": "agency"
+        },
+        {
+          "title": "South Dakota Codified Laws 10-6A-1 and 10-6A-4: household income and annual applications",
+          "url": "https://sdlegislature.gov/api/Statutes/10-6A.html?all=true",
+          "kind": "statute"
         }
       ],
       "modelVariables": [],
