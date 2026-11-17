@@ -2432,8 +2432,8 @@
         "The estimate assumes wages are your only income, Schedule A includes only Colorado income taxes, qualifying real estate taxes and qualified mortgage interest, and you have no other income additions or subtractions.",
         "Colorado adds back the state income tax included in your federal deduction using its worksheet. The estimate includes the remaining real estate tax deduction within the federal limit."
       ],
-      "resultLabel": "Real estate taxes included in Colorado’s federal taxable income starting amount",
-      "resultNote": "This amount reduces the modeled Colorado taxable income for the stated itemizing household.",
+      "resultLabel": "Real estate taxes in the federal deduction used by Colorado",
+      "resultNote": "Colorado starts with federal taxable income. This amount is the real estate tax portion of the itemized deduction used to compute that starting amount.",
       "sources": [
         {
           "title": "2025 Colorado DR 0104 and DR 0104AD instructions",
