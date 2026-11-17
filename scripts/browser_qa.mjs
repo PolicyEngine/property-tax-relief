@@ -98,6 +98,8 @@ function buildCalculatorFixture() {
       "--target",
       "browser",
       "--env=NEXT_PUBLIC_*",
+      "--define",
+      `process.env.NEXT_PUBLIC_BASE_PATH=${JSON.stringify(basePath)}`,
       "--minify",
     ],
     {
@@ -116,6 +118,23 @@ async function calculatorDeferredCheck(existingPage, options) {
   const page = await existingPage.context().newPage();
   const completed = [];
   let escapedRequests = 0;
+  const bootstrapFailure = new Promise((_, reject) => {
+    page.on("pageerror", (error) =>
+      reject(
+        new Error("MOCK fixture page error: " + error.message.slice(0, 1000)),
+      ),
+    );
+    page.on("console", (message) => {
+      if (message.type() === "error")
+        reject(
+          new Error(
+            "MOCK fixture console error: " + message.text().slice(0, 1000),
+          ),
+        );
+    });
+  });
+  // Attach immediately: a module can fail before navigation finishes.
+  bootstrapFailure.catch(() => {});
   try {
     // Fail closed if the controlled fetch fixture misses a calculation request.
     await page.route("**/api/household/calculate", async (route) => {
@@ -222,10 +241,15 @@ async function calculatorDeferredCheck(existingPage, options) {
       exact: true,
     });
     async function reset() {
-      await page.goto(options.url);
-      await state.selectOption("IN");
-      await program.selectOption("in-renters-income-tax-deduction");
-      await rent.fill("111");
+      await Promise.race([
+        (async () => {
+          await page.goto(options.url);
+          await state.selectOption("IN");
+          await program.selectOption("in-renters-income-tax-deduction");
+          await rent.fill("111");
+        })(),
+        bootstrapFailure,
+      ]);
     }
     async function submit(count) {
       await calculate.click();
