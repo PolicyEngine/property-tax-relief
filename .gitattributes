@@ -1,0 +1,5 @@
+*.csv text eol=lf
+artifacts/*.html -whitespace
+artifacts/*.js -whitespace
+public/data/inventory.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+artifacts/inventory.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

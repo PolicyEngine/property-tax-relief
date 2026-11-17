@@ -1,0 +1,22 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "bun run build:zone",
+  "installCommand": "bun install --frozen-lockfile",
+  "outputDirectory": "out",
+  "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "/_zones/property-tax-relief/_next/:path(.*)",
+      "destination": "/_next/:path"
+    },
+    {
+      "source": "/us/rent-and-property-taxes",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/us/rent-and-property-taxes/:path(.*)",
+      "destination": "/:path"
+    }
+  ]
+}

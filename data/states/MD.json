@@ -1,0 +1,202 @@
+{
+  "code": "MD",
+  "name": "Maryland",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Maryland operates separate homeowner and renter circuit-breaker programs with different income thresholds, asset/age rules and application timing.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "md-homeowners-tax-credit",
+      "name": "Homeowners’ Property Tax Credit",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "No general minimum age.",
+      "incomeDefinition": "Combined gross household income, including nontaxable income, with exclusions for specified occupants.",
+      "incomeLimits": "Gross household income no more than $60,000; net worth excluding the residence and qualifying retirement savings no more than $200,000.",
+      "maximumBenefit": "Eligible property tax above the statutory income-based limit; eligible assessed value is limited to $300,000.",
+      "formulaSummary": "Credit eligible tax above a graduated income limit: 0% of first $8,000, 4% of next $4,000, 6.5% of next $4,000, and 9% above $16,000.",
+      "application": "Apply annually to SDAT; the 2025 application deadline was October 1, 2025.",
+      "eligibilityNotes": [
+        "Legal interest and principal-residence occupancy conditions apply.",
+        "2025 application uses calendar-year 2024 income and year-end 2024 assets."
+      ],
+      "interactions": [
+        "Eligible taxes reflect the Homestead assessment reduction; fixed water/sewer charges, excess acreage and business portions are excluded.",
+        "State, county and municipal Homestead assessment bases can differ. Their aggregation with the Homeowners' $300,000 assessment cap remains unresolved for a general calculation."
+      ],
+      "programYear": "2025 property-tax credit using calendar-year 2024 household income.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Homeowners’ Property Tax Credit Application",
+          "url": "https://dat.maryland.gov/SDAT%20Forms/2025HTCApplication.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "Homeowners’ Property Tax Credit Program",
+          "url": "https://dat.maryland.gov/realproperty/Pages/Homeowners%27-Property-Tax-Credit-Program.aspx",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 Tax–Property §9-104 — Homeowners' eligible tax base",
+          "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-104.pdf",
+          "kind": "statute"
+        },
+        {
+          "title": "2025 Tax–Property §9-105 — differing State, county and municipal Homestead bases",
+          "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-105.pdf",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
+    },
+    {
+      "id": "md-renters-tax-credit",
+      "name": "Renters’ Tax Credit",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["renter"],
+      "refundable": true,
+      "ageRule": "Age 60+, fully disabled, or younger renter meeting dependent-child, income and housing conditions.",
+      "incomeDefinition": "Combined gross household income, including nontaxable retirement income.",
+      "incomeLimits": "Younger applicants face household-size limits; older or disabled applicants use the rent-to-income calculation. Section 9-102(i)(2) bars a renter whose combined net worth exceeds $200,000 as of December 31.",
+      "maximumBenefit": "$1,000.",
+      "formulaSummary": "15% of occupancy rent minus 0% of first $4,000 of income, 2.5% of next $4,000, and 5.5% above $8,000, subject to eligibility and cap.",
+      "application": "Apply annually to SDAT by October 1 of the application year; payment is a direct state check.",
+      "eligibilityNotes": [
+        "At least six months in a qualifying Maryland principal residence.",
+        "Occupancy rent excludes heat, utilities and fees.",
+        "Tax-exempt dwellings are excluded; younger applicants have additional subsidy restrictions.",
+        "The under-60 route has an unresolved source conflict: statute specifies Census poverty thresholds, while the 2025/2026 forms use HHS poverty guidelines. Exact reference-year and family-composition treatment remain unresolved for eligibility calculations.",
+        "The 2025 application uses December 31, 2024 net worth. The statute bars net worth above $200,000; the application describes eligibility as less than $200,000, so its wording differs at the exact threshold."
+      ],
+      "interactions": [],
+      "programYear": "The 2025 application uses 2024 rent and income; the 2026 application uses 2025. Rent year and application/payment year must remain separate.",
+      "rentProxy": 0.15,
+      "sources": [
+        {
+          "title": "Renters’ Tax Credits",
+          "url": "https://dat.maryland.gov/realproperty/pages/renters%27-tax-credits.aspx",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 Tax–Property §9-102(a)(9) — statutory under-60 eligibility threshold",
+          "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-102.pdf",
+          "kind": "statute"
+        },
+        {
+          "title": "2025 Renters' Tax Credit application — 2024 rent and income",
+          "url": "https://dat.maryland.gov/SDAT%20Forms/2025RTCApplication.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "2026 Renters' Tax Credit application — 2025 rent and income",
+          "url": "https://dat.maryland.gov/SDAT%20Forms/2026%20Renters%E2%80%99%20Tax%20Credit%20Application%20RTC-1%20Form.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "cash-rebate"
+    },
+    {
+      "id": "md-homestead-assessment-credit",
+      "name": "Homestead Property Tax Credit",
+      "category": "assessment-limit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Credit on annual taxable-assessment increases above 10% for State property tax, or the local cap of 10% or less.",
+      "formulaSummary": "Credit the property tax attributable to eligible assessment growth above the applicable cap; market-value assessment itself is not frozen.",
+      "application": "One-time principal-residence application to SDAT.",
+      "eligibilityNotes": [
+        "Applies to one qualifying principal residence; ownership and occupancy conditions apply."
+      ],
+      "interactions": [
+        "This assessment-growth credit is distinct from the income-based Homeowners’ Tax Credit.",
+        "The income-based Homeowners' Credit uses its statutory Homestead-adjusted assessment basis. The aggregation of differing jurisdictional bases remains unresolved."
+      ],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Maryland Homestead Property Tax Credit Program",
+          "url": "https://dat.maryland.gov/realproperty/Pages/Maryland-Homestead-Tax-Credit.aspx",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "assessment-or-tax-limit"
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [
+    "The report does not establish a validated Maryland program-to-model mapping.",
+    "The Homeowners’ Credit reduces the property-tax bill, so income-tax refundability does not describe its delivery.",
+    "The under-60 renter Census/HHS threshold conflict and differing jurisdictional Homestead bases remain unresolved calculation limits."
+  ],
+  "sources": [
+    {
+      "title": "2025 Homeowners’ Property Tax Credit Application",
+      "url": "https://dat.maryland.gov/SDAT%20Forms/2025HTCApplication.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "Homeowners’ Property Tax Credit Program",
+      "url": "https://dat.maryland.gov/realproperty/Pages/Homeowners%27-Property-Tax-Credit-Program.aspx",
+      "kind": "agency"
+    },
+    {
+      "title": "Renters’ Tax Credits",
+      "url": "https://dat.maryland.gov/realproperty/pages/renters%27-tax-credits.aspx",
+      "kind": "agency"
+    },
+    {
+      "title": "Maryland Homestead Property Tax Credit Program",
+      "url": "https://dat.maryland.gov/realproperty/Pages/Maryland-Homestead-Tax-Credit.aspx",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 Tax–Property §9-104 — Homeowners' eligible tax base",
+      "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-104.pdf",
+      "kind": "statute"
+    },
+    {
+      "title": "2025 Tax–Property §9-105 — differing State, county and municipal Homestead bases",
+      "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-105.pdf",
+      "kind": "statute"
+    },
+    {
+      "title": "2025 Tax–Property §9-102(a)(9) — statutory under-60 eligibility threshold",
+      "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gtp/9-102.pdf",
+      "kind": "statute"
+    },
+    {
+      "title": "2025 Renters' Tax Credit application — 2024 rent and income",
+      "url": "https://dat.maryland.gov/SDAT%20Forms/2025RTCApplication.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "2026 Renters' Tax Credit application — 2025 rent and income",
+      "url": "https://dat.maryland.gov/SDAT%20Forms/2026%20Renters%E2%80%99%20Tax%20Credit%20Application%20RTC-1%20Form.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "2024 HHS poverty guidelines — comparison with 2025 renter-form table",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2024-01-17/pdf/2024-00796.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "Census historical poverty thresholds — distinct from HHS guidelines",
+      "url": "https://www.census.gov/data/tables/time-series/demo/income-poverty/historical-poverty-thresholds.html",
+      "kind": "agency"
+    }
+  ]
+}

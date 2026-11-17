@@ -1,0 +1,132 @@
+{
+  "code": "MS",
+  "name": "Mississippi",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-14",
+  "overview": "Mississippi’s homestead system includes a regular property-tax bill credit and larger age/disability exemptions; it is not a refundable income-based renter circuit breaker.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "ms-regular-homestead-credit",
+      "name": "Regular Homestead Exemption — bill credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "Ordinary tier for eligible owners under age 65 who do not qualify for the disability tiers.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Up to $300 reduction in taxes under the assessed-value table.",
+      "formulaSummary": "Statutory assessed-value table provides a nominal $6–$300 bill credit, split equally between school and county general-fund taxes. Actual component liabilities and shared ownership can limit relief.",
+      "application": "Apply to the county tax assessor January 1–April 1; reapply after relevant changes.",
+      "eligibilityNotes": [
+        "Own and occupy the principal residence on January 1.",
+        "Ownership, head-of-family and state-tax compliance rules apply."
+      ],
+      "interactions": [
+        "Age/disability and total-exemption tiers replace the ordinary tier."
+      ],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Mississippi homestead exemption",
+          "url": "https://www.dor.ms.gov/county-services/homestead-exemption",
+          "kind": "agency"
+        },
+        {
+          "title": "Mississippi SOS Title 35, Part VI property-tax rules",
+          "url": "https://www.sos.ms.gov/adminsearch/ACCode/00000161c.pdf",
+          "kind": "regulation"
+        },
+        {
+          "title": "2025 HB 812: as-signed homestead provisions and credit table",
+          "url": "https://billstatus.ls.state.ms.us/documents/2025/pdf/HB/0800-0899/HB0812SG.pdf",
+          "kind": "statute"
+        },
+        {
+          "title": "2025 HB 812 official enactment record",
+          "url": "https://billstatus.ls.state.ms.us/2025/pdf/history/HB/HB0812.xml",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
+    },
+    {
+      "id": "ms-age-disability-homestead-exemption",
+      "name": "Age/Disability Homestead Exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "Age 65+ or qualifying total disability as of January 1.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Covered taxes on the first $7,500 of assessed value, plus the additional statutory exemption for qualifying reassessment increases. Certain qualifying veterans and survivors receive a full exemption.",
+      "formulaSummary": "Exempt eligible homestead value from covered property taxes under the applicable tier.",
+      "application": "Apply to the local assessing authority.",
+      "eligibilityNotes": [
+        "Provide proof of age or qualifying disability.",
+        "Section 27-33-75(2)(c) also exempts qualifying reassessment increases above the January 1, 2018 assessed value or the January 1 value in the first exemption claim year. A subsequent lower reassessment resets that base.",
+        "The additional exemption generally excludes increases from renovations, expansions, improvements or additions, with exceptions for work that promotes energy efficiency, safety or access."
+      ],
+      "interactions": [],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Mississippi homestead exemption",
+          "url": "https://www.dor.ms.gov/county-services/homestead-exemption",
+          "kind": "agency"
+        },
+        {
+          "title": "Mississippi SOS Title 35, Part VI property-tax rules",
+          "url": "https://www.sos.ms.gov/adminsearch/ACCode/00000161c.pdf",
+          "kind": "regulation"
+        },
+        {
+          "title": "2025 Mississippi HB 812 as signed, section 27-33-75(2)(c)",
+          "url": "https://billstatus.ls.state.ms.us/documents/2025/pdf/HB/0800-0899/HB0812SG.pdf#page=4",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": [
+        "ms_age_disability_homestead_exemption",
+        "ms_age_disability_homestead_property_tax_reduction"
+      ],
+      "paymentMechanism": "taxable-property-value-exemption"
+    }
+  ],
+  "laterChanges": [
+    "HB 812 distinguishes veteran age-90 relief for 2025 claims from specified surviving-spouse additions beginning with 2026 claims."
+  ],
+  "researchNotes": [
+    "No general statewide renter credit was identified in reviewed DOR materials.",
+    "The regular tier operates as a property-tax bill credit despite its exemption title; it does not provide a cash refund.",
+    "The retained SOS rulebook includes later changes. The dated enacted act establishes the 2025 table; shared-ownership ordering and low component-liability treatment remain unresolved."
+  ],
+  "sources": [
+    {
+      "title": "Mississippi homestead exemption",
+      "url": "https://www.dor.ms.gov/county-services/homestead-exemption",
+      "kind": "agency"
+    },
+    {
+      "title": "Mississippi SOS Title 35, Part VI property-tax rules",
+      "url": "https://www.sos.ms.gov/adminsearch/ACCode/00000161c.pdf",
+      "kind": "regulation"
+    },
+    {
+      "title": "2025 HB 812: as-signed homestead provisions and credit table",
+      "url": "https://billstatus.ls.state.ms.us/documents/2025/pdf/HB/0800-0899/HB0812SG.pdf",
+      "kind": "statute"
+    },
+    {
+      "title": "2025 HB 812 official enactment record",
+      "url": "https://billstatus.ls.state.ms.us/2025/pdf/history/HB/HB0812.xml",
+      "kind": "agency"
+    }
+  ]
+}

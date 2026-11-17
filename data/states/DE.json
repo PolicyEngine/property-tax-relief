@@ -1,0 +1,89 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [],
+  "code": "DE",
+  "name": "Delaware",
+  "overview": "Delaware's statewide senior-credit framework allows school districts to authorize a credit against regular school property taxes on a qualifying principal residence.",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "de-senior-school-property-tax-credit",
+      "name": "Senior School Property Tax Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "Age 65+ as of June 30 immediately before the county fiscal year.",
+      "incomeDefinition": "Not income-tested under the statewide program.",
+      "incomeLimits": "No income limit listed for the statewide credit.",
+      "maximumBenefit": "Statutory ceiling is 50% of eligible regular school property tax, up to $500; district authorization can provide less.",
+      "formulaSummary": "District-authorized nonrefundable bill credit, no greater than the lesser of half the eligible regular school levy after applicable reductions or $500.",
+      "application": "Apply to county ordinarily by April 30; annual reapplication generally unnecessary. A statutory financial-disability filing-date waiver may apply.",
+      "eligibilityNotes": [
+        "Primary residence only.",
+        "Residency waiting periods depend on when Delaware domicile began; newer arrivals generally require ten consecutive years. Statute measures the required duration on June 30 immediately before the county fiscal year.",
+        "Prior-year property taxes must have been paid in full.",
+        "Actual school-district authorization and eligible school-tax amounts must be established; the statewide ceiling is not an automatic award."
+      ],
+      "interactions": [
+        "Under 14 Del. C. section 1917(d)(4)e, a claimant qualifying for both the disabled-veteran and senior school credits receives the disabled-veteran credit and cannot claim the senior credit.",
+        "The treatment of separate county exemptions is not established."
+      ],
+      "programYear": "2025 application cohort: ordinary filing by April 30, 2025 and age/domicile qualification on June 30, 2025 for the upcoming county fiscal year. The corresponding county bill periods are not established.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Senior school property-tax relief",
+          "url": "https://finance.delaware.gov/senior-relief/",
+          "kind": "agency"
+        },
+        {
+          "title": "14 Del. C. §1917(c) — district authorization and June 30 qualification",
+          "url": "https://delcode.delaware.gov/title14/c019/sc01/index.html#1917",
+          "kind": "statute"
+        },
+        {
+          "title": "29 Del. C. §6102(q)(3) — statutory ceiling and lesser district authorization",
+          "url": "https://delcode.delaware.gov/title29/c061/index.html#6102",
+          "kind": "statute"
+        },
+        {
+          "title": "Senior School Property Tax Credit application — residency wording differs from statute",
+          "url": "https://financefiles.delaware.gov/docs/ssptc_app_revised092523.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
+    }
+  ],
+  "researchNotes": [
+    "The agency overview and current statutory framework state a $500 ceiling; a proposal to raise it does not change the enacted amount.",
+    "District-specific authorization for 2025 is not recorded comprehensively. The statewide ceiling does not establish the authorized amount for a particular district.",
+    "The linked form measures domicile duration before application, while the statute uses June 30 before the county fiscal year. The statutory date governs; district, property and billing facts determine a particular claim."
+  ],
+  "sources": [
+    {
+      "title": "Senior school property-tax relief",
+      "url": "https://finance.delaware.gov/senior-relief/",
+      "kind": "agency"
+    },
+    {
+      "title": "14 Del. C. §1917(c) — district authorization and June 30 qualification",
+      "url": "https://delcode.delaware.gov/title14/c019/sc01/index.html#1917",
+      "kind": "statute"
+    },
+    {
+      "title": "29 Del. C. §6102(q)(3) — statutory ceiling and lesser district authorization",
+      "url": "https://delcode.delaware.gov/title29/c061/index.html#6102",
+      "kind": "statute"
+    },
+    {
+      "title": "Senior School Property Tax Credit application — residency wording differs from statute",
+      "url": "https://financefiles.delaware.gov/docs/ssptc_app_revised092523.pdf",
+      "kind": "form"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "code": "KY",
+  "name": "Kentucky",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Kentucky reduces assessed homestead value for qualifying older or totally disabled homeowners.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "none-identified",
+  "programs": [
+    {
+      "id": "ky-homestead-exemption",
+      "name": "Homestead Exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "Age 65+ during the tax period, or qualifying total disability.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "$49,100 reduction in assessed value for 2025 and 2026; this is not a $49,100 tax credit.",
+      "formulaSummary": "Deduct the statutory exempt value from eligible assessed value, then apply property-tax rates.",
+      "application": "Application and proof to the county Property Valuation Administrator by December 31 of the eligible year.",
+      "eligibilityNotes": [
+        "Own, occupy and maintain the property as a personal residence on January 1."
+      ],
+      "interactions": [],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "DOR sets 2025–2026 homestead exemption",
+          "url": "https://revenue.ky.gov/News/Pages/DOR-Sets-2025-2026-Homestead-Exemption.aspx",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [
+        "ky_homestead_exemption",
+        "ky_homestead_property_tax_reduction"
+      ],
+      "paymentMechanism": "taxable-property-value-exemption"
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [
+    "The listed statewide program covers a homestead value exemption. Tax savings depend on the covered property-tax rates."
+  ],
+  "sources": [
+    {
+      "title": "DOR sets 2025–2026 homestead exemption",
+      "url": "https://revenue.ky.gov/News/Pages/DOR-Sets-2025-2026-Homestead-Exemption.aspx",
+      "kind": "agency"
+    }
+  ]
+}

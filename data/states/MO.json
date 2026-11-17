@@ -1,0 +1,74 @@
+{
+  "code": "MO",
+  "name": "Missouri",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "A refundable Property Tax Credit covers qualifying seniors, disabled people and certain surviving spouses who own or rent.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "mo-property-tax-credit",
+      "name": "Property Tax Credit",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner", "renter"],
+      "refundable": true,
+      "ageRule": "Age 65+, 100% disabled, service-connected 100% disabled veteran, or age 60+ receiving qualifying surviving-spouse benefits.",
+      "incomeDefinition": "Missouri adjusted income plus specified nontaxable Social Security, pension, assistance and other income; statutory exemptions and offsets apply.",
+      "incomeLimits": "Renters/part-year owners: $27,200 single or $29,200 combined; full-year owner-occupiers: $30,000 single or $34,000 combined.",
+      "maximumBenefit": "2025: $750 renter or $1,100 owner.",
+      "formulaSummary": "Apply the MO-PTC chart to program net income and eligible property tax or 20% of qualifying rent; caps and owner/renter income offsets differ.",
+      "application": "MO-PTS with MO-1040 if an income return is required; otherwise standalone MO-PTC.",
+      "eligibilityNotes": [
+        "Full-year Missouri residence is required for the ordinary age-65 route.",
+        "Rental property must pay real-estate tax.",
+        "Claim only qualifying principal-residence taxes; fees and excess acreage are excluded."
+      ],
+      "interactions": [],
+      "programYear": "2025 taxes/rent; claim due April 15, 2026.",
+      "rentProxy": 0.2,
+      "sources": [
+        {
+          "title": "2025 Property Tax Credit qualification chart",
+          "url": "https://dor.mo.gov/forms/PTC%20Qualification%20Chart.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "2025 MO-PTC instructions",
+          "url": "https://dor.mo.gov/forms/MO-PTC%20Instructions_2025.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "Property Tax Credit FAQs",
+          "url": "https://dor.mo.gov/faq/taxation/individual/property-tax-credit-claim.html?source=syndication",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": ["mo_property_tax_credit"],
+      "paymentMechanism": "income-tax-credit"
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [
+    "The credit chart determines the payable amount.",
+    "Renters count 20% of rent after the qualifying rent reductions as property taxes."
+  ],
+  "sources": [
+    {
+      "title": "2025 Property Tax Credit qualification chart",
+      "url": "https://dor.mo.gov/forms/PTC%20Qualification%20Chart.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "2025 MO-PTC instructions",
+      "url": "https://dor.mo.gov/forms/MO-PTC%20Instructions_2025.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "Property Tax Credit FAQs",
+      "url": "https://dor.mo.gov/faq/taxation/individual/property-tax-credit-claim.html?source=syndication",
+      "kind": "agency"
+    }
+  ]
+}

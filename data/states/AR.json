@@ -1,0 +1,131 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [
+    "Act 174 of the 2026 Fiscal Session raises the cap to $675 beginning with assessment year 2026, normally collected in 2027. It does not replace the $600 cap for assessment year 2025."
+  ],
+  "code": "AR",
+  "name": "Arkansas",
+  "overview": "The homestead credit reduces qualifying homeowners' property-tax liability without an income test.",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "ar-homestead-property-tax-credit",
+      "name": "Homestead Property Tax Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general minimum age.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit identified.",
+      "maximumBenefit": "Lesser of $600 and qualifying homestead tax for assessment year 2025, normally collected in 2026.",
+      "formulaSummary": "Nonrefundable bill credit equal to the lesser of qualified homestead real-property ad valorem tax before this credit and the assessment-year cap. Any unused cap is not a cash payment.",
+      "application": "Register the homestead and establish eligibility with the county assessor. Section 26-26-1118(b)(3), as amended by Act 1268 of 2005, bars the credit after October 10 of the year after assessment. Later codification of this subsection remains unverified.",
+      "eligibilityNotes": [
+        "Applies to a qualifying owner-occupied homestead.",
+        "Assessment year and bill-payment year differ; the assessment-year cap governs even if payment is early or late.",
+        "Section 26-26-1118(b)(4), as amended by Act 1268 of 2005, requires the parcel to qualify as a homestead before January 1 of the year after assessment. Later codification of this subsection remains unverified.",
+        "County parcel qualification, valid registration, annual property history and qualified pre-credit tax determine eligibility and amount."
+      ],
+      "interactions": [
+        "Assessment limitations and disability/veteran exemptions are separate forms of relief.",
+        "A person claiming the disabled-veteran property-tax exemption cannot also claim this credit; veteran status alone is not the exclusion."
+      ],
+      "programYear": "2025 assessments, generally collected in 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "DFA fiscal impact: SB263",
+          "url": "https://arkleg.state.ar.us/Home/FTPDocument?path=%2FAssembly%2F2025%2F2025R%2FFiscal+Impacts%2FSB263-DFA2.pdf",
+          "kind": "agency"
+        },
+        {
+          "title": "Arkansas Assessment Coordination annual report 2025",
+          "url": "https://www.dfa.arkansas.gov/wp-content/uploads/AACD_AnnualReport_2025.pdf",
+          "kind": "agency"
+        },
+        {
+          "title": "Act 330 of 2025, §§1–2 — $600 beginning assessment year 2025",
+          "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2025R%2FPublic%2FACT330.pdf",
+          "kind": "statute"
+        },
+        {
+          "title": "Act 174 of the 2026 Fiscal Session, §§1–2 — $675 beginning assessment year 2026",
+          "url": "https://arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2026F%2FPublic%2FACT174.pdf",
+          "kind": "statute"
+        },
+        {
+          "title": "Act 541 of 2023 — registration proof and qualifying homestead interests",
+          "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2023R%2FPublic%2FACT541.pdf",
+          "kind": "statute"
+        },
+        {
+          "title": "Act 1268 of 2005, §1 — parcel qualification and annual credit history",
+          "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2005%2FPublic%2FACT1268.pdf",
+          "kind": "statute"
+        },
+        {
+          "title": "Act 1544 of 2001, §1 — disabled-veteran exemption interaction",
+          "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2001%2FPublic%2FACT1544.pdf",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
+    }
+  ],
+  "researchNotes": [
+    "Act 330 of 2025 raised the assessment-year-2025 credit to $600.",
+    "The assessment-year-2025 credit normally appears on the 2026 bill; the assessment-year-2026 credit normally appears on the 2027 bill.",
+    "The statutory caps are $425 for assessment 2023, $500 for assessment 2024, $600 for assessment 2025 and $675 from assessment 2026. A tax paid during 2025 ordinarily relates to assessment 2024 and its $500 cap."
+  ],
+  "sources": [
+    {
+      "title": "DFA fiscal impact: SB263",
+      "url": "https://arkleg.state.ar.us/Home/FTPDocument?path=%2FAssembly%2F2025%2F2025R%2FFiscal+Impacts%2FSB263-DFA2.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "Arkansas Assessment Coordination annual report 2025",
+      "url": "https://www.dfa.arkansas.gov/wp-content/uploads/AACD_AnnualReport_2025.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "Act 330 of 2025, §§1–2 — $600 beginning assessment year 2025",
+      "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2025R%2FPublic%2FACT330.pdf",
+      "kind": "statute"
+    },
+    {
+      "title": "Act 174 of the 2026 Fiscal Session, §§1–2 — $675 beginning assessment year 2026",
+      "url": "https://arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2026F%2FPublic%2FACT174.pdf",
+      "kind": "statute"
+    },
+    {
+      "title": "Act 315 of 2023 — $425 beginning assessment year 2023",
+      "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2023R%2FPublic%2FACT315.pdf",
+      "kind": "statute"
+    },
+    {
+      "title": "Act 3 of the 2024 Second Extraordinary Session — $500 beginning assessment year 2024",
+      "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2024S2%2FPublic%2FACT3.pdf",
+      "kind": "statute"
+    },
+    {
+      "title": "Act 541 of 2023 — registration proof and qualifying homestead interests",
+      "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2023R%2FPublic%2FACT541.pdf",
+      "kind": "statute"
+    },
+    {
+      "title": "Act 1268 of 2005, §1 — parcel qualification and annual credit history",
+      "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2005%2FPublic%2FACT1268.pdf",
+      "kind": "statute"
+    },
+    {
+      "title": "Act 1544 of 2001, §1 — disabled-veteran exemption interaction",
+      "url": "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2001%2FPublic%2FACT1544.pdf",
+      "kind": "statute"
+    }
+  ]
+}

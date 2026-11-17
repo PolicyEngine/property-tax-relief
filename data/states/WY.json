@@ -1,0 +1,160 @@
+{
+  "code": "WY",
+  "name": "Wyoming",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Wyoming offers an income- and asset-tested homeowner tax refund alongside value exemptions introduced or expanded for 2025.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "wy-property-tax-refund",
+      "name": "Property Tax Refund Program",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Total household income compared with the greater of county or state median household income.",
+      "incomeLimits": "Up to 145% of applicable median income, with lower benefits above the 125% tier.",
+      "maximumBenefit": "75% of eligible taxes paid, limited to half the county median residential tax bill; upper income tier receives a 35% reduction.",
+      "formulaSummary": "Income-tier refund using paid taxes, county median tax cap and asset/residency tests.",
+      "application": "Annual application through Department of Revenue or official refund portal; supporting tax-payment and household-income records required.",
+      "eligibilityNotes": [
+        "Wyoming resident at least five years; primary residence.",
+        "For 2025, combined countable household assets must not exceed $169,866 times the number of adult household members, with program exclusions.",
+        "The asset test does not apply when the person's tax liability strictly exceeds 10% of household income; equality does not trigger the waiver."
+      ],
+      "interactions": [],
+      "programYear": "2025 property taxes, refund application in 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Wyoming Property Tax Refund Program",
+          "url": "https://revenue.wyo.gov/property-tax-refund-program",
+          "kind": "agency"
+        },
+        {
+          "title": "Wyoming Property Tax Refund System: 2025 refunds",
+          "url": "https://wptrs.wyo.gov/",
+          "kind": "agency"
+        },
+        {
+          "title": "W.S. 39-13-109(c)(v)(B) — combined asset test and tax-liability waiver, physical pages 98–99",
+          "url": "https://wyoleg.gov/statutes/compress/title39.pdf#page=98",
+          "kind": "statute"
+        },
+        {
+          "title": "Wyoming property-tax refund rules, Chapter 19 §4(c), physical page 4",
+          "url": "https://drive.google.com/uc?export=download&id=1w2f2AJ4jONlAiGkoI5_li4tdZ04_7mRY#page=4",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "cash-rebate"
+    },
+    {
+      "id": "wy-homeowner-value-exemption",
+      "name": "Homeowner Property Tax Exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "The inventory does not establish the 2025 income definition.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "25% of the first $1 million of qualifying residence and improved-land fair market value.",
+      "formulaSummary": "Value exemption introduced for tax year 2025; owner-occupancy limitation applies beginning in 2026.",
+      "application": "The inventory does not establish the 2025 application procedure.",
+      "eligibilityNotes": [],
+      "interactions": [
+        "Cannot combine with long-term homeowner exemption for 2025/26."
+      ],
+      "programYear": "2025 property-tax year, corresponding to fiscal year 2026 in the May 2025 legislative analysis.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Wyoming 2025 Chapter 106 homeowner-exemption analysis",
+          "url": "https://wyoleg.gov/InterimCommittee/2025/03-202506034-01TaxLegeslationWhitePaperFINAL05122925Combined.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
+    },
+    {
+      "id": "wy-long-term-homeowner-exemption",
+      "name": "Long-term Homeowner Exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "Owner or spouse age 65 or older.",
+      "incomeDefinition": "The inventory does not establish the 2025 income definition.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "50% of assessed residential real-property value.",
+      "formulaSummary": "Primary-residence exemption for owner/spouse with at least 25 years paying Wyoming residential property tax.",
+      "application": "Claim through local assessor under statutory process.",
+      "eligibilityNotes": [
+        "Effective January 1, 2025; original legislation sunsets July 1, 2027."
+      ],
+      "interactions": ["Alternative to 25% homeowner exemption in 2025/26."],
+      "programYear": "2025 property-tax exemption on the qualifying long-term homeowner’s primary residence.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Wyoming HB0003 enacted long-term homeowner exemption",
+          "url": "https://www.wyoleg.gov/Legislation/2024/HB0003",
+          "kind": "statute"
+        },
+        {
+          "title": "Wyoming 2025 Chapter 106 homeowner-exemption analysis",
+          "url": "https://wyoleg.gov/InterimCommittee/2025/03-202506034-01TaxLegeslationWhitePaperFINAL05122925Combined.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
+    }
+  ],
+  "laterChanges": [
+    "25% homeowner value exemption becomes limited to owner-occupied property beginning in 2026."
+  ],
+  "researchNotes": [
+    "An exact refund calculation requires county median-income and median-tax-bill tables.",
+    "The 25% and 50% exemptions are not additive in 2025/26.",
+    "The statute and rules use an inclusive combined-adult asset limit with a tax-liability waiver. The form/portal's strict per-adult wording differs; the statute sets the inclusive combined-adult test. The waiver uses tax liability; the refund uses qualifying timely-paid tax. Household facts and county tables determine the applicable amount."
+  ],
+  "sources": [
+    {
+      "title": "Wyoming Property Tax Refund Program",
+      "url": "https://revenue.wyo.gov/property-tax-refund-program",
+      "kind": "agency"
+    },
+    {
+      "title": "Wyoming Property Tax Refund System: 2025 refunds",
+      "url": "https://wptrs.wyo.gov/",
+      "kind": "agency"
+    },
+    {
+      "title": "Wyoming 2025 Chapter 106 homeowner-exemption analysis",
+      "url": "https://wyoleg.gov/InterimCommittee/2025/03-202506034-01TaxLegeslationWhitePaperFINAL05122925Combined.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "Wyoming HB0003 enacted long-term homeowner exemption",
+      "url": "https://www.wyoleg.gov/Legislation/2024/HB0003",
+      "kind": "statute"
+    },
+    {
+      "title": "W.S. 39-13-109(c)(v)(B) — combined asset test and tax-liability waiver, physical pages 98–99",
+      "url": "https://wyoleg.gov/statutes/compress/title39.pdf#page=98",
+      "kind": "statute"
+    },
+    {
+      "title": "Wyoming property-tax refund rules, Chapter 19 §4(c), physical page 4",
+      "url": "https://drive.google.com/uc?export=download&id=1w2f2AJ4jONlAiGkoI5_li4tdZ04_7mRY#page=4",
+      "kind": "agency"
+    }
+  ]
+}

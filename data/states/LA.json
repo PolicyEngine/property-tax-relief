@@ -1,0 +1,162 @@
+{
+  "code": "LA",
+  "name": "Louisiana",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Louisiana provides a homestead exemption, an income-tested assessment freeze, and a narrow property-tax bill credit for qualifying dwelling owners who lease the land and are not otherwise entitled to homestead exemption.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "la-homestead-exemption",
+      "name": "Homestead Exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "$7,500 of assessed value, with tax and property limitations.",
+      "formulaSummary": "Exempt the eligible assessed-value portion from covered ad valorem taxes.",
+      "application": "Apply to the local assessing authority.",
+      "eligibilityNotes": [
+        "Bona fide owner-occupied homestead; municipal and other constitutional limitations apply."
+      ],
+      "interactions": [],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Louisiana Constitution, Article VII §20",
+          "url": "https://www.legis.la.gov/legis/LawPrint.aspx?d=206550",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
+    },
+    {
+      "id": "la-special-assessment-level",
+      "name": "Special Assessment Level",
+      "category": "assessment-limit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "Age 65+ or specified military, disability or surviving-family categories.",
+      "incomeDefinition": "Prior-year federal AGI under the constitutional rules.",
+      "incomeLimits": "Prior-year federal adjusted gross income must not exceed the constitutional $100,000 ceiling. CPI adjustments begin with tax year 2026.",
+      "maximumBenefit": "Future eligible assessed-value increases are limited; the amount depends on the frozen assessment and tax rates.",
+      "formulaSummary": "Freeze qualifying assessed value at the first eligible year while conditions continue.",
+      "application": "Apply to the local assessing authority.",
+      "eligibilityNotes": [
+        "Property must qualify for the homestead exemption.",
+        "An assessment freeze does not freeze tax rates or necessarily the total bill."
+      ],
+      "interactions": [],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Louisiana Constitution, Article VII §18(G)",
+          "url": "https://www.legis.la.gov/legis/Law.aspx?d=206545",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "assessment-or-tax-limit"
+    },
+    {
+      "id": "la-residential-lessee-property-tax-credit",
+      "name": "Residential Lessees’ Property Tax Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Covered tax on $7,500 assessed value or actual covered tax, whichever is less.",
+      "formulaSummary": "Reduce the qualifying residence's ad valorem tax bill by the lesser of actual covered tax and tax on $7,500 assessed value. This provision does not provide a separate cash payment or income-tax refund.",
+      "application": "A bill-level credit under R.S. 47:1710; local claim procedures are not established.",
+      "eligibilityNotes": [
+        "Residential lessee means a person who owns and occupies the residence, including a mobile home, but does not own its land.",
+        "Ordinary apartment renters are not eligible through this provision.",
+        "Non-entitlement to homestead exemption must be established separately; failing to apply for that exemption does not by itself establish credit eligibility.",
+        "Covered residence tax, applicable rates and local parcel facts must be established; unknown facts do not establish a zero award."
+      ],
+      "interactions": [
+        "Available only where the claimant is not otherwise entitled to the homestead exemption.",
+        "Article VII §20(A)(1) already extends homestead exemption to many owner-occupied primary dwellings on leased land. The remaining eligible claimant population is unresolved."
+      ],
+      "programYear": "2025 residence ad valorem tax bill; distinct from calendar-year cash payments and the income-tax return.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "R.S. 47:1710 — residential lessees’ tax credit",
+          "url": "https://www.legis.la.gov/legis/Law.aspx?d=101342",
+          "kind": "statute"
+        },
+        {
+          "title": "Louisiana Constitution, Article VII §20(A)(1) and (B) — homestead overlap and lessee relief",
+          "url": "https://www.legis.la.gov/legis/Law.aspx?d=206550",
+          "kind": "statute"
+        },
+        {
+          "title": "June 2025 Louisiana Administrative Code, 61:V §101(F)(2), physical page 292",
+          "url": "https://dam.ldr.la.gov/lawspolicies/61v01.pdf#page=292",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
+    }
+  ],
+  "laterChanges": [
+    "Article VII section 18(G)(ii) contains a replacement provision effective January 1, 2027 only if the amendment proposed by Acts 2025 No. 220 is ratified. Its ratification status is not established here."
+  ],
+  "researchNotes": [
+    "The lessee credit applies to dwelling owners who rent the land; ordinary apartment tenants do not qualify.",
+    "Housing filters classify ownership of the dwelling: an owner who rents the underlying land appears under homeowners.",
+    "The constitutional pages include future-effective amendments. The 2025 descriptions follow provisions in force for 2025.",
+    "R.S. 47:1710 remains in the statute and June 2025 administrative compilation. Act 11 of the 2024 Third Extraordinary Session does not repeal it. Act 12’s contingent changes did not become operative after voters rejected the required Article VII amendment on March 29, 2025.",
+    "Homestead entitlement, remaining eligible claimant scenarios, covered levies and local claim procedures remain unresolved for the lessee bill credit."
+  ],
+  "sources": [
+    {
+      "title": "Louisiana Constitution, Article VII §20",
+      "url": "https://www.legis.la.gov/legis/LawPrint.aspx?d=206550",
+      "kind": "statute"
+    },
+    {
+      "title": "Louisiana Constitution, Article VII §18(G)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=206545",
+      "kind": "statute"
+    },
+    {
+      "title": "R.S. 47:1710 — residential lessees’ tax credit",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=101342",
+      "kind": "statute"
+    },
+    {
+      "title": "June 2025 Louisiana Administrative Code, 61:V §101(F)(2), physical page 292",
+      "url": "https://dam.ldr.la.gov/lawspolicies/61v01.pdf#page=292",
+      "kind": "agency"
+    },
+    {
+      "title": "2024 Third Extraordinary Session Act 11 (HB10), repeal list and applicability, page 161",
+      "url": "https://www.legis.la.gov/legis/ViewDocument.aspx?d=1391656#page=161",
+      "kind": "statute"
+    },
+    {
+      "title": "2024 Third Extraordinary Session Act 12 (HB11), contingent operation, page 41",
+      "url": "https://www.legis.la.gov/legis/ViewDocument.aspx?d=1391657#page=41",
+      "kind": "statute"
+    },
+    {
+      "title": "Governor's April 2, 2025 statement confirming Amendment 2 rejection on March 29, 2025",
+      "url": "https://gov.louisiana.gov/news/4820",
+      "kind": "agency"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [],
+  "code": "IL",
+  "name": "Illinois",
+  "overview": "Illinois offers a nonrefundable income-tax credit for owner property taxes, alongside homestead exemptions and senior tax deferral.",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "il-property-tax-credit",
+      "name": "Illinois Property Tax Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Adjusted gross income and federal filing status.",
+      "incomeLimits": "Not allowed above $500,000 joint or $250,000 for other returns.",
+      "maximumBenefit": "5% of eligible Illinois real-estate taxes, limited to income-tax liability.",
+      "formulaSummary": "Five percent of qualifying property taxes paid on the principal residence.",
+      "application": "Complete IL-1040 Schedule ICR.",
+      "eligibilityNotes": [
+        "Must own and reside in the qualifying Illinois property.",
+        "Prior assessment-year taxes are commonly paid during the income-tax year."
+      ],
+      "interactions": ["No refund or carryforward for unused credit."],
+      "programYear": "Property taxes paid during 2025; 2025 income-tax return.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Illinois property-tax credit, Publication 108",
+          "url": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html",
+          "kind": "agency"
+        },
+        {
+          "title": "35 ILCS 5/208, residential real-property credit",
+          "url": "https://www.ilga.gov/documents/legislation/ilcs/documents/003500050K208.htm",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": ["il_property_tax_credit"],
+      "paymentMechanism": "income-tax-credit"
+    },
+    {
+      "id": "il-senior-tax-deferral",
+      "name": "Senior Citizens Real Estate Tax Deferral",
+      "category": "deferral",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "Age 65 by June 1 of the application year.",
+      "incomeDefinition": "Total annual household income.",
+      "incomeLimits": "$75,000 for property-tax year 2025 under current agency guidance.",
+      "maximumBenefit": "Up to $7,500 deferred annually, subject to equity and program conditions.",
+      "formulaSummary": "State pays approved taxes as a loan secured by a lien; interest and repayment apply.",
+      "application": "Apply to county collector January 1–March 1.",
+      "eligibilityNotes": [
+        "Ownership/occupancy, insurance, equity and delinquency conditions apply."
+      ],
+      "interactions": [],
+      "programYear": "2025 property taxes generally payable in 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Senior real-estate tax deferral, PIO-64",
+          "url": "https://tax.illinois.gov/research/publications/pio-64.html",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "tax-deferral"
+    }
+  ],
+  "researchNotes": [
+    "Deferrals are loans, not credits or permanent tax savings.",
+    "County homestead exemptions and senior assessment freezes are separate contextual relief."
+  ],
+  "sources": [
+    {
+      "title": "Illinois property-tax credit, Publication 108",
+      "url": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html",
+      "kind": "agency"
+    },
+    {
+      "title": "35 ILCS 5/208, residential real-property credit",
+      "url": "https://www.ilga.gov/documents/legislation/ilcs/documents/003500050K208.htm",
+      "kind": "statute"
+    },
+    {
+      "title": "Senior real-estate tax deferral, PIO-64",
+      "url": "https://tax.illinois.gov/research/publications/pio-64.html",
+      "kind": "agency"
+    }
+  ]
+}

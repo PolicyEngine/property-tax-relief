@@ -1,0 +1,51 @@
+{
+  "code": "OK",
+  "name": "Oklahoma",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Oklahoma's property-tax refund is an owner-only circuit breaker with a narrow household-income limit.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "ok-property-tax-refund",
+      "name": "Credit or Refund of Property Tax (Form 538-H)",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "Head of household age 65 or older, or totally disabled; form also asks whether claimant or spouse is 65 or older.",
+      "incomeDefinition": "Gross taxable and nontaxable income and assistance of all household members, excluding gifts.",
+      "incomeLimits": "$12,000 or less.",
+      "maximumBenefit": "$200.",
+      "formulaSummary": "Refunds qualifying homestead real-estate taxes exceeding 1% of gross household income, capped at $200.",
+      "application": "File Form 538-H by June 30, 2026 for 2025 taxes; attach to Form 511 if required to file an income-tax return.",
+      "eligibilityNotes": [
+        "Full-year Oklahoma residence.",
+        "Owner or joint owner must maintain the residence; renters do not qualify.",
+        "No late amended claim after the deadline."
+      ],
+      "interactions": [],
+      "programYear": "2025 property taxes and household income; Form 538-H claim due June 30, 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Form 538-H and instructions",
+          "url": "https://oklahoma.gov/content/dam/ok/en/tax/documents/forms/individuals/current/538-H.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["ok_ptc"],
+      "paymentMechanism": "income-tax-credit"
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [],
+  "sources": [
+    {
+      "title": "2025 Form 538-H and instructions",
+      "url": "https://oklahoma.gov/content/dam/ok/en/tax/documents/forms/individuals/current/538-H.pdf",
+      "kind": "form"
+    }
+  ]
+}

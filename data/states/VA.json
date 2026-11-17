@@ -1,0 +1,85 @@
+{
+  "code": "VA",
+  "name": "Virginia",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Virginia authorizes local elderly/disability real-estate relief and mandates a disabled-veteran exemption.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "none-identified",
+  "programs": [
+    {
+      "id": "va-local-elderly-disabled-relief",
+      "name": "Local elderly and disabled real-estate exemption/deferral",
+      "category": "local-option",
+      "scope": "local-option",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "65 or older, or permanently and totally disabled if local ordinance includes disability.",
+      "incomeDefinition": "If a locality sets an income limit, the cited statute counts preceding-year income of owners who use the dwelling as their principal residence and relatives who live there, except bona fide caregivers. Localities may include resident nonrelatives except bona fide tenants or caregivers. Localities may exclude disability income of permanently and totally disabled resident relatives or nonrelatives, and other specified income sources or portions. The inventory does not establish the effective-date history for every 2025 application.",
+      "incomeLimits": "Local income and net-worth limits.",
+      "maximumBenefit": "Local ordinance determines exempted taxes, deferral, or combination.",
+      "formulaSummary": "Localities may exempt taxes, defer them, or limit increases; relief is not uniform statewide.",
+      "application": "Apply to local commissioner of revenue or designated official.",
+      "eligibilityNotes": [
+        "Owner-occupied sole dwelling.",
+        "Ownership interests and jointly owned property affect proration."
+      ],
+      "interactions": [],
+      "programYear": "2025 locally adopted property-tax relief, using preceding-year income under the local ordinance.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Virginia Code: local elderly and disability real-estate relief",
+          "url": "https://law.lis.virginia.gov/vacodefull/title58.1/chapter32/article2/",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "varies-by-locality"
+    },
+    {
+      "id": "va-disabled-veteran-exemption",
+      "name": "Disabled Veteran Real Property Tax Exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "Qualifying disabled veteran or unremarried surviving spouse.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "Qualifying principal dwelling and up to one acre of land exempt from real-property tax. More land qualifies where the locality's Article 2 relief covers a larger area. Land the veteran does not own does not qualify.",
+      "formulaSummary": "Mandatory exemption for a veteran rated 100% service-connected, permanently and totally disabled by the VA; proration may apply with other owners.",
+      "application": "File with local administering official.",
+      "eligibilityNotes": [
+        "Principal residence requirement.",
+        "Surviving-spouse and trust/life-estate rules apply."
+      ],
+      "interactions": [],
+      "programYear": "2025 real-property tax exemption on the qualifying principal residence.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Virginia Code 58.1-3219.5: disabled veteran exemption",
+          "url": "https://law.lis.virginia.gov/vacode/title58.1/chapter32/section58.1-3219.5/",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": ["Local ordinances determine elderly/disability relief."],
+  "sources": [
+    {
+      "title": "Virginia Code: local elderly and disability real-estate relief",
+      "url": "https://law.lis.virginia.gov/vacodefull/title58.1/chapter32/article2/",
+      "kind": "statute"
+    },
+    {
+      "title": "Virginia Code 58.1-3219.5: disabled veteran exemption",
+      "url": "https://law.lis.virginia.gov/vacode/title58.1/chapter32/section58.1-3219.5/",
+      "kind": "statute"
+    }
+  ]
+}

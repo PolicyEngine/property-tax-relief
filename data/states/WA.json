@@ -1,0 +1,126 @@
+{
+  "code": "WA",
+  "name": "Washington",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Washington provides county-income-tiered senior/disability property-tax exemptions and repayable deferrals; these are distinct from refundable renter credits.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "none-identified",
+  "programs": [
+    {
+      "id": "wa-senior-disabled-exemption",
+      "name": "Senior Citizen and Disabled Persons Property Tax Exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "At least 61, retired due to disability, or qualifying disabled veteran under the 2025 rules.",
+      "incomeDefinition": "Combined disposable income after authorized exclusions and deductions.",
+      "incomeLimits": "County-specific income thresholds for tax years 2024–2026.",
+      "maximumBenefit": "Varies by income tier, home value and local levy rates.",
+      "formulaSummary": "Exempts designated levies and portions of assessed value, with assessment-freeze provisions.",
+      "application": "Apply to county assessor; periodic renewal and change reporting required.",
+      "eligibilityNotes": [
+        "Own and occupy primary residence.",
+        "Veteran qualification changed in later legislation; use the 2025 rule."
+      ],
+      "interactions": [],
+      "programYear": "2025 property-tax exemption rules; the exact income reference year is not recorded.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Washington Property Tax Exemptions and Deferrals",
+          "url": "https://dor.wa.gov/taxes-rates/property-tax/property-tax-exemptions-and-deferrals",
+          "kind": "agency"
+        },
+        {
+          "title": "Washington income thresholds, tax years 2024–2026",
+          "url": "https://dor.wa.gov/sites/default/files/2023-08/Income_ThreshTY24-26.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": ["wa_senior_disabled_property_tax_exemption"],
+      "paymentMechanism": "taxable-property-value-exemption"
+    },
+    {
+      "id": "wa-senior-disabled-deferral",
+      "name": "Senior Citizen and Disabled Persons Property Tax Deferral",
+      "category": "deferral",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "60 or older, or retired due to disability.",
+      "incomeDefinition": "Combined disposable income.",
+      "incomeLimits": "County-specific deferral threshold.",
+      "maximumBenefit": "Eligible current and delinquent taxes and assessments, subject to equity.",
+      "formulaSummary": "State-paid taxes accrue 5% simple interest and must be repaid after specified events.",
+      "application": "Annual application/renewal through county assessor.",
+      "eligibilityNotes": ["Ownership, occupancy and equity requirements."],
+      "interactions": [],
+      "programYear": "2025 property-tax deferral rules; the exact income and application-year mapping is not recorded.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Washington Property Tax Exemptions and Deferrals",
+          "url": "https://dor.wa.gov/taxes-rates/property-tax/property-tax-exemptions-and-deferrals",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "tax-deferral"
+    },
+    {
+      "id": "wa-limited-income-deferral",
+      "name": "Property Tax Deferral for Homeowners with Limited Income",
+      "category": "deferral",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Combined disposable income.",
+      "incomeLimits": "$57,000 or less.",
+      "maximumBenefit": "Eligible second-half property-tax installment.",
+      "formulaSummary": "Repayable deferral with variable simple interest tied to the federal short-term rate plus two percentage points.",
+      "application": "Apply through county assessor by September 1; annual renewal.",
+      "eligibilityNotes": [
+        "Five years of homeownership, primary residence and sufficient equity."
+      ],
+      "interactions": [],
+      "programYear": "2025 property-tax deferral rules; the exact income and application-year mapping is not recorded.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Washington Property Tax Exemptions and Deferrals",
+          "url": "https://dor.wa.gov/taxes-rates/property-tax/property-tax-exemptions-and-deferrals",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "tax-deferral"
+    }
+  ],
+  "laterChanges": [
+    "The 2025 description uses the published 2024–2026 income-threshold schedule. Separate 2026 legislation governs later tax years."
+  ],
+  "researchNotes": [
+    "A 2025 exemption amount needs county, assessment and levy details; household income and a total tax bill alone are insufficient.",
+    "The listed records cover exemption and deferral programs. Separate state assistance for widows and widowers of veterans appears in the cited Department of Revenue overview but is not enumerated here."
+  ],
+  "sources": [
+    {
+      "title": "Washington Property Tax Exemptions and Deferrals",
+      "url": "https://dor.wa.gov/taxes-rates/property-tax/property-tax-exemptions-and-deferrals",
+      "kind": "agency"
+    },
+    {
+      "title": "Washington income thresholds, tax years 2024–2026",
+      "url": "https://dor.wa.gov/sites/default/files/2023-08/Income_ThreshTY24-26.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "2026 legislative changes to property-tax relief programs",
+      "url": "https://dor.wa.gov/forms-publications/publications-subject/special-notices/changes-property-tax-relief-programs-and-state-school-levy",
+      "kind": "agency"
+    }
+  ]
+}

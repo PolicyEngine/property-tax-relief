@@ -1,0 +1,133 @@
+{
+  "code": "MA",
+  "name": "Massachusetts",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-14",
+  "overview": "Massachusetts provides a refundable senior circuit breaker for qualifying homeowners and renters and an income-tax deduction for qualifying rent. Locally administered property-tax exemptions are separate.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "ma-senior-circuit-breaker",
+      "name": "Senior Circuit Breaker Tax Credit",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["owner", "renter"],
+      "refundable": true,
+      "ageRule": "At least one eligible taxpayer must be 65 or older by the end of the tax year.",
+      "incomeDefinition": "Massachusetts adjusted gross income with statutory additions and subtractions; excludes specified personal exemptions.",
+      "incomeLimits": "2025 total income: $75,000 single, $94,000 head of household, $112,000 joint; married filing separately is ineligible.",
+      "maximumBenefit": "$2,820 for tax year 2025.",
+      "formulaSummary": "Credit qualifying housing payments above 10% of program income, limited to the annual maximum. Owner expenses include property taxes after reductions and half of separately stated water/sewer charges. Renters use 25% of annual qualifying rent.",
+      "application": "File Schedule CB with the Massachusetts income-tax return; a return is required even when no tax would otherwise be due.",
+      "eligibilityNotes": [
+        "Principal residence required.",
+        "2025 assessed-value ceiling for homeowners is $1,298,000, before residential exemptions and after abatements.",
+        "Dependents, nonresidents, subsidized renters and tenants of tax-exempt property are excluded."
+      ],
+      "interactions": [
+        "Subtract property-tax abatements, exemptions and other reductions when measuring owner payments."
+      ],
+      "programYear": "Tax year 2025; claimed with the return filed in 2026.",
+      "rentProxy": 0.25,
+      "sources": [
+        {
+          "title": "Senior Circuit Breaker Tax Credit",
+          "url": "https://www.mass.gov/info-details/senior-circuit-breaker-tax-credit",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 tax tips for seniors and retirees",
+          "url": "https://www.mass.gov/doc/dor-tax-tips-for-seniors-and-retirees/download",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["ma_senior_circuit_breaker"],
+      "paymentMechanism": "income-tax-credit"
+    },
+    {
+      "id": "ma-renters-income-tax-deduction",
+      "name": "Rental deduction",
+      "category": "deduction",
+      "scope": "statewide",
+      "tenures": ["renter"],
+      "refundable": null,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested; deduct qualifying rent from Massachusetts Part B adjusted gross income.",
+      "incomeLimits": "No general income eligibility ceiling stated in the rental-deduction provision.",
+      "maximumBenefit": "Deduct up to $4,000; this is the deduction amount, not tax savings. Married filing separately: normally $2,000 each, with a consent-allocation exception subject to a $4,000 combined ceiling.",
+      "formulaSummary": "Deduct 50% of qualifying rent personally paid for a principal residence in Massachusetts, subject to the applicable limit. Each separately filing spouse remains limited to 50% of rent that spouse actually paid; consent may allocate more than $2,000 to one spouse within the $4,000 combined limit.",
+      "application": "2025 Form 1: enter qualifying rent on line 14a and the deduction on line 14. Form 1-NR/PY uses lines 18a and 18. A separately filing spouse claiming more than $2,000 must attach the other spouse's signed consent statement.",
+      "eligibilityNotes": [
+        "Rent must be paid to a landlord for the taxpayer's principal Massachusetts residence. Joint occupants claim only their own payments.",
+        "A third party paying rent while maintaining a principal residence elsewhere cannot generate the deduction for either party.",
+        "Exclude separately charged utilities, furnishings and parking, and exclude deposits or prepaid rent until applied as rent. Condominium association payments and tenant-stockholder payments to a cooperative corporation do not qualify.",
+        "Vacation homes, temporary-assignment lodging and student or faculty housing do not qualify when the taxpayer has a principal residence elsewhere. Hotel, motel or rooming-house occupancy requires a rental agreement.",
+        "Part-year residents use qualifying rent paid while Massachusetts residents. A nonresident's Massachusetts rental must be the sole principal residence, with no outside dwelling to which the taxpayer normally returns or could return in the future."
+      ],
+      "interactions": [
+        "The consent statement for a married-filing-separately allocation must identify the consenting spouse's name, address, Social Security number and deduction amount.",
+        "This Massachusetts deduction does not apply to the federal return. It reduces taxable income rather than paying a rent rebate."
+      ],
+      "programYear": "Tax year 2025 rent; claimed on the Massachusetts return generally filed in 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Massachusetts General Laws, chapter 62, section 3(B)(a)(9)",
+          "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIX/Chapter62/Section3",
+          "kind": "statute"
+        },
+        {
+          "title": "2025 Form 1 instructions, printed page 12, line 14",
+          "url": "https://www.mass.gov/doc/2025-form-1-instructions/download",
+          "kind": "form"
+        },
+        {
+          "title": "2025 Form 1-NR/PY instructions, printed pages 16–17, line 18",
+          "url": "https://www.mass.gov/doc/2025-form-1-nrpy-instructions/download",
+          "kind": "form"
+        },
+        {
+          "title": "Deductions on rent paid in Massachusetts",
+          "url": "https://www.mass.gov/info-details/deductions-on-rent-paid-in-massachusetts",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": ["ma_part_b_taxable_income_deductions"],
+      "paymentMechanism": "income-tax-deduction"
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [
+    "The legal household income definition differs from federal AGI.",
+    "Municipalities administer local exemptions; this inventory does not enumerate every municipal option.",
+    "Separate filers need the other spouse’s consent to allocate more than $2,000 of the rental deduction to one spouse, within the combined limit."
+  ],
+  "sources": [
+    {
+      "title": "Senior Circuit Breaker Tax Credit",
+      "url": "https://www.mass.gov/info-details/senior-circuit-breaker-tax-credit",
+      "kind": "agency"
+    },
+    {
+      "title": "Massachusetts General Laws, chapter 62, section 3(B)(a)(9)",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIX/Chapter62/Section3",
+      "kind": "statute"
+    },
+    {
+      "title": "2025 Form 1 instructions, printed page 12, line 14",
+      "url": "https://www.mass.gov/doc/2025-form-1-instructions/download",
+      "kind": "form"
+    },
+    {
+      "title": "2025 Form 1-NR/PY instructions, printed pages 16–17, line 18",
+      "url": "https://www.mass.gov/doc/2025-form-1-nrpy-instructions/download",
+      "kind": "form"
+    },
+    {
+      "title": "Deductions on rent paid in Massachusetts",
+      "url": "https://www.mass.gov/info-details/deductions-on-rent-paid-in-massachusetts",
+      "kind": "agency"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "code": "MN",
+  "name": "Minnesota",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Minnesota has separate refundable renter and homeowner programs; the homeowner program includes a special refund for sharp tax increases.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "mn-renters-credit",
+      "name": "Renter’s Credit",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["renter"],
+      "refundable": true,
+      "ageRule": "All ages, subject to other eligibility rules.",
+      "incomeDefinition": "Federal AGI with prescribed spouse/nonresident adjustments and subtractions for dependents, age/disability, and eligible stipend payments.",
+      "incomeLimits": "2025 household income below $77,570.",
+      "maximumBenefit": "$2,720 for 2025.",
+      "formulaSummary": "The annual credit table applies income-dependent thresholds, copayments and caps to 17% of qualifying rent; subsidized-rent adjustments may apply.",
+      "application": "File M1RENT and M1REF with the Minnesota income-tax return; include Certificates of Rent Paid.",
+      "eligibilityNotes": [
+        "A qualifying Minnesota resident renting tax-paying or qualifying payments-in-lieu property.",
+        "Mobile-home lot rent alone goes through M1PR, not M1RENT."
+      ],
+      "interactions": [
+        "Income-tax filing replaced the separate renter refund starting with 2024 rent.",
+        "The same rent does not qualify under both M1RENT and homeowner lot-rent claims."
+      ],
+      "programYear": "Tax year 2025, claimed in 2026.",
+      "rentProxy": 0.17,
+      "sources": [
+        {
+          "title": "2025 Schedule M1RENT",
+          "url": "https://www.revenue.state.mn.us/sites/default/files/2026-07/m1rent-25.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "Renter’s Credit",
+          "url": "https://www.revenue.state.mn.us/es/node/20391",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": ["mn_renters_credit"],
+      "paymentMechanism": "income-tax-credit"
+    },
+    {
+      "id": "mn-homestead-credit-refund",
+      "name": "Homeowner’s Homestead Credit Refund — regular",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "All ages, subject to other eligibility rules.",
+      "incomeDefinition": "2025 household income under M1PR, with specified dependent, retirement, senior and disability subtractions.",
+      "incomeLimits": "Below $142,490 for the 2025 claim.",
+      "maximumBenefit": "The 2025 M1PR table has a $3,480 base maximum. Revised line 17a adds 14.88% of the line 17 refund under the 2026 law.",
+      "formulaSummary": "Income-banded thresholds, claimant copayments and maximum refunds apply to qualifying property taxes. Revised 2025 M1PR line 17a adds 14.88% of line 17.",
+      "application": "File Form M1PR separately from the income-tax return.",
+      "eligibilityNotes": [
+        "Own and occupy the qualifying homestead on January 2, 2026.",
+        "Homestead classification and no delinquent property taxes (or qualifying arrangement) required."
+      ],
+      "interactions": ["May qualify for both regular and special refunds."],
+      "programYear": "2025 household income with property taxes payable in 2026; claim generally filed in 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Homeowner’s Homestead Credit Refund",
+          "url": "https://www.revenue.state.mn.us/homeowners-homestead-credit-refund",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 homeowner refund increase guidance",
+          "url": "https://www.revenue.state.mn.us/press-release/2026-06-05/minnesota-revenue-announces-guidance-one-time-increase-homeowner-refunds",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 M1PR instructions, revised June 2026: additional refund on line 17a",
+          "url": "https://www.revenue.state.mn.us/sites/default/files/2026-06/m1pr-inst-25.pdf#page=9",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["mn_homestead_credit_refund"],
+      "paymentMechanism": "cash-rebate"
+    },
+    {
+      "id": "mn-special-property-tax-refund",
+      "name": "Homestead Credit Refund — special",
+      "category": "rebate",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "All ages, subject to other eligibility rules.",
+      "incomeDefinition": "No income limit.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "$1,000 under the 2025 M1PR instructions revised in June 2026.",
+      "formulaSummary": "A refund of qualifying increases above the statutory percentage threshold; 2025-to-2026 net tax must rise more than 12% and at least $100, excluding improvements.",
+      "application": "Claim on Form M1PR.",
+      "eligibilityNotes": [
+        "Must own and occupy the same home January 2, 2025 and January 2, 2026."
+      ],
+      "interactions": [
+        "Can accompany a regular refund, subject to M1PR coordination."
+      ],
+      "programYear": "2025 M1PR compares taxes payable in 2025 and 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 M1PR instructions",
+          "url": "https://www.revenue.state.mn.us/sites/default/files/2026-06/m1pr-inst-25.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "Homeowner’s Homestead Credit Refund",
+          "url": "https://www.revenue.state.mn.us/homeowners-homestead-credit-refund",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "cash-rebate"
+    }
+  ],
+  "laterChanges": [
+    "A law enacted in May 2026 retroactively increased regular 2025 homeowner refunds. Revised M1PR line 17a adds 14.88% of the refund from the existing table."
+  ],
+  "researchNotes": [
+    "The regular homeowner and renter programs use different income concepts and housing-tax years.",
+    "The $3,480 homeowner table maximum precedes the additional line 17a refund in the revised 2025 return."
+  ],
+  "sources": [
+    {
+      "title": "2025 Schedule M1RENT",
+      "url": "https://www.revenue.state.mn.us/sites/default/files/2026-07/m1rent-25.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "Renter’s Credit",
+      "url": "https://www.revenue.state.mn.us/es/node/20391",
+      "kind": "agency"
+    },
+    {
+      "title": "Homeowner’s Homestead Credit Refund",
+      "url": "https://www.revenue.state.mn.us/homeowners-homestead-credit-refund",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 homeowner refund increase guidance",
+      "url": "https://www.revenue.state.mn.us/press-release/2026-06-05/minnesota-revenue-announces-guidance-one-time-increase-homeowner-refunds",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 M1PR instructions",
+      "url": "https://www.revenue.state.mn.us/sites/default/files/2026-06/m1pr-inst-25.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "Homeowner’s Homestead Credit Refund",
+      "url": "https://www.revenue.state.mn.us/homeowners-homestead-credit-refund",
+      "kind": "agency"
+    }
+  ]
+}

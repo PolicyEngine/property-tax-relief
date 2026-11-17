@@ -11,3 +11,5 @@ __pycache__/
 .DS_Store
 .vercel/
 research/raw/
+output/
+.playwright-cli/

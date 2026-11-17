@@ -1,0 +1,159 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [],
+  "code": "CT",
+  "name": "Connecticut",
+  "overview": "Connecticut combines an income-tax credit with separately administered homeowner and renter relief for older or disabled residents.",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "ct-income-tax-property-credit",
+      "name": "Property Tax Credit against income tax",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No age/dependent restriction for 2025.",
+      "incomeDefinition": "Connecticut adjusted gross income and filing status determine phaseout.",
+      "incomeLimits": "Graduated filing-status phaseout; see 2025 property-tax-credit table.",
+      "maximumBenefit": "$300 per 2025 income-tax return.",
+      "formulaSummary": "Qualifying primary-residence and/or motor-vehicle taxes, capped and phased out by income; limited to income-tax liability.",
+      "application": "Complete CT-1040 Schedule 3.",
+      "eligibilityNotes": [
+        "Requires Connecticut residency and qualifying taxes actually paid.",
+        "Motor-vehicle taxes are also eligible and must be separated for a housing-only comparison."
+      ],
+      "interactions": [],
+      "programYear": "2025 taxes paid; 2025 income-tax return filed in 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 CT-1040 instructions",
+          "url": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf?rev=d898db2e610641b9b3e6efe6f89c6fc2",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["ct_property_tax_credit"],
+      "paymentMechanism": "income-tax-credit"
+    },
+    {
+      "id": "ct-homeowner-elderly-disabled-credit",
+      "name": "Homeowners' elderly/disabled tax relief",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "Generally age 65+, total disability, or qualifying surviving spouse.",
+      "incomeDefinition": "Qualifying taxable and nontaxable income; annual OPM thresholds.",
+      "incomeLimits": "2025 qualifying income no greater than $46,300 unmarried or $56,500 married.",
+      "maximumBenefit": "Up to $1,250 married or $1,000 single.",
+      "formulaSummary": "Graduated income-based percentage reduction with minimum and maximum credits.",
+      "application": "Apply to local assessor February 1–May 15, 2026 for the 2025 Grand List; generally renew biennially.",
+      "eligibilityNotes": [
+        "Principal residence and residency requirements apply.",
+        "The application uses prior-calendar-year income."
+      ],
+      "interactions": [
+        "Municipal optional relief may supplement state-law relief."
+      ],
+      "programYear": "2025 program year and October 1, 2025 Grand List; uses 2025 income, with applications February 1–May 15, 2026.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Homeowners elderly/disabled tax relief",
+          "url": "https://portal.ct.gov/opm/igpp/grants/tax-relief-grants/homeowners--elderlydisabled-circuit-breaker-tax-relief-program",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 Connecticut statutes, chapter 204a",
+          "url": "https://www.cga.ct.gov/2025/pub/chap_204a.htm",
+          "kind": "statute"
+        },
+        {
+          "title": "OPM 2026 homeowner Q&A — 2025 program year",
+          "url": "https://portal.ct.gov/opm/-/media/opm/igpp-data-grants-mgmt/q-and-a-tax-relief-booklets/homeowners-qa-booklet.pdf?hash=5F9B183BC9D83F2F9CB11C93898C3889&rev=819c640290dd4ac1b0a0933573bd7c3e",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
+    },
+    {
+      "id": "ct-renters-rebate",
+      "name": "Renters' Rebate for elderly/disabled renters",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["renter"],
+      "refundable": true,
+      "ageRule": "Age 65+, qualifying surviving spouse age 50+, or eligible disability age 18+.",
+      "incomeDefinition": "Qualifying income includes taxable and nontaxable amounts, subject to statutory exclusions.",
+      "incomeLimits": "Annual OPM graduated-income schedule.",
+      "maximumBenefit": "Up to $900 married or $700 single.",
+      "formulaSummary": "35% of qualifying rent/utilities less 5% of qualifying income, subject to income-table bounds.",
+      "application": "Apply annually through municipality April 1–September 30.",
+      "eligibilityNotes": [
+        "One-year state residence; qualifying rent and utility payments required.",
+        "Utility costs exclude telephone."
+      ],
+      "interactions": [],
+      "programYear": "2025 rent/income claimed in 2026; payment generally by November 30.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Renters elderly/disabled rebate",
+          "url": "https://portal.ct.gov/opm/igpp/grants/tax-relief-grants/renters--rebate-for-elderly-disabled-renters-tax-relief-program",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 Connecticut statutes, chapter 204a",
+          "url": "https://www.cga.ct.gov/2025/pub/chap_204a.htm",
+          "kind": "statute"
+        },
+        {
+          "title": "Renters rebate Q&A",
+          "url": "https://portal.ct.gov/opm/-/media/opm/igpp-data-grants-mgmt/q-and-a-tax-relief-booklets/renters-rebate-qa-booklet.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "cash-rebate"
+    }
+  ],
+  "researchNotes": [
+    "Homeowner applications in February–May 2026 cover the October 1, 2025 Grand List and 2025 qualifying income."
+  ],
+  "sources": [
+    {
+      "title": "2025 CT-1040 instructions",
+      "url": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf?rev=d898db2e610641b9b3e6efe6f89c6fc2",
+      "kind": "form"
+    },
+    {
+      "title": "Homeowners elderly/disabled tax relief",
+      "url": "https://portal.ct.gov/opm/igpp/grants/tax-relief-grants/homeowners--elderlydisabled-circuit-breaker-tax-relief-program",
+      "kind": "agency"
+    },
+    {
+      "title": "Renters elderly/disabled rebate",
+      "url": "https://portal.ct.gov/opm/igpp/grants/tax-relief-grants/renters--rebate-for-elderly-disabled-renters-tax-relief-program",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 Connecticut statutes, chapter 204a",
+      "url": "https://www.cga.ct.gov/2025/pub/chap_204a.htm",
+      "kind": "statute"
+    },
+    {
+      "title": "Renters rebate Q&A",
+      "url": "https://portal.ct.gov/opm/-/media/opm/igpp-data-grants-mgmt/q-and-a-tax-relief-booklets/renters-rebate-qa-booklet.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "OPM 2026 homeowner Q&A — 2025 program year",
+      "url": "https://portal.ct.gov/opm/-/media/opm/igpp-data-grants-mgmt/q-and-a-tax-relief-booklets/homeowners-qa-booklet.pdf?hash=5F9B183BC9D83F2F9CB11C93898C3889&rev=819c640290dd4ac1b0a0933573bd7c3e",
+      "kind": "agency"
+    }
+  ]
+}

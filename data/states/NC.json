@@ -1,0 +1,104 @@
+{
+  "code": "NC",
+  "name": "North Carolina",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "North Carolina’s named circuit breaker is a tax deferral with repayment conditions. Separate elderly/disabled and disabled-veteran exclusions reduce taxable value.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "none-identified",
+  "programs": [
+    {
+      "id": "nc-circuit-breaker-deferral",
+      "name": "Circuit Breaker Tax Deferment Program",
+      "category": "deferral",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "Age 65+ or qualifying total permanent disability.",
+      "incomeDefinition": "Prior-calendar-year income under the statutory property-tax relief definition.",
+      "incomeLimits": "No more than 150% of the annually adjusted elderly/disabled exclusion limit; use 2025 AV-9.",
+      "maximumBenefit": "Eligible tax above 4% or 5% of income is deferred, not forgiven outright.",
+      "formulaSummary": "Cap current qualifying tax payment at the applicable income percentage and defer the balance; statutory events can trigger repayment of deferred taxes and interest.",
+      "application": "Apply annually to the county tax assessor using AV-9.",
+      "eligibilityNotes": [
+        "At least five consecutive years of ownership and permanent-residence occupancy are generally required.",
+        "Multiple-owner and citizenship/residency conditions apply."
+      ],
+      "interactions": [
+        "Cannot combine with the elderly/disabled or disabled-veteran exclusion."
+      ],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 AV-9 property-tax relief application",
+          "url": "https://www.ncdor.gov/av-9-2025-application-property-tax-relief-0/open",
+          "kind": "form"
+        },
+        {
+          "title": "G.S. 105-277.1B",
+          "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-277.1B.html",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "tax-deferral"
+    },
+    {
+      "id": "nc-elderly-disabled-exclusion",
+      "name": "Elderly or Disabled Exclusion",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "Age 65+ or qualifying total permanent disability.",
+      "incomeDefinition": "Prior-year income under G.S. 105-277.1.",
+      "incomeLimits": "2025 income eligibility limit $37,900.",
+      "maximumBenefit": "Greater of $25,000 or 50% of eligible appraised residence value.",
+      "formulaSummary": "Exclude the statutory portion of permanent-residence value from taxation.",
+      "application": "AV-9 to county assessor, generally by June 1.",
+      "eligibilityNotes": [],
+      "interactions": [
+        "Only one of the three AV-9 relief programs may benefit each owner."
+      ],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 AV-9 property-tax relief application",
+          "url": "https://www.ncdor.gov/av-9-2025-application-property-tax-relief-0/open",
+          "kind": "form"
+        },
+        {
+          "title": "G.S. 105-277.1: elderly or disabled exclusion",
+          "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-277.1.html",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [
+    "The circuit breaker defers property-tax liabilities, with repayment under the statutory triggers.",
+    "The linked relief application does not establish a statewide renter credit."
+  ],
+  "sources": [
+    {
+      "title": "2025 AV-9 property-tax relief application",
+      "url": "https://www.ncdor.gov/av-9-2025-application-property-tax-relief-0/open",
+      "kind": "form"
+    },
+    {
+      "title": "G.S. 105-277.1B",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-277.1B.html",
+      "kind": "statute"
+    },
+    {
+      "title": "G.S. 105-277.1: elderly or disabled exclusion",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-277.1.html",
+      "kind": "statute"
+    }
+  ]
+}

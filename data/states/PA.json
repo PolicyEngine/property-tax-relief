@@ -1,0 +1,73 @@
+{
+  "code": "PA",
+  "name": "Pennsylvania",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Pennsylvania's refundable Property Tax/Rent Rebate covers older adults, qualifying widows and widowers, and adults with disabilities.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "pa-property-tax-rent-rebate",
+      "name": "Property Tax/Rent Rebate",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner", "renter"],
+      "refundable": true,
+      "ageRule": "65 or older (including qualifying spouse); widow or widower 50 or older; permanently disabled adult 18 or older.",
+      "incomeDefinition": "Program household income includes spouse's income and excludes half of Social Security, SSI, State Supplementary Payments and Railroad Retirement Tier 1.",
+      "incomeLimits": "$48,110 for 2025.",
+      "maximumBenefit": "Standard rebate up to $1,000; eligible homeowners may receive up to $1,500 including supplement.",
+      "formulaSummary": "Income bands set standard rebates of $1,000, $770, $460, or $380, limited by property taxes paid or 20% of rent. Supplemental homeowner rebates depend on income, locality, or tax-to-income burden.",
+      "application": "File PA-1000 or use myPATH in 2026 for 2025 taxes or rent.",
+      "eligibilityNotes": [
+        "Principal residence; paid taxes or rent.",
+        "Rental property must be taxable or subject to payments in lieu of taxes.",
+        "Public assistance can limit qualifying rental months."
+      ],
+      "interactions": [
+        "Owner/renter claims share one annual rebate cap; supplement calculated by Revenue."
+      ],
+      "programYear": "2025 property taxes or rent and household income; rebate claim filed in 2026.",
+      "rentProxy": 0.2,
+      "sources": [
+        {
+          "title": "2025 PA-1000 Property Tax or Rent Rebate claim",
+          "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforindividuals/ptrr/documents/2025_pa-1000.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "2025 PA-1000 instructions",
+          "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforindividuals/ptrr/documents/2025_pa-1000_inst.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "Property Tax/Rent Rebate Preparation Guide",
+          "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforindividuals/ptrr/documents/dfo-03.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["pa_property_tax_or_rent_rebate"],
+      "paymentMechanism": "cash-rebate"
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [],
+  "sources": [
+    {
+      "title": "2025 PA-1000 Property Tax or Rent Rebate claim",
+      "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforindividuals/ptrr/documents/2025_pa-1000.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "2025 PA-1000 instructions",
+      "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforindividuals/ptrr/documents/2025_pa-1000_inst.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "Property Tax/Rent Rebate Preparation Guide",
+      "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforindividuals/ptrr/documents/dfo-03.pdf",
+      "kind": "form"
+    }
+  ]
+}

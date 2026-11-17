@@ -1,0 +1,133 @@
+{
+  "code": "TX",
+  "name": "Texas",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Texas relies on homestead value exemptions and local property-tax rules.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "none-identified",
+  "programs": [
+    {
+      "id": "tx-school-homestead",
+      "name": "School District Residence Homestead Exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "$140,000 of residence value exempt from school-district tax for 2025.",
+      "formulaSummary": "Mandatory school-district homestead value exemption; actual savings depend on school tax rate.",
+      "application": "Apply to local appraisal district.",
+      "eligibilityNotes": [
+        "Principal residence ownership and occupancy requirements."
+      ],
+      "interactions": [],
+      "programYear": "2025 property-tax year; the November 2025 voter-approved exemption amount applies to 2025.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Residential Homestead Exemptions",
+          "url": "https://comptroller.texas.gov/taxes/property-tax/docs/98-1070.pdf",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 Property Tax Law Changes",
+          "url": "https://comptroller.texas.gov/taxes/property-tax/docs/96-669.pdf",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 Texas ACFR: voter-approved property-tax changes",
+          "url": "https://comptroller.texas.gov/transparency/reports/comprehensive-annual-financial/2025/intro.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": ["tx_school_district_homestead_exemption"],
+      "paymentMechanism": "taxable-property-value-exemption"
+    },
+    {
+      "id": "tx-senior-disabled-homestead",
+      "name": "Age 65 or Disabled School Homestead Exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "65 or older, or qualifying disability.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "Additional $60,000 of school-district taxable value for 2025.",
+      "formulaSummary": "Additional mandatory school exemption; age and disability exemptions are alternatives, not cumulative.",
+      "application": "Apply to local appraisal district.",
+      "eligibilityNotes": [],
+      "interactions": [],
+      "programYear": "2025 property-tax year; the November 2025 voter-approved exemption amount applies to 2025.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Residential Homestead Exemptions",
+          "url": "https://comptroller.texas.gov/taxes/property-tax/docs/98-1070.pdf",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 Texas ACFR: voter-approved property-tax changes",
+          "url": "https://comptroller.texas.gov/transparency/reports/comprehensive-annual-financial/2025/intro.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [
+        "tx_over_65_or_disabled_school_district_homestead_exemption"
+      ],
+      "paymentMechanism": "taxable-property-value-exemption"
+    },
+    {
+      "id": "tx-local-homestead",
+      "name": "Local-option Residence Homestead Exemptions",
+      "category": "local-option",
+      "scope": "local-option",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "General exemption up to 20% of home value, with statutory minimum; optional senior/disability amounts vary.",
+      "formulaSummary": "Each eligible taxing unit chooses whether to adopt the optional exemption.",
+      "application": "Local appraisal district administers adopted exemptions.",
+      "eligibilityNotes": [],
+      "interactions": [],
+      "programYear": "2025 property-tax year; locally adopted exemptions reduce that year’s eligible taxable value.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Residential Homestead Exemptions",
+          "url": "https://comptroller.texas.gov/taxes/property-tax/docs/98-1070.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [
+    "The 2025 school exemption increases received voter approval in November 2025 and apply to the 2025 tax year.",
+    "Homestead exemptions reduce taxable value under the applicable local levies. Tax savings depend on the covered tax rates."
+  ],
+  "sources": [
+    {
+      "title": "2025 Residential Homestead Exemptions",
+      "url": "https://comptroller.texas.gov/taxes/property-tax/docs/98-1070.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 Property Tax Law Changes",
+      "url": "https://comptroller.texas.gov/taxes/property-tax/docs/96-669.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 Texas ACFR: voter-approved property-tax changes",
+      "url": "https://comptroller.texas.gov/transparency/reports/comprehensive-annual-financial/2025/intro.pdf",
+      "kind": "agency"
+    }
+  ]
+}

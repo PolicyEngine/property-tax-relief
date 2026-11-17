@@ -1,0 +1,145 @@
+{
+  "code": "OH",
+  "name": "Ohio",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Ohio offers bill-level nonbusiness and owner-occupancy credits plus a means-tested homestead value exemption; qualifying levy composition matters.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "oh-nonbusiness-credit",
+      "name": "Non-Business Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "10% of qualifying levies.",
+      "formulaSummary": "Reduces qualifying residential and agricultural property levies; it is not 10% of every tax bill.",
+      "application": "Administered on property-tax bills by county auditor.",
+      "eligibilityNotes": [
+        "Residential rental property may qualify at the property-owner level; this is not a payment to renters."
+      ],
+      "interactions": [],
+      "programYear": "2025 real-property tax baseline; the exact application and collection periods remain unverified.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Real Property Tax Rollbacks overview",
+          "url": "https://tax.ohio.gov/government/resources/distributions-real-property-tax-rollback-overview",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
+    },
+    {
+      "id": "oh-owner-occupancy-credit",
+      "name": "Owner Occupancy Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "Not income-tested.",
+      "maximumBenefit": "2.5% of qualifying levies for the 2025 baseline.",
+      "formulaSummary": "Owner-occupancy reduction applies to eligible levies, not necessarily the complete property-tax bill.",
+      "application": "County auditors administer this credit. The inventory does not establish the 2025 application procedure.",
+      "eligibilityNotes": ["Principal residence requirement."],
+      "interactions": [],
+      "programYear": "2025 real-property tax baseline; the exact application and collection periods remain unverified.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Real Property Tax Rollbacks overview",
+          "url": "https://tax.ohio.gov/government/resources/distributions-real-property-tax-rollback-overview",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
+    },
+    {
+      "id": "oh-homestead-exemption",
+      "name": "Homestead Exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "65 or older; permanently and totally disabled; or qualifying surviving spouse age 59 or older.",
+      "incomeDefinition": "Ohio modified adjusted gross income of the owner and spouse for the calendar year preceding the application year under section 323.151(C). A 2025 application therefore uses 2024 income. Pre-2014 recipients may be grandfathered.",
+      "incomeLimits": "$40,000 for tax year 2025 real property; grandfather and enhanced-exemption rules apply.",
+      "maximumBenefit": "Tax on up to $29,000 true home value; enhanced exemption up to $58,000 for qualifying veterans and survivor categories.",
+      "formulaSummary": "Exempts a specified portion of home value; enhanced exemptions apply to qualifying disabled veterans and surviving spouses of public-service officers.",
+      "application": "Apply to county auditor.",
+      "eligibilityNotes": [
+        "Local-option supplemental homestead exemption requires county adoption."
+      ],
+      "interactions": [],
+      "programYear": "2025 real-property tax baseline; the income reference follows the application year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "H.B. 96 final tax analysis: homestead exemptions",
+          "url": "https://www.lsc.ohio.gov/assets/legislation/136/hb96/en0/files/hb96-tax-bill-analysis-as-enacted-136th-general-assembly.pdf",
+          "kind": "agency"
+        },
+        {
+          "title": "Ohio Tax Commissioner entry 25-09-0346: certified 2025 exemption value",
+          "url": "https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/government/newdocs/25-09-0346-HomesteadIncomeThreshold2026.pdf",
+          "kind": "agency"
+        },
+        {
+          "title": "Ohio Homestead Means Testing FAQ",
+          "url": "https://tax.ohio.gov/help-center/faqs/real-property-tax-homestead-means-testing/real-property-tax--homestead-means-testing",
+          "kind": "agency"
+        },
+        {
+          "title": "Ohio Revised Code 323.151(C): income year preceding application",
+          "url": "https://codes.ohio.gov/ohio-revised-code/section-323.151",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": ["oh_homestead_property_tax_reduction"],
+      "paymentMechanism": "taxable-property-value-exemption"
+    }
+  ],
+  "laterChanges": [
+    "H.B. 96 authorizes a separate county local-option rollback of up to 2.5%. County adoption controls that option; the statewide 2025 baseline above remains 10% for the nonbusiness credit and 2.5% for owner occupancy."
+  ],
+  "researchNotes": [
+    "October 2025 Tax Commissioner certification resolves older summaries: $29,000/$58,000 value reductions apply to 2025 real-property tax collected in 2026. The $41,000 income threshold in the same document applies to 2026 real-property tax, not 2025.",
+    "Credits require eligible levy information, not only a total tax bill."
+  ],
+  "sources": [
+    {
+      "title": "Real Property Tax Rollbacks overview",
+      "url": "https://tax.ohio.gov/government/resources/distributions-real-property-tax-rollback-overview",
+      "kind": "agency"
+    },
+    {
+      "title": "H.B. 96 final tax analysis: homestead exemptions",
+      "url": "https://www.lsc.ohio.gov/assets/legislation/136/hb96/en0/files/hb96-tax-bill-analysis-as-enacted-136th-general-assembly.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "Ohio Tax Commissioner entry 25-09-0346: certified 2025 exemption value",
+      "url": "https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/government/newdocs/25-09-0346-HomesteadIncomeThreshold2026.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "Ohio Homestead Means Testing FAQ",
+      "url": "https://tax.ohio.gov/help-center/faqs/real-property-tax-homestead-means-testing/real-property-tax--homestead-means-testing",
+      "kind": "agency"
+    },
+    {
+      "title": "Ohio Revised Code 323.151(C): income year preceding application",
+      "url": "https://codes.ohio.gov/ohio-revised-code/section-323.151",
+      "kind": "statute"
+    }
+  ]
+}

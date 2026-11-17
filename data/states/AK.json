@@ -1,0 +1,52 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [],
+  "code": "AK",
+  "name": "Alaska",
+  "overview": "State law requires specified municipal homestead exemptions and permits additional local exemptions.",
+  "statewideCreditStatus": "none-identified",
+  "programs": [
+    {
+      "id": "ak-senior-disabled-veteran-exemption",
+      "name": "Senior citizen and disabled veteran exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "Age 65+ or qualifying disabled veteran; surviving-spouse provisions apply.",
+      "incomeDefinition": "Mandatory exemption is not described as income-tested.",
+      "incomeLimits": "No income limit for the mandatory base exemption.",
+      "maximumBenefit": "First $150,000 of assessed primary-residence value.",
+      "formulaSummary": "Municipal tax applies after the mandatory assessed-value exemption.",
+      "application": "Apply to the municipal assessor by its local deadline.",
+      "eligibilityNotes": [
+        "Disabled veteran must have at least 50% service-connected disability.",
+        "Municipalities may adopt additional exemptions by ordinance."
+      ],
+      "interactions": [],
+      "programYear": "Annual municipal property-tax year; AS 29.45.030(e).",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Property tax exemptions in Alaska — DCRA",
+          "url": "https://www.commerce.alaska.gov/web/dcra/LocalGovernmentResourceDesk/TaxationAssessment/PropertyTaxExemptionsinAlaska.aspx",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "not-established"
+    }
+  ],
+  "researchNotes": [
+    "No statewide cash property-tax or renter credit identified. Optional municipal relief is not a uniform statewide credit."
+  ],
+  "sources": [
+    {
+      "title": "Property tax exemptions in Alaska — DCRA",
+      "url": "https://www.commerce.alaska.gov/web/dcra/LocalGovernmentResourceDesk/TaxationAssessment/PropertyTaxExemptionsinAlaska.aspx",
+      "kind": "agency"
+    }
+  ]
+}

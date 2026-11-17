@@ -1,0 +1,183 @@
+{
+  "code": "NE",
+  "name": "Nebraska",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Nebraska combines a refundable community-college property-tax credit with property-tax statement credits and a targeted homestead exemption.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "ne-community-college-property-tax-credit",
+      "name": "Community College Property Tax Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": true,
+      "ageRule": "No age restriction.",
+      "incomeDefinition": "No income test.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Qualifying community-college property taxes paid, as computed from parcel records.",
+      "formulaSummary": "Use Form PTC and DOR parcel lookup for qualifying community-college taxes paid in 2025; excluded levies and existing property-tax credits reduce the eligible base.",
+      "application": "Form PTC with a Nebraska income-tax return; an amended PTCX is available for missed credits.",
+      "eligibilityNotes": [
+        "Eligibility follows actual payment to the county treasurer.",
+        "A lessee paying the county directly may qualify; ordinary rent alone is not sufficient."
+      ],
+      "interactions": [
+        "School-district taxes are outside the income-tax PTC base under the post-2024 framework.",
+        "School-district relief appears separately on property-tax statements."
+      ],
+      "programYear": "2025 income-tax credit for qualifying community-college property taxes paid during 2025, usually levied for 2024.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Form PTC",
+          "url": "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_PTC.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "Nebraska property-tax credit FAQs",
+          "url": "https://revenue.nebraska.gov/about/frequently-asked-questions/nebraska-property-tax-credit-faqs",
+          "kind": "agency"
+        },
+        {
+          "title": "Nebraska Revised Statute 77-6706: refundable community-college property-tax credit",
+          "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=77-6706",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "income-tax-credit"
+    },
+    {
+      "id": "ne-homestead-exemption",
+      "name": "Homestead Exemption",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "Qualifying older, disabled and veteran categories; category-specific conditions apply.",
+      "incomeDefinition": "Application-year household-income schedule.",
+      "incomeLimits": "Varies by category, filing status and annual table.",
+      "maximumBenefit": "Partial or full eligible-value exemption; county-average value and statutory limits apply.",
+      "formulaSummary": "Reduce taxable homestead value under the qualifying category and income/value tables.",
+      "application": "Form 458 and required income/disability documentation to the county assessor.",
+      "eligibilityNotes": [],
+      "interactions": [],
+      "programYear": "2025 exemption application rules and 2025 income tables.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Nebraska Homestead Exemption",
+          "url": "https://revenue.nebraska.gov/PAD/homestead-exemption",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
+    },
+    {
+      "id": "ne-real-property-tax-bill-credit",
+      "name": "Real Property Tax Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Varies with qualifying property and tax bill.",
+      "formulaSummary": "Allocate State funding using parcel credit-allocation valuation and the published annual rate; show credit separately on the property-tax statement.",
+      "application": "Applied through county assessment and treasury administration.",
+      "eligibilityNotes": [
+        "All taxable real-property parcels generally qualify; land classification affects allocation."
+      ],
+      "interactions": [
+        "Applied after homestead exemption, before the School District Property Tax Relief Credit.",
+        "A net tax bill already reflects this reduction."
+      ],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Directive 25-3 — Real Property Tax Credit",
+          "url": "https://revenue.nebraska.gov/sites/default/files/doc/Dir_25-3_Real_Property_Tax_Credit_and_Tax_Statements_Calculatons.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
+    },
+    {
+      "id": "ne-school-district-property-tax-relief-credit",
+      "name": "School District Property Tax Relief Credit",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Varies with qualifying property and tax bill.",
+      "formulaSummary": "Apply the State-funded school-district relief calculation to eligible parcel school taxes and display it as a credit on the tax statement.",
+      "application": "Applied through county property-tax administration.",
+      "eligibilityNotes": [
+        "Qualifying school levies and the published tax-year calculation determine the credit."
+      ],
+      "interactions": [
+        "Coordinates with homestead exemption and the Real Property Tax Credit.",
+        "Separate from the refundable community-college income-tax credit.",
+        "A net property-tax bill already includes this credit."
+      ],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Directive 25-4 — School District Property Tax Relief Credit",
+          "url": "https://revenue.nebraska.gov/sites/default/files/doc/Dir_25-4_School_District_Property_Tax_Relief_Credit%20(SDPTRC).pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [
+    "Statewide statement credits reduce the bill before payment. A net tax amount already reflects those credits.",
+    "The listed programs do not include a direct renter credit."
+  ],
+  "sources": [
+    {
+      "title": "2025 Form PTC",
+      "url": "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_PTC.pdf",
+      "kind": "form"
+    },
+    {
+      "title": "Nebraska property-tax credit FAQs",
+      "url": "https://revenue.nebraska.gov/about/frequently-asked-questions/nebraska-property-tax-credit-faqs",
+      "kind": "agency"
+    },
+    {
+      "title": "Nebraska Homestead Exemption",
+      "url": "https://revenue.nebraska.gov/PAD/homestead-exemption",
+      "kind": "agency"
+    },
+    {
+      "title": "Directive 25-3 — Real Property Tax Credit",
+      "url": "https://revenue.nebraska.gov/sites/default/files/doc/Dir_25-3_Real_Property_Tax_Credit_and_Tax_Statements_Calculatons.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "Directive 25-4 — School District Property Tax Relief Credit",
+      "url": "https://revenue.nebraska.gov/sites/default/files/doc/Dir_25-4_School_District_Property_Tax_Relief_Credit%20(SDPTRC).pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "Nebraska Revised Statute 77-6706: refundable community-college property-tax credit",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=77-6706",
+      "kind": "statute"
+    }
+  ]
+}

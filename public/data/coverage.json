@@ -1,0 +1,1904 @@
+{
+  "interfaceVersion": "6.19.0",
+  "modelVersion": "2.2.1",
+  "canonicalModelCommit": "5b18694981c758e0ae52042eb103e55e0333c7ef",
+  "canonicalModelRef": "5b18694981c758e0ae52042eb103e55e0333c7ef",
+  "canonicalModelSource": "committed-git-tree",
+  "programs": [
+    {
+      "id": "al-homestead-exemptions",
+      "state": "AL",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ak-senior-disabled-veteran-exemption",
+      "state": "AK",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "az-property-tax-credit",
+      "state": "AZ",
+      "variables": [
+        "az_property_tax_credit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "az_property_tax_credit": {
+          "file": "gov/states/az/tax/income/credits/property_tax_credit/az_property_tax_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "az_property_tax_credit"
+      ],
+      "validated": false
+    },
+    {
+      "id": "ar-homestead-property-tax-credit",
+      "state": "AR",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ca-nonrefundable-renters-credit",
+      "state": "CA",
+      "variables": [
+        "ca_renter_credit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "ca_renter_credit": {
+          "file": "gov/states/ca/tax/income/credits/ca_renter_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "ca_renter_credit"
+      ],
+      "validated": false
+    },
+    {
+      "id": "ca-homeowners-exemption",
+      "state": "CA",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ca-property-tax-postponement",
+      "state": "CA",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "co-ptc-rebate",
+      "state": "CO",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ct-income-tax-property-credit",
+      "state": "CT",
+      "variables": [
+        "ct_property_tax_credit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "ct_property_tax_credit": {
+          "file": "gov/states/ct/tax/income/credits/property_tax/ct_property_tax_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "ct_property_tax_credit"
+      ],
+      "validated": false
+    },
+    {
+      "id": "ct-homeowner-elderly-disabled-credit",
+      "state": "CT",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ct-renters-rebate",
+      "state": "CT",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "de-senior-school-property-tax-credit",
+      "state": "DE",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "dc-schedule-h",
+      "state": "DC",
+      "variables": [
+        "dc_ptc"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "dc_ptc": {
+          "file": "gov/states/dc/tax/income/credits/dc_ptc.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "dc_ptc"
+      ],
+      "validated": false
+    },
+    {
+      "id": "dc-senior-disabled-property-tax-relief",
+      "state": "DC",
+      "variables": [
+        "dc_senior_disabled_property_tax_relief"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "dc_senior_disabled_property_tax_relief": {
+          "file": "gov/states/dc/tax/property/senior_disabled_property_tax_relief/dc_senior_disabled_property_tax_relief.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "dc_senior_disabled_property_tax_relief"
+      ],
+      "validated": false
+    },
+    {
+      "id": "dc-homestead-deduction",
+      "state": "DC",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "dc-assessment-cap-credits",
+      "state": "DC",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "fl-homestead-exemption",
+      "state": "FL",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "fl-local-senior-exemption",
+      "state": "FL",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ga-homestead-exemptions",
+      "state": "GA",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "hi-low-income-household-renters-credit",
+      "state": "HI",
+      "variables": [
+        "hi_tax_credit_for_low_income_household_renters"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "hi_tax_credit_for_low_income_household_renters": {
+          "file": "gov/states/hi/tax/income/credits/hi_low_income_household_renters/hi_low_income_household_renters_tax_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "hi_tax_credit_for_low_income_household_renters"
+      ],
+      "validated": false
+    },
+    {
+      "id": "id-property-tax-reduction",
+      "state": "ID",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "id-disabled-veteran-property-tax-benefit",
+      "state": "ID",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "id-homeowner-tax-relief",
+      "state": "ID",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "il-property-tax-credit",
+      "state": "IL",
+      "variables": [
+        "il_property_tax_credit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "il_property_tax_credit": {
+          "file": "gov/states/il/tax/income/credits/il_property_tax_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "il_property_tax_credit"
+      ],
+      "validated": false
+    },
+    {
+      "id": "il-senior-tax-deferral",
+      "state": "IL",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "in-property-tax-cap-credit",
+      "state": "IN",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "in-over-65-circuit-breaker",
+      "state": "IN",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "in-renters-income-tax-deduction",
+      "state": "IN",
+      "variables": [
+        "in_renters_deduction"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "in_renters_deduction": {
+          "file": "gov/states/in/tax/income/deductions/in_renters_deduction.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "in_renters_deduction"
+      ],
+      "validated": false
+    },
+    {
+      "id": "in-homeowner-income-tax-deduction",
+      "state": "IN",
+      "variables": [
+        "in_homeowners_property_tax_deduction"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "in_homeowners_property_tax_deduction": {
+          "file": "gov/states/in/tax/income/deductions/in_homeowners_property_tax_deduction.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "in_homeowners_property_tax_deduction"
+      ],
+      "validated": false
+    },
+    {
+      "id": "ia-homestead-tax-credit",
+      "state": "IA",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ia-elderly-disabled-property-tax-credit",
+      "state": "IA",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ia-rent-reimbursement",
+      "state": "IA",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ia-senior-homestead-exemption",
+      "state": "IA",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ia-disabled-veteran-homestead-credit",
+      "state": "IA",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ks-homestead-refund",
+      "state": "KS",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ks-safesr",
+      "state": "KS",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ks-senior-disabled-veteran-refund",
+      "state": "KS",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ky-homestead-exemption",
+      "state": "KY",
+      "variables": [
+        "ky_homestead_exemption",
+        "ky_homestead_property_tax_reduction"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "ky_homestead_exemption": {
+          "file": "gov/states/ky/tax/property/homestead_exemption/ky_homestead_exemption.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        },
+        "ky_homestead_property_tax_reduction": {
+          "file": "gov/states/ky/tax/property/homestead_exemption/ky_homestead_property_tax_reduction.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "context",
+      "canonicalVariables": [
+        "ky_homestead_exemption",
+        "ky_homestead_property_tax_reduction"
+      ],
+      "validated": false
+    },
+    {
+      "id": "la-homestead-exemption",
+      "state": "LA",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "la-special-assessment-level",
+      "state": "LA",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "la-residential-lessee-property-tax-credit",
+      "state": "LA",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "me-property-tax-fairness-credit",
+      "state": "ME",
+      "variables": [
+        "me_property_tax_fairness_credit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "me_property_tax_fairness_credit": {
+          "file": "gov/states/me/tax/income/credits/fairness/property_tax_fairness_credit/me_property_tax_fairness_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "me_property_tax_fairness_credit"
+      ],
+      "validated": false
+    },
+    {
+      "id": "md-homeowners-tax-credit",
+      "state": "MD",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "md-renters-tax-credit",
+      "state": "MD",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "md-homestead-assessment-credit",
+      "state": "MD",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ma-senior-circuit-breaker",
+      "state": "MA",
+      "variables": [
+        "ma_senior_circuit_breaker"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "ma_senior_circuit_breaker": {
+          "file": "gov/states/ma/tax/income/credits/senior_circuit_breaker/ma_senior_circuit_breaker.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "ma_senior_circuit_breaker"
+      ],
+      "validated": false
+    },
+    {
+      "id": "ma-renters-income-tax-deduction",
+      "state": "MA",
+      "variables": [
+        "ma_part_b_taxable_income_deductions"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "ma_part_b_taxable_income_deductions": {
+          "file": "gov/states/ma/tax/income/taxable_income/ma_part_b_taxable_income_deductions.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "ma_part_b_taxable_income_deductions"
+      ],
+      "validated": false
+    },
+    {
+      "id": "mi-homestead-property-tax-credit",
+      "state": "MI",
+      "variables": [
+        "mi_homestead_property_tax_credit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "mi_homestead_property_tax_credit": {
+          "file": "gov/states/mi/tax/income/credits/homestead_property_tax/mi_homestead_property_tax_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "mi_homestead_property_tax_credit"
+      ],
+      "validated": false
+    },
+    {
+      "id": "mn-renters-credit",
+      "state": "MN",
+      "variables": [
+        "mn_renters_credit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "mn_renters_credit": {
+          "file": "gov/states/mn/tax/income/credits/mn_renters_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "mn_renters_credit"
+      ],
+      "validated": false
+    },
+    {
+      "id": "mn-homestead-credit-refund",
+      "state": "MN",
+      "variables": [
+        "mn_homestead_credit_refund"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "mn_homestead_credit_refund": {
+          "file": "gov/states/mn/tax/property/homestead_credit_refund/mn_homestead_credit_refund.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "mn_homestead_credit_refund"
+      ],
+      "validated": false
+    },
+    {
+      "id": "mn-special-property-tax-refund",
+      "state": "MN",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ms-regular-homestead-credit",
+      "state": "MS",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ms-age-disability-homestead-exemption",
+      "state": "MS",
+      "variables": [
+        "ms_age_disability_homestead_exemption",
+        "ms_age_disability_homestead_property_tax_reduction"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "ms_age_disability_homestead_exemption": {
+          "file": "gov/states/ms/tax/property/age_disability_homestead_exemption/ms_age_disability_homestead_exemption.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        },
+        "ms_age_disability_homestead_property_tax_reduction": {
+          "file": "gov/states/ms/tax/property/age_disability_homestead_exemption/ms_age_disability_homestead_property_tax_reduction.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "context",
+      "canonicalVariables": [
+        "ms_age_disability_homestead_exemption",
+        "ms_age_disability_homestead_property_tax_reduction"
+      ],
+      "validated": false
+    },
+    {
+      "id": "mo-property-tax-credit",
+      "state": "MO",
+      "variables": [
+        "mo_property_tax_credit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "mo_property_tax_credit": {
+          "file": "gov/states/mo/tax/income/credits/property_tax/mo_property_tax_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "mo_property_tax_credit"
+      ],
+      "validated": false
+    },
+    {
+      "id": "mt-elderly-homeowner-renter-credit",
+      "state": "MT",
+      "variables": [
+        "mt_elderly_homeowner_or_renter_credit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "mt_elderly_homeowner_or_renter_credit": {
+          "file": "gov/states/mt/tax/income/credits/mt_elderly_homeowner_or_renter/mt_elderly_homeowner_or_renter_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "mt_elderly_homeowner_or_renter_credit"
+      ],
+      "validated": false
+    },
+    {
+      "id": "mt-2025-homeowner-rebate",
+      "state": "MT",
+      "variables": [
+        "mt_property_tax_rebate"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "mt_property_tax_rebate": {
+          "file": "gov/states/mt/tax/income/credits/rebate/mt_property_tax_rebate.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "mt_property_tax_rebate"
+      ],
+      "validated": false
+    },
+    {
+      "id": "mt-property-tax-assistance-program",
+      "state": "MT",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ne-community-college-property-tax-credit",
+      "state": "NE",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ne-homestead-exemption",
+      "state": "NE",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ne-real-property-tax-bill-credit",
+      "state": "NE",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ne-school-district-property-tax-relief-credit",
+      "state": "NE",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "nv-residential-tax-abatement",
+      "state": "NV",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "nh-low-moderate-income-property-tax-relief",
+      "state": "NH",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "nj-anchor",
+      "state": "NJ",
+      "variables": [
+        "nj_anchor"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "nj_anchor": {
+          "file": "gov/states/nj/tax/income/credits/anchor/nj_anchor.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "nj_anchor"
+      ],
+      "validated": false
+    },
+    {
+      "id": "nj-senior-freeze",
+      "state": "NJ",
+      "variables": [
+        "nj_senior_freeze",
+        "nj_capped_senior_freeze"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [
+        "nj_senior_freeze"
+      ],
+      "variableDetails": {
+        "nj_senior_freeze": {
+          "file": "gov/states/nj/tax/income/credits/staynj/nj_senior_freeze.py",
+          "methods": [],
+          "computableIn2025": false
+        },
+        "nj_capped_senior_freeze": {
+          "file": "gov/states/nj/tax/income/credits/staynj/nj_capped_senior_freeze.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-missing",
+      "canonicalVariables": [
+        "nj_senior_freeze",
+        "nj_capped_senior_freeze"
+      ],
+      "validated": false
+    },
+    {
+      "id": "nj-stay-nj",
+      "state": "NJ",
+      "variables": [
+        "nj_staynj"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "nj_staynj": {
+          "file": "gov/states/nj/tax/income/credits/staynj/nj_staynj.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "nj_staynj"
+      ],
+      "validated": false
+    },
+    {
+      "id": "nj-income-tax-property-tax-credit",
+      "state": "NJ",
+      "variables": [
+        "nj_property_tax_credit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "nj_property_tax_credit": {
+          "file": "gov/states/nj/tax/income/credits/property_tax_credit/nj_property_tax_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "nj_property_tax_credit"
+      ],
+      "validated": false
+    },
+    {
+      "id": "nj-income-tax-property-tax-deduction",
+      "state": "NJ",
+      "variables": [
+        "nj_property_tax_deduction"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "nj_property_tax_deduction": {
+          "file": "gov/states/nj/tax/income/property_tax/nj_property_tax_deduction.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "nj_property_tax_deduction"
+      ],
+      "validated": false
+    },
+    {
+      "id": "nm-senior-property-tax-rebate",
+      "state": "NM",
+      "variables": [
+        "nm_property_tax_rebate"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "nm_property_tax_rebate": {
+          "file": "gov/states/nm/tax/income/rebates/property_tax_rebate/nm_property_tax_rebate.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "nm_property_tax_rebate"
+      ],
+      "validated": false
+    },
+    {
+      "id": "nm-local-low-income-property-tax-rebate",
+      "state": "NM",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ny-real-property-tax-credit",
+      "state": "NY",
+      "variables": [
+        "ny_real_property_tax_credit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "ny_real_property_tax_credit": {
+          "file": "gov/states/ny/tax/income/credits/ny_real_property_tax_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "ny_real_property_tax_credit"
+      ],
+      "validated": false
+    },
+    {
+      "id": "ny-star-credit",
+      "state": "NY",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "nc-circuit-breaker-deferral",
+      "state": "NC",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "nc-elderly-disabled-exclusion",
+      "state": "NC",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "nd-primary-residence-credit",
+      "state": "ND",
+      "variables": [
+        "nd_primary_residence_credit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "nd_primary_residence_credit": {
+          "file": "gov/states/nd/tax/property/primary_residence_credit/nd_primary_residence_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "nd_primary_residence_credit"
+      ],
+      "validated": false
+    },
+    {
+      "id": "nd-homestead-credit",
+      "state": "ND",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "nd-renters-refund",
+      "state": "ND",
+      "variables": [
+        "nd_renters_refund"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "nd_renters_refund": {
+          "file": "gov/states/nd/tax/property/renters_refund/nd_renters_refund.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "nd_renters_refund"
+      ],
+      "validated": false
+    },
+    {
+      "id": "oh-nonbusiness-credit",
+      "state": "OH",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "oh-owner-occupancy-credit",
+      "state": "OH",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "oh-homestead-exemption",
+      "state": "OH",
+      "variables": [
+        "oh_homestead_property_tax_reduction"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "oh_homestead_property_tax_reduction": {
+          "file": "gov/states/oh/tax/property/homestead_exemption/oh_homestead_property_tax_reduction.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "context",
+      "canonicalVariables": [
+        "oh_homestead_property_tax_reduction"
+      ],
+      "validated": false
+    },
+    {
+      "id": "ok-property-tax-refund",
+      "state": "OK",
+      "variables": [
+        "ok_ptc"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "ok_ptc": {
+          "file": "gov/states/ok/tax/income/credits/ok_ptc.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "ok_ptc"
+      ],
+      "validated": false
+    },
+    {
+      "id": "or-senior-disabled-deferral",
+      "state": "OR",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "pa-property-tax-rent-rebate",
+      "state": "PA",
+      "variables": [
+        "pa_property_tax_or_rent_rebate"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "pa_property_tax_or_rent_rebate": {
+          "file": "gov/states/pa/tax/property/property_tax_or_rent_rebate/pa_property_tax_or_rent_rebate.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "pa_property_tax_or_rent_rebate"
+      ],
+      "validated": false
+    },
+    {
+      "id": "ri-property-tax-relief",
+      "state": "RI",
+      "variables": [
+        "ri_property_tax_credit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "ri_property_tax_credit": {
+          "file": "gov/states/ri/tax/income/credits/property_tax/ri_property_tax_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "ri_property_tax_credit"
+      ],
+      "validated": false
+    },
+    {
+      "id": "sc-homestead-exemption",
+      "state": "SC",
+      "variables": [
+        "sc_homestead_property_tax_reduction"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "sc_homestead_property_tax_reduction": {
+          "file": "gov/states/sc/tax/property/homestead_exemption/sc_homestead_property_tax_reduction.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "context",
+      "canonicalVariables": [
+        "sc_homestead_property_tax_reduction"
+      ],
+      "validated": false
+    },
+    {
+      "id": "sc-school-operating-exemption",
+      "state": "SC",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "sd-assessment-freeze",
+      "state": "SD",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "sd-homestead-deferral",
+      "state": "SD",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "sd-municipal-reduction",
+      "state": "SD",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "sd-historical-property-tax-refund",
+      "state": "SD",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "tn-elderly-disabled-relief",
+      "state": "TN",
+      "variables": [
+        "tn_elderly_property_tax_relief"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "tn_elderly_property_tax_relief": {
+          "file": "gov/states/tn/tax/property/elderly_property_tax_relief/tn_elderly_property_tax_relief.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "tn_elderly_property_tax_relief"
+      ],
+      "validated": false
+    },
+    {
+      "id": "tn-disabled-veteran-relief",
+      "state": "TN",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "tn-local-tax-freeze",
+      "state": "TN",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "tx-school-homestead",
+      "state": "TX",
+      "variables": [
+        "tx_school_district_homestead_exemption"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "tx_school_district_homestead_exemption": {
+          "file": "gov/states/tx/tax/property/school_district_homestead_exemption/tx_school_district_homestead_exemption.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "context",
+      "canonicalVariables": [
+        "tx_school_district_homestead_exemption"
+      ],
+      "validated": false
+    },
+    {
+      "id": "tx-senior-disabled-homestead",
+      "state": "TX",
+      "variables": [
+        "tx_over_65_or_disabled_school_district_homestead_exemption"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "tx_over_65_or_disabled_school_district_homestead_exemption": {
+          "file": "gov/states/tx/tax/property/school_district_homestead_exemption/tx_over_65_or_disabled_school_district_homestead_exemption.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "context",
+      "canonicalVariables": [
+        "tx_over_65_or_disabled_school_district_homestead_exemption"
+      ],
+      "validated": false
+    },
+    {
+      "id": "tx-local-homestead",
+      "state": "TX",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ut-homeowner-credit",
+      "state": "UT",
+      "variables": [
+        "ut_homeowner_renter_relief"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "ut_homeowner_renter_relief": {
+          "file": "gov/states/ut/tax/property/homeowner_renter_relief/ut_homeowner_renter_relief.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "ut_homeowner_renter_relief"
+      ],
+      "validated": false
+    },
+    {
+      "id": "ut-renter-refund",
+      "state": "UT",
+      "variables": [
+        "ut_homeowner_renter_relief"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "ut_homeowner_renter_relief": {
+          "file": "gov/states/ut/tax/property/homeowner_renter_relief/ut_homeowner_renter_relief.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "ut_homeowner_renter_relief"
+      ],
+      "validated": false
+    },
+    {
+      "id": "ut-low-income-abatement",
+      "state": "UT",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "vt-property-tax-credit",
+      "state": "VT",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "vt-renter-credit",
+      "state": "VT",
+      "variables": [
+        "vt_renter_credit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "vt_renter_credit": {
+          "file": "gov/states/vt/tax/income/credits/renter/vt_renter_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "vt_renter_credit"
+      ],
+      "validated": false
+    },
+    {
+      "id": "va-local-elderly-disabled-relief",
+      "state": "VA",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "va-disabled-veteran-exemption",
+      "state": "VA",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "wa-senior-disabled-exemption",
+      "state": "WA",
+      "variables": [
+        "wa_senior_disabled_property_tax_exemption"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "wa_senior_disabled_property_tax_exemption": {
+          "file": "gov/states/wa/dor/property_tax_exemption/senior_disabled/wa_senior_disabled_property_tax_exemption.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "context",
+      "canonicalVariables": [
+        "wa_senior_disabled_property_tax_exemption"
+      ],
+      "validated": false
+    },
+    {
+      "id": "wa-senior-disabled-deferral",
+      "state": "WA",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "wa-limited-income-deferral",
+      "state": "WA",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "wv-senior-tax-credit",
+      "state": "WV",
+      "variables": [
+        "wv_sctc"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "wv_sctc": {
+          "file": "gov/states/wv/tax/income/credits/sctc/wv_sctc.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "wv_sctc"
+      ],
+      "validated": false
+    },
+    {
+      "id": "wv-excess-property-tax-credit",
+      "state": "WV",
+      "variables": [
+        "wv_homestead_excess_property_tax_credit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "wv_homestead_excess_property_tax_credit": {
+          "file": "gov/states/wv/tax/income/credits/heptc/wv_homestead_excess_property_tax_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "wv_homestead_excess_property_tax_credit"
+      ],
+      "validated": false
+    },
+    {
+      "id": "wv-disabled-veteran-credit",
+      "state": "WV",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "wv-homestead-exemption",
+      "state": "WV",
+      "variables": [
+        "wv_homestead_exemption"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "wv_homestead_exemption": {
+          "file": "gov/states/wv/tax/income/exemptions/homestead_exemption/wv_homestead_exemption.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "context",
+      "canonicalVariables": [
+        "wv_homestead_exemption"
+      ],
+      "validated": false
+    },
+    {
+      "id": "wi-homestead-credit",
+      "state": "WI",
+      "variables": [
+        "wi_homestead_credit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "wi_homestead_credit": {
+          "file": "gov/states/wi/tax/income/credits/homestead/wi_homestead_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "wi_homestead_credit"
+      ],
+      "validated": false
+    },
+    {
+      "id": "wi-school-property-tax-credit",
+      "state": "WI",
+      "variables": [
+        "wi_property_tax_credit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "wi_property_tax_credit": {
+          "file": "gov/states/wi/tax/income/credits/property_tax/wi_property_tax_credit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "wi_property_tax_credit"
+      ],
+      "validated": false
+    },
+    {
+      "id": "wi-veterans-property-tax-credit",
+      "state": "WI",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "wi-lottery-gaming-credit",
+      "state": "WI",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "wi-first-dollar-credit",
+      "state": "WI",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "wi-school-levy-credit",
+      "state": "WI",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "wy-property-tax-refund",
+      "state": "WY",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "implementation-missing",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "wy-homeowner-value-exemption",
+      "state": "WY",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "wy-long-term-homeowner-exemption",
+      "state": "WY",
+      "variables": [],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {},
+      "status": "context",
+      "canonicalVariables": [],
+      "validated": false
+    }
+  ],
+  "releaseReady": false,
+  "limitations": [
+    "A matching formula declaration available by 2025 confirms source-level implementation presence only; it does not validate legal correctness, parameters, eligibility or interactions.",
+    "Research records program-specific 2025 reference periods. Assessment, tax-payment, income and filing years can differ; read each program-year field.",
+    "The national relief calculator requires missing implementations, tax-year checks, source-derived household tests, interaction checks and independent review.",
+    "Source research describes identified statewide programs and selected context; it does not enumerate every local program or establish exhaustive absence."
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [],
+  "code": "ID",
+  "name": "Idaho",
+  "overview": "Idaho offers income-tested Property Tax Reduction (PTR), a separate disabled-veteran benefit, and state-funded homeowner property-tax bill credits.",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "id-property-tax-reduction",
+      "name": "Property Tax Reduction (Circuit Breaker)",
+      "category": "income-tested-relief",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "Age 65+ or qualifying widowhood, disability, blindness, former POW/hostage status, or orphaned child.",
+      "incomeDefinition": "Prior-calendar-year total income after qualifying medical expenses.",
+      "incomeLimits": "2025 property-tax program uses 2024 income of $37,810 or less.",
+      "maximumBenefit": "2025 income schedule ranges from $250 to $1,500, limited by qualifying taxes.",
+      "formulaSummary": "Income-table reduction applied to home and up to one acre.",
+      "application": "Apply January 1–April 15, 2025 through assessor/Tax Commission.",
+      "eligibilityNotes": [
+        "Applicants must use the Idaho property as their primary residence and qualify for the homeowner exemption.",
+        "Applicants whose current-year home assessment exceeds the greater of $400,000 or 200% of their county's median assessment for homes with the homeowner exemption are referred to the property-tax deferral program instead.",
+        "This value limit does not apply to veterans with a VA-certified 100% service-connected disability rating, or an individual-unemployability rating compensated at the 100% rate.",
+        "The reduction excludes fees."
+      ],
+      "interactions": [
+        "Other homeowner relief affects remaining taxes; avoid double counting."
+      ],
+      "programYear": "2025 property-tax bill based on 2024 income.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Idaho PTR 2025 guide",
+          "url": "https://tax.idaho.gov/wp-content/uploads/pubs/EBR00135/EBR00135_12-10-2024.pdf",
+          "kind": "agency"
+        },
+        {
+          "title": "Idaho 2025 PTR income brackets",
+          "url": "https://tax.idaho.gov/wp-content/uploads/pubs/EPB00168/EPB00168_10-07-2024.pdf",
+          "kind": "agency"
+        },
+        {
+          "title": "Idaho Code §63-705, income schedule and home-value limit",
+          "url": "https://legislature.idaho.gov/statutesrules/idstat/Title63/T63CH7/SECT63-705/",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
+    },
+    {
+      "id": "id-disabled-veteran-property-tax-benefit",
+      "name": "Disabled Veterans Property Tax Reduction",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "Qualifying 100% service-connected disability or VA individual-unemployability compensation.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Up to $1,500 of qualifying taxes.",
+      "formulaSummary": "Fixed maximum tax reduction on qualifying home and up to one acre.",
+      "application": "Apply to assessor by April 15, 2025; permanent-and-total rules affect reapplication.",
+      "eligibilityNotes": [
+        "Primary residence and homeowner exemption required.",
+        "Qualifying surviving spouse may continue on the same property."
+      ],
+      "interactions": [],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Veterans property-tax benefit 2025 guide",
+          "url": "https://tax.idaho.gov/wp-content/uploads/pubs/EBR00650/EBR00650_12-10-2024.pdf",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
+    },
+    {
+      "id": "id-homeowner-tax-relief",
+      "name": "Homeowner and Additional Property Tax Relief",
+      "category": "property-tax-credit",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Not income-tested.",
+      "incomeLimits": "No income limit.",
+      "maximumBenefit": "Variable state-funded bill credit, limited to applicable taxes.",
+      "formulaSummary": "State allocations reduce eligible property-tax bills; calculation depends on levy/property and funding inputs.",
+      "application": "County administration for qualifying properties; verify the bill's relief line items.",
+      "eligibilityNotes": [
+        "Homeowner exemption and program certification rules apply.",
+        "This program uses separate rules from the income-tested PTR schedule."
+      ],
+      "interactions": [
+        "Apply relief in statutory order; underlying taxes and other credits cannot be double counted."
+      ],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Homeowner and additional property-tax relief, December 2025",
+          "url": "https://tax.idaho.gov/wp-content/uploads/reports/EIS00522/EIS00522_2025-12-31.pdf",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 Idaho property-tax relief administrative rules",
+          "url": "https://adminrules.idaho.gov/legislative_books/2025/temporary/25S_Temp_LocalGovTax.pdf",
+          "kind": "regulation"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
+    }
+  ],
+  "researchNotes": [
+    "The 2025 PTR income limit is not the 2026 limit based on 2025 income.",
+    "Homeowner bill credits depend on county and tax-code-area inputs; the report provides no statewide flat payment.",
+    "Idaho also offers a homeowner assessed-value exemption and property-tax deferral.",
+    "The published 2025 PTR income table contains overlapping and omitted interior ranges. The report provides no calculator that assigns awards at those boundaries or resolves income rounding.",
+    "The December 2025 homeowner-relief report lists county semiannual FY2026 transfers rather than parcel awards. Parcel calculations require certified rolls, eligible levies and county allocations."
+  ],
+  "sources": [
+    {
+      "title": "Idaho PTR 2025 guide",
+      "url": "https://tax.idaho.gov/wp-content/uploads/pubs/EBR00135/EBR00135_12-10-2024.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "Idaho 2025 PTR income brackets",
+      "url": "https://tax.idaho.gov/wp-content/uploads/pubs/EPB00168/EPB00168_10-07-2024.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "Homeowner and additional property-tax relief, December 2025",
+      "url": "https://tax.idaho.gov/wp-content/uploads/reports/EIS00522/EIS00522_2025-12-31.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 Idaho property-tax relief administrative rules",
+      "url": "https://adminrules.idaho.gov/legislative_books/2025/temporary/25S_Temp_LocalGovTax.pdf",
+      "kind": "regulation"
+    },
+    {
+      "title": "Veterans property-tax benefit 2025 guide",
+      "url": "https://tax.idaho.gov/wp-content/uploads/pubs/EBR00650/EBR00650_12-10-2024.pdf",
+      "kind": "agency"
+    }
+  ]
+}

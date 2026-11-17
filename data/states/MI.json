@@ -1,0 +1,67 @@
+{
+  "code": "MI",
+  "name": "Michigan",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Michigan’s refundable Homestead Property Tax Credit covers homeowners and renters, with alternate senior and disability calculations.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "identified",
+  "programs": [
+    {
+      "id": "mi-homestead-property-tax-credit",
+      "name": "Homestead Property Tax Credit",
+      "category": "threshold-circuit-breaker",
+      "scope": "statewide",
+      "tenures": ["owner", "renter"],
+      "refundable": true,
+      "ageRule": "All ages, subject to other eligibility rules.",
+      "incomeDefinition": "Total Household Resources (claimant and spouse), including specified nontaxable income and loss addbacks.",
+      "incomeLimits": "2025 THR no more than $71,500; phaseout starts above $62,500.",
+      "maximumBenefit": "$1,900 for 2025 before applicable phaseout.",
+      "formulaSummary": "A claimant-specific percentage (generally 60%, with enhanced/alternate senior or disability rules) of qualifying taxes or 23% of rent above 3.2% of THR; apply maximum and income phaseout.",
+      "application": "File MI-1040CR, with or without an income-tax return. Eligible veterans/blind claimants compare the alternate MI-1040CR-2.",
+      "eligibilityNotes": [
+        "Michigan residence for at least six months.",
+        "Owner taxable-value ceiling $165,400 for 2025; no corresponding renter value ceiling.",
+        "Use property taxes levied for the year; tax-exempt housing and public-assistance conditions can affect the credit."
+      ],
+      "interactions": [
+        "The veteran or blind alternative replaces the ordinary credit; the two amounts are not added.",
+        "Special rent, service-fee and senior calculations use separate rules and inputs."
+      ],
+      "programYear": "Tax year 2025, claimed in 2026.",
+      "rentProxy": 0.23,
+      "sources": [
+        {
+          "title": "2025 Homestead Property Tax Credit information",
+          "url": "https://www.michigan.gov/taxes/iit/tax-guidance/credits-exemptions/hptc/tax-year-credit-information/2025",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 Taxpayer Assistance Manual",
+          "url": "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Tax-Professional/2025-Taxpayer-Assistance-Manual.pdf?hash=1CF91F0ADA922792D961A1A4569437C7&rev=1c6289d2935b4fc3a8e88eac2ee3d7e8",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["mi_homestead_property_tax_credit"],
+      "paymentMechanism": "income-tax-credit"
+    }
+  ],
+  "laterChanges": [],
+  "researchNotes": [
+    "Taxable value is not market value or state equalized value.",
+    "The Homestead Property Tax Credit is different from the Principal Residence Exemption."
+  ],
+  "sources": [
+    {
+      "title": "2025 Homestead Property Tax Credit information",
+      "url": "https://www.michigan.gov/taxes/iit/tax-guidance/credits-exemptions/hptc/tax-year-credit-information/2025",
+      "kind": "agency"
+    },
+    {
+      "title": "2025 Taxpayer Assistance Manual",
+      "url": "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Tax-Professional/2025-Taxpayer-Assistance-Manual.pdf?hash=1CF91F0ADA922792D961A1A4569437C7&rev=1c6289d2935b4fc3a8e88eac2ee3d7e8",
+      "kind": "form"
+    }
+  ]
+}

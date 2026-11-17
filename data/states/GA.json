@@ -1,0 +1,59 @@
+{
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "inventoryStatus": "researched",
+  "laterChanges": [
+    "Georgia enacted a 2026 Property Tax Relief Grant providing an $18,000 assessed-value reduction to qualifying homesteads; it is not a 2025 credit."
+  ],
+  "code": "GA",
+  "name": "Georgia",
+  "overview": "Georgia combines statewide minimum homestead exemptions with locally adopted exemptions.",
+  "statewideCreditStatus": "none-identified",
+  "programs": [
+    {
+      "id": "ga-homestead-exemptions",
+      "name": "State-law homestead exemptions",
+      "category": "exemption",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "General homeowner exemption, with additional age-based options.",
+      "incomeDefinition": "Senior exemptions use specially defined prior-year income; some retirement income excluded.",
+      "incomeLimits": "The age-65 county exemption uses a $10,000 claimant/spouse income limit.",
+      "maximumBenefit": "General $2,000 assessed-value exemption; additional senior and local exemptions differ.",
+      "formulaSummary": "Reduces taxable assessed value for specified county/school levies.",
+      "application": "Apply through county tax officials by applicable homestead deadline.",
+      "eligibilityNotes": [
+        "Primary residence required.",
+        "Local exemptions may be more generous than the state-law minimum."
+      ],
+      "interactions": [],
+      "programYear": "2025 property-tax year.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Georgia homestead exemptions",
+          "url": "https://dor.georgia.gov/property-tax-homestead-exemptions",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
+    }
+  ],
+  "researchNotes": [
+    "The listed 2025 program covers homestead exemptions. Periodic homeowner grants use their own tax years."
+  ],
+  "sources": [
+    {
+      "title": "Georgia homestead exemptions",
+      "url": "https://dor.georgia.gov/property-tax-homestead-exemptions",
+      "kind": "agency"
+    },
+    {
+      "title": "2026 Property Tax Relief Grant",
+      "url": "https://dor.georgia.gov/2026-property-tax-relief-grant",
+      "kind": "agency"
+    }
+  ]
+}

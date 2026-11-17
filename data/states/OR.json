@@ -1,0 +1,65 @@
+{
+  "code": "OR",
+  "name": "Oregon",
+  "taxYear": 2025,
+  "verifiedAt": "2026-11-13",
+  "overview": "Oregon pays qualifying senior and disabled homeowners’ property taxes through a repayable deferral.",
+  "inventoryStatus": "researched",
+  "statewideCreditStatus": "none-identified",
+  "programs": [
+    {
+      "id": "or-senior-disabled-deferral",
+      "name": "Property Tax Deferral for Disabled and Senior Homeowners",
+      "category": "deferral",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "62 or older, or receiving or eligible for Social Security Disability benefits.",
+      "incomeDefinition": "Prior-year household income, including taxable and nontaxable income under program rules.",
+      "incomeLimits": "$60,000 for 2025 enrollment, using 2024 household income.",
+      "maximumBenefit": "The state pays eligible annual property taxes as a loan.",
+      "formulaSummary": "State pays the county; deferred taxes, 6% simple annual interest, and applicable costs must be repaid when the deferral ends.",
+      "application": "Apply through county assessor by April 15; late applications through December 1 require a fee.",
+      "eligibilityNotes": [
+        "Generally five years of ownership and occupancy.",
+        "Property-value and mortgage requirements apply. The inventory does not establish the 2025 asset or insurance requirements."
+      ],
+      "interactions": [],
+      "programYear": "2025 program enrollment; standard applications due April 15, 2025.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Property Tax Deferral for Disabled and Senior Homeowners",
+          "url": "https://www.oregon.gov/dor/programs/property/pages/senior-and-disabled-property-tax-deferral-program.aspx",
+          "kind": "agency"
+        },
+        {
+          "title": "March 26, 2025 Department of Revenue deferral announcement",
+          "url": "https://apps.oregon.gov/oregon-newsroom/OR/DOR/Posts/Post/Could-Oregons-Property-Tax-Deferral-for-Disabled-and-Senior-Homeowners-program-be-the-right-fit-for-you-or-someone-you-know",
+          "kind": "agency"
+        }
+      ],
+      "modelVariables": [],
+      "paymentMechanism": "tax-deferral"
+    }
+  ],
+  "laterChanges": [
+    "2026 enrollment raises the prior-year household-income limit to $70,000 and changes property-value rules."
+  ],
+  "researchNotes": [
+    "Deferred taxes remain repayable with interest under the program rules.",
+    "The linked deferral sources do not establish an active Elderly Rental Assistance program for 2025."
+  ],
+  "sources": [
+    {
+      "title": "Property Tax Deferral for Disabled and Senior Homeowners",
+      "url": "https://www.oregon.gov/dor/programs/property/pages/senior-and-disabled-property-tax-deferral-program.aspx",
+      "kind": "agency"
+    },
+    {
+      "title": "March 26, 2025 Department of Revenue deferral announcement",
+      "url": "https://apps.oregon.gov/oregon-newsroom/OR/DOR/Posts/Post/Could-Oregons-Property-Tax-Deferral-for-Disabled-and-Senior-Homeowners-program-be-the-right-fit-for-you-or-someone-you-know",
+      "kind": "agency"
+    }
+  ]
+}
