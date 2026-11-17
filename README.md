@@ -82,7 +82,7 @@ The [Lincoln Institute residential-program database](https://apps.lincolninst.ed
 
 ## Website integration
 
-The [public report](https://www.policyengine.org/us/rent-and-property-taxes/) and [scoped calculator preview](https://www.policyengine.org/us/rent-and-property-taxes/calculator/) serve under `/us/rent-and-property-taxes`, with assets under `/_zones/property-tax-relief`. Production serves the [deployed source at `a9e407ef`](https://github.com/PolicyEngine/property-tax-relief/tree/a9e407ef6e2b2798746da918e9379e82e36b1541). [policyengine-app-v2 PR #1568](https://github.com/PolicyEngine/policyengine-app-v2/pull/1568) and [PR #1570](https://github.com/PolicyEngine/policyengine-app-v2/pull/1570) supply the host’s route and registry changes.
+The [public report](https://www.policyengine.org/us/rent-and-property-taxes) and [scoped calculator preview](https://www.policyengine.org/us/rent-and-property-taxes/calculator) serve under `/us/rent-and-property-taxes`, with assets under `/_zones/property-tax-relief`. Production serves the [deployed source at `623d2d1`](https://github.com/PolicyEngine/property-tax-relief/tree/623d2d15993ec07e553353b5f4dd273bee0d1a1a). [policyengine-app-v2 PR #1568](https://github.com/PolicyEngine/policyengine-app-v2/pull/1568) and [PR #1570](https://github.com/PolicyEngine/policyengine-app-v2/pull/1570) supply the host’s route and registry changes.
 
 `bun run build:zone` sets the build-time base path; `vercel.json` maps those paths onto the static export. Ordinary `bun run build` keeps root URLs for local and offline review.
 
