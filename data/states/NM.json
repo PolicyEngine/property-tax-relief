@@ -39,7 +39,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["nm_property_tax_rebate"]
+      "modelVariables": ["nm_property_tax_rebate"],
+      "paymentMechanism": "cash-rebate"
     },
     {
       "id": "nm-local-low-income-property-tax-rebate",
@@ -74,13 +75,14 @@
           "kind": "form"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "cash-rebate"
     }
   ],
   "laterChanges": [],
   "researchNotes": [
-    "The agency’s general county-rebate webpage lists only three counties, but the actual 2025 PIT-RC explicitly includes Bernalillo; the annual form governs this inventory.",
-    "Do not confuse the general low-income comprehensive rebate with property-tax-specific relief."
+    "The 2025 PIT-RC Section 4 rebate covers participating counties Los Alamos, Santa Fe, Doña Ana and Bernalillo.",
+    "The general low-income comprehensive rebate and the property-tax-specific rebates follow separate rules."
   ],
   "sources": [
     {

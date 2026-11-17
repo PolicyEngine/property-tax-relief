@@ -92,7 +92,8 @@
             "kind": "agency"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "not-established"
       }
     ],
     "researchNotes": [
@@ -211,11 +212,11 @@
         "incomeLimits": "No income limit identified.",
         "maximumBenefit": "Lesser of $600 and qualifying homestead tax for assessment year 2025, normally collected in 2026.",
         "formulaSummary": "Nonrefundable bill credit equal to the lesser of qualified homestead real-property ad valorem tax before this credit and the assessment-year cap. Any unused cap is not a cash payment.",
-        "application": "Register the homestead and establish eligibility with the county assessor. The latest supplied text of section 26-26-1118(b)(3) bars allowance after October 10 of the year after assessment; current codification of that subsection is unverified.",
+        "application": "Register the homestead and establish eligibility with the county assessor. Section 26-26-1118(b)(3), as amended by Act 1268 of 2005, bars the credit after October 10 of the year after assessment. Later codification of this subsection remains unverified.",
         "eligibilityNotes": [
           "Applies to a qualifying owner-occupied homestead.",
           "Assessment year and bill-payment year differ; the assessment-year cap governs even if payment is early or late.",
-          "The latest supplied section 26-26-1118(b)(4) requires the parcel to qualify as a homestead before January 1 of the year after assessment. Current codification of that subsection is unverified.",
+          "Section 26-26-1118(b)(4), as amended by Act 1268 of 2005, requires the parcel to qualify as a homestead before January 1 of the year after assessment. Later codification of this subsection remains unverified.",
           "County parcel qualification, valid registration, annual property history and qualified pre-credit tax determine eligibility and amount."
         ],
         "interactions": [
@@ -268,8 +269,7 @@
     "researchNotes": [
       "Act 330 of 2025 raised the assessment-year-2025 credit to $600.",
       "The assessment-year-2025 credit normally appears on the 2026 bill; the assessment-year-2026 credit normally appears on the 2027 bill.",
-      "The statutory caps are $425 for assessment 2023, $500 for assessment 2024, $600 for assessment 2025 and $675 from assessment 2026. A tax paid during 2025 ordinarily relates to assessment 2024 and its $500 cap.",
-      "An unestablished liability, registration or property history does not determine a household award."
+      "The statutory caps are $425 for assessment 2023, $500 for assessment 2024, $600 for assessment 2025 and $675 from assessment 2026. A tax paid during 2025 ordinarily relates to assessment 2024 and its $500 cap."
     ],
     "sources": [
       {
@@ -491,13 +491,14 @@
             "kind": "agency"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "cash-rebate"
       }
     ],
     "researchNotes": [
       "From tax year 2025, disabled residents of any age may receive the refundable DAC ($400\u2013$1,200 by income/status); it replaces their former PTC route and is income-based rather than a housing-expense credit.",
       "DAC federal-AGI limits: $20,000 single/$32,000 joint; full-year qualifying disability benefits required.",
-      "Senior Housing Income Tax Credit is unavailable for tax year 2025; do not extrapolate 2024 rules."
+      "Senior Housing Income Tax Credit is unavailable for tax year 2025."
     ],
     "sources": [
       {
@@ -1060,8 +1061,8 @@
       }
     ],
     "researchNotes": [
-      "No statewide renter credit or cash circuit-breaker credit identified in reviewed state exemptions materials.",
-      "Exempt assessed value is not a dollar amount of tax savings."
+      "The listed Florida programs cover homeowner value exemptions; they do not include a statewide renter or cash circuit-breaker credit.",
+      "Tax savings from exempt assessed value depend on the covered tax rates."
     ],
     "sources": [
       {
@@ -1095,7 +1096,7 @@
     ],
     "code": "GA",
     "name": "Georgia",
-    "overview": "State-law and local homestead exemptions provide relief; a 2026 grant is kept separate from the 2025 comparison.",
+    "overview": "Georgia combines statewide minimum homestead exemptions with locally adopted exemptions.",
     "statewideCreditStatus": "none-identified",
     "programs": [
       {
@@ -1127,11 +1128,12 @@
             "kind": "agency"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "taxable-property-value-exemption"
       }
     ],
     "researchNotes": [
-      "No recurring statewide renter or circuit-breaker credit identified for the 2025 baseline; periodic homeowner grants must be assigned to their actual year."
+      "The listed 2025 program covers homestead exemptions. Periodic homeowner grants use their own tax years."
     ],
     "sources": [
       {
@@ -1193,7 +1195,8 @@
         ],
         "modelVariables": [
           "hi_tax_credit_for_low_income_household_renters"
-        ]
+        ],
+        "paymentMechanism": "income-tax-credit"
       }
     ],
     "researchNotes": [
@@ -1220,7 +1223,7 @@
     "laterChanges": [],
     "code": "ID",
     "name": "Idaho",
-    "overview": "Idaho has income-tested PTR, a separate disabled-veteran benefit, and state-funded homeowner tax-relief bill credits.",
+    "overview": "Idaho offers income-tested Property Tax Reduction (PTR), a separate disabled-veteran benefit, and state-funded homeowner property-tax bill credits.",
     "statewideCreditStatus": "identified",
     "programs": [
       {
@@ -1239,8 +1242,10 @@
         "formulaSummary": "Income-table reduction applied to home and up to one acre.",
         "application": "Apply January 1\u2013April 15, 2025 through assessor/Tax Commission.",
         "eligibilityNotes": [
-          "Idaho primary residence and homeowner exemption required.",
-          "The assessed-home-value limit has an exception for certified 100%/individual-unemployability veterans. Fees are not eligible."
+          "Applicants must use the Idaho property as their primary residence and qualify for the homeowner exemption.",
+          "Applicants whose current-year home assessment exceeds the greater of $400,000 or 200% of their county's median assessment for homes with the homeowner exemption are referred to the property-tax deferral program instead.",
+          "This value limit does not apply to veterans with a VA-certified 100% service-connected disability rating, or an individual-unemployability rating compensated at the 100% rate.",
+          "The reduction excludes fees."
         ],
         "interactions": [
           "Other homeowner relief affects remaining taxes; avoid double counting."
@@ -1259,12 +1264,13 @@
             "kind": "agency"
           },
           {
-            "title": "Idaho Code \u00a763-705, value-limit exception and annual schedule",
+            "title": "Idaho Code \u00a763-705, income schedule and home-value limit",
             "url": "https://legislature.idaho.gov/statutesrules/idstat/Title63/T63CH7/SECT63-705/",
             "kind": "statute"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "property-tax-bill-reduction"
       },
       {
         "id": "id-disabled-veteran-property-tax-benefit",
@@ -1295,7 +1301,8 @@
             "kind": "agency"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "property-tax-bill-reduction"
       },
       {
         "id": "id-homeowner-tax-relief",
@@ -1314,7 +1321,7 @@
         "application": "County administration for qualifying properties; verify the bill's relief line items.",
         "eligibilityNotes": [
           "Homeowner exemption and program certification rules apply.",
-          "This is distinct from the income-tested PTR schedule."
+          "This program uses separate rules from the income-tested PTR schedule."
         ],
         "interactions": [
           "Apply relief in statutory order; underlying taxes and other credits cannot be double counted."
@@ -1330,18 +1337,19 @@
           {
             "title": "2025 Idaho property-tax relief administrative rules",
             "url": "https://adminrules.idaho.gov/legislative_books/2025/temporary/25S_Temp_LocalGovTax.pdf",
-            "kind": "statute"
+            "kind": "regulation"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "property-tax-bill-reduction"
       }
     ],
     "researchNotes": [
       "The 2025 PTR income limit is not the 2026 limit based on 2025 income.",
-      "Universal bill-credit calculations need county/tax-code-area inputs; a single statewide flat payment would be incorrect.",
-      "Context: homeowner assessed-value exemption and deferral programs also exist.",
-      "The actual published 2025 PTR income table contains overlapping and omitted interior ranges. Those source anomalies and income-rounding rules require clarification before a full calculator can assign awards at every boundary.",
-      "The December 2025 homeowner-relief report lists county semiannual FY2026 transfers, not parcel awards. Actual certified rolls, eligible levies and county allocations remain necessary."
+      "Homeowner bill credits depend on county and tax-code-area inputs; the report provides no statewide flat payment.",
+      "Idaho also offers a homeowner assessed-value exemption and property-tax deferral.",
+      "The published 2025 PTR income table contains overlapping and omitted interior ranges. The report provides no calculator that assigns awards at those boundaries or resolves income rounding.",
+      "The December 2025 homeowner-relief report lists county semiannual FY2026 transfers rather than parcel awards. Parcel calculations require certified rolls, eligible levies and county allocations."
     ],
     "sources": [
       {
@@ -1362,7 +1370,7 @@
       {
         "title": "2025 Idaho property-tax relief administrative rules",
         "url": "https://adminrules.idaho.gov/legislative_books/2025/temporary/25S_Temp_LocalGovTax.pdf",
-        "kind": "statute"
+        "kind": "regulation"
       },
       {
         "title": "Veterans property-tax benefit 2025 guide",
@@ -1419,7 +1427,8 @@
         ],
         "modelVariables": [
           "il_property_tax_credit"
-        ]
+        ],
+        "paymentMechanism": "income-tax-credit"
       },
       {
         "id": "il-senior-tax-deferral",
@@ -1449,7 +1458,8 @@
             "kind": "agency"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "tax-deferral"
       }
     ],
     "researchNotes": [
@@ -1528,7 +1538,7 @@
         "refundable": false,
         "ageRule": "Qualifying senior homeowner age 65+; surviving-spouse rules apply.",
         "incomeDefinition": "The October 2025 DLGF FAQ describes federal AGI from two calendar years before taxes are first due and payable; its explicit example is assessment 2025/pay 2026 using 2024 AGI. The historical pay-2025 reference year remains unverified.",
-        "incomeLimits": "Indexed limits depend on pay year. The supplied DLGF historical pay-2025 row prints $33,563.52 while its formula row prints $33,653.52; the discrepancy remains unresolved.",
+        "incomeLimits": "Indexed limits depend on pay year. DLGF\u2019s April 7, 2025 memo prints $33,563.52 in its historical pay-2025 row and $33,653.52 in its formula row; the discrepancy remains unresolved.",
         "maximumBenefit": "Qualifying reduction needed to limit annual homestead tax growth to 2%.",
         "formulaSummary": "Uses prior-year liability, age/income tests, and the applicable assessment-year eligibility rules.",
         "application": "Apply through county auditor using senior property-tax benefits form.",
@@ -1632,7 +1642,7 @@
     "researchNotes": [
       "A value-based cap and an income-threshold circuit breaker follow different rules despite the shared statutory name.",
       "The 2024 assessment/pay-2025 baseline predates the changes for 2025 assessments/pay 2026.",
-      "Assessment year and payable year identify different periods. The supplied memo prints $33,563.52 in its historical pay-2025 row and $33,653.52 in its formula row; that discrepancy remains unresolved."
+      "Assessment year and payable year identify different periods. DLGF\u2019s April 7, 2025 memo prints $33,563.52 in its historical pay-2025 row and $33,653.52 in its formula row; that discrepancy remains unresolved."
     ],
     "sources": [
       {
@@ -1832,7 +1842,7 @@
         "application": "Apply through local tax officials.",
         "eligibilityNotes": [],
         "interactions": [],
-        "programYear": "2025 baseline.",
+        "programYear": "2025 assessment year; the property-tax fiscal payment cycle differs.",
         "rentProxy": null,
         "sources": [
           {
@@ -1864,9 +1874,9 @@
           "For pre-July 2026 applications, acreage/appurtenance rules differ from new 2026 applications."
         ],
         "interactions": [
-          "Coordinate credits on the underlying bill; relief cannot exceed eligible taxes."
+          "Relief cannot exceed eligible taxes."
         ],
-        "programYear": "2025 qualifying homestead; preserve assessment/payable year.",
+        "programYear": "2025 qualifying homestead property taxes; the exact assessment and payable-year mapping remains unverified.",
         "rentProxy": null,
         "sources": [
           {
@@ -1887,7 +1897,7 @@
     "researchNotes": [
       "Owner 2025 claims use 2024 income; renter claim-year 2025 uses 2025 income. These are not the same income window.",
       "Levy and prior-tax-liability inputs are necessary for complete owner calculations.",
-      "The HHS manual\u2019s $17,000-income example uses 50%, matching its 2024 table, without naming a base year. Its 2025 table lists 70% at that income. Funding, final rounding and specified age-70 source conflicts remain unresolved."
+      "The HHS manual\u2019s $17,000-income example uses 50%, matching its 2024 table, without naming a base year. Its 2025 table lists 70% at that income. Funding and final rounding remain unresolved. The age-70 calculation compares current fiscal-year taxes with the first qualifying claim-year tax base; treatment of individual base-year histories remains unverified."
     ],
     "sources": [
       {
@@ -2015,7 +2025,8 @@
             "kind": "agency"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "cash-rebate"
       },
       {
         "id": "ks-senior-disabled-veteran-refund",
@@ -2053,7 +2064,8 @@
             "kind": "agency"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "cash-rebate"
       }
     ],
     "researchNotes": [
@@ -2089,7 +2101,7 @@
     "name": "Kentucky",
     "taxYear": 2025,
     "verifiedAt": "2026-11-13",
-    "overview": "The principal statewide residential relief identified is an assessed-value homestead exemption for older or totally disabled owners.",
+    "overview": "Kentucky reduces assessed homestead value for qualifying older or totally disabled homeowners.",
     "inventoryStatus": "researched",
     "statewideCreditStatus": "none-identified",
     "programs": [
@@ -2124,13 +2136,13 @@
         "modelVariables": [
           "ky_homestead_exemption",
           "ky_homestead_property_tax_reduction"
-        ]
+        ],
+        "paymentMechanism": "taxable-property-value-exemption"
       }
     ],
     "laterChanges": [],
     "researchNotes": [
-      "No statewide renter credit or refundable property-tax circuit breaker was identified in the reviewed DOR materials.",
-      "Exemption tax savings require applicable tax rates and are contextual to the credit comparison."
+      "The listed statewide program covers a homestead value exemption. Tax savings depend on the covered property-tax rates."
     ],
     "sources": [
       {
@@ -2357,11 +2369,12 @@
         ],
         "modelVariables": [
           "me_property_tax_fairness_credit"
-        ]
+        ],
+        "paymentMechanism": "income-tax-credit"
       }
     ],
     "laterChanges": [
-      "For tax years beginning in 2026, the ordinary under-65 maximum rises to $1,500; the senior maximum remains $2,000. Source: Maine Revenue Services 2026 legislative changes, https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/legischange26.pdf."
+      "For tax years beginning in 2026, section 5219-KK(2-D) raises the under-65 maximum from $1,000 to $1,500; the age-65-or-older maximum remains $2,000."
     ],
     "researchNotes": [
       "The benefit base limits the housing expenses used in the formula; comparing only headline maximum credits is insufficient.",
@@ -2637,7 +2650,8 @@
         ],
         "modelVariables": [
           "ma_senior_circuit_breaker"
-        ]
+        ],
+        "paymentMechanism": "income-tax-credit"
       },
       {
         "id": "ma-renters-income-tax-deduction",
@@ -2691,14 +2705,15 @@
         ],
         "modelVariables": [
           "ma_part_b_taxable_income_deductions"
-        ]
+        ],
+        "paymentMechanism": "income-tax-deduction"
       }
     ],
     "laterChanges": [],
     "researchNotes": [
       "The legal household income definition differs from federal AGI.",
-      "Locally administered exemptions are context, not an additional statewide cash credit. The inventory does not enumerate every municipal option.",
-      "Separate filers must check the allocation and spouse-consent conditions when claiming the rental deduction. The declaration audit does not validate the recorded model-variable mapping or a household deduction calculation."
+      "Municipalities administer local exemptions; this inventory does not enumerate every municipal option.",
+      "Separate filers need the other spouse\u2019s consent to allocate more than $2,000 of the rental deduction to one spouse, within the combined limit."
     ],
     "sources": [
       {
@@ -2848,7 +2863,8 @@
         ],
         "modelVariables": [
           "mn_renters_credit"
-        ]
+        ],
+        "paymentMechanism": "income-tax-credit"
       },
       {
         "id": "mn-homestead-credit-refund",
@@ -2893,7 +2909,8 @@
         ],
         "modelVariables": [
           "mn_homestead_credit_refund"
-        ]
+        ],
+        "paymentMechanism": "cash-rebate"
       },
       {
         "id": "mn-special-property-tax-refund",
@@ -2930,7 +2947,8 @@
             "kind": "agency"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "cash-rebate"
       }
     ],
     "laterChanges": [
@@ -3139,9 +3157,7 @@
           "Rental property must pay real-estate tax.",
           "Claim only qualifying principal-residence taxes; fees and excess acreage are excluded."
         ],
-        "interactions": [
-          "County-option senior property-tax freeze relief is a separate local program."
-        ],
+        "interactions": [],
         "programYear": "2025 taxes/rent; claim due April 15, 2026.",
         "rentProxy": 0.2,
         "sources": [
@@ -3163,13 +3179,14 @@
         ],
         "modelVariables": [
           "mo_property_tax_credit"
-        ]
+        ],
+        "paymentMechanism": "income-tax-credit"
       }
     ],
     "laterChanges": [],
     "researchNotes": [
-      "The chart, not a simple maximum-credit comparison, determines the payable amount.",
-      "The 2025 MO-CRP instructions confirm the 20% rent conversion after qualifying rent reductions."
+      "The credit chart determines the payable amount.",
+      "Renters count 20% of rent after the qualifying rent reductions as property taxes."
     ],
     "sources": [
       {
@@ -3492,7 +3509,7 @@
     "laterChanges": [],
     "researchNotes": [
       "Statewide statement credits reduce the bill before payment. A net tax amount already reflects those credits.",
-      "A direct renter credit is not recorded in this selective profile."
+      "The listed programs do not include a direct renter credit."
     ],
     "sources": [
       {
@@ -3570,13 +3587,13 @@
             "kind": "agency"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "assessment-or-tax-limit"
       }
     ],
     "laterChanges": [],
     "researchNotes": [
-      "No statewide refundable renter credit or income-based circuit-breaker credit was identified in the reviewed Department of Taxation materials.",
-      "Veteran, surviving-spouse, disability and other property exemptions are separate context; county-specific tax rates are not estimated."
+      "The listed program covers residential tax-growth abatement. Veteran, surviving-spouse and disability exemptions follow separate rules. Tax savings depend on county-specific rates and qualifying bill history."
     ],
     "sources": [
       {
@@ -3633,13 +3650,13 @@
             "kind": "agency"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "not-established"
       }
     ],
     "laterChanges": [],
     "researchNotes": [
-      "The 2025 application window concerned 2024 property taxes; keep filing year separate.",
-      "No statewide renter credit was identified in the reviewed agency sources."
+      "The 2025 application window covered 2024 property taxes; 2025-property-tax claims follow in 2026. The listed program covers homeowner relief."
     ],
     "sources": [
       {
@@ -3728,7 +3745,7 @@
         ],
         "interactions": [
           "Base-year taxes affect the separate income-tax property deduction/credit.",
-          "Coordinate with ANCHOR and Stay NJ rather than simply adding nominal maxima."
+          "Total covered property-tax relief, including ANCHOR and Stay NJ, cannot exceed property taxes paid."
         ],
         "programYear": "2025 tax reimbursement, applications/payments in 2026.",
         "rentProxy": null,
@@ -3770,7 +3787,7 @@
           "Renters and mobile-home owners excluded; eligible PILOT owners may qualify."
         ],
         "interactions": [
-          "Subtract/coordinate existing ANCHOR and Senior Freeze relief under applicable budget and benefit-statement rules."
+          "ANCHOR and Senior Freeze reduce the remaining Stay NJ payment under the applicable benefit statement. Total covered relief cannot exceed property taxes paid."
         ],
         "programYear": "Payments for tax-year-2025 benefits are scheduled for February and May 2027. Annualized caps assume no FY 2028 change.",
         "rentProxy": null,
@@ -3878,13 +3895,13 @@
       }
     ],
     "laterChanges": [
-      "The FY 2027 budget sets the current Stay NJ eligibility and payment caps for tax year 2025; earlier handouts described a different $500,000 income ceiling."
+      "The FY 2027 Appropriations Act lowers the Stay NJ income ceiling from $500,000 to $200,000 for tax-year-2025 benefits and sets the applicable payment caps."
     ],
     "researchNotes": [
       "Tax year, payment season and state fiscal year differ. A 2025-season ANCHOR announcement does not describe the same benefit period as tax-year-2025 benefits.",
       "The 2025 ANCHOR homeowner table does not include the earlier $250 senior homeowner addition.",
       "Annualized Stay NJ caps depend on future appropriations; payable installments follow their budget periods.",
-      "No validated household calculation amounts are reported for these programs."
+      "Household amounts depend on qualifying payments, other property-tax benefits and the installments authorized by the applicable budget."
     ],
     "sources": [
       {
@@ -3975,7 +3992,8 @@
         ],
         "modelVariables": [
           "nm_property_tax_rebate"
-        ]
+        ],
+        "paymentMechanism": "cash-rebate"
       },
       {
         "id": "nm-local-low-income-property-tax-rebate",
@@ -4012,13 +4030,14 @@
             "kind": "form"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "cash-rebate"
       }
     ],
     "laterChanges": [],
     "researchNotes": [
-      "The agency\u2019s general county-rebate webpage lists only three counties, but the actual 2025 PIT-RC explicitly includes Bernalillo; the annual form governs this inventory.",
-      "Do not confuse the general low-income comprehensive rebate with property-tax-specific relief."
+      "The 2025 PIT-RC Section 4 rebate covers participating counties Los Alamos, Santa Fe, Do\u00f1a Ana and Bernalillo.",
+      "The general low-income comprehensive rebate and the property-tax-specific rebates follow separate rules."
     ],
     "sources": [
       {
@@ -4139,13 +4158,13 @@
       }
     ],
     "laterChanges": [
-      "For 2026 Enhanced STAR, the income limit becomes $110,750 and owner-income eligibility rules change; the 2025 description retains its separate rules."
+      "For 2026 Enhanced STAR, the income limit becomes $110,750 and owner-income eligibility rules change. The 2025 benefit rules use their separate income limits and ownership conditions."
     ],
     "researchNotes": [
-      "The IT-214 rules changed in 2025. A variable name alone does not establish that a calculation follows those rules.",
-      "IT-229 is discontinued and does not provide an additional 2025 benefit. Source: https://www.tax.ny.gov/forms/form_number_order_income.htm.",
+      "The IT-214 rules changed in 2025.",
+      "IT-229 is discontinued and does not provide an additional 2025 benefit.",
       "Local senior and disability exemptions depend on local adoption and are not enumerated here.",
-      "STAR credit and legacy exemption have distinct income limits, ownership histories, qualifying dates and local amount tables. School-district segments and partial-payment or advance reconciliations remain unvalidated."
+      "STAR credit and legacy exemption have distinct income limits, ownership histories, qualifying dates and local amount tables. School-district segments, partial payments and advance recoveries require separate property and payment details."
     ],
     "sources": [
       {
@@ -4323,7 +4342,7 @@
         "interactions": [
           "Applied after Homestead or Disabled Veterans credits to any remaining property tax balance."
         ],
-        "programYear": "2025",
+        "programYear": "2025 property-tax year; the credit appears on the property-tax statement.",
         "rentProxy": null,
         "sources": [
           {
@@ -4363,7 +4382,7 @@
         "interactions": [
           "Primary Residence Credit may offset remaining taxes."
         ],
-        "programYear": "2025",
+        "programYear": "2025 assessment year, using 2024 household income; applications precede March 31 of the assessment year.",
         "rentProxy": null,
         "sources": [
           {
@@ -4397,7 +4416,7 @@
         "interactions": [
           "Homeowner homestead credit and renter refund generally cannot both be claimed, except qualifying mobile-home lot rent."
         ],
-        "programYear": "2025",
+        "programYear": "2025 rent and income; the refund claim follows in 2026.",
         "rentProxy": 0.2,
         "sources": [
           {
@@ -4460,14 +4479,14 @@
         "ageRule": "No general age restriction.",
         "incomeDefinition": "Not income-tested.",
         "incomeLimits": "Not income-tested.",
-        "maximumBenefit": "10% of qualifying levies under the pre-reform structure.",
+        "maximumBenefit": "10% of qualifying levies.",
         "formulaSummary": "Reduces qualifying residential and agricultural property levies; it is not 10% of every tax bill.",
         "application": "Administered on property-tax bills by county auditor.",
         "eligibilityNotes": [
           "Residential rental property may qualify at the property-owner level; this is not a payment to renters."
         ],
         "interactions": [],
-        "programYear": "2025",
+        "programYear": "2025 real-property tax baseline; the exact application and collection periods remain unverified.",
         "rentProxy": null,
         "sources": [
           {
@@ -4498,7 +4517,7 @@
           "Principal residence requirement."
         ],
         "interactions": [],
-        "programYear": "2025",
+        "programYear": "2025 real-property tax baseline; the exact application and collection periods remain unverified.",
         "rentProxy": null,
         "sources": [
           {
@@ -4560,7 +4579,7 @@
       }
     ],
     "laterChanges": [
-      "H.B. 96 authorizes a separate county local-option 2.5% rollback. County adoption controls that option; the statewide 2025 baseline above remains 10% for the nonbusiness credit and 2.5% for owner occupancy."
+      "H.B. 96 authorizes a separate county local-option rollback of up to 2.5%. County adoption controls that option; the statewide 2025 baseline above remains 10% for the nonbusiness credit and 2.5% for owner occupancy."
     ],
     "researchNotes": [
       "October 2025 Tax Commissioner certification resolves older summaries: $29,000/$58,000 value reductions apply to 2025 real-property tax collected in 2026. The $41,000 income threshold in the same document applies to 2026 real-property tax, not 2025.",
@@ -4635,7 +4654,8 @@
         ],
         "modelVariables": [
           "ok_ptc"
-        ]
+        ],
+        "paymentMechanism": "income-tax-credit"
       }
     ],
     "laterChanges": [],
@@ -4653,7 +4673,7 @@
     "name": "Oregon",
     "taxYear": 2025,
     "verifiedAt": "2026-11-13",
-    "overview": "Oregon provides a repayable senior and disability property-tax deferral. No current statewide property-tax or renter credit was identified in the reviewed sources.",
+    "overview": "Oregon pays qualifying senior and disabled homeowners\u2019 property taxes through a repayable deferral.",
     "inventoryStatus": "researched",
     "statewideCreditStatus": "none-identified",
     "programs": [
@@ -4677,7 +4697,7 @@
           "Property-value, assets, insurance, and mortgage requirements apply."
         ],
         "interactions": [],
-        "programYear": "2025",
+        "programYear": "2025 program enrollment; standard applications due April 15, 2025.",
         "rentProxy": null,
         "sources": [
           {
@@ -4748,7 +4768,7 @@
         "interactions": [
           "Owner/renter claims share one annual rebate cap; supplement calculated by Revenue."
         ],
-        "programYear": "2025",
+        "programYear": "2025 property taxes or rent and household income; rebate claim filed in 2026.",
         "rentProxy": 0.2,
         "sources": [
           {
@@ -4769,7 +4789,8 @@
         ],
         "modelVariables": [
           "pa_property_tax_or_rent_rebate"
-        ]
+        ],
+        "paymentMechanism": "cash-rebate"
       }
     ],
     "laterChanges": [],
@@ -4825,7 +4846,7 @@
         "interactions": [
           "Only one household member claims; rented land can be combined with taxes on an owned home."
         ],
-        "programYear": "2025",
+        "programYear": "2025 property taxes or rent and household income; Form RI-1040H claim due April 15, 2026.",
         "rentProxy": 0.2,
         "sources": [
           {
@@ -4836,7 +4857,8 @@
         ],
         "modelVariables": [
           "ri_property_tax_credit"
-        ]
+        ],
+        "paymentMechanism": "income-tax-credit"
       }
     ],
     "laterChanges": [],
@@ -4878,9 +4900,9 @@
           "Qualifying spouse can meet age/disability condition."
         ],
         "interactions": [
-          "The school-operating exemption applies only to value not already exempt under the homestead exemption; the homestead school-tax share is not counted a second time."
+          "The school-operating exemption applies only to value remaining after the homestead exemption."
         ],
-        "programYear": "2025",
+        "programYear": "2025 property-tax exemption; age, disability or blindness qualification follows December 31, 2024 status.",
         "rentProxy": null,
         "sources": [
           {
@@ -4918,9 +4940,9 @@
           "Primary residence; second homes do not qualify."
         ],
         "interactions": [
-          "The school-operating exemption applies only to value not already exempt under the homestead exemption; the homestead school-tax share is not counted a second time."
+          "The school-operating exemption applies only to value remaining after the homestead exemption."
         ],
-        "programYear": "2025",
+        "programYear": "2025 property-tax exemption on the qualifying legal-residence school-operating levies.",
         "rentProxy": null,
         "sources": [
           {
@@ -4981,7 +5003,7 @@
           "Prior-year occupancy of at least 200 days."
         ],
         "interactions": [],
-        "programYear": "2025",
+        "programYear": "2025 application, using previous-year 2024 household income and the applicable assessment-freeze base.",
         "rentProxy": null,
         "sources": [
           {
@@ -5055,7 +5077,7 @@
         "application": "Apply through local county treasurer.",
         "eligibilityNotes": [],
         "interactions": [],
-        "programYear": "2025",
+        "programYear": "2025 locally adopted property-tax reduction; precise income, application and collection-year mapping is not established.",
         "rentProxy": null,
         "sources": [
           {
@@ -5079,17 +5101,17 @@
         "ageRule": "Senior or qualifying disability.",
         "incomeDefinition": "Historical program household income includes specified nontaxable receipts and an up-to-$400 deduction for principal-residence property taxes payable in the application year; federal adjusted gross income alone does not establish this amount.",
         "incomeLimits": "2025 application cycle: program household income up to $16,566 for a single-member household or $22,484 for a multiple-member household. These are not the 2026 sales-refund limits.",
-        "maximumBenefit": "Historical schedule up to 35% of qualified property tax for a single-member household or 55% for a multiple-member household, subject to annual appropriation and proration. No validated dollar entitlement is supplied.",
+        "maximumBenefit": "Historical schedule up to 35% of qualified property tax for a single-member household or 55% for a multiple-member household, subject to annual appropriation and proration.",
         "formulaSummary": "The historical program applied an income-based percentage to qualified real-property taxes, subject to appropriation and proration. Revenue calculated the sales-tax and property-tax refunds and paid the larger award once.",
         "application": "Historical 2025 cycle: May 1\u2013July 1, 2025. The advertised 2026 cycle offers sales-tax refunds; it does not advertise an ongoing property-tax application.",
         "eligibilityNotes": [
           "For the historical 2025 cycle, the homeowner must have owned the residence for at least three years or have been a South Dakota resident for at least five years.",
-          "The 2025 announcement uses 2024 residency, age/disability and income facts. The historical record does not certify every transitional 2026 property claim."
+          "The 2025 announcement uses 2024 residency, age/disability and income facts. Eligibility for particular transitional 2026 property claims remains unresolved."
         ],
         "interactions": [
           "Revenue pays the larger eligible sales-tax or property-tax refund once; the two awards are not additive."
         ],
-        "programYear": "2025 application cycle; 2024 reference taxes/facts. Chapter 10-18A was repealed July 1, 2026. Transitional 2026 property-claim rights and the precise assessment/payable-year mapping are not certified.",
+        "programYear": "2025 application cycle; 2024 reference taxes/facts. Chapter 10-18A was repealed July 1, 2026. Transitional 2026 property-claim rights and the precise assessment/payable-year mapping remain unresolved.",
         "rentProxy": null,
         "sources": [
           {
@@ -5224,7 +5246,7 @@
           "Owner-occupied primary residence."
         ],
         "interactions": [],
-        "programYear": "2025",
+        "programYear": "2025 property-tax relief using 2024 household income; applications follow the property-tax bill.",
         "rentProxy": null,
         "sources": [
           {
@@ -5240,7 +5262,8 @@
         ],
         "modelVariables": [
           "tn_elderly_property_tax_relief"
-        ]
+        ],
+        "paymentMechanism": "not-established"
       },
       {
         "id": "tn-disabled-veteran-relief",
@@ -5252,14 +5275,14 @@
         ],
         "refundable": true,
         "ageRule": "Qualifying disabled veteran or surviving spouse; age-independent.",
-        "incomeDefinition": "See program rules.",
+        "incomeDefinition": "The inventory does not establish the 2025 income definition.",
         "incomeLimits": "Not income-tested.",
         "maximumBenefit": "Tax attributable to up to $175,000 market value.",
         "formulaSummary": "Reimbursement based on qualifying property taxes and veteran disability or survivor requirements.",
         "application": "Apply through county trustee/city collecting official with VA consent and evidence.",
         "eligibilityNotes": [],
         "interactions": [],
-        "programYear": "2025",
+        "programYear": "2025 property-tax relief; applications follow the property-tax bill.",
         "rentProxy": null,
         "sources": [
           {
@@ -5268,7 +5291,8 @@
             "kind": "form"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "not-established"
       },
       {
         "id": "tn-local-tax-freeze",
@@ -5287,7 +5311,7 @@
         "application": "Annual application with participating local collecting official.",
         "eligibilityNotes": [],
         "interactions": [],
-        "programYear": "2025",
+        "programYear": "2025 local property-tax freeze with annual applications; the exact income reference year is not established.",
         "rentProxy": null,
         "sources": [
           {
@@ -5296,11 +5320,12 @@
             "kind": "agency"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "assessment-or-tax-limit"
       }
     ],
     "laterChanges": [
-      "2026 relief uses a $38,470 2025-income ceiling and $33,600 elderly/disabled market-value cap; do not apply those values to 2025."
+      "2026 relief uses a $38,470 2025-income ceiling and $33,600 elderly/disabled market-value cap; those amounts apply to the 2026 relief year."
     ],
     "researchNotes": [
       "Tax relief is reimbursement, not an assessed-value exemption; local tax freeze is a separate program."
@@ -5328,7 +5353,7 @@
     "name": "Texas",
     "taxYear": 2025,
     "verifiedAt": "2026-11-13",
-    "overview": "Texas relies on homestead value exemptions and local property-tax rules. No general statewide homeowner circuit-breaker or renter tax credit was identified.",
+    "overview": "Texas relies on homestead value exemptions and local property-tax rules.",
     "inventoryStatus": "researched",
     "statewideCreditStatus": "none-identified",
     "programs": [
@@ -5351,7 +5376,7 @@
           "Principal residence ownership and occupancy requirements."
         ],
         "interactions": [],
-        "programYear": "2025",
+        "programYear": "2025 property-tax year; the November 2025 voter-approved exemption amount applies to 2025.",
         "rentProxy": null,
         "sources": [
           {
@@ -5392,7 +5417,7 @@
         "application": "Apply to local appraisal district.",
         "eligibilityNotes": [],
         "interactions": [],
-        "programYear": "2025",
+        "programYear": "2025 property-tax year; the November 2025 voter-approved exemption amount applies to 2025.",
         "rentProxy": null,
         "sources": [
           {
@@ -5428,7 +5453,7 @@
         "application": "Local appraisal district administers adopted exemptions.",
         "eligibilityNotes": [],
         "interactions": [],
-        "programYear": "2025",
+        "programYear": "2025 property-tax year; locally adopted exemptions reduce that year\u2019s eligible taxable value.",
         "rentProxy": null,
         "sources": [
           {
@@ -5569,7 +5594,7 @@
         "application": "Apply to county by September 1.",
         "eligibilityNotes": [],
         "interactions": [],
-        "programYear": "2025",
+        "programYear": "2025 property tax; county application due September 1, 2025.",
         "rentProxy": null,
         "sources": [
           {
@@ -5674,7 +5699,7 @@
           }
         ],
         "modelVariables": [],
-        "paymentMechanism": "not-established"
+        "paymentMechanism": "property-tax-bill-reduction"
       },
       {
         "id": "vt-renter-credit",
@@ -5713,7 +5738,8 @@
         ],
         "modelVariables": [
           "vt_renter_credit"
-        ]
+        ],
+        "paymentMechanism": "income-tax-credit"
       }
     ],
     "laterChanges": [
@@ -5723,7 +5749,8 @@
     "researchNotes": [
       "Owner credit and renter credit use different timing; the owner claim based on 2025 income is formally a 2026 property-tax credit.",
       "The current renter webpage describes eligibility at 65% of county median income. The exact 2025 county and family-size schedule remains unverified.",
-      "Owner relief includes conditional excess-cash and late-claim payment routes. Local rate/value inputs, household-income adjustments, filing history and debt allocation remain unvalidated; a general refundable label does not imply an automatic full cash payment."
+      "Owner relief includes conditional excess-cash and late-claim payment routes.",
+      "The municipality applies homeowner relief to the eligible bill and liabilities before any excess-cash payment. Local rates, value, household-income adjustments, filing history and debt allocation determine the result."
     ],
     "sources": [
       {
@@ -5773,7 +5800,7 @@
     "name": "Virginia",
     "taxYear": 2025,
     "verifiedAt": "2026-11-13",
-    "overview": "Virginia authorizes local elderly/disability real-estate relief and mandates a disabled-veteran exemption. No statewide general homeowner or renter tax credit was identified.",
+    "overview": "Virginia authorizes local elderly/disability real-estate relief and mandates a disabled-veteran exemption.",
     "inventoryStatus": "researched",
     "statewideCreditStatus": "none-identified",
     "programs": [
@@ -5797,7 +5824,7 @@
           "Ownership interests and jointly owned property affect proration."
         ],
         "interactions": [],
-        "programYear": "2025",
+        "programYear": "2025 locally adopted property-tax relief, using preceding-year income under the local ordinance.",
         "rentProxy": null,
         "sources": [
           {
@@ -5806,7 +5833,8 @@
             "kind": "statute"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "varies-by-locality"
       },
       {
         "id": "va-disabled-veteran-exemption",
@@ -5828,7 +5856,7 @@
           "Surviving-spouse and trust/life-estate rules apply."
         ],
         "interactions": [],
-        "programYear": "2025",
+        "programYear": "2025 real-property tax exemption on the qualifying principal residence.",
         "rentProxy": null,
         "sources": [
           {
@@ -5843,8 +5871,7 @@
     ],
     "laterChanges": [],
     "researchNotes": [
-      "Local-option relief cannot be represented as one statewide dollar entitlement.",
-      "Real-estate relief is distinct from Virginia's personal-property vehicle-tax relief."
+      "Local ordinances determine elderly/disability relief. Real-estate relief follows separate rules from Virginia\u2019s personal-property vehicle-tax relief."
     ],
     "sources": [
       {
@@ -6060,7 +6087,8 @@
         ],
         "modelVariables": [
           "wv_sctc"
-        ]
+        ],
+        "paymentMechanism": "income-tax-credit"
       },
       {
         "id": "wv-excess-property-tax-credit",
@@ -6084,7 +6112,7 @@
           "The statute and dedicated 2025 form use 2025 income and payments. The overview webpage\u2019s 2024-income sentence is inconsistent."
         ],
         "interactions": [
-          "Calculate senior credit first; subtract it.",
+          "The Senior Citizens Tax Credit reduces the remaining Homestead Excess Property Tax Credit.",
           "Cannot combine with Disabled Veteran Property Tax Credit."
         ],
         "programYear": "2025 income and qualifying property-tax payments during 2025.",
@@ -6113,7 +6141,8 @@
         ],
         "modelVariables": [
           "wv_homestead_excess_property_tax_credit"
-        ]
+        ],
+        "paymentMechanism": "income-tax-credit"
       },
       {
         "id": "wv-disabled-veteran-credit",
@@ -6125,7 +6154,7 @@
         ],
         "refundable": true,
         "ageRule": "Honorably discharged veteran with qualifying service-connected disability; qualifying unremarried surviving spouse.",
-        "incomeDefinition": "See program rules.",
+        "incomeDefinition": "Not income-tested.",
         "incomeLimits": "Not income-tested.",
         "maximumBenefit": "Eligible homestead real-property taxes timely paid during the income-tax year.",
         "formulaSummary": "Refundable credit for qualifying homestead taxes, limited by statutory veteran criteria and timely payment.",
@@ -6156,7 +6185,8 @@
             "kind": "statute"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "income-tax-credit"
       },
       {
         "id": "wv-homestead-exemption",
@@ -6168,14 +6198,14 @@
         ],
         "refundable": false,
         "ageRule": "65 or older or permanently and totally disabled.",
-        "incomeDefinition": "See program rules.",
+        "incomeDefinition": "The inventory does not establish the 2025 income definition.",
         "incomeLimits": "Not income-tested.",
         "maximumBenefit": "First $20,000 of assessed homestead value.",
         "formulaSummary": "Assessed-value exemption administered by county assessor; it precedes senior-credit calculations.",
         "application": "Apply through county assessor.",
         "eligibilityNotes": [],
         "interactions": [],
-        "programYear": "2025",
+        "programYear": "2025 homestead assessment exemption; the exact application and payment-year mapping is not established.",
         "rentProxy": null,
         "sources": [
           {
@@ -6186,7 +6216,8 @@
         ],
         "modelVariables": [
           "wv_homestead_exemption"
-        ]
+        ],
+        "paymentMechanism": "taxable-property-value-exemption"
       }
     ],
     "laterChanges": [
@@ -6194,8 +6225,7 @@
     ],
     "researchNotes": [
       "The statute controls the 2025 income year and AMT disqualification where the overview conflicts. Partial payments, mixed assessment cohorts, legal family membership and some household-income attribution require additional facts.",
-      "Claimants must follow the tax-year claiming and coordination rules for the senior and excess-property-tax credits. The declaration audit does not validate the recorded model-variable mappings, amounts or a combined household calculation.",
-      "Compute SCTC before HEPTC. Disabled-veteran relief excludes both. Sub-$10 refund settlement and any combined-cap interpretation remain explicit calculation gaps."
+      "The Senior Citizens Tax Credit reduces the remaining Homestead Excess Property Tax Credit. Disabled-veteran relief excludes both credits. Sub-$10 refund settlement and the interpretation of any combined cap remain unresolved."
     ],
     "sources": [
       {
@@ -6629,7 +6659,8 @@
             "kind": "agency"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "cash-rebate"
       },
       {
         "id": "wy-homeowner-value-exemption",
@@ -6641,7 +6672,7 @@
         ],
         "refundable": false,
         "ageRule": "No general age restriction.",
-        "incomeDefinition": "See program rules.",
+        "incomeDefinition": "The inventory does not establish the 2025 income definition.",
         "incomeLimits": "Not income-tested.",
         "maximumBenefit": "25% of the first $1 million of qualifying residence and improved-land fair market value.",
         "formulaSummary": "Value exemption introduced for tax year 2025; owner-occupancy limitation applies beginning in 2026.",
@@ -6650,7 +6681,7 @@
         "interactions": [
           "Cannot combine with long-term homeowner exemption for 2025/26."
         ],
-        "programYear": "2025",
+        "programYear": "2025 property-tax year, corresponding to fiscal year 2026 in the May 2025 legislative analysis.",
         "rentProxy": null,
         "sources": [
           {
@@ -6659,7 +6690,8 @@
             "kind": "agency"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "taxable-property-value-exemption"
       },
       {
         "id": "wy-long-term-homeowner-exemption",
@@ -6671,7 +6703,7 @@
         ],
         "refundable": false,
         "ageRule": "Owner or spouse age 65 or older.",
-        "incomeDefinition": "See program rules.",
+        "incomeDefinition": "The inventory does not establish the 2025 income definition.",
         "incomeLimits": "Not income-tested.",
         "maximumBenefit": "50% of assessed residential real-property value.",
         "formulaSummary": "Primary-residence exemption for owner/spouse with at least 25 years paying Wyoming residential property tax.",
@@ -6682,7 +6714,7 @@
         "interactions": [
           "Alternative to 25% homeowner exemption in 2025/26."
         ],
-        "programYear": "2025",
+        "programYear": "2025 property-tax exemption on the qualifying long-term homeowner\u2019s primary residence.",
         "rentProxy": null,
         "sources": [
           {
@@ -6696,7 +6728,8 @@
             "kind": "agency"
           }
         ],
-        "modelVariables": []
+        "modelVariables": [],
+        "paymentMechanism": "taxable-property-value-exemption"
       }
     ],
     "laterChanges": [
@@ -6705,7 +6738,7 @@
     "researchNotes": [
       "County median-income and median-tax-bill tables are required to calculate an exact refund.",
       "The 25% and 50% exemptions are not additive in 2025/26.",
-      "The statute and rules use an inclusive combined-adult asset limit with a tax-liability waiver. The form/portal's strict per-adult wording differs; the statutory test governs this inventory description. The waiver's liability basis must be established separately from timely-paid refundable tax, and household/county facts remain necessary for an award."
+      "The statute and rules use an inclusive combined-adult asset limit with a tax-liability waiver. The form/portal's strict per-adult wording differs; the statute sets the inclusive combined-adult test. The waiver uses tax liability; the refund uses qualifying timely-paid tax. Household facts and county tables determine the applicable amount."
     ],
     "sources": [
       {

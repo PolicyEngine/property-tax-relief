@@ -50,7 +50,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "cash-rebate"
     },
     {
       "id": "wy-homeowner-value-exemption",
@@ -60,7 +61,7 @@
       "tenures": ["owner"],
       "refundable": false,
       "ageRule": "No general age restriction.",
-      "incomeDefinition": "See program rules.",
+      "incomeDefinition": "The inventory does not establish the 2025 income definition.",
       "incomeLimits": "Not income-tested.",
       "maximumBenefit": "25% of the first $1 million of qualifying residence and improved-land fair market value.",
       "formulaSummary": "Value exemption introduced for tax year 2025; owner-occupancy limitation applies beginning in 2026.",
@@ -69,7 +70,7 @@
       "interactions": [
         "Cannot combine with long-term homeowner exemption for 2025/26."
       ],
-      "programYear": "2025",
+      "programYear": "2025 property-tax year, corresponding to fiscal year 2026 in the May 2025 legislative analysis.",
       "rentProxy": null,
       "sources": [
         {
@@ -78,7 +79,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
     },
     {
       "id": "wy-long-term-homeowner-exemption",
@@ -88,7 +90,7 @@
       "tenures": ["owner"],
       "refundable": false,
       "ageRule": "Owner or spouse age 65 or older.",
-      "incomeDefinition": "See program rules.",
+      "incomeDefinition": "The inventory does not establish the 2025 income definition.",
       "incomeLimits": "Not income-tested.",
       "maximumBenefit": "50% of assessed residential real-property value.",
       "formulaSummary": "Primary-residence exemption for owner/spouse with at least 25 years paying Wyoming residential property tax.",
@@ -97,7 +99,7 @@
         "Effective January 1, 2025; original legislation sunsets July 1, 2027."
       ],
       "interactions": ["Alternative to 25% homeowner exemption in 2025/26."],
-      "programYear": "2025",
+      "programYear": "2025 property-tax exemption on the qualifying long-term homeowner’s primary residence.",
       "rentProxy": null,
       "sources": [
         {
@@ -111,7 +113,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
     }
   ],
   "laterChanges": [
@@ -120,7 +123,7 @@
   "researchNotes": [
     "County median-income and median-tax-bill tables are required to calculate an exact refund.",
     "The 25% and 50% exemptions are not additive in 2025/26.",
-    "The statute and rules use an inclusive combined-adult asset limit with a tax-liability waiver. The form/portal's strict per-adult wording differs; the statutory test governs this inventory description. The waiver's liability basis must be established separately from timely-paid refundable tax, and household/county facts remain necessary for an award."
+    "The statute and rules use an inclusive combined-adult asset limit with a tax-liability waiver. The form/portal's strict per-adult wording differs; the statute sets the inclusive combined-adult test. The waiver uses tax liability; the refund uses qualifying timely-paid tax. Household facts and county tables determine the applicable amount."
   ],
   "sources": [
     {

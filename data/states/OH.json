@@ -17,14 +17,14 @@
       "ageRule": "No general age restriction.",
       "incomeDefinition": "Not income-tested.",
       "incomeLimits": "Not income-tested.",
-      "maximumBenefit": "10% of qualifying levies under the pre-reform structure.",
+      "maximumBenefit": "10% of qualifying levies.",
       "formulaSummary": "Reduces qualifying residential and agricultural property levies; it is not 10% of every tax bill.",
       "application": "Administered on property-tax bills by county auditor.",
       "eligibilityNotes": [
         "Residential rental property may qualify at the property-owner level; this is not a payment to renters."
       ],
       "interactions": [],
-      "programYear": "2025",
+      "programYear": "2025 real-property tax baseline; the exact application and collection periods remain unverified.",
       "rentProxy": null,
       "sources": [
         {
@@ -51,7 +51,7 @@
       "application": "Apply to county auditor.",
       "eligibilityNotes": ["Principal residence requirement."],
       "interactions": [],
-      "programYear": "2025",
+      "programYear": "2025 real-property tax baseline; the exact application and collection periods remain unverified.",
       "rentProxy": null,
       "sources": [
         {
@@ -109,7 +109,7 @@
     }
   ],
   "laterChanges": [
-    "H.B. 96 authorizes a separate county local-option 2.5% rollback. County adoption controls that option; the statewide 2025 baseline above remains 10% for the nonbusiness credit and 2.5% for owner occupancy."
+    "H.B. 96 authorizes a separate county local-option rollback of up to 2.5%. County adoption controls that option; the statewide 2025 baseline above remains 10% for the nonbusiness credit and 2.5% for owner occupancy."
   ],
   "researchNotes": [
     "October 2025 Tax Commissioner certification resolves older summaries: $29,000/$58,000 value reductions apply to 2025 real-property tax collected in 2026. The $41,000 income threshold in the same document applies to 2026 real-property tax, not 2025.",

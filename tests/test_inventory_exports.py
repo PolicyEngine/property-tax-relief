@@ -4,6 +4,7 @@ import csv
 import importlib.util
 import io
 import json
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -84,7 +85,7 @@ def test_static_csv_uses_browser_schema_and_escaping():
                 "category": "rebate",
                 "scope": "statewide",
                 "tenures": ["renter"],
-                "refundable": None,
+                "refundable": False,
                 "paymentMechanism": "property-tax-bill-reduction",
                 "ageRule": 'First\n"second"',
                 "incomeDefinition": "",
@@ -120,3 +121,56 @@ def test_static_csv_uses_browser_schema_and_escaping():
     )
     assert rows[1]["program_id"] == ""
     assert rows[1]["state_research_notes"] == "Fixture boundary"
+
+
+def test_comparison_classification_matches_browser_and_all_category_scope_pairs():
+    """Prevent source/export/browser drift at the context-comparison boundary."""
+    categories = {
+        "threshold-circuit-breaker": True,
+        "income-tested-relief": True,
+        "property-tax-credit": True,
+        "renter-credit": True,
+        "rebate": True,
+        "deduction": True,
+        "exemption": False,
+        "deferral": False,
+        "assessment-limit": False,
+        "local-option": False,
+    }
+    fixtures = [
+        {"category": category, "scope": scope}
+        for scope in ("statewide", "local-option")
+        for category in categories
+    ]
+    expected = [
+        item["scope"] == "statewide" and categories[item["category"]]
+        for item in fixtures
+    ]
+    states = json.loads((ROOT / "public/data/inventory.json").read_text())
+    programs = [program for state in states for program in state["programs"]]
+    audit = json.loads((ROOT / "public/data/coverage.json").read_text())
+    comparison_ids = {
+        program["id"] for program in audit["programs"] if program["status"] != "context"
+    }
+    expected.extend(program["id"] in comparison_ids for program in programs)
+    cases = fixtures + programs
+    browser = subprocess.run(
+        [
+            "bun",
+            "--eval",
+            (
+                'import { isComparisonProgram } from "./lib/inventory.ts"; '
+                "const cases = JSON.parse(await Bun.stdin.text()); "
+                "process.stdout.write(JSON.stringify(cases.map(isComparisonProgram)));"
+            ),
+        ],
+        input=json.dumps(cases),
+        capture_output=True,
+        text=True,
+        check=True,
+        cwd=ROOT,
+        timeout=30,
+    )
+    build = load_builder()
+    python_results = [build.is_comparison_program(item) for item in cases]
+    assert python_results == json.loads(browser.stdout) == expected

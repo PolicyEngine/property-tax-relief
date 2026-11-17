@@ -40,7 +40,8 @@
           "kind": "statute"
         }
       ],
-      "modelVariables": ["il_property_tax_credit"]
+      "modelVariables": ["il_property_tax_credit"],
+      "paymentMechanism": "income-tax-credit"
     },
     {
       "id": "il-senior-tax-deferral",
@@ -68,7 +69,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "tax-deferral"
     }
   ],
   "researchNotes": [

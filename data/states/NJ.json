@@ -65,7 +65,7 @@
       ],
       "interactions": [
         "Base-year taxes affect the separate income-tax property deduction/credit.",
-        "Coordinate with ANCHOR and Stay NJ rather than simply adding nominal maxima."
+        "Total covered property-tax relief, including ANCHOR and Stay NJ, cannot exceed property taxes paid."
       ],
       "programYear": "2025 tax reimbursement, applications/payments in 2026.",
       "rentProxy": null,
@@ -102,7 +102,7 @@
         "Renters and mobile-home owners excluded; eligible PILOT owners may qualify."
       ],
       "interactions": [
-        "Subtract/coordinate existing ANCHOR and Senior Freeze relief under applicable budget and benefit-statement rules."
+        "ANCHOR and Senior Freeze reduce the remaining Stay NJ payment under the applicable benefit statement. Total covered relief cannot exceed property taxes paid."
       ],
       "programYear": "Payments for tax-year-2025 benefits are scheduled for February and May 2027. Annualized caps assume no FY 2028 change.",
       "rentProxy": null,
@@ -198,13 +198,13 @@
     }
   ],
   "laterChanges": [
-    "The FY 2027 budget sets the current Stay NJ eligibility and payment caps for tax year 2025; earlier handouts described a different $500,000 income ceiling."
+    "The FY 2027 Appropriations Act lowers the Stay NJ income ceiling from $500,000 to $200,000 for tax-year-2025 benefits and sets the applicable payment caps."
   ],
   "researchNotes": [
     "Tax year, payment season and state fiscal year differ. A 2025-season ANCHOR announcement does not describe the same benefit period as tax-year-2025 benefits.",
     "The 2025 ANCHOR homeowner table does not include the earlier $250 senior homeowner addition.",
     "Annualized Stay NJ caps depend on future appropriations; payable installments follow their budget periods.",
-    "No validated household calculation amounts are reported for these programs."
+    "Household amounts depend on qualifying payments, other property-tax benefits and the installments authorized by the applicable budget."
   ],
   "sources": [
     {

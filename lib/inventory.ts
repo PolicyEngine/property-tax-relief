@@ -36,12 +36,17 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   "local-option": "Local option",
 };
 
+export const CONTEXT_CATEGORIES: readonly string[] = [
+  "exemption",
+  "deferral",
+  "assessment-limit",
+  "local-option",
+];
+
 export function isComparisonProgram(program: Program): boolean {
   return (
     program.scope === "statewide" &&
-    !["exemption", "deferral", "assessment-limit", "local-option"].includes(
-      program.category,
-    )
+    !CONTEXT_CATEGORIES.includes(program.category)
   );
 }
 
@@ -78,6 +83,13 @@ export function filterStates(
       selectPrograms(state, tenure, category, includeContext).length > 0;
     return matchesText && matchesProgram;
   });
+}
+
+export function displayedRefundability(program: Program): boolean | null {
+  const mechanism = program.paymentMechanism ?? "not-established";
+  return mechanism === "income-tax-credit" || mechanism === "not-established"
+    ? program.refundable
+    : null;
 }
 
 function csvCell(value: unknown): string {
@@ -144,7 +156,9 @@ export function inventoryCsv(states: StateProfile[]): string {
       p.category,
       p.scope,
       p.tenures.join(" | "),
-      p.refundable === null ? "" : String(p.refundable),
+      displayedRefundability(p) === null
+        ? ""
+        : String(displayedRefundability(p)),
       p.paymentMechanism ?? "not-established",
       p.ageRule,
       p.incomeDefinition,

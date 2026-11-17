@@ -3,6 +3,7 @@ import fc from "fast-check";
 import { readFileSync, readdirSync } from "node:fs";
 import {
   CATEGORY_LABELS,
+  displayedRefundability,
   PAYMENT_MECHANISM_LABELS,
   filterStates,
   inventoryCsv,
@@ -30,10 +31,9 @@ describe("national source inventory", () => {
       expect(state.overview.length).toBeGreaterThan(15);
       for (const p of state.programs) {
         expect(Object.keys(CATEGORY_LABELS)).toContain(p.category);
-        if (p.paymentMechanism !== undefined)
-          expect(Object.keys(PAYMENT_MECHANISM_LABELS)).toContain(
-            p.paymentMechanism,
-          );
+        expect(Object.keys(PAYMENT_MECHANISM_LABELS)).toContain(
+          p.paymentMechanism,
+        );
         expect(p.sources.length, p.id).toBeGreaterThan(0);
         expect(p.programYear.trim().length, p.id).toBeGreaterThanOrEqual(4);
         if (isComparisonProgram(p))
@@ -114,9 +114,22 @@ describe("national source inventory", () => {
     expect(csv).toContain('"payment_mechanism"');
     expect(csv).toContain('"state_research_notes"');
     expect(csv).toContain('"property-tax-bill-reduction"');
-    expect(csv).toContain('"false"');
+    expect(csv).not.toContain('"false"');
     expect(csv).toContain('"Quote,\n""line"""');
     expect(csv).toContain("\r\n");
+  });
+  it("retains unclassified refundability without calling bill reductions income-tax credits", () => {
+    const program = structuredClone(states[0].programs[0]);
+    program.paymentMechanism = "income-tax-credit";
+    program.refundable = false;
+    expect(displayedRefundability(program)).toBe(false);
+    program.paymentMechanism = "not-established";
+    program.refundable = true;
+    expect(displayedRefundability(program)).toBe(true);
+    program.paymentMechanism = "property-tax-bill-reduction";
+    expect(displayedRefundability(program)).toBeNull();
+    program.paymentMechanism = "cash-rebate";
+    expect(displayedRefundability(program)).toBeNull();
   });
   it.each(["=x", "+x", "-x", "@x", "\tx", "\rx", "  =x"])(
     "guards spreadsheet-leading content %j",

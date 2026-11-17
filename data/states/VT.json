@@ -58,7 +58,7 @@
         }
       ],
       "modelVariables": [],
-      "paymentMechanism": "not-established"
+      "paymentMechanism": "property-tax-bill-reduction"
     },
     {
       "id": "vt-renter-credit",
@@ -93,7 +93,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["vt_renter_credit"]
+      "modelVariables": ["vt_renter_credit"],
+      "paymentMechanism": "income-tax-credit"
     }
   ],
   "laterChanges": [
@@ -103,7 +104,8 @@
   "researchNotes": [
     "Owner credit and renter credit use different timing; the owner claim based on 2025 income is formally a 2026 property-tax credit.",
     "The current renter webpage describes eligibility at 65% of county median income. The exact 2025 county and family-size schedule remains unverified.",
-    "Owner relief includes conditional excess-cash and late-claim payment routes. Local rate/value inputs, household-income adjustments, filing history and debt allocation remain unvalidated; a general refundable label does not imply an automatic full cash payment."
+    "Owner relief includes conditional excess-cash and late-claim payment routes.",
+    "The municipality applies homeowner relief to the eligible bill and liabilities before any excess-cash payment. Local rates, value, household-income adjustments, filing history and debt allocation determine the result."
   ],
   "sources": [
     {

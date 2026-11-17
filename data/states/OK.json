@@ -35,7 +35,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["ok_ptc"]
+      "modelVariables": ["ok_ptc"],
+      "paymentMechanism": "income-tax-credit"
     }
   ],
   "laterChanges": [],

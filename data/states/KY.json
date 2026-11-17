@@ -3,7 +3,7 @@
   "name": "Kentucky",
   "taxYear": 2025,
   "verifiedAt": "2026-11-13",
-  "overview": "The principal statewide residential relief identified is an assessed-value homestead exemption for older or totally disabled owners.",
+  "overview": "Kentucky reduces assessed homestead value for qualifying older or totally disabled homeowners.",
   "inventoryStatus": "researched",
   "statewideCreditStatus": "none-identified",
   "programs": [
@@ -36,13 +36,13 @@
       "modelVariables": [
         "ky_homestead_exemption",
         "ky_homestead_property_tax_reduction"
-      ]
+      ],
+      "paymentMechanism": "taxable-property-value-exemption"
     }
   ],
   "laterChanges": [],
   "researchNotes": [
-    "No statewide renter credit or refundable property-tax circuit breaker was identified in the reviewed DOR materials.",
-    "Exemption tax savings require applicable tax rates and are contextual to the credit comparison."
+    "The listed statewide program covers a homestead value exemption. Tax savings depend on the covered property-tax rates."
   ],
   "sources": [
     {

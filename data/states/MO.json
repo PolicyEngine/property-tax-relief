@@ -25,9 +25,7 @@
         "Rental property must pay real-estate tax.",
         "Claim only qualifying principal-residence taxes; fees and excess acreage are excluded."
       ],
-      "interactions": [
-        "County-option senior property-tax freeze relief is a separate local program."
-      ],
+      "interactions": [],
       "programYear": "2025 taxes/rent; claim due April 15, 2026.",
       "rentProxy": 0.2,
       "sources": [
@@ -47,13 +45,14 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["mo_property_tax_credit"]
+      "modelVariables": ["mo_property_tax_credit"],
+      "paymentMechanism": "income-tax-credit"
     }
   ],
   "laterChanges": [],
   "researchNotes": [
-    "The chart, not a simple maximum-credit comparison, determines the payable amount.",
-    "The 2025 MO-CRP instructions confirm the 20% rent conversion after qualifying rent reductions."
+    "The credit chart determines the payable amount.",
+    "Renters count 20% of rent after the qualifying rent reductions as property taxes."
   ],
   "sources": [
     {

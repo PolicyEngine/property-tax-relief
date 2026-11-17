@@ -26,7 +26,7 @@
       "interactions": [
         "Applied after Homestead or Disabled Veterans credits to any remaining property tax balance."
       ],
-      "programYear": "2025",
+      "programYear": "2025 property-tax year; the credit appears on the property-tax statement.",
       "rentProxy": null,
       "sources": [
         {
@@ -60,7 +60,7 @@
         "Must live in and hold an interest in the homestead."
       ],
       "interactions": ["Primary Residence Credit may offset remaining taxes."],
-      "programYear": "2025",
+      "programYear": "2025 assessment year, using 2024 household income; applications precede March 31 of the assessment year.",
       "rentProxy": null,
       "sources": [
         {
@@ -92,7 +92,7 @@
       "interactions": [
         "Homeowner homestead credit and renter refund generally cannot both be claimed, except qualifying mobile-home lot rent."
       ],
-      "programYear": "2025",
+      "programYear": "2025 rent and income; the refund claim follows in 2026.",
       "rentProxy": 0.2,
       "sources": [
         {

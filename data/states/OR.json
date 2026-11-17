@@ -3,7 +3,7 @@
   "name": "Oregon",
   "taxYear": 2025,
   "verifiedAt": "2026-11-13",
-  "overview": "Oregon provides a repayable senior and disability property-tax deferral. No current statewide property-tax or renter credit was identified in the reviewed sources.",
+  "overview": "Oregon pays qualifying senior and disabled homeowners’ property taxes through a repayable deferral.",
   "inventoryStatus": "researched",
   "statewideCreditStatus": "none-identified",
   "programs": [
@@ -25,7 +25,7 @@
         "Property-value, assets, insurance, and mortgage requirements apply."
       ],
       "interactions": [],
-      "programYear": "2025",
+      "programYear": "2025 program enrollment; standard applications due April 15, 2025.",
       "rentProxy": null,
       "sources": [
         {

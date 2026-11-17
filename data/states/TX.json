@@ -3,7 +3,7 @@
   "name": "Texas",
   "taxYear": 2025,
   "verifiedAt": "2026-11-13",
-  "overview": "Texas relies on homestead value exemptions and local property-tax rules. No general statewide homeowner circuit-breaker or renter tax credit was identified.",
+  "overview": "Texas relies on homestead value exemptions and local property-tax rules.",
   "inventoryStatus": "researched",
   "statewideCreditStatus": "none-identified",
   "programs": [
@@ -24,7 +24,7 @@
         "Principal residence ownership and occupancy requirements."
       ],
       "interactions": [],
-      "programYear": "2025",
+      "programYear": "2025 property-tax year; the November 2025 voter-approved exemption amount applies to 2025.",
       "rentProxy": null,
       "sources": [
         {
@@ -61,7 +61,7 @@
       "application": "Apply to local appraisal district.",
       "eligibilityNotes": [],
       "interactions": [],
-      "programYear": "2025",
+      "programYear": "2025 property-tax year; the November 2025 voter-approved exemption amount applies to 2025.",
       "rentProxy": null,
       "sources": [
         {
@@ -95,7 +95,7 @@
       "application": "Local appraisal district administers adopted exemptions.",
       "eligibilityNotes": [],
       "interactions": [],
-      "programYear": "2025",
+      "programYear": "2025 property-tax year; locally adopted exemptions reduce that year’s eligible taxable value.",
       "rentProxy": null,
       "sources": [
         {

@@ -3,7 +3,7 @@
   "name": "Virginia",
   "taxYear": 2025,
   "verifiedAt": "2026-11-13",
-  "overview": "Virginia authorizes local elderly/disability real-estate relief and mandates a disabled-veteran exemption. No statewide general homeowner or renter tax credit was identified.",
+  "overview": "Virginia authorizes local elderly/disability real-estate relief and mandates a disabled-veteran exemption.",
   "inventoryStatus": "researched",
   "statewideCreditStatus": "none-identified",
   "programs": [
@@ -25,7 +25,7 @@
         "Ownership interests and jointly owned property affect proration."
       ],
       "interactions": [],
-      "programYear": "2025",
+      "programYear": "2025 locally adopted property-tax relief, using preceding-year income under the local ordinance.",
       "rentProxy": null,
       "sources": [
         {
@@ -34,7 +34,8 @@
           "kind": "statute"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "varies-by-locality"
     },
     {
       "id": "va-disabled-veteran-exemption",
@@ -54,7 +55,7 @@
         "Surviving-spouse and trust/life-estate rules apply."
       ],
       "interactions": [],
-      "programYear": "2025",
+      "programYear": "2025 real-property tax exemption on the qualifying principal residence.",
       "rentProxy": null,
       "sources": [
         {
@@ -69,8 +70,7 @@
   ],
   "laterChanges": [],
   "researchNotes": [
-    "Local-option relief cannot be represented as one statewide dollar entitlement.",
-    "Real-estate relief is distinct from Virginia's personal-property vehicle-tax relief."
+    "Local ordinances determine elderly/disability relief. Real-estate relief follows separate rules from Virginia’s personal-property vehicle-tax relief."
   ],
   "sources": [
     {

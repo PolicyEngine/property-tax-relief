@@ -38,13 +38,13 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "not-established"
     }
   ],
   "laterChanges": [],
   "researchNotes": [
-    "The 2025 application window concerned 2024 property taxes; keep filing year separate.",
-    "No statewide renter credit was identified in the reviewed agency sources."
+    "The 2025 application window covered 2024 property taxes; 2025-property-tax claims follow in 2026. The listed program covers homeowner relief."
   ],
   "sources": [
     {

@@ -42,7 +42,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["mn_renters_credit"]
+      "modelVariables": ["mn_renters_credit"],
+      "paymentMechanism": "income-tax-credit"
     },
     {
       "id": "mn-homestead-credit-refund",
@@ -81,7 +82,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["mn_homestead_credit_refund"]
+      "modelVariables": ["mn_homestead_credit_refund"],
+      "paymentMechanism": "cash-rebate"
     },
     {
       "id": "mn-special-property-tax-refund",
@@ -116,7 +118,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "cash-rebate"
     }
   ],
   "laterChanges": [
