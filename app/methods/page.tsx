@@ -131,7 +131,7 @@ export default function Methods() {
           </p>
           <p>
             Saved API responses match the expected amounts in{" "}
-            <a href="https://github.com/PolicyEngine/property-tax-relief/blob/main/data/calculator/validation-cases.json">
+            <a href="https://github.com/PolicyEngine/property-tax-relief/blob/0d334d00d3ec8361256c94c83b52973709a8b850/data/calculator/validation-cases.json">
               {calculationCases.length} source-derived cases
             </a>{" "}
             for the enabled calculations. Those cases do not validate other
