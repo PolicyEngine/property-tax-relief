@@ -22,11 +22,11 @@
       "incomeLimits": "No income limit identified.",
       "maximumBenefit": "Lesser of $600 and qualifying homestead tax for assessment year 2025, normally collected in 2026.",
       "formulaSummary": "Nonrefundable bill credit equal to the lesser of qualified homestead real-property ad valorem tax before this credit and the assessment-year cap. Any unused cap is not a cash payment.",
-      "application": "Register the homestead and establish eligibility with the county assessor. The latest supplied text of section 26-26-1118(b)(3) bars allowance after October 10 of the year after assessment; current codification of that subsection is unverified.",
+      "application": "Register the homestead and establish eligibility with the county assessor. Section 26-26-1118(b)(3), as amended by Act 1268 of 2005, bars the credit after October 10 of the year after assessment. Later codification of this subsection remains unverified.",
       "eligibilityNotes": [
         "Applies to a qualifying owner-occupied homestead.",
         "Assessment year and bill-payment year differ; the assessment-year cap governs even if payment is early or late.",
-        "The latest supplied section 26-26-1118(b)(4) requires the parcel to qualify as a homestead before January 1 of the year after assessment. Current codification of that subsection is unverified.",
+        "Section 26-26-1118(b)(4), as amended by Act 1268 of 2005, requires the parcel to qualify as a homestead before January 1 of the year after assessment. Later codification of this subsection remains unverified.",
         "County parcel qualification, valid registration, annual property history and qualified pre-credit tax determine eligibility and amount."
       ],
       "interactions": [
@@ -79,8 +79,7 @@
   "researchNotes": [
     "Act 330 of 2025 raised the assessment-year-2025 credit to $600.",
     "The assessment-year-2025 credit normally appears on the 2026 bill; the assessment-year-2026 credit normally appears on the 2027 bill.",
-    "The statutory caps are $425 for assessment 2023, $500 for assessment 2024, $600 for assessment 2025 and $675 from assessment 2026. A tax paid during 2025 ordinarily relates to assessment 2024 and its $500 cap.",
-    "An unestablished liability, registration or property history does not determine a household award."
+    "The statutory caps are $425 for assessment 2023, $500 for assessment 2024, $600 for assessment 2025 and $675 from assessment 2026. A tax paid during 2025 ordinarily relates to assessment 2024 and its $500 cap."
   ],
   "sources": [
     {

@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Rent and property taxes across states | PolicyEngine",
   description:
-    "Review selected income-tax credits and deductions for rent and property taxes, alongside rebates and bill programs. Subtractions and itemization remain under review.",
+    "Review selected income-tax credits and deductions for rent and property taxes, alongside rebates and bill programs. The inventory does not enumerate every subtraction or itemization rule.",
   robots: { index: false, follow: false },
 };
 

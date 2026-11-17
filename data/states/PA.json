@@ -28,7 +28,7 @@
       "interactions": [
         "Owner/renter claims share one annual rebate cap; supplement calculated by Revenue."
       ],
-      "programYear": "2025",
+      "programYear": "2025 property taxes or rent and household income; rebate claim filed in 2026.",
       "rentProxy": 0.2,
       "sources": [
         {
@@ -47,7 +47,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["pa_property_tax_or_rent_rebate"]
+      "modelVariables": ["pa_property_tax_or_rent_rebate"],
+      "paymentMechanism": "cash-rebate"
     }
   ],
   "laterChanges": [],

@@ -37,13 +37,14 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "cash-rebate"
     }
   ],
   "researchNotes": [
     "From tax year 2025, disabled residents of any age may receive the refundable DAC ($400–$1,200 by income/status); it replaces their former PTC route and is income-based rather than a housing-expense credit.",
     "DAC federal-AGI limits: $20,000 single/$32,000 joint; full-year qualifying disability benefits required.",
-    "Senior Housing Income Tax Credit is unavailable for tax year 2025; do not extrapolate 2024 rules."
+    "Senior Housing Income Tax Credit is unavailable for tax year 2025."
   ],
   "sources": [
     {

@@ -34,7 +34,7 @@ export interface Program {
   scope: "statewide" | "local-option";
   tenures: Tenure[];
   refundable: boolean | null;
-  paymentMechanism?: PaymentMechanism;
+  paymentMechanism: PaymentMechanism;
   ageRule: string;
   incomeDefinition: string;
   incomeLimits: string;

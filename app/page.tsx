@@ -23,7 +23,8 @@ export default function Home() {
           <p>
             Compare selected income-tax credits and deductions for rent and
             property taxes, alongside rebates and property-tax bill programs.
-            Subtractions and itemization rules remain under review.
+            The inventory does not enumerate every subtraction or itemization
+            rule.
           </p>
           <div className="intro-stat">
             <strong>{states.length}</strong>
@@ -32,10 +33,9 @@ export default function Home() {
         </div>
       </section>
       <div className="draft-note">
-        <strong>Research draft.</strong> The profiles cover selected provisions;
-        the systematic scope audit and validated national household calculations
-        remain incomplete.{" "}
-        <a href={appPath("/methods/")}>Read the coverage audit</a>
+        <strong>Research draft.</strong> The profiles cover selected provisions.
+        The report provides no validated national household calculations.{" "}
+        <a href={appPath("/methods/")}>Read the model-presence audit</a>
       </div>
       <Explorer states={states} coverage={coverage} />
     </main>

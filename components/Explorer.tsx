@@ -6,6 +6,7 @@ import { useMemo, useState } from "react";
 import { Button, Input } from "@policyengine/ui-kit";
 import {
   CATEGORY_LABELS,
+  CONTEXT_CATEGORIES,
   filterStates,
   inventoryCsv,
   isComparisonProgram,
@@ -17,7 +18,7 @@ import type {
   StateProfile,
   Tenure,
 } from "@/lib/types";
-import { ProgramDetail, SourceLinks } from "./ProgramDetail";
+import { PaymentFacts, ProgramDetail, SourceLinks } from "./ProgramDetail";
 
 type Filters = {
   query: string;
@@ -32,12 +33,6 @@ const INITIAL_FILTERS: Filters = {
   category: "all",
   includeContext: false,
 };
-const CONTEXT_CATEGORIES = [
-  "exemption",
-  "deferral",
-  "assessment-limit",
-  "local-option",
-];
 
 function downloadCsv(states: StateProfile[]) {
   const csv = "\uFEFF" + inventoryCsv(states);
@@ -278,9 +273,9 @@ function StateDetail({
       </div>
       <p className="state-overview">{state.overview}</p>
       <div className="profile-meta">
-        Source check: {state.verifiedAt} ·{" "}
+        Initial source pass: {state.verifiedAt} ·{" "}
         {state.inventoryStatus === "partial"
-          ? "Some research remains open"
+          ? "See research boundaries"
           : "Initial source pass recorded"}
       </div>
       {hiddenContextMatches.length > 0 && (
@@ -447,6 +442,7 @@ function Comparison({
                       <dt>Benefit or deduction measure</dt>
                       <dd>{program.maximumBenefit}</dd>
                     </div>
+                    <PaymentFacts program={program} />
                     <div>
                       <dt>Timing</dt>
                       <dd>{program.programYear}</dd>
@@ -471,12 +467,12 @@ function Comparison({
       </div>
       <p className="method-footnote">
         <strong>Research draft.</strong> These columns compare documented
-        program rules. No validated national household estimates are available.
-        Deduction limits cap reductions in taxable income; they do not measure
-        cash benefits or tax savings. Program maxima describe different
-        eligibility rules and payment mechanisms; they do not rank states or
-        estimate a household&apos;s tax change.{" "}
-        <a href={methodsHref}>Read the calculation audit</a>.
+        program rules. The report provides no validated national household
+        estimates. Deduction limits cap reductions in taxable income; they do
+        not measure cash benefits or tax savings. Program maxima describe
+        different eligibility rules and payment mechanisms; they do not rank
+        states or estimate a household&apos;s tax change.{" "}
+        <a href={methodsHref}>Read the model-presence audit</a>.
       </p>
     </section>
   );

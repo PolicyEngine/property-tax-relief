@@ -145,7 +145,7 @@
       "application": "Apply through local tax officials.",
       "eligibilityNotes": [],
       "interactions": [],
-      "programYear": "2025 baseline.",
+      "programYear": "2025 assessment year; the property-tax fiscal payment cycle differs.",
       "rentProxy": null,
       "sources": [
         {
@@ -174,10 +174,8 @@
         "Veteran ownership/occupancy, VA documentation, and surviving-beneficiary rules apply.",
         "For pre-July 2026 applications, acreage/appurtenance rules differ from new 2026 applications."
       ],
-      "interactions": [
-        "Coordinate credits on the underlying bill; relief cannot exceed eligible taxes."
-      ],
-      "programYear": "2025 qualifying homestead; preserve assessment/payable year.",
+      "interactions": ["Relief cannot exceed eligible taxes."],
+      "programYear": "2025 qualifying homestead property taxes; the exact assessment and payable-year mapping remains unverified.",
       "rentProxy": null,
       "sources": [
         {
@@ -198,7 +196,7 @@
   "researchNotes": [
     "Owner 2025 claims use 2024 income; renter claim-year 2025 uses 2025 income. These are not the same income window.",
     "Levy and prior-tax-liability inputs are necessary for complete owner calculations.",
-    "The HHS manual’s $17,000-income example uses 50%, matching its 2024 table, without naming a base year. Its 2025 table lists 70% at that income. Funding, final rounding and specified age-70 source conflicts remain unresolved."
+    "The HHS manual’s $17,000-income example uses 50%, matching its 2024 table, without naming a base year. Its 2025 table lists 70% at that income. Funding and final rounding remain unresolved. The age-70 calculation compares current fiscal-year taxes with the first qualifying claim-year tax base; treatment of individual base-year histories remains unverified."
   ],
   "sources": [
     {

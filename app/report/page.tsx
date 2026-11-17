@@ -52,12 +52,11 @@ export default function Report() {
         </section>
         <div className="draft-note">
           <strong>Scope of this draft.</strong> The inventory covers{" "}
-          {states.length} jurisdictions and records {records} programs,
+          {states.length} jurisdictions and contains {records} program records,
           including selected context. The {comparison.length} statewide records
-          in the main comparison describe program rules; validated national
-          household calculations remain outstanding. The systematic audit of
-          deductions, subtractions and itemization rules remains open. This
-          inventory does not establish exhaustive program coverage.
+          in the main comparison describe program rules. The report provides no
+          validated national household calculations. The inventory does not
+          enumerate every deduction, subtraction, itemization rule or program.
         </div>
         <nav className="report-toc" aria-label="Report contents">
           <a href="#findings">Findings</a>
@@ -65,7 +64,7 @@ export default function Report() {
           <a href="#timing">Timing and interactions</a>
           <a href="#benchmarks">Other research and coverage gaps</a>
           <a href="#profiles">All state profiles</a>
-          <a href={appPath("/methods/")}>Methods and model audit</a>
+          <a href={appPath("/methods/")}>Methods and model-presence audit</a>
           <a href={appPath("/data/inventory.csv")} download>
             Download CSV
           </a>
@@ -76,9 +75,8 @@ export default function Report() {
             A threshold circuit breaker links a credit to housing costs above a
             specified share of program income. Other credits reduce tax
             liability, deductions and subtractions reduce taxable income, and
-            rebates may arrive as separate payments. Exemptions, tax limits and
-            repayable deferrals have their own effects. The inventory records
-            the mechanism separately from the program name.
+            rebates may arrive as separate payments. The inventory records the
+            mechanism separately from the program name.
           </p>
           <p>
             North Carolina calls one program a circuit breaker but{" "}
@@ -93,7 +91,7 @@ export default function Report() {
             <a href="https://www.mass.gov/info-details/senior-circuit-breaker-tax-credit">
               refundable credit based on housing expenses and income
             </a>
-            . A comparison should retain these distinctions.
+            .
           </p>
         </section>
         <section id="comparison">
@@ -134,7 +132,8 @@ export default function Report() {
                 <td>Payment mechanism and refundability</td>
                 <td>
                   Income-tax credit, cash rebate, bill reduction or
-                  taxable-value exemption; refundability recorded separately
+                  taxable-value exemption, with recorded refundability for
+                  income-tax credits and unclassified mechanisms
                 </td>
                 <td>
                   Income-tax liability may limit the value of a nonrefundable
@@ -171,7 +170,7 @@ export default function Report() {
           <p>
             The interactive compares documented program designs across three
             selected states. Program maxima retain their source definitions. The
-            draft does not combine maxima into state generosity rankings or
+            comparison does not combine maxima into state generosity rankings or
             calculated household totals.
           </p>
         </section>
@@ -210,8 +209,8 @@ export default function Report() {
           <p>
             Existing inventories provide different views of rent and property
             taxes. Their dates, program definitions and geographic coverage
-            differ, so their totals cannot be compared directly with this
-            inventory&apos;s record count.
+            differ. Their totals do not measure the same set of provisions as
+            this inventory&apos;s record count.
           </p>
           <ul>
             <li>
@@ -257,17 +256,16 @@ export default function Report() {
             Jersey property-tax deductions. Separate records describe selected
             circuit breakers, rebates and bill credits. Exemptions, deferrals,
             assessment limits and local options remain contextual categories.
-            State-return subtractions, itemization rules and federal-state
-            conformity still require a systematic audit.
+            The inventory does not enumerate every state-return subtraction,
+            itemization rule or federal-state conformity provision.
           </p>
           <p>
-            Cross-checks also identify programs that this draft has not yet
-            enumerated, including Montana disabled-veteran assistance,
-            Washington veteran-survivor grants, South Dakota&apos;s paraplegic
-            tax reduction, Hawaii county circuit breakers, and Maine&apos;s
+            The inventory omits Montana disabled-veteran assistance, Washington
+            veteran-survivor grants, South Dakota&apos;s paraplegic tax
+            reduction, Hawaii county circuit breakers, and Maine&apos;s
             homestead exemption and property-tax deferral. Some existing records
-            group several qualifying categories. These differences prevent an
-            exhaustive-coverage claim or a national completeness percentage.
+            group several qualifying categories. The inventory supplies no
+            national completeness percentage.
           </p>
         </section>
         <section id="profiles">
@@ -319,10 +317,12 @@ export default function Report() {
             Sources and definitions accompany each program. The inventory
             includes selected income-tax provisions, rebates and bill programs,
             with exemptions, deferrals, assessment limits and local options as
-            context. Coverage, local rules and program interactions require
-            further validation. See{" "}
-            <a href={appPath("/methods/")}>the calculation audit and methods</a>{" "}
-            for the release boundary.
+            context. The report provides no household calculations for local
+            rules or program interactions. See{" "}
+            <a href={appPath("/methods/")}>
+              the model-presence audit and methods
+            </a>{" "}
+            for scope and calculation limits.
           </p>
         </section>
       </div>

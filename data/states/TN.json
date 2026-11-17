@@ -22,7 +22,7 @@
       "application": "Apply through county trustee or city collecting official after the tax bill; deadline generally 35 days after delinquency.",
       "eligibilityNotes": ["Owner-occupied primary residence."],
       "interactions": [],
-      "programYear": "2025",
+      "programYear": "2025 property-tax relief using 2024 household income; applications follow the property-tax bill.",
       "rentProxy": null,
       "sources": [
         {
@@ -36,7 +36,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["tn_elderly_property_tax_relief"]
+      "modelVariables": ["tn_elderly_property_tax_relief"],
+      "paymentMechanism": "not-established"
     },
     {
       "id": "tn-disabled-veteran-relief",
@@ -46,14 +47,14 @@
       "tenures": ["owner"],
       "refundable": true,
       "ageRule": "Qualifying disabled veteran or surviving spouse; age-independent.",
-      "incomeDefinition": "See program rules.",
+      "incomeDefinition": "The inventory does not establish the 2025 income definition.",
       "incomeLimits": "Not income-tested.",
       "maximumBenefit": "Tax attributable to up to $175,000 market value.",
       "formulaSummary": "Reimbursement based on qualifying property taxes and veteran disability or survivor requirements.",
       "application": "Apply through county trustee/city collecting official with VA consent and evidence.",
       "eligibilityNotes": [],
       "interactions": [],
-      "programYear": "2025",
+      "programYear": "2025 property-tax relief; applications follow the property-tax bill.",
       "rentProxy": null,
       "sources": [
         {
@@ -62,7 +63,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "not-established"
     },
     {
       "id": "tn-local-tax-freeze",
@@ -79,7 +81,7 @@
       "application": "Annual application with participating local collecting official.",
       "eligibilityNotes": [],
       "interactions": [],
-      "programYear": "2025",
+      "programYear": "2025 local property-tax freeze with annual applications; the exact income reference year is not established.",
       "rentProxy": null,
       "sources": [
         {
@@ -88,11 +90,12 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "assessment-or-tax-limit"
     }
   ],
   "laterChanges": [
-    "2026 relief uses a $38,470 2025-income ceiling and $33,600 elderly/disabled market-value cap; do not apply those values to 2025."
+    "2026 relief uses a $38,470 2025-income ceiling and $33,600 elderly/disabled market-value cap; those amounts apply to the 2026 relief year."
   ],
   "researchNotes": [
     "Tax relief is reimbursement, not an assessed-value exemption; local tax freeze is a separate program."

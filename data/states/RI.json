@@ -28,7 +28,7 @@
       "interactions": [
         "Only one household member claims; rented land can be combined with taxes on an owned home."
       ],
-      "programYear": "2025",
+      "programYear": "2025 property taxes or rent and household income; Form RI-1040H claim due April 15, 2026.",
       "rentProxy": 0.2,
       "sources": [
         {
@@ -37,7 +37,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["ri_property_tax_credit"]
+      "modelVariables": ["ri_property_tax_credit"],
+      "paymentMechanism": "income-tax-credit"
     }
   ],
   "laterChanges": [],

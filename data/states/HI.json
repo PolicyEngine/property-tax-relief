@@ -41,7 +41,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["hi_tax_credit_for_low_income_household_renters"]
+      "modelVariables": ["hi_tax_credit_for_low_income_household_renters"],
+      "paymentMechanism": "income-tax-credit"
     }
   ],
   "researchNotes": [

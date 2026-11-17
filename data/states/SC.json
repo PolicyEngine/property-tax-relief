@@ -25,9 +25,9 @@
         "Qualifying spouse can meet age/disability condition."
       ],
       "interactions": [
-        "The school-operating exemption applies only to value not already exempt under the homestead exemption; the homestead school-tax share is not counted a second time."
+        "The school-operating exemption applies only to value remaining after the homestead exemption."
       ],
-      "programYear": "2025",
+      "programYear": "2025 property-tax exemption; age, disability or blindness qualification follows December 31, 2024 status.",
       "rentProxy": null,
       "sources": [
         {
@@ -59,9 +59,9 @@
       "application": "Apply for legal-residence 4% assessment classification with county assessor; no separate school-exemption application.",
       "eligibilityNotes": ["Primary residence; second homes do not qualify."],
       "interactions": [
-        "The school-operating exemption applies only to value not already exempt under the homestead exemption; the homestead school-tax share is not counted a second time."
+        "The school-operating exemption applies only to value remaining after the homestead exemption."
       ],
-      "programYear": "2025",
+      "programYear": "2025 property-tax exemption on the qualifying legal-residence school-operating levies.",
       "rentProxy": null,
       "sources": [
         {
