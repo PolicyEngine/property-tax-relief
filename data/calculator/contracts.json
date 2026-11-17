@@ -21,7 +21,7 @@
       ],
       "notes": [
         "Enter rent you paid for your principal Indiana home, which must be subject to Indiana property tax. Exclude utilities and other non-rent charges.",
-        "The estimate assumes you meet the residence and property-qualification requirements. Indiana's Bulletin 38 also covers mobile homes and cooperative housing."
+        "The estimate assumes you meet the residence and property-qualification requirements. Mobile-home rent can qualify. Payments by members of cooperative housing projects do not qualify."
       ],
       "sourceEvidence": {
         "packageVersion": "2.2.1",
@@ -29,7 +29,13 @@
         "sha256": "599db50ba3d574efea7a7f3db261b6cbd9954aa50e1390a3ae9b11a68596ba4d"
       },
       "resultLabel": "Deduction from taxable income",
-      "resultNote": "A deduction reduces taxable income. Your tax savings depend on your tax return; the deduction amount does not measure a cash payment."
+      "resultNote": "A deduction reduces taxable income. Your tax savings depend on your tax return; the deduction amount does not measure a cash payment.",
+      "sources": [
+        {
+          "title": "Indiana Bulletin 38, November 2022, page 2: mobile homes and cooperative housing",
+          "url": "https://www.in.gov/dor/files/reference/ib38.pdf#page=2"
+        }
+      ]
     },
     {
       "id": "in-homeowner-income-tax-deduction",
@@ -78,12 +84,12 @@
           "label": "California adjusted gross income",
           "entity": "tax_unit",
           "kind": "money",
-          "description": "Enter California adjusted gross income from your 2025 state return. Gross wages and total household income can differ from this amount."
+          "description": "Enter California adjusted gross income from your 2025 Form 540, line 17. Gross wages and total household income can differ from this amount."
         }
       ],
       "notes": [
-        "This estimate assumes you meet California's renter-credit requirements, including the rent-duration, housing, dependent-status, and property-tax-exemption rules. Check the Franchise Tax Board's qualification record.",
-        "Enter California adjusted gross income from your tax return. Gross wages and total household income can differ from this amount."
+        "These scenarios cover full-year California residents who meet the renter-credit requirements, including the rent-duration, housing, dependent-status, and property-tax-exemption rules. Check the 2025 Form 540 qualification record.",
+        "Enter California adjusted gross income from your 2025 Form 540, line 17. Gross wages and total household income can differ from this amount."
       ],
       "sourceEvidence": {
         "packageVersion": "2.2.1",
@@ -91,7 +97,13 @@
         "sha256": "c41613f4aaff3a9279c2043429daf63ddae32c8cec82cc8ca679635cb88a0eb6"
       },
       "resultLabel": "Credit before tax-liability limit",
-      "resultNote": "Your California income-tax liability can limit the credit you claim. The calculator does not apply that limit."
+      "resultNote": "Your California income-tax liability can limit the credit you claim. The calculator does not apply that limit.",
+      "sources": [
+        {
+          "title": "2025 California Form 540 booklet, renter's credit qualification record, questions 1–2",
+          "url": "https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html#Nonrefundable-Renter-s-Credit-Qualification-Record"
+        }
+      ]
     },
     {
       "id": "mi-homestead-property-tax-credit",
@@ -164,7 +176,7 @@
       "notes": [
         "This estimate covers a full-year Michigan renter who meets the homestead requirements and pays ordinary rent for housing subject to property tax.",
         "The estimate assumes no Family Independence Program or other Michigan Department of Health and Human Services benefits. It omits special-housing and veteran alternatives.",
-        "Enter the total household resources amount from Form MI-1040CR, line 33. Wages and federal adjusted gross income can differ from this amount.",
+        "Enter total household resources from 2025 Form MI-1040CR, page 2, line 33. Wages and federal adjusted gross income can differ from this amount.",
         "Enter only rent you paid. Exclude subsidies, services and other charges. Enter zero for both homeowner fields; homeowner calculations need further treatment."
       ],
       "resultLabel": "Modeled property tax credit",
@@ -177,6 +189,10 @@
         {
           "title": "2025 Michigan homestead credit limits",
           "url": "https://www.michigan.gov/taxes/iit/tax-guidance/credits-exemptions/hptc/tax-year-credit-information/2025"
+        },
+        {
+          "title": "2025 Michigan Form MI-1040CR, page 2, line 33: total household resources",
+          "url": "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/IIT/TY2025/MI-1040CR.pdf#page=2"
         }
       ]
     },
@@ -396,17 +412,26 @@
           "kind": "money",
           "period": 2025,
           "minimum": 0,
-          "description": "Enter the Illinois income tax you owe before nonrefundable credits, from your 2025 return."
+          "description": "Enter Illinois income tax from your 2025 Form IL-1040, line 14, before nonrefundable credits. This calculator requires a zero credit for tax paid to other states on line 15."
         }
       ],
       "notes": [
         "This estimate assumes you meet Illinois's ownership and residence requirements. Check Publication 108 for rules covering purchases, sales, and shared property.",
-        "For a 2025 claim, qualifying payments generally cover 2024 property taxes you paid during 2025. Enter only your share of qualifying payments."
+        "For a 2025 claim, qualifying payments generally cover 2024 property taxes you paid during 2025. Enter only your share of qualifying payments.",
+        "These scenarios cover claimants who claim no credit for tax paid to other states on 2025 Form IL-1040, line 15. With line 15 at zero, line 14 equals Schedule ICR, Step 2, line 3. Schedule ICR applies the K-12 education expense credit after the property-tax credit."
       ],
       "sources": [
         {
           "title": "Illinois Publication 108, December 2025",
           "url": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html"
+        },
+        {
+          "title": "2025 Illinois Form IL-1040 instructions, page 9: federal AGI and nonrefundable credits",
+          "url": "https://tax.illinois.gov/content/dam/soi/en/web/tax/forms/incometax/documents/currentyear/individual/il-1040-instr.pdf#page=9"
+        },
+        {
+          "title": "2025 Illinois Schedule ICR, page 1, Step 2: credit for tax paid to other states and property-tax credit",
+          "url": "https://tax.illinois.gov/content/dam/soi/en/web/tax/forms/incometax/documents/currentyear/individual/il-1040-schedule-icr.pdf#page=1"
         }
       ],
       "sourceEvidence": {
@@ -637,7 +662,7 @@
       "reason": "unverified-dependency-rule",
       "notes": [
         "Hawaii excludes you from this credit if another taxpayer could claim you as a dependent, even if nobody claims you.",
-        "Use 2025 Schedule X, Part I, to check the credit\u2019s residence, housing and dependent requirements."
+        "Use 2025 Schedule X, Part I, to check the credit’s residence, housing and dependent requirements."
       ],
       "sources": [
         {

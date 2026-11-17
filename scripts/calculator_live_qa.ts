@@ -1,66 +1,81 @@
-/** Explicit, bounded live smoke check. Never runs as part of the offline unit suite. */
-import { readFileSync } from "node:fs";
-import { writeFile } from "node:fs/promises";
+/** Explicit, bounded live check; prepare/merge never send a calculation. */
+import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { setTimeout as pause } from "node:timers/promises";
-import { calculateProgram, type CalculatorValues } from "../lib/calculator";
+import { createPolicyEngineApiClient } from "@policyengine/api-client";
 import { loadCalculatorPrograms } from "../lib/calculatorData";
+import {
+  assertIdentityUnchanged,
+  createBatchReceipt,
+  createValidationManifest,
+  mergeBatchReceipts,
+  observeDashboardRequest,
+  selectBatch,
+  readValidationIdentity,
+  type BatchReceipt,
+  type Observation,
+  type ValidationCase,
+} from "./calculator_receipts";
+const write = (path: string, value: unknown) =>
+  writeFileSync(resolve(path), JSON.stringify(value, null, 2) + "\n");
+const read = (path: string) => JSON.parse(readFileSync(path, "utf8"));
 
-interface Case {
-  id: string;
-  programId: string;
-  inputs: CalculatorValues;
-  expectedValue: number;
-  source: string;
-  sourceLocation: string;
-}
-
-const receipt = process.argv[2];
-if (!receipt) throw new Error("Provide a durable output receipt path");
-const allCases = JSON.parse(
-  readFileSync("data/calculator/validation-cases.json", "utf8"),
-) as Case[];
-const selectedPrograms = process.argv.slice(3);
-const cases = allCases.filter(
-  (example) =>
-    !selectedPrograms.length || selectedPrograms.includes(example.programId),
-);
-if (!cases.length) throw new Error("No validation cases selected");
-if (cases.length > 15)
-  throw new Error("Live check exceeds one minute's request budget");
-const programs = loadCalculatorPrograms();
-const results: unknown[] = [];
-for (const example of cases) {
-  const program = programs.find((item) => item.id === example.programId);
-  if (!program) throw new Error(`Unknown program: ${example.programId}`);
-  try {
-    const answer = await calculateProgram(program, example.inputs);
-    results.push({
-      ...example,
-      ...answer,
-      pass: answer.value === example.expectedValue,
-    });
-  } catch (error) {
-    results.push({
-      ...example,
-      pass: false,
-      error: error instanceof Error ? error.message : String(error),
-    });
-  }
-  await writeFile(
-    resolve(receipt),
-    JSON.stringify(
-      {
-        checkedAt: new Date().toISOString(),
-        runtimeModelVersion: null,
-        results,
-      },
-      null,
-      2,
-    ) + "\n",
+async function main() {
+  const [mode, output, ...args] = process.argv.slice(2);
+  if (!output || !["prepare", "batch", "merge"].includes(mode))
+    throw new Error("invalid-validation-command");
+  const identity = readValidationIdentity();
+  const metadata = read("data/calculator/model-metadata.json");
+  const manifest = createValidationManifest(
+    read("data/calculator/validation-cases.json") as ValidationCase[],
+    loadCalculatorPrograms(),
+    identity,
+    metadata.sourceSha256,
   );
-  const row = results.at(-1) as { pass: boolean };
-  console.log(`${example.id}: ${row.pass ? "PASS" : "FAIL"}`);
-  if (!row.pass) process.exit(1);
-  await pause(4_000);
+  const verifyIdentity = () =>
+    assertIdentityUnchanged(identity, readValidationIdentity());
+  verifyIdentity();
+  if (mode === "prepare") {
+    if (args.length) throw new Error("unexpected-validation-arguments");
+    write(output, manifest);
+    return;
+  }
+  if (mode === "merge") {
+    if (!args.length) throw new Error("missing-validation-batches");
+    const merged = mergeBatchReceipts(
+      args.map((path) => read(path) as BatchReceipt),
+      manifest,
+    );
+    verifyIdentity();
+    write(output, merged);
+    return;
+  }
+  if (args.length !== 1 || !/^\d+$/.test(args[0]))
+    throw new Error("invalid-batch-index");
+  const ids = selectBatch(manifest, Number(args[0]));
+  const rows: Observation[] = [];
+  for (const id of ids) {
+    verifyIdentity();
+    const example = manifest.cases.find((c) => c.example.id === id)!;
+    const observed = observeDashboardRequest(
+      manifest,
+      id,
+      globalThis.fetch,
+      verifyIdentity,
+    );
+    const client = createPolicyEngineApiClient({ fetch: observed.fetch });
+    await client.calculateHousehold(example.request, {
+      signal: AbortSignal.timeout(120_000),
+    });
+    verifyIdentity();
+    rows.push(observed.observation());
+    write(output, createBatchReceipt(manifest, ids, rows));
+    console.log(`${id}: ${rows.at(-1)!.pass ? "PASS" : "FAIL"}`);
+    if (!rows.at(-1)!.pass) throw new Error("validation-value-differs");
+    // No retries. The final wait also separates successive batch processes.
+    await pause(4_000);
+  }
+  verifyIdentity();
 }
+
+await main();

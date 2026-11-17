@@ -84,6 +84,35 @@ function parseInput(field: CalculatorInput, raw: string | undefined): Value {
   return value;
 }
 
+export function calculatorInputError(
+  input: CalculatorInput,
+  value: string,
+): string | null {
+  try {
+    parseInput(input, value);
+    return null;
+  } catch {
+    // Use the same parser as the request builder for the form's error messages.
+  }
+  if (input.kind === "boolean") return "Choose Yes or No.";
+  if (input.kind === "select") return `${input.label}: choose an option.`;
+  if (!value.trim()) return `${input.label}: enter a value.`;
+  if (
+    !/^-?(?:\d+(?:\.\d*)?|\.\d+)$/.test(value.trim()) ||
+    !Number.isFinite(Number(value))
+  )
+    return `${input.label}: enter a plain decimal number.`;
+  if (input.minimum !== undefined && input.minimum === input.maximum)
+    return input.minimum === 0
+      ? `${input.label}: enter 0 in this renter scenario.`
+      : `${input.label}: enter ${input.minimum}.`;
+  if (input.minimum !== undefined && Number(value) < input.minimum)
+    return `${input.label}: enter ${input.minimum} or more.`;
+  if (input.maximum !== undefined && Number(value) > input.maximum)
+    return `${input.label}: enter ${input.maximum} or less.`;
+  return `${input.label}: enter a plain decimal number.`;
+}
+
 export function validateInputs(
   program: CalculatorProgram,
   values: CalculatorValues,
@@ -181,6 +210,34 @@ const answers = new Map<string, CalculatorResponse>();
 let requestedAt: number[] = [];
 let retryAfter = 0;
 
+function calculationSignal(signal?: AbortSignal) {
+  const timeout = AbortSignal.timeout(120_000);
+  if (!signal) return { signal: timeout, timeout, dispose: () => {} };
+  if (typeof AbortSignal.any === "function")
+    return {
+      signal: AbortSignal.any([signal, timeout]),
+      timeout,
+      dispose: () => {},
+    };
+
+  const controller = new AbortController();
+  const sources = [signal, timeout];
+  const listeners = sources.map(
+    (source) => () => controller.abort(source.reason),
+  );
+  const dispose = () =>
+    sources.forEach((source, index) =>
+      source.removeEventListener("abort", listeners[index]),
+    );
+  sources.forEach((source, index) =>
+    source.addEventListener("abort", listeners[index], { once: true }),
+  );
+  // Cover an abort occurring before the listeners were attached.
+  const aborted = sources.find((source) => source.aborted);
+  if (aborted) controller.abort(aborted.reason);
+  return { signal: controller.signal, timeout, dispose };
+}
+
 export async function calculateProgram(
   program: CalculatorProgram,
   values: CalculatorValues,
@@ -197,12 +254,11 @@ export async function calculateProgram(
     throw new Error("rate-limit");
   requestedAt.push(now);
   // One call per explicit action, no automatic retries or per-keystroke requests.
-  const timeout = AbortSignal.timeout(120_000);
-  const requestSignal = signal ? AbortSignal.any([signal, timeout]) : timeout;
+  const request = calculationSignal(signal);
   try {
     const result = await client.calculateHousehold(
       { country: "us", household },
-      { signal: requestSignal },
+      { signal: request.signal },
     );
     if (signal?.aborted) throw new Error("cancelled");
     const answer = readModelResult(program, result);
@@ -211,7 +267,7 @@ export async function calculateProgram(
     return answer;
   } catch (error) {
     if (signal?.aborted) throw new Error("cancelled");
-    if (timeout.aborted) throw new Error("timeout");
+    if (request.timeout.aborted) throw new Error("timeout");
     if (error instanceof PolicyEngineApiError) {
       if (error.status === 429) {
         retryAfter =
@@ -226,5 +282,7 @@ export async function calculateProgram(
       throw new Error("service-unavailable");
     }
     throw error;
+  } finally {
+    request.dispose();
   }
 }

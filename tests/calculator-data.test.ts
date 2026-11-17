@@ -1,4 +1,23 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+import fc from "fast-check";
+import { createPolicyEngineApiClient } from "@policyengine/api-client";
+import type { CalculatorProgram } from "../lib/calculator";
+import {
+  assertIdentityUnchanged,
+  canonicalJson,
+  createBatchReceipt,
+  createValidationManifest,
+  DASHBOARD_CALCULATION_URL,
+  mergeBatchReceipts,
+  observeDashboardRequest,
+  readValidationIdentity,
+  recordObservation,
+  selectBatch,
+  semanticHash,
+  validateMergedReceipt,
+  type ValidationCase,
+  type ValidationIdentity,
+} from "../scripts/calculator_receipts";
 import { readFileSync } from "node:fs";
 import {
   buildHousehold,
@@ -113,13 +132,21 @@ describe("calculator source contracts", () => {
     const cases = JSON.parse(
       readFileSync("data/calculator/validation-cases.json", "utf8"),
     );
-    expect(receipt.runtimeModelVersion).toBeNull();
-    expect(receipt.metadataSnapshotSha256).toBe(metadata.sourceSha256);
-    expect(receipt.results.map((row) => row.id).sort()).toEqual(
+    const manifest = createValidationManifest(
+      cases,
+      loadCalculatorPrograms(),
+      readValidationIdentity(),
+      metadata.sourceSha256,
+    );
+    const bound = validateMergedReceipt(receipt, manifest);
+    expect(bound.evidenceKind).toBe("live-dashboard");
+    expect(bound.runtimeModelVersion).toBeNull();
+    expect(bound.metadataSnapshotSha256).toBe(metadata.sourceSha256);
+    expect(bound.results.map((row) => row.id).sort()).toEqual(
       cases.map((example: { id: string }) => example.id).sort(),
     );
     for (const example of cases) {
-      const actual = receipt.results.find((row) => row.id === example.id)!;
+      const actual = bound.results.find((row) => row.id === example.id)!;
       expect(actual).toMatchObject({
         programId: example.programId,
         inputs: example.inputs,
@@ -131,9 +158,298 @@ describe("calculator source contracts", () => {
     for (const program of loadCalculatorPrograms().filter(
       (p) => !p.unavailableReason,
     )) {
-      expect(receipt.results.some((row) => row.programId === program.id)).toBe(
+      expect(bound.results.some((row) => row.programId === program.id)).toBe(
         true,
       );
     }
+  });
+});
+
+// MOCK transport evidence only. These7s do not represent a public benefit output.
+const MOCK_IDENTITY = Object.fromEntries(
+  [
+    "contractsSha256",
+    "adapterSha256",
+    "casesSha256",
+    "metadataFileSha256",
+    "harnessSha256",
+    "helperSha256",
+    "apiClientSha256",
+  ].map((key) => [key, "a".repeat(64)]),
+) as ValidationIdentity;
+const MOCK_PROGRAM: CalculatorProgram = {
+  id: "mock-transport",
+  state: "IN",
+  name: "MOCK transport fixture",
+  modelVariable: "mock_credit",
+  entity: "tax_unit",
+  kind: "credit",
+  inputs: [
+    {
+      variable: "rent",
+      label: "MOCK input",
+      entity: "person",
+      kind: "money",
+      period: 2025,
+    },
+  ],
+  notes: [],
+  sources: [],
+  unavailableReason: null,
+};
+const MOCK_CASES: ValidationCase[] = Array.from({ length: 31 }, (_, n) => ({
+  id: `mock-${String(n).padStart(2, "0")}`,
+  programId: MOCK_PROGRAM.id,
+  inputs: { rent: String(n) },
+  expectedValue: 7,
+  source: "https://example.invalid/mock-transport",
+  sourceLocation: "MOCK fixture; no statutory amount",
+}));
+const mockManifest = () =>
+  createValidationManifest(
+    MOCK_CASES,
+    [MOCK_PROGRAM],
+    MOCK_IDENTITY,
+    "b".repeat(64),
+    "MOCK transport scope",
+    "mock-transport",
+  );
+const MOCK_BODY = JSON.stringify({
+  status: "ok",
+  result: { tax_units: { tax_unit: { mock_credit: { "2025": 7 } } } },
+});
+const clone = <T>(value: T): T => JSON.parse(JSON.stringify(value));
+const mockBatches = () => {
+  const manifest = mockManifest();
+  return [0, 1, 2].map((index) => {
+    const ids = selectBatch(manifest, index);
+    return createBatchReceipt(
+      manifest,
+      ids,
+      ids.map((id) =>
+        recordObservation(
+          manifest,
+          id,
+          JSON.stringify(
+            manifest.cases.find((c) => c.example.id === id)!.request,
+          ),
+          MOCK_BODY,
+          200,
+          "2026-11-17T00:00:00.000Z",
+        ),
+      ),
+    );
+  });
+};
+
+describe("calculator validation receipt provenance", () => {
+  it("deterministically merges31 observed mock tuples from15/15/1 batches", () => {
+    const m = mockManifest();
+    const batches = mockBatches();
+    expect(batches.map((b) => b.results.length)).toEqual([15, 15, 1]);
+    const merged = mergeBatchReceipts(batches, m);
+    expect(merged.results).toHaveLength(31);
+    expect(merged.evidenceKind).toBe("mock-transport");
+    expect(merged.metadataSnapshotSha256).toBe(m.metadataSnapshotSha256);
+    expect(merged.qualificationScope).toBe(m.qualificationScope);
+    expect(merged.runtimeModelVersion).toBeNull();
+    expect(merged.results.every((r) => r.runtimeModelVersion === null)).toBe(
+      true,
+    );
+    expect(mergeBatchReceipts([...batches].reverse(), m)).toEqual(merged);
+    expect(validateMergedReceipt(merged, m)).toEqual(merged);
+    expect(() => selectBatch(m, 0, 16)).toThrow();
+  });
+  it("rejects duplicate, missing, unknown, failed and unobserved tuples", () => {
+    const m = mockManifest();
+    const batches = mockBatches();
+    expect(() => mergeBatchReceipts([...batches, batches[0]], m)).toThrow(
+      "duplicate-validation-case",
+    );
+    expect(() => mergeBatchReceipts(batches.slice(0, 2), m)).toThrow(
+      "incomplete-validation-receipt",
+    );
+    for (const change of [
+      (b: typeof batches) => {
+        b[0].results[0].id = "unknown";
+      },
+      (b: typeof batches) => {
+        b[0].results[0].pass = false;
+      },
+      (b: typeof batches) => {
+        delete (b[0].results[0] as Partial<(typeof b)[0]["results"][0]>)
+          .request;
+      },
+      (b: typeof batches) => {
+        b[0].results[0].response.body += " ";
+      },
+      (b: typeof batches) => {
+        b[0].results[0].expectedValue = 99;
+      },
+    ]) {
+      const changed = clone(batches);
+      change(changed);
+      expect(() => mergeBatchReceipts(changed, m)).toThrow();
+    }
+    expect(() => validateMergedReceipt({ results: [] }, m)).toThrow();
+  });
+  it("rejects mixed scopes, metadata, manifests and source identities", () => {
+    const m = mockManifest();
+    const batches = mockBatches();
+    for (const change of [
+      (b: typeof batches) => {
+        b[0].qualificationScope = "other scope";
+      },
+      (b: typeof batches) => {
+        b[0].metadataSnapshotSha256 = "f".repeat(64);
+      },
+      (b: typeof batches) => {
+        b[0].validationIdentity.adapterSha256 = "f".repeat(64);
+      },
+      (b: typeof batches) => {
+        b[0].manifestSha256 = "f".repeat(64);
+      },
+    ]) {
+      const changed = clone(batches);
+      change(changed);
+      expect(() => mergeBatchReceipts(changed, m)).toThrow();
+    }
+    const changedProgram = clone(MOCK_PROGRAM);
+    changedProgram.inputs[0].entity = "tax_unit";
+    const changed = createValidationManifest(
+      MOCK_CASES,
+      [changedProgram],
+      MOCK_IDENTITY,
+      m.metadataSnapshotSha256,
+      m.qualificationScope,
+      "mock-transport",
+    );
+    expect(() => mergeBatchReceipts(batches, changed)).toThrow();
+  });
+  it("keeps semantic hashes stable under object-key ordering", () => {
+    fc.assert(
+      fc.property(
+        fc.dictionary(fc.stringMatching(/^[a-z]{1,8}$/), fc.integer()),
+        (fields) => {
+          const a = {
+            country: "us",
+            household: {
+              tax_units: { tax_unit: { ...fields, output: { "2025": null } } },
+            },
+          };
+          const b = {
+            household: {
+              tax_units: {
+                tax_unit: Object.fromEntries(
+                  Object.entries(a.household.tax_units.tax_unit).reverse(),
+                ),
+              },
+            },
+            country: "us",
+          };
+          expect(semanticHash(a)).toBe(semanticHash(b));
+          expect(canonicalJson(a)).toBe(canonicalJson(b));
+        },
+      ),
+      { numRuns: 100, seed: 20261117 },
+    );
+  });
+  it("rejects observed entity, period and structural mutations", () => {
+    const m = mockManifest();
+    const expected = m.cases[0];
+    const bodies = [
+      clone(expected.request),
+      clone(expected.request),
+      clone(expected.request),
+    ];
+    bodies[0].household.tax_units.tax_unit.rent =
+      bodies[0].household.people.claimant.rent;
+    delete bodies[0].household.people.claimant.rent;
+    bodies[1].household.people.claimant.rent = { "2024": 0 };
+    bodies[2].household.tax_units.tax_unit.filing_status = { "2025": "JOINT" };
+    for (const body of bodies) {
+      expect(semanticHash(body)).not.toBe(expected.requestSha256);
+      expect(() =>
+        recordObservation(
+          m,
+          expected.example.id,
+          JSON.stringify(body),
+          MOCK_BODY,
+          200,
+          "2026-11-17T00:00:00Z",
+        ),
+      ).toThrow("observed-request-differs");
+    }
+  });
+  it("captures the actual official-client request and raw response without headers", async () => {
+    const m = mockManifest();
+    const expected = m.cases[0];
+    const fakeFetch = vi.fn<typeof fetch>(
+      async () =>
+        new Response(MOCK_BODY, {
+          headers: { authorization: "FAKE_HEADER_NOT_RECORDED" },
+        }),
+    );
+    const check = vi.fn();
+    const observed = observeDashboardRequest(
+      m,
+      expected.example.id,
+      fakeFetch,
+      check,
+    );
+    expect(() => observed.observation()).toThrow("unobserved-validation-tuple");
+    const client = createPolicyEngineApiClient({ fetch: observed.fetch });
+    await client.calculateHousehold(expected.request);
+    expect(fakeFetch).toHaveBeenCalledTimes(1);
+    expect(fakeFetch.mock.calls[0][0]).toBe(DASHBOARD_CALCULATION_URL);
+    expect(check).toHaveBeenCalledTimes(2);
+    expect(observed.observation().response.body).toBe(MOCK_BODY);
+    expect(observed.observation().request.semanticSha256).toBe(
+      expected.requestSha256,
+    );
+    expect(JSON.stringify(observed.observation())).not.toContain("FAKE_HEADER");
+  });
+  it("rejects source changes during a response and never records that observation", async () => {
+    const m = mockManifest();
+    const expected = m.cases[0];
+    let current = clone(MOCK_IDENTITY);
+    const fakeFetch = vi.fn<typeof fetch>(async () => {
+      current.adapterSha256 = "f".repeat(64);
+      return new Response(MOCK_BODY);
+    });
+    const observed = observeDashboardRequest(
+      m,
+      expected.example.id,
+      fakeFetch,
+      () => assertIdentityUnchanged(MOCK_IDENTITY, current),
+    );
+    await expect(
+      observed.fetch(DASHBOARD_CALCULATION_URL, {
+        method: "POST",
+        credentials: "omit",
+        body: JSON.stringify(expected.request),
+      }),
+    ).rejects.toThrow("validation-source-changed");
+    expect(() => observed.observation()).toThrow("unobserved-validation-tuple");
+    expect(fakeFetch).toHaveBeenCalledTimes(1);
+  });
+  it("refuses an altered request before sending or recording anything", async () => {
+    const m = mockManifest();
+    const fakeFetch = vi.fn<typeof fetch>();
+    const observed = observeDashboardRequest(
+      m,
+      m.cases[0].example.id,
+      fakeFetch,
+      () => {},
+    );
+    await expect(
+      observed.fetch(DASHBOARD_CALCULATION_URL, {
+        method: "POST",
+        credentials: "omit",
+        body: "{}",
+      }),
+    ).rejects.toThrow("observed-request-differs");
+    expect(fakeFetch).not.toHaveBeenCalled();
+    expect(() => observed.observation()).toThrow();
   });
 });

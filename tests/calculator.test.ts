@@ -73,6 +73,7 @@ function transportAnswer(value: unknown = 123.45) {
 
 let adapter: typeof import("../lib/calculator");
 let fetchMock: ReturnType<typeof vi.fn<typeof fetch>>;
+const originalAny = Object.getOwnPropertyDescriptor(AbortSignal, "any")!;
 
 beforeEach(async () => {
   vi.resetModules();
@@ -86,6 +87,7 @@ beforeEach(async () => {
 });
 
 afterEach(() => {
+  Object.defineProperty(AbortSignal, "any", originalAny);
   vi.useRealTimers();
   vi.restoreAllMocks();
   vi.unstubAllGlobals();
@@ -518,5 +520,141 @@ describe("official dashboard API transport", () => {
     await vi.advanceTimersByTimeAsync(1);
     await rejected;
     expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe("calculation cancellation without AbortSignal.any", () => {
+  it.each(["success", "rejection", "cancel", "timeout"] as const)(
+    "preserves %s behavior and removes fallback listeners",
+    async (outcome) => {
+      Object.defineProperty(AbortSignal, "any", {
+        ...originalAny,
+        value: undefined,
+      });
+      const timeout = new AbortController();
+      vi.spyOn(AbortSignal, "timeout").mockReturnValue(timeout.signal);
+      const action = new AbortController();
+      const removeAction = vi.spyOn(action.signal, "removeEventListener");
+      const removeTimeout = vi.spyOn(timeout.signal, "removeEventListener");
+      let resolve!: (response: Response) => void;
+      let reject!: (reason: unknown) => void;
+      fetchMock.mockImplementationOnce(
+        (_url, options) =>
+          new Promise((accept, refuse) => {
+            resolve = accept;
+            reject = refuse;
+            options?.signal?.addEventListener(
+              "abort",
+              () => refuse(options.signal?.reason),
+              { once: true },
+            );
+          }),
+      );
+      const pending = adapter.calculateProgram(
+        TRANSPORT_PROGRAM,
+        TRANSPORT_VALUES,
+        action.signal,
+      );
+      if (outcome === "success") {
+        resolve(transportAnswer());
+        await expect(pending).resolves.toMatchObject({ value: 123.45 });
+      } else {
+        const rejected = expect(pending).rejects.toThrow(
+          outcome === "cancel"
+            ? "cancelled"
+            : outcome === "timeout"
+              ? "timeout"
+              : "network",
+        );
+        if (outcome === "cancel") action.abort();
+        else if (outcome === "timeout")
+          timeout.abort(new DOMException("Timed out", "TimeoutError"));
+        else reject(new TypeError("Transport fixture network failure"));
+        await rejected;
+      }
+      expect(fetchMock).toHaveBeenCalledTimes(1);
+      expect(removeAction).toHaveBeenCalledWith("abort", expect.any(Function));
+      expect(removeTimeout).toHaveBeenCalledWith("abort", expect.any(Function));
+    },
+  );
+});
+
+describe("calculator field messages", () => {
+  it.each(["1e4", "0x10", "Infinity", "NaN", "12,000"])(
+    "explains unsupported numeric notation %j before a request",
+    (value) => {
+      expect(
+        adapter.calculatorInputError(TRANSPORT_PROGRAM.inputs[1], value),
+      ).toBe("Annual rent: enter a plain decimal number.");
+      expect(fetchMock).not.toHaveBeenCalled();
+    },
+  );
+
+  it.each(["0", "1000.50", ".50", " 12. "])(
+    "accepts the request parser's plain decimal input %j",
+    (value) => {
+      expect(
+        adapter.calculatorInputError(TRANSPORT_PROGRAM.inputs[1], value),
+      ).toBeNull();
+    },
+  );
+
+  it.each(["-1", "1"])(
+    "explains the exact-zero renter requirement for %j",
+    (value) => {
+      expect(
+        adapter.calculatorInputError(
+          {
+            ...TRANSPORT_PROGRAM.inputs[1],
+            minimum: 0,
+            maximum: 0,
+          },
+          value,
+        ),
+      ).toBe("Annual rent: enter 0 in this renter scenario.");
+    },
+  );
+
+  it("accepts an explicit zero for a fixed-zero field", () => {
+    expect(
+      adapter.calculatorInputError(
+        {
+          ...TRANSPORT_PROGRAM.inputs[1],
+          minimum: 0,
+          maximum: 0,
+        },
+        "0",
+      ),
+    ).toBeNull();
+  });
+
+  it("explains minimum and maximum values", () => {
+    expect(
+      adapter.calculatorInputError(TRANSPORT_PROGRAM.inputs[0], "-1"),
+    ).toBe("Age: enter 0 or more.");
+    expect(
+      adapter.calculatorInputError(TRANSPORT_PROGRAM.inputs[0], "121"),
+    ).toBe("Age: enter 120 or less.");
+  });
+
+  it("agrees with request validation for every generated field value", () => {
+    fc.assert(
+      fc.property(
+        fc.oneof(
+          fc.string(),
+          fc.double({ noNaN: true, noDefaultInfinity: true }).map(String),
+        ),
+        (value) => {
+          for (const input of TRANSPORT_PROGRAM.inputs) {
+            const program = { ...TRANSPORT_PROGRAM, inputs: [input] };
+            expect(adapter.calculatorInputError(input, value) === null).toBe(
+              adapter.validateInputs(program, { [input.variable]: value })
+                .length === 0,
+            );
+          }
+        },
+      ),
+      { numRuns: 100 },
+    );
   });
 });

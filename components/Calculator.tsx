@@ -4,9 +4,9 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Button, Input, SelectInput } from "@policyengine/ui-kit";
 import {
   calculateProgram,
+  calculatorInputError,
   CALCULATOR_YEAR,
   validateInputs,
-  type CalculatorInput,
   type CalculatorProgram,
   type CalculatorResponse,
   type CalculatorValues,
@@ -85,31 +85,6 @@ function availabilityReason(reason: string | null): string {
     default:
       return "Household calculations for this program remain unavailable here.";
   }
-}
-
-function inputError(input: CalculatorInput, value: string): string | null {
-  if (input.kind === "boolean") {
-    return value === "true" || value === "false"
-      ? null
-      : `Choose yes or no for ${input.label.toLowerCase()}.`;
-  }
-  if (input.kind === "select") {
-    return input.options?.some((option) => option.value === value)
-      ? null
-      : `Choose ${input.label.toLowerCase()}.`;
-  }
-  if (!value.trim()) return `Enter ${input.label.toLowerCase()}.`;
-  const number = Number(value);
-  if (!Number.isFinite(number)) {
-    return `Enter a number for ${input.label.toLowerCase()}.`;
-  }
-  if (input.minimum !== undefined && number < input.minimum) {
-    return `Enter ${input.minimum} or more for ${input.label.toLowerCase()}.`;
-  }
-  if (input.maximum !== undefined && number > input.maximum) {
-    return `Enter ${input.maximum} or less for ${input.label.toLowerCase()}.`;
-  }
-  return null;
 }
 
 export function Calculator({ programs, states }: CalculatorProps) {
@@ -209,7 +184,7 @@ export function Calculator({ programs, states }: CalculatorProps) {
     const nextFieldErrors: Record<string, string> = {};
     const validation = validateInputs(selectedProgram, values);
     for (const input of selectedProgram.inputs) {
-      const error = inputError(input, values[input.variable] ?? "");
+      const error = calculatorInputError(input, values[input.variable] ?? "");
       if (error || validation.includes(input.variable))
         nextFieldErrors[input.variable] =
           error ?? `Enter a number for ${input.label.toLowerCase()}.`;
@@ -467,22 +442,23 @@ export function Calculator({ programs, states }: CalculatorProps) {
       >
         <div className={styles.resultHeading}>
           <span className="eyebrow">PolicyEngine</span>
-          <span className={styles.status} aria-live="polite">
+          <span
+            className={styles.status}
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
             {pending
               ? "Calculating"
               : stale
                 ? "Inputs changed"
                 : displayedEstimate
-                  ? "Calculated"
+                  ? `Calculated: ${dollars.format(displayedEstimate.result.value)}`
                   : "No estimate yet"}
           </span>
         </div>
         <h2 id="estimate-heading">Model estimate</h2>
-        <div
-          className={styles.resultBody}
-          aria-live="polite"
-          aria-busy={pending}
-        >
+        <div className={styles.resultBody} aria-busy={pending}>
           {displayedEstimate && selectedProgram ? (
             <>
               {stale && (

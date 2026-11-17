@@ -33,7 +33,7 @@ Hawaii excludes taxpayers whom another taxpayer could claim as a dependent, even
 
 The browser uses `@policyengine/api-client` to send entered scenarios to the website's household-calculation API. Calculations require a network connection and use the shared API's capacity. The app adds no calculation backend or frontend benefit formulas. The adapter rejects missing or invalid outputs, preserves finite returned numbers, cancels obsolete requests, reuses unchanged requests, and caps new requests at 15 per minute per page.
 
-`data/calculator/contracts.json` records input mappings and source evidence. The metadata snapshot reported PolicyEngine US 2.2.1 on November 15, 2026; each calculation response supplies no model-version receipt. `data/calculator/validation-cases.json` contains 31 source-derived cases for enabled programs. Saved API responses match their expected values; `scripts/calculator_live_qa.ts` can rerun those checks. The offline unit suite sends no live requests.
+`data/calculator/contracts.json` records input mappings and source evidence. The metadata snapshot reported PolicyEngine US 2.2.1 on November 15, 2026. Saved responses retain the API's provenance fields; requests do not pin a model version. `data/calculator/validation-cases.json` contains 31 source-derived cases for enabled programs. Saved API responses match their expected values; `scripts/calculator_live_qa.ts` can rerun those checks. The offline unit suite sends no live requests.
 
 Independent review and publication checks remain open. The preview does not establish exhaustive coverage or national-calculator readiness.
 

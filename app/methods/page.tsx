@@ -101,10 +101,9 @@ export default function Methods() {
             engine through the website's household-calculation API. On November
             15, 2026, the API's metadata reported PolicyEngine US 2.2.1. We
             recorded that snapshot and inspected the matching source for each
-            enabled calculation. The calculation response supplies no
-            model-version receipt, so the metadata snapshot does not pin a
-            release to each later answer. Missing, null, and nonnumeric outputs
-            remain unavailable.
+            enabled calculation. Saved responses retain the API's provenance
+            fields; requests do not pin a model version. Missing, null, and
+            nonnumeric outputs remain unavailable.
           </p>
           <p>
             Saved API responses match the expected amounts in 31 source-derived
