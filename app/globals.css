@@ -8,6 +8,7 @@ section[id] {
   scroll-margin-top: 100px;
 }
 body {
+  --font-sans: var(--font-report-inter);
   margin: 0;
   background: var(--background);
   color: var(--foreground);
@@ -231,6 +232,9 @@ select {
   color: var(--color-teal-800);
   border-color: var(--color-teal-100);
 }
+.state-tile.context-only {
+  border-style: dashed;
+}
 .state-tile:hover {
   transform: translateY(-2px);
   border-color: var(--primary);
@@ -258,11 +262,11 @@ select {
   width: 10px;
   height: 10px;
   background: var(--muted);
-  border: 1px solid var(--border);
+  border: 1px dashed var(--border);
 }
 .legend .legend-credit {
-  background: var(--color-teal-100);
-  border-color: var(--color-teal-200);
+  background: var(--color-teal-50);
+  border: 1px solid var(--color-teal-100);
 }
 .small-note,
 .method-footnote {
@@ -326,7 +330,8 @@ select {
   border-top: 1px solid var(--border);
   padding: 26px 0;
 }
-.program-detail h3 {
+.program-detail h3,
+.program-detail h4 {
   margin: 5px 0 12px;
 }
 .program-formula {
@@ -584,9 +589,17 @@ summary {
   footer,
   .state-picker,
   .draft-note a,
-  details,
   .report-toc {
     display: none;
+  }
+  details,
+  details > .expanded-notes,
+  details > ul {
+    display: block !important;
+  }
+  details::details-content {
+    content-visibility: visible !important;
+    block-size: auto !important;
   }
   .page-width {
     padding: 0;

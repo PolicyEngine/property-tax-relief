@@ -44,7 +44,7 @@ function OfflineResearch() {
           <strong>Research draft.</strong> The profiles cover selected
           provisions; the systematic scope audit and validated national
           household calculations remain incomplete.{" "}
-          <a href="methods.html">Read the coverage audit ↗</a>
+          <a href="methods.html">Read the coverage audit</a>
         </div>
         <Explorer
           states={states}

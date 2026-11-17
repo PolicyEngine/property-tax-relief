@@ -39,15 +39,16 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "tax-deferral"
     }
   ],
   "laterChanges": [
     "2026 enrollment raises the prior-year household-income limit to $70,000 and changes property-value rules."
   ],
   "researchNotes": [
-    "Deferral is financing, not forgiven tax or a refundable credit.",
-    "Historical Elderly Rental Assistance references were not treated as evidence of an active 2025 credit."
+    "Deferred taxes remain repayable with interest under the program rules.",
+    "The linked deferral sources do not establish an active Elderly Rental Assistance program for 2025."
   ],
   "sources": [
     {

@@ -28,7 +28,7 @@
         "Eligible taxes reflect the Homestead assessment reduction; fixed water/sewer charges, excess acreage and business portions are excluded.",
         "State, county and municipal Homestead assessment bases can differ. Their aggregation with the Homeowners' $300,000 assessment cap remains unresolved for a general calculation."
       ],
-      "programYear": "2025 property-tax credit uses 2024 household income; do not equate the credit year with the income year.",
+      "programYear": "2025 property-tax credit using calendar-year 2024 household income.",
       "rentProxy": null,
       "sources": [
         {
@@ -52,7 +52,8 @@
           "kind": "statute"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
     },
     {
       "id": "md-renters-tax-credit",
@@ -63,7 +64,7 @@
       "refundable": true,
       "ageRule": "Age 60+, fully disabled, or younger renter meeting dependent-child, income and housing conditions.",
       "incomeDefinition": "Combined gross household income, including nontaxable retirement income.",
-      "incomeLimits": "Younger applicants face household-size limits; older/disabled applicants use the rent-to-income calculation. Apply the applicable-year application rules.",
+      "incomeLimits": "Younger applicants face household-size limits; older or disabled applicants use the rent-to-income calculation. Section 9-102(i)(2) bars a renter whose combined net worth exceeds $200,000 as of December 31.",
       "maximumBenefit": "$1,000.",
       "formulaSummary": "15% of occupancy rent minus 0% of first $4,000 of income, 2.5% of next $4,000, and 5.5% above $8,000, subject to eligibility and cap.",
       "application": "Apply annually to SDAT by October 1 of the application year; payment is a direct state check.",
@@ -71,7 +72,8 @@
         "At least six months in a qualifying Maryland principal residence.",
         "Occupancy rent excludes heat, utilities and fees.",
         "Tax-exempt dwellings are excluded; younger applicants have additional subsidy restrictions.",
-        "The under-60 route has an unresolved source conflict: statute specifies Census poverty thresholds, while the 2025/2026 forms use HHS poverty guidelines. Exact reference-year and family-composition treatment remain unresolved for eligibility calculations."
+        "The under-60 route has an unresolved source conflict: statute specifies Census poverty thresholds, while the 2025/2026 forms use HHS poverty guidelines. Exact reference-year and family-composition treatment remain unresolved for eligibility calculations.",
+        "The 2025 application uses December 31, 2024 net worth. The statute bars net worth above $200,000; the application describes eligibility as less than $200,000, so its wording differs at the exact threshold."
       ],
       "interactions": [],
       "programYear": "The 2025 application uses 2024 rent and income; the 2026 application uses 2025. Rent year and application/payment year must remain separate.",
@@ -98,7 +100,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "cash-rebate"
     },
     {
       "id": "md-homestead-assessment-credit",
@@ -118,7 +121,7 @@
       ],
       "interactions": [
         "This assessment-growth credit is distinct from the income-based Homeowners’ Tax Credit.",
-        "Do not count bill relief twice. The income-based Homeowners' Credit uses its statutory Homestead-adjusted assessment basis; aggregation of differing jurisdictional bases remains unresolved."
+        "The income-based Homeowners' Credit uses its statutory Homestead-adjusted assessment basis. The aggregation of differing jurisdictional bases remains unresolved."
       ],
       "programYear": "2025 property-tax year.",
       "rentProxy": null,
@@ -129,14 +132,15 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "assessment-or-tax-limit"
     }
   ],
   "laterChanges": [],
   "researchNotes": [
-    "No Maryland credit variable was identified in the inspected model paths; this is a model-coverage flag, not proof of legal absence.",
-    "Homeowner credit is bill relief, so income-tax refundability is not a meaningful classification.",
-    "The under-60 renter Census/HHS threshold conflict and the Homeowners' differing-jurisdiction Homestead bases remain unresolved calculation limits. Initial source-pass completion does not certify population eligibility or household amounts."
+    "The report does not establish a validated Maryland program-to-model mapping.",
+    "The Homeowners’ Credit reduces the property-tax bill, so income-tax refundability does not describe its delivery.",
+    "The under-60 renter Census/HHS threshold conflict and differing jurisdictional Homestead bases remain unresolved calculation limits."
   ],
   "sources": [
     {

@@ -15,7 +15,7 @@
       "tenures": ["owner"],
       "refundable": false,
       "ageRule": "66 or older in 2025, or qualifying surviving spouse.",
-      "incomeDefinition": "2024 gross household income for relief against 2025 property tax.",
+      "incomeDefinition": "Gross household income under the homeowner-credit rules. The 2024 income reference for 2025 relief is inferred from the prior-year rule in 2026 guidance; the exact 2025 TC-90CY form remains unavailable.",
       "incomeLimits": "Less than $42,623 for the 2025 homeowner application.",
       "maximumBenefit": "Income-based credit up to $1,312, plus tax on 20% of the residence's fair market value.",
       "formulaSummary": "Income-band credit and separate home-value-based reduction, limited by qualifying taxes.",
@@ -25,7 +25,7 @@
         "Owner-occupied primary residence."
       ],
       "interactions": [],
-      "programYear": "2025 property tax; uses 2024 household income.",
+      "programYear": "2025 property tax; the 2024 household-income reference remains inferred rather than verified against the 2025 form.",
       "rentProxy": null,
       "sources": [
         {
@@ -34,12 +34,13 @@
           "kind": "agency"
         },
         {
-          "title": "2025 Homeowner Low Income Abatement and Tax Credit form",
-          "url": "https://sanjuancountyut.gov/sites/default/files/fileattachments/clerk/page/3551/2025_low_income_abatement_form_tc-90cy.pdf",
-          "kind": "form"
+          "title": "Utah property-tax forms index",
+          "url": "https://tax.utah.gov/propertytax/forms/",
+          "kind": "agency"
         }
       ],
-      "modelVariables": ["ut_homeowner_renter_relief"]
+      "modelVariables": ["ut_homeowner_renter_relief"],
+      "paymentMechanism": "not-established"
     },
     {
       "id": "ut-renter-refund",
@@ -74,7 +75,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["ut_homeowner_renter_relief"]
+      "modelVariables": ["ut_homeowner_renter_relief"],
+      "paymentMechanism": "cash-rebate"
     },
     {
       "id": "ut-low-income-abatement",
@@ -84,7 +86,7 @@
       "tenures": ["owner"],
       "refundable": false,
       "ageRule": "Senior, disabled or extreme-hardship criteria.",
-      "incomeDefinition": "See program rules.",
+      "incomeDefinition": "Household income under the county abatement rules; the precise income definition is not established.",
       "incomeLimits": "2025 application income below $42,623.",
       "maximumBenefit": "Half of qualifying taxes, capped at $1,312 under the 2025 table.",
       "formulaSummary": "County-discretionary abatement with separate eligibility and application requirements.",
@@ -100,26 +102,22 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
     }
   ],
   "laterChanges": [
     "2026 homeowner rules introduce age-67 or prior-year eligibility conditions; these are separate from the 2025 homeowner baseline."
   ],
   "researchNotes": [
-    "Do not apply the $1,412 refund schedule for 2025 rent to 2025 homeowner property tax; those schedules use different income years.",
-    "Current agency pages mix 2025 household income with 2026 homeowner relief. Year-specific forms control."
+    "The $1,412 renter refund applies to 2025 rent claimed in 2026. The 2025 homeowner table has a separate $1,312 maximum.",
+    "The forms index does not establish the 2025 homeowner income reference year. Its 2024-income mapping remains inferred from later guidance."
   ],
   "sources": [
     {
       "title": "2025 Property Tax Relief Table",
       "url": "https://files.tax.utah.gov/propertytax/media/tax-relief.pdf",
       "kind": "agency"
-    },
-    {
-      "title": "2025 Homeowner Low Income Abatement and Tax Credit form",
-      "url": "https://sanjuancountyut.gov/sites/default/files/fileattachments/clerk/page/3551/2025_low_income_abatement_form_tc-90cy.pdf",
-      "kind": "form"
     },
     {
       "title": "TC-90CB refund for rent year 2025, revision April 2026",
@@ -129,6 +127,11 @@
     {
       "title": "Utah Publication 36, revised September 2026",
       "url": "https://tax.utah.gov/forms-pubs/pub-36/",
+      "kind": "agency"
+    },
+    {
+      "title": "Utah property-tax forms index",
+      "url": "https://tax.utah.gov/propertytax/forms/",
       "kind": "agency"
     }
   ]

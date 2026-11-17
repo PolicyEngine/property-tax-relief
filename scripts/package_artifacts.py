@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import base64
+import html
 import mimetypes
 import re
 import shutil
@@ -11,6 +12,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "out"
 ARTIFACTS = ROOT / "artifacts"
+
+
+def body_class(text: str) -> str:
+    """Preserve the production font class in self-contained documents."""
+    match = re.search(r'<body\b[^>]*\bclass="([^"]*)"', text)
+    return f' class="{html.escape(match.group(1), quote=True)}"' if match else ""
 
 
 def inline_styles(text: str) -> str:
@@ -45,6 +52,7 @@ def document(name: str) -> None:
     source = re.sub(r"<script\b[^>]*>.*?</script>", "", source, flags=re.DOTALL)
     source = re.sub(r'<link[^>]*(?:as="script"|rel="modulepreload")[^>]*>', "", source)
     source = inline_styles(source)
+    font_class = body_class(source)
     styles = "\n".join(re.findall(r"<style>.*?</style>", source, flags=re.DOTALL))
     main = re.search(r"<main\b.*?</main>", source, flags=re.DOTALL)
     if main is None:
@@ -59,7 +67,7 @@ def document(name: str) -> None:
         + title
         + " — research draft</title>"
         + styles
-        + '</head><body><nav class="page-width report-toc" aria-label="Research navigation"><a href="index.html">Interactive explorer</a><a href="report.html">Report</a><a href="methods.html">Sources and methods</a><a href="inventory.csv">Download CSV</a></nav>'
+        + f'</head><body{font_class}><nav class="page-width report-toc" aria-label="Research navigation"><a href="index.html">Interactive explorer</a><a href="report.html">Report</a><a href="methods.html">Sources and methods</a><a href="inventory.csv">Download CSV</a></nav>'
         + main.group(0)
         + "</body></html>"
     )
@@ -82,7 +90,7 @@ def main() -> None:
     (ARTIFACTS / "index.html").write_text(
         '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Rent and property taxes across states — research draft</title>'
         + styles
-        + '</head><body><div id="root"></div><script type="module">'
+        + f'</head><body{body_class(shell)}><div id="root"></div><script type="module">'
         + bundle
         + "</script></body></html>"
     )

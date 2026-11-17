@@ -26,8 +26,8 @@
         "Use property taxes levied for the year; tax-exempt housing and public-assistance conditions can affect the credit."
       ],
       "interactions": [
-        "Do not add the veteran/blind alternative to the ordinary credit.",
-        "Special rent/service-fee and senior calculations require their own inputs."
+        "The veteran or blind alternative replaces the ordinary credit; the two amounts are not added.",
+        "Special rent, service-fee and senior calculations use separate rules and inputs."
       ],
       "programYear": "Tax year 2025, claimed in 2026.",
       "rentProxy": 0.23,
@@ -43,7 +43,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["mi_homestead_property_tax_credit"]
+      "modelVariables": ["mi_homestead_property_tax_credit"],
+      "paymentMechanism": "income-tax-credit"
     }
   ],
   "laterChanges": [],

@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import { SiteHeader, SiteFooter } from "@/components/Chrome";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-report-inter",
+});
 
 export const metadata: Metadata = {
   title: "Rent and property taxes across states | PolicyEngine",
@@ -16,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${inter.className} ${inter.variable}`}>
         <SiteHeader />
         {children}
         <SiteFooter />

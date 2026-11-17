@@ -206,10 +206,10 @@ function StatePicker({
       <div className="legend">
         <span>
           <i className="legend-credit" aria-hidden="true" /> Tax program
-          recorded
+          recorded (solid outline)
         </span>
         <span>
-          <i aria-hidden="true" /> Other property-tax provisions
+          <i aria-hidden="true" /> Other provisions (dashed outline)
         </span>
       </div>
       <p className="small-note">
@@ -237,6 +237,7 @@ function StateDetail({
   onCompare,
   onShowAll,
   methodsHref,
+  hiddenContextMatches,
 }: {
   state: StateProfile;
   programs: ReturnType<typeof selectPrograms>;
@@ -246,6 +247,7 @@ function StateDetail({
   onCompare: () => void;
   onShowAll: () => void;
   methodsHref: string;
+  hiddenContextMatches: ReturnType<typeof selectPrograms>;
 }) {
   const cannotAdd = comparisonFull && !isCompared;
   return (
@@ -281,6 +283,24 @@ function StateDetail({
           ? "Some research remains open"
           : "Initial source pass recorded"}
       </div>
+      {hiddenContextMatches.length > 0 && (
+        <div
+          className="no-credit"
+          role="region"
+          aria-label="Matching contextual provisions"
+        >
+          <h3>Your search matched contextual provisions</h3>
+          <p>These provisions sit outside the main comparison:</p>
+          <ul>
+            {hiddenContextMatches.map((program) => (
+              <li key={program.id}>{program.name}</li>
+            ))}
+          </ul>
+          <button type="button" className="text-button" onClick={onShowAll}>
+            Show all recorded programs
+          </button>
+        </div>
+      )}
       {programs.map((program) => (
         <ProgramDetail
           key={program.id}
@@ -289,7 +309,7 @@ function StateDetail({
           coverage={coverage?.programs.find((row) => row.id === program.id)}
         />
       ))}
-      {programs.length === 0 && (
+      {programs.length === 0 && hiddenContextMatches.length === 0 && (
         <div className="no-credit">
           <h3>No matching program recorded</h3>
           <p>
@@ -489,6 +509,14 @@ export function Explorer({
   const programs = selected
     ? selectPrograms(selected, tenure, category, includeContext)
     : [];
+  const hiddenContextMatches =
+    selected && !includeContext && query.trim()
+      ? selectPrograms(selected, tenure, category, true).filter(
+          (program) =>
+            !isComparisonProgram(program) &&
+            program.name.toLowerCase().includes(query.trim().toLowerCase()),
+        )
+      : [];
   const comparisonFull = comparison.every(Boolean);
 
   function updateFilters(patch: Partial<Filters>) {
@@ -540,6 +568,7 @@ export function Explorer({
             methodsHref={methodsHref}
             state={selected}
             programs={programs}
+            hiddenContextMatches={hiddenContextMatches}
             coverage={coverage}
             isCompared={comparison.includes(selected.code)}
             comparisonFull={comparisonFull}

@@ -1,7 +1,7 @@
 """Check or export the frozen housing-expense source declaration audit.
 
-Run without arguments to check the committed JSON and CSV exports. --write
-refreshes the public exports from data/housing-expense-model-routes.json.
+Run without arguments to check the committed public and offline JSON/CSV exports.
+--write refreshes those copies from data/housing-expense-model-routes.json.
 --model-repo additionally checks immutable Git blobs without loading the model.
 """
 
@@ -76,6 +76,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data/housing-expense-model-routes.json"
 PUBLIC_JSON = ROOT / "public/data/housing-expense-model-routes.json"
 PUBLIC_CSV = ROOT / "public/data/housing-expense-model-routes.csv"
+OFFLINE_JSON = ROOT / "artifacts/housing-expense-model-routes.json"
+OFFLINE_CSV = ROOT / "artifacts/housing-expense-model-routes.csv"
 PRIVATE = re.compile(
     r"""(?:^|[\s"'])/(?:Users|home|private)/|file://|captured_path|local_source_copy|transcript|\.claude/|~/""",
     re.IGNORECASE,
@@ -106,6 +108,9 @@ def csv_bytes(data):
         "audit_type",
         "tax_year",
         "model_commit",
+        "validation",
+        "calculator_coverage_added",
+        "interpretation",
         "rent_routes",
         "property_tax_routes",
         "itemization_or_federal_base_route",
@@ -133,6 +138,9 @@ def csv_bytes(data):
                     for ref in row["source_refs"]
                 ]
                 if field == "source_records"
+                else data["audit"][field]
+                if field
+                in {"validation", "calculator_coverage_added", "interpretation"}
                 else row[field]
             )
             item[field] = json.dumps(value, ensure_ascii=False, separators=(",", ":"))
@@ -242,12 +250,17 @@ def validate(data):
             "Method selector includes a later-year branch",
         )
 
-    def references(values):
+    def references(values, row_refs=None):
         require(
             isinstance(values, list) and values == sorted(set(values)),
             "Source references must be unique and sorted",
         )
         require(set(values) <= ids, "Unknown source reference")
+        if row_refs is not None:
+            require(
+                set(values) <= row_refs,
+                "Sub-route source reference missing from its jurisdiction source_refs",
+            )
         used.update(values)
 
     expected_row_keys = {
@@ -263,13 +276,18 @@ def validate(data):
     for row in rows:
         require(set(row) == expected_row_keys, "Unexpected jurisdiction fields")
         references(row["source_refs"])
+        row_refs = set(row["source_refs"])
         for field in ("rent_routes", "property_tax_routes"):
             require(isinstance(row[field], list), "Routes must use lists")
             for route in row[field]:
                 require(set(route) == ROUTE_KEYS, "Unexpected route fields")
                 require(
-                    isinstance(route["kind"], str) and bool(route["kind"]),
-                    "Route kind required",
+                    isinstance(route["kind"], str)
+                    and re.fullmatch(r"[a-z][a-z0-9_]*", route["kind"]),
+                    "Route kind must use a lowercase identifier without spaces",
+                )
+                require(
+                    bool(route["description"].strip()), "Route description required"
                 )
                 for key in ("variables", "input_dependencies", "dependency_chain"):
                     require(
@@ -277,13 +295,21 @@ def validate(data):
                         and all(isinstance(value, str) for value in route[key]),
                         "Route chains must use string lists",
                     )
-                references(route["source_refs"])
+                references(route["source_refs"], row_refs)
                 require(
                     not route["dependency_chain"] or bool(route["source_refs"]),
                     "Asserted dependency chain requires route source references",
                 )
-        references(row["itemization_or_federal_base_route"]["source_refs"])
-        references(row["effective_year_evidence"]["source_refs"])
+        itemization = row["itemization_or_federal_base_route"]
+        require(
+            re.fullmatch(r"[a-z][a-z0-9_]*", itemization["kind"]) is not None,
+            "Itemization kind must use a lowercase identifier without spaces",
+        )
+        require(
+            bool(itemization["description"].strip()), "Itemization description required"
+        )
+        references(itemization["source_refs"], row_refs)
+        references(row["effective_year_evidence"]["source_refs"], row_refs)
         require(
             row["effective_year_evidence"]["tax_year"] == 2025,
             "Jurisdiction year changed",
@@ -376,6 +402,18 @@ def check_model(data, repo):
         )
 
 
+def check_exports(data, root=ROOT):
+    """Reject a stale committed public or offline copy without regenerating it."""
+    expected_json, expected_csv = json_bytes(data), csv_bytes(data)
+    for name in ("public/data", "artifacts"):
+        for suffix, content in (("json", expected_json), ("csv", expected_csv)):
+            path = root / name / f"housing-expense-model-routes.{suffix}"
+            require(
+                path.read_bytes() == content,
+                f"{name} {suffix.upper()} differs; run --write",
+            )
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     action = parser.add_mutually_exclusive_group()
@@ -391,7 +429,7 @@ def main():
         help="Read immutable Git objects from a local PolicyEngine US checkout",
     )
     args = parser.parse_args()
-    data = json.loads(SOURCE.read_text())
+    data = json.loads(SOURCE.read_text(encoding="utf-8"))
     validate(data)
     expected_json, expected_csv = json_bytes(data), csv_bytes(data)
     require(SOURCE.read_bytes() == expected_json, "Canonical JSON formatting differs")
@@ -402,12 +440,13 @@ def main():
         PUBLIC_JSON.parent.mkdir(parents=True, exist_ok=True)
         PUBLIC_JSON.write_bytes(expected_json)
         PUBLIC_CSV.write_bytes(expected_csv)
+        OFFLINE_JSON.parent.mkdir(parents=True, exist_ok=True)
+        OFFLINE_JSON.write_bytes(expected_json)
+        OFFLINE_CSV.write_bytes(expected_csv)
+    check_exports(data)
     require(
-        PUBLIC_JSON.read_bytes() == expected_json, "Public JSON differs; run --write"
-    )
-    require(PUBLIC_CSV.read_bytes() == expected_csv, "Public CSV differs; run --write")
-    require(
-        len(list(csv.DictReader(io.StringIO(PUBLIC_CSV.read_text())))) == 51,
+        len(list(csv.DictReader(io.StringIO(PUBLIC_CSV.read_text(encoding="utf-8")))))
+        == 51,
         "CSV must contain 51 jurisdictions",
     )
     print(

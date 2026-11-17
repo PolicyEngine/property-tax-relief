@@ -15,7 +15,7 @@
       "tenures": ["owner"],
       "refundable": false,
       "ageRule": "No general age restriction.",
-      "incomeDefinition": "See program rules.",
+      "incomeDefinition": "Not income-tested.",
       "incomeLimits": "Not income-tested.",
       "maximumBenefit": "$140,000 of residence value exempt from school-district tax for 2025.",
       "formulaSummary": "Mandatory school-district homestead value exemption; actual savings depend on school tax rate.",
@@ -43,7 +43,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["tx_school_district_homestead_exemption"]
+      "modelVariables": ["tx_school_district_homestead_exemption"],
+      "paymentMechanism": "taxable-property-value-exemption"
     },
     {
       "id": "tx-senior-disabled-homestead",
@@ -53,7 +54,7 @@
       "tenures": ["owner"],
       "refundable": false,
       "ageRule": "65 or older, or qualifying disability.",
-      "incomeDefinition": "See program rules.",
+      "incomeDefinition": "Not income-tested.",
       "incomeLimits": "Not income-tested.",
       "maximumBenefit": "Additional $60,000 of school-district taxable value for 2025.",
       "formulaSummary": "Additional mandatory school exemption; age and disability exemptions are alternatives, not cumulative.",
@@ -76,7 +77,8 @@
       ],
       "modelVariables": [
         "tx_over_65_or_disabled_school_district_homestead_exemption"
-      ]
+      ],
+      "paymentMechanism": "taxable-property-value-exemption"
     },
     {
       "id": "tx-local-homestead",
@@ -86,7 +88,7 @@
       "tenures": ["owner"],
       "refundable": false,
       "ageRule": "No general age restriction.",
-      "incomeDefinition": "See program rules.",
+      "incomeDefinition": "Not income-tested.",
       "incomeLimits": "Not income-tested.",
       "maximumBenefit": "General exemption up to 20% of home value, with statutory minimum; optional senior/disability amounts vary.",
       "formulaSummary": "Each eligible taxing unit chooses whether to adopt the optional exemption.",
@@ -102,13 +104,14 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
     }
   ],
   "laterChanges": [],
   "researchNotes": [
     "The 2025 school exemption increases received voter approval in November 2025 and apply to the 2025 tax year.",
-    "Homestead exemptions do not cover every local tax and must not be displayed as dollar-for-dollar credits."
+    "Homestead exemptions reduce taxable value under the applicable local levies. Tax savings depend on the covered tax rates."
   ],
   "sources": [
     {

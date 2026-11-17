@@ -47,12 +47,12 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["az_property_tax_credit"]
+      "modelVariables": ["az_property_tax_credit"],
+      "paymentMechanism": "income-tax-credit"
     }
   ],
   "researchNotes": [
-    "PDF direct fetch returned 403; official indexed instructions and form excerpts were readable.",
-    "Renters do not use a uniform statewide percentage proxy in this program."
+    "Renters use landlord-certified property taxes attributable to their unit; the program has no uniform statewide rent-percentage proxy."
   ],
   "sources": [
     {

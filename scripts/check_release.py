@@ -15,14 +15,14 @@ if summary["partialProfiles"]:
     )
 if summary["implementationMissing"]:
     problems.append(
-        f"{summary['implementationMissing']} credit/rebate records lack implementation mappings"
+        f"{summary['implementationMissing']} credit, deduction or rebate records lack implementation mappings"
     )
 unvalidated = sum(
     not p["validated"] for p in audit["programs"] if p["status"] != "context"
 )
 if unvalidated:
     problems.append(
-        f"{unvalidated} credit/rebate records lack source-derived calculation validation"
+        f"{unvalidated} credit, deduction or rebate records lack source-derived calculation validation"
     )
 if not audit["releaseReady"]:
     problems.append("Independent review and release readiness have not been recorded")

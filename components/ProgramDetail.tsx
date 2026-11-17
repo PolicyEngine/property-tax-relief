@@ -1,5 +1,9 @@
 import { appPath } from "@/lib/paths";
-import { CATEGORY_LABELS, isComparisonProgram } from "@/lib/inventory";
+import {
+  CATEGORY_LABELS,
+  isComparisonProgram,
+  PAYMENT_MECHANISM_LABELS,
+} from "@/lib/inventory";
 import type { Program, ProgramCoverage, Source } from "@/lib/types";
 
 export function SourceLinks({
@@ -29,20 +33,6 @@ export function SourceLinks({
   );
 }
 
-function paymentMechanism(program: Program) {
-  if (program.category === "deferral") return "Repayable tax deferral";
-  if (program.category === "exemption")
-    return "Reduction in taxable property value";
-  if (program.category === "deduction")
-    return "Reduction in taxable income; the deduction amount is not a cash credit";
-  if (program.category === "assessment-limit")
-    return "Limit on assessment or tax growth";
-  if (program.refundable === true) return "Refundable credit or cash rebate";
-  if (program.refundable === false)
-    return "Nonrefundable: limited to applicable tax liability";
-  return "See the program's payment mechanism";
-}
-
 function CalculationNote({
   program,
   coverage,
@@ -57,7 +47,7 @@ function CalculationNote({
     <p className="model-note">
       <strong>Calculation coverage.</strong>{" "}
       {coverage?.status === "implementation-found"
-        ? "A model implementation was found. Its eligibility rules, timing and interactions still need validation."
+        ? "The source audit found a matching model declaration. It does not validate the program mapping, eligibility rules, timing or interactions."
         : "No audited household calculation is available for this program."}{" "}
       <a href={methodsHref}>View the coverage audit</a>.
     </p>
@@ -68,19 +58,22 @@ export function ProgramDetail({
   program,
   coverage,
   methodsHref = appPath("/methods/"),
+  headingLevel = 3,
 }: {
   program: Program;
   coverage?: ProgramCoverage;
   methodsHref?: string;
+  headingLevel?: 3 | 4;
 }) {
   const headingId = `program-${program.id}`;
+  const Heading = headingLevel === 4 ? "h4" : "h3";
   return (
     <article className="program-detail" aria-labelledby={headingId}>
       <div className="eyebrow">
         {CATEGORY_LABELS[program.category]} ·{" "}
         {program.scope === "statewide" ? "Statewide" : "Local option"}
       </div>
-      <h3 id={headingId}>{program.name}</h3>
+      <Heading id={headingId}>{program.name}</Heading>
       <p className="program-formula">{program.formulaSummary}</p>
       <dl className="program-facts">
         <div>
@@ -106,8 +99,25 @@ export function ProgramDetail({
         </div>
         <div>
           <dt>Payment mechanism</dt>
-          <dd>{paymentMechanism(program)}</dd>
+          <dd>
+            {
+              PAYMENT_MECHANISM_LABELS[
+                program.paymentMechanism ?? "not-established"
+              ]
+            }
+          </dd>
         </div>
+        {program.paymentMechanism === "income-tax-credit" &&
+          program.refundable !== null && (
+            <div>
+              <dt>Income-tax credit refundability</dt>
+              <dd>
+                {program.refundable
+                  ? "Refundable"
+                  : "Limited to income-tax liability"}
+              </dd>
+            </div>
+          )}
       </dl>
       <details>
         <summary>Eligibility, claiming and calculation notes</summary>

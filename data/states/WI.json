@@ -18,16 +18,17 @@
       "incomeDefinition": "Broad taxable/nontaxable household income, loss/depreciation adjustments and $500 qualifying-dependent deduction.",
       "incomeLimits": "Less than $24,680 for 2025.",
       "maximumBenefit": "$1,168.",
-      "formulaSummary": "Income-adjusted credit based on allowable assessed property taxes or rent constituting property taxes; rent share depends on heat inclusion.",
+      "formulaSummary": "Income-adjusted credit based on allowable assessed property taxes or rent constituting property taxes: 20% of rent when heat is included and 25% when heat is excluded.",
       "application": "File Schedule H or H-EZ with tax bill/rent certificate; most 2025 claims due April 15, 2030.",
       "eligibilityNotes": [
         "Full-year Wisconsin resident.",
         "Public assistance and tax-exempt housing can affect allowance."
       ],
       "interactions": [
-        "The claimant or spouse cannot claim Homestead credit if either claims the veterans/surviving-spouses property-tax credit or farmland preservation credit for the same taxable year."
+        "The claimant or spouse cannot claim Homestead credit if either claims the veterans/surviving-spouses property-tax credit or farmland preservation credit for the same taxable year.",
+        "The statute applies the credit exclusions to claims relating to the same taxable year. The 2025 Schedule H instructions instead refer to a veterans credit based on 2025 property taxes payable in 2026; those timing descriptions can identify different returns."
       ],
-      "programYear": "2025",
+      "programYear": "2025 household income, rent and assessed property taxes; tax-year-2025 claims generally begin filing in 2026.",
       "rentProxy": null,
       "sources": [
         {
@@ -41,7 +42,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["wi_homestead_credit"]
+      "modelVariables": ["wi_homestead_credit"],
+      "paymentMechanism": "income-tax-credit"
     },
     {
       "id": "wi-school-property-tax-credit",
@@ -54,15 +56,16 @@
       "incomeDefinition": "Not income-tested.",
       "incomeLimits": "Not income-tested.",
       "maximumBenefit": "$300 ordinarily, or $150 for married filing separately and married head-of-household filers, limited by income-tax liability.",
-      "formulaSummary": "Income-tax credit based on eligible property taxes or rent; owner and renter amounts are combined subject to one cap, with rent table depending on heat inclusion.",
+      "formulaSummary": "Income-tax credit based on eligible property taxes or rent; owner and renter amounts share one cap. Rent constituting property taxes equals 20% of rent when heat is included and 25% when heat is excluded.",
       "application": "Claim Form 1 line 16 using 2025 tables.",
       "eligibilityNotes": [
         "Uses taxes paid in 2025, unlike Homestead's assessed-tax basis."
       ],
       "interactions": [
-        "The claimant or spouse cannot claim School Property Tax Credit if either claims the veterans/surviving-spouses property-tax credit for the same taxable year."
+        "The claimant or spouse cannot claim School Property Tax Credit if either claims the veterans/surviving-spouses property-tax credit for the same taxable year.",
+        "The statute applies the credit exclusions to claims relating to the same taxable year. The 2025 Schedule H instructions instead refer to a veterans credit based on 2025 property taxes payable in 2026; those timing descriptions can identify different returns."
       ],
-      "programYear": "2025",
+      "programYear": "2025 income-tax return, using eligible property taxes and rent paid in 2025.",
       "rentProxy": null,
       "sources": [
         {
@@ -71,7 +74,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["wi_property_tax_credit"]
+      "modelVariables": ["wi_property_tax_credit"],
+      "paymentMechanism": "income-tax-credit"
     },
     {
       "id": "wi-veterans-property-tax-credit",
@@ -88,12 +92,13 @@
       "application": "Obtain WDVA certification and claim through income-tax return.",
       "eligibilityNotes": [
         "An otherwise qualified renter may claim actual property taxes required by a written landlord agreement and paid directly to the municipality. Ordinary rent is not a percentage-based tax proxy.",
-        "DOR instructions specify one acre, while the statute cross-refers to a principal-dwelling definition without a numeric acreage limit. This draft does not adjudicate disputed acreage claims."
+        "DOR instructions specify one acre, while the statute cross-refers to a principal-dwelling definition without a numeric acreage limit. Disputed acreage claims remain unresolved."
       ],
       "interactions": [
-        "The claimant or spouse cannot claim School Property Tax, Homestead or farmland preservation credits for the same taxable year when claiming this veterans credit."
+        "The claimant or spouse cannot claim School Property Tax, Homestead or farmland preservation credits for the same taxable year when claiming this veterans credit.",
+        "The statute applies the credit exclusions to claims relating to the same taxable year. The 2025 Schedule H instructions instead refer to a veterans credit based on 2025 property taxes payable in 2026; those timing descriptions can identify different returns."
       ],
-      "programYear": "2025",
+      "programYear": "2025 income-tax return, using qualifying municipal property-tax payments made in 2025.",
       "rentProxy": null,
       "sources": [
         {
@@ -122,7 +127,8 @@
           "kind": "statute"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "income-tax-credit"
     },
     {
       "id": "wi-lottery-gaming-credit",
@@ -134,18 +140,18 @@
       "ageRule": "No general age restriction.",
       "incomeDefinition": "Not income-tested; household income is not used to calculate this bill credit.",
       "incomeLimits": "Not income-tested.",
-      "maximumBenefit": "Applicable annual equalized school-tax rate × the smaller of the qualifying dwelling’s estimated fair market value and $27,000. The $27,000 figure is a value base for December2025 bills, not a cash maximum.",
+      "maximumBenefit": "Applicable annual equalized school-tax rate × the smaller of the qualifying dwelling’s estimated fair market value and $27,000. The $27,000 figure is a value base for December 2025 bills, not a cash maximum.",
       "formulaSummary": "Parcel bill reduction using the annual municipality/school-district rate and capped value base, subject to valid claim, parcel tax liability and installment rules.",
-      "application": "Apply to the county or eligible city treasurer. A missing2025bill credit may be claimed through the municipal treasurer by January31,2026, or by late DOR application through October1,2026.",
+      "application": "Apply to the county or eligible city treasurer. A missing 2025 bill credit may be claimed through the municipal treasurer by January 31, 2026, or by late DOR application through October 1, 2026.",
       "eligibilityNotes": [
-        "Wisconsin resident-owner principal dwelling on January1,2025; a documented buyer-after-January1 exception can preserve a predecessor-qualified parcel’s credit.",
-        "A new dwelling must be completed and occupied on the relevant January1. First Dollar eligibility alone does not establish Lottery eligibility.",
+        "Wisconsin resident-owner principal dwelling on January 1, 2025; a documented buyer-after-January 1 exception can preserve a predecessor-qualified parcel’s credit.",
+        "A new dwelling must be completed and occupied on the relevant January 1. First Dollar eligibility alone does not establish Lottery eligibility.",
         "Credit stays with a qualifying parcel on sale; multiple-property and separate-spouse cases require their specific facts."
       ],
       "interactions": [
         "May coexist with First Dollar and School Levy credits.",
         "Bill reductions affect net general taxes actually paid; the veterans credit uses its separate qualified municipal-payment ledger and calendar year.",
-        "Do not subtract the credit again from an already-net tax payment or count a correction refund as a second award."
+        "A tax payment already reduced by the credit does not receive another subtraction; a correction refund is not a second award."
       ],
       "programYear": "2025 property-tax bills, payable 2026.",
       "rentProxy": null,
@@ -161,7 +167,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
     },
     {
       "id": "wi-first-dollar-credit",
@@ -173,7 +180,7 @@
       "ageRule": "No general age restriction.",
       "incomeDefinition": "Not income-tested; household income is not used to calculate this bill credit.",
       "incomeLimits": "Not income-tested.",
-      "maximumBenefit": "Applicable annual equalized school-tax rate × the smaller of total qualifying parcel estimated fair market value and $9,000. The $9,000 figure is a value base for December2025 bills, not a cash maximum.",
+      "maximumBenefit": "Applicable annual equalized school-tax rate × the smaller of total qualifying parcel estimated fair market value and $9,000. The $9,000 figure is a value base for December 2025 bills, not a cash maximum.",
       "formulaSummary": "Automatic credit for taxable real-estate parcels with a real-property improvement. The improvement establishes eligibility; total parcel value determines the capped base.",
       "application": "Automatically applied to qualifying parcels.",
       "eligibilityNotes": [
@@ -204,7 +211,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
     },
     {
       "id": "wi-school-levy-credit",
@@ -225,10 +233,10 @@
       ],
       "interactions": [
         "May coexist with Lottery and First Dollar credits.",
-        "Already reflected in net school levies and the bill’s net tax/rate; do not subtract the informational School Levy box again.",
+        "Net school levies and the bill’s net tax or rate already reflect this credit; the informational School Levy box does not provide an additional reduction.",
         "The separate School Property income-tax credit and the veterans income-tax credit have different rules."
       ],
-      "programYear": "2025 assessment/property-tax bills issued in December2025, normally payable in2026. State May/July2026 distributions finance the same bill credit.",
+      "programYear": "2025 assessment/property-tax bills issued in December 2025, normally payable in 2026. State May/July 2026 distributions finance the same bill credit.",
       "rentProxy": null,
       "sources": [
         {
@@ -242,15 +250,16 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
     }
   ],
   "laterChanges": [],
   "researchNotes": [
-    "Lottery/Gaming, First Dollar, and School Levy credits normally already reduce net property-tax bills; do not add them again to an input already measured after bill credits.",
-    "School Property Tax Credit and School Levy Tax Credit are different programs.",
-    "Veteran eligibility requires WDVA certification; this inventory does not infer eligibility from a single disability-percentage input.",
-    "For the three bill credits, 2025 assessment and December billing generally precede 2026 collection. Full local parameter records, ownership history, installment limits and corrected bills remain calculation gaps; the listed value caps are not cash awards."
+    "Lottery/Gaming, First Dollar and School Levy credits normally already reduce net property-tax bills. A net tax payment excludes those credits.",
+    "School Property Tax Credit and School Levy Tax Credit follow different rules.",
+    "Veteran eligibility requires WDVA certification and the other statutory conditions. A disability-percentage input alone does not establish eligibility.",
+    "For the three bill credits, 2025 assessment and December billing generally precede 2026 collection. Local parameters, ownership history, installment limits and corrected bills remain necessary for a calculation; the listed value caps are not cash awards."
   ],
   "sources": [
     {

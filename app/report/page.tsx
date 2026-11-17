@@ -1,11 +1,12 @@
 import { appPath, PUBLIC_TOOL_URL } from "@/lib/paths";
-import { ProgramDetail } from "@/components/ProgramDetail";
+import { ProgramDetail, SourceLinks } from "@/components/ProgramDetail";
+import type { Source } from "@/lib/types";
 import { isComparisonProgram } from "@/lib/inventory";
 import { loadCoverage, loadStates } from "@/lib/loadResearch";
 
 export const metadata = {
-  alternates: { canonical: PUBLIC_TOOL_URL + "/report" },
-  openGraph: { url: PUBLIC_TOOL_URL + "/report" },
+  alternates: { canonical: PUBLIC_TOOL_URL + "/report/" },
+  openGraph: { url: PUBLIC_TOOL_URL + "/report/" },
 };
 
 export default function Report() {
@@ -15,6 +16,25 @@ export default function Report() {
     s.programs.filter(isComparisonProgram),
   );
   const records = states.reduce((n, s) => n + s.programs.length, 0);
+  const interactionProgramIds = new Set([
+    "ks-homestead-refund",
+    "ks-safesr",
+    "ks-senior-disabled-veteran-refund",
+    "wi-lottery-gaming-credit",
+    "wi-first-dollar-credit",
+    "wi-school-levy-credit",
+  ]);
+  const interactionSources: Source[] = [
+    ...states
+      .flatMap((state) => state.programs)
+      .filter((program) => interactionProgramIds.has(program.id))
+      .flatMap((program) => program.sources),
+    {
+      title: "New Jersey Division of Taxation: Stay NJ",
+      url: "https://www.nj.gov/treasury/taxation/staynj/index.shtml",
+      kind: "agency",
+    },
+  ];
   return (
     <main className="page-width">
       <div className="reading-width">
@@ -26,7 +46,8 @@ export default function Report() {
             property taxes sit alongside separate rebates and property-tax bill
             programs. This review records selected provisions in all 50 states
             and the District of Columbia, using program-specific 2025 reference
-            periods and official sources checked on November 13–14, 2026.
+            periods and an initial source pass on November 13–14, 2026. Targeted
+            follow-up checks on November 17, 2026 supplement that pass.
           </p>
         </section>
         <div className="draft-note">
@@ -110,10 +131,10 @@ export default function Report() {
                 </td>
               </tr>
               <tr>
-                <td>Refundability</td>
+                <td>Payment mechanism and refundability</td>
                 <td>
-                  Refundable payment, liability-limited credit, or bill
-                  reduction
+                  Income-tax credit, cash rebate, bill reduction or
+                  taxable-value exemption; refundability recorded separately
                 </td>
                 <td>
                   Income-tax liability may limit the value of a nonrefundable
@@ -182,21 +203,7 @@ export default function Report() {
             directly on property-tax bills. Adding published maxima without
             those rules would overstate relief.
           </p>
-          <p>
-            Sources:{" "}
-            <a href={states.find((s) => s.code === "KS")?.sources[0]?.url}>
-              Kansas Department of Revenue
-            </a>
-            ,{" "}
-            <a href="https://www.nj.gov/treasury/taxation/staynj/index.shtml">
-              New Jersey Division of Taxation
-            </a>
-            , and{" "}
-            <a href={states.find((s) => s.code === "WI")?.sources[0]?.url}>
-              Wisconsin Department of Revenue
-            </a>
-            .
-          </p>
+          <SourceLinks sources={interactionSources} />
         </section>
         <section id="benchmarks">
           <h2>Other research and coverage gaps</h2>
@@ -284,12 +291,13 @@ export default function Report() {
                   ? "Open research question"
                   : "Initial source pass"}
               </div>
-              <h2>{state.name}</h2>
+              <h3>{state.name}</h3>
               <p>{state.overview}</p>
               {state.programs.map((program) => (
                 <ProgramDetail
                   key={program.id}
                   program={program}
+                  headingLevel={4}
                   coverage={coverage?.programs.find(
                     (row) => row.id === program.id,
                   )}
@@ -302,13 +310,7 @@ export default function Report() {
                 </p>
               )}
               <p className="small-note">{state.researchNotes.join(" ")}</p>
-              <div className="source-links">
-                {state.sources.map((source) => (
-                  <a key={source.url} href={source.url}>
-                    {source.title} ↗
-                  </a>
-                ))}
-              </div>
+              <SourceLinks sources={state.sources} />
             </article>
           ))}
         </section>

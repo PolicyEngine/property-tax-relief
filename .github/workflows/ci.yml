@@ -16,6 +16,8 @@ jobs:
       - run: uv sync --locked
       - name: Verify housing-expense source index
         run: uv run python scripts/build_housing_expense_routes.py --check
+      - run: bun run format:check
+      - run: bun run lint
       - run: bun run typecheck
       - run: bun run test
       - run: uv run pytest

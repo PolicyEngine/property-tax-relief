@@ -18,17 +18,18 @@
       "incomeDefinition": "Federal adjusted gross income starting in tax year 2025, replacing the prior household-income basis.",
       "incomeLimits": "FAGI $18,000 or less.",
       "maximumBenefit": "2025: up to $75 under age 65, or $375 under the senior schedule.",
-      "formulaSummary": "Starting in 2025, use fixed FAGI-tiered credit amounts and the age schedule; the older excess-property-tax formula no longer applies.",
+      "formulaSummary": "Starting in 2025, the credit uses fixed federal-AGI tiers and the age schedule. Renters count 25% of adjusted rent as property taxes; IT-214 line 18 must be greater than zero to claim the credit.",
       "application": "IT-214 with IT-201, or standalone IT-214 if no income return is otherwise required.",
       "eligibilityNotes": [
         "Full-year resident, same residence at least six months, not claimable as a dependent.",
         "All owned real-property market value must not exceed $85,000.",
         "Qualifying renters face a $450 average-monthly occupancy-rent ceiling.",
-        "Residence must not be fully property-tax exempt."
+        "Residence must not be fully property-tax exempt.",
+        "IT-214 line 18 must exceed zero; a zero or negative amount does not qualify."
       ],
       "interactions": [],
       "programYear": "Tax year 2025, claimed in 2026.",
-      "rentProxy": null,
+      "rentProxy": 0.25,
       "sources": [
         {
           "title": "2025 IT-214 instructions",
@@ -41,7 +42,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["ny_real_property_tax_credit"]
+      "modelVariables": ["ny_real_property_tax_credit"],
+      "paymentMechanism": "income-tax-credit"
     },
     {
       "id": "ny-star-credit",
@@ -59,12 +61,12 @@
       "eligibilityNotes": [
         "2025 Basic uses resident owners and their spouses; Enhanced includes all owners, including nonresident owners, plus resident spouses.",
         "2025 Enhanced generally requires every owner to be 65 by December 31, with specified married-couple, sibling and survivor exceptions. The relaxed 2026 rule is separate.",
-        "A dated September 15, 2025 Tax Department bulletin uses the last day to pay local school taxes without penalty for 2025 credit ownership and primary-residence eligibility. The current July 1 rule must not be applied backward.",
-        "Joint returns must be counted once. STAR income subtracts taxable IRA distributions included in federal AGI, not all pensions, gross IRA withdrawals or Social Security."
+        "The September 15, 2025 Tax Department bulletin sets the 2025 ownership and primary-residence date at the last day to pay local school taxes without penalty.",
+        "Each joint return contributes STAR income once. STAR income subtracts taxable IRA distributions included in federal AGI, not all pensions, gross IRA withdrawals or Social Security."
       ],
       "interactions": [
         "Cannot receive STAR credit and STAR exemption on the same property for the same associated fiscal year. Basic and Enhanced are alternatives.",
-        "Separate eligibility, exemption savings, cash advances and any recovery; do not reduce an already-net property-tax bill and count the same credit again as income."
+        "Eligibility, exemption savings, cash advances and recoveries follow separate rules. An exemption already reflected in a net property-tax bill does not also provide the same credit as cash income."
       ],
       "programYear": "2025 benefit year uses 2023 income; property/school-district facts are necessary.",
       "rentProxy": null,
@@ -90,17 +92,18 @@
           "kind": "statute"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "cash-rebate"
     }
   ],
   "laterChanges": [
-    "For 2026 Enhanced STAR, the income limit becomes $110,750 and owner-income eligibility rules change. Do not apply those changes to the 2025 comparison."
+    "For 2026 Enhanced STAR, the income limit becomes $110,750 and owner-income eligibility rules change; the 2025 description retains its separate rules."
   ],
   "researchNotes": [
-    "The IT-214 formula changed materially in 2025; presence of an older model variable does not validate the new calculation.",
-    "IT-229 real property tax relief credit is discontinued; it is not an additional 2025 program. Source: https://www.tax.ny.gov/forms/form_number_order_income.htm.",
-    "Local senior/disability exemptions require separate local adoption and are not enumerated here.",
-    "STAR credit and legacy exemption have distinct income limits, ownership histories, qualifying dates and local amount tables. The initial source pass does not validate every school-district segment or partial-payment/advance reconciliation."
+    "The IT-214 rules changed in 2025. A variable name alone does not establish that a calculation follows those rules.",
+    "IT-229 is discontinued and does not provide an additional 2025 benefit. Source: https://www.tax.ny.gov/forms/form_number_order_income.htm.",
+    "Local senior and disability exemptions depend on local adoption and are not enumerated here.",
+    "STAR credit and legacy exemption have distinct income limits, ownership histories, qualifying dates and local amount tables. School-district segments and partial-payment or advance reconciliations remain unvalidated."
   ],
   "sources": [
     {

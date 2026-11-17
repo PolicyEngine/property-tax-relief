@@ -20,7 +20,7 @@
       "incomeLimits": "No income limit.",
       "maximumBenefit": "2025: $25,000 base assessed-value exemption; additional non-school exemption up to $25,722.",
       "formulaSummary": "Exempts portions of qualifying assessed value; school and non-school levies differ.",
-      "application": "Apply through the county assessor.",
+      "application": "Apply through the county property appraiser.",
       "eligibilityNotes": [
         "Permanent-residence, ownership, and January 1 qualification rules apply."
       ],
@@ -44,7 +44,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
     },
     {
       "id": "fl-local-senior-exemption",
@@ -58,7 +59,7 @@
       "incomeLimits": "Annual state income threshold; local adoption also required.",
       "maximumBenefit": "Local non-school assessed-value exemptions, including an up-to-$50,000 option.",
       "formulaSummary": "Applies only to the adopting county or municipal levy.",
-      "application": "Apply through the county assessor.",
+      "application": "Apply through the county property appraiser. A first-time claim requires a sworn household-income statement by March 1 under section 196.075(4)(d).",
       "eligibilityNotes": [],
       "interactions": [],
       "programYear": "2025 property-tax year.",
@@ -73,9 +74,15 @@
           "title": "2025 exemption codes",
           "url": "https://floridarevenue.com/property/Documents/2025NALexempt.pdf",
           "kind": "agency"
+        },
+        {
+          "title": "Florida Statutes section 196.075(4)(d): first-time senior exemption claim",
+          "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0196/Sections/0196.075.html",
+          "kind": "statute"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
     }
   ],
   "researchNotes": [
@@ -97,6 +104,11 @@
       "title": "Additional homestead exemption adjustment",
       "url": "https://floridarevenue.com/property/Documents/cpi_homestead_exemption.pdf",
       "kind": "agency"
+    },
+    {
+      "title": "Florida Statutes section 196.075(4)(d): first-time senior exemption claim",
+      "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0196/Sections/0196.075.html",
+      "kind": "statute"
     }
   ]
 }

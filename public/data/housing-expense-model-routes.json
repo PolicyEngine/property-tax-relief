@@ -6,7 +6,7 @@
     "model_repository": "https://github.com/PolicyEngine/policyengine-us",
     "model_commit": "5b18694981c758e0ae52042eb103e55e0333c7ef",
     "model_commit_url": "https://github.com/PolicyEngine/policyengine-us/commit/5b18694981c758e0ae52042eb103e55e0333c7ef",
-    "scope": "Personal rent and homeowner property-tax dependencies in declared model sources for 50 states and DC. The inventory includes direct credits, deductions, subtractions, itemization and federal taxable-income inheritance. It excludes business and landlord expenses and property-sale gains.",
+    "scope": "Personal rent and homeowner property-tax dependencies in declared model sources for 50 states and DC. The inventory includes direct credits, deductions, subtractions, income add-backs, itemization and federal taxable-income inheritance. It excludes business and landlord expenses and property-sale gains.",
     "validation": {
       "legal": false,
       "numerical": false,
@@ -54,6 +54,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -142,6 +143,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -193,6 +195,7 @@
             "src_5d66d2023472",
             "src_69de1968207f",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_9e12629b92cd",
             "src_a56f4861f562",
             "src_b0d0fffd8bf9",
@@ -306,6 +309,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -451,6 +455,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -620,6 +625,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -745,6 +751,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -776,6 +783,7 @@
             "src_7ba778e5df83",
             "src_846a87859e92",
             "src_8c3fa4fd9ca7",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -911,6 +919,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -1041,6 +1050,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -1197,6 +1207,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -1325,6 +1336,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -1413,6 +1425,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -1440,6 +1453,7 @@
             "src_75a595f1328d",
             "src_7ba778e5df83",
             "src_7ef3e9de887d",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b9c0a1a4d650",
             "src_bc4fe24e20cc"
@@ -1548,6 +1562,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -1699,6 +1714,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -1730,6 +1746,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b25502f3e36b",
             "src_b4b7519e123f",
@@ -1843,6 +1860,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -1874,6 +1892,7 @@
             "src_3dce65bd93e3",
             "src_7ba778e5df83",
             "src_8a2cb07e34c3",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b9c0a1a4d650",
             "src_bc4fe24e20cc"
@@ -1977,6 +1996,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -2114,6 +2134,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -2236,6 +2257,7 @@
             "src_3dce65bd93e3",
             "src_5d66d2023472",
             "src_7ba778e5df83",
+            "src_9795316ca0c9",
             "src_a56f4861f562",
             "src_b4b7519e123f",
             "src_b9c0a1a4d650",
@@ -2319,7 +2341,16 @@
     },
     {
       "state": "KY",
-      "rent_routes": [],
+      "rent_routes": [
+        {
+          "kind": "not_located",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [],
+          "description": "The inspected state source files contain no direct personal-rent income-tax route. The audit does not establish legal absence or a zero benefit.",
+          "source_refs": []
+        }
+      ],
       "property_tax_routes": [
         {
           "kind": "bill_context_outside_income_tax",
@@ -2330,9 +2361,10 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "Kentucky itemization explicitly starts from itemized_deductions_less_salt, which excludes the federal SALT expense component. ky_itemized_deductions_unit -> ky_itemized_deductions_joint/indiv -> ky_deductions_joint/indiv -> ky_taxable_income_joint/indiv. A separate homestead mechanism reduces the property bill."
+            "real_estate_taxes",
+            "ky_homestead_property_tax_reduction"
           ],
-          "description": "",
+          "description": "The ky_homestead_property_tax_reduction declaration depends on real_estate_taxes through the listed property-tax bill reduction path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_244315df517d",
@@ -2342,20 +2374,59 @@
             "src_ca2cee939f1d",
             "src_ff9d7dd4e4f6"
           ]
+        },
+        {
+          "kind": "federal_itemization",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [
+            "real_estate_taxes",
+            "salt [gov.irs.deductions.itemized.salt_and_real_estate.sources]",
+            "salt_deduction [salt_cap]",
+            "total_itemized_taxable_income_deductions",
+            "itemized_taxable_income_deductions",
+            "taxable_income_deductions_if_itemizing",
+            "taxable_income_deductions [tax_unit_itemizes]",
+            "taxable_income"
+          ],
+          "description": "Common federal itemization route. Actual deduction depends on itemization, cap, income and other inputs; this entry establishes no separate state credit.",
+          "source_refs": [
+            "src_0cfad85772e5",
+            "src_231f2ba940b4",
+            "src_2ca325897f36",
+            "src_3dce65bd93e3",
+            "src_5d66d2023472",
+            "src_7ba778e5df83",
+            "src_9795316ca0c9",
+            "src_a56f4861f562",
+            "src_b4b7519e123f",
+            "src_b9c0a1a4d650",
+            "src_bc4fe24e20cc"
+          ]
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "state_itemization_excludes_SALT",
-        "description": "",
-        "variables": [],
+        "kind": "state_itemization_excludes_salt",
+        "description": "Kentucky itemization explicitly starts from itemized_deductions_less_salt, which excludes the federal SALT expense component. ky_itemized_deductions_unit -> ky_itemized_deductions_joint/indiv -> ky_deductions_joint/indiv -> ky_taxable_income_joint/indiv. A separate homestead mechanism reduces the property bill.",
+        "variables": [
+          "ky_itemized_deductions_unit",
+          "ky_itemized_deductions_joint",
+          "ky_deductions_joint",
+          "ky_taxable_income_joint"
+        ],
         "dependency_chain": [
-          "Kentucky itemization explicitly starts from itemized_deductions_less_salt, which excludes the federal SALT expense component. ky_itemized_deductions_unit -> ky_itemized_deductions_joint/indiv -> ky_deductions_joint/indiv -> ky_taxable_income_joint/indiv. A separate homestead mechanism reduces the property bill."
+          "itemized_deductions_less_salt",
+          "ky_itemized_deductions_unit",
+          "ky_itemized_deductions_joint",
+          "ky_deductions_joint",
+          "ky_taxable_income_joint"
         ],
         "source_refs": [
           "src_244315df517d",
           "src_35b0af9c3272",
           "src_b227d61277c3",
           "src_ca2cee939f1d",
+          "src_e6b442f479ed",
           "src_ff9d7dd4e4f6"
         ]
       },
@@ -2369,6 +2440,7 @@
         "src_3dce65bd93e3",
         "src_480829064f30",
         "src_58b5e3c3fcee",
+        "src_5d66d2023472",
         "src_7ba778e5df83",
         "src_9795316ca0c9",
         "src_9c05e33bb6b2",
@@ -2400,7 +2472,9 @@
       ],
       "effective_year_evidence": {
         "tax_year": 2025,
-        "dispatch_notes": [],
+        "dispatch_notes": [
+          "The cited ky_taxable_income_joint file declares formula at line 15 without a date suffix. The source audit does not evaluate runtime selection or legal applicability."
+        ],
         "source_refs": [
           "src_0cfad85772e5",
           "src_1b30e6687cd7",
@@ -2434,17 +2508,60 @@
     },
     {
       "state": "LA",
-      "rent_routes": [],
-      "property_tax_routes": [],
+      "rent_routes": [
+        {
+          "kind": "not_located",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [],
+          "description": "The inspected state source files contain no direct personal-rent income-tax route. The audit does not establish legal absence or a zero benefit.",
+          "source_refs": []
+        }
+      ],
+      "property_tax_routes": [
+        {
+          "kind": "federal_itemization",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [
+            "real_estate_taxes",
+            "salt [gov.irs.deductions.itemized.salt_and_real_estate.sources]",
+            "salt_deduction [salt_cap]",
+            "total_itemized_taxable_income_deductions",
+            "itemized_taxable_income_deductions",
+            "taxable_income_deductions_if_itemizing",
+            "taxable_income_deductions [tax_unit_itemizes]",
+            "taxable_income"
+          ],
+          "description": "Common federal itemization route. Actual deduction depends on itemization, cap, income and other inputs; this entry establishes no separate state credit.",
+          "source_refs": [
+            "src_0cfad85772e5",
+            "src_231f2ba940b4",
+            "src_2ca325897f36",
+            "src_3dce65bd93e3",
+            "src_5d66d2023472",
+            "src_7ba778e5df83",
+            "src_9795316ca0c9",
+            "src_a56f4861f562",
+            "src_b4b7519e123f",
+            "src_b9c0a1a4d650",
+            "src_bc4fe24e20cc"
+          ]
+        }
+      ],
       "itemization_or_federal_base_route": {
         "kind": "medical_only_itemized_branch_2025",
-        "description": "",
-        "variables": [],
+        "description": "la_taxable_income -> la_itemized_deductions, la_federal_tax_deduction and la_standard_deduction. relevant_federal_deductions switches to medical_expense_deduction from 2022; federal_tax.availability is false from 2022; standard.applies is true from 2025. Historical full-federal-itemization and federal-tax-deduction paths establish no active personal-property-tax deduction route in 2025.",
+        "variables": [
+          "la_taxable_income"
+        ],
         "dependency_chain": [
-          "la_taxable_income -> la_itemized_deductions, la_federal_tax_deduction and la_standard_deduction. relevant_federal_deductions switches to medical_expense_deduction from 2022; federal_tax.availability is false from 2022; standard.applies is true from 2025. Thus historical full-federal-itemization and federal-tax-deduction paths cannot be labelled active personal-property-tax deductions in 2025."
+          "la_itemized_deductions",
+          "la_taxable_income"
         ],
         "source_refs": [
           "src_01b2a03a76ac",
+          "src_61caf229d9df",
           "src_63070d0b8281",
           "src_64352a26c6be",
           "src_a15147f80605"
@@ -2458,6 +2575,7 @@
         "src_2ca325897f36",
         "src_3dce65bd93e3",
         "src_480829064f30",
+        "src_5d66d2023472",
         "src_61caf229d9df",
         "src_63070d0b8281",
         "src_64352a26c6be",
@@ -2498,7 +2616,9 @@
       ],
       "effective_year_evidence": {
         "tax_year": 2025,
-        "dispatch_notes": [],
+        "dispatch_notes": [
+          "The cited la_taxable_income file declares formula at line 12 without a date suffix. The source audit does not evaluate runtime selection or legal applicability."
+        ],
         "source_refs": [
           "src_01b2a03a76ac",
           "src_0cfad85772e5",
@@ -2545,9 +2665,10 @@
             "rent"
           ],
           "dependency_chain": [
-            "ma_part_b_taxable_income_deductions reads rent, applies gov.states.ma.tax.income.deductions.rent.share/cap, and ma_part_b_taxable_income_before_exemption subtracts that composition. The separate senior circuit breaker reads real_estate_taxes and a rent-equivalent component. This Part B chain establishes no federal Schedule A inheritance."
+            "rent",
+            "ma_part_b_taxable_income_deductions"
           ],
-          "description": "",
+          "description": "The ma_part_b_taxable_income_deductions declaration depends on rent through the listed rent deduction path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_03955f7dcba9",
             "src_0cfad85772e5",
@@ -2556,7 +2677,7 @@
           ]
         },
         {
-          "kind": "deduction_credit_or_separate_refund_source_route",
+          "kind": "tax_credit",
           "variables": [
             "ma_senior_circuit_breaker"
           ],
@@ -2564,9 +2685,10 @@
             "rent"
           ],
           "dependency_chain": [
-            "ma_part_b_taxable_income_deductions reads rent, applies gov.states.ma.tax.income.deductions.rent.share/cap, and ma_part_b_taxable_income_before_exemption subtracts that composition. The separate senior circuit breaker reads real_estate_taxes and a rent-equivalent component. This Part B chain establishes no federal Schedule A inheritance."
+            "rent",
+            "ma_senior_circuit_breaker"
           ],
-          "description": "",
+          "description": "The ma_senior_circuit_breaker declaration depends on rent through the listed tax credit path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_03955f7dcba9",
             "src_0cfad85772e5",
@@ -2578,7 +2700,7 @@
       ],
       "property_tax_routes": [
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "tax_credit",
           "variables": [
             "ma_senior_circuit_breaker"
           ],
@@ -2586,9 +2708,10 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "ma_part_b_taxable_income_deductions reads rent, applies gov.states.ma.tax.income.deductions.rent.share/cap, and ma_part_b_taxable_income_before_exemption subtracts that composition. The separate senior circuit breaker reads real_estate_taxes and a rent-equivalent component. This Part B chain establishes no federal Schedule A inheritance."
+            "real_estate_taxes",
+            "ma_senior_circuit_breaker"
           ],
-          "description": "",
+          "description": "The ma_senior_circuit_breaker declaration depends on real_estate_taxes through the listed tax credit path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_03955f7dcba9",
             "src_0cfad85772e5",
@@ -2596,14 +2719,48 @@
             "src_480829064f30",
             "src_ee321499cac5"
           ]
+        },
+        {
+          "kind": "federal_itemization",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [
+            "real_estate_taxes",
+            "salt [gov.irs.deductions.itemized.salt_and_real_estate.sources]",
+            "salt_deduction [salt_cap]",
+            "total_itemized_taxable_income_deductions",
+            "itemized_taxable_income_deductions",
+            "taxable_income_deductions_if_itemizing",
+            "taxable_income_deductions [tax_unit_itemizes]",
+            "taxable_income"
+          ],
+          "description": "Common federal itemization route. Actual deduction depends on itemization, cap, income and other inputs; this entry establishes no separate state credit.",
+          "source_refs": [
+            "src_0cfad85772e5",
+            "src_231f2ba940b4",
+            "src_2ca325897f36",
+            "src_3dce65bd93e3",
+            "src_5d66d2023472",
+            "src_7ba778e5df83",
+            "src_9795316ca0c9",
+            "src_a56f4861f562",
+            "src_b4b7519e123f",
+            "src_b9c0a1a4d650",
+            "src_bc4fe24e20cc"
+          ]
         }
       ],
       "itemization_or_federal_base_route": {
         "kind": "direct_rent_deduction_plus_credit",
-        "description": "",
-        "variables": [],
+        "description": "ma_part_b_taxable_income_deductions reads rent, applies gov.states.ma.tax.income.deductions.rent.share/cap, and ma_part_b_taxable_income_before_exemption subtracts that composition. The separate senior circuit breaker reads real_estate_taxes and a rent-equivalent component. This Part B chain establishes no federal Schedule A inheritance.",
+        "variables": [
+          "ma_part_b_taxable_income_deductions",
+          "ma_part_b_taxable_income_before_exemption"
+        ],
         "dependency_chain": [
-          "ma_part_b_taxable_income_deductions reads rent, applies gov.states.ma.tax.income.deductions.rent.share/cap, and ma_part_b_taxable_income_before_exemption subtracts that composition. The separate senior circuit breaker reads real_estate_taxes and a rent-equivalent component. This Part B chain establishes no federal Schedule A inheritance."
+          "rent",
+          "ma_part_b_taxable_income_deductions",
+          "ma_part_b_taxable_income_before_exemption"
         ],
         "source_refs": [
           "src_03955f7dcba9",
@@ -2616,11 +2773,21 @@
         "src_03955f7dcba9",
         "src_0cfad85772e5",
         "src_1b30e6687cd7",
+        "src_231f2ba940b4",
+        "src_2ca325897f36",
+        "src_3dce65bd93e3",
         "src_428771a62a78",
         "src_480829064f30",
         "src_4eb263f782bd",
+        "src_5d66d2023472",
+        "src_7ba778e5df83",
+        "src_9795316ca0c9",
         "src_9b6c01e22074",
         "src_9c05e33bb6b2",
+        "src_a56f4861f562",
+        "src_b4b7519e123f",
+        "src_b9c0a1a4d650",
+        "src_bc4fe24e20cc",
         "src_cbc2f9881a46",
         "src_ee321499cac5"
       ],
@@ -2636,7 +2803,9 @@
       ],
       "effective_year_evidence": {
         "tax_year": 2025,
-        "dispatch_notes": [],
+        "dispatch_notes": [
+          "The cited ma_part_b_taxable_income_before_exemption file declares formula at line 13 without a date suffix. The source audit does not evaluate runtime selection or legal applicability."
+        ],
         "source_refs": [
           "src_03955f7dcba9",
           "src_0cfad85772e5",
@@ -2656,10 +2825,19 @@
     },
     {
       "state": "MD",
-      "rent_routes": [],
+      "rent_routes": [
+        {
+          "kind": "not_located",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [],
+          "description": "The inspected state source files contain no direct personal-rent income-tax route. The audit does not establish legal absence or a zero benefit.",
+          "source_refs": []
+        }
+      ],
       "property_tax_routes": [
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "state_itemized_deduction",
           "variables": [
             "md_itemized_deductions"
           ],
@@ -2667,9 +2845,11 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "real_estate_taxes -> capped_property_taxes -> md_itemized_deductions (plus itemized_deductions_less_salt) -> md_deductions -> md_taxable_income. md_deductions requires federal itemizer status before considering the state itemized amount; md_itemized_deductions also has a state phase-out parameter branch."
+            "real_estate_taxes",
+            "capped_property_taxes",
+            "md_itemized_deductions"
           ],
-          "description": "",
+          "description": "The md_itemized_deductions declaration depends on real_estate_taxes through the listed state itemized deduction path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_3c9a87bde00f",
@@ -2678,14 +2858,52 @@
             "src_e672bca71752",
             "src_eff4ce31de48"
           ]
+        },
+        {
+          "kind": "federal_itemization",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [
+            "real_estate_taxes",
+            "salt [gov.irs.deductions.itemized.salt_and_real_estate.sources]",
+            "salt_deduction [salt_cap]",
+            "total_itemized_taxable_income_deductions",
+            "itemized_taxable_income_deductions",
+            "taxable_income_deductions_if_itemizing",
+            "taxable_income_deductions [tax_unit_itemizes]",
+            "taxable_income"
+          ],
+          "description": "Common federal itemization route. Actual deduction depends on itemization, cap, income and other inputs; this entry establishes no separate state credit.",
+          "source_refs": [
+            "src_0cfad85772e5",
+            "src_231f2ba940b4",
+            "src_2ca325897f36",
+            "src_3dce65bd93e3",
+            "src_5d66d2023472",
+            "src_7ba778e5df83",
+            "src_9795316ca0c9",
+            "src_a56f4861f562",
+            "src_b4b7519e123f",
+            "src_b9c0a1a4d650",
+            "src_bc4fe24e20cc"
+          ]
         }
       ],
       "itemization_or_federal_base_route": {
         "kind": "state_itemization_property_component",
-        "description": "",
-        "variables": [],
+        "description": "real_estate_taxes -> capped_property_taxes -> md_itemized_deductions (plus itemized_deductions_less_salt) -> md_deductions -> md_taxable_income. md_deductions requires federal itemizer status before considering the state itemized amount; md_itemized_deductions also has a state phase-out parameter branch.",
+        "variables": [
+          "capped_property_taxes",
+          "md_itemized_deductions",
+          "md_deductions",
+          "md_taxable_income"
+        ],
         "dependency_chain": [
-          "real_estate_taxes -> capped_property_taxes -> md_itemized_deductions (plus itemized_deductions_less_salt) -> md_deductions -> md_taxable_income. md_deductions requires federal itemizer status before considering the state itemized amount; md_itemized_deductions also has a state phase-out parameter branch."
+          "real_estate_taxes",
+          "capped_property_taxes",
+          "md_itemized_deductions",
+          "md_deductions",
+          "md_taxable_income"
         ],
         "source_refs": [
           "src_0cfad85772e5",
@@ -2706,6 +2924,7 @@
         "src_3dce65bd93e3",
         "src_3de0bca1c677",
         "src_480829064f30",
+        "src_5d66d2023472",
         "src_7ba778e5df83",
         "src_9795316ca0c9",
         "src_9c05e33bb6b2",
@@ -2739,7 +2958,9 @@
       ],
       "effective_year_evidence": {
         "tax_year": 2025,
-        "dispatch_notes": [],
+        "dispatch_notes": [
+          "The cited md_taxable_income file declares formula at line 12 without a date suffix. The source audit does not evaluate runtime selection or legal applicability."
+        ],
         "source_refs": [
           "src_0cfad85772e5",
           "src_1b30e6687cd7",
@@ -2774,7 +2995,7 @@
       "state": "ME",
       "rent_routes": [
         {
-          "kind": "deduction_credit_or_separate_refund_source_route",
+          "kind": "tax_credit_component",
           "variables": [
             "me_property_tax_fairness_credit_countable_rent"
           ],
@@ -2782,9 +3003,10 @@
             "rent"
           ],
           "dependency_chain": [
-            "me_itemized_deductions_pre_phaseout adds real_estate_taxes to itemized_deductions_less_salt with a medical carve-out/cap. me_deductions selects using federal itemizer status and a state phase-out, then me_taxable_income subtracts it. Separate fairness-credit countable-rent and property-tax composition feeds the credit/cap route."
+            "rent",
+            "me_property_tax_fairness_credit_countable_rent"
           ],
-          "description": "",
+          "description": "The me_property_tax_fairness_credit_countable_rent declaration depends on rent through the listed credit calculation component path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_2566c82ad770",
@@ -2796,7 +3018,7 @@
           ]
         },
         {
-          "kind": "deduction_credit_or_separate_refund_source_route",
+          "kind": "tax_credit",
           "variables": [
             "me_property_tax_fairness_credit"
           ],
@@ -2804,15 +3026,20 @@
             "rent"
           ],
           "dependency_chain": [
-            "me_itemized_deductions_pre_phaseout adds real_estate_taxes to itemized_deductions_less_salt with a medical carve-out/cap. me_deductions selects using federal itemizer status and a state phase-out, then me_taxable_income subtracts it. Separate fairness-credit countable-rent and property-tax composition feeds the credit/cap route."
+            "rent",
+            "me_property_tax_fairness_credit_countable_rent",
+            "me_property_tax_fairness_credit_countable_rent_property_tax",
+            "me_property_tax_fairness_credit"
           ],
-          "description": "",
+          "description": "The me_property_tax_fairness_credit declaration depends on rent through the listed tax credit path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_2566c82ad770",
             "src_295c75d22e9a",
             "src_3bb92b327708",
             "src_480829064f30",
+            "src_4c249ef47702",
+            "src_5f68b31f2c39",
             "src_c6e599a3ee9d",
             "src_ca2cee939f1d"
           ]
@@ -2820,7 +3047,7 @@
       ],
       "property_tax_routes": [
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "tax_credit_component",
           "variables": [
             "me_property_tax_fairness_credit_countable_rent_property_tax"
           ],
@@ -2828,9 +3055,10 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "me_itemized_deductions_pre_phaseout adds real_estate_taxes to itemized_deductions_less_salt with a medical carve-out/cap. me_deductions selects using federal itemizer status and a state phase-out, then me_taxable_income subtracts it. Separate fairness-credit countable-rent and property-tax composition feeds the credit/cap route."
+            "real_estate_taxes",
+            "me_property_tax_fairness_credit_countable_rent_property_tax"
           ],
-          "description": "",
+          "description": "The me_property_tax_fairness_credit_countable_rent_property_tax declaration depends on real_estate_taxes through the listed credit calculation component path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_2566c82ad770",
@@ -2842,7 +3070,7 @@
           ]
         },
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "tax_credit",
           "variables": [
             "me_property_tax_fairness_credit"
           ],
@@ -2850,21 +3078,24 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "me_itemized_deductions_pre_phaseout adds real_estate_taxes to itemized_deductions_less_salt with a medical carve-out/cap. me_deductions selects using federal itemizer status and a state phase-out, then me_taxable_income subtracts it. Separate fairness-credit countable-rent and property-tax composition feeds the credit/cap route."
+            "real_estate_taxes",
+            "me_property_tax_fairness_credit_countable_rent_property_tax",
+            "me_property_tax_fairness_credit"
           ],
-          "description": "",
+          "description": "The me_property_tax_fairness_credit declaration depends on real_estate_taxes through the listed tax credit path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_2566c82ad770",
             "src_295c75d22e9a",
             "src_3bb92b327708",
             "src_480829064f30",
+            "src_5f68b31f2c39",
             "src_c6e599a3ee9d",
             "src_ca2cee939f1d"
           ]
         },
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "state_itemized_deduction",
           "variables": [
             "me_itemized_deductions_pre_phaseout"
           ],
@@ -2872,9 +3103,10 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "me_itemized_deductions_pre_phaseout adds real_estate_taxes to itemized_deductions_less_salt with a medical carve-out/cap. me_deductions selects using federal itemizer status and a state phase-out, then me_taxable_income subtracts it. Separate fairness-credit countable-rent and property-tax composition feeds the credit/cap route."
+            "real_estate_taxes",
+            "me_itemized_deductions_pre_phaseout"
           ],
-          "description": "",
+          "description": "The me_itemized_deductions_pre_phaseout declaration depends on real_estate_taxes through the listed state itemized deduction path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_2566c82ad770",
@@ -2883,14 +3115,50 @@
             "src_c6e599a3ee9d",
             "src_ca2cee939f1d"
           ]
+        },
+        {
+          "kind": "federal_itemization",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [
+            "real_estate_taxes",
+            "salt [gov.irs.deductions.itemized.salt_and_real_estate.sources]",
+            "salt_deduction [salt_cap]",
+            "total_itemized_taxable_income_deductions",
+            "itemized_taxable_income_deductions",
+            "taxable_income_deductions_if_itemizing",
+            "taxable_income_deductions [tax_unit_itemizes]",
+            "taxable_income"
+          ],
+          "description": "Common federal itemization route. Actual deduction depends on itemization, cap, income and other inputs; this entry establishes no separate state credit.",
+          "source_refs": [
+            "src_0cfad85772e5",
+            "src_231f2ba940b4",
+            "src_2ca325897f36",
+            "src_3dce65bd93e3",
+            "src_5d66d2023472",
+            "src_7ba778e5df83",
+            "src_9795316ca0c9",
+            "src_a56f4861f562",
+            "src_b4b7519e123f",
+            "src_b9c0a1a4d650",
+            "src_bc4fe24e20cc"
+          ]
         }
       ],
       "itemization_or_federal_base_route": {
         "kind": "state_itemization_and_fairness_credit",
-        "description": "",
-        "variables": [],
+        "description": "me_itemized_deductions_pre_phaseout adds real_estate_taxes to itemized_deductions_less_salt with a medical carve-out/cap. me_deductions selects using federal itemizer status and a state phase-out, then me_taxable_income subtracts it. Separate fairness-credit countable-rent and property-tax composition feeds the credit/cap route.",
+        "variables": [
+          "me_itemized_deductions_pre_phaseout",
+          "me_deductions",
+          "me_taxable_income"
+        ],
         "dependency_chain": [
-          "me_itemized_deductions_pre_phaseout adds real_estate_taxes to itemized_deductions_less_salt with a medical carve-out/cap. me_deductions selects using federal itemizer status and a state phase-out, then me_taxable_income subtracts it. Separate fairness-credit countable-rent and property-tax composition feeds the credit/cap route."
+          "real_estate_taxes",
+          "me_itemized_deductions_pre_phaseout",
+          "me_deductions",
+          "me_taxable_income"
         ],
         "source_refs": [
           "src_0cfad85772e5",
@@ -2914,6 +3182,7 @@
         "src_3dce65bd93e3",
         "src_480829064f30",
         "src_4c249ef47702",
+        "src_5d66d2023472",
         "src_5f68b31f2c39",
         "src_7ba778e5df83",
         "src_9795316ca0c9",
@@ -2957,7 +3226,9 @@
       ],
       "effective_year_evidence": {
         "tax_year": 2025,
-        "dispatch_notes": [],
+        "dispatch_notes": [
+          "The cited me_taxable_income file declares formula at line 14 without a date suffix. The source audit does not evaluate runtime selection or legal applicability."
+        ],
         "source_refs": [
           "src_0cfad85772e5",
           "src_1b30e6687cd7",
@@ -2997,7 +3268,7 @@
       "state": "MI",
       "rent_routes": [
         {
-          "kind": "deduction_credit_or_separate_refund_source_route",
+          "kind": "tax_credit_component",
           "variables": [
             "mi_homestead_property_tax_credit_countable_property_tax"
           ],
@@ -3005,9 +3276,10 @@
             "rent"
           ],
           "dependency_chain": [
-            "mi_taxable_income starts from adjusted_gross_income plus state additions less subtractions/exemptions, not federal taxable income or Schedule A. The homestead-credit chain reads personal rent/real_estate_taxes through countable property tax, resource exemption, allowable/pre-alternate/senior calculations."
+            "rent",
+            "mi_homestead_property_tax_credit_countable_property_tax"
           ],
-          "description": "",
+          "description": "The mi_homestead_property_tax_credit_countable_property_tax declaration depends on rent through the listed credit calculation component path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_480829064f30",
@@ -3018,7 +3290,7 @@
           ]
         },
         {
-          "kind": "deduction_credit_or_separate_refund_source_route",
+          "kind": "tax_credit",
           "variables": [
             "mi_homestead_property_tax_credit"
           ],
@@ -3026,22 +3298,31 @@
             "rent"
           ],
           "dependency_chain": [
-            "mi_taxable_income starts from adjusted_gross_income plus state additions less subtractions/exemptions, not federal taxable income or Schedule A. The homestead-credit chain reads personal rent/real_estate_taxes through countable property tax, resource exemption, allowable/pre-alternate/senior calculations."
+            "rent",
+            "mi_homestead_property_tax_credit_countable_property_tax",
+            "mi_homestead_property_tax_credit_household_resource_exemption",
+            "mi_allowable_homestead_property_tax_credit",
+            "mi_homestead_property_tax_credit_pre_alternate_senior_amount",
+            "mi_homestead_property_tax_credit"
           ],
-          "description": "",
+          "description": "The mi_homestead_property_tax_credit declaration depends on rent through the listed tax credit path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
+            "src_0e28ba435947",
+            "src_1efbf81f9da6",
+            "src_1f2bc25efca4",
             "src_480829064f30",
             "src_5a77c6cb0ef8",
             "src_cc6218c03311",
             "src_e140192f36ce",
-            "src_efce9acd761b"
+            "src_efce9acd761b",
+            "src_f9359513321b"
           ]
         }
       ],
       "property_tax_routes": [
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "tax_credit_component",
           "variables": [
             "mi_homestead_property_tax_credit_countable_property_tax"
           ],
@@ -3049,9 +3330,10 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "mi_taxable_income starts from adjusted_gross_income plus state additions less subtractions/exemptions, not federal taxable income or Schedule A. The homestead-credit chain reads personal rent/real_estate_taxes through countable property tax, resource exemption, allowable/pre-alternate/senior calculations."
+            "real_estate_taxes",
+            "mi_homestead_property_tax_credit_countable_property_tax"
           ],
-          "description": "",
+          "description": "The mi_homestead_property_tax_credit_countable_property_tax declaration depends on real_estate_taxes through the listed credit calculation component path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_480829064f30",
@@ -3062,7 +3344,7 @@
           ]
         },
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "tax_credit",
           "variables": [
             "mi_homestead_property_tax_credit"
           ],
@@ -3070,25 +3352,66 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "mi_taxable_income starts from adjusted_gross_income plus state additions less subtractions/exemptions, not federal taxable income or Schedule A. The homestead-credit chain reads personal rent/real_estate_taxes through countable property tax, resource exemption, allowable/pre-alternate/senior calculations."
+            "real_estate_taxes",
+            "mi_homestead_property_tax_credit_countable_property_tax",
+            "mi_homestead_property_tax_credit_household_resource_exemption",
+            "mi_allowable_homestead_property_tax_credit",
+            "mi_homestead_property_tax_credit_pre_alternate_senior_amount",
+            "mi_homestead_property_tax_credit"
           ],
-          "description": "",
+          "description": "The mi_homestead_property_tax_credit declaration depends on real_estate_taxes through the listed tax credit path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
+            "src_0e28ba435947",
+            "src_1efbf81f9da6",
+            "src_1f2bc25efca4",
             "src_480829064f30",
             "src_5a77c6cb0ef8",
             "src_cc6218c03311",
             "src_e140192f36ce",
-            "src_efce9acd761b"
+            "src_efce9acd761b",
+            "src_f9359513321b"
+          ]
+        },
+        {
+          "kind": "federal_itemization",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [
+            "real_estate_taxes",
+            "salt [gov.irs.deductions.itemized.salt_and_real_estate.sources]",
+            "salt_deduction [salt_cap]",
+            "total_itemized_taxable_income_deductions",
+            "itemized_taxable_income_deductions",
+            "taxable_income_deductions_if_itemizing",
+            "taxable_income_deductions [tax_unit_itemizes]",
+            "taxable_income"
+          ],
+          "description": "Common federal itemization route. Actual deduction depends on itemization, cap, income and other inputs; this entry establishes no separate state credit.",
+          "source_refs": [
+            "src_0cfad85772e5",
+            "src_231f2ba940b4",
+            "src_2ca325897f36",
+            "src_3dce65bd93e3",
+            "src_5d66d2023472",
+            "src_7ba778e5df83",
+            "src_9795316ca0c9",
+            "src_a56f4861f562",
+            "src_b4b7519e123f",
+            "src_b9c0a1a4d650",
+            "src_bc4fe24e20cc"
           ]
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "AGI_base_direct_credit",
-        "description": "",
-        "variables": [],
+        "kind": "agi_base_direct_credit",
+        "description": "mi_taxable_income starts from adjusted_gross_income plus state additions less subtractions/exemptions, not federal taxable income or Schedule A. The homestead-credit chain reads personal rent/real_estate_taxes through countable property tax, resource exemption, allowable/pre-alternate/senior calculations.",
+        "variables": [
+          "mi_taxable_income"
+        ],
         "dependency_chain": [
-          "mi_taxable_income starts from adjusted_gross_income plus state additions less subtractions/exemptions, not federal taxable income or Schedule A. The homestead-credit chain reads personal rent/real_estate_taxes through countable property tax, resource exemption, allowable/pre-alternate/senior calculations."
+          "adjusted_gross_income",
+          "mi_taxable_income"
         ],
         "source_refs": [
           "src_0cfad85772e5",
@@ -3104,12 +3427,22 @@
         "src_1b30e6687cd7",
         "src_1efbf81f9da6",
         "src_1f2bc25efca4",
+        "src_231f2ba940b4",
         "src_273ce6f6fa31",
+        "src_2ca325897f36",
         "src_3d54ed01a307",
+        "src_3dce65bd93e3",
         "src_480829064f30",
         "src_5a77c6cb0ef8",
+        "src_5d66d2023472",
+        "src_7ba778e5df83",
+        "src_9795316ca0c9",
         "src_9c05e33bb6b2",
         "src_9ea99706e84c",
+        "src_a56f4861f562",
+        "src_b4b7519e123f",
+        "src_b9c0a1a4d650",
+        "src_bc4fe24e20cc",
         "src_cc6218c03311",
         "src_e140192f36ce",
         "src_efce9acd761b",
@@ -3139,7 +3472,9 @@
       ],
       "effective_year_evidence": {
         "tax_year": 2025,
-        "dispatch_notes": [],
+        "dispatch_notes": [
+          "The cited mi_taxable_income file declares formula at line 17 without a date suffix. The source audit does not evaluate runtime selection or legal applicability."
+        ],
         "source_refs": [
           "src_0cfad85772e5",
           "src_0e28ba435947",
@@ -3164,7 +3499,7 @@
       "state": "MN",
       "rent_routes": [
         {
-          "kind": "deduction_credit_or_separate_refund_source_route",
+          "kind": "tax_credit_component",
           "variables": [
             "mn_rent_constituting_property_taxes"
           ],
@@ -3172,9 +3507,10 @@
             "rent"
           ],
           "dependency_chain": [
-            "real_estate_taxes -> capped_property_taxes -> mn_itemized_deductions; mn_itemizing compares with mn_standard_deduction and mn_deductions feeds mn_taxable_income. Rent -> mn_rent_constituting_property_taxes -> mn_renters_credit. A separate property-refund route supplies the homestead credit refund."
+            "rent",
+            "mn_rent_constituting_property_taxes"
           ],
-          "description": "",
+          "description": "The mn_rent_constituting_property_taxes declaration depends on rent through the listed credit calculation component path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_141272290aa4",
@@ -3188,7 +3524,7 @@
           ]
         },
         {
-          "kind": "deduction_credit_or_separate_refund_source_route",
+          "kind": "tax_credit",
           "variables": [
             "mn_renters_credit"
           ],
@@ -3196,9 +3532,11 @@
             "rent"
           ],
           "dependency_chain": [
-            "real_estate_taxes -> capped_property_taxes -> mn_itemized_deductions; mn_itemizing compares with mn_standard_deduction and mn_deductions feeds mn_taxable_income. Rent -> mn_rent_constituting_property_taxes -> mn_renters_credit. A separate property-refund route supplies the homestead credit refund."
+            "rent",
+            "mn_rent_constituting_property_taxes",
+            "mn_renters_credit"
           ],
-          "description": "",
+          "description": "The mn_renters_credit declaration depends on rent through the listed tax credit path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_141272290aa4",
@@ -3214,7 +3552,7 @@
       ],
       "property_tax_routes": [
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "state_itemized_deduction",
           "variables": [
             "mn_itemized_deductions"
           ],
@@ -3222,9 +3560,11 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "real_estate_taxes -> capped_property_taxes -> mn_itemized_deductions; mn_itemizing compares with mn_standard_deduction and mn_deductions feeds mn_taxable_income. Rent -> mn_rent_constituting_property_taxes -> mn_renters_credit. A separate property-refund route supplies the homestead credit refund."
+            "real_estate_taxes",
+            "capped_property_taxes",
+            "mn_itemized_deductions"
           ],
-          "description": "",
+          "description": "The mn_itemized_deductions declaration depends on real_estate_taxes through the listed state itemized deduction path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_141272290aa4",
@@ -3245,9 +3585,10 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "real_estate_taxes -> capped_property_taxes -> mn_itemized_deductions; mn_itemizing compares with mn_standard_deduction and mn_deductions feeds mn_taxable_income. Rent -> mn_rent_constituting_property_taxes -> mn_renters_credit. A separate property-refund route supplies the homestead credit refund."
+            "real_estate_taxes",
+            "mn_homestead_credit_refund"
           ],
-          "description": "",
+          "description": "The mn_homestead_credit_refund declaration depends on real_estate_taxes through the listed separate cash refund path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_141272290aa4",
@@ -3259,14 +3600,52 @@
             "src_df783a568c75",
             "src_e672bca71752"
           ]
+        },
+        {
+          "kind": "federal_itemization",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [
+            "real_estate_taxes",
+            "salt [gov.irs.deductions.itemized.salt_and_real_estate.sources]",
+            "salt_deduction [salt_cap]",
+            "total_itemized_taxable_income_deductions",
+            "itemized_taxable_income_deductions",
+            "taxable_income_deductions_if_itemizing",
+            "taxable_income_deductions [tax_unit_itemizes]",
+            "taxable_income"
+          ],
+          "description": "Common federal itemization route. Actual deduction depends on itemization, cap, income and other inputs; this entry establishes no separate state credit.",
+          "source_refs": [
+            "src_0cfad85772e5",
+            "src_231f2ba940b4",
+            "src_2ca325897f36",
+            "src_3dce65bd93e3",
+            "src_5d66d2023472",
+            "src_7ba778e5df83",
+            "src_9795316ca0c9",
+            "src_a56f4861f562",
+            "src_b4b7519e123f",
+            "src_b9c0a1a4d650",
+            "src_bc4fe24e20cc"
+          ]
         }
       ],
       "itemization_or_federal_base_route": {
         "kind": "state_itemization_plus_renter_credit",
-        "description": "",
-        "variables": [],
+        "description": "real_estate_taxes -> capped_property_taxes -> mn_itemized_deductions; mn_itemizing compares with mn_standard_deduction and mn_deductions feeds mn_taxable_income. Rent -> mn_rent_constituting_property_taxes -> mn_renters_credit. A separate property-refund route supplies the homestead credit refund.",
+        "variables": [
+          "capped_property_taxes",
+          "mn_itemized_deductions",
+          "mn_deductions",
+          "mn_taxable_income"
+        ],
         "dependency_chain": [
-          "real_estate_taxes -> capped_property_taxes -> mn_itemized_deductions; mn_itemizing compares with mn_standard_deduction and mn_deductions feeds mn_taxable_income. Rent -> mn_rent_constituting_property_taxes -> mn_renters_credit. A separate property-refund route supplies the homestead credit refund."
+          "real_estate_taxes",
+          "capped_property_taxes",
+          "mn_itemized_deductions",
+          "mn_deductions",
+          "mn_taxable_income"
         ],
         "source_refs": [
           "src_0cfad85772e5",
@@ -3291,6 +3670,7 @@
         "src_480829064f30",
         "src_4fc642756cfa",
         "src_572b2646aad1",
+        "src_5d66d2023472",
         "src_7ba778e5df83",
         "src_9795316ca0c9",
         "src_9c05e33bb6b2",
@@ -3329,7 +3709,9 @@
       ],
       "effective_year_evidence": {
         "tax_year": 2025,
-        "dispatch_notes": [],
+        "dispatch_notes": [
+          "The cited mn_taxable_income file declares formula at line 18 without a date suffix. The source audit does not evaluate runtime selection or legal applicability."
+        ],
         "source_refs": [
           "src_0cfad85772e5",
           "src_141272290aa4",
@@ -3369,7 +3751,7 @@
       "state": "MO",
       "rent_routes": [
         {
-          "kind": "deduction_credit_or_separate_refund_source_route",
+          "kind": "tax_credit",
           "variables": [
             "mo_property_tax_credit"
           ],
@@ -3377,9 +3759,10 @@
             "rent"
           ],
           "dependency_chain": [
-            "mo_itemized_deductions reads its dated federal-deduction source list and subtracts mo_net_state_income_taxes, whose allocation denominator explicitly includes real_estate_taxes. mo_taxable_income uses that state amount only under federal itemizer status, with standard deduction comparison. Separate property-tax credit reads both rent and real_estate_taxes."
+            "rent",
+            "mo_property_tax_credit"
           ],
-          "description": "",
+          "description": "The mo_property_tax_credit declaration depends on rent through the listed tax credit path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_17a9f97821a7",
@@ -3392,7 +3775,7 @@
       ],
       "property_tax_routes": [
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "tax_credit",
           "variables": [
             "mo_property_tax_credit"
           ],
@@ -3400,9 +3783,10 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "mo_itemized_deductions reads its dated federal-deduction source list and subtracts mo_net_state_income_taxes, whose allocation denominator explicitly includes real_estate_taxes. mo_taxable_income uses that state amount only under federal itemizer status, with standard deduction comparison. Separate property-tax credit reads both rent and real_estate_taxes."
+            "real_estate_taxes",
+            "mo_property_tax_credit"
           ],
-          "description": "",
+          "description": "The mo_property_tax_credit declaration depends on real_estate_taxes through the listed tax credit path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_17a9f97821a7",
@@ -3413,7 +3797,7 @@
           ]
         },
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "state_itemized_deduction",
           "variables": [
             "mo_itemized_deductions"
           ],
@@ -3421,29 +3805,69 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "mo_itemized_deductions reads its dated federal-deduction source list and subtracts mo_net_state_income_taxes, whose allocation denominator explicitly includes real_estate_taxes. mo_taxable_income uses that state amount only under federal itemizer status, with standard deduction comparison. Separate property-tax credit reads both rent and real_estate_taxes."
+            "real_estate_taxes",
+            "mo_net_state_income_taxes",
+            "mo_itemized_deductions"
           ],
-          "description": "",
+          "description": "The mo_itemized_deductions declaration depends on real_estate_taxes through the listed state itemized deduction path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_17a9f97821a7",
             "src_480829064f30",
+            "src_6f240c93f0f1",
             "src_710f63c1f31b",
             "src_7dc4754b0f84"
+          ]
+        },
+        {
+          "kind": "federal_itemization",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [
+            "real_estate_taxes",
+            "salt [gov.irs.deductions.itemized.salt_and_real_estate.sources]",
+            "salt_deduction [salt_cap]",
+            "total_itemized_taxable_income_deductions",
+            "itemized_taxable_income_deductions",
+            "taxable_income_deductions_if_itemizing",
+            "taxable_income_deductions [tax_unit_itemizes]",
+            "taxable_income"
+          ],
+          "description": "Common federal itemization route. Actual deduction depends on itemization, cap, income and other inputs; this entry establishes no separate state credit.",
+          "source_refs": [
+            "src_0cfad85772e5",
+            "src_231f2ba940b4",
+            "src_2ca325897f36",
+            "src_3dce65bd93e3",
+            "src_5d66d2023472",
+            "src_7ba778e5df83",
+            "src_9795316ca0c9",
+            "src_a56f4861f562",
+            "src_b4b7519e123f",
+            "src_b9c0a1a4d650",
+            "src_bc4fe24e20cc"
           ]
         }
       ],
       "itemization_or_federal_base_route": {
         "kind": "federal_itemized_source_adjusted_by_state_tax_addback",
-        "description": "",
-        "variables": [],
+        "description": "mo_itemized_deductions reads its dated federal-deduction source list and subtracts mo_net_state_income_taxes, whose allocation denominator explicitly includes real_estate_taxes. mo_taxable_income uses that state amount only under federal itemizer status, with standard deduction comparison. Separate property-tax credit reads both rent and real_estate_taxes.",
+        "variables": [
+          "mo_net_state_income_taxes",
+          "mo_itemized_deductions",
+          "mo_taxable_income"
+        ],
         "dependency_chain": [
-          "mo_itemized_deductions reads its dated federal-deduction source list and subtracts mo_net_state_income_taxes, whose allocation denominator explicitly includes real_estate_taxes. mo_taxable_income uses that state amount only under federal itemizer status, with standard deduction comparison. Separate property-tax credit reads both rent and real_estate_taxes."
+          "real_estate_taxes",
+          "mo_net_state_income_taxes",
+          "mo_itemized_deductions",
+          "mo_taxable_income"
         ],
         "source_refs": [
           "src_0cfad85772e5",
           "src_17a9f97821a7",
           "src_480829064f30",
+          "src_6f240c93f0f1",
           "src_710f63c1f31b",
           "src_7dc4754b0f84"
         ]
@@ -3457,6 +3881,7 @@
         "src_2ca325897f36",
         "src_3dce65bd93e3",
         "src_480829064f30",
+        "src_5d66d2023472",
         "src_6f240c93f0f1",
         "src_710f63c1f31b",
         "src_7ba778e5df83",
@@ -3502,7 +3927,9 @@
       ],
       "effective_year_evidence": {
         "tax_year": 2025,
-        "dispatch_notes": [],
+        "dispatch_notes": [
+          "The cited mo_taxable_income file declares formula at line 21 without a date suffix. The source audit does not evaluate runtime selection or legal applicability."
+        ],
         "source_refs": [
           "src_0cfad85772e5",
           "src_17a9f97821a7",
@@ -3537,10 +3964,19 @@
     },
     {
       "state": "MS",
-      "rent_routes": [],
+      "rent_routes": [
+        {
+          "kind": "not_located",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [],
+          "description": "The inspected state source files contain no direct personal-rent income-tax route. The audit does not establish legal absence or a zero benefit.",
+          "source_refs": []
+        }
+      ],
       "property_tax_routes": [
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "state_itemized_deduction",
           "variables": [
             "ms_real_estate_tax_deduction"
           ],
@@ -3548,9 +3984,10 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "real_estate_taxes -> ms_real_estate_tax_deduction -> ms_itemized_deductions_unit -> ms_itemized_deductions_joint/indiv -> ms_deductions_joint/indiv -> ms_taxable_income_joint/indiv. The real-estate component reads the shared IRS salt_and_real_estate.cap parameter."
+            "real_estate_taxes",
+            "ms_real_estate_tax_deduction"
           ],
-          "description": "",
+          "description": "The ms_real_estate_tax_deduction declaration depends on real_estate_taxes through the listed state itemized deduction path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_054365144efd",
             "src_0cfad85772e5",
@@ -3559,14 +3996,54 @@
             "src_c9db73a9137e",
             "src_d8e43435b4d0"
           ]
+        },
+        {
+          "kind": "federal_itemization",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [
+            "real_estate_taxes",
+            "salt [gov.irs.deductions.itemized.salt_and_real_estate.sources]",
+            "salt_deduction [salt_cap]",
+            "total_itemized_taxable_income_deductions",
+            "itemized_taxable_income_deductions",
+            "taxable_income_deductions_if_itemizing",
+            "taxable_income_deductions [tax_unit_itemizes]",
+            "taxable_income"
+          ],
+          "description": "Common federal itemization route. Actual deduction depends on itemization, cap, income and other inputs; this entry establishes no separate state credit.",
+          "source_refs": [
+            "src_0cfad85772e5",
+            "src_231f2ba940b4",
+            "src_2ca325897f36",
+            "src_3dce65bd93e3",
+            "src_5d66d2023472",
+            "src_7ba778e5df83",
+            "src_9795316ca0c9",
+            "src_a56f4861f562",
+            "src_b4b7519e123f",
+            "src_b9c0a1a4d650",
+            "src_bc4fe24e20cc"
+          ]
         }
       ],
       "itemization_or_federal_base_route": {
         "kind": "explicit_state_real_estate_itemization",
-        "description": "",
-        "variables": [],
+        "description": "real_estate_taxes -> ms_real_estate_tax_deduction -> ms_itemized_deductions_unit -> ms_itemized_deductions_joint/indiv -> ms_deductions_joint/indiv -> ms_taxable_income_joint/indiv. The real-estate component reads the shared IRS salt_and_real_estate.cap parameter.",
+        "variables": [
+          "ms_real_estate_tax_deduction",
+          "ms_itemized_deductions_unit",
+          "ms_itemized_deductions_joint",
+          "ms_deductions_joint",
+          "ms_taxable_income_joint"
+        ],
         "dependency_chain": [
-          "real_estate_taxes -> ms_real_estate_tax_deduction -> ms_itemized_deductions_unit -> ms_itemized_deductions_joint/indiv -> ms_deductions_joint/indiv -> ms_taxable_income_joint/indiv. The real-estate component reads the shared IRS salt_and_real_estate.cap parameter."
+          "real_estate_taxes",
+          "ms_real_estate_tax_deduction",
+          "ms_itemized_deductions_unit",
+          "ms_itemized_deductions_joint",
+          "ms_deductions_joint",
+          "ms_taxable_income_joint"
         ],
         "source_refs": [
           "src_054365144efd",
@@ -3587,6 +4064,7 @@
         "src_3dce65bd93e3",
         "src_480829064f30",
         "src_4ac18d8dd702",
+        "src_5d66d2023472",
         "src_5eb76683e10e",
         "src_7ba778e5df83",
         "src_7ed9b9a54622",
@@ -3622,7 +4100,9 @@
       ],
       "effective_year_evidence": {
         "tax_year": 2025,
-        "dispatch_notes": [],
+        "dispatch_notes": [
+          "The cited ms_taxable_income_joint file declares formula at line 16 without a date suffix. The source audit does not evaluate runtime selection or legal applicability."
+        ],
         "source_refs": [
           "src_054365144efd",
           "src_0cfad85772e5",
@@ -3661,7 +4141,7 @@
       "state": "MT",
       "rent_routes": [
         {
-          "kind": "deduction_credit_or_separate_refund_source_route",
+          "kind": "tax_credit_component",
           "variables": [
             "mt_elderly_homeowner_or_renter_credit_gross_rent"
           ],
@@ -3669,9 +4149,10 @@
             "rent"
           ],
           "dependency_chain": [
-            "2025 uses mt_taxable_income_joint.formula_2024: federal AGI less federal taxable_income_deductions, with QBI/state adjustments. mt_federal_deductions.formula_2024 and mt_state_income_tax_itemized_add_back retain a federal itemized property-tax route. The elderly credit separately combines property_tax_billed and gross_rent, then selects one claimant. The source labels the property-tax rebate separately, outside the income tax."
+            "rent",
+            "mt_elderly_homeowner_or_renter_credit_gross_rent"
           ],
-          "description": "",
+          "description": "The mt_elderly_homeowner_or_renter_credit_gross_rent declaration depends on rent through the listed credit calculation component path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_2ca325897f36",
             "src_480829064f30",
@@ -3682,7 +4163,7 @@
           ]
         },
         {
-          "kind": "deduction_credit_or_separate_refund_source_route",
+          "kind": "tax_credit",
           "variables": [
             "mt_elderly_homeowner_or_renter_credit"
           ],
@@ -3690,22 +4171,27 @@
             "rent"
           ],
           "dependency_chain": [
-            "2025 uses mt_taxable_income_joint.formula_2024: federal AGI less federal taxable_income_deductions, with QBI/state adjustments. mt_federal_deductions.formula_2024 and mt_state_income_tax_itemized_add_back retain a federal itemized property-tax route. The elderly credit separately combines property_tax_billed and gross_rent, then selects one claimant. The source labels the property-tax rebate separately, outside the income tax."
+            "rent",
+            "mt_elderly_homeowner_or_renter_credit_gross_rent",
+            "mt_elderly_homeowner_or_renter_credit_pre_one_claimant",
+            "mt_elderly_homeowner_or_renter_credit"
           ],
-          "description": "",
+          "description": "The mt_elderly_homeowner_or_renter_credit declaration depends on rent through the listed tax credit path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_23c53d8109c6",
             "src_2ca325897f36",
             "src_480829064f30",
             "src_4a95eecb06d3",
+            "src_952dc7001793",
             "src_a40e96cadc16",
-            "src_bc0700d5c1e9"
+            "src_bc0700d5c1e9",
+            "src_f7e0d277c90d"
           ]
         }
       ],
       "property_tax_routes": [
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "income_add_back",
           "variables": [
             "mt_state_income_tax_itemized_add_back"
           ],
@@ -3713,9 +4199,10 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "2025 uses mt_taxable_income_joint.formula_2024: federal AGI less federal taxable_income_deductions, with QBI/state adjustments. mt_federal_deductions.formula_2024 and mt_state_income_tax_itemized_add_back retain a federal itemized property-tax route. The elderly credit separately combines property_tax_billed and gross_rent, then selects one claimant. The source labels the property-tax rebate separately, outside the income tax."
+            "real_estate_taxes",
+            "mt_state_income_tax_itemized_add_back"
           ],
-          "description": "",
+          "description": "The mt_state_income_tax_itemized_add_back declaration reads real_estate_taxes while allocating an addition to state income. This path records an income add-back, not a separate deduction or credit.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_2ca325897f36",
@@ -3725,7 +4212,7 @@
           ]
         },
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "tax_credit_component",
           "variables": [
             "mt_elderly_homeowner_or_renter_credit_property_tax_billed"
           ],
@@ -3733,9 +4220,10 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "2025 uses mt_taxable_income_joint.formula_2024: federal AGI less federal taxable_income_deductions, with QBI/state adjustments. mt_federal_deductions.formula_2024 and mt_state_income_tax_itemized_add_back retain a federal itemized property-tax route. The elderly credit separately combines property_tax_billed and gross_rent, then selects one claimant. The source labels the property-tax rebate separately, outside the income tax."
+            "real_estate_taxes",
+            "mt_elderly_homeowner_or_renter_credit_property_tax_billed"
           ],
-          "description": "",
+          "description": "The mt_elderly_homeowner_or_renter_credit_property_tax_billed declaration depends on real_estate_taxes through the listed credit calculation component path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_2ca325897f36",
@@ -3746,7 +4234,7 @@
           ]
         },
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "tax_credit",
           "variables": [
             "mt_elderly_homeowner_or_renter_credit"
           ],
@@ -3754,16 +4242,21 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "2025 uses mt_taxable_income_joint.formula_2024: federal AGI less federal taxable_income_deductions, with QBI/state adjustments. mt_federal_deductions.formula_2024 and mt_state_income_tax_itemized_add_back retain a federal itemized property-tax route. The elderly credit separately combines property_tax_billed and gross_rent, then selects one claimant. The source labels the property-tax rebate separately, outside the income tax."
+            "real_estate_taxes",
+            "mt_elderly_homeowner_or_renter_credit_gross_rent",
+            "mt_elderly_homeowner_or_renter_credit_pre_one_claimant",
+            "mt_elderly_homeowner_or_renter_credit"
           ],
-          "description": "",
+          "description": "The mt_elderly_homeowner_or_renter_credit declaration depends on real_estate_taxes through the listed tax credit path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_23c53d8109c6",
             "src_2ca325897f36",
             "src_4a95eecb06d3",
+            "src_952dc7001793",
             "src_a40e96cadc16",
-            "src_bc0700d5c1e9"
+            "src_bc0700d5c1e9",
+            "src_f7e0d277c90d"
           ]
         },
         {
@@ -3775,9 +4268,10 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "2025 uses mt_taxable_income_joint.formula_2024: federal AGI less federal taxable_income_deductions, with QBI/state adjustments. mt_federal_deductions.formula_2024 and mt_state_income_tax_itemized_add_back retain a federal itemized property-tax route. The elderly credit separately combines property_tax_billed and gross_rent, then selects one claimant. The source labels the property-tax rebate separately, outside the income tax."
+            "real_estate_taxes",
+            "mt_property_tax_rebate"
           ],
-          "description": "",
+          "description": "The mt_property_tax_rebate declaration depends on real_estate_taxes through the listed separate cash refund path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_2ca325897f36",
@@ -3786,14 +4280,46 @@
             "src_bc0700d5c1e9",
             "src_bd657d4e02df"
           ]
+        },
+        {
+          "kind": "federal_itemization",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [
+            "real_estate_taxes",
+            "salt [gov.irs.deductions.itemized.salt_and_real_estate.sources]",
+            "salt_deduction [salt_cap]",
+            "total_itemized_taxable_income_deductions",
+            "itemized_taxable_income_deductions",
+            "taxable_income_deductions_if_itemizing",
+            "taxable_income_deductions [tax_unit_itemizes]",
+            "taxable_income"
+          ],
+          "description": "Common federal itemization route. Actual deduction depends on itemization, cap, income and other inputs; this entry establishes no separate state credit.",
+          "source_refs": [
+            "src_0cfad85772e5",
+            "src_231f2ba940b4",
+            "src_2ca325897f36",
+            "src_3dce65bd93e3",
+            "src_5d66d2023472",
+            "src_7ba778e5df83",
+            "src_9795316ca0c9",
+            "src_a56f4861f562",
+            "src_b4b7519e123f",
+            "src_b9c0a1a4d650",
+            "src_bc4fe24e20cc"
+          ]
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "federal_deduction_base_from 2024_plus_credit",
-        "description": "",
-        "variables": [],
+        "kind": "federal_deduction_base_from_2024_plus_credit",
+        "description": "2025 uses mt_taxable_income_joint.formula_2024: federal AGI less federal taxable_income_deductions, with QBI/state adjustments. mt_federal_deductions.formula_2024 and mt_state_income_tax_itemized_add_back retain a federal itemized property-tax route. The elderly credit separately combines property_tax_billed and gross_rent, then selects one claimant. The source labels the property-tax rebate separately, outside the income tax.",
+        "variables": [
+          "mt_taxable_income_joint"
+        ],
         "dependency_chain": [
-          "2025 uses mt_taxable_income_joint.formula_2024: federal AGI less federal taxable_income_deductions, with QBI/state adjustments. mt_federal_deductions.formula_2024 and mt_state_income_tax_itemized_add_back retain a federal itemized property-tax route. The elderly credit separately combines property_tax_billed and gross_rent, then selects one claimant. The source labels the property-tax rebate separately, outside the income tax."
+          "taxable_income_deductions",
+          "mt_taxable_income_joint"
         ],
         "source_refs": [
           "src_2ca325897f36",
@@ -3812,6 +4338,7 @@
         "src_3dce65bd93e3",
         "src_480829064f30",
         "src_4a95eecb06d3",
+        "src_5d66d2023472",
         "src_7ba778e5df83",
         "src_9338e989eb6c",
         "src_952dc7001793",
@@ -3863,7 +4390,9 @@
       ],
       "effective_year_evidence": {
         "tax_year": 2025,
-        "dispatch_notes": [],
+        "dispatch_notes": [
+          "The cited mt_taxable_income_joint file declares formula_2024 at line 47 with the recorded start 2024-01-01. The source audit does not evaluate runtime selection or legal applicability."
+        ],
         "source_refs": [
           "src_0cfad85772e5",
           "src_18902378f17e",
@@ -3905,10 +4434,19 @@
     },
     {
       "state": "NC",
-      "rent_routes": [],
+      "rent_routes": [
+        {
+          "kind": "not_located",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [],
+          "description": "The inspected state source files contain no direct personal-rent income-tax route. The audit does not establish legal absence or a zero benefit.",
+          "source_refs": []
+        }
+      ],
       "property_tax_routes": [
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "state_itemized_deduction",
           "variables": [
             "nc_mortgage_and_property_tax_before_limitation"
           ],
@@ -3916,9 +4454,10 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "real_estate_taxes -> nc_mortgage_and_property_tax_before_limitation (shared IRS SALT cap) -> nc_mortgage_and_property_tax_deduction (state combined limitation, including separate-spouse allocation) -> nc_itemized_deductions -> nc_standard_or_itemized_deductions -> nc_deductions -> nc_taxable_income."
+            "real_estate_taxes",
+            "nc_mortgage_and_property_tax_before_limitation"
           ],
-          "description": "",
+          "description": "The nc_mortgage_and_property_tax_before_limitation declaration depends on real_estate_taxes through the listed state itemized deduction path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_05462a95c07d",
             "src_0cfad85772e5",
@@ -3928,14 +4467,52 @@
             "src_c052bde73fc1",
             "src_e0aac7f1eb72"
           ]
+        },
+        {
+          "kind": "federal_itemization",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [
+            "real_estate_taxes",
+            "salt [gov.irs.deductions.itemized.salt_and_real_estate.sources]",
+            "salt_deduction [salt_cap]",
+            "total_itemized_taxable_income_deductions",
+            "itemized_taxable_income_deductions",
+            "taxable_income_deductions_if_itemizing",
+            "taxable_income_deductions [tax_unit_itemizes]",
+            "taxable_income"
+          ],
+          "description": "Common federal itemization route. Actual deduction depends on itemization, cap, income and other inputs; this entry establishes no separate state credit.",
+          "source_refs": [
+            "src_0cfad85772e5",
+            "src_231f2ba940b4",
+            "src_2ca325897f36",
+            "src_3dce65bd93e3",
+            "src_5d66d2023472",
+            "src_7ba778e5df83",
+            "src_9795316ca0c9",
+            "src_a56f4861f562",
+            "src_b4b7519e123f",
+            "src_b9c0a1a4d650",
+            "src_bc4fe24e20cc"
+          ]
         }
       ],
       "itemization_or_federal_base_route": {
         "kind": "state_mortgage_and_property_tax_itemization",
-        "description": "",
-        "variables": [],
+        "description": "The retained declarations link real_estate_taxes through the combined mortgage/property-tax deduction to nc_standard_or_itemized_deductions. The nc_deductions declaration names gov.states.nc.tax.income.deductions.deductions, but this source set does not retain that parameter list; the index does not establish the remaining composition into nc_taxable_income.",
+        "variables": [
+          "nc_mortgage_and_property_tax_before_limitation",
+          "nc_mortgage_and_property_tax_deduction",
+          "nc_itemized_deductions",
+          "nc_standard_or_itemized_deductions"
+        ],
         "dependency_chain": [
-          "real_estate_taxes -> nc_mortgage_and_property_tax_before_limitation (shared IRS SALT cap) -> nc_mortgage_and_property_tax_deduction (state combined limitation, including separate-spouse allocation) -> nc_itemized_deductions -> nc_standard_or_itemized_deductions -> nc_deductions -> nc_taxable_income."
+          "real_estate_taxes",
+          "nc_mortgage_and_property_tax_before_limitation",
+          "nc_mortgage_and_property_tax_deduction",
+          "nc_itemized_deductions",
+          "nc_standard_or_itemized_deductions"
         ],
         "source_refs": [
           "src_05462a95c07d",
@@ -3957,6 +4534,7 @@
         "src_2e3d75f22528",
         "src_3dce65bd93e3",
         "src_480829064f30",
+        "src_5d66d2023472",
         "src_7ba778e5df83",
         "src_94baf6872669",
         "src_9795316ca0c9",
@@ -3992,7 +4570,9 @@
       ],
       "effective_year_evidence": {
         "tax_year": 2025,
-        "dispatch_notes": [],
+        "dispatch_notes": [
+          "The cited nc_standard_or_itemized_deductions file declares formula at line 16 without a date suffix. The source audit does not evaluate runtime selection or legal applicability."
+        ],
         "source_refs": [
           "src_05462a95c07d",
           "src_0cfad85772e5",
@@ -4023,7 +4603,8 @@
         ]
       },
       "uncertainties": [
-        "State conformity with the shared federal cap requires primary-source validation."
+        "State conformity with the shared federal cap requires primary-source validation.",
+        "The retained source set omits gov.states.nc.tax.income.deductions.deductions; it does not establish the complete state deduction aggregate."
       ]
     },
     {
@@ -4038,9 +4619,10 @@
             "rent"
           ],
           "dependency_chain": [
-            "nd_taxable_income uses adjusted_gross_income less federal taxable_income_deductions, plus ND adjustments; federal itemized SALT therefore supplies an indirect homeowner-property-tax base route when selected. Separate property mechanisms supply the renter refund and primary-residence bill credit."
+            "rent",
+            "nd_renters_refund"
           ],
-          "description": "",
+          "description": "The nd_renters_refund declaration depends on rent through the listed separate cash refund path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_1b799c1e5333",
             "src_2ca325897f36",
@@ -4060,9 +4642,10 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "nd_taxable_income uses adjusted_gross_income less federal taxable_income_deductions, plus ND adjustments; federal itemized SALT therefore supplies an indirect homeowner-property-tax base route when selected. Separate property mechanisms supply the renter refund and primary-residence bill credit."
+            "real_estate_taxes",
+            "nd_primary_residence_credit"
           ],
-          "description": "",
+          "description": "The nd_primary_residence_credit declaration depends on real_estate_taxes through the listed property-tax bill reduction path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_1b799c1e5333",
@@ -4070,14 +4653,46 @@
             "src_5548f0dda27f",
             "src_efce9acd761b"
           ]
+        },
+        {
+          "kind": "federal_itemization",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [
+            "real_estate_taxes",
+            "salt [gov.irs.deductions.itemized.salt_and_real_estate.sources]",
+            "salt_deduction [salt_cap]",
+            "total_itemized_taxable_income_deductions",
+            "itemized_taxable_income_deductions",
+            "taxable_income_deductions_if_itemizing",
+            "taxable_income_deductions [tax_unit_itemizes]",
+            "taxable_income"
+          ],
+          "description": "Common federal itemization route. Actual deduction depends on itemization, cap, income and other inputs; this entry establishes no separate state credit.",
+          "source_refs": [
+            "src_0cfad85772e5",
+            "src_231f2ba940b4",
+            "src_2ca325897f36",
+            "src_3dce65bd93e3",
+            "src_5d66d2023472",
+            "src_7ba778e5df83",
+            "src_9795316ca0c9",
+            "src_a56f4861f562",
+            "src_b4b7519e123f",
+            "src_b9c0a1a4d650",
+            "src_bc4fe24e20cc"
+          ]
         }
       ],
       "itemization_or_federal_base_route": {
         "kind": "federal_deduction_base",
-        "description": "",
-        "variables": [],
+        "description": "nd_taxable_income uses adjusted_gross_income less federal taxable_income_deductions, plus ND adjustments; federal itemized SALT therefore supplies an indirect homeowner-property-tax base route when selected. Separate property mechanisms supply the renter refund and primary-residence bill credit.",
+        "variables": [
+          "nd_taxable_income"
+        ],
         "dependency_chain": [
-          "nd_taxable_income uses adjusted_gross_income less federal taxable_income_deductions, plus ND adjustments; federal itemized SALT therefore supplies an indirect homeowner-property-tax base route when selected. Separate property mechanisms supply the renter refund and primary-residence bill credit."
+          "taxable_income_deductions",
+          "nd_taxable_income"
         ],
         "source_refs": [
           "src_1b799c1e5333",
@@ -4095,6 +4710,7 @@
         "src_443032e5c40c",
         "src_480829064f30",
         "src_5548f0dda27f",
+        "src_5d66d2023472",
         "src_7ba778e5df83",
         "src_9795316ca0c9",
         "src_9c05e33bb6b2",
@@ -4129,7 +4745,9 @@
       ],
       "effective_year_evidence": {
         "tax_year": 2025,
-        "dispatch_notes": [],
+        "dispatch_notes": [
+          "The cited nd_taxable_income file declares formula at line 18 without a date suffix. The source audit does not evaluate runtime selection or legal applicability."
+        ],
         "source_refs": [
           "src_0cfad85772e5",
           "src_1b30e6687cd7",
@@ -4161,10 +4779,19 @@
     },
     {
       "state": "NE",
-      "rent_routes": [],
+      "rent_routes": [
+        {
+          "kind": "not_located",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [],
+          "description": "The inspected state source files contain no direct personal-rent income-tax route. The audit does not establish legal absence or a zero benefit.",
+          "source_refs": []
+        }
+      ],
       "property_tax_routes": [
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "state_itemized_deduction",
           "variables": [
             "ne_itemized_deductions"
           ],
@@ -4172,9 +4799,11 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "real_estate_taxes -> capped_property_taxes -> ne_itemized_deductions plus itemized_deductions_less_salt -> ne_taxable_income. Under tax_unit_itemizes, the formula compares the state itemized amount with the Nebraska standard deduction."
+            "real_estate_taxes",
+            "capped_property_taxes",
+            "ne_itemized_deductions"
           ],
-          "description": "",
+          "description": "The ne_itemized_deductions declaration depends on real_estate_taxes through the listed state itemized deduction path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_231f2ba940b4",
@@ -4183,14 +4812,50 @@
             "src_d623a7c1c81c",
             "src_e672bca71752"
           ]
+        },
+        {
+          "kind": "federal_itemization",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [
+            "real_estate_taxes",
+            "salt [gov.irs.deductions.itemized.salt_and_real_estate.sources]",
+            "salt_deduction [salt_cap]",
+            "total_itemized_taxable_income_deductions",
+            "itemized_taxable_income_deductions",
+            "taxable_income_deductions_if_itemizing",
+            "taxable_income_deductions [tax_unit_itemizes]",
+            "taxable_income"
+          ],
+          "description": "Common federal itemization route. Actual deduction depends on itemization, cap, income and other inputs; this entry establishes no separate state credit.",
+          "source_refs": [
+            "src_0cfad85772e5",
+            "src_231f2ba940b4",
+            "src_2ca325897f36",
+            "src_3dce65bd93e3",
+            "src_5d66d2023472",
+            "src_7ba778e5df83",
+            "src_9795316ca0c9",
+            "src_a56f4861f562",
+            "src_b4b7519e123f",
+            "src_b9c0a1a4d650",
+            "src_bc4fe24e20cc"
+          ]
         }
       ],
       "itemization_or_federal_base_route": {
         "kind": "state_itemization_property_component",
-        "description": "",
-        "variables": [],
+        "description": "real_estate_taxes -> capped_property_taxes -> ne_itemized_deductions plus itemized_deductions_less_salt -> ne_taxable_income. Under tax_unit_itemizes, the formula compares the state itemized amount with the Nebraska standard deduction.",
+        "variables": [
+          "capped_property_taxes",
+          "ne_itemized_deductions",
+          "ne_taxable_income"
+        ],
         "dependency_chain": [
-          "real_estate_taxes -> capped_property_taxes -> ne_itemized_deductions plus itemized_deductions_less_salt -> ne_taxable_income. Under tax_unit_itemizes, the formula compares the state itemized amount with the Nebraska standard deduction."
+          "real_estate_taxes",
+          "capped_property_taxes",
+          "ne_itemized_deductions",
+          "ne_taxable_income"
         ],
         "source_refs": [
           "src_0cfad85772e5",
@@ -4208,6 +4873,7 @@
         "src_2ca325897f36",
         "src_3dce65bd93e3",
         "src_480829064f30",
+        "src_5d66d2023472",
         "src_7ba778e5df83",
         "src_9795316ca0c9",
         "src_98440e0a20c5",
@@ -4236,7 +4902,9 @@
       ],
       "effective_year_evidence": {
         "tax_year": 2025,
-        "dispatch_notes": [],
+        "dispatch_notes": [
+          "The cited ne_taxable_income file declares formula at line 16 without a date suffix. The source audit does not evaluate runtime selection or legal applicability."
+        ],
         "source_refs": [
           "src_0cfad85772e5",
           "src_1b30e6687cd7",
@@ -4267,14 +4935,56 @@
     },
     {
       "state": "NH",
-      "rent_routes": [],
-      "property_tax_routes": [],
+      "rent_routes": [
+        {
+          "kind": "not_located",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [],
+          "description": "The inspected state source files contain no direct personal-rent income-tax route. The audit does not establish legal absence or a zero benefit.",
+          "source_refs": []
+        }
+      ],
+      "property_tax_routes": [
+        {
+          "kind": "federal_itemization",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [
+            "real_estate_taxes",
+            "salt [gov.irs.deductions.itemized.salt_and_real_estate.sources]",
+            "salt_deduction [salt_cap]",
+            "total_itemized_taxable_income_deductions",
+            "itemized_taxable_income_deductions",
+            "taxable_income_deductions_if_itemizing",
+            "taxable_income_deductions [tax_unit_itemizes]",
+            "taxable_income"
+          ],
+          "description": "Common federal itemization route. Actual deduction depends on itemization, cap, income and other inputs; this entry establishes no separate state credit.",
+          "source_refs": [
+            "src_0cfad85772e5",
+            "src_231f2ba940b4",
+            "src_2ca325897f36",
+            "src_3dce65bd93e3",
+            "src_5d66d2023472",
+            "src_7ba778e5df83",
+            "src_9795316ca0c9",
+            "src_a56f4861f562",
+            "src_b4b7519e123f",
+            "src_b9c0a1a4d650",
+            "src_bc4fe24e20cc"
+          ]
+        }
+      ],
       "itemization_or_federal_base_route": {
-        "kind": "income_tax_branch_inactive_from 2025",
-        "description": "",
-        "variables": [],
+        "kind": "income_tax_branch_inactive_from_2025",
+        "description": "nh_taxable_income uses an interest/dividend composition rather than a federal itemized base. nh_income_tax_before_refundable_credits gates on gov.states.nh.tax.income.in_effect, whose 2025 entry contains false. This inactive branch establishes no 2025 personal-rent/property-tax income-tax path.",
+        "variables": [
+          "nh_income_tax_before_refundable_credits"
+        ],
         "dependency_chain": [
-          "nh_taxable_income uses an interest/dividend composition rather than a federal itemized base. nh_income_tax_before_refundable_credits gates on gov.states.nh.tax.income.in_effect, whose 2025 entry contains false. This inactive branch establishes no 2025 personal-rent/property-tax income-tax path."
+          "nh_taxable_income",
+          "nh_income_tax_before_refundable_credits"
         ],
         "source_refs": [
           "src_480829064f30",
@@ -4283,8 +4993,19 @@
         ]
       },
       "source_refs": [
+        "src_0cfad85772e5",
+        "src_231f2ba940b4",
         "src_271e7f057316",
+        "src_2ca325897f36",
+        "src_3dce65bd93e3",
         "src_480829064f30",
+        "src_5d66d2023472",
+        "src_7ba778e5df83",
+        "src_9795316ca0c9",
+        "src_a56f4861f562",
+        "src_b4b7519e123f",
+        "src_b9c0a1a4d650",
+        "src_bc4fe24e20cc",
         "src_bdbee6966317",
         "src_edf788fd2a34",
         "src_ef3dbf9642da"
@@ -4301,7 +5022,9 @@
       ],
       "effective_year_evidence": {
         "tax_year": 2025,
-        "dispatch_notes": [],
+        "dispatch_notes": [
+          "The cited nh_income_tax_before_refundable_credits file declares formula at line 12 without a date suffix. The source audit does not evaluate runtime selection or legal applicability."
+        ],
         "source_refs": [
           "src_271e7f057316",
           "src_bdbee6966317",
@@ -4317,7 +5040,7 @@
       "state": "NJ",
       "rent_routes": [
         {
-          "kind": "deduction_credit_or_separate_refund_source_route",
+          "kind": "direct_deduction",
           "variables": [
             "nj_potential_property_tax_deduction"
           ],
@@ -4325,9 +5048,10 @@
             "rent"
           ],
           "dependency_chain": [
-            "real_estate_taxes plus rent times qualifying_rent_fraction -> nj_potential_property_tax_deduction -> nj_property_tax_deduction -> nj_taxable_income (which subtracts it from the before-property-tax base). nj_taking_property_tax_deduction compares state-tax reductions against the credit; nj_property_tax_credit supplies the alternative branch."
+            "rent",
+            "nj_potential_property_tax_deduction"
           ],
-          "description": "",
+          "description": "The nj_potential_property_tax_deduction declaration depends on rent through the listed direct deduction path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_00b7f698a41e",
             "src_0cfad85772e5",
@@ -4339,7 +5063,7 @@
           ]
         },
         {
-          "kind": "deduction_credit_or_separate_refund_source_route",
+          "kind": "tax_credit",
           "variables": [
             "nj_property_tax_credit"
           ],
@@ -4347,9 +5071,12 @@
             "rent"
           ],
           "dependency_chain": [
-            "real_estate_taxes plus rent times qualifying_rent_fraction -> nj_potential_property_tax_deduction -> nj_property_tax_deduction -> nj_taxable_income (which subtracts it from the before-property-tax base). nj_taking_property_tax_deduction compares state-tax reductions against the credit; nj_property_tax_credit supplies the alternative branch."
+            "rent",
+            "nj_potential_property_tax_deduction",
+            "nj_taking_property_tax_deduction",
+            "nj_property_tax_credit"
           ],
-          "description": "",
+          "description": "The nj_property_tax_credit declaration depends on rent through the listed tax credit path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_00b7f698a41e",
             "src_0cfad85772e5",
@@ -4363,7 +5090,7 @@
       ],
       "property_tax_routes": [
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "direct_deduction",
           "variables": [
             "nj_potential_property_tax_deduction"
           ],
@@ -4371,9 +5098,10 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "real_estate_taxes plus rent times qualifying_rent_fraction -> nj_potential_property_tax_deduction -> nj_property_tax_deduction -> nj_taxable_income (which subtracts it from the before-property-tax base). nj_taking_property_tax_deduction compares state-tax reductions against the credit; nj_property_tax_credit supplies the alternative branch."
+            "real_estate_taxes",
+            "nj_potential_property_tax_deduction"
           ],
-          "description": "",
+          "description": "The nj_potential_property_tax_deduction declaration depends on real_estate_taxes through the listed direct deduction path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_00b7f698a41e",
             "src_0cfad85772e5",
@@ -4385,7 +5113,7 @@
           ]
         },
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "tax_credit",
           "variables": [
             "nj_property_tax_credit"
           ],
@@ -4393,9 +5121,12 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "real_estate_taxes plus rent times qualifying_rent_fraction -> nj_potential_property_tax_deduction -> nj_property_tax_deduction -> nj_taxable_income (which subtracts it from the before-property-tax base). nj_taking_property_tax_deduction compares state-tax reductions against the credit; nj_property_tax_credit supplies the alternative branch."
+            "real_estate_taxes",
+            "nj_potential_property_tax_deduction",
+            "nj_taking_property_tax_deduction",
+            "nj_property_tax_credit"
           ],
-          "description": "",
+          "description": "The nj_property_tax_credit declaration depends on real_estate_taxes through the listed tax credit path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_00b7f698a41e",
             "src_0cfad85772e5",
@@ -4405,14 +5136,50 @@
             "src_7e067c350f86",
             "src_bac6085f6a85"
           ]
+        },
+        {
+          "kind": "federal_itemization",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [
+            "real_estate_taxes",
+            "salt [gov.irs.deductions.itemized.salt_and_real_estate.sources]",
+            "salt_deduction [salt_cap]",
+            "total_itemized_taxable_income_deductions",
+            "itemized_taxable_income_deductions",
+            "taxable_income_deductions_if_itemizing",
+            "taxable_income_deductions [tax_unit_itemizes]",
+            "taxable_income"
+          ],
+          "description": "Common federal itemization route. Actual deduction depends on itemization, cap, income and other inputs; this entry establishes no separate state credit.",
+          "source_refs": [
+            "src_0cfad85772e5",
+            "src_231f2ba940b4",
+            "src_2ca325897f36",
+            "src_3dce65bd93e3",
+            "src_5d66d2023472",
+            "src_7ba778e5df83",
+            "src_9795316ca0c9",
+            "src_a56f4861f562",
+            "src_b4b7519e123f",
+            "src_b9c0a1a4d650",
+            "src_bc4fe24e20cc"
+          ]
         }
       ],
       "itemization_or_federal_base_route": {
         "kind": "direct_property_tax_or_rent_deduction_credit_election",
-        "description": "",
-        "variables": [],
+        "description": "real_estate_taxes plus rent times qualifying_rent_fraction -> nj_potential_property_tax_deduction -> nj_property_tax_deduction -> nj_taxable_income (which subtracts it from the before-property-tax base). nj_taking_property_tax_deduction compares state-tax reductions against the credit; nj_property_tax_credit supplies the alternative branch.",
+        "variables": [
+          "nj_potential_property_tax_deduction",
+          "nj_property_tax_deduction",
+          "nj_taxable_income"
+        ],
         "dependency_chain": [
-          "real_estate_taxes plus rent times qualifying_rent_fraction -> nj_potential_property_tax_deduction -> nj_property_tax_deduction -> nj_taxable_income (which subtracts it from the before-property-tax base). nj_taking_property_tax_deduction compares state-tax reductions against the credit; nj_property_tax_credit supplies the alternative branch."
+          "real_estate_taxes",
+          "nj_potential_property_tax_deduction",
+          "nj_property_tax_deduction",
+          "nj_taxable_income"
         ],
         "source_refs": [
           "src_00b7f698a41e",
@@ -4431,13 +5198,23 @@
         "src_1562d1236484",
         "src_1b30e6687cd7",
         "src_1e94ef3a90b2",
+        "src_231f2ba940b4",
+        "src_2ca325897f36",
         "src_37ecb0f36344",
+        "src_3dce65bd93e3",
         "src_480829064f30",
+        "src_5d66d2023472",
         "src_6426b8e27d55",
+        "src_7ba778e5df83",
         "src_7e067c350f86",
         "src_8d7812b67ce0",
+        "src_9795316ca0c9",
         "src_9c05e33bb6b2",
+        "src_a56f4861f562",
+        "src_b4b7519e123f",
+        "src_b9c0a1a4d650",
         "src_bac6085f6a85",
+        "src_bc4fe24e20cc",
         "src_d97155ccea1f",
         "src_dbe271280f69",
         "src_dd4006e08804",
@@ -4463,7 +5240,9 @@
       ],
       "effective_year_evidence": {
         "tax_year": 2025,
-        "dispatch_notes": [],
+        "dispatch_notes": [
+          "The cited nj_taxable_income file declares formula at line 16 without a date suffix. The source audit does not evaluate runtime selection or legal applicability."
+        ],
         "source_refs": [
           "src_00b7f698a41e",
           "src_05fedcfb82d8",
@@ -4492,7 +5271,7 @@
       "state": "NM",
       "rent_routes": [
         {
-          "kind": "deduction_credit_or_separate_refund_source_route",
+          "kind": "rebate",
           "variables": [
             "nm_property_tax_rebate"
           ],
@@ -4500,9 +5279,10 @@
             "rent"
           ],
           "dependency_chain": [
-            "nm_deductions follows federal itemizer choice into nm_itemized_deductions. nm_taxable_income starts federal AGI and adds nm_salt_add_back, whose allocation includes real_estate_taxes, while subtracting the selected deduction. Property-tax rebate separately combines rent-equivalent and property taxes against a program income-based liability."
+            "rent",
+            "nm_property_tax_rebate"
           ],
-          "description": "",
+          "description": "The nm_property_tax_rebate declaration depends on rent through the listed rebate path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_2ea479d94465",
@@ -4516,7 +5296,7 @@
       ],
       "property_tax_routes": [
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "state_itemized_deduction",
           "variables": [
             "nm_itemized_deductions"
           ],
@@ -4524,20 +5304,29 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "nm_deductions follows federal itemizer choice into nm_itemized_deductions. nm_taxable_income starts federal AGI and adds nm_salt_add_back, whose allocation includes real_estate_taxes, while subtracting the selected deduction. Property-tax rebate separately combines rent-equivalent and property taxes against a program income-based liability."
+            "real_estate_taxes",
+            "salt",
+            "salt_deduction",
+            "total_itemized_taxable_income_deductions",
+            "nm_itemized_deductions"
           ],
-          "description": "",
+          "description": "The nm_itemized_deductions declaration depends on real_estate_taxes through the listed state itemized deduction path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_2ea479d94465",
+            "src_3dce65bd93e3",
             "src_480829064f30",
             "src_4b4ba6cda6cc",
             "src_593dc149041f",
-            "src_87a29ba0116e"
+            "src_7ba778e5df83",
+            "src_87a29ba0116e",
+            "src_9795316ca0c9",
+            "src_bc4fe24e20cc",
+            "src_e6b442f479ed"
           ]
         },
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "income_add_back",
           "variables": [
             "nm_salt_add_back"
           ],
@@ -4545,9 +5334,10 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "nm_deductions follows federal itemizer choice into nm_itemized_deductions. nm_taxable_income starts federal AGI and adds nm_salt_add_back, whose allocation includes real_estate_taxes, while subtracting the selected deduction. Property-tax rebate separately combines rent-equivalent and property taxes against a program income-based liability."
+            "real_estate_taxes",
+            "nm_salt_add_back"
           ],
-          "description": "",
+          "description": "The nm_salt_add_back declaration reads real_estate_taxes while allocating an addition to state income. This path records an income add-back, not a separate deduction or credit.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_2ea479d94465",
@@ -4558,7 +5348,7 @@
           ]
         },
         {
-          "kind": "personal_property_tax_deduction_credit_or_refund_source_route",
+          "kind": "rebate",
           "variables": [
             "nm_property_tax_rebate"
           ],
@@ -4566,9 +5356,10 @@
             "real_estate_taxes"
           ],
           "dependency_chain": [
-            "nm_deductions follows federal itemizer choice into nm_itemized_deductions. nm_taxable_income starts federal AGI and adds nm_salt_add_back, whose allocation includes real_estate_taxes, while subtracting the selected deduction. Property-tax rebate separately combines rent-equivalent and property taxes against a program income-based liability."
+            "real_estate_taxes",
+            "nm_property_tax_rebate"
           ],
-          "description": "",
+          "description": "The nm_property_tax_rebate declaration depends on real_estate_taxes through the listed rebate path. The index does not establish eligibility or a household amount.",
           "source_refs": [
             "src_0cfad85772e5",
             "src_2ea479d94465",
@@ -4578,14 +5369,48 @@
             "src_87a29ba0116e",
             "src_bcdc20ac2b94"
           ]
+        },
+        {
+          "kind": "federal_itemization",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [
+            "real_estate_taxes",
+            "salt [gov.irs.deductions.itemized.salt_and_real_estate.sources]",
+            "salt_deduction [salt_cap]",
+            "total_itemized_taxable_income_deductions",
+            "itemized_taxable_income_deductions",
+            "taxable_income_deductions_if_itemizing",
+            "taxable_income_deductions [tax_unit_itemizes]",
+            "taxable_income"
+          ],
+          "description": "Common federal itemization route. Actual deduction depends on itemization, cap, income and other inputs; this entry establishes no separate state credit.",
+          "source_refs": [
+            "src_0cfad85772e5",
+            "src_231f2ba940b4",
+            "src_2ca325897f36",
+            "src_3dce65bd93e3",
+            "src_5d66d2023472",
+            "src_7ba778e5df83",
+            "src_9795316ca0c9",
+            "src_a56f4861f562",
+            "src_b4b7519e123f",
+            "src_b9c0a1a4d650",
+            "src_bc4fe24e20cc"
+          ]
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "federal_itemized_deduction_plus_state_SALT_addback",
-        "description": "",
-        "variables": [],
+        "kind": "federal_itemized_deduction_plus_state_salt_addback",
+        "description": "nm_deductions follows federal itemizer choice into nm_itemized_deductions. nm_taxable_income starts federal AGI and adds nm_salt_add_back, whose allocation includes real_estate_taxes, while subtracting the selected deduction. Property-tax rebate separately combines rent-equivalent and property taxes against a program income-based liability.",
+        "variables": [
+          "nm_deductions",
+          "nm_taxable_income"
+        ],
         "dependency_chain": [
-          "nm_deductions follows federal itemizer choice into nm_itemized_deductions. nm_taxable_income starts federal AGI and adds nm_salt_add_back, whose allocation includes real_estate_taxes, while subtracting the selected deduction. Property-tax rebate separately combines rent-equivalent and property taxes against a program income-based liability."
+          "nm_itemized_deductions",
+          "nm_deductions",
+          "nm_taxable_income"
         ],
         "source_refs": [
           "src_0cfad85772e5",
@@ -4606,6 +5431,7 @@
         "src_480829064f30",
         "src_4b4ba6cda6cc",
         "src_593dc149041f",
+        "src_5d66d2023472",
         "src_7ba778e5df83",
         "src_87a29ba0116e",
         "src_9795316ca0c9",
@@ -4636,7 +5462,9 @@
       ],
       "effective_year_evidence": {
         "tax_year": 2025,
-        "dispatch_notes": [],
+        "dispatch_notes": [
+          "The cited nm_taxable_income file declares formula at line 12 without a date suffix. The source audit does not evaluate runtime selection or legal applicability."
+        ],
         "source_refs": [
           "src_0cfad85772e5",
           "src_1b30e6687cd7",
@@ -4671,29 +5499,88 @@
     },
     {
       "state": "NV",
-      "rent_routes": [],
-      "property_tax_routes": [],
+      "rent_routes": [
+        {
+          "kind": "not_located",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [],
+          "description": "The inspected state source files contain no direct personal-rent income-tax route. The audit does not establish legal absence or a zero benefit.",
+          "source_refs": []
+        }
+      ],
+      "property_tax_routes": [
+        {
+          "kind": "federal_itemization",
+          "variables": [],
+          "input_dependencies": [],
+          "dependency_chain": [
+            "real_estate_taxes",
+            "salt [gov.irs.deductions.itemized.salt_and_real_estate.sources]",
+            "salt_deduction [salt_cap]",
+            "total_itemized_taxable_income_deductions",
+            "itemized_taxable_income_deductions",
+            "taxable_income_deductions_if_itemizing",
+            "taxable_income_deductions [tax_unit_itemizes]",
+            "taxable_income"
+          ],
+          "description": "Common federal itemization route. Actual deduction depends on itemization, cap, income and other inputs; this entry establishes no separate state credit.",
+          "source_refs": [
+            "src_0cfad85772e5",
+            "src_231f2ba940b4",
+            "src_2ca325897f36",
+            "src_3dce65bd93e3",
+            "src_5d66d2023472",
+            "src_7ba778e5df83",
+            "src_9795316ca0c9",
+            "src_a56f4861f562",
+            "src_b4b7519e123f",
+            "src_b9c0a1a4d650",
+            "src_bc4fe24e20cc"
+          ]
+        }
+      ],
       "itemization_or_federal_base_route": {
         "kind": "no_modeled_state_income_tax_route_identified",
-        "description": "",
-        "variables": [],
+        "description": "The frozen state-variable tree and shared income-tax selector contain no NV personal-income-tax component. These sources establish no modeled state-income-tax personal-rent/property-tax route and do not establish legal absence or a zero benefit.",
+        "variables": [
+          "state_income_tax_before_refundable_credits",
+          "state_income_tax"
+        ],
         "dependency_chain": [
-          "The frozen state-variable tree and shared income-tax selector contain no NV personal-income-tax component. These sources establish no modeled state-income-tax personal-rent/property-tax route and do not establish legal absence or a zero benefit."
+          "state_income_tax_before_refundable_credits",
+          "state_income_tax"
         ],
         "source_refs": [
-          "src_480829064f30"
+          "src_480829064f30",
+          "src_624651af57f6",
+          "src_67585145593c",
+          "src_af0d2b84ba0a"
         ]
       },
       "source_refs": [
+        "src_0cfad85772e5",
+        "src_231f2ba940b4",
+        "src_2ca325897f36",
+        "src_3dce65bd93e3",
         "src_480829064f30",
+        "src_5d66d2023472",
         "src_624651af57f6",
         "src_67585145593c",
-        "src_af0d2b84ba0a"
+        "src_7ba778e5df83",
+        "src_9795316ca0c9",
+        "src_a56f4861f562",
+        "src_af0d2b84ba0a",
+        "src_b4b7519e123f",
+        "src_b9c0a1a4d650",
+        "src_bc4fe24e20cc"
       ],
       "declared_reference_urls": [],
       "effective_year_evidence": {
         "tax_year": 2025,
-        "dispatch_notes": [],
+        "dispatch_notes": [
+          "The cited state_income_tax source uses a declarative composition. Source presence does not establish runtime selection or legal validation."
+        ],
         "source_refs": [
           "src_624651af57f6",
           "src_67585145593c",
@@ -4837,7 +5724,7 @@
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "source_finding",
+        "kind": "state_itemized_deduction",
         "description": "State-specific NY itemized deductions; ny_deductions takes the larger state itemized/standard amount, rather than automatically copying federal taxable income.",
         "variables": [
           "ny_agi",
@@ -5019,7 +5906,7 @@
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "source_finding",
+        "kind": "agi_base",
         "description": "The state base uses federal AGI/person-level modifications and personal exemptions; this path establishes no federal taxable-income or itemized-deduction inheritance.",
         "variables": [
           "oh_agi_person",
@@ -5233,7 +6120,7 @@
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "source_finding",
+        "kind": "state_itemized_deduction",
         "description": "Oklahoma explicitly follows tax_unit_itemizes for the federal election; its itemized formula combines non-SALT deductions with capped_property_taxes and applies a state partial limit.",
         "variables": [
           "ok_agi",
@@ -5410,7 +6297,7 @@
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "source_finding",
+        "kind": "state_itemized_deduction",
         "description": "Oregon takes the larger or_itemized_deductions/or_standard_deduction. or_itemized_deductions adds itemized_deductions_less_salt and capped_property_taxes.",
         "variables": [
           "or_agi",
@@ -5592,7 +6479,7 @@
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "source_finding",
+        "kind": "agi_base",
         "description": "Pennsylvania starts from federal gross-income sources, not federal taxable income; inspected deductions include 529-plan deductions and generic other-subtraction inputs, without automatic federal itemization.",
         "variables": [
           "pa_total_taxable_income",
@@ -5779,7 +6666,7 @@
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "source_finding",
+        "kind": "agi_base",
         "description": "Rhode Island taxable income uses ri_agi, ri_standard_deduction and exemptions; the inspected sources establish no itemized/federal-taxable-income path.",
         "variables": [
           "ri_taxable_income"
@@ -5976,7 +6863,7 @@
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "source_finding",
+        "kind": "federal_taxable_income_inheritance",
         "description": "For 2025 SCIAD in_effect is false, so the source starts from federal taxable_income, then state additions/subtractions. Real-estate taxes can flow through federal itemization; sc_state_tax_addback removes an income/sales-tax component, not a general property-tax addback.",
         "variables": [
           "sc_taxable_income",
@@ -6144,7 +7031,7 @@
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "source_finding",
+        "kind": "no_state_income_tax_component_in_selector",
         "description": "The shared income-tax selector list contains no SD-specific component. These sources establish no state itemization/federal-taxable-income inheritance route; the common federal route remains separate.",
         "variables": [
           "state_income_tax",
@@ -6192,7 +7079,7 @@
       "effective_year_evidence": {
         "tax_year": 2025,
         "dispatch_notes": [
-          "Shared state-income-tax component parameter list dated 2021-01-01; no SD component in inspected list for 2025."
+          "The shared state_income_tax_before_refundable_credits selector list begins 0000-01-01 and contains no SD component. Other dated shared lists do not change that source date."
         ],
         "source_refs": [
           "src_0cfad85772e5",
@@ -6201,6 +7088,7 @@
           "src_3dce65bd93e3",
           "src_5d66d2023472",
           "src_624651af57f6",
+          "src_67585145593c",
           "src_7ba778e5df83",
           "src_a56f4861f562",
           "src_af0d2b84ba0a",
@@ -6296,7 +7184,7 @@
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "source_finding",
+        "kind": "no_state_income_tax_component_in_selector",
         "description": "Shared selector contains no TN-specific income-tax component; no state itemization inheritance established.",
         "variables": [
           "state_income_tax",
@@ -6453,7 +7341,7 @@
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "source_finding",
+        "kind": "no_state_income_tax_component_in_selector",
         "description": "Shared selector contains no TX-specific income-tax component; common federal itemization remains separate.",
         "variables": [
           "state_income_tax",
@@ -6659,7 +7547,7 @@
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "source_finding",
+        "kind": "federal_deduction_tax_credit",
         "description": "ut_federal_deductions_for_taxpayer_credit uses the federal standard/itemized deduction to compute the taxpayer credit; it does not deduct that amount from state taxable income. Federal tax_unit_itemizes selects the branch; the income-tax-removal parameter uses different 2025 and 2026 branches.",
         "variables": [
           "ut_taxable_income",
@@ -6868,7 +7756,7 @@
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "source_finding",
+        "kind": "state_itemized_deduction",
         "description": "Virginia source uses the federal tax_unit_itemizes election. Its own itemized formula reconstructs non-SALT deductions plus real-estate taxes and removes income/sales tax; the high-income branch has separate Virginia reduction logic.",
         "variables": [
           "va_agi",
@@ -7069,7 +7957,7 @@
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "source_finding",
+        "kind": "agi_base",
         "description": "For 2025 vt_taxable_income uses formula_2018 / its formula alias and subtracts VT standard deduction and exemptions from vt_agi. The federal-itemized addback has formula_2018 returning zero; its 2017 inheritance branch establishes no 2025 deduction path.",
         "variables": [
           "vt_taxable_income",
@@ -7224,7 +8112,7 @@
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "source_finding",
+        "kind": "outside_2025_ordinary_income_tax_scope",
         "description": "The state source before refundable credits lists capital-gains and millionaires-tax components. This audit excludes capital gains; millionaires_tax.in_effect declares false until 2028. That future ordinary-income branch establishes no 2025 personal-rent/property-tax deduction.",
         "variables": [
           "wa_income_tax",
@@ -7412,7 +8300,7 @@
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "source_finding",
+        "kind": "agi_base",
         "description": "Wisconsin taxable income uses WI AGI, standard deduction and exemptions. The separate itemized-deduction credit lists selected non-SALT components and excludes personal property tax. Mortgage interest remains a different housing expense outside this rent/property-tax routing scope.",
         "variables": [
           "wi_taxable_income",
@@ -7620,7 +8508,7 @@
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "source_finding",
+        "kind": "agi_base",
         "description": "wv_taxable_income subtracts the low-income exclusion and personal exemptions from WV AGI; the inspected sources establish no state itemized/federal-taxable-income deduction route.",
         "variables": [
           "wv_agi",
@@ -7769,7 +8657,7 @@
         }
       ],
       "itemization_or_federal_base_route": {
-        "kind": "source_finding",
+        "kind": "no_state_income_tax_component_in_selector",
         "description": "The shared selector contains no WY-specific income-tax component; these sources establish no state itemization/federal-taxable-income inheritance route.",
         "variables": [
           "state_income_tax",
@@ -7817,7 +8705,7 @@
       "effective_year_evidence": {
         "tax_year": 2025,
         "dispatch_notes": [
-          "Shared selector source list dated 2021-01-01; no WY component in inspected 2025 route."
+          "The shared state_income_tax_before_refundable_credits selector list begins 0000-01-01 and contains no WY component. Other dated shared lists do not change that source date."
         ],
         "source_refs": [
           "src_0cfad85772e5",
@@ -7826,6 +8714,7 @@
           "src_3dce65bd93e3",
           "src_5d66d2023472",
           "src_624651af57f6",
+          "src_67585145593c",
           "src_7ba778e5df83",
           "src_a56f4861f562",
           "src_af0d2b84ba0a",
