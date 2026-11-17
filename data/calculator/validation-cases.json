@@ -1,0 +1,404 @@
+[
+  {
+    "id": "in-bulletin-38-example-1",
+    "programId": "in-renters-income-tax-deduction",
+    "inputs": {
+      "rent": "1200"
+    },
+    "expectedValue": 1200,
+    "source": "https://www.in.gov/dor/files/reference/ib38.pdf",
+    "sourceLocation": "Example 1, page 1"
+  },
+  {
+    "id": "in-bulletin-38-example-2",
+    "programId": "in-renters-income-tax-deduction",
+    "inputs": {
+      "rent": "3400"
+    },
+    "expectedValue": 3000,
+    "source": "https://www.in.gov/dor/files/reference/ib38.pdf",
+    "sourceLocation": "Example 2, page 1"
+  },
+  {
+    "id": "in-rent-zero",
+    "programId": "in-renters-income-tax-deduction",
+    "inputs": {
+      "rent": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://www.in.gov/dor/files/reference/ib38.pdf",
+    "sourceLocation": "Limitation of deduction, page 1; actual qualified rent is zero"
+  },
+  {
+    "id": "in-homeowner-cap",
+    "programId": "in-homeowner-income-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "4000"
+    },
+    "expectedValue": 2500,
+    "source": "https://forms.in.gov/Download.aspx?id=16915#page=16",
+    "sourceLocation": "2025 IT-40 booklet, page 16, Schedule 2 line 2; Residential homeowner's property tax deduction; single filer with qualified expenses exceeding cap"
+  },
+  {
+    "id": "in-homeowner-zero",
+    "programId": "in-homeowner-income-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://forms.in.gov/Download.aspx?id=16915#page=16",
+    "sourceLocation": "2025 IT-40 booklet, page 16, Schedule 2 line 2; Residential homeowner's property tax deduction; no qualified payments"
+  },
+  {
+    "id": "ca-at-income-cap",
+    "programId": "ca-nonrefundable-renters-credit",
+    "inputs": {
+      "rent": "12000",
+      "ca_agi": "53994"
+    },
+    "expectedValue": 60,
+    "source": "https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html#Nonrefundable-Renter-s-Credit-Qualification-Record",
+    "sourceLocation": "2025 Form 540 booklet, renter credit qualification record, questions 1–2 and Form 540 line 46; Single filer, all nonmonetary qualifications assumed; income at 2025 ceiling; credit before liability limit"
+  },
+  {
+    "id": "ca-above-income-cap",
+    "programId": "ca-nonrefundable-renters-credit",
+    "inputs": {
+      "rent": "12000",
+      "ca_agi": "53995"
+    },
+    "expectedValue": 0,
+    "source": "https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html#Nonrefundable-Renter-s-Credit-Qualification-Record",
+    "sourceLocation": "2025 Form 540 booklet, renter credit qualification record, questions 1–2 and Form 540 line 46; Single filer, all nonmonetary qualifications assumed; income one dollar above 2025 ceiling"
+  },
+  {
+    "id": "mi-general-renter",
+    "programId": "mi-homestead-property-tax-credit",
+    "inputs": {
+      "mi_household_resources": "20000",
+      "age": "40",
+      "is_disabled": "false",
+      "rent": "12000",
+      "real_estate_taxes": "0",
+      "assessed_property_value": "0"
+    },
+    "expectedValue": 1272,
+    "source": "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Tax-Professional/2025-Taxpayer-Assistance-Manual.pdf?hash=1CF91F0ADA922792D961A1A4569437C7&rev=1c6289d2935b4fc3a8e88eac2ee3d7e8",
+    "sourceLocation": "Printed page64/PDFpage70: 12000×0.23=2760;20000×0.032=640;(2760−640)×0.60=1272;below1900cap and62500phaseout. Full-year qualified general renter; no public-assistance or special-status adjustments."
+  },
+  {
+    "id": "mi-general-renter-cap",
+    "programId": "mi-homestead-property-tax-credit",
+    "inputs": {
+      "mi_household_resources": "62500",
+      "age": "40",
+      "is_disabled": "false",
+      "rent": "50000",
+      "real_estate_taxes": "0",
+      "assessed_property_value": "0"
+    },
+    "expectedValue": 1900,
+    "source": "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Tax-Professional/2025-Taxpayer-Assistance-Manual.pdf?hash=1CF91F0ADA922792D961A1A4569437C7&rev=1c6289d2935b4fc3a8e88eac2ee3d7e8",
+    "sourceLocation": "Printed page64/PDFpage70:50000×0.23=11500;62500×0.032=2000;(11500−2000)×0.60=5700,capped1900;resourcesat62500retain100percent."
+  },
+  {
+    "id": "mi-above-resource-limit",
+    "programId": "mi-homestead-property-tax-credit",
+    "inputs": {
+      "mi_household_resources": "71501",
+      "age": "40",
+      "is_disabled": "false",
+      "rent": "50000",
+      "real_estate_taxes": "0",
+      "assessed_property_value": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://www.michigan.gov/taxes/iit/tax-guidance/credits-exemptions/hptc/tax-year-credit-information/2025",
+    "sourceLocation": "2025THRlimit71500;71501exceedsit. Manualprintedp64/PDFp70 independently states no credit over71500."
+  },
+  {
+    "id": "nj-senior-low-income-renter-credit",
+    "programId": "nj-income-tax-property-tax-credit",
+    "inputs": {
+      "nj_agi": "0",
+      "nj_taxable_income_before_property_tax_deduction": "0",
+      "age": "70",
+      "is_blind": "false",
+      "is_ssi_disabled": "false",
+      "rent": "12000",
+      "real_estate_taxes": "0"
+    },
+    "expectedValue": 50,
+    "source": "https://www.nj.gov/treasury/taxation/njit35.shtml",
+    "sourceLocation": "Agency eligibility/credit/nonfiler sections;2025NJ1040HWPartIage65test andNJ1040instructionsprintedp25/PDFp27:singleage70qualifiedfull-yearrenter,AGI0,credit50. Assume no duplicateANCHORcredit."
+  },
+  {
+    "id": "nj-owner-deduction-selection",
+    "programId": "nj-income-tax-property-tax-deduction",
+    "inputs": {
+      "nj_agi": "50000",
+      "nj_taxable_income_before_property_tax_deduction": "40000",
+      "age": "40",
+      "is_blind": "false",
+      "is_ssi_disabled": "false",
+      "rent": "0",
+      "real_estate_taxes": "6000"
+    },
+    "expectedValue": 6000,
+    "source": "https://www.nj.gov/treasury/taxation/pdf/current/1040i.pdf",
+    "sourceLocation": "WorksheetHprintedp29/PDFp31:6000<15000cap;40000−6000=34000. Singletax tableprintedpp57–58/PDFpp59–60 gives719at40000and525at34000;194savingexceeds50credit,soenter6000deduction. Assumesolequalifiedowner,noSeniorFreeze/nootherjurisdictioncredit."
+  },
+  {
+    "id": "il-property-5percent",
+    "programId": "il-property-tax-credit",
+    "inputs": {
+      "adjusted_gross_income": "50000",
+      "real_estate_taxes": "6000",
+      "il_income_tax_before_non_refundable_credits": "500"
+    },
+    "expectedValue": 300,
+    "source": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html",
+    "sourceLocation": "Publication 108: five-percent amount, single-filer $250,000 income ceiling, nonrefundability limit; properties and payments assumed qualified.",
+    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
+  },
+  {
+    "id": "il-property-liability-cap",
+    "programId": "il-property-tax-credit",
+    "inputs": {
+      "adjusted_gross_income": "50000",
+      "real_estate_taxes": "6000",
+      "il_income_tax_before_non_refundable_credits": "100"
+    },
+    "expectedValue": 100,
+    "source": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html",
+    "sourceLocation": "Publication 108: five-percent amount, single-filer $250,000 income ceiling, nonrefundability limit; properties and payments assumed qualified.",
+    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
+  },
+  {
+    "id": "il-property-agi-at-cap",
+    "programId": "il-property-tax-credit",
+    "inputs": {
+      "adjusted_gross_income": "250000",
+      "real_estate_taxes": "6000",
+      "il_income_tax_before_non_refundable_credits": "500"
+    },
+    "expectedValue": 300,
+    "source": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html",
+    "sourceLocation": "Publication 108: five-percent amount, single-filer $250,000 income ceiling, nonrefundability limit; properties and payments assumed qualified.",
+    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
+  },
+  {
+    "id": "il-property-agi-above-cap",
+    "programId": "il-property-tax-credit",
+    "inputs": {
+      "adjusted_gross_income": "250001",
+      "real_estate_taxes": "6000",
+      "il_income_tax_before_non_refundable_credits": "500"
+    },
+    "expectedValue": 0,
+    "source": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html",
+    "sourceLocation": "Publication 108: five-percent amount, single-filer $250,000 income ceiling, nonrefundability limit; properties and payments assumed qualified.",
+    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
+  },
+  {
+    "id": "il-property-no-liability",
+    "programId": "il-property-tax-credit",
+    "inputs": {
+      "adjusted_gross_income": "50000",
+      "real_estate_taxes": "6000",
+      "il_income_tax_before_non_refundable_credits": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html",
+    "sourceLocation": "Publication 108: five-percent amount, single-filer $250,000 income ceiling, nonrefundability limit; properties and payments assumed qualified.",
+    "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules."
+  },
+  {
+    "id": "pa-renter-first-income-band",
+    "programId": "pa-property-tax-rent-rebate",
+    "inputs": {
+      "pa_property_tax_or_rent_rebate_income": "8550",
+      "age": "70",
+      "is_permanently_and_totally_disabled": "false",
+      "is_surviving_spouse": "false",
+      "rent": "6000",
+      "real_estate_taxes": "0"
+    },
+    "expectedValue": 1000,
+    "source": "https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforindividuals/ptrr/documents/2025_pa-1000_inst.pdf",
+    "sourceLocation": "2025bookletprinted/PDFp11line17:6000rent×20%=1200;printed/PDFp13table:income8550cap1000;lesser=1000. Qualifiedfull-yearsolorenter,noassistance."
+  },
+  {
+    "id": "pa-renter-next-income-band",
+    "programId": "pa-property-tax-rent-rebate",
+    "inputs": {
+      "pa_property_tax_or_rent_rebate_income": "8551",
+      "age": "70",
+      "is_permanently_and_totally_disabled": "false",
+      "is_surviving_spouse": "false",
+      "rent": "6000",
+      "real_estate_taxes": "0"
+    },
+    "expectedValue": 770,
+    "source": "https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforindividuals/ptrr/documents/2025_pa-1000_inst.pdf",
+    "sourceLocation": "2025bookletp13table:8551enters770band;p11line17:6000rent×20%=1200;lesser770."
+  },
+  {
+    "id": "pa-renter-limited-by-rent",
+    "programId": "pa-property-tax-rent-rebate",
+    "inputs": {
+      "pa_property_tax_or_rent_rebate_income": "8550",
+      "age": "70",
+      "is_permanently_and_totally_disabled": "false",
+      "is_surviving_spouse": "false",
+      "rent": "3000",
+      "real_estate_taxes": "0"
+    },
+    "expectedValue": 600,
+    "source": "https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforindividuals/ptrr/documents/2025_pa-1000_inst.pdf",
+    "sourceLocation": "2025bookletp11line17:3000×20%=600;p13income8550cap1000;lesser600."
+  },
+  {
+    "id": "ok-at-income-limit-partial-credit",
+    "programId": "ok-property-tax-refund",
+    "inputs": {
+      "ok_gross_income": "12000",
+      "age": "70",
+      "is_disabled": "false",
+      "real_estate_taxes": "200"
+    },
+    "expectedValue": 80,
+    "source": "https://oklahoma.gov/content/dam/ok/en/tax/documents/forms/individuals/current/538-H.pdf",
+    "sourceLocation": "2025Form538Hp1line14allows12000;p2lines15–17:200tax−12000×1%=80,below200cap. Qualifiedfull-yearage70homesteadowner."
+  },
+  {
+    "id": "ok-above-income-limit",
+    "programId": "ok-property-tax-refund",
+    "inputs": {
+      "ok_gross_income": "12001",
+      "age": "70",
+      "is_disabled": "false",
+      "real_estate_taxes": "200"
+    },
+    "expectedValue": 0,
+    "source": "https://oklahoma.gov/content/dam/ok/en/tax/documents/forms/individuals/current/538-H.pdf",
+    "sourceLocation": "2025Form538Hp1line14:incomeover12000doesnotqualify;12001exceedslimit."
+  },
+  {
+    "id": "ok-maximum-credit",
+    "programId": "ok-property-tax-refund",
+    "inputs": {
+      "ok_gross_income": "10000",
+      "age": "70",
+      "is_disabled": "false",
+      "real_estate_taxes": "500"
+    },
+    "expectedValue": 200,
+    "source": "https://oklahoma.gov/content/dam/ok/en/tax/documents/forms/individuals/current/538-H.pdf",
+    "sourceLocation": "2025Form538Hp2lines15–17:500tax−10000×1%=400;maximum200."
+  },
+  {
+    "id": "ct-at-full-credit-income-limit",
+    "programId": "ct-income-tax-property-credit",
+    "inputs": {
+      "ct_agi": "49500",
+      "ct_income_tax_after_amt": "1000",
+      "real_estate_taxes": "1000",
+      "age": "40"
+    },
+    "expectedValue": 300,
+    "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
+    "sourceLocation": "CT-1040 Schedule 3 lines 63–65 cap $1,000 qualifying residence taxes at $300. Instructions page 27 gives zero reduction at single CT AGI $49,500. Line 10 tax $1,000 does not limit the $300 credit. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
+  },
+  {
+    "id": "ct-first-phaseout-band",
+    "programId": "ct-income-tax-property-credit",
+    "inputs": {
+      "ct_agi": "49501",
+      "ct_income_tax_after_amt": "1000",
+      "real_estate_taxes": "1000",
+      "age": "40"
+    },
+    "expectedValue": 255,
+    "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
+    "sourceLocation": "Instructions page 27 places single CT AGI $49,501 in the 15% reduction band. Schedule 3 lines 65–68: $300 - ($300 × 15%) = $255; line 10 tax $1,000 does not bind. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
+  },
+  {
+    "id": "ct-second-phaseout-band",
+    "programId": "ct-income-tax-property-credit",
+    "inputs": {
+      "ct_agi": "59501",
+      "ct_income_tax_after_amt": "1000",
+      "real_estate_taxes": "1000",
+      "age": "40"
+    },
+    "expectedValue": 210,
+    "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
+    "sourceLocation": "Instructions page 27 places single CT AGI $59,501 in the 30% reduction band. Schedule 3: $300 - ($300 × 30%) = $210. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
+  },
+  {
+    "id": "ct-limited-by-qualified-taxes",
+    "programId": "ct-income-tax-property-credit",
+    "inputs": {
+      "ct_agi": "49501",
+      "ct_income_tax_after_amt": "1000",
+      "real_estate_taxes": "200",
+      "age": "40"
+    },
+    "expectedValue": 170,
+    "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
+    "sourceLocation": "Schedule 3 line 65 limits the base to $200 qualified residence taxes. Instructions page 27 gives a 15% reduction: $200 - ($200 × 15%) = $170. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
+  },
+  {
+    "id": "ct-limited-by-income-tax",
+    "programId": "ct-income-tax-property-credit",
+    "inputs": {
+      "ct_agi": "49500",
+      "ct_income_tax_after_amt": "80",
+      "real_estate_taxes": "1000",
+      "age": "40"
+    },
+    "expectedValue": 80,
+    "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
+    "sourceLocation": "Instructions page 14 limits the credit to CT-1040 line 10 tax. Schedule 3 produces $300 before the liability limit; line 10 tax $80 limits the applied nonrefundable credit to $80. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
+  },
+  {
+    "id": "ct-last-partial-phaseout-band",
+    "programId": "ct-income-tax-property-credit",
+    "inputs": {
+      "ct_agi": "109499",
+      "ct_income_tax_after_amt": "1000",
+      "real_estate_taxes": "1000",
+      "age": "40"
+    },
+    "expectedValue": 30,
+    "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
+    "sourceLocation": "Instructions page 27 places single CT AGI $109,499 in the 90% reduction band. Schedule 3: $300 - ($300 × 90%) = $30. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
+  },
+  {
+    "id": "ct-fully-phased-out",
+    "programId": "ct-income-tax-property-credit",
+    "inputs": {
+      "ct_agi": "109501",
+      "ct_income_tax_after_amt": "1000",
+      "real_estate_taxes": "1000",
+      "age": "40"
+    },
+    "expectedValue": 0,
+    "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
+    "sourceLocation": "Instructions page 27 assigns a 100% reduction at single CT AGI $109,501. Schedule 3: $300 - ($300 × 100%) = $0. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
+  },
+  {
+    "id": "ct-zero-income-tax",
+    "programId": "ct-income-tax-property-credit",
+    "inputs": {
+      "ct_agi": "49500",
+      "ct_income_tax_after_amt": "0",
+      "real_estate_taxes": "1000",
+      "age": "40"
+    },
+    "expectedValue": 0,
+    "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
+    "sourceLocation": "Instructions page 2 directs a filer with CT-1040 line 10 tax of zero to skip the property tax credit. The allowed nonrefundable credit is $0. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
+  }
+]

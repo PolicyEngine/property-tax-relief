@@ -12,7 +12,34 @@ This report describes program rules and matching model declarations. It provides
 
 ## Review artifacts
 
-The `artifacts/` directory contains a self-contained interactive (`index.html`), a report (`report.html`), methods (`methods.html`), and the matching JSON/CSV downloads. These local research drafts do not require a running server. They describe program rules and provide no household calculations. The inventory does not establish exhaustive program coverage or provide a filing determination.
+The `artifacts/` directory contains a self-contained interactive (`index.html`), a report (`report.html`), methods (`methods.html`), and the matching JSON/CSV downloads. These files run without a server and describe program rules. The calculator preview on this branch adds live estimates for selected programs. The inventory does not establish exhaustive program coverage or provide a filing determination.
+
+## Household calculator preview
+
+The `/calculator/` page calculates 2025 scenarios for one adult filing as single, with no spouse or dependents. Its selector includes all 50 states and DC and 119 selected program and context records. Ten programs support calculations across eight states:
+
+- California: nonrefundable renter credit before its tax-liability limit.
+- Connecticut: nonrefundable credit for qualified primary-residence property taxes.
+- Illinois: property-tax credit after its income-tax limit.
+- Indiana: renter and homeowner income-tax deductions.
+- Michigan: homestead property-tax credit for renters.
+- New Jersey: property-tax deduction or credit, as PolicyEngine selects.
+- Oklahoma: property-tax credit or refund for homestead owners.
+- Pennsylvania: property-tax/rent rebate for renters.
+
+Other records show why calculations remain unavailable. Users supply qualified expenses and specified tax-form inputs; the estimate assumes the remaining qualification requirements hold. Connecticut covers primary-residence taxes and uses CT-1040, line 10, as its tax-liability limit; motor-vehicle tax claims require the full Schedule 3. Michigan and Pennsylvania calculations cover renters; Pennsylvania's preview excludes mixed owner-renter claims. Oklahoma calculations cover homestead owners. New Jersey selects one provision, so a zero deduction can accompany a credit or vice versa. Deduction amounts and California's credit before its liability limit do not measure tax savings on a completed return.
+
+Michigan's preview excludes claims that use the senior status for an unremarried surviving spouse whose spouse was 65 or older at death. See [2025 Form MI-1040CR, box 5a](https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/IIT/TY2025/MI-1040CR.pdf#page=1).
+
+Hawaii excludes taxpayers whom another taxpayer could claim as a dependent, even if nobody claims them. The preview cannot evaluate that condition, so Hawaii's renter credit remains unavailable. See [2025 Schedule X, Part I](https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=26).
+
+The browser uses `@policyengine/api-client` to send entered scenarios to the website's household-calculation API. Calculations require a network connection and use the shared API's capacity. The app adds no calculation backend or frontend benefit formulas. The adapter rejects missing or invalid outputs, preserves finite returned numbers, cancels obsolete requests, reuses unchanged requests, and caps new requests at 15 per minute per page.
+
+`data/calculator/contracts.json` records input mappings and source evidence. The November 15, 2026 metadata snapshot reported PolicyEngine US 2.2.1. All 31 saved response bodies record `spm_provenance.runtime_versions` labels for PolicyEngine US 2.2.2 and the `policyengine` wrapper 6.20.0 in the [validation receipt](https://github.com/PolicyEngine/property-tax-relief/blob/ea011237f5a2b51c71ad01db9371fe0c66ae1a14/data/calculator/validation-receipt.json). The receipt also records `runtimeModelVersion: null`; its raw response bodies preserve those labels. Requests do not pin a model version, and the recorded labels do not independently establish the runtime that produced each answer.
+
+`data/calculator/validation-cases.json` contains 31 source-derived cases for enabled programs. Saved API responses match their expected values; `scripts/calculator_live_qa.ts` can rerun those checks. The offline unit suite sends no live requests.
+
+The preview does not establish exhaustive coverage or national-calculator readiness.
 
 Browser and static CSV downloads use the same serializer and 22-column schema. `program_id` joins each program to the JSON inventory and model-presence audit. `payment_mechanism` records the explicit mechanism separately from `refundable`; an unclassified mechanism uses `not-established`. `eligibility_notes` and `interactions` retain each program’s condition and coordination notes, joining each source array with `|`. These columns follow `application` and precede `program_year`. `state_research_notes` carries profile boundaries and omissions on each program row; `source_urls` combines program and state references without duplicates. CSVs use UTF-8 with a byte-order mark, CRLF row endings, quoted cells, lowercase booleans and empty cells for null refundability. The serializer escapes embedded quotes and guards spreadsheet formula prefixes. For income-tax credits, `refundable` indicates whether the credit can exceed income-tax liability. For an unclassified mechanism, it carries the recorded flag without identifying how the program pays. The CSV leaves this cell empty for other mechanisms; the JSON retains the recorded flag.
 
@@ -39,15 +66,15 @@ uv run python scripts/build_inventory.py \
   --canonical-ref upstream/main
 ```
 
-The generator resolves the requested ref to an immutable commit and reads its variable files with `git archive`. Staged, modified and untracked working files cannot change that snapshot. `--canonical-ref` defaults to `HEAD`; select `upstream/main` to exclude an unmerged local branch. The audit records the requested ref, resolved commit and committed-source mode separately from the installed-package audit. Without `--canonical-model`, it records canonical source as not inspected. Fetch the intended canonical ref before running the command when a newer remote snapshot is required.
+The generator resolves the requested ref to an immutable commit and reads its variable files with `git archive`. Staged, modified and untracked working files cannot change that snapshot. `--canonical-ref` defaults to `HEAD`; select `upstream/main` to exclude an unmerged local branch. The audit records the requested ref, resolved commit and committed-source mode separately from the installed-package audit. Without `--canonical-model`, it records canonical source as not inspected. Fetch the intended canonical ref before running the command when you need a newer remote snapshot.
 
-`bun run dev` serves the Next.js development version at `http://localhost:3075`; after building, `bun run start` serves the static export there. Linux CI exercises the served app and the saved HTML with networking disabled, including search, comparison limits, renter filters, full CSV downloads and mobile layout. CI retains screenshots and the browser result as artifacts. The project uses Next App Router, Tailwind and `@policyengine/ui-kit`. The model-presence audit reads the country-model dependency pinned by `policyengine[us]==6.19.0`; the generated audit records its resolved version. It parses declarations without importing country-model code or calculating household amounts.
+`bun run dev` serves the Next.js development version at `http://localhost:3075`; after building, `bun run start` serves the static export there. Linux CI checks the served app, calculator, and saved HTML, including search, comparison limits, renter filters, full CSV downloads, and mobile layout. Calculator checks use the shared API; saved-HTML checks disable networking. CI retains screenshots and the browser result as artifacts. The project uses Next App Router, Tailwind and `@policyengine/ui-kit`. The model-presence audit reads the country-model dependency pinned by `policyengine[us]==6.19.0`; the generated audit records its resolved version. It parses declarations without importing country-model code or calculating household amounts. The served calculator obtains household estimates through the website's API; its model metadata snapshot appears in the calculator contracts.
 
 ## Validation and release boundary
 
 Tests cover all 51 jurisdiction records, unique program IDs, source/year metadata, category separation, filter invariants, downloads, generated-data consistency, and separation of shared chrome from tool-specific provenance. The syntactic audit matches undated formulas, formulas starting by 2025, and `adds`/`subtracts` declarations; missing references, input-only variables and later-only formulas enter the gap list. It ignores declaration end dates and does not establish applicability to a 2025 claim or legal correctness.
 
-Run `bun run release:check` to inspect the outstanding national-calculator requirements. The audit lists implementation, mapping and calculation-validation gaps. Completing each state's initial source pass does not resolve every transitional claim or establish calculator readiness. Independent review and the website integration must finish before public publication. The report provides no validated national household calculator.
+Run `bun run release:check` to inspect the outstanding national-calculator requirements. The audit lists implementation, mapping and calculation-validation gaps. Completing each state's initial source pass does not resolve every transitional claim or establish calculator readiness. The report provides no validated national household calculator.
 
 ## Coverage benchmarks
 
@@ -55,7 +82,9 @@ The [Lincoln Institute residential-program database](https://apps.lincolninst.ed
 
 ## Website integration
 
-The planned site path is `/us/rent-and-property-taxes`, with assets under `/_zones/property-tax-relief`. `bun run build:zone` sets the build-time base path; `vercel.json` maps those paths onto the static export. Ordinary `bun run build` keeps root URLs for local and offline review. The host’s route and registry changes are tracked in [policyengine-app-v2 PR #1568](https://github.com/PolicyEngine/policyengine-app-v2/pull/1568). The route is not live until that change is reviewed, merged and deployed. Add the direct-host redirect only after verifying the policyengine.org route, following the host repository’s deployment guidance.
+The [public report](https://www.policyengine.org/us/rent-and-property-taxes/) serves at `/us/rent-and-property-taxes`, with assets under `/_zones/property-tax-relief`. Production serves the [report source at `a2354c2d`](https://github.com/PolicyEngine/property-tax-relief/tree/a2354c2d31ff8bcfb6a1f9a19edb8a54af2ca378). [policyengine-app-v2 PR #1568](https://github.com/PolicyEngine/policyengine-app-v2/pull/1568) supplies the host’s route and registry changes. The calculator on this branch remains a scoped preview pending separate publication.
+
+`bun run build:zone` sets the build-time base path; `vercel.json` maps those paths onto the static export. Ordinary `bun run build` keeps root URLs for local and offline review.
 
 ## Data and results invariants
 
@@ -69,15 +98,15 @@ The planned site path is `/us/rent-and-property-taxes`, with assets under `/_zon
 
 ## Running costs
 
-The Vercel preview serves the existing static export. It does not run an application server, PolicyEngine calculation service, database, scheduled task or serverless function.
+The Vercel app serves a static export and runs no application server, calculation service, database, scheduled task, or serverless function of its own. Household calculations use the shared PolicyEngine website API.
 
-| Question                        | Answer                                                                                                                                                                                               |
-| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| What runs while nobody uses it? | No application compute or background work. Vercel retains the static deployment.                                                                                                                     |
-| Most it can cost in an hour     | No compute capacity is reserved. Request and transfer charges depend on traffic and the existing PolicyEngine Vercel team plan; no numeric hourly ceiling or project spending cap has been verified. |
-| Bill review                     | Review Vercel project usage and team billing on November 21, 2026, and before a public launch. Static hosting does not imply unlimited free traffic.                                                 |
-| Copies and how each one ends    | Preview deployments are immutable copies. The project owner removes obsolete previews when superseded and retires the project when this tool is retired.                                             |
-| Where secrets live              | The static app requires no secrets. Deployment-account credentials remain in the local Vercel credential store and are excluded from uploads.                                                        |
-| Owner and review                | PolicyEngine; Max Ghenis. Review the preview and continued hosting by November 21, 2026.                                                                                                             |
+| Question                        | Answer                                                                                                                                                                                                      |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| What runs while nobody uses it? | No application compute or background work. Vercel retains the static deployment.                                                                                                                            |
+| Most it can cost in an hour     | The app reserves no compute capacity. Request and transfer charges depend on traffic and the existing PolicyEngine Vercel team plan; we have not verified a numeric hourly ceiling or project spending cap. |
+| Bill review                     | Review Vercel project usage and team billing on November 21, 2026, and before a public calculator launch. Static hosting does not imply unlimited free traffic.                                             |
+| Copies and how each one ends    | Vercel retains immutable preview copies. The project owner removes obsolete previews after replacing them and retires the project when retiring the tool.                                                   |
+| Where secrets live              | The static app requires no secrets. Deployment-account credentials remain in the local Vercel credential store. We exclude them from uploads.                                                               |
+| Owner and review                | PolicyEngine; Max Ghenis. Review continued hosting and the calculator preview by November 21, 2026.                                                                                                         |
 
-No Modal, Cloud Run, database or warm-compute exception is configured. Preview access uses Vercel authentication. Hosting this research draft does not certify comprehensive program coverage or household calculations.
+We configure no Modal, Cloud Run, database or warm-compute exception. Calculator previews use Vercel authentication. The public report describes selected programs; it provides no household estimates.

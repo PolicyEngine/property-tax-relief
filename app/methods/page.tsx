@@ -68,6 +68,83 @@ export default function Methods() {
           </p>
         </section>
         <section>
+          <h2>Household calculations</h2>
+          <p>
+            The calculator supports 2025 scenarios for one adult filing as
+            single, with no spouse or dependents. Ten programs support
+            calculations in California, Connecticut, Illinois, Indiana,
+            Michigan, New Jersey, Oklahoma, and Pennsylvania. Users supply
+            qualified expenses and the specified tax-form inputs; the estimate
+            assumes the remaining qualification requirements hold. Deduction
+            results measure reductions in taxable income. The California credit
+            result precedes the limit from available income-tax liability. These
+            results do not measure tax savings on a completed return.
+          </p>
+          <p>
+            Connecticut calculations cover qualified primary-residence taxes
+            only, with the tax-liability limit from CT-1040, line 10.
+            Motor-vehicle tax claims require the full Schedule 3. Michigan and
+            Pennsylvania calculations cover renters; Pennsylvania's preview
+            excludes mixed owner-renter claims. Oklahoma calculations cover
+            homestead owners. For New Jersey, PolicyEngine selects either the
+            deduction or credit; a zero for one can reflect selection of the
+            other. Enter the stated form-line values, including Michigan's total
+            household resources and New Jersey's income before the property-tax
+            deduction.
+          </p>
+          <p>
+            Michigan's preview excludes claims that use the senior status for an
+            unremarried surviving spouse whose spouse was 65 or older at death.
+            See{" "}
+            <a href="https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/IIT/TY2025/MI-1040CR.pdf#page=1">
+              2025 Form MI-1040CR, box 5a
+            </a>
+            .
+          </p>
+          <p>
+            Hawaii excludes taxpayers whom another taxpayer could claim as a
+            dependent, even if nobody claims them. The preview cannot evaluate
+            that condition, so Hawaii's renter credit remains unavailable. See{" "}
+            <a href="https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=26">
+              2025 Schedule X, Part I
+            </a>
+            .
+          </p>
+          <p>
+            The calculator sends each entered scenario to PolicyEngine's rules
+            engine through the website's household-calculation API. Missing,
+            null, and nonnumeric outputs remain unavailable.
+          </p>
+          <p>
+            The November 15, 2026 metadata snapshot reported PolicyEngine US
+            2.2.1. All 31 saved response bodies record{" "}
+            <code>spm_provenance.runtime_versions</code> labels for PolicyEngine
+            US 2.2.2 and the <code>policyengine</code> wrapper 6.20.0 in the{" "}
+            <a href="https://github.com/PolicyEngine/property-tax-relief/blob/ea011237f5a2b51c71ad01db9371fe0c66ae1a14/data/calculator/validation-receipt.json">
+              validation receipt
+            </a>
+            . The receipt also records <code>runtimeModelVersion: null</code>;
+            its raw response bodies preserve those labels. Requests do not pin a
+            model version, and the recorded labels do not independently
+            establish the runtime that produced each answer.
+          </p>
+          <p>
+            Saved API responses match the expected amounts in{" "}
+            <a href="https://github.com/PolicyEngine/property-tax-relief/blob/ea011237f5a2b51c71ad01db9371fe0c66ae1a14/data/calculator/validation-cases.json">
+              31 source-derived cases
+            </a>{" "}
+            for the enabled calculations. Those cases do not validate other
+            household scenarios.
+          </p>
+          <p>
+            All 50 states and DC appear in the selector alongside 119 selected
+            program and context records. Ten programs currently support
+            calculations; the other records remain visible with their
+            availability status. This inventory does not establish exhaustive
+            program coverage or a validated national calculator.
+          </p>
+        </section>
+        <section>
           <h2>Downloads</h2>
           <ul>
             <li>
@@ -139,8 +216,8 @@ export default function Methods() {
                     <td>{missing.length}</td>
                   </tr>
                   <tr>
-                    <td>Validated household-calculation coverage</td>
-                    <td>No household calculations</td>
+                    <td>National household-calculation validation</td>
+                    <td>No validated national estimates</td>
                   </tr>
                 </tbody>
               </table>

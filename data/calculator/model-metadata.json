@@ -1,0 +1,548 @@
+{
+  "source": "https://www.policyengine.org/api/metadata/us",
+  "checkedAt": "2026-11-15T15:41:05.213853Z",
+  "modelVersion": "2.2.1",
+  "sourceSha256": "670b553ff1eb2307bcb7edf529a03f40826c7beb1b8b057a1fc4e92b53b8de92",
+  "variables": {
+    "adjusted_gross_income": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "adjusted_gross_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "age": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "age",
+      "unit": null,
+      "isInputVariable": true
+    },
+    "assessed_property_value": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "assessed_property_value",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ca_agi": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ca_agi",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ca_renter_credit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ca_renter_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "cohabitating_spouses": {
+      "entity": "tax_unit",
+      "valueType": "bool",
+      "definitionPeriod": "year",
+      "name": "cohabitating_spouses",
+      "unit": null,
+      "isInputVariable": true
+    },
+    "ct_agi": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ct_agi",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ct_income_tax_after_amt": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ct_income_tax_after_amt",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ct_property_tax_credit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ct_property_tax_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "filing_status": {
+      "entity": "tax_unit",
+      "valueType": "Enum",
+      "definitionPeriod": "year",
+      "name": "filing_status",
+      "unit": null,
+      "isInputVariable": false,
+      "possibleValues": [
+        {
+          "value": "SINGLE",
+          "label": "Single"
+        },
+        {
+          "value": "JOINT",
+          "label": "Joint"
+        },
+        {
+          "value": "SEPARATE",
+          "label": "Separate"
+        },
+        {
+          "value": "HEAD_OF_HOUSEHOLD",
+          "label": "Head of household"
+        },
+        {
+          "value": "SURVIVING_SPOUSE",
+          "label": "Surviving spouse"
+        }
+      ]
+    },
+    "il_income_tax_before_non_refundable_credits": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "il_income_tax_before_non_refundable_credits",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "il_property_tax_credit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "il_property_tax_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "in_homeowners_property_tax_deduction": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "in_homeowners_property_tax_deduction",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "in_renters_deduction": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "in_renters_deduction",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "is_blind": {
+      "entity": "person",
+      "valueType": "bool",
+      "definitionPeriod": "year",
+      "name": "is_blind",
+      "unit": null,
+      "isInputVariable": true
+    },
+    "is_disabled": {
+      "entity": "person",
+      "valueType": "bool",
+      "definitionPeriod": "year",
+      "name": "is_disabled",
+      "unit": null,
+      "isInputVariable": true
+    },
+    "is_permanently_and_totally_disabled": {
+      "entity": "person",
+      "valueType": "bool",
+      "definitionPeriod": "year",
+      "name": "is_permanently_and_totally_disabled",
+      "unit": null,
+      "isInputVariable": true
+    },
+    "is_ssi_disabled": {
+      "entity": "person",
+      "valueType": "bool",
+      "definitionPeriod": "year",
+      "name": "is_ssi_disabled",
+      "unit": null,
+      "isInputVariable": false
+    },
+    "is_surviving_spouse": {
+      "entity": "person",
+      "valueType": "bool",
+      "definitionPeriod": "year",
+      "name": "is_surviving_spouse",
+      "unit": null,
+      "isInputVariable": true
+    },
+    "is_tax_unit_dependent": {
+      "entity": "person",
+      "valueType": "bool",
+      "definitionPeriod": "year",
+      "name": "is_tax_unit_dependent",
+      "unit": null,
+      "isInputVariable": false
+    },
+    "is_tax_unit_head": {
+      "entity": "person",
+      "valueType": "bool",
+      "definitionPeriod": "year",
+      "name": "is_tax_unit_head",
+      "unit": null,
+      "isInputVariable": false
+    },
+    "is_tax_unit_spouse": {
+      "entity": "person",
+      "valueType": "bool",
+      "definitionPeriod": "year",
+      "name": "is_tax_unit_spouse",
+      "unit": null,
+      "isInputVariable": false
+    },
+    "mi_homestead_property_tax_credit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "mi_homestead_property_tax_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "mi_household_resources": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "mi_household_resources",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "nj_agi": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "nj_agi",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "nj_property_tax_credit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "nj_property_tax_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "nj_property_tax_deduction": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "nj_property_tax_deduction",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "nj_taxable_income_before_property_tax_deduction": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "nj_taxable_income_before_property_tax_deduction",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ok_gross_income": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ok_gross_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ok_ptc": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ok_ptc",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "pa_property_tax_or_rent_rebate": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "pa_property_tax_or_rent_rebate",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "pa_property_tax_or_rent_rebate_income": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "pa_property_tax_or_rent_rebate_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "real_estate_taxes": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "real_estate_taxes",
+      "unit": "currency-USD",
+      "isInputVariable": true
+    },
+    "rent": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "rent",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "state_code": {
+      "entity": "household",
+      "valueType": "Enum",
+      "definitionPeriod": "year",
+      "name": "state_code",
+      "unit": null,
+      "isInputVariable": false,
+      "possibleValues": [
+        {
+          "value": "AL",
+          "label": "AL"
+        },
+        {
+          "value": "AK",
+          "label": "AK"
+        },
+        {
+          "value": "AZ",
+          "label": "AZ"
+        },
+        {
+          "value": "AR",
+          "label": "AR"
+        },
+        {
+          "value": "CA",
+          "label": "CA"
+        },
+        {
+          "value": "CO",
+          "label": "CO"
+        },
+        {
+          "value": "CT",
+          "label": "CT"
+        },
+        {
+          "value": "DE",
+          "label": "DE"
+        },
+        {
+          "value": "FL",
+          "label": "FL"
+        },
+        {
+          "value": "GA",
+          "label": "GA"
+        },
+        {
+          "value": "HI",
+          "label": "HI"
+        },
+        {
+          "value": "ID",
+          "label": "ID"
+        },
+        {
+          "value": "IL",
+          "label": "IL"
+        },
+        {
+          "value": "IN",
+          "label": "IN"
+        },
+        {
+          "value": "IA",
+          "label": "IA"
+        },
+        {
+          "value": "KS",
+          "label": "KS"
+        },
+        {
+          "value": "KY",
+          "label": "KY"
+        },
+        {
+          "value": "LA",
+          "label": "LA"
+        },
+        {
+          "value": "ME",
+          "label": "ME"
+        },
+        {
+          "value": "MD",
+          "label": "MD"
+        },
+        {
+          "value": "MA",
+          "label": "MA"
+        },
+        {
+          "value": "MI",
+          "label": "MI"
+        },
+        {
+          "value": "MN",
+          "label": "MN"
+        },
+        {
+          "value": "MS",
+          "label": "MS"
+        },
+        {
+          "value": "MO",
+          "label": "MO"
+        },
+        {
+          "value": "MT",
+          "label": "MT"
+        },
+        {
+          "value": "NE",
+          "label": "NE"
+        },
+        {
+          "value": "NV",
+          "label": "NV"
+        },
+        {
+          "value": "NH",
+          "label": "NH"
+        },
+        {
+          "value": "NJ",
+          "label": "NJ"
+        },
+        {
+          "value": "NM",
+          "label": "NM"
+        },
+        {
+          "value": "NY",
+          "label": "NY"
+        },
+        {
+          "value": "NC",
+          "label": "NC"
+        },
+        {
+          "value": "ND",
+          "label": "ND"
+        },
+        {
+          "value": "OH",
+          "label": "OH"
+        },
+        {
+          "value": "OK",
+          "label": "OK"
+        },
+        {
+          "value": "OR",
+          "label": "OR"
+        },
+        {
+          "value": "PA",
+          "label": "PA"
+        },
+        {
+          "value": "RI",
+          "label": "RI"
+        },
+        {
+          "value": "SC",
+          "label": "SC"
+        },
+        {
+          "value": "SD",
+          "label": "SD"
+        },
+        {
+          "value": "TN",
+          "label": "TN"
+        },
+        {
+          "value": "TX",
+          "label": "TX"
+        },
+        {
+          "value": "UT",
+          "label": "UT"
+        },
+        {
+          "value": "VT",
+          "label": "VT"
+        },
+        {
+          "value": "VA",
+          "label": "VA"
+        },
+        {
+          "value": "WA",
+          "label": "WA"
+        },
+        {
+          "value": "WV",
+          "label": "WV"
+        },
+        {
+          "value": "WI",
+          "label": "WI"
+        },
+        {
+          "value": "WY",
+          "label": "WY"
+        },
+        {
+          "value": "DC",
+          "label": "DC"
+        },
+        {
+          "value": "GU",
+          "label": "GU"
+        },
+        {
+          "value": "MP",
+          "label": "MP"
+        },
+        {
+          "value": "PW",
+          "label": "PW"
+        },
+        {
+          "value": "PR",
+          "label": "PR"
+        },
+        {
+          "value": "VI",
+          "label": "VI"
+        },
+        {
+          "value": "AA",
+          "label": "AA"
+        },
+        {
+          "value": "AE",
+          "label": "AE"
+        },
+        {
+          "value": "AP",
+          "label": "AP"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,370 @@
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  gap: clamp(36px, 7vw, 96px);
+  align-items: start;
+  padding: 0 0 80px;
+}
+
+.inputs,
+.results {
+  min-width: 0;
+}
+
+.sectionHeading,
+.resultHeading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.year,
+.status {
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+
+.scope {
+  max-width: 440px;
+  color: var(--muted-foreground);
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.selectionFields {
+  display: grid;
+  gap: 22px;
+  margin-bottom: 26px;
+}
+
+.select {
+  min-height: 46px;
+  font-size: 14px;
+  width: 100%;
+  transition: border-color 140ms ease;
+}
+
+.facts {
+  border: 0;
+  border-top: 1px solid var(--border);
+  padding: 26px 0 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.facts legend {
+  font-size: 18px;
+  font-weight: 550;
+  padding: 0 14px 0 0;
+}
+
+.fieldInstructions {
+  margin: 0 0 24px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  max-width: 440px;
+}
+
+.field {
+  margin-bottom: 24px;
+}
+
+.selectionField > label,
+.field > label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.fieldPeriod {
+  color: var(--muted-foreground);
+  font-weight: 400;
+}
+
+.fieldDescription {
+  color: var(--muted-foreground);
+  font-size: 12px;
+  margin: -2px 0 9px;
+  max-width: 470px;
+}
+
+.numericInput {
+  position: relative;
+}
+
+.number {
+  height: 46px;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-element, 4px);
+  padding: 9px 12px;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  box-shadow: none;
+}
+
+.money {
+  padding-left: 29px;
+}
+
+.currencyPrefix {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-foreground);
+  pointer-events: none;
+}
+
+.fieldError {
+  font-size: 12px;
+  color: var(--text-error);
+  margin: 7px 0 0;
+}
+
+.errors {
+  border-left: 3px solid var(--text-error);
+  padding: 13px 0 13px 17px;
+  margin: 24px 0;
+  color: var(--foreground);
+  scroll-margin-top: 110px;
+}
+
+.errors h3 {
+  margin: 0 0 7px;
+  font-size: 15px;
+}
+
+.errors p,
+.errors ul {
+  margin: 0;
+  font-size: 13px;
+}
+
+.errors ul {
+  padding-left: 18px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.calculate {
+  min-height: 46px;
+  padding: 10px 22px;
+  min-width: 190px;
+  font-size: 14px;
+  transition: opacity 140ms ease;
+}
+
+.cancel {
+  min-height: 46px;
+}
+
+.availability {
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  margin: 24px 0;
+}
+
+.availability h3 {
+  font-size: 18px;
+}
+
+.availability p,
+.availability a {
+  font-size: 13px;
+}
+
+.availability p {
+  color: var(--muted-foreground);
+}
+
+.results {
+  border-top: 2px solid var(--primary);
+  padding-top: 19px;
+  position: sticky;
+  top: 100px;
+  scroll-margin-top: calc(var(--spacing-header, 58px) + 24px);
+}
+
+.results h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.resultBody {
+  min-height: 235px;
+  transition: opacity 160ms ease;
+}
+
+.resultBody[aria-busy="true"] {
+  opacity: 0.65;
+}
+
+.amount {
+  color: var(--primary);
+  font-size: clamp(46px, 5.2vw, 68px);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+  margin: 0 0 9px;
+  overflow-wrap: anywhere;
+}
+
+.resultLabel {
+  color: var(--foreground);
+  font-size: 15px;
+  font-weight: 550;
+  margin: 0 0 6px;
+}
+
+.programName {
+  color: var(--muted-foreground);
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+.resultNote {
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 1.65;
+  max-width: 440px;
+  margin-bottom: 15px;
+}
+
+.stale {
+  font-size: 12px;
+  color: var(--muted-foreground);
+  border-left: 2px solid var(--border);
+  padding-left: 12px;
+  margin: 0 0 20px;
+}
+
+.emptyResult {
+  padding: 16px 0 30px;
+}
+
+.emptyRule {
+  display: block;
+  width: 64px;
+  height: 2px;
+  background: var(--border);
+  margin-bottom: 28px;
+}
+
+.emptyResult > p:first-of-type {
+  font-size: 17px;
+  color: var(--muted-foreground);
+  max-width: 340px;
+  margin-bottom: 22px;
+}
+
+.calculationDetails {
+  margin-top: 21px;
+  font-size: 12px;
+}
+
+.calculationDetails > summary {
+  min-height: 44px;
+  align-content: center;
+}
+
+.calculationDetails dl {
+  margin: 15px 0 24px;
+}
+
+.calculationDetails dl > div {
+  display: grid;
+  grid-template-columns: 115px minmax(0, 1fr);
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.calculationDetails dt,
+.calculationDetails dd {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.programContext {
+  border-top: 1px solid var(--border);
+  padding-top: 25px;
+  margin-top: 26px;
+}
+
+.programContext h3 {
+  font-size: 16px;
+  margin-bottom: 17px;
+}
+
+.notes,
+.sourceLinks {
+  font-size: 12px;
+  line-height: 1.65;
+  padding-left: 17px;
+  margin: 0 0 22px;
+}
+
+.notes {
+  color: var(--muted-foreground);
+}
+
+.notes li + li,
+.sourceLinks li + li {
+  margin-top: 10px;
+}
+
+.sourceLinks a {
+  display: inline-block;
+  min-height: 44px;
+  align-content: center;
+  overflow-wrap: anywhere;
+}
+
+.methodLink {
+  margin-top: 25px;
+  font-size: 12px;
+}
+
+@media (max-width: 800px) {
+  .workspace {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 44px;
+    padding-bottom: 55px;
+  }
+
+  .results {
+    position: static;
+  }
+
+  .resultBody {
+    min-height: 0;
+  }
+
+  .scope,
+  .fieldInstructions,
+  .fieldDescription,
+  .resultNote {
+    max-width: none;
+  }
+
+  .amount {
+    font-size: 54px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .select,
+  .calculate,
+  .resultBody {
+    transition: none;
+  }
+}

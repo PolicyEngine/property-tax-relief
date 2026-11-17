@@ -28,6 +28,7 @@ export function SiteHeader() {
         aria-label="Rent and property tax research"
       >
         <a href={appPath("/")}>Explore states</a>
+        <a href={appPath("/calculator/")}>Household estimates</a>
         <a href={appPath("/report/")}>Read the report</a>
         <a href={appPath("/methods/")}>Data and methods</a>
       </nav>
