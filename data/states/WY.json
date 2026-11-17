@@ -23,7 +23,7 @@
       "eligibilityNotes": [
         "Wyoming resident at least five years; primary residence.",
         "For 2025, combined countable household assets must not exceed $169,866 times the number of adult household members, with program exclusions.",
-        "The asset test is waived when the person's tax liability is strictly greater than 10% of household income; equality does not trigger the waiver."
+        "The asset test does not apply when the person's tax liability strictly exceeds 10% of household income; equality does not trigger the waiver."
       ],
       "interactions": [],
       "programYear": "2025 property taxes, refund application in 2026.",
@@ -121,7 +121,7 @@
     "25% homeowner value exemption becomes limited to owner-occupied property beginning in 2026."
   ],
   "researchNotes": [
-    "County median-income and median-tax-bill tables are required to calculate an exact refund.",
+    "An exact refund calculation requires county median-income and median-tax-bill tables.",
     "The 25% and 50% exemptions are not additive in 2025/26.",
     "The statute and rules use an inclusive combined-adult asset limit with a tax-liability waiver. The form/portal's strict per-adult wording differs; the statute sets the inclusive combined-adult test. The waiver uses tax liability; the refund uses qualifying timely-paid tax. Household facts and county tables determine the applicable amount."
   ],

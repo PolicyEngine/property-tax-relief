@@ -61,7 +61,7 @@
       "eligibilityNotes": [
         "Own and occupy since December 31, 2022 through December 31, 2025, with listed exceptions.",
         "Qualifying mobile-home owners can use 18% of site fees.",
-        "Ordinary renters are excluded."
+        "Ordinary renters do not qualify."
       ],
       "interactions": [
         "Base-year taxes affect the separate income-tax property deduction/credit.",
@@ -104,7 +104,7 @@
       "interactions": [
         "ANCHOR and Senior Freeze reduce the remaining Stay NJ payment under the applicable benefit statement. Total covered relief cannot exceed property taxes paid."
       ],
-      "programYear": "Payments for tax-year-2025 benefits are scheduled for February and May 2027. Annualized caps assume no FY 2028 change.",
+      "programYear": "New Jersey schedules payments for tax-year-2025 benefits for February and May 2027. Annualized caps assume no FY 2028 change.",
       "rentProxy": null,
       "sources": [
         {

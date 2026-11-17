@@ -429,7 +429,7 @@
     ],
     "researchNotes": [
       "The nominal credit may exceed usable savings because it is nonrefundable.",
-      "Owner relief is represented as exemptions/deferrals rather than cash credits."
+      "The owner entries describe exemptions and deferrals rather than cash credits."
     ],
     "sources": [
       {
@@ -456,7 +456,7 @@
     "laterChanges": [],
     "code": "CO",
     "name": "Colorado",
-    "overview": "The 2025 PTC rebate supports qualifying seniors' property-tax, rent, and heat costs; disabled residents may instead qualify for DAC.",
+    "overview": "The 2025 Property Tax/Rent/Heat Credit rebate supports qualifying seniors' property-tax, rent, and heat costs; disabled residents may instead qualify for the Disability Assistance Credit.",
     "statewideCreditStatus": "identified",
     "programs": [
       {
@@ -3613,7 +3613,7 @@
     "name": "New Hampshire",
     "taxYear": 2025,
     "verifiedAt": "2026-11-13",
-    "overview": "Income-tested relief refunds part of the State Education Property Tax to qualifying homeowners; local exemptions are separate.",
+    "overview": "Income-tested relief refunds part of the State Education Property Tax to qualifying homeowners.",
     "inventoryStatus": "researched",
     "statewideCreditStatus": "identified",
     "programs": [
@@ -3627,7 +3627,7 @@
         ],
         "refundable": true,
         "ageRule": "No age restriction stated.",
-        "incomeDefinition": "Adjusted gross income under DP-8 rules; use the claim-year instructions.",
+        "incomeDefinition": "Total household income, including income of the claimant and adult household members. RSA 198:57 establishes the household scope; the inventory does not establish the precise adjusted-gross-income basis for the claim year.",
         "incomeLimits": "$37,000 single; $47,000 married or head of New Hampshire household.",
         "maximumBenefit": "Income-tiered relief on qualifying homestead value, capped at $220,000 of value.",
         "formulaSummary": "Refund qualifying State Education Property Tax using eligible homestead value and income-tier factors; this is not a refund of the whole local property-tax bill.",
@@ -3648,6 +3648,11 @@
             "title": "2025 submission window (for 2024 property tax)",
             "url": "https://www.revenue.nh.gov/news-and-media/nh-department-revenue-administration-tax-relief-program-provides-support-low-and",
             "kind": "agency"
+          },
+          {
+            "title": "New Hampshire RSA 198:57: household income and application requirements",
+            "url": "https://gc.nh.gov/rsa/html/XV/198/198-57.htm",
+            "kind": "statute"
           }
         ],
         "modelVariables": [],
@@ -3741,7 +3746,7 @@
         "eligibilityNotes": [
           "Own and occupy since December 31, 2022 through December 31, 2025, with listed exceptions.",
           "Qualifying mobile-home owners can use 18% of site fees.",
-          "Ordinary renters are excluded."
+          "Ordinary renters do not qualify."
         ],
         "interactions": [
           "Base-year taxes affect the separate income-tax property deduction/credit.",
@@ -3789,7 +3794,7 @@
         "interactions": [
           "ANCHOR and Senior Freeze reduce the remaining Stay NJ payment under the applicable benefit statement. Total covered relief cannot exceed property taxes paid."
         ],
-        "programYear": "Payments for tax-year-2025 benefits are scheduled for February and May 2027. Annualized caps assume no FY 2028 change.",
+        "programYear": "New Jersey schedules payments for tax-year-2025 benefits for February and May 2027. Annualized caps assume no FY 2028 change.",
         "rentProxy": null,
         "sources": [
           {
@@ -4117,7 +4122,7 @@
         "incomeDefinition": "STAR income generally equals FAGI minus taxable IRA distributions; 2025 benefits use 2023 income.",
         "incomeLimits": "2025 Basic credit income limit $500,000; Enhanced income limit $107,300. Legacy Basic exemption limit $250,000.",
         "maximumBenefit": "Location-specific school-tax savings; no uniform statewide dollar credit.",
-        "formulaSummary": "Basic or Enhanced STAR is paid as a state check/direct deposit using location-specific school-tax savings and qualifying-tax limits. Legacy STAR exemption is a separate bill reduction; the two delivery forms cannot be added.",
+        "formulaSummary": "New York pays Basic or Enhanced STAR by check or direct deposit using location-specific school-tax savings and qualifying-tax limits. The legacy STAR exemption reduces the bill separately; recipients cannot combine the two delivery forms.",
         "application": "Register for the STAR credit; existing exemption recipients follow separate rules.",
         "eligibilityNotes": [
           "2025 Basic uses resident owners and their spouses; Enhanced includes all owners, including nonresident owners, plus resident spouses.",
@@ -4414,7 +4419,7 @@
           "Generally unavailable for tax-exempt rental property; payments in lieu of taxes can qualify."
         ],
         "interactions": [
-          "Homeowner homestead credit and renter refund generally cannot both be claimed, except qualifying mobile-home lot rent."
+          "Claimants generally cannot claim both the homeowner homestead credit and renter refund, except for qualifying mobile-home lot rent."
         ],
         "programYear": "2025 rent and income; the refund claim follows in 2026.",
         "rentProxy": 0.2,
@@ -4689,7 +4694,7 @@
         "ageRule": "62 or older, or receiving or eligible for Social Security Disability benefits.",
         "incomeDefinition": "Prior-year household income, including taxable and nontaxable income under program rules.",
         "incomeLimits": "$60,000 for 2025 enrollment, using 2024 household income.",
-        "maximumBenefit": "Eligible annual property taxes are paid by the state as a loan.",
+        "maximumBenefit": "The state pays eligible annual property taxes as a loan.",
         "formulaSummary": "State pays the county; deferred taxes, 6% simple annual interest, and applicable costs must be repaid when the deferral ends.",
         "application": "Apply through county assessor by April 15; late applications through December 1 require a fee.",
         "eligibilityNotes": [
@@ -5116,7 +5121,7 @@
         "interactions": [
           "Revenue pays the larger eligible sales-tax or property-tax refund once; the two awards are not additive."
         ],
-        "programYear": "2025 application cycle; 2024 reference taxes/facts. Chapter 10-18A was repealed July 1, 2026. Transitional 2026 property-claim rights and the precise assessment/payable-year mapping remain unresolved.",
+        "programYear": "2025 application cycle; 2024 reference taxes/facts. South Dakota repealed chapter 10-18A effective July 1, 2026. Transitional 2026 property-claim rights and the precise assessment/payable-year mapping remain unresolved.",
         "rentProxy": null,
         "sources": [
           {
@@ -5819,7 +5824,7 @@
         ],
         "refundable": null,
         "ageRule": "65 or older, or permanently and totally disabled if local ordinance includes disability.",
-        "incomeDefinition": "Preceding-year income under local ordinance; household inclusion and exclusions specified locally.",
+        "incomeDefinition": "If a locality sets an income limit, the cited statute counts preceding-year income of owners who use the dwelling as their principal residence and relatives who live there, except bona fide caregivers. Localities may include resident nonrelatives except bona fide tenants or caregivers. Localities may exclude disability income of permanently and totally disabled resident relatives or nonrelatives, and other specified income sources or portions. The inventory does not establish the effective-date history for every 2025 application.",
         "incomeLimits": "Local income and net-worth limits.",
         "maximumBenefit": "Local ordinance determines exempted taxes, deferral, or combination.",
         "formulaSummary": "Localities may exempt taxes, defer them, or limit increases; relief is not uniform statewide.",
@@ -5876,7 +5881,7 @@
     ],
     "laterChanges": [],
     "researchNotes": [
-      "Local ordinances determine elderly/disability relief. Real-estate relief follows separate rules from Virginia\u2019s personal-property vehicle-tax relief."
+      "Local ordinances determine elderly/disability relief."
     ],
     "sources": [
       {
@@ -6415,7 +6420,7 @@
         ],
         "refundable": false,
         "ageRule": "No general age restriction.",
-        "incomeDefinition": "Not income-tested; household income is not used to calculate this bill credit.",
+        "incomeDefinition": "Not income-tested; household income does not enter the calculation of this bill credit.",
         "incomeLimits": "Not income-tested.",
         "maximumBenefit": "Applicable annual equalized school-tax rate \u00d7 the smaller of the qualifying dwelling\u2019s estimated fair market value and $27,000. The $27,000 figure is a value base for December 2025 bills, not a cash maximum.",
         "formulaSummary": "Parcel bill reduction using the annual municipality/school-district rate and capped value base, subject to valid claim, parcel tax liability and installment rules.",
@@ -6457,7 +6462,7 @@
         ],
         "refundable": false,
         "ageRule": "No general age restriction.",
-        "incomeDefinition": "Not income-tested; household income is not used to calculate this bill credit.",
+        "incomeDefinition": "Not income-tested; household income does not enter the calculation of this bill credit.",
         "incomeLimits": "Not income-tested.",
         "maximumBenefit": "Applicable annual equalized school-tax rate \u00d7 the smaller of total qualifying parcel estimated fair market value and $9,000. The $9,000 figure is a value base for December 2025 bills, not a cash maximum.",
         "formulaSummary": "Automatic credit for taxable real-estate parcels with a real-property improvement. The improvement establishes eligibility; total parcel value determines the capped base.",
@@ -6503,10 +6508,10 @@
         ],
         "refundable": false,
         "ageRule": "No general age restriction.",
-        "incomeDefinition": "Not income-tested; household income is not used to calculate this bill credit.",
+        "incomeDefinition": "Not income-tested; household income does not enter the calculation of this bill credit.",
         "incomeLimits": "Not income-tested.",
         "maximumBenefit": "Local allocated bill-level amount.",
-        "formulaSummary": "The state allocates School Levy funding using each municipality\u2019s share of three-year average school levies. The parcel amount is allocated by assessed value within the municipality and is already reflected in net levy/tax figures.",
+        "formulaSummary": "The state allocates School Levy funding using each municipality\u2019s share of three-year average school levies. Within the municipality, assessed value determines each parcel\u2019s amount; net levy/tax figures already reflect that amount.",
         "application": "Applied through local property-tax billing, not income-tax return.",
         "eligibilityNotes": [
           "Applies to every taxable real-property parcel, including vacant, rental and commercial property; no primary-residence requirement.",
@@ -6627,7 +6632,7 @@
         "eligibilityNotes": [
           "Wyoming resident at least five years; primary residence.",
           "For 2025, combined countable household assets must not exceed $169,866 times the number of adult household members, with program exclusions.",
-          "The asset test is waived when the person's tax liability is strictly greater than 10% of household income; equality does not trigger the waiver."
+          "The asset test does not apply when the person's tax liability strictly exceeds 10% of household income; equality does not trigger the waiver."
         ],
         "interactions": [],
         "programYear": "2025 property taxes, refund application in 2026.",
@@ -6731,7 +6736,7 @@
       "25% homeowner value exemption becomes limited to owner-occupied property beginning in 2026."
     ],
     "researchNotes": [
-      "County median-income and median-tax-bill tables are required to calculate an exact refund.",
+      "An exact refund calculation requires county median-income and median-tax-bill tables.",
       "The 25% and 50% exemptions are not additive in 2025/26.",
       "The statute and rules use an inclusive combined-adult asset limit with a tax-liability waiver. The form/portal's strict per-adult wording differs; the statute sets the inclusive combined-adult test. The waiver uses tax liability; the refund uses qualifying timely-paid tax. Household facts and county tables determine the applicable amount."
     ],
