@@ -15,7 +15,7 @@
       "tenures": ["owner"],
       "refundable": false,
       "ageRule": "65 or older, totally and permanently disabled, or legally blind before the tax year.",
-      "incomeDefinition": "See program rules.",
+      "incomeDefinition": "Not income-tested.",
       "incomeLimits": "Not income-tested.",
       "maximumBenefit": "Tax exemption on the first $50,000 of fair market value in 2025.",
       "formulaSummary": "Excludes qualifying home value from county, municipal, school and special-assessment property taxes; fees remain.",
@@ -24,7 +24,9 @@
         "At least one year of South Carolina legal residence before the tax year.",
         "Qualifying spouse can meet age/disability condition."
       ],
-      "interactions": [],
+      "interactions": [
+        "The school-operating exemption applies only to value not already exempt under the homestead exemption; the homestead school-tax share is not counted a second time."
+      ],
       "programYear": "2025",
       "rentProxy": null,
       "sources": [
@@ -39,7 +41,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["sc_homestead_property_tax_reduction"]
+      "modelVariables": ["sc_homestead_property_tax_reduction"],
+      "paymentMechanism": "taxable-property-value-exemption"
     },
     {
       "id": "sc-school-operating-exemption",
@@ -49,13 +52,15 @@
       "tenures": ["owner"],
       "refundable": false,
       "ageRule": "No general age restriction.",
-      "incomeDefinition": "See program rules.",
+      "incomeDefinition": "Not income-tested.",
       "incomeLimits": "Not income-tested.",
       "maximumBenefit": "School operating property taxes on qualifying legal-residence value.",
       "formulaSummary": "Qualifying owner-occupied legal residences are exempt from school operating millage, with debt millage and county/municipal taxes outside the exemption.",
       "application": "Apply for legal-residence 4% assessment classification with county assessor; no separate school-exemption application.",
       "eligibilityNotes": ["Primary residence; second homes do not qualify."],
-      "interactions": [],
+      "interactions": [
+        "The school-operating exemption applies only to value not already exempt under the homestead exemption; the homestead school-tax share is not counted a second time."
+      ],
       "programYear": "2025",
       "rentProxy": null,
       "sources": [
@@ -65,14 +70,15 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
     }
   ],
   "laterChanges": [
-    "2026 adds a temporary additional homestead exemption for some recipients; do not apply it to 2025."
+    "A temporary additional homestead exemption applies to some recipients in 2026; it does not apply to the 2025 reference year."
   ],
   "researchNotes": [
-    "A statewide exemption can provide significant relief even where no statewide refundable property/renter credit was identified."
+    "The listed statewide provisions exempt home value or school-operating taxes. The linked sources do not establish a statewide refundable property-tax or renter credit."
   ],
   "sources": [
     {

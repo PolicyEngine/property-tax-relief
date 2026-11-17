@@ -15,7 +15,7 @@
       "tenures": ["owner"],
       "refundable": false,
       "ageRule": "No general age restriction.",
-      "incomeDefinition": "See program-specific rules.",
+      "incomeDefinition": "Not income-tested.",
       "incomeLimits": "Not income-tested.",
       "maximumBenefit": "Up to $1,600 against property tax due for tax year 2025.",
       "formulaSummary": "Approved primary residences receive a credit limited by remaining property tax liability.",
@@ -40,7 +40,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["nd_primary_residence_credit"]
+      "modelVariables": ["nd_primary_residence_credit"],
+      "paymentMechanism": "property-tax-bill-reduction"
     },
     {
       "id": "nd-homestead-credit",
@@ -68,7 +69,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
     },
     {
       "id": "nd-renters-refund",
@@ -104,11 +106,12 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["nd_renters_refund"]
+      "modelVariables": ["nd_renters_refund"],
+      "paymentMechanism": "cash-rebate"
     }
   ],
   "laterChanges": [
-    "The primary-residence credit increase to $1,600 was made retroactive to the 2025 property-tax year; do not use the original $500 amount."
+    "Legislation increased the Primary Residence Credit to $1,600 retroactive to the 2025 property-tax year."
   ],
   "researchNotes": [],
   "sources": [

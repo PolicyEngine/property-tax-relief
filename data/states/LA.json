@@ -33,7 +33,8 @@
           "kind": "statute"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
     },
     {
       "id": "la-special-assessment-level",
@@ -44,7 +45,7 @@
       "refundable": null,
       "ageRule": "Age 65+ or specified military, disability or surviving-family categories.",
       "incomeDefinition": "Prior-year federal AGI under the constitutional rules.",
-      "incomeLimits": "Statutory income ceiling applies; use the tax-year-specific application threshold.",
+      "incomeLimits": "Prior-year federal adjusted gross income must not exceed the constitutional $100,000 ceiling. CPI adjustments begin with tax year 2026.",
       "maximumBenefit": "Future eligible assessed-value increases are limited; the amount depends on the frozen assessment and tax rates.",
       "formulaSummary": "Freeze qualifying assessed value at the first eligible year while conditions continue.",
       "application": "Apply to the local assessing authority.",
@@ -62,7 +63,8 @@
           "kind": "statute"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "assessment-or-tax-limit"
     },
     {
       "id": "la-residential-lessee-property-tax-credit",
@@ -76,7 +78,7 @@
       "incomeLimits": "No income limit.",
       "maximumBenefit": "Covered tax on $7,500 assessed value or actual covered tax, whichever is less.",
       "formulaSummary": "Reduce the qualifying residence's ad valorem tax bill by the lesser of actual covered tax and tax on $7,500 assessed value. This provision does not provide a separate cash payment or income-tax refund.",
-      "application": "Bill-level credit under R.S. 47:1710; local claim procedures were not established by this source review.",
+      "application": "A bill-level credit under R.S. 47:1710; local claim procedures are not established.",
       "eligibilityNotes": [
         "Residential lessee means a person who owns and occupies the residence, including a mobile home, but does not own its land.",
         "Ordinary apartment renters are not eligible through this provision.",
@@ -106,16 +108,19 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
     }
   ],
-  "laterChanges": [],
+  "laterChanges": [
+    "Article VII section 18(G)(ii) contains a replacement provision effective January 1, 2027 only if the amendment proposed by Acts 2025 No. 220 is ratified. Its ratification status is not established here."
+  ],
   "researchNotes": [
-    "The narrow lessee credit must not be advertised as a general renter credit.",
-    "Housing filters classify ownership of the dwelling: a dwelling owner who rents the underlying land appears under homeowners.",
-    "Current constitutional pages contain future-effective amendments; a 2025 comparison must use provisions in force for 2025.",
-    "R.S. 47:1710 remains in the statute and June 2025 administrative compilation. Act 11 of the 2024 Third Extraordinary Session does not repeal it. Act 12's contingent changes did not become operative after voters rejected the required Article VII amendment on March 29, 2025.",
-    "The lessee entry identifies a nonrefundable property-bill offset. Homestead entitlement, remaining eligible claimant scenarios, covered levies and local claim procedures remain unresolved; initial source-pass completion does not validate a household award."
+    "The lessee credit applies to dwelling owners who rent the land; ordinary apartment tenants do not qualify.",
+    "Housing filters classify ownership of the dwelling: an owner who rents the underlying land appears under homeowners.",
+    "The constitutional pages include future-effective amendments. The 2025 descriptions follow provisions in force for 2025.",
+    "R.S. 47:1710 remains in the statute and June 2025 administrative compilation. Act 11 of the 2024 Third Extraordinary Session does not repeal it. Act 12’s contingent changes did not become operative after voters rejected the required Article VII amendment on March 29, 2025.",
+    "Homestead entitlement, remaining eligible claimant scenarios, covered levies and local claim procedures remain unresolved for the lessee bill credit."
   ],
   "sources": [
     {

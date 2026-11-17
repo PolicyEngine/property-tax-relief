@@ -93,3 +93,55 @@ def test_requested_commit_can_differ_from_the_checkout_head(model_repo):
     assert git(directory, "rev-parse", "HEAD") != canonical_commit
     assert resolved == canonical_commit
     assert set(index) == {"committed_credit"}
+
+
+@pytest.mark.parametrize(
+    ("body", "computable"),
+    [
+        ("def formula_2026(entity, period):\n        raise AssertionError", False),
+        ("def formula_2025(entity, period):\n        raise AssertionError", True),
+        ("def formula_2024(entity, period):\n        raise AssertionError", True),
+        ("def formula(entity, period):\n        raise AssertionError", True),
+        ("value_type = float", False),
+        ('adds = ["input"]', True),
+        ('subtracts = ["input"]', True),
+        ("def adds(entity, period):\n        raise AssertionError", True),
+        ("def subtracts(entity, period):\n        raise AssertionError", True),
+        ("formula = lambda entity, period: 0", False),
+        (
+            (
+                'end = "2024-12-31"\n    '
+                "def formula_2024(entity, period):\n        raise AssertionError"
+            ),
+            True,
+        ),
+    ],
+    ids=[
+        "later-only",
+        "current-year",
+        "earlier-year",
+        "undated",
+        "input-only",
+        "adds-assignment",
+        "subtracts-assignment",
+        "adds-method",
+        "subtracts-method",
+        "formula-assignment-ignored",
+        "end-ignored-by-syntactic-audit",
+    ],
+)
+def test_declaration_boundary(body, computable):
+    source = (
+        "raise AssertionError('must not execute')\nclass credit(Variable):\n    "
+        + body
+        + "\n"
+    )
+    index = BUILD.source_variable_index(source, "fixture.py")
+    assert set(index) == {"credit"}
+    assert index["credit"]["computableIn2025"] is computable
+
+
+@pytest.mark.parametrize("base", ["OtherVariable", "model.Variable"])
+def test_declaration_boundary_rejects_nonmatching_bases(base):
+    source = f"class credit({base}):\n    def formula(entity, period):\n        raise AssertionError\n"
+    assert BUILD.source_variable_index(source, "fixture.py") == {}

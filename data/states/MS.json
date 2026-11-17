@@ -51,7 +51,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
     },
     {
       "id": "ms-age-disability-homestead-exemption",
@@ -63,12 +64,13 @@
       "ageRule": "Age 65+ or qualifying total disability as of January 1.",
       "incomeDefinition": "Not income-tested.",
       "incomeLimits": "No income limit.",
-      "maximumBenefit": "Covered taxes on the first $7,500 assessed value; certain qualifying veterans/survivors receive full exemption.",
+      "maximumBenefit": "Covered taxes on the first $7,500 of assessed value, plus the additional statutory exemption for qualifying reassessment increases. Certain qualifying veterans and survivors receive a full exemption.",
       "formulaSummary": "Exempt eligible homestead value from covered property taxes under the applicable tier.",
       "application": "Apply to the local assessing authority.",
       "eligibilityNotes": [
-        "Apply proof-of-age or disability requirements.",
-        "Current agency guidance contains further value-protection rules; use 2025 law for calculation."
+        "Provide proof of age or qualifying disability.",
+        "Section 27-33-75(2)(c) also exempts qualifying reassessment increases above the January 1, 2018 assessed value or the January 1 value in the first exemption claim year. A subsequent lower reassessment resets that base.",
+        "The additional exemption generally excludes increases from renovations, expansions, improvements or additions, with exceptions for work that promotes energy efficiency, safety or access."
       ],
       "interactions": [],
       "programYear": "2025 property-tax year.",
@@ -83,21 +85,27 @@
           "title": "Mississippi SOS Title 35, Part VI property-tax rules",
           "url": "https://www.sos.ms.gov/adminsearch/ACCode/00000161c.pdf",
           "kind": "regulation"
+        },
+        {
+          "title": "2025 Mississippi HB 812 as signed, section 27-33-75(2)(c)",
+          "url": "https://billstatus.ls.state.ms.us/documents/2025/pdf/HB/0800-0899/HB0812SG.pdf#page=4",
+          "kind": "statute"
         }
       ],
       "modelVariables": [
         "ms_age_disability_homestead_exemption",
         "ms_age_disability_homestead_property_tax_reduction"
-      ]
+      ],
+      "paymentMechanism": "taxable-property-value-exemption"
     }
   ],
   "laterChanges": [
-    "HB 812 distinguishes veteran age-90 relief for 2025 claims from specified surviving-spouse additions beginning with 2026 claims; do not backcast current guidance into 2025."
+    "HB 812 distinguishes veteran age-90 relief for 2025 claims from specified surviving-spouse additions beginning with 2026 claims."
   ],
   "researchNotes": [
     "No general statewide renter credit was identified in reviewed DOR materials.",
-    "The regular tier is called an exemption but operates as a bill credit; do not treat it as a cash refund.",
-    "The replaced DOR regulation link returned 404. The retained SOS rulebook includes later changes; the dated enacted act anchors the 2025 table. Shared-ownership ordering and low component-liability treatment remain unresolved."
+    "The regular tier operates as a property-tax bill credit despite its exemption title; it does not provide a cash refund.",
+    "The retained SOS rulebook includes later changes. The dated enacted act establishes the 2025 table; shared-ownership ordering and low component-liability treatment remain unresolved."
   ],
   "sources": [
     {

@@ -26,7 +26,7 @@
       ],
       "interactions": [
         "Income-tax filing replaced the separate renter refund starting with 2024 rent.",
-        "Do not double count rent between M1RENT and homeowner lot-rent claims."
+        "The same rent does not qualify under both M1RENT and homeowner lot-rent claims."
       ],
       "programYear": "Tax year 2025, claimed in 2026.",
       "rentProxy": 0.17,
@@ -54,8 +54,8 @@
       "ageRule": "All ages, subject to other eligibility rules.",
       "incomeDefinition": "2025 household income under M1PR, with specified dependent, retirement, senior and disability subtractions.",
       "incomeLimits": "Below $142,490 for the 2025 claim.",
-      "maximumBenefit": "Use the revised 2025 M1PR table; a 2026 law increased 2025 refunds by nearly 15%.",
-      "formulaSummary": "Income-banded thresholds, claimant copayments and maximum refunds apply to qualifying property taxes.",
+      "maximumBenefit": "The 2025 M1PR table has a $3,480 base maximum. Revised line 17a adds 14.88% of the line 17 refund under the 2026 law.",
+      "formulaSummary": "Income-banded thresholds, claimant copayments and maximum refunds apply to qualifying property taxes. Revised 2025 M1PR line 17a adds 14.88% of line 17.",
       "application": "File Form M1PR separately from the income-tax return.",
       "eligibilityNotes": [
         "Own and occupy the qualifying homestead on January 2, 2026.",
@@ -74,6 +74,11 @@
           "title": "2025 homeowner refund increase guidance",
           "url": "https://www.revenue.state.mn.us/press-release/2026-06-05/minnesota-revenue-announces-guidance-one-time-increase-homeowner-refunds",
           "kind": "agency"
+        },
+        {
+          "title": "2025 M1PR instructions, revised June 2026: additional refund on line 17a",
+          "url": "https://www.revenue.state.mn.us/sites/default/files/2026-06/m1pr-inst-25.pdf#page=9",
+          "kind": "form"
         }
       ],
       "modelVariables": ["mn_homestead_credit_refund"]
@@ -88,7 +93,7 @@
       "ageRule": "All ages, subject to other eligibility rules.",
       "incomeDefinition": "No income limit.",
       "incomeLimits": "No income limit.",
-      "maximumBenefit": "$1,000 under the published 2025 instructions; verify against the revised 2025 return before calculation.",
+      "maximumBenefit": "$1,000 under the 2025 M1PR instructions revised in June 2026.",
       "formulaSummary": "A refund of qualifying increases above the statutory percentage threshold; 2025-to-2026 net tax must rise more than 12% and at least $100, excluding improvements.",
       "application": "Claim on Form M1PR.",
       "eligibilityNotes": [
@@ -115,11 +120,11 @@
     }
   ],
   "laterChanges": [
-    "A law enacted in May 2026 retroactively increased regular 2025 homeowner refunds. Current-law tax-year-2025 comparisons must use revised tables, not mechanically inflate old model results."
+    "A law enacted in May 2026 retroactively increased regular 2025 homeowner refunds. Revised M1PR line 17a adds 14.88% of the refund from the existing table."
   ],
   "researchNotes": [
-    "The regular homeowner and renter programs use different income concepts and different housing-tax years.",
-    "The annual adjustments PDF showing a $3,480 homeowner maximum predates the one-time 2026 increase; do not use that maximum as current entitlement."
+    "The regular homeowner and renter programs use different income concepts and housing-tax years.",
+    "The $3,480 homeowner table maximum precedes the additional line 17a refund in the revised 2025 return."
   ],
   "sources": [
     {

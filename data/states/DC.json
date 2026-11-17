@@ -42,7 +42,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["dc_ptc"]
+      "modelVariables": ["dc_ptc"],
+      "paymentMechanism": "income-tax-credit"
     },
     {
       "id": "dc-senior-disabled-property-tax-relief",
@@ -51,7 +52,7 @@
       "scope": "statewide",
       "tenures": ["owner"],
       "refundable": false,
-      "ageRule": "Age65+ or qualifying disability; qualifying owner must own at least50%.",
+      "ageRule": "Age 65+ or qualifying disability; qualifying owner must own at least 50%.",
       "incomeDefinition": "Total federal AGI of household residents excluding fair-market tenants with written leases.",
       "incomeLimits": "2025 real-property-tax relief uses 2023 household AGI below $159,750.",
       "maximumBenefit": "50% reduction of qualifying property tax.",
@@ -77,7 +78,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["dc_senior_disabled_property_tax_relief"]
+      "modelVariables": ["dc_senior_disabled_property_tax_relief"],
+      "paymentMechanism": "property-tax-bill-reduction"
     },
     {
       "id": "dc-homestead-deduction",
@@ -89,7 +91,7 @@
       "ageRule": "No general age restriction.",
       "incomeDefinition": "Not income-tested.",
       "incomeLimits": "No income limit.",
-      "maximumBenefit": "$89,850 reduction in assessed value for tax year2025.",
+      "maximumBenefit": "$89,850 reduction in assessed value for tax year 2025.",
       "formulaSummary": "Reduces qualifying assessed value before tax is computed.",
       "application": "Apply through OTR/MyTax.DC.gov.",
       "eligibilityNotes": ["Owner occupancy and no more than five units."],
@@ -108,7 +110,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
     },
     {
       "id": "dc-assessment-cap-credits",
@@ -120,7 +123,7 @@
       "ageRule": "General homeowner cap; lower taxable-assessment growth cap for qualifying seniors/disabled owners.",
       "incomeDefinition": "Not income-tested.",
       "incomeLimits": "No income limit.",
-      "maximumBenefit": "Taxable-assessment growth generally limited to10%; qualifying senior/disabled property to2%.",
+      "maximumBenefit": "Taxable-assessment growth generally limited to 10%; qualifying senior/disabled property to 2%.",
       "formulaSummary": "Credits limit tax based on prior taxable assessed value; new-owner and improvement rules apply.",
       "application": "Generally automatic for property receiving required homestead/senior benefits.",
       "eligibilityNotes": [],
@@ -134,13 +137,14 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "assessment-or-tax-limit"
     }
   ],
   "researchNotes": [
     "Additional direct property-tax relief includes homestead deductions and senior/disabled relief; it is distinct from Schedule H.",
     "20% of rent is a statutory calculation proxy, not measured economic incidence.",
-    "The direct senior/disabled owner reduction uses 2023 household AGI for tax year2025; Schedule H uses 2025 tax-unit AGI."
+    "The direct senior/disabled owner reduction uses 2023 household AGI for tax year 2025; Schedule H uses 2025 tax-unit AGI."
   ],
   "sources": [
     {

@@ -3,7 +3,7 @@
   "verifiedAt": "2026-11-13",
   "inventoryStatus": "researched",
   "laterChanges": [
-    "Enacted 2026 law replaces the general credit with a homestead exemption from assessment2026/pay2027 onward.",
+    "Enacted 2026 law replaces the general credit with a homestead exemption from assessment 2026/pay 2027 onward.",
     "For rent base year 2026, claimed in 2027, the enacted law raises the tax-equivalent base to $1,500. The owner base increases for fiscal-year 2027–2028 taxes; these changes do not apply to 2025 rent."
   ],
   "code": "IA",
@@ -43,7 +43,8 @@
           "kind": "statute"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
     },
     {
       "id": "ia-elderly-disabled-property-tax-credit",
@@ -54,16 +55,16 @@
       "refundable": false,
       "ageRule": "Age 65+, or totally disabled age 18+; expanded calculation at age 70+.",
       "incomeDefinition": "Prior-year household income under claim instructions, including specified nontaxable amounts.",
-      "incomeLimits": "2025 claim: ordinary income table below $26,219; age70+ route below 250% of poverty guideline.",
-      "maximumBenefit": "Ordinary credit uses up to $1,000 of taxes; age70+ tax-growth alternative can differ.",
-      "formulaSummary": "Income-table percentage of capped tax base, less general homestead credit; age70+ may use greater tax-growth calculation.",
+      "incomeLimits": "2025 claim: ordinary income table below $26,219; age 70+ route below 250% of poverty guideline.",
+      "maximumBenefit": "Ordinary credit uses up to $1,000 of taxes; age 70+ tax-growth alternative can differ.",
+      "formulaSummary": "Income-table percentage of capped tax base, less general homestead credit; age 70+ may use greater tax-growth calculation.",
       "application": "File 2025 Form 54-001 with county treasurer by June 1, subject to extension.",
       "eligibilityNotes": [
         "2025 claim form uses 2024 income and age.",
         "Eligible mobile homes may follow a separate reduced-tax-rate route."
       ],
       "interactions": [
-        "General Homestead Credit is subtracted in the claim calculation; do not sum unadjusted credits."
+        "The claim calculation subtracts the General Homestead Credit, so the nominal maxima are not added without adjustment."
       ],
       "programYear": "2025 claim using 2024 income, applied to fiscal-year 2025–2026 taxes.",
       "rentProxy": null,
@@ -79,7 +80,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
     },
     {
       "id": "ia-rent-reimbursement",
@@ -88,15 +90,15 @@
       "scope": "statewide",
       "tenures": ["renter"],
       "refundable": true,
-      "ageRule": "Funded HHS program serves age65+ residents and qualifying disabled adults.",
+      "ageRule": "Funded HHS program serves age 65+ residents and qualifying disabled adults.",
       "incomeDefinition": "Annual household income under HHS instructions.",
-      "incomeLimits": "Claim year2025: below $26,895.",
+      "incomeLimits": "Claim year 2025: below $26,895.",
       "maximumBenefit": "2025 maximum $1,000, subject to income schedule and qualifying rent.",
       "formulaSummary": "Apply the income-table percentage to the lesser of 23% of qualified rent and the $1,000 tax-equivalent base.",
       "application": "Apply through Iowa HHS beginning January 2026 for 2025 rent.",
       "eligibilityNotes": [
         "Taxable-property and residence conditions apply.",
-        "Statutory broader age23/head-of-household extension has distinct funding rules; HHS currently describes senior/disabled eligibility."
+        "Statutory broader age 23/head-of-household extension has distinct funding rules; HHS currently describes senior/disabled eligibility."
       ],
       "interactions": [
         "A dual owner/renter claim shares the $1,000 tax-equivalent base, with owner taxes applied first. Rent base year 2025 pairs with owner claim year 2026."
@@ -112,7 +114,7 @@
         {
           "title": "Iowa rent-reimbursement rules, adopted 2023",
           "url": "https://rules.iowa.gov/Notice/Details/6557C",
-          "kind": "statute"
+          "kind": "regulation"
         },
         {
           "title": "2026 rent-reimbursement rulemaking notice",
@@ -125,7 +127,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "cash-rebate"
     },
     {
       "id": "ia-senior-homestead-exemption",
@@ -134,7 +137,7 @@
       "scope": "statewide",
       "tenures": ["owner"],
       "refundable": null,
-      "ageRule": "Age65+ by January1 of assessment year.",
+      "ageRule": "Age 65+ by January 1 of assessment year.",
       "incomeDefinition": "Not income-tested.",
       "incomeLimits": "No income limit.",
       "maximumBenefit": "$6,500 of taxable value.",
@@ -151,7 +154,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
     },
     {
       "id": "ia-disabled-veteran-homestead-credit",
@@ -160,15 +164,15 @@
       "scope": "statewide",
       "tenures": ["owner"],
       "refundable": false,
-      "ageRule": "Qualifying permanent100% service-connected disability, compensated individual unemployability, or eligible survivor.",
+      "ageRule": "Qualifying permanent 100% service-connected disability, compensated individual unemployability, or eligible survivor.",
       "incomeDefinition": "Not income-tested.",
       "incomeLimits": "No income limit.",
       "maximumBenefit": "100% of qualifying homestead property-tax levy.",
       "formulaSummary": "Offsets qualifying taxes on the eligible homestead.",
-      "application": "File disabled-veteran claim with assessor by July1.",
+      "application": "File disabled-veteran claim with assessor by July 1.",
       "eligibilityNotes": [
         "Veteran ownership/occupancy, VA documentation, and surviving-beneficiary rules apply.",
-        "For pre-July2026 applications, acreage/appurtenance rules differ from new2026 applications."
+        "For pre-July 2026 applications, acreage/appurtenance rules differ from new 2026 applications."
       ],
       "interactions": [
         "Coordinate credits on the underlying bill; relief cannot exceed eligible taxes."
@@ -187,13 +191,14 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
     }
   ],
   "researchNotes": [
-    "Owner 2025 claims use 2024 income; renter claim-year2025 uses 2025 income. These are not the same income window.",
+    "Owner 2025 claims use 2024 income; renter claim-year 2025 uses 2025 income. These are not the same income window.",
     "Levy and prior-tax-liability inputs are necessary for complete owner calculations.",
-    "The HHS manual’s $17,000-income example uses 50%, matching its 2024 table, without naming a base year. Its 2025 table lists 70% at that income. Funding, final rounding and specified age-70 source conflicts remain unresolved; this profile does not provide a validated award."
+    "The HHS manual’s $17,000-income example uses 50%, matching its 2024 table, without naming a base year. Its 2025 table lists 70% at that income. Funding, final rounding and specified age-70 source conflicts remain unresolved."
   ],
   "sources": [
     {
@@ -219,7 +224,7 @@
     {
       "title": "Iowa rent-reimbursement rules, adopted 2023",
       "url": "https://rules.iowa.gov/Notice/Details/6557C",
-      "kind": "statute"
+      "kind": "regulation"
     },
     {
       "title": "2026 rent-reimbursement rulemaking notice",

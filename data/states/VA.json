@@ -44,9 +44,9 @@
       "tenures": ["owner"],
       "refundable": false,
       "ageRule": "Qualifying disabled veteran or unremarried surviving spouse.",
-      "incomeDefinition": "See program rules.",
+      "incomeDefinition": "Not income-tested.",
       "incomeLimits": "Not income-tested.",
-      "maximumBenefit": "Qualifying principal dwelling and at least one acre exempt from real-property tax.",
+      "maximumBenefit": "Qualifying principal dwelling and up to one acre of land exempt from real-property tax. More land qualifies where the locality's Article 2 relief covers a larger area. Land the veteran does not own does not qualify.",
       "formulaSummary": "Mandatory exemption for a veteran rated 100% service-connected, permanently and totally disabled by the VA; proration may apply with other owners.",
       "application": "File with local administering official.",
       "eligibilityNotes": [
@@ -63,7 +63,8 @@
           "kind": "statute"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
     }
   ],
   "laterChanges": [],

@@ -25,7 +25,7 @@
         "Veteran qualification changed in later legislation; use the 2025 rule."
       ],
       "interactions": [],
-      "programYear": "2025",
+      "programYear": "2025 property-tax exemption rules; the exact income reference year is not recorded.",
       "rentProxy": null,
       "sources": [
         {
@@ -44,7 +44,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["wa_senior_disabled_property_tax_exemption"]
+      "modelVariables": ["wa_senior_disabled_property_tax_exemption"],
+      "paymentMechanism": "taxable-property-value-exemption"
     },
     {
       "id": "wa-senior-disabled-deferral",
@@ -61,7 +62,7 @@
       "application": "Annual application/renewal through county assessor.",
       "eligibilityNotes": ["Ownership, occupancy and equity requirements."],
       "interactions": [],
-      "programYear": "2025",
+      "programYear": "2025 property-tax deferral rules; the exact income and application-year mapping is not recorded.",
       "rentProxy": null,
       "sources": [
         {
@@ -70,7 +71,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "tax-deferral"
     },
     {
       "id": "wa-limited-income-deferral",
@@ -89,7 +91,7 @@
         "Five years of homeownership, primary residence and sufficient equity."
       ],
       "interactions": [],
-      "programYear": "2025",
+      "programYear": "2025 property-tax deferral rules; the exact income and application-year mapping is not recorded.",
       "rentProxy": null,
       "sources": [
         {
@@ -98,15 +100,16 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "tax-deferral"
     }
   ],
   "laterChanges": [
-    "2026 legislation changes eligibility and thresholds for later tax years; 2027–2029 schedules must not replace the 2024–2026 schedule."
+    "The 2025 description uses the published 2024–2026 income-threshold schedule. Separate 2026 legislation governs later tax years."
   ],
   "researchNotes": [
     "A 2025 exemption amount needs county, assessment and levy details; household income and a total tax bill alone are insufficient.",
-    "No statewide refundable residential property-tax or renter credit was identified in the official relief sources reviewed; this is not a claim that Washington provides no property-tax relief."
+    "The listed records cover exemption and deferral programs. Separate state assistance for widows and widowers of veterans appears in the cited Department of Revenue overview but is not enumerated here."
   ],
   "sources": [
     {

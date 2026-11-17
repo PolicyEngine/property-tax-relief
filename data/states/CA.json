@@ -35,7 +35,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["ca_renter_credit"]
+      "modelVariables": ["ca_renter_credit"],
+      "paymentMechanism": "income-tax-credit"
     },
     {
       "id": "ca-homeowners-exemption",
@@ -63,7 +64,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
     },
     {
       "id": "ca-property-tax-postponement",
@@ -72,14 +74,14 @@
       "scope": "statewide",
       "tenures": ["owner"],
       "refundable": null,
-      "ageRule": "Age62+ or blind or disabled.",
+      "ageRule": "Age 62+ or blind or disabled.",
       "incomeDefinition": "Program household income from the prior calendar year.",
       "incomeLimits": "2025–2026 filing period uses 2024 income no greater than $55,181.",
       "maximumBenefit": "Approved current-year taxes deferred; must be repaid.",
       "formulaSummary": "State advances tax payments, secured by a lien; this is a loan.",
       "application": "Apply annually through State Controller during the published filing period.",
       "eligibilityNotes": [
-        "Principal residence, at least40% equity, and no reverse mortgage.",
+        "Principal residence, at least 40% equity, and no reverse mortgage.",
         "Funding/ownership and other conditions apply."
       ],
       "interactions": [],
@@ -92,7 +94,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "tax-deferral"
     }
   ],
   "researchNotes": [

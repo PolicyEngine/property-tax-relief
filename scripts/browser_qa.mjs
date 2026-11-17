@@ -455,6 +455,35 @@ async function servedCheck(page, options) {
     .waitFor();
   if ((await page.locator(".state-tile").count()) !== 51)
     throw new Error("Served app must show all 51 jurisdictions");
+  await page.getByLabel("State or program", { exact: true }).fill("exemption");
+  await page.getByRole("button", { name: /^California:/ }).click();
+  const contextMatch = page.getByRole("region", {
+    name: "Matching contextual provisions",
+    exact: true,
+  });
+  await contextMatch.waitFor();
+  if ((await contextMatch.getByRole("listitem").count()) === 0)
+    throw new Error(
+      "Hidden-context search must explain the matching provisions",
+    );
+  await contextMatch
+    .getByRole("button", { name: "Show all recorded programs", exact: true })
+    .click();
+  await page.getByRole("heading", { name: /homeowners.*exemption/i }).waitFor();
+  await page
+    .getByLabel("Include exemptions, limits, deferrals and local options", {
+      exact: true,
+    })
+    .uncheck();
+  await page.evaluate(() => document.fonts.ready);
+  if (
+    !(await page.evaluate(() =>
+      performance
+        .getEntriesByType("resource")
+        .some((entry) => /\.woff2?(?:[?#]|$)/.test(entry.name)),
+    ))
+  )
+    throw new Error("Served page must load its self-hosted font asset");
   await page.getByLabel("State or program", { exact: true }).fill("Wisconsin");
   await page.getByRole("heading", { name: "Wisconsin", exact: true }).waitFor();
   await page.screenshot({ path: options.screenshot, fullPage: true });
@@ -484,6 +513,12 @@ async function servedCheck(page, options) {
     .click();
   if ((await page.locator(".report-profile").count()) !== 51)
     throw new Error("Served report must include all profiles");
+  await page.emulateMedia({ media: "print" });
+  await page
+    .locator(".report-profile details:not([open]) .expanded-notes")
+    .first()
+    .waitFor({ state: "visible" });
+  await page.emulateMedia({ media: "screen" });
   await page
     .getByRole("link", { name: "Data and methods", exact: true })
     .click();

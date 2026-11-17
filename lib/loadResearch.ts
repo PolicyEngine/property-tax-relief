@@ -2,6 +2,10 @@ import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import type { StateProfile, CoverageAudit } from "./types";
 
+export function canonicalCommitLabel(commit: string): string {
+  return /^[a-f0-9]{40}$/i.test(commit) ? commit.slice(0, 12) : commit;
+}
+
 export function loadStates(): StateProfile[] {
   const directory = join(process.cwd(), "data/states");
   return readdirSync(directory)

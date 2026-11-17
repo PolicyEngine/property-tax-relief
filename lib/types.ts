@@ -1,4 +1,14 @@
 export type Tenure = "owner" | "renter";
+export type PaymentMechanism =
+  | "property-tax-bill-reduction"
+  | "taxable-property-value-exemption"
+  | "income-tax-credit"
+  | "cash-rebate"
+  | "income-tax-deduction"
+  | "tax-deferral"
+  | "assessment-or-tax-limit"
+  | "varies-by-locality"
+  | "not-established";
 export type Category =
   | "threshold-circuit-breaker"
   | "income-tested-relief"
@@ -24,6 +34,7 @@ export interface Program {
   scope: "statewide" | "local-option";
   tenures: Tenure[];
   refundable: boolean | null;
+  paymentMechanism?: PaymentMechanism;
   ageRule: string;
   incomeDefinition: string;
   incomeLimits: string;

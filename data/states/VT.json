@@ -19,13 +19,13 @@
       "incomeLimits": "Up to $115,400 for 2025 income used in the 2026 claim.",
       "maximumBenefit": "$5,600 education portion plus $2,400 municipal portion.",
       "formulaSummary": "Income-sensitive education and municipal credits using eligible housesite taxes, household income, property value and local tax parameters.",
-      "application": "File HS-122 and HI-144, generally by April 15, 2026. Statutory late-claim and direct-payment rules require separate review.",
+      "application": "File HS-122 and HI-144, generally by April 15, 2026.",
       "eligibilityNotes": [
         "Domiciled in Vermont all of 2025, not another person's dependent.",
         "Own and occupy declared homestead on April 1, 2026."
       ],
       "interactions": [
-        "Normally applied to the property-tax bill and specified current/prior liabilities; excess is refunded under 32 V.S.A. §6066a(f)(4). Do not count the same dollar as both bill relief and cash.",
+        "Normally applied to the property-tax bill and specified current/prior liabilities; excess is refunded under 32 V.S.A. §6066a(f)(4). A dollar applied to the bill does not also provide a separate cash payment.",
         "Under §6068(b), a claim filed after October 15 through March 15 of the following year is reduced by $150, not below zero, and paid directly. This statutory route qualifies the instructions’ general October 15 cutoff."
       ],
       "programYear": "2025 income and 2025/26 housesite taxes; credit applied to 2026/27 property-tax bill.",
@@ -57,7 +57,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "not-established"
     },
     {
       "id": "vt-renter-credit",
@@ -68,7 +69,7 @@
       "refundable": true,
       "ageRule": "No general age restriction.",
       "incomeDefinition": "Claimant/family program income; special rules for shared housing and subsidies.",
-      "incomeLimits": "Published county- and family-size-specific limits; verify the 2025 schedule.",
+      "incomeLimits": "County- and family-size-specific limits apply; the exact 2025 schedule remains unverified.",
       "maximumBenefit": "$2,500 for the 2025 rent year.",
       "formulaSummary": "Up to 10% of HUD fair market rent for county and family size, with income phaseout, month proration, and shared-housing/subsidy adjustments.",
       "application": "File RCC-146 through myVTax, income-tax software, or paper; final 2025 claim deadline October 15, 2026.",
@@ -96,12 +97,12 @@
     }
   ],
   "laterChanges": [
-    "A one-year renter increase applies to claims filed in 2027, not the 2025 rent comparison.",
-    "Owner credit cap changes for claims filed beginning in 2028 are tracked separately."
+    "For claims filed in 2027 only, Act 169 raises the renter-credit rate from 10% to 12.5% and the maximum from $2,500 to $3,250.",
+    "For owner claims filed beginning in 2027, Act 169 raises the $47,000 household-income limits to $50,000, the state maximum from $5,600 to $6,000, and the municipal maximum from $2,400 to $2,600. These changes take effect July 1, 2027 and apply to fiscal year 2028 and after, according to the Department of Taxes legislative summary."
   ],
   "researchNotes": [
     "Owner credit and renter credit use different timing; the owner claim based on 2025 income is formally a 2026 property-tax credit.",
-    "Current renter webpage describes 65% county-median eligibility; the exact 2025 income-limit file needs validation before calculation.",
+    "The current renter webpage describes eligibility at 65% of county median income. The exact 2025 county and family-size schedule remains unverified.",
     "Owner relief includes conditional excess-cash and late-claim payment routes. Local rate/value inputs, household-income adjustments, filing history and debt allocation remain unvalidated; a general refundable label does not imply an automatic full cash payment."
   ],
   "sources": [
@@ -139,6 +140,11 @@
       "title": "2026 Homestead Declaration and Property Tax Credit instructions",
       "url": "https://tax.vermont.gov/sites/tax/files/documents/HS-122-Instr-2025.pdf",
       "kind": "form"
+    },
+    {
+      "title": "Vermont Department of Taxes: 2026 Legislative Highlights, Act 169",
+      "url": "https://tax.vermont.gov/tax-law-and-guidance/tax-legislation/2026",
+      "kind": "agency"
     }
   ]
 }

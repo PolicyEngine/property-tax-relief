@@ -39,7 +39,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["mt_elderly_homeowner_or_renter_credit"]
+      "modelVariables": ["mt_elderly_homeowner_or_renter_credit"],
+      "paymentMechanism": "income-tax-credit"
     },
     {
       "id": "mt-2025-homeowner-rebate",
@@ -52,7 +53,7 @@
       "incomeDefinition": "No income test stated.",
       "incomeLimits": "No income test stated.",
       "maximumBenefit": "Up to $400 for the 2025 application program.",
-      "formulaSummary": "One-time rebate limited by qualifying tax and the program cap; statutory tax-year/payment-year treatment must be checked against the rebate claim.",
+      "formulaSummary": "One-time rebate limited by qualifying tax and the program cap. Its exact tax-payment reference year is not established in this record.",
       "application": "Application window August 15–October 1, 2025.",
       "eligibilityNotes": [
         "Owned and occupied principal residence for at least seven months in 2024.",
@@ -68,7 +69,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["mt_property_tax_rebate"]
+      "modelVariables": ["mt_property_tax_rebate"],
+      "paymentMechanism": "cash-rebate"
     },
     {
       "id": "mt-property-tax-assistance-program",
@@ -89,24 +91,25 @@
       "interactions": [
         "Separate from the Elderly Homeowner/Renter Credit and one-time homeowner rebate."
       ],
-      "programYear": "2025 program description uses 2023 FAGI; do not substitute the current 2027 application’s 2025-income thresholds.",
+      "programYear": "2025 program description using 2023 federal AGI; later application schedules use separate income-reference years.",
       "rentProxy": null,
       "sources": [
         {
           "title": "Montana Legislature property-tax overview, July 2025, page 8",
-          "url": "https://static.legmt.gov/Divisions/LFD/PFL/Prop-Tax/LSD-Property-Tax-Overview-July 2025.pdf",
+          "url": "https://static.legmt.gov/Divisions/LFD/PFL/Prop-Tax/LSD-Property-Tax-Overview-July2025.pdf",
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
     }
   ],
   "laterChanges": [
-    "Homestead and long-term-rental reduced property-tax rates apply in 2026 under separate property-classification reforms; they are not renter cash credits."
+    "The post-2025 homestead and long-term-rental rate rules are not established in this 2025 description."
   ],
   "researchNotes": [
-    "The agency overview labels the rebate as 2025 but uses 2024 occupancy. Verify the claim’s tax-payment reference before including it in a tax-year-2025 total.",
-    "PTAP and disabled-veteran rate reductions are separate from refundable income-tax credits."
+    "The agency overview labels the rebate as 2025 and uses 2024 occupancy. Its exact tax-payment reference year remains unverified.",
+    "PTAP and disabled-veteran rate reductions follow separate rules from refundable income-tax credits."
   ],
   "sources": [
     {
@@ -126,7 +129,7 @@
     },
     {
       "title": "Montana Legislature property-tax overview, July 2025, page 8",
-      "url": "https://static.legmt.gov/Divisions/LFD/PFL/Prop-Tax/LSD-Property-Tax-Overview-July 2025.pdf",
+      "url": "https://static.legmt.gov/Divisions/LFD/PFL/Prop-Tax/LSD-Property-Tax-Overview-July2025.pdf",
       "kind": "agency"
     }
   ]
