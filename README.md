@@ -14,6 +14,18 @@ Every numerical household result must come from the PolicyEngine model for that 
 
 The `artifacts/` directory contains a self-contained interactive (`index.html`), a report (`report.html`), methods (`methods.html`), and the matching JSON/CSV downloads. These local research drafts do not require a running server. They describe program rules; household calculations and independent review remain outstanding. The inventory does not establish exhaustive program coverage or provide a filing determination.
 
+## Housing-expense model-route index
+
+The source index in `data/housing-expense-model-routes.json` maps selected 2025 code paths for personal rent and property-tax expenses across all 50 states and DC. It distinguishes direct credits and deductions, state itemization, and state calculations that start from federal taxable income. Each entry links to the inspected PolicyEngine US source at commit `5b18694981c758e0ae52042eb103e55e0333c7ef`. Legal and household-calculation validation remain outstanding.
+
+Check the JSON and CSV exports without importing a tax model:
+
+```sh
+uv run python scripts/build_housing_expense_routes.py --check
+```
+
+Add `--model-repo /absolute/path/to/policyengine-us` to verify the source hashes and line references against that immutable commit. Use `--write` to regenerate the exports from the source index. The index records source declarations; it does not identify the model version serving a live calculation.
+
 ## Reproduce
 
 Use Python 3.13 and Bun 1.3.12:

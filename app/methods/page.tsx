@@ -88,6 +88,42 @@ export default function Methods() {
           </ul>
         </section>
         <section>
+          <h2>Housing-expense model routes</h2>
+          <p>
+            Explore selected source paths for personal rent and property-tax
+            expenses in all 50 states and the District of Columbia for 2025. The
+            index distinguishes direct credits and deductions, state
+            itemization, and state calculations that start from federal taxable
+            income.
+          </p>
+          <p>
+            Source snapshot:{" "}
+            <a href="https://github.com/PolicyEngine/policyengine-us/tree/5b18694981c758e0ae52042eb103e55e0333c7ef">
+              PolicyEngine US, commit 5b18694981
+            </a>
+            . The index records declared code paths; legal and
+            household-calculation validation remain outstanding.
+          </p>
+          <ul>
+            <li>
+              <a
+                href={appPath("/data/housing-expense-model-routes.json")}
+                download
+              >
+                Housing-expense source index (JSON)
+              </a>
+            </li>
+            <li>
+              <a
+                href={appPath("/data/housing-expense-model-routes.csv")}
+                download
+              >
+                Housing-expense source index (CSV)
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section>
           <h2>Model-presence audit</h2>
           <p>
             The audit reads declared variable classes in the pinned release and
