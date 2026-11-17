@@ -1,21 +1,224 @@
 {
   "schemaVersion": 2,
   "evidenceKind": "live-dashboard",
-  "checkedAt": "2026-11-17T12:35:21.732Z",
-  "metadataSnapshotSha256": "670b553ff1eb2307bcb7edf529a03f40826c7beb1b8b057a1fc4e92b53b8de92",
+  "checkedAt": "2026-11-17T19:20:06.747Z",
+  "metadataSnapshotSha256": "8f8b944c3d91a84a891a01274282688fb80f1113a55ce09931ba83f42e25091e",
   "qualificationScope": "Source-qualified single-adult scenarios; validation covers only the listed cases.",
   "validationIdentity": {
-    "contractsSha256": "c3966e8b40c5737b31c083629f40f374d51e1af0d5503cfdff3542326938979f",
-    "adapterSha256": "90d278ef60f811116fe84fc0d61d32e1c03eeb87b1816f6efbd586490c26c3c7",
-    "casesSha256": "192c9291448f8a5dbf63db5125870309c12415dbbab64564f4724d7f0a594601",
-    "metadataFileSha256": "c507168c7124f00c3e6c51182c0c289f655a146181a4330235da6fdf9e9d2980",
+    "contractsSha256": "01811eb0cbf3913b9ca9b38f7f2e79a5adf9de4653a8a88e94ea1c001c9161bc",
+    "adapterSha256": "68ce1214e37d972c315fce970023e9fc4188e3e7b9277ba068720ea27a6a5444",
+    "casesSha256": "e44a8574a8b153eced11e37e5786acf13bd2db7fc9ce8ff898c1325dd66a575a",
+    "metadataFileSha256": "fd05cb25e380c3f0858ebba37f3e411d44c2b11b4b398cd58e6919f37870b3c0",
     "harnessSha256": "704a7838755e2ac35e33fba41604b08240c4abba8c36dad6e49d6a47b190954c",
     "helperSha256": "77cbac21987fc49c7f82e4ee8a2f619ddad90ec0308daaec4de3644a03449678",
     "apiClientSha256": "dbf0856939219da0752788c3c13b42d0e98f8dea61560f1bae92ca5615678660"
   },
-  "manifestSha256": "bd4863aadd37370350c02a1533091d8915f452e514bbc75d35386b6f8736e0f8",
+  "manifestSha256": "42a079ade05a4cc5139df38d2c511b0b8981a5c6c2708576dd70889aec5fd160",
   "runtimeModelVersion": null,
   "results": [
+    {
+      "id": "al-senior-homestead-age-ineligible",
+      "programId": "al-homestead-exemptions",
+      "inputs": {
+        "age": "64",
+        "assessed_property_value": "32000",
+        "real_estate_taxes": "1250"
+      },
+      "expectedValue": 0,
+      "source": "https://admincode.legislature.state.al.us/administrative-code/810-4-1-.23",
+      "sourceLocation": "Rule 810-4-1-.23(3)(a)–(b). The age-65 state levy exemption does not apply at age 64 with no other qualifying status. The ordinary exemption is a separate provision.",
+      "value": 0,
+      "modelVariable": "al_senior_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:16:19.891Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":64},\"assessed_property_value\":{\"2025\":32000},\"real_estate_taxes\":{\"2025\":1250}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"al_senior_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"AL\"}}}}}",
+        "bodySha256": "789fc1ff002b4c18959d5e3930efd35eea0659ab203c36712044bd4235bcc4b9",
+        "semanticSha256": "4b258884cdd8eb7062f285c8d92c9668bbbb99ee1eb991f5502cc0344d3487d6"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"AL\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":64},\"assessed_property_value\":{\"2025\":32000},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":1250}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"al_senior_homestead_exemption\":{\"2025\":0.0},\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "3e75d6589900cb7e1c07e6808fd156c7db708cb3c11a4d7ef2990e8be5bb4d90"
+      }
+    },
+    {
+      "id": "al-senior-homestead-larger-state-levy",
+      "programId": "al-homestead-exemptions",
+      "inputs": {
+        "age": "70",
+        "assessed_property_value": "32000",
+        "real_estate_taxes": "1250"
+      },
+      "expectedValue": 208,
+      "source": "https://admincode.legislature.state.al.us/administrative-code/810-4-1-.23",
+      "sourceLocation": "Rule 810-4-1-.23(3)(b) and Department of Revenue state tax rate. At 6.5 mills, $32,000 of assessed value carries a state levy of $208 before exemptions.",
+      "value": 208,
+      "modelVariable": "al_senior_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:16:24.223Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":70},\"assessed_property_value\":{\"2025\":32000},\"real_estate_taxes\":{\"2025\":1250}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"al_senior_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"AL\"}}}}}",
+        "bodySha256": "3263d68e3a2dedb1141fe82aff01c3943997e4d4cb63929efb67017a6d640526",
+        "semanticSha256": "fd0a53ad750487e5f72298071942f855739cddbb213236a03d5a92c094f430c7"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"AL\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":70},\"assessed_property_value\":{\"2025\":32000},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":1250}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"al_senior_homestead_exemption\":{\"2025\":208.0},\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "5d09260fb5e5deb00055a1f0a9e83479584abdbf927e0d5f66aaa62d80ac90c5"
+      }
+    },
+    {
+      "id": "al-senior-homestead-state-levy",
+      "programId": "al-homestead-exemptions",
+      "inputs": {
+        "age": "65",
+        "assessed_property_value": "10000",
+        "real_estate_taxes": "390"
+      },
+      "expectedValue": 65,
+      "source": "https://admincode.legislature.state.al.us/administrative-code/810-4-1-.23",
+      "sourceLocation": "Rule 810-4-1-.23(3)(b) exempts all state-levied property taxes at age 65. At the Department of Revenue’s 6.5 mills, $10,000 of assessed value carries a state levy of $65 before exemptions.",
+      "value": 65,
+      "modelVariable": "al_senior_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:16:28.544Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":65},\"assessed_property_value\":{\"2025\":10000},\"real_estate_taxes\":{\"2025\":390}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"al_senior_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"AL\"}}}}}",
+        "bodySha256": "860a6fe85ebfc43434bc6446f832e4e8c10551d9a393cdea216092ddef57e3f1",
+        "semanticSha256": "0f136b83168af7b62b303710607dbb1695b72ff6cff2987180fabd314036c6ca"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"AL\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":65},\"assessed_property_value\":{\"2025\":10000},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":390}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"al_senior_homestead_exemption\":{\"2025\":65.0},\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "1723565ba627ba71af2064dd1c768c59105754d93ea51e253613cc47105b2312"
+      }
+    },
+    {
+      "id": "az-owner-income-exceeds-limit",
+      "programId": "az-property-tax-credit",
+      "inputs": {
+        "age": "65",
+        "az_property_tax_credit_income": "3751",
+        "real_estate_taxes": "1000"
+      },
+      "expectedValue": 0,
+      "source": "https://www.azleg.gov/ars/43/01072.htm",
+      "sourceLocation": "Subsection A(3)(a) requires income below $3,751 for someone who lived alone.",
+      "value": 0,
+      "modelVariable": "az_property_tax_credit",
+      "calculatedAt": "2026-11-17T19:16:33.385Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":65},\"real_estate_taxes\":{\"2025\":1000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"az_property_tax_credit_income\":{\"2025\":3751},\"az_property_tax_credit\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"AZ\"}}}}}",
+        "bodySha256": "6867755974024f3407d8a0f15d4cbb46cf57dcbd752bbd68fc5bc4128793ff6b",
+        "semanticSha256": "6336a3f215c4682b70af3b718d6b5e09a73a402ce6832ede85fef34cb8e91327"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"AZ\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":65},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":1000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"az_property_tax_credit\":{\"2025\":0.0},\"az_property_tax_credit_income\":{\"2025\":3751},\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "627f2d2fcb246ff296f0fabb9d12b3beb01c8c88b19a69d07c9da07eccdbd57d"
+      }
+    },
+    {
+      "id": "az-owner-next-band-start",
+      "programId": "az-property-tax-credit",
+      "inputs": {
+        "age": "65",
+        "az_property_tax_credit_income": "1751",
+        "real_estate_taxes": "1000"
+      },
+      "expectedValue": 479,
+      "source": "https://www.azleg.gov/ars/43/01072.htm",
+      "sourceLocation": "Subsection B(1), $1,751–$1,850 bracket. The $479 table amount controls.",
+      "value": 479,
+      "modelVariable": "az_property_tax_credit",
+      "calculatedAt": "2026-11-17T19:16:38.205Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":65},\"real_estate_taxes\":{\"2025\":1000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"az_property_tax_credit_income\":{\"2025\":1751},\"az_property_tax_credit\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"AZ\"}}}}}",
+        "bodySha256": "fe88f6b44e335165022a5c58204a2271089a2d88e994b110104b1264fccd5f1c",
+        "semanticSha256": "7af3af8b24a7106b3cd3f1b4614dfa3f21be0c441c67d629bde0a4a9e9a1b84d"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"AZ\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":65},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":1000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"az_property_tax_credit\":{\"2025\":479.0},\"az_property_tax_credit_income\":{\"2025\":1751},\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "6d372f5ada5911e5befa21b20b98869e315d97e6b9aedb2e49ea3716295cb098"
+      }
+    },
+    {
+      "id": "az-owner-payment-limits-credit",
+      "programId": "az-property-tax-credit",
+      "inputs": {
+        "age": "65",
+        "az_property_tax_credit_income": "1500",
+        "real_estate_taxes": "120"
+      },
+      "expectedValue": 120,
+      "source": "https://www.azleg.gov/ars/43/01072.htm",
+      "sourceLocation": "Subsection B limits the credit to the $120 paid when the table gives $502.",
+      "value": 120,
+      "modelVariable": "az_property_tax_credit",
+      "calculatedAt": "2026-11-17T19:16:42.769Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":65},\"real_estate_taxes\":{\"2025\":120}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"az_property_tax_credit_income\":{\"2025\":1500},\"az_property_tax_credit\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"AZ\"}}}}}",
+        "bodySha256": "b32df139e507616dcb1def4fb17c1a1b96fff567e2cc1a251456e92736a0e9a5",
+        "semanticSha256": "cd7cb103ae1fe03a2af47272652291dfa02ceea3dd374d933cf8262cd765ca8e"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"AZ\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":65},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":120}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"az_property_tax_credit\":{\"2025\":120.0},\"az_property_tax_credit_income\":{\"2025\":1500},\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "6958068b3a0ff2417383773c05ac5b2eb1327ce75c3082fa3e3e0708d45d57cb"
+      }
+    },
+    {
+      "id": "az-owner-zero-income",
+      "programId": "az-property-tax-credit",
+      "inputs": {
+        "age": "65",
+        "az_property_tax_credit_income": "0",
+        "real_estate_taxes": "1000"
+      },
+      "expectedValue": 502,
+      "source": "https://www.azleg.gov/ars/43/01072.htm",
+      "sourceLocation": "Subsection B(1), $0–$1,750 bracket. $502 is below the $1,000 paid.",
+      "value": 502,
+      "modelVariable": "az_property_tax_credit",
+      "calculatedAt": "2026-11-17T19:16:47.575Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":65},\"real_estate_taxes\":{\"2025\":1000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"az_property_tax_credit_income\":{\"2025\":0},\"az_property_tax_credit\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"AZ\"}}}}}",
+        "bodySha256": "6c78dbe4e41c96c489a4ef2380304cdb726bcaf308c87ccf1f6f634c3a86bd98",
+        "semanticSha256": "a941fa12011ca2b0673bcae906ce92ed87662ff9d423f24700919a714e535904"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"AZ\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":65},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":1000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"az_property_tax_credit\":{\"2025\":502.0},\"az_property_tax_credit_income\":{\"2025\":0},\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "d6c4e3e8eebba8876739d041f8734343faaa540fac7c6a6f100ce6ee0903d5ae"
+      }
+    },
     {
       "id": "ca-above-income-cap",
       "programId": "ca-nonrefundable-renters-credit",
@@ -28,7 +231,7 @@
       "sourceLocation": "2025 Form 540 booklet, renter credit qualification record, questions 1–2 and Form 540 line 46; Single filer, all nonmonetary qualifications assumed; income one dollar above 2025 ceiling",
       "value": 0,
       "modelVariable": "ca_renter_credit",
-      "calculatedAt": "2026-11-17T12:33:10.549Z",
+      "calculatedAt": "2026-11-17T19:16:51.881Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -56,7 +259,7 @@
       "sourceLocation": "2025 Form 540 booklet, renter credit qualification record, questions 1–2 and Form 540 line 46; Single filer, all nonmonetary qualifications assumed; income at 2025 ceiling; credit before liability limit",
       "value": 60,
       "modelVariable": "ca_renter_credit",
-      "calculatedAt": "2026-11-17T12:33:15.167Z",
+      "calculatedAt": "2026-11-17T19:16:56.361Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -86,7 +289,7 @@
       "sourceLocation": "CT-1040 Schedule 3 lines 63–65 cap $1,000 qualifying residence taxes at $300. Instructions page 27 gives zero reduction at single CT AGI $49,500. Line 10 tax $1,000 does not limit the $300 credit. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim.",
       "value": 300,
       "modelVariable": "ct_property_tax_credit",
-      "calculatedAt": "2026-11-17T12:33:19.467Z",
+      "calculatedAt": "2026-11-17T19:17:00.673Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -116,7 +319,7 @@
       "sourceLocation": "Instructions page 27 places single CT AGI $49,501 in the 15% reduction band. Schedule 3 lines 65–68: $300 - ($300 × 15%) = $255; line 10 tax $1,000 does not bind. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim.",
       "value": 255,
       "modelVariable": "ct_property_tax_credit",
-      "calculatedAt": "2026-11-17T12:33:23.733Z",
+      "calculatedAt": "2026-11-17T19:17:04.965Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -146,7 +349,7 @@
       "sourceLocation": "Instructions page 27 assigns a 100% reduction at single CT AGI $109,501. Schedule 3: $300 - ($300 × 100%) = $0. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim.",
       "value": 0,
       "modelVariable": "ct_property_tax_credit",
-      "calculatedAt": "2026-11-17T12:33:28.054Z",
+      "calculatedAt": "2026-11-17T19:17:09.274Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -176,7 +379,7 @@
       "sourceLocation": "Instructions page 27 places single CT AGI $109,499 in the 90% reduction band. Schedule 3: $300 - ($300 × 90%) = $30. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim.",
       "value": 30,
       "modelVariable": "ct_property_tax_credit",
-      "calculatedAt": "2026-11-17T12:33:32.572Z",
+      "calculatedAt": "2026-11-17T19:17:13.554Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -206,7 +409,7 @@
       "sourceLocation": "Instructions page 14 limits the credit to CT-1040 line 10 tax. Schedule 3 produces $300 before the liability limit; line 10 tax $80 limits the applied nonrefundable credit to $80. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim.",
       "value": 80,
       "modelVariable": "ct_property_tax_credit",
-      "calculatedAt": "2026-11-17T12:33:36.845Z",
+      "calculatedAt": "2026-11-17T19:17:17.849Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -236,7 +439,7 @@
       "sourceLocation": "Schedule 3 line 65 limits the base to $200 qualified residence taxes. Instructions page 27 gives a 15% reduction: $200 - ($200 × 15%) = $170. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim.",
       "value": 170,
       "modelVariable": "ct_property_tax_credit",
-      "calculatedAt": "2026-11-17T12:33:41.107Z",
+      "calculatedAt": "2026-11-17T19:17:22.149Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -266,7 +469,7 @@
       "sourceLocation": "Instructions page 27 places single CT AGI $59,501 in the 30% reduction band. Schedule 3: $300 - ($300 × 30%) = $210. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim.",
       "value": 210,
       "modelVariable": "ct_property_tax_credit",
-      "calculatedAt": "2026-11-17T12:33:45.381Z",
+      "calculatedAt": "2026-11-17T19:17:26.560Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -296,7 +499,7 @@
       "sourceLocation": "Instructions page 2 directs a filer with CT-1040 line 10 tax of zero to skip the property tax credit. The allowed nonrefundable credit is $0. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim.",
       "value": 0,
       "modelVariable": "ct_property_tax_credit",
-      "calculatedAt": "2026-11-17T12:33:49.651Z",
+      "calculatedAt": "2026-11-17T19:17:30.824Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -326,7 +529,7 @@
       "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules.",
       "value": 300,
       "modelVariable": "il_property_tax_credit",
-      "calculatedAt": "2026-11-17T12:33:53.927Z",
+      "calculatedAt": "2026-11-17T19:17:35.108Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -356,7 +559,7 @@
       "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules.",
       "value": 0,
       "modelVariable": "il_property_tax_credit",
-      "calculatedAt": "2026-11-17T12:33:58.392Z",
+      "calculatedAt": "2026-11-17T19:17:39.606Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -386,7 +589,7 @@
       "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules.",
       "value": 300,
       "modelVariable": "il_property_tax_credit",
-      "calculatedAt": "2026-11-17T12:34:02.644Z",
+      "calculatedAt": "2026-11-17T19:17:43.874Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -416,7 +619,7 @@
       "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules.",
       "value": 100,
       "modelVariable": "il_property_tax_credit",
-      "calculatedAt": "2026-11-17T12:34:06.908Z",
+      "calculatedAt": "2026-11-17T19:17:48.161Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -446,7 +649,7 @@
       "qualificationScope": "Single adult; nonmonetary statutory qualifications assumed unless this case explicitly fails a modeled test. Expected value derived independently from agency rules.",
       "value": 0,
       "modelVariable": "il_property_tax_credit",
-      "calculatedAt": "2026-11-17T12:34:11.247Z",
+      "calculatedAt": "2026-11-17T19:17:52.441Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -473,7 +676,7 @@
       "sourceLocation": "Example 1, page 1",
       "value": 1200,
       "modelVariable": "in_renters_deduction",
-      "calculatedAt": "2026-11-17T12:34:17.488Z",
+      "calculatedAt": "2026-11-17T19:17:56.730Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -500,7 +703,7 @@
       "sourceLocation": "Example 2, page 1",
       "value": 3000,
       "modelVariable": "in_renters_deduction",
-      "calculatedAt": "2026-11-17T12:34:21.775Z",
+      "calculatedAt": "2026-11-17T19:18:01.009Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -527,7 +730,7 @@
       "sourceLocation": "2025 IT-40 booklet, page 16, Schedule 2 line 2; Residential homeowner's property tax deduction; single filer with qualified expenses exceeding cap",
       "value": 2500,
       "modelVariable": "in_homeowners_property_tax_deduction",
-      "calculatedAt": "2026-11-17T12:34:26.026Z",
+      "calculatedAt": "2026-11-17T19:18:05.364Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -554,7 +757,7 @@
       "sourceLocation": "2025 IT-40 booklet, page 16, Schedule 2 line 2; Residential homeowner's property tax deduction; no qualified payments",
       "value": 0,
       "modelVariable": "in_homeowners_property_tax_deduction",
-      "calculatedAt": "2026-11-17T12:34:30.269Z",
+      "calculatedAt": "2026-11-17T19:18:09.647Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -581,7 +784,7 @@
       "sourceLocation": "Limitation of deduction, page 1; actual qualified rent is zero",
       "value": 0,
       "modelVariable": "in_renters_deduction",
-      "calculatedAt": "2026-11-17T12:34:34.520Z",
+      "calculatedAt": "2026-11-17T19:18:13.914Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -595,6 +798,90 @@
         "status": 200,
         "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"IN\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"rent\":{\"2025\":0}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"in_renters_deduction\":{\"2025\":0.0},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
         "bodySha256": "8c5cdb046c111aafb4a1a7a9c533c88e04af31a4d51f1648a693cb2ec687b2ec"
+      }
+    },
+    {
+      "id": "ky-homestead-age-65-assessment-200000",
+      "programId": "ky-homestead-exemption",
+      "inputs": {
+        "age": "65",
+        "assessed_property_value": "200000"
+      },
+      "expectedValue": 49100,
+      "source": "https://revenue.ky.gov/Property/Residential-Farm-Commercial-Property/Pages/Homestead-Exemption.aspx",
+      "sourceLocation": "Kentucky DOR's 2025–2026 example exempts $49,100 of a $200,000 assessment. §132.810(2)(a) permits applicants who reach age 65 during 2025.",
+      "value": 49100,
+      "modelVariable": "ky_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:18:18.223Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":65},\"assessed_property_value\":{\"2025\":200000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"ky_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"KY\"}}}}}",
+        "bodySha256": "72b9b456bb87216522ff1bcbce49a42c5cecdaa5b69d86a525ac4c23702880f6",
+        "semanticSha256": "10b570869e072f3cfa715eacfbd9894af2ceefa5f9445bebeaf09968ef112a34"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"KY\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":65},\"assessed_property_value\":{\"2025\":200000},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"ky_homestead_exemption\":{\"2025\":49100.0},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "aab1c9884063322823436bae9e49c522bb09b90adfbc7f964fc429e9e7baac46"
+      }
+    },
+    {
+      "id": "ky-homestead-assessment-40000",
+      "programId": "ky-homestead-exemption",
+      "inputs": {
+        "age": "80",
+        "assessed_property_value": "40000"
+      },
+      "expectedValue": 40000,
+      "source": "https://revenue.ky.gov/Property/Residential-Farm-Commercial-Property/Pages/Homestead-Exemption.aspx",
+      "sourceLocation": "The $49,100 exemption applies to the assessed value. It exempts the full $40,000 assessment of this eligible home.",
+      "value": 40000,
+      "modelVariable": "ky_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:18:22.504Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":80},\"assessed_property_value\":{\"2025\":40000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"ky_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"KY\"}}}}}",
+        "bodySha256": "7d5ecb46b82a157b38ccb3b15ef8ce746901e6d224a43e8e3c871e73e8e75f33",
+        "semanticSha256": "eb5c3c64cb7e6753b50cef7a13b8530aab0b7f57cd876e2e17306223cd4fc8cf"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"KY\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":80},\"assessed_property_value\":{\"2025\":40000},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"ky_homestead_exemption\":{\"2025\":40000.0},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "8d73defd82dc201bc101c02a1bd8a92488d040ef4004e8c5e91e73ce9f956eba"
+      }
+    },
+    {
+      "id": "ky-homestead-assessment-49100",
+      "programId": "ky-homestead-exemption",
+      "inputs": {
+        "age": "70",
+        "assessed_property_value": "49100"
+      },
+      "expectedValue": 49100,
+      "source": "https://revenue.ky.gov/News/Pages/DOR-Sets-2025-2026-Homestead-Exemption.aspx",
+      "sourceLocation": "2025–2026 maximum exemption. The assessed value and exemption limit each equal $49,100.",
+      "value": 49100,
+      "modelVariable": "ky_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:18:27.039Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":70},\"assessed_property_value\":{\"2025\":49100}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"ky_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"KY\"}}}}}",
+        "bodySha256": "e2b4f9aac7575019c7f7f1599fca3dad8922a70f8c58ecb3532ba87a055ca2a8",
+        "semanticSha256": "4326c6b540873fba0a3c281552b4d190848ca6510c4b64deca408f15b226dd90"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"KY\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":70},\"assessed_property_value\":{\"2025\":49100},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"ky_homestead_exemption\":{\"2025\":49100.0},\"members\":[\"claimant\"]}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "b83057677d5e10b664176430c9101cbef3edf06d06ffa32da869e6e1a82e97fe"
       }
     },
     {
@@ -613,7 +900,7 @@
       "sourceLocation": "2025THRlimit71500;71501exceedsit. Manualprintedp64/PDFp70 independently states no credit over71500.",
       "value": 0,
       "modelVariable": "mi_homestead_property_tax_credit",
-      "calculatedAt": "2026-11-17T12:34:38.770Z",
+      "calculatedAt": "2026-11-17T19:18:31.471Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -645,7 +932,7 @@
       "sourceLocation": "Printed page64/PDFpage70: 12000×0.23=2760;20000×0.032=640;(2760−640)×0.60=1272;below1900cap and62500phaseout. Full-year qualified general renter; no public-assistance or special-status adjustments.",
       "value": 1272,
       "modelVariable": "mi_homestead_property_tax_credit",
-      "calculatedAt": "2026-11-17T12:34:43.020Z",
+      "calculatedAt": "2026-11-17T19:18:35.764Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -677,7 +964,7 @@
       "sourceLocation": "Printed page64/PDFpage70:50000×0.23=11500;62500×0.032=2000;(11500−2000)×0.60=5700,capped1900;resourcesat62500retain100percent.",
       "value": 1900,
       "modelVariable": "mi_homestead_property_tax_credit",
-      "calculatedAt": "2026-11-17T12:34:47.285Z",
+      "calculatedAt": "2026-11-17T19:18:40.047Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -691,6 +978,171 @@
         "status": 200,
         "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MI\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":40},\"assessed_property_value\":{\"2025\":0},\"is_disabled\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":0},\"rent\":{\"2025\":50000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"mi_homestead_property_tax_credit\":{\"2025\":1900.0},\"mi_household_resources\":{\"2025\":62500}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
         "bodySha256": "4e41360c48adf2a6de4cc9ac601863fe1651941b57bb470884458edc4a53cc3d"
+      }
+    },
+    {
+      "id": "ms-senior-homestead-age-ineligible",
+      "programId": "ms-age-disability-homestead-exemption",
+      "inputs": {
+        "age": "64",
+        "assessed_property_value": "15000"
+      },
+      "expectedValue": 0,
+      "source": "https://www.dor.ms.gov/county-services/homestead-exemption",
+      "sourceLocation": "Tier 2. An applicant age 64 on January 1, 2025 without disability or other qualifying status has no age-based exemption. Tier 1 is a separate provision.",
+      "value": 0,
+      "modelVariable": "ms_age_disability_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:18:44.339Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":64},\"assessed_property_value\":{\"2025\":15000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"ms_age_disability_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MS\"}}}}}",
+        "bodySha256": "d1bd5942e14eb7ac05d83aa1434d3ab8b1f847b70dc4744c39ef5f4be0721a17",
+        "semanticSha256": "ec2494f7a7ab508b16dfafe9b4913653ec6379c037dfa9685f96fc2a6c1262cf"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MS\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":64},\"assessed_property_value\":{\"2025\":15000},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"ms_age_disability_homestead_exemption\":{\"2025\":0.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "b48c9ff8d5dec4ec5e0e450404a426ae4c2bfaea8189e080e38c0ffd77ade61e"
+      }
+    },
+    {
+      "id": "ms-senior-homestead-assessed-below-cap",
+      "programId": "ms-age-disability-homestead-exemption",
+      "inputs": {
+        "age": "70",
+        "assessed_property_value": "6000"
+      },
+      "expectedValue": 6000,
+      "source": "https://billstatus.ls.state.ms.us/documents/2025/html/HB/0800-0899/HB0812SG.htm",
+      "sourceLocation": "§ 27-33-75(2)(a). Entire $6,000 qualifying assessed value falls within the base $7,500 exemption.",
+      "value": 6000,
+      "modelVariable": "ms_age_disability_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:18:48.613Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":70},\"assessed_property_value\":{\"2025\":6000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"ms_age_disability_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MS\"}}}}}",
+        "bodySha256": "cc47e32944c3f2b815b9fb4b86c2c495e0b2927ac99588f6851845cdee5eb505",
+        "semanticSha256": "9b9aba71e7e1b8d141b2f6931bfbdceac99ef0a2dc3e6bdf74917a41218526db"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MS\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":70},\"assessed_property_value\":{\"2025\":6000},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"ms_age_disability_homestead_exemption\":{\"2025\":6000.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "2cb9e6757bdbbb52a61bae48a44b0a41aa4ba31f78369298645765996024d9db"
+      }
+    },
+    {
+      "id": "ms-senior-homestead-assessed-cap",
+      "programId": "ms-age-disability-homestead-exemption",
+      "inputs": {
+        "age": "65",
+        "assessed_property_value": "15000"
+      },
+      "expectedValue": 7500,
+      "source": "https://billstatus.ls.state.ms.us/documents/2025/html/HB/0800-0899/HB0812SG.htm",
+      "sourceLocation": "§ 27-33-75(2)(a), and Department of Revenue Homestead Exemption tier 2. Age 65 on January 1, 2025 and qualifying $15,000 assessment. The base exemption is the first $7,500 of assessed value.",
+      "value": 7500,
+      "modelVariable": "ms_age_disability_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:18:53.107Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":65},\"assessed_property_value\":{\"2025\":15000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"ms_age_disability_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MS\"}}}}}",
+        "bodySha256": "1483cde28235d1461372c028f24e8a6a506aa60c4533bcd2372ae2853d90c197",
+        "semanticSha256": "694b321865832af9493524758c94b6b46070d051315be72080ddc53396d3e2fc"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"MS\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":65},\"assessed_property_value\":{\"2025\":15000},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"ms_age_disability_homestead_exemption\":{\"2025\":7500.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "16d97d4cbdbc2d6086b5d6a982c2017b6ac2410b204b07c3dce0f2d29d186a33"
+      }
+    },
+    {
+      "id": "nd-primary-credit-tax-due-1500",
+      "programId": "nd-primary-residence-credit",
+      "inputs": {
+        "real_estate_taxes": "1500"
+      },
+      "expectedValue": 1500,
+      "source": "https://ndlegis.gov/assembly/69-2025/regular/documents/25-1003-06000.pdf#page=11",
+      "sourceLocation": "Section 10, §57-02-08.9(1)(a)–(d), 2025 property tax year. An approved applicant with $1,500 of eligible tax due receives $1,500 because the credit cannot exceed the tax due.",
+      "value": 1500,
+      "modelVariable": "nd_primary_residence_credit",
+      "calculatedAt": "2026-11-17T19:18:57.570Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":1500}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"nd_primary_residence_credit\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"ND\"}}}}}",
+        "bodySha256": "3221a2fea460d8424b70bbbbc9ee8ddc44352f8a980df2a9d9de31947c60cb5a",
+        "semanticSha256": "cebca620703984e253b5b7dbc57da3fd700833f044685f5c2b8f803c19499888"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"ND\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":1500}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"nd_primary_residence_credit\":{\"2025\":1500.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "8367a2d6cef9021d1fcc99c0a4752af302450126967c1f0923144403347f6fbf"
+      }
+    },
+    {
+      "id": "nd-primary-credit-tax-due-1600",
+      "programId": "nd-primary-residence-credit",
+      "inputs": {
+        "real_estate_taxes": "1600"
+      },
+      "expectedValue": 1600,
+      "source": "https://ndlegis.gov/assembly/69-2025/regular/documents/25-1003-06000.pdf#page=11",
+      "sourceLocation": "Section 10, §57-02-08.9(1)(a)–(d), 2025 property tax year. The eligible tax due and maximum credit each equal $1,600.",
+      "value": 1600,
+      "modelVariable": "nd_primary_residence_credit",
+      "calculatedAt": "2026-11-17T19:19:01.871Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":1600}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"nd_primary_residence_credit\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"ND\"}}}}}",
+        "bodySha256": "7af6b035f4ff3a54b6ac72b073863fe96a694e32a57882728ea833d481cb6ab8",
+        "semanticSha256": "d4199a03d33f57928ff9f77a468b325115f68ba60ce02d6d49247be63069835e"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"ND\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":1600}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"nd_primary_residence_credit\":{\"2025\":1600.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "016b1c23c264a7daedd65e3d95610679b5458e333082393bd0b0711452e55d52"
+      }
+    },
+    {
+      "id": "nd-primary-credit-tax-due-2500",
+      "programId": "nd-primary-residence-credit",
+      "inputs": {
+        "real_estate_taxes": "2500"
+      },
+      "expectedValue": 1600,
+      "source": "https://ndlegis.gov/assembly/69-2025/regular/documents/25-1003-06000.pdf#page=11",
+      "sourceLocation": "Section 10, §57-02-08.9(1)(a)–(d), 2025 property tax year. The $1,600 statutory maximum limits the credit on $2,500 of eligible tax due.",
+      "value": 1600,
+      "modelVariable": "nd_primary_residence_credit",
+      "calculatedAt": "2026-11-17T19:19:06.342Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":2500}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"nd_primary_residence_credit\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"ND\"}}}}}",
+        "bodySha256": "7d4836b135e87065d11df297bf88822e4600f1a09fbc3021358e4bc464ea71b3",
+        "semanticSha256": "15bdd73b4d526d24e83e518aaf69ff2b4ec19e9163718713ff552e6ab18b238b"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"ND\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":2500}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"nd_primary_residence_credit\":{\"2025\":1600.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "7b3b3b2a6272f5a48dde9d7f7bec84ebb64728509aecea3b38d2ac97b8633ec9"
       }
     },
     {
@@ -710,7 +1162,7 @@
       "sourceLocation": "WorksheetHprintedp29/PDFp31:6000<15000cap;40000−6000=34000. Singletax tableprintedpp57–58/PDFpp59–60 gives719at40000and525at34000;194savingexceeds50credit,soenter6000deduction. Assumesolequalifiedowner,noSeniorFreeze/nootherjurisdictioncredit.",
       "value": 6000,
       "modelVariable": "nj_property_tax_deduction",
-      "calculatedAt": "2026-11-17T12:34:51.553Z",
+      "calculatedAt": "2026-11-17T19:19:10.611Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -743,7 +1195,7 @@
       "sourceLocation": "Agency eligibility/credit/nonfiler sections;2025NJ1040HWPartIage65test andNJ1040instructionsprintedp25/PDFp27:singleage70qualifiedfull-yearrenter,AGI0,credit50. Assume no duplicateANCHORcredit.",
       "value": 50,
       "modelVariable": "nj_property_tax_credit",
-      "calculatedAt": "2026-11-17T12:34:55.834Z",
+      "calculatedAt": "2026-11-17T19:19:14.884Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -773,7 +1225,7 @@
       "sourceLocation": "2025Form538Hp1line14:incomeover12000doesnotqualify;12001exceedslimit.",
       "value": 0,
       "modelVariable": "ok_ptc",
-      "calculatedAt": "2026-11-17T12:35:00.109Z",
+      "calculatedAt": "2026-11-17T19:19:19.153Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -803,7 +1255,7 @@
       "sourceLocation": "2025Form538Hp1line14allows12000;p2lines15–17:200tax−12000×1%=80,below200cap. Qualifiedfull-yearage70homesteadowner.",
       "value": 80,
       "modelVariable": "ok_ptc",
-      "calculatedAt": "2026-11-17T12:35:04.372Z",
+      "calculatedAt": "2026-11-17T19:19:23.449Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -833,7 +1285,7 @@
       "sourceLocation": "2025Form538Hp2lines15–17:500tax−10000×1%=400;maximum200.",
       "value": 200,
       "modelVariable": "ok_ptc",
-      "calculatedAt": "2026-11-17T12:35:08.626Z",
+      "calculatedAt": "2026-11-17T19:19:27.732Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -865,7 +1317,7 @@
       "sourceLocation": "2025bookletprinted/PDFp11line17:6000rent×20%=1200;printed/PDFp13table:income8550cap1000;lesser=1000. Qualifiedfull-yearsolorenter,noassistance.",
       "value": 1000,
       "modelVariable": "pa_property_tax_or_rent_rebate",
-      "calculatedAt": "2026-11-17T12:35:12.886Z",
+      "calculatedAt": "2026-11-17T19:19:32.069Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -897,7 +1349,7 @@
       "sourceLocation": "2025bookletp11line17:3000×20%=600;p13income8550cap1000;lesser600.",
       "value": 600,
       "modelVariable": "pa_property_tax_or_rent_rebate",
-      "calculatedAt": "2026-11-17T12:35:17.166Z",
+      "calculatedAt": "2026-11-17T19:19:36.531Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -929,7 +1381,7 @@
       "sourceLocation": "2025bookletp13table:8551enters770band;p11line17:6000rent×20%=1200;lesser770.",
       "value": 770,
       "modelVariable": "pa_property_tax_or_rent_rebate",
-      "calculatedAt": "2026-11-17T12:35:21.732Z",
+      "calculatedAt": "2026-11-17T19:19:40.865Z",
       "pass": true,
       "runtimeModelVersion": null,
       "request": {
@@ -943,6 +1395,171 @@
         "status": 200,
         "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"PA\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":70},\"is_permanently_and_totally_disabled\":{\"2025\":false},\"is_surviving_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"real_estate_taxes\":{\"2025\":0},\"rent\":{\"2025\":6000}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"pa_property_tax_or_rent_rebate\":{\"2025\":770.0},\"pa_property_tax_or_rent_rebate_income\":{\"2025\":8551}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
         "bodySha256": "4c5a33f007ddaa5a2e30a3f0f7f295d4568c76fee488326a8d1e37fca32badda"
+      }
+    },
+    {
+      "id": "sc-senior-homestead-age-ineligible",
+      "programId": "sc-homestead-exemption",
+      "inputs": {
+        "age": "64",
+        "assessed_property_value": "3200"
+      },
+      "expectedValue": 0,
+      "source": "https://www.scstatehouse.gov/code/t12c037.php",
+      "sourceLocation": "§ 12-37-250(A)(1)(i), (A)(2). An applicant age 64 on December 31, 2024, without other qualifying status misses the 2025 age-based exemption.",
+      "value": 0,
+      "modelVariable": "sc_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:19:45.149Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":64},\"assessed_property_value\":{\"2025\":3200}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"sc_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"SC\"}}}}}",
+        "bodySha256": "66676a0f6ad9f91ffa64b3825f1b15dcc32404ce29de50e80076dbb2cc09e4bd",
+        "semanticSha256": "85d424895e17bf332635727eac3810dd4d1559ad4f71125947b193d9e2e67906"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"SC\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":64},\"assessed_property_value\":{\"2025\":3200},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"sc_homestead_exemption\":{\"2025\":0.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "cedfef7c9ef96e0eab1d4fa8ddeddc66b9287ddad2d63a0b9a62ea899b6aee37"
+      }
+    },
+    {
+      "id": "sc-senior-homestead-assessed-below-cap",
+      "programId": "sc-homestead-exemption",
+      "inputs": {
+        "age": "70",
+        "assessed_property_value": "1200"
+      },
+      "expectedValue": 1200,
+      "source": "https://www.scstatehouse.gov/code/t12c037.php",
+      "sourceLocation": "§ 12-37-250(A)(1) and § 12-43-220(c). An eligible $30,000 residence lies below the $50,000 fair-market-value exemption cap. At 4% the entire $1,200 assessment is exempt.",
+      "value": 1200,
+      "modelVariable": "sc_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:19:49.452Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":70},\"assessed_property_value\":{\"2025\":1200}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"sc_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"SC\"}}}}}",
+        "bodySha256": "0f945481a3e337c96314aa286b302331098686008fede7d2593359cd66e76807",
+        "semanticSha256": "bcf05df95d102a138dac76963114d006707f985489df1cb962945c4b0d74be3f"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"SC\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":70},\"assessed_property_value\":{\"2025\":1200},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"sc_homestead_exemption\":{\"2025\":1200.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "5de15cbc7a73ebbb8e25d9e64bd9341cfa10e11a9adc4a376ffadafbb08512f1"
+      }
+    },
+    {
+      "id": "sc-senior-homestead-assessed-cap",
+      "programId": "sc-homestead-exemption",
+      "inputs": {
+        "age": "65",
+        "assessed_property_value": "3200"
+      },
+      "expectedValue": 2000,
+      "source": "https://www.scstatehouse.gov/code/t12c037.php",
+      "sourceLocation": "§ 12-37-250(A)(1)(i) exempts the first $50,000 in fair market value. § 12-43-220(c) applies the 4% assessment ratio. For an eligible $80,000 legal residence, $2,000 of the $3,200 assessed value is exempt.",
+      "value": 2000,
+      "modelVariable": "sc_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:19:53.736Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"age\":{\"2025\":65},\"assessed_property_value\":{\"2025\":3200}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"sc_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"SC\"}}}}}",
+        "bodySha256": "d7eb0c5abb551ca63e842989cdcbe1b3509a81081073b508e287aab40d29e708",
+        "semanticSha256": "e7320960be22a6a9bf6203a7ea61c99c55a803531394aa68f8b689d439285906"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"SC\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"age\":{\"2025\":65},\"assessed_property_value\":{\"2025\":3200},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"sc_homestead_exemption\":{\"2025\":2000.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "bc0f9e35ebf7dda445d3904c560cdd455dd75ece5e3385bce9b40318d9887e97"
+      }
+    },
+    {
+      "id": "tx-school-homestead-appraisal-140000",
+      "programId": "tx-school-homestead",
+      "inputs": {
+        "assessed_property_value": "140000"
+      },
+      "expectedValue": 140000,
+      "source": "https://comptroller.texas.gov/taxes/property-tax/docs/98-1070.pdf",
+      "sourceLocation": "General mandatory school district exemption. The qualifying appraised value and exemption amount each equal $140,000.",
+      "value": 140000,
+      "modelVariable": "tx_school_district_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:19:58.103Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"assessed_property_value\":{\"2025\":140000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"tx_school_district_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"TX\"}}}}}",
+        "bodySha256": "65972d696014167cd203c7e7c2fe2f26971ecdf140913eba984ecae91618fdb2",
+        "semanticSha256": "f68e485ed07e6b5dd8d7a38b5eb55c3e61a2c62576a959811ed53cc0ada87cdb"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"TX\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"assessed_property_value\":{\"2025\":140000},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"tx_school_district_homestead_exemption\":{\"2025\":140000.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "8d4bee63fc4ef95c2fea015f8c4695bf775505c8fe3ad13fee64738e5c6a9b7c"
+      }
+    },
+    {
+      "id": "tx-school-homestead-appraisal-300000",
+      "programId": "tx-school-homestead",
+      "inputs": {
+        "assessed_property_value": "300000"
+      },
+      "expectedValue": 140000,
+      "source": "https://comptroller.texas.gov/taxes/property-tax/docs/98-1070.pdf",
+      "sourceLocation": "2025 School District Exemptions Example. The general mandatory component exempts $140,000 of the $300,000 appraised value.",
+      "value": 140000,
+      "modelVariable": "tx_school_district_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:20:02.420Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"assessed_property_value\":{\"2025\":300000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"tx_school_district_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"TX\"}}}}}",
+        "bodySha256": "622c3b912ee5345297ba06fd52f0fd95fd07c28ab26380bef30ed5179d88bfbf",
+        "semanticSha256": "e3833104e3cca884e6348f73ee41c68cdc6b52e68b9612903e4117c1e38ed332"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"TX\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"assessed_property_value\":{\"2025\":300000},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"tx_school_district_homestead_exemption\":{\"2025\":140000.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "5fd4aa2b21b9e211aa3e42e39e573ed8a0ed16bbf1724a99263c76e7d60963a9"
+      }
+    },
+    {
+      "id": "tx-school-homestead-appraisal-60000",
+      "programId": "tx-school-homestead",
+      "inputs": {
+        "assessed_property_value": "60000"
+      },
+      "expectedValue": 60000,
+      "source": "https://comptroller.texas.gov/taxes/property-tax/docs/98-1070.pdf",
+      "sourceLocation": "General mandatory school district exemption. The exemption removes the entire $60,000 appraised value, which falls under the $140,000 limit.",
+      "value": 60000,
+      "modelVariable": "tx_school_district_homestead_exemption",
+      "calculatedAt": "2026-11-17T19:20:06.747Z",
+      "pass": true,
+      "runtimeModelVersion": null,
+      "request": {
+        "url": "https://www.policyengine.org/api/household/calculate",
+        "method": "POST",
+        "body": "{\"country\":\"us\",\"household\":{\"people\":{\"claimant\":{\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false},\"is_tax_unit_dependent\":{\"2025\":false},\"assessed_property_value\":{\"2025\":60000}}},\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"members\":[\"claimant\"],\"filing_status\":{\"2025\":\"SINGLE\"},\"cohabitating_spouses\":{\"2025\":false},\"tx_school_district_homestead_exemption\":{\"2025\":null}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"TX\"}}}}}",
+        "bodySha256": "e7be5d2fb2c0a43b22133e7a197454c39a80ccb67445db91255435a288af2d5e",
+        "semanticSha256": "8f4e07719910839ea5d6eeecb79158d9f3ca15c1601dd60903fc35ba07fdcabe"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"message\":null,\"result\":{\"families\":{\"family\":{\"members\":[\"claimant\"]}},\"households\":{\"household\":{\"members\":[\"claimant\"],\"state_code\":{\"2025\":\"TX\"}}},\"marital_units\":{\"marital_unit\":{\"members\":[\"claimant\"]}},\"people\":{\"claimant\":{\"assessed_property_value\":{\"2025\":60000},\"is_tax_unit_dependent\":{\"2025\":false},\"is_tax_unit_head\":{\"2025\":true},\"is_tax_unit_spouse\":{\"2025\":false}}},\"spm_units\":{\"spm_unit\":{\"members\":[\"claimant\"]}},\"tax_units\":{\"tax_unit\":{\"cohabitating_spouses\":{\"2025\":false},\"filing_status\":{\"2025\":\"SINGLE\"},\"members\":[\"claimant\"],\"tx_school_district_homestead_exemption\":{\"2025\":60000.0}}}},\"spm_provenance\":{\"as_of\":null,\"county_vintage\":\"2020\",\"forecast_id\":\"spm-rolling-2026-09-09\",\"forecast_sha256\":\"335e6755dc8e0bd883e09b76c2bd53a5315683773e44d50085c7d6b8832b6291\",\"geography_id\":null,\"geography_kind\":\"county\",\"runtime_versions\":{\"policyengine\":\"6.20.0\",\"policyengine-core\":\"3.33.3\",\"policyengine-us\":\"2.2.2\",\"spm-calculator\":\"1.1.0\"},\"scenario\":\"ce_trend\",\"schema_version\":\"canonical-spm-provenance-v2\",\"years\":[]},\"status\":\"ok\"}\n",
+        "bodySha256": "b3d9d52f3eb0a951aeddfa262685cc890f44da4bf9cd95e5b382cf98c60f6ccb"
       }
     }
   ]

@@ -23,8 +23,8 @@ export default function CalculatorPage() {
         <h1>Household estimates</h1>
         <div className="intro-bottom">
           <p>
-            Enter household facts to calculate a selected credit, rebate, or
-            deduction with PolicyEngine.
+            Enter household facts to estimate a credit, rebate, deduction, or
+            property tax exemption with PolicyEngine.
           </p>
         </div>
       </section>

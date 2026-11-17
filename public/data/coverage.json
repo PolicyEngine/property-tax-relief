@@ -8,12 +8,24 @@
     {
       "id": "al-homestead-exemptions",
       "state": "AL",
-      "variables": [],
+      "variables": [
+        "al_senior_homestead_exemption"
+      ],
       "missingVariables": [],
       "inputOnlyOrLaterFormula": [],
-      "variableDetails": {},
+      "variableDetails": {
+        "al_senior_homestead_exemption": {
+          "file": "gov/states/al/tax/property/senior_homestead_exemption/al_senior_homestead_exemption.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
       "status": "context",
-      "canonicalVariables": [],
+      "canonicalVariables": [
+        "al_senior_homestead_exemption"
+      ],
       "validated": false
     },
     {
@@ -1356,7 +1368,8 @@
       "id": "sc-homestead-exemption",
       "state": "SC",
       "variables": [
-        "sc_homestead_property_tax_reduction"
+        "sc_homestead_property_tax_reduction",
+        "sc_homestead_exemption"
       ],
       "missingVariables": [],
       "inputOnlyOrLaterFormula": [],
@@ -1367,11 +1380,19 @@
             "formula"
           ],
           "computableIn2025": true
+        },
+        "sc_homestead_exemption": {
+          "file": "gov/states/sc/tax/property/homestead_exemption/sc_homestead_exemption.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
         }
       },
       "status": "context",
       "canonicalVariables": [
-        "sc_homestead_property_tax_reduction"
+        "sc_homestead_property_tax_reduction",
+        "sc_homestead_exemption"
       ],
       "validated": false
     },

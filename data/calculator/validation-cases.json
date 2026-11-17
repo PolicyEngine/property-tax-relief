@@ -400,5 +400,248 @@
     "expectedValue": 0,
     "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
     "sourceLocation": "Instructions page 2 directs a filer with CT-1040 line 10 tax of zero to skip the property tax credit. The allowed nonrefundable credit is $0. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
+  },
+  {
+    "id": "az-owner-zero-income",
+    "programId": "az-property-tax-credit",
+    "inputs": {
+      "age": "65",
+      "az_property_tax_credit_income": "0",
+      "real_estate_taxes": "1000"
+    },
+    "expectedValue": 502,
+    "source": "https://www.azleg.gov/ars/43/01072.htm",
+    "sourceLocation": "Subsection B(1), $0–$1,750 bracket. $502 is below the $1,000 paid."
+  },
+  {
+    "id": "az-owner-payment-limits-credit",
+    "programId": "az-property-tax-credit",
+    "inputs": {
+      "age": "65",
+      "az_property_tax_credit_income": "1500",
+      "real_estate_taxes": "120"
+    },
+    "expectedValue": 120,
+    "source": "https://www.azleg.gov/ars/43/01072.htm",
+    "sourceLocation": "Subsection B limits the credit to the $120 paid when the table gives $502."
+  },
+  {
+    "id": "az-owner-next-band-start",
+    "programId": "az-property-tax-credit",
+    "inputs": {
+      "age": "65",
+      "az_property_tax_credit_income": "1751",
+      "real_estate_taxes": "1000"
+    },
+    "expectedValue": 479,
+    "source": "https://www.azleg.gov/ars/43/01072.htm",
+    "sourceLocation": "Subsection B(1), $1,751–$1,850 bracket. The $479 table amount controls."
+  },
+  {
+    "id": "az-owner-income-exceeds-limit",
+    "programId": "az-property-tax-credit",
+    "inputs": {
+      "age": "65",
+      "az_property_tax_credit_income": "3751",
+      "real_estate_taxes": "1000"
+    },
+    "expectedValue": 0,
+    "source": "https://www.azleg.gov/ars/43/01072.htm",
+    "sourceLocation": "Subsection A(3)(a) requires income below $3,751 for someone who lived alone."
+  },
+  {
+    "id": "nd-primary-credit-tax-due-1500",
+    "programId": "nd-primary-residence-credit",
+    "inputs": {
+      "real_estate_taxes": "1500"
+    },
+    "expectedValue": 1500,
+    "source": "https://ndlegis.gov/assembly/69-2025/regular/documents/25-1003-06000.pdf#page=11",
+    "sourceLocation": "Section 10, §57-02-08.9(1)(a)–(d), 2025 property tax year. An approved applicant with $1,500 of eligible tax due receives $1,500 because the credit cannot exceed the tax due."
+  },
+  {
+    "id": "nd-primary-credit-tax-due-1600",
+    "programId": "nd-primary-residence-credit",
+    "inputs": {
+      "real_estate_taxes": "1600"
+    },
+    "expectedValue": 1600,
+    "source": "https://ndlegis.gov/assembly/69-2025/regular/documents/25-1003-06000.pdf#page=11",
+    "sourceLocation": "Section 10, §57-02-08.9(1)(a)–(d), 2025 property tax year. The eligible tax due and maximum credit each equal $1,600."
+  },
+  {
+    "id": "nd-primary-credit-tax-due-2500",
+    "programId": "nd-primary-residence-credit",
+    "inputs": {
+      "real_estate_taxes": "2500"
+    },
+    "expectedValue": 1600,
+    "source": "https://ndlegis.gov/assembly/69-2025/regular/documents/25-1003-06000.pdf#page=11",
+    "sourceLocation": "Section 10, §57-02-08.9(1)(a)–(d), 2025 property tax year. The $1,600 statutory maximum limits the credit on $2,500 of eligible tax due."
+  },
+  {
+    "id": "ky-homestead-age-65-assessment-200000",
+    "programId": "ky-homestead-exemption",
+    "inputs": {
+      "age": "65",
+      "assessed_property_value": "200000"
+    },
+    "expectedValue": 49100,
+    "source": "https://revenue.ky.gov/Property/Residential-Farm-Commercial-Property/Pages/Homestead-Exemption.aspx",
+    "sourceLocation": "Kentucky DOR's 2025–2026 example exempts $49,100 of a $200,000 assessment. §132.810(2)(a) permits applicants who reach age 65 during 2025."
+  },
+  {
+    "id": "ky-homestead-assessment-49100",
+    "programId": "ky-homestead-exemption",
+    "inputs": {
+      "age": "70",
+      "assessed_property_value": "49100"
+    },
+    "expectedValue": 49100,
+    "source": "https://revenue.ky.gov/News/Pages/DOR-Sets-2025-2026-Homestead-Exemption.aspx",
+    "sourceLocation": "2025–2026 maximum exemption. The assessed value and exemption limit each equal $49,100."
+  },
+  {
+    "id": "ky-homestead-assessment-40000",
+    "programId": "ky-homestead-exemption",
+    "inputs": {
+      "age": "80",
+      "assessed_property_value": "40000"
+    },
+    "expectedValue": 40000,
+    "source": "https://revenue.ky.gov/Property/Residential-Farm-Commercial-Property/Pages/Homestead-Exemption.aspx",
+    "sourceLocation": "The $49,100 exemption applies to the assessed value. It exempts the full $40,000 assessment of this eligible home."
+  },
+  {
+    "id": "tx-school-homestead-appraisal-300000",
+    "programId": "tx-school-homestead",
+    "inputs": {
+      "assessed_property_value": "300000"
+    },
+    "expectedValue": 140000,
+    "source": "https://comptroller.texas.gov/taxes/property-tax/docs/98-1070.pdf",
+    "sourceLocation": "2025 School District Exemptions Example. The general mandatory component exempts $140,000 of the $300,000 appraised value."
+  },
+  {
+    "id": "tx-school-homestead-appraisal-140000",
+    "programId": "tx-school-homestead",
+    "inputs": {
+      "assessed_property_value": "140000"
+    },
+    "expectedValue": 140000,
+    "source": "https://comptroller.texas.gov/taxes/property-tax/docs/98-1070.pdf",
+    "sourceLocation": "General mandatory school district exemption. The qualifying appraised value and exemption amount each equal $140,000."
+  },
+  {
+    "id": "tx-school-homestead-appraisal-60000",
+    "programId": "tx-school-homestead",
+    "inputs": {
+      "assessed_property_value": "60000"
+    },
+    "expectedValue": 60000,
+    "source": "https://comptroller.texas.gov/taxes/property-tax/docs/98-1070.pdf",
+    "sourceLocation": "General mandatory school district exemption. The exemption removes the entire $60,000 appraised value, which falls under the $140,000 limit."
+  },
+  {
+    "id": "sc-senior-homestead-assessed-cap",
+    "programId": "sc-homestead-exemption",
+    "inputs": {
+      "age": "65",
+      "assessed_property_value": "3200"
+    },
+    "expectedValue": 2000,
+    "source": "https://www.scstatehouse.gov/code/t12c037.php",
+    "sourceLocation": "§ 12-37-250(A)(1)(i) exempts the first $50,000 in fair market value. § 12-43-220(c) applies the 4% assessment ratio. For an eligible $80,000 legal residence, $2,000 of the $3,200 assessed value is exempt."
+  },
+  {
+    "id": "sc-senior-homestead-assessed-below-cap",
+    "programId": "sc-homestead-exemption",
+    "inputs": {
+      "age": "70",
+      "assessed_property_value": "1200"
+    },
+    "expectedValue": 1200,
+    "source": "https://www.scstatehouse.gov/code/t12c037.php",
+    "sourceLocation": "§ 12-37-250(A)(1) and § 12-43-220(c). An eligible $30,000 residence lies below the $50,000 fair-market-value exemption cap. At 4% the entire $1,200 assessment is exempt."
+  },
+  {
+    "id": "sc-senior-homestead-age-ineligible",
+    "programId": "sc-homestead-exemption",
+    "inputs": {
+      "age": "64",
+      "assessed_property_value": "3200"
+    },
+    "expectedValue": 0,
+    "source": "https://www.scstatehouse.gov/code/t12c037.php",
+    "sourceLocation": "§ 12-37-250(A)(1)(i), (A)(2). An applicant age 64 on December 31, 2024, without other qualifying status misses the 2025 age-based exemption."
+  },
+  {
+    "id": "ms-senior-homestead-assessed-cap",
+    "programId": "ms-age-disability-homestead-exemption",
+    "inputs": {
+      "age": "65",
+      "assessed_property_value": "15000"
+    },
+    "expectedValue": 7500,
+    "source": "https://billstatus.ls.state.ms.us/documents/2025/html/HB/0800-0899/HB0812SG.htm",
+    "sourceLocation": "§ 27-33-75(2)(a), and Department of Revenue Homestead Exemption tier 2. Age 65 on January 1, 2025 and qualifying $15,000 assessment. The base exemption is the first $7,500 of assessed value."
+  },
+  {
+    "id": "ms-senior-homestead-assessed-below-cap",
+    "programId": "ms-age-disability-homestead-exemption",
+    "inputs": {
+      "age": "70",
+      "assessed_property_value": "6000"
+    },
+    "expectedValue": 6000,
+    "source": "https://billstatus.ls.state.ms.us/documents/2025/html/HB/0800-0899/HB0812SG.htm",
+    "sourceLocation": "§ 27-33-75(2)(a). Entire $6,000 qualifying assessed value falls within the base $7,500 exemption."
+  },
+  {
+    "id": "ms-senior-homestead-age-ineligible",
+    "programId": "ms-age-disability-homestead-exemption",
+    "inputs": {
+      "age": "64",
+      "assessed_property_value": "15000"
+    },
+    "expectedValue": 0,
+    "source": "https://www.dor.ms.gov/county-services/homestead-exemption",
+    "sourceLocation": "Tier 2. An applicant age 64 on January 1, 2025 without disability or other qualifying status has no age-based exemption. Tier 1 is a separate provision."
+  },
+  {
+    "id": "al-senior-homestead-state-levy",
+    "programId": "al-homestead-exemptions",
+    "inputs": {
+      "age": "65",
+      "assessed_property_value": "10000",
+      "real_estate_taxes": "390"
+    },
+    "expectedValue": 65,
+    "source": "https://admincode.legislature.state.al.us/administrative-code/810-4-1-.23",
+    "sourceLocation": "Rule 810-4-1-.23(3)(b) exempts all state-levied property taxes at age 65. At the Department of Revenue’s 6.5 mills, $10,000 of assessed value carries a state levy of $65 before exemptions."
+  },
+  {
+    "id": "al-senior-homestead-larger-state-levy",
+    "programId": "al-homestead-exemptions",
+    "inputs": {
+      "age": "70",
+      "assessed_property_value": "32000",
+      "real_estate_taxes": "1250"
+    },
+    "expectedValue": 208,
+    "source": "https://admincode.legislature.state.al.us/administrative-code/810-4-1-.23",
+    "sourceLocation": "Rule 810-4-1-.23(3)(b) and Department of Revenue state tax rate. At 6.5 mills, $32,000 of assessed value carries a state levy of $208 before exemptions."
+  },
+  {
+    "id": "al-senior-homestead-age-ineligible",
+    "programId": "al-homestead-exemptions",
+    "inputs": {
+      "age": "64",
+      "assessed_property_value": "32000",
+      "real_estate_taxes": "1250"
+    },
+    "expectedValue": 0,
+    "source": "https://admincode.legislature.state.al.us/administrative-code/810-4-1-.23",
+    "sourceLocation": "Rule 810-4-1-.23(3)(a)–(b). The age-65 state levy exemption does not apply at age 64 with no other qualifying status. The ordinary exemption is a separate provision."
   }
 ]

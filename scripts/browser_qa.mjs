@@ -692,7 +692,7 @@ async function calculatorCheck(page, options) {
     diagnosticPhase = "Program selector after TX";
     await page
       .getByLabel("Program", { exact: true })
-      .selectOption({ index: 1 });
+      .selectOption("tx-school-homestead");
   } catch (error) {
     const diagnostic = {
       kind: "CALCULATOR_SELECTOR_FAILURE",
@@ -747,20 +747,25 @@ async function calculatorCheck(page, options) {
     page.off("response", onResponse);
   }
   await page
-    .getByRole("heading", { name: "Calculation unavailable", exact: true })
+    .getByLabel("Appraised home value before exemptions", { exact: true })
+    .fill("300000");
+  const calculate = page.getByRole("button", {
+    name: "Calculate estimate",
+    exact: true,
+  });
+  await calculate.click();
+  await page
+    .getByText("$140,000.00", { exact: true })
+    .waitFor({ timeout: options.responseTimeoutMs });
+  await page
+    .getByText("Home value exempt from school district tax", { exact: true })
     .waitFor();
-  if (await page.getByText(/^\$0(?:\.00)?$/).count())
-    throw new Error("Unavailable is not a zero result");
 
   await state.selectOption("IN");
   await page
     .getByLabel("Program", { exact: true })
     .selectOption("in-renters-income-tax-deduction");
   const rent = page.getByLabel("Qualified annual rent paid", { exact: true });
-  const calculate = page.getByRole("button", {
-    name: "Calculate estimate",
-    exact: true,
-  });
   await calculate.click();
   await page
     .getByRole("alert")

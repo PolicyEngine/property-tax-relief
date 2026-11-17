@@ -23,7 +23,12 @@ export interface CalculatorProgram {
   name: string;
   modelVariable: string | null;
   entity: string | null;
-  kind: "credit" | "rebate" | "deduction" | "bill-reduction";
+  kind:
+    | "credit"
+    | "rebate"
+    | "deduction"
+    | "bill-reduction"
+    | "assessed-value-exemption";
   resultLabel?: string;
   resultNote?: string;
   inputs: CalculatorInput[];

@@ -38,7 +38,9 @@
             "kind": "agency"
           }
         ],
-        "modelVariables": [],
+        "modelVariables": [
+          "al_senior_homestead_exemption"
+        ],
         "paymentMechanism": "not-established"
       }
     ],
@@ -4922,7 +4924,8 @@
           }
         ],
         "modelVariables": [
-          "sc_homestead_property_tax_reduction"
+          "sc_homestead_property_tax_reduction",
+          "sc_homestead_exemption"
         ],
         "paymentMechanism": "taxable-property-value-exemption"
       },

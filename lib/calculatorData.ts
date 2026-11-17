@@ -67,6 +67,8 @@ export function loadCalculatorContracts(): Contract[] {
       output.unit !== "currency-USD" ||
       output.valueType !== "float" ||
       output.definitionPeriod !== "year" ||
+      (contract.kind === "assessed-value-exemption" &&
+        (!contract.resultLabel || !contract.resultNote)) ||
       contract.sourceEvidence.packageVersion !== document.metadataVersion ||
       !/^[a-f0-9]{64}$/.test(contract.sourceEvidence.sha256)
     )

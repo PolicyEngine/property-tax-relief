@@ -1,7 +1,7 @@
 {
   "referenceYear": 2025,
-  "metadataVersion": "2.2.1",
-  "metadataSha256": "670b553ff1eb2307bcb7edf529a03f40826c7beb1b8b057a1fc4e92b53b8de92",
+  "metadataVersion": "2.2.2",
+  "metadataSha256": "8f8b944c3d91a84a891a01274282688fb80f1113a55ce09931ba83f42e25091e",
   "contracts": [
     {
       "id": "in-renters-income-tax-deduction",
@@ -24,7 +24,7 @@
         "The estimate assumes you meet the residence and property-qualification requirements. Mobile-home rent can qualify. Payments by members of cooperative housing projects do not qualify."
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/in/tax/income/deductions/in_renters_deduction.py",
         "sha256": "599db50ba3d574efea7a7f3db261b6cbd9954aa50e1390a3ae9b11a68596ba4d"
       },
@@ -58,7 +58,7 @@
         "This preview excludes claims that use the Lake County residential income-tax credit on 2025 Schedule 5, line 7."
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/in/tax/income/deductions/in_homeowners_property_tax_deduction.py",
         "sha256": "86ade95cda55b23f4350c6d7ea5f3681200dd1a4e23636363cd16695656f75db"
       },
@@ -99,7 +99,7 @@
         "Enter California adjusted gross income from your 2025 Form 540, line 17. Gross wages and total household income can differ from this amount."
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/ca/tax/income/credits/ca_renter_credit.py",
         "sha256": "c41613f4aaff3a9279c2043429daf63ddae32c8cec82cc8ca679635cb88a0eb6"
       },
@@ -176,7 +176,7 @@
         }
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/mi/tax/income/credits/homestead_property_tax/mi_homestead_property_tax_credit.py",
         "sha256": "051ee8226e01c5e008146bb1490cc97e1380d9bc98d212f907b8412911f37483"
       },
@@ -276,7 +276,7 @@
         }
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/nj/tax/income/credits/property_tax_credit/nj_property_tax_credit.py",
         "sha256": "186c50b1ec1bf3fa017d0af18c12cb42d5a37d2b9c52d7ea23750e6795162cfa"
       },
@@ -370,7 +370,7 @@
         }
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/nj/tax/income/property_tax/nj_property_tax_deduction.py",
         "sha256": "4104b635d417670da1e548f255d49c50b485427600fcd8ad038226300cfbf765"
       },
@@ -451,7 +451,7 @@
         }
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/il/tax/income/credits/il_property_tax_credit.py",
         "sha256": "f238adef000461757781ac140469ee1d0580d23a93c78cb10f4b59f505ede945"
       },
@@ -533,7 +533,7 @@
         }
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/pa/tax/property/property_tax_or_rent_rebate/pa_property_tax_or_rent_rebate.py",
         "sha256": "249d361846b79f08fdd43691d1fd6204c9d804f28ac0b310aa4646870aa3678f"
       }
@@ -596,7 +596,7 @@
         }
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/ok/tax/income/credits/ok_ptc.py",
         "sha256": "caba65e52d8d4b9e68cbb9a36799c01783c884d77ac7e4b182318963b7932a14"
       }
@@ -664,9 +664,349 @@
         }
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/ct/tax/income/credits/property_tax/ct_property_tax_credit.py",
         "sha256": "666607b961917d36c205baf5ec17ba8b1713f8f2c335885ebd85917138202b15"
+      }
+    },
+    {
+      "id": "az-property-tax-credit",
+      "state": "AZ",
+      "year": 2025,
+      "modelVariable": "az_property_tax_credit",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age at the end of 2025",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 65,
+          "maximum": 120
+        },
+        {
+          "variable": "az_property_tax_credit_income",
+          "label": "Income for the Arizona property tax credit",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter income from all sources as defined in the Form 140PTC instructions. Enter the whole-dollar amount for someone who lived alone."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualified property taxes paid in 2025",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Include only taxes you paid on the Arizona home you owned and occupied as your primary residence."
+        }
+      ],
+      "notes": [
+        "This estimate covers homeowners age 65 or older who lived alone and were Arizona residents throughout 2025. Use the Form 140PTC instructions to check the remaining requirements."
+      ],
+      "resultLabel": "Arizona property tax credit",
+      "sources": [
+        {
+          "title": "Arizona Revised Statutes § 43-1072",
+          "url": "https://www.azleg.gov/ars/43/01072.htm"
+        },
+        {
+          "title": "Arizona Department of Revenue, Form 140PTC",
+          "url": "https://azdor.gov/forms/tax-credits-forms/property-tax-refund-credit-claim-form-fillable"
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/az/tax/income/credits/property_tax_credit/az_property_tax_credit.py",
+        "sha256": "7417342c9549aa449c64fe046f604b568a598595fdcef77afa7d0a75fb2ad944"
+      }
+    },
+    {
+      "id": "nd-primary-residence-credit",
+      "state": "ND",
+      "year": 2025,
+      "modelVariable": "nd_primary_residence_credit",
+      "entity": "tax_unit",
+      "kind": "bill-reduction",
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "2025 property tax due before the Primary Residence Credit",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Enter the tax due on your North Dakota primary home before this credit. Exclude special assessments."
+        }
+      ],
+      "notes": [
+        "This estimate covers sole owners who occupy a qualifying North Dakota primary home that the county taxes as real estate. It assumes the state approved your application and you receive no other Chapter 57 property tax credits."
+      ],
+      "resultLabel": "Credit against your property tax bill",
+      "resultNote": "The county applies the credit against the tax due on your primary home.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/nd/tax/property/primary_residence_credit/nd_primary_residence_credit.py",
+        "sha256": "4e1a2f32abc485c0618dbfb1456ad2f225f22b1bbbe0170ba92eacd612f7f370"
+      },
+      "sources": [
+        {
+          "title": "North Dakota 2025 House Bill 1176, section 10",
+          "url": "https://ndlegis.gov/assembly/69-2025/regular/documents/25-1003-06000.pdf#page=11"
+        },
+        {
+          "title": "North Dakota 2025 House Bill 1176, section 12",
+          "url": "https://ndlegis.gov/assembly/69-2025/regular/documents/25-1003-06000.pdf#page=17"
+        },
+        {
+          "title": "North Dakota Office of State Tax Commissioner Primary Residence Credit",
+          "url": "https://www.tax.nd.gov/prc"
+        }
+      ]
+    },
+    {
+      "id": "ky-homestead-exemption",
+      "state": "KY",
+      "year": 2025,
+      "modelVariable": "ky_homestead_exemption",
+      "entity": "tax_unit",
+      "kind": "assessed-value-exemption",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age at the end of 2025",
+          "entity": "person",
+          "minimum": 65,
+          "kind": "number"
+        },
+        {
+          "variable": "assessed_property_value",
+          "label": "Assessed value of your home before the exemption",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Use the 2025 assessed value from your Kentucky property valuation administrator."
+        }
+      ],
+      "notes": [
+        "Use this estimate if you reached age 65 by the end of 2025 and owned and occupied your Kentucky primary home on January 1, 2025.",
+        "Apply through the property valuation administrator for your county. The Department of Revenue also lists a separate disability qualification."
+      ],
+      "resultLabel": "Assessed home value exempt from property tax",
+      "resultNote": "Kentucky subtracts this amount from the assessed value of your home before applying local property tax rates.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ky/tax/property/homestead_exemption/ky_homestead_exemption.py",
+        "sha256": "41eb7f7eea5ca7cf391cdaefd75ebccebdb8da7ed7e3b4b5d082889bcc8dd96c"
+      },
+      "sources": [
+        {
+          "title": "Kentucky Department of Revenue homestead exemption for 2025 and 2026",
+          "url": "https://revenue.ky.gov/News/Pages/DOR-Sets-2025-2026-Homestead-Exemption.aspx"
+        },
+        {
+          "title": "Kentucky Revised Statutes §132.810",
+          "url": "https://apps.legislature.ky.gov/law/Statutes/statute.aspx?id=39641"
+        },
+        {
+          "title": "Kentucky Department of Revenue homestead exemption application guidance",
+          "url": "https://revenue.ky.gov/Property/Residential-Farm-Commercial-Property/Pages/Homestead-Exemption.aspx"
+        }
+      ]
+    },
+    {
+      "id": "tx-school-homestead",
+      "state": "TX",
+      "year": 2025,
+      "modelVariable": "tx_school_district_homestead_exemption",
+      "entity": "tax_unit",
+      "kind": "assessed-value-exemption",
+      "inputs": [
+        {
+          "variable": "assessed_property_value",
+          "label": "Appraised home value before exemptions",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Use the 2025 appraised value from your appraisal district after any appraisal cap and before exemptions."
+        }
+      ],
+      "notes": [
+        "Use this estimate if you owned and occupied your qualifying Texas primary home throughout 2025.",
+        "Apply with your local appraisal district. The district checks whether you qualify for this and any additional exemptions."
+      ],
+      "resultLabel": "Home value exempt from school district tax",
+      "resultNote": "Your school district calculates tax on the appraised value after exemptions. Your bill depends on the district tax rate and any additional exemptions.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/tx/tax/property/school_district_homestead_exemption/tx_school_district_homestead_exemption.py",
+        "sha256": "a9a426fff3c1219562775d1761229bce19fe99b2ced019e81af7e69e7a2892a0"
+      },
+      "sources": [
+        {
+          "title": "Texas Comptroller 2025 residential homestead exemptions",
+          "url": "https://comptroller.texas.gov/taxes/property-tax/docs/98-1070.pdf"
+        },
+        {
+          "title": "Texas Comptroller 2025 property tax law changes",
+          "url": "https://comptroller.texas.gov/taxes/property-tax/docs/96-669.pdf"
+        },
+        {
+          "title": "Texas Comptroller appraisal and tax limitations",
+          "url": "https://comptroller.texas.gov/taxes/property-tax/appraisal-tax-limitations.php"
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "entity": "tax_unit",
+      "id": "sc-homestead-exemption",
+      "state": "SC",
+      "modelVariable": "sc_homestead_exemption",
+      "kind": "assessed-value-exemption",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age on December 31, 2024",
+          "entity": "person",
+          "kind": "number",
+          "minimum": 18,
+          "maximum": 120
+        },
+        {
+          "variable": "assessed_property_value",
+          "label": "Assessed value before the homestead exemption",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 100,
+          "description": "Enter the assessed value of the home from your 2025 property assessment. Use the value based on South Carolina’s 4% legal residence assessment ratio."
+        }
+      ],
+      "notes": [
+        "This calculation covers the age-based exemption for the sole owner of a qualifying legal residence who lived in South Carolina for at least one year by December 31, 2024. It assumes you applied and meet the other ownership and residence requirements.",
+        "The 2025 exemption covers the first $50,000 of fair market value. South Carolina assesses a qualifying legal residence at 4% of fair market value."
+      ],
+      "resultLabel": "Assessed value exempt from property tax",
+      "resultNote": "The exemption reduces the assessed value subject to property tax. Your tax savings depend on the levies that apply to your home.",
+      "sources": [
+        {
+          "title": "South Carolina Code § 12-37-250, Homestead exemption",
+          "url": "https://www.scstatehouse.gov/code/t12c037.php"
+        },
+        {
+          "title": "South Carolina Code § 12-43-220(c), Legal residence assessment ratio",
+          "url": "https://www.scstatehouse.gov/code/t12c043.php"
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/sc/tax/property/homestead_exemption/sc_homestead_exemption.py",
+        "sha256": "cd3d36acc5b20f50d9b83a0aa65822d91f33d81dbd0762ab201a008b40216ab8"
+      }
+    },
+    {
+      "year": 2025,
+      "entity": "tax_unit",
+      "id": "ms-age-disability-homestead-exemption",
+      "state": "MS",
+      "modelVariable": "ms_age_disability_homestead_exemption",
+      "kind": "assessed-value-exemption",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age on January 1, 2025",
+          "entity": "person",
+          "kind": "number",
+          "minimum": 18,
+          "maximum": 120
+        },
+        {
+          "variable": "assessed_property_value",
+          "label": "Assessed value before the homestead exemption",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter the assessed value of your qualifying home before exemptions, as shown on the 2025 property assessment."
+        }
+      ],
+      "notes": [
+        "This calculation covers the base age-based exemption for a qualifying homeowner. It assumes you own and occupy the home as your primary residence and meet the other requirements.",
+        "If you qualify for an additional exemption for increases in assessed value, military service, disability or surviving-spouse status, contact your county tax assessor for the applicable amount."
+      ],
+      "resultLabel": "Base assessed value exempt from property tax",
+      "resultNote": "The exemption reduces the assessed value subject to property tax. Your tax savings depend on your local tax rates and any additional exemptions.",
+      "sources": [
+        {
+          "title": "Mississippi Department of Revenue, Homestead exemption tier 2",
+          "url": "https://www.dor.ms.gov/county-services/homestead-exemption"
+        },
+        {
+          "title": "2025 Mississippi HB 812, § 27-33-75(2)(a)–(c)",
+          "url": "https://billstatus.ls.state.ms.us/documents/2025/html/HB/0800-0899/HB0812SG.htm"
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ms/tax/property/age_disability_homestead_exemption/ms_age_disability_homestead_exemption.py",
+        "sha256": "f5d9a0c5dfbf6cc6068f5575dfbed59bc7745ca057bab43c62047401e891e1db"
+      }
+    },
+    {
+      "year": 2025,
+      "entity": "tax_unit",
+      "id": "al-homestead-exemptions",
+      "state": "AL",
+      "modelVariable": "al_senior_homestead_exemption",
+      "kind": "bill-reduction",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age on October 1, 2025",
+          "entity": "person",
+          "kind": "number",
+          "minimum": 18,
+          "maximum": 120
+        },
+        {
+          "variable": "assessed_property_value",
+          "label": "Assessed value before the homestead exemption",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter the assessed value for the eligible home and land from your assessment for the 2025–26 property tax year."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Property tax before exemptions",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter the combined state and local property tax on the same home and land before exemptions. Exclude penalties, fees and taxes on other property. Ask your county assessing official for the amount if your bill only shows tax after exemptions."
+        }
+      ],
+      "notes": [
+        "This calculation covers the state property tax levy for a qualifying Alabama resident age 65 or older who owns and occupies the homestead. It assumes you meet the acreage and application requirements.",
+        "Alabama exempts qualifying seniors from the state levy. Your county can apply separate exemptions to local property taxes."
+      ],
+      "resultLabel": "State property tax exempted",
+      "resultNote": "This amount measures the state portion before any exemption. For your county, municipal and school taxes, check with your county assessing official.",
+      "sources": [
+        {
+          "title": "Alabama Administrative Code r. 810-4-1-.23(2), (3) and (8), Homestead exemptions",
+          "url": "https://admincode.legislature.state.al.us/administrative-code/810-4-1-.23"
+        },
+        {
+          "title": "Alabama Department of Revenue, State property tax rate",
+          "url": "https://www.revenue.alabama.gov/tax-types/property-ad-valorem-tax/"
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/al/tax/property/senior_homestead_exemption/al_senior_homestead_exemption.py",
+        "sha256": "4ccdcd67aad3dbe60942257ffd984932be740e2ab611caafb8f4ef9c8c37f0e9"
       }
     }
   ],

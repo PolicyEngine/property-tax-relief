@@ -1,8 +1,8 @@
 {
   "source": "https://www.policyengine.org/api/metadata/us",
-  "checkedAt": "2026-11-15T15:41:05.213853Z",
-  "modelVersion": "2.2.1",
-  "sourceSha256": "670b553ff1eb2307bcb7edf529a03f40826c7beb1b8b057a1fc4e92b53b8de92",
+  "checkedAt": "2026-11-17T19:11:00Z",
+  "modelVersion": "2.2.2",
+  "sourceSha256": "8f8b944c3d91a84a891a01274282688fb80f1113a55ce09931ba83f42e25091e",
   "variables": {
     "adjusted_gross_income": {
       "entity": "tax_unit",
@@ -20,11 +20,35 @@
       "unit": null,
       "isInputVariable": true
     },
+    "al_senior_homestead_exemption": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "al_senior_homestead_exemption",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
     "assessed_property_value": {
       "entity": "person",
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "assessed_property_value",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "az_property_tax_credit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "az_property_tax_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "az_property_tax_credit_income": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "az_property_tax_credit_income",
       "unit": "currency-USD",
       "isInputVariable": false
     },
@@ -202,6 +226,14 @@
       "unit": null,
       "isInputVariable": false
     },
+    "ky_homestead_exemption": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ky_homestead_exemption",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
     "mi_homestead_property_tax_credit": {
       "entity": "tax_unit",
       "valueType": "float",
@@ -215,6 +247,22 @@
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "mi_household_resources",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ms_age_disability_homestead_exemption": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ms_age_disability_homestead_exemption",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "nd_primary_residence_credit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "nd_primary_residence_credit",
       "unit": "currency-USD",
       "isInputVariable": false
     },
@@ -295,6 +343,14 @@
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "rent",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "sc_homestead_exemption": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "sc_homestead_exemption",
       "unit": "currency-USD",
       "isInputVariable": false
     },
@@ -543,6 +599,14 @@
           "label": "AP"
         }
       ]
+    },
+    "tx_school_district_homestead_exemption": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "tx_school_district_homestead_exemption",
+      "unit": "currency-USD",
+      "isInputVariable": false
     }
   }
 }
