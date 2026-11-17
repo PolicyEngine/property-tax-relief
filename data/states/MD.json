@@ -134,6 +134,47 @@
       ],
       "modelVariables": [],
       "paymentMechanism": "assessment-or-tax-limit"
+    },
+    {
+      "id": "md-itemized-real-estate-tax-deduction",
+      "name": "Real estate taxes in Maryland itemized deductions",
+      "category": "deduction",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "paymentMechanism": "income-tax-deduction",
+      "ageRule": "No age test applies to this deduction.",
+      "incomeDefinition": "Maryland starts with the amount used on federal Schedule A. Federal adjusted gross income also determines Maryland’s separate itemized-deduction phaseout.",
+      "incomeLimits": "For a single filer, Maryland reduces itemized deductions by 7.5% of federal adjusted gross income above $200,000. Federal modified AGI can also lower the federal state-and-local-tax deduction limit.",
+      "maximumBenefit": "The qualifying federal real estate tax component after federal and Maryland adjustments. The deduction reduces taxable income.",
+      "formulaSummary": "Federal real estate taxes can carry to Maryland itemized deductions. Maryland subtracts disallowed deductions and applies its income-based reduction.",
+      "application": "Itemize on the federal return. Complete Form 502 lines 17a through 17c, using Worksheet 14A if the income threshold applies.",
+      "eligibilityNotes": [
+        "Use the eligible amount on federal Schedule A and keep records of property taxes paid."
+      ],
+      "interactions": [
+        "A Maryland taxpayer may choose the state standard deduction after itemizing federally. The federal standard deduction excludes Maryland itemization."
+      ],
+      "programYear": "2025 Maryland resident income-tax return",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Maryland Form 502",
+          "url": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/forms/2025/502.pdf#page=2",
+          "kind": "form"
+        },
+        {
+          "title": "2025 Maryland resident instructions",
+          "url": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/instructions/2025/resident-booklet.pdf#page=20",
+          "kind": "form"
+        },
+        {
+          "title": "Maryland Tax–General § 10–218",
+          "url": "https://www.mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gtg&enactments=false&section=10-218",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": ["md_itemized_deductions"]
     }
   ],
   "laterChanges": [],

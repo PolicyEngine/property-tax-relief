@@ -39,6 +39,52 @@
       ],
       "modelVariables": [],
       "paymentMechanism": "cash-rebate"
+    },
+    {
+      "id": "co-real-estate-taxes-in-federal-starting-income",
+      "name": "Real estate taxes in Colorado’s income tax base",
+      "category": "deduction",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "paymentMechanism": "income-tax-deduction",
+      "ageRule": "No age test applies to real estate taxes in the federal itemized deduction.",
+      "incomeDefinition": "Colorado starts from federal taxable income, which reflects a federal filer’s election to claim itemized deductions.",
+      "incomeLimits": "The federal combined tax deduction phases down at higher modified adjusted gross income. Colorado adds back some standard or itemized deductions for taxpayers at the state income threshold.",
+      "maximumBenefit": "The amount of qualifying real estate taxes included within the federal combined limit, subject to Colorado’s additions to federal taxable income.",
+      "formulaSummary": "DR 0104 starts with federal taxable income that reflects itemized real estate taxes. Colorado’s state income tax addback worksheet leaves real estate taxes within the federal deduction. Higher-income filers can also face a separate addition for excess federal deductions.",
+      "application": "Report qualified real estate taxes on federal Schedule A, line 5b. Enter federal taxable income on Colorado DR 0104 line 1 and follow the state income tax addback instructions for line 2.",
+      "eligibilityNotes": [
+        "The calculator uses a single full-year resident, moderate wages-only income, and sufficient mortgage interest to itemize even before property taxes."
+      ],
+      "interactions": [
+        "Federal law limits the combined deduction for state and local taxes. On the 2025 Colorado return, line 2 adds back state income tax within the deduction and line 4 can restore other amounts for filers at the higher-income threshold."
+      ],
+      "programYear": "2025 Colorado income tax return and 2025 federal Schedule A.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Colorado DR 0104 and DR 0104AD instructions",
+          "url": "https://tax.colorado.gov/sites/tax/files/documents/Book104_2025.pdf#page=8",
+          "kind": "form"
+        },
+        {
+          "title": "Colorado DOR state income tax addback worksheet",
+          "url": "https://tax.colorado.gov/income-tax-topics-state-income-tax-addback",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 federal Schedule A",
+          "url": "https://www.irs.gov/pub/irs-prior/i1040sca--2025.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "Colorado Revised Statutes §39-22-104",
+          "url": "https://olls.info/crs/crs2025-title-39.pdf#page=382",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": ["capped_property_taxes"]
     }
   ],
   "researchNotes": [

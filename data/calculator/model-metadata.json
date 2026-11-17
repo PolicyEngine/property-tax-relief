@@ -140,6 +140,14 @@
       "unit": "currency-USD",
       "isInputVariable": false
     },
+    "deductible_mortgage_interest": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "deductible_mortgage_interest",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
     "filing_status": {
       "entity": "tax_unit",
       "valueType": "Enum",
@@ -178,6 +186,14 @@
       "unit": "currency-USD",
       "isInputVariable": false
     },
+    "hi_salt_deduction": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "hi_salt_deduction",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
     "home_mortgage_interest": {
       "entity": "person",
       "valueType": "float",
@@ -185,6 +201,14 @@
       "name": "home_mortgage_interest",
       "unit": "currency-USD",
       "isInputVariable": true
+    },
+    "ia_itemized_deductions_unit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ia_itemized_deductions_unit",
+      "unit": "currency-USD",
+      "isInputVariable": false
     },
     "id_itemized_deductions": {
       "entity": "tax_unit",
@@ -298,6 +322,14 @@
       "unit": "currency-USD",
       "isInputVariable": false
     },
+    "ks_itemized_deductions": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ks_itemized_deductions",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
     "ky_homestead_exemption": {
       "entity": "tax_unit",
       "valueType": "float",
@@ -319,6 +351,14 @@
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "ma_senior_circuit_breaker",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "md_itemized_deductions": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "md_itemized_deductions",
       "unit": "currency-USD",
       "isInputVariable": false
     },
@@ -455,6 +495,14 @@
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "nj_taxable_income_before_property_tax_deduction",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "nm_itemized_deductions": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "nm_itemized_deductions",
       "unit": "currency-USD",
       "isInputVariable": false
     },

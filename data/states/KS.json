@@ -105,6 +105,42 @@
       ],
       "modelVariables": [],
       "paymentMechanism": "cash-rebate"
+    },
+    {
+      "id": "ks-itemized-real-estate-tax-deduction",
+      "name": "Real estate taxes in Kansas itemized deductions",
+      "category": "deduction",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "paymentMechanism": "income-tax-deduction",
+      "ageRule": "No age test on the deduction.",
+      "incomeDefinition": "Kansas computes its itemized deductions independently of the federal itemization election.",
+      "incomeLimits": "No separate income test or federal state-and-local-tax cap applies to this component.",
+      "maximumBenefit": "The full qualifying amount of state and local real estate taxes paid on owned, nonbusiness property. The deduction reduces taxable income.",
+      "formulaSummary": "Kansas Schedule A includes qualifying real estate taxes in state itemized deductions without the federal dollar limit on state and local taxes.",
+      "application": "Complete Kansas Schedule A line 5. Carry the total from line 14 to Form K-40 line 4 if you choose itemized deductions.",
+      "eligibilityNotes": [
+        "Claim taxes assessed uniformly on owned nonbusiness real estate that fund general community or government purposes."
+      ],
+      "interactions": [
+        "Compare Kansas itemized deductions with the Kansas standard deduction. The federal deduction choice does not determine the Kansas election."
+      ],
+      "programYear": "2025 Kansas income-tax return",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Kansas Schedule A",
+          "url": "https://www.ksrevenue.gov/pdf/scha25.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "2025 Kansas income-tax and Schedule A instructions",
+          "url": "https://www.ksrevenue.gov/incomebook25.html",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["ks_itemized_deductions"]
     }
   ],
   "researchNotes": [

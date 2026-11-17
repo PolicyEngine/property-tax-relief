@@ -191,6 +191,47 @@
       ],
       "modelVariables": [],
       "paymentMechanism": "property-tax-bill-reduction"
+    },
+    {
+      "id": "ia-itemized-real-estate-tax-deduction",
+      "name": "Real estate taxes in Iowa itemized deductions",
+      "category": "deduction",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "paymentMechanism": "income-tax-deduction",
+      "ageRule": "No separate age test applies to this deduction.",
+      "incomeDefinition": "Iowa uses federal itemized deductions. Federal modified adjusted gross income can reduce the combined deduction for state and local taxes.",
+      "incomeLimits": "The federal combined limit starts to phase down for a 2025 single filer with modified adjusted gross income over $500,000.",
+      "maximumBenefit": "Eligible property taxes within the federal combined limit for state and local taxes.",
+      "formulaSummary": "Line 1d carries the allowed federal itemized deduction from Form 1040 line 12e. The deduction is already reflected in federal taxable income on line 2.",
+      "application": "Enter Form 1040 line 12e on IA 1040 line 1d and use federal taxable income on line 2.",
+      "eligibilityNotes": [
+        "Use eligible real estate taxes paid on owned nonbusiness property from federal Schedule A line 5b."
+      ],
+      "interactions": [
+        "The federal filing election determines whether the state computation starts with the federal standard deduction or federal itemized deductions."
+      ],
+      "programYear": "2025 Iowa income-tax return, using taxes paid in 2025 and the 2025 federal Schedule A.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 IA 1040 instructions, line 1d",
+          "url": "https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/1040-expanded-instructions/federal-total-income",
+          "kind": "form"
+        },
+        {
+          "title": "2025 IA 1040 instructions, line 2",
+          "url": "https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/1040-expanded-instructions/federal-taxable-income",
+          "kind": "form"
+        },
+        {
+          "title": "2025 federal Schedule A, lines 5a–5e",
+          "url": "https://www.irs.gov/pub/irs-prior/f1040sa--2025.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["ia_itemized_deductions_unit"]
     }
   ],
   "researchNotes": [

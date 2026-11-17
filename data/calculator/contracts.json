@@ -2121,6 +2121,337 @@
         "file": "variables/gov/states/mo/tax/income/credits/property_tax/mo_property_tax_credit.py",
         "sha256": "4f7b00bab0fc204acc8e6d5dc7a5b3d2dff43495c2cb91d347b37c6b27d5eaec"
       }
+    },
+    {
+      "id": "ks-itemized-real-estate-tax-deduction",
+      "state": "KS",
+      "year": 2025,
+      "modelVariable": "ks_itemized_deductions",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Eligible real estate taxes paid in 2025",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter the qualifying state and local real estate taxes from Kansas Schedule A line 5. Use taxes you paid on your own home."
+        }
+      ],
+      "notes": [
+        "This estimate covers a full-year Kansas resident filing singly with eligible real estate taxes on one home as the only Kansas itemized deduction."
+      ],
+      "resultLabel": "Real estate taxes allowed under Kansas itemization",
+      "resultNote": "Compare this amount with your Kansas standard deduction. Kansas allows its own itemization election and does not apply the federal limit on state and local tax deductions to these taxes.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ks/tax/income/deductions/ks_itemized_deductions.py",
+        "sha256": "eb030cf04cf90dd581153cfc6dd1459d80768ef8c865cb909c290f93889b9f82"
+      },
+      "sources": [
+        {
+          "title": "2025 Kansas Schedule A, lines 5, 7 and 14",
+          "url": "https://www.ksrevenue.gov/pdf/scha25.pdf"
+        },
+        {
+          "title": "2025 Kansas income-tax and Schedule A instructions",
+          "url": "https://www.ksrevenue.gov/incomebook25.html"
+        }
+      ]
+    },
+    {
+      "id": "hi-itemized-real-estate-tax-deduction",
+      "state": "HI",
+      "year": 2025,
+      "modelVariable": "hi_salt_deduction",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Eligible real estate taxes paid in 2025",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter Worksheet A-2 line 6. For escrowed taxes, use what the lender paid to the taxing authority in 2025."
+        },
+        {
+          "variable": "state_and_local_sales_or_income_tax",
+          "label": "Income or sales tax deduction on Worksheet A-2",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 0,
+          "maximum": 0,
+          "description": "Enter zero if Worksheet A-2 line 5 is blank or zero. This estimate covers real estate taxes alone."
+        }
+      ],
+      "notes": [
+        "This estimate covers full-year Hawaii residents filing singly who enter only eligible real estate taxes on Worksheet A-2 for one nonbusiness home. Use the Hawaii instructions to determine whether you qualify for itemized deductions."
+      ],
+      "resultLabel": "Real estate taxes in Hawaii’s itemized tax deduction",
+      "resultNote": "The result is the real estate tax component on Form N-11 line 21b. Hawaii applies any overall limit on itemized deductions later.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/hi/tax/income/deductions/itemized/hi_salt_deduction.py",
+        "sha256": "c8a99f0cbc5650e10dc2120631590ea74be8998ca6afb2f2771956bfdd53a4e3"
+      },
+      "sources": [
+        {
+          "title": "2025 Hawaii Form N-11 instructions for line 21b",
+          "url": "https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=16"
+        },
+        {
+          "title": "2025 Hawaii Worksheet A-2, lines 5–9",
+          "url": "https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=34"
+        }
+      ]
+    },
+    {
+      "id": "md-itemized-real-estate-tax-deduction",
+      "state": "MD",
+      "year": 2025,
+      "modelVariable": "md_itemized_deductions",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "adjusted_gross_income",
+          "label": "2025 federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 0,
+          "maximum": 500000,
+          "description": "Enter federal adjusted gross income from Maryland Form 502 line 1. This estimate assumes you have no foreign or territorial income adjustments for the federal tax deduction limit."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Eligible real estate taxes paid in 2025",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter federal Schedule A line 5b before the combined deduction limit."
+        }
+      ],
+      "notes": [
+        "This estimate covers full-year Maryland residents filing singly who itemized federally and listed only eligible real estate taxes on their home. It assumes no amount on Maryland Form 502 line 17b."
+      ],
+      "resultLabel": "Real estate taxes allowed under Maryland itemization",
+      "resultNote": "This amount includes Maryland’s income-based reduction of itemized deductions. Compare it with your Maryland standard deduction before choosing how to file.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/md/tax/income/deductions/md_itemized_deductions.py",
+        "sha256": "ec386ac11f471643d863ba2b757aedb28888681b4419abc57af923c1f03ee17a"
+      },
+      "sources": [
+        {
+          "title": "2025 Maryland Form 502 lines 17a through 17c",
+          "url": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/forms/2025/502.pdf#page=2"
+        },
+        {
+          "title": "2025 Maryland resident instructions, Worksheet 14A",
+          "url": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/instructions/2025/resident-booklet.pdf#page=20"
+        },
+        {
+          "title": "Maryland Tax–General § 10–218",
+          "url": "https://www.mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gtg&enactments=false&section=10-218"
+        },
+        {
+          "title": "2025 federal Schedule A",
+          "url": "https://www.irs.gov/pub/irs-prior/f1040sa--2025.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ia-itemized-real-estate-tax-deduction",
+      "state": "IA",
+      "year": 2025,
+      "modelVariable": "ia_itemized_deductions_unit",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "adjusted_gross_income",
+          "label": "2025 federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 50000,
+          "maximum": 500000,
+          "description": "Enter 2025 federal Form 1040 line 11a. This scenario covers incomes from $50,000 to $500,000 and assumes you have no modifications for foreign or territorial income."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "2025 eligible real estate taxes paid",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter qualifying real estate taxes you paid on nonbusiness property you own, as shown on federal Schedule A line 5b before the combined limit."
+        },
+        {
+          "variable": "state_and_local_sales_or_income_tax",
+          "label": "2025 state or local income or general sales taxes deducted",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 0,
+          "maximum": 0,
+          "description": "Enter 0 when your federal Schedule A line 5a is zero. This scenario also requires zero personal property tax on line 5c."
+        }
+      ],
+      "notes": [
+        "This estimate covers a full-year Iowa resident filing single who chooses to itemize on their federal return and has qualifying real estate taxes as their sole federal itemized deduction.",
+        "The result is the amount included in itemized deductions. Your filing choices and tax rate affect any change in your tax liability."
+      ],
+      "resultLabel": "Real estate taxes included in Iowa itemized deductions",
+      "resultNote": "Line 1d carries the allowed federal itemized deduction from Form 1040 line 12e. The deduction is already reflected in federal taxable income on line 2.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ia/tax/income/including_married_filing_separately/deductions/ia_itemized_deductions_unit.py",
+        "sha256": "f6bb031129831c55669571c1895d1c72cd7e593bda91aabe771ddc2dfff8950f"
+      },
+      "sources": [
+        {
+          "title": "2025 IA 1040 instructions, line 1d",
+          "url": "https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/1040-expanded-instructions/federal-total-income"
+        },
+        {
+          "title": "2025 IA 1040 instructions, line 2",
+          "url": "https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/1040-expanded-instructions/federal-taxable-income"
+        },
+        {
+          "title": "2025 federal Schedule A, lines 5a–5e",
+          "url": "https://www.irs.gov/pub/irs-prior/f1040sa--2025.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nm-itemized-real-estate-tax-deduction",
+      "state": "NM",
+      "year": 2025,
+      "modelVariable": "nm_itemized_deductions",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "adjusted_gross_income",
+          "label": "2025 federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 50000,
+          "maximum": 500000,
+          "description": "Enter 2025 federal Form 1040 line 11a. This scenario covers incomes from $50,000 to $500,000 and assumes you have no modifications for foreign or territorial income."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "2025 eligible real estate taxes paid",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter qualifying real estate taxes you paid on nonbusiness property you own, as shown on federal Schedule A line 5b before the combined limit."
+        },
+        {
+          "variable": "state_and_local_sales_or_income_tax",
+          "label": "2025 state or local income or general sales taxes deducted",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 0,
+          "maximum": 0,
+          "description": "Enter 0 when your federal Schedule A line 5a is zero. This scenario also requires zero personal property tax on line 5c."
+        }
+      ],
+      "notes": [
+        "This estimate covers a full-year New Mexico resident filing single who chooses to itemize on their federal return and has qualifying real estate taxes as their sole federal itemized deduction.",
+        "The result is the amount included in itemized deductions. Your filing choices and tax rate affect any change in your tax liability."
+      ],
+      "resultLabel": "Real estate taxes included in New Mexico itemized deductions",
+      "resultNote": "PIT-1 line 12 carries the allowed federal itemized deduction. With no income or sales taxes on Schedule A line 5a, the line 10 add-back is zero.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/nm/tax/income/deductions/nm_itemized_deductions.py",
+        "sha256": "bd16339b651cdcd13b4f5ef89579f40244aa54891b87df84a7c6b397956fd8e5"
+      },
+      "sources": [
+        {
+          "title": "2025 New Mexico PIT-1 instructions, line 12",
+          "url": "https://realfile.tax.newmexico.gov/2025pit-1-ins.pdf#page=25"
+        },
+        {
+          "title": "2025 New Mexico PIT-1 instructions, line 10 worksheet",
+          "url": "https://realfile.tax.newmexico.gov/2025pit-1-ins.pdf#page=24"
+        },
+        {
+          "title": "2025 federal Schedule A, lines 5a–5e",
+          "url": "https://www.irs.gov/pub/irs-prior/f1040sa--2025.pdf"
+        }
+      ]
+    },
+    {
+      "id": "co-real-estate-taxes-in-federal-starting-income",
+      "state": "CO",
+      "modelVariable": "capped_property_taxes",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/irs/income/taxable_income/deductions/capped_property_taxes.py",
+        "sha256": "e7839784523664b0a9f773f77c770dfcc1b1e61d77c167809649c0ef5c095ac9"
+      },
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualifying real estate taxes paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter the qualified 2025 federal Schedule A line 5b amount before the combined federal limit.",
+          "minimum": 0
+        },
+        {
+          "variable": "adjusted_gross_income",
+          "label": "Federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter wages-only adjusted gross income from 2025 Form 1040 line 11a. The estimate covers $70,000 to $100,000.",
+          "minimum": 70000,
+          "maximum": 100000
+        },
+        {
+          "variable": "deductible_mortgage_interest",
+          "label": "Qualifying mortgage interest",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter the amount eligible on 2025 federal Schedule A line 8e. This estimate covers $20,000 to $25,000 so both calculations use itemized deductions.",
+          "minimum": 20000,
+          "maximum": 25000
+        }
+      ],
+      "notes": [
+        "Use this estimate if you are a full-year Colorado resident filing singly who elected federal itemization for 2025.",
+        "The estimate assumes wages are your only income, Schedule A includes only Colorado income taxes, qualifying real estate taxes and qualified mortgage interest, and you have no other income additions or subtractions.",
+        "Colorado adds back the state income tax included in your federal deduction using its worksheet. The estimate includes the remaining real estate tax deduction within the federal limit."
+      ],
+      "resultLabel": "Real estate taxes included in Colorado’s federal taxable income starting amount",
+      "resultNote": "This amount reduces the modeled Colorado taxable income for the stated itemizing household.",
+      "sources": [
+        {
+          "title": "2025 Colorado DR 0104 and DR 0104AD instructions",
+          "url": "https://tax.colorado.gov/sites/tax/files/documents/Book104_2025.pdf#page=8"
+        },
+        {
+          "title": "Colorado DOR state income tax addback worksheet",
+          "url": "https://tax.colorado.gov/income-tax-topics-state-income-tax-addback"
+        },
+        {
+          "title": "2025 federal Schedule A",
+          "url": "https://www.irs.gov/pub/irs-prior/i1040sca--2025.pdf"
+        },
+        {
+          "title": "Colorado Revised Statutes §39-22-104",
+          "url": "https://olls.info/crs/crs2025-title-39.pdf#page=382"
+        }
+      ]
     }
   ],
   "heldPrograms": [

@@ -153,6 +153,29 @@
       "validated": false
     },
     {
+      "id": "co-real-estate-taxes-in-federal-starting-income",
+      "state": "CO",
+      "variables": [
+        "capped_property_taxes"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "capped_property_taxes": {
+          "file": "gov/irs/income/taxable_income/deductions/capped_property_taxes.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "capped_property_taxes"
+      ],
+      "validated": false
+    },
+    {
       "id": "ct-income-tax-property-credit",
       "state": "CT",
       "variables": [
@@ -379,6 +402,27 @@
       "validated": false
     },
     {
+      "id": "hi-itemized-real-estate-tax-deduction",
+      "state": "HI",
+      "variables": [
+        "hi_salt_deduction"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "hi_salt_deduction": {
+          "file": "gov/states/hi/tax/income/deductions/itemized/hi_salt_deduction.py",
+          "methods": [],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "hi_salt_deduction"
+      ],
+      "validated": false
+    },
+    {
       "id": "id-property-tax-reduction",
       "state": "ID",
       "variables": [],
@@ -592,6 +636,29 @@
       "validated": false
     },
     {
+      "id": "ia-itemized-real-estate-tax-deduction",
+      "state": "IA",
+      "variables": [
+        "ia_itemized_deductions_unit"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "ia_itemized_deductions_unit": {
+          "file": "gov/states/ia/tax/income/including_married_filing_separately/deductions/ia_itemized_deductions_unit.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "ia_itemized_deductions_unit"
+      ],
+      "validated": false
+    },
+    {
       "id": "ks-homestead-refund",
       "state": "KS",
       "variables": [],
@@ -622,6 +689,29 @@
       "variableDetails": {},
       "status": "implementation-missing",
       "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "ks-itemized-real-estate-tax-deduction",
+      "state": "KS",
+      "variables": [
+        "ks_itemized_deductions"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "ks_itemized_deductions": {
+          "file": "gov/states/ks/tax/income/deductions/ks_itemized_deductions.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "ks_itemized_deductions"
+      ],
       "validated": false
     },
     {
@@ -743,6 +833,29 @@
       "variableDetails": {},
       "status": "context",
       "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "md-itemized-real-estate-tax-deduction",
+      "state": "MD",
+      "variables": [
+        "md_itemized_deductions"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "md_itemized_deductions": {
+          "file": "gov/states/md/tax/income/deductions/md_itemized_deductions.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "md_itemized_deductions"
+      ],
       "validated": false
     },
     {
@@ -1239,6 +1352,27 @@
       "variableDetails": {},
       "status": "context",
       "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "nm-itemized-real-estate-tax-deduction",
+      "state": "NM",
+      "variables": [
+        "nm_itemized_deductions"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "nm_itemized_deductions": {
+          "file": "gov/states/nm/tax/income/deductions/nm_itemized_deductions.py",
+          "methods": [],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "nm_itemized_deductions"
+      ],
       "validated": false
     },
     {

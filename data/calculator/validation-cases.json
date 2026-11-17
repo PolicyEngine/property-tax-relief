@@ -1318,5 +1318,221 @@
     "expectedValue": 0,
     "source": "https://revisor.mo.gov/main/OneSection.aspx?section=135.030&bid=6439",
     "sourceLocation": "RSMo §135.030.2 allows no credit without property tax or rent attributable to tax. With no eligible tax and no rent, the amount is $0."
+  },
+  {
+    "id": "ks-itemized-property-no-paid-taxes",
+    "programId": "ks-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://www.ksrevenue.gov/pdf/scha25.pdf",
+    "sourceLocation": "Kansas Schedule A lines 5, 7 and 14. With no eligible property tax or other itemized expense, the itemized component is $0."
+  },
+  {
+    "id": "ks-itemized-property-5000",
+    "programId": "ks-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "5000"
+    },
+    "expectedValue": 5000,
+    "source": "https://www.ksrevenue.gov/pdf/scha25.pdf",
+    "sourceLocation": "Kansas Schedule A line 5 takes $5,000 of eligible real estate tax. With other lines at zero, $5,000 flows through lines 7 and 14."
+  },
+  {
+    "id": "ks-itemized-property-above-federal-cap",
+    "programId": "ks-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "45000"
+    },
+    "expectedValue": 45000,
+    "source": "https://www.ksrevenue.gov/incomebook25.html",
+    "sourceLocation": "2025 Schedule A instructions, Taxes You Paid, line 5. Kansas leaves $45,000 of eligible property tax uncapped when computing the state itemized amount."
+  },
+  {
+    "id": "hi-itemized-property-no-paid-taxes",
+    "programId": "hi-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "0",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=34",
+    "sourceLocation": "Worksheet A-2 lines 5–9. A zero real estate amount with every other line at zero gives a $0 line 9 component, before choosing itemization."
+  },
+  {
+    "id": "hi-itemized-property-6800",
+    "programId": "hi-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "6800",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 6800,
+    "source": "https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=34",
+    "sourceLocation": "Worksheet A-2 lines 6 and 9. Qualified real estate tax of $6,800 flows to Form N-11 line 21b when all other taxes are zero."
+  },
+  {
+    "id": "hi-itemized-property-above-federal-cap",
+    "programId": "hi-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "45000",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 45000,
+    "source": "https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=16",
+    "sourceLocation": "2025 Form N-11 line 21b instructions and Worksheet A-2 lines 6 and 9. Hawaii's state and local tax calculation does not apply the federal cap, so the component is $45,000 before any overall itemized-deduction limit."
+  },
+  {
+    "id": "md-itemized-property-20000",
+    "programId": "md-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "100000",
+      "real_estate_taxes": "20000"
+    },
+    "expectedValue": 20000,
+    "source": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/forms/2025/502.pdf#page=2",
+    "sourceLocation": "Form 502 lines 17a–17c. $20,000 in federal Schedule A real estate taxes carries through with a zero addback and no Maryland phaseout."
+  },
+  {
+    "id": "md-itemized-property-federal-cap",
+    "programId": "md-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "180000",
+      "real_estate_taxes": "50000"
+    },
+    "expectedValue": 40000,
+    "source": "https://www.irs.gov/pub/irs-prior/f1040sa--2025.pdf",
+    "sourceLocation": "Federal Schedule A lines 5b–5e limit $50,000 in sole real estate taxes to $40,000. That amount carries through Maryland Form 502 lines 17a–17c with no phaseout."
+  },
+  {
+    "id": "md-itemized-property-phaseout-to-zero",
+    "programId": "md-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "480000",
+      "real_estate_taxes": "21000"
+    },
+    "expectedValue": 0,
+    "source": "https://www.mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gtg&enactments=false&section=10-218",
+    "sourceLocation": "Md. Tax–General § 10–218(c)(3) and Worksheet 14A. Federal itemized deductions are $21,000. Subtract 7.5% of the $280,000 federal AGI excess, or $21,000. Maryland itemized deductions are $0."
+  },
+  {
+    "id": "ia-property-tax-itemization-20000",
+    "programId": "ia-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "100000",
+      "real_estate_taxes": "20000",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 20000,
+    "source": "https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/1040-expanded-instructions/federal-total-income",
+    "sourceLocation": "The single homeowner has $20,000 on Schedule A line 5b and no other itemized deductions. The $40,000 combined limit does not bind. Line 1d carries the allowed federal itemized deduction from Form 1040 line 12e. The deduction is already reflected in federal taxable income on line 2."
+  },
+  {
+    "id": "ia-property-tax-itemization-40000",
+    "programId": "ia-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "250000",
+      "real_estate_taxes": "40000",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 40000,
+    "source": "https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/1040-expanded-instructions/federal-total-income",
+    "sourceLocation": "The homeowner's sole federal itemized expense equals the $40,000 combined limit for a single filer. Line 1d carries the allowed federal itemized deduction from Form 1040 line 12e. The deduction is already reflected in federal taxable income on line 2."
+  },
+  {
+    "id": "ia-property-tax-itemization-45000",
+    "programId": "ia-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "500000",
+      "real_estate_taxes": "45000",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 40000,
+    "source": "https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/1040-expanded-instructions/federal-total-income",
+    "sourceLocation": "At $500,000 of federal adjusted gross income with no foreign or territorial modifications, the 2025 federal limit remains $40,000. The owner reports $45,000 before the limit. Line 1d carries the allowed federal itemized deduction from Form 1040 line 12e. The deduction is already reflected in federal taxable income on line 2."
+  },
+  {
+    "id": "nm-property-tax-itemization-20000",
+    "programId": "nm-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "100000",
+      "real_estate_taxes": "20000",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 20000,
+    "source": "https://realfile.tax.newmexico.gov/2025pit-1-ins.pdf#page=25",
+    "sourceLocation": "The single homeowner has $20,000 on Schedule A line 5b and no other itemized deductions. The $40,000 combined limit does not bind. PIT-1 line 12 carries the allowed federal itemized deduction. With no income or sales taxes on Schedule A line 5a, the line 10 add-back is zero."
+  },
+  {
+    "id": "nm-property-tax-itemization-40000",
+    "programId": "nm-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "250000",
+      "real_estate_taxes": "40000",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 40000,
+    "source": "https://realfile.tax.newmexico.gov/2025pit-1-ins.pdf#page=25",
+    "sourceLocation": "The homeowner's sole federal itemized expense equals the $40,000 combined limit for a single filer. PIT-1 line 12 carries the allowed federal itemized deduction. With no income or sales taxes on Schedule A line 5a, the line 10 add-back is zero."
+  },
+  {
+    "id": "nm-property-tax-itemization-45000",
+    "programId": "nm-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "500000",
+      "real_estate_taxes": "45000",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 40000,
+    "source": "https://realfile.tax.newmexico.gov/2025pit-1-ins.pdf#page=25",
+    "sourceLocation": "At $500,000 of federal adjusted gross income with no foreign or territorial modifications, the 2025 federal limit remains $40,000. The owner reports $45,000 before the limit. PIT-1 line 12 carries the allowed federal itemized deduction. With no income or sales taxes on Schedule A line 5a, the line 10 add-back is zero."
+  },
+  {
+    "id": "co-real-estate-tax-itemizing-zero",
+    "programId": "co-real-estate-taxes-in-federal-starting-income",
+    "inputs": {
+      "real_estate_taxes": "0",
+      "adjusted_gross_income": "100000",
+      "deductible_mortgage_interest": "20000"
+    },
+    "expectedValue": 0,
+    "source": "https://tax.colorado.gov/sites/tax/files/documents/Book104_2025.pdf#page=8",
+    "sourceLocation": "2025 DR 0104 lines 1, 2, 4, 11 and 12, 2025 federal Schedule A lines 5a–5e and 8e, and Colorado's state income tax addback worksheet. Same resident single itemizer with $100,000 wages, $20,000 eligible mortgage interest, and $5,000 qualifying Colorado income tax as the only other tax. The real estate tax line is zero, so no real estate taxes are included."
+  },
+  {
+    "id": "co-real-estate-tax-itemizing-ordinary",
+    "programId": "co-real-estate-taxes-in-federal-starting-income",
+    "inputs": {
+      "real_estate_taxes": "5000",
+      "adjusted_gross_income": "100000",
+      "deductible_mortgage_interest": "20000"
+    },
+    "expectedValue": 5000,
+    "source": "https://tax.colorado.gov/sites/tax/files/documents/Book104_2025.pdf#page=8",
+    "sourceLocation": "2025 DR 0104 lines 1, 2, 4, 11 and 12, 2025 federal Schedule A lines 5a–5e and 8e, and Colorado's state income tax addback worksheet. Same resident single itemizer with $100,000 wages, $20,000 eligible mortgage interest, and $5,000 qualifying Colorado income tax as the only other tax. Schedule A line 5e includes $5,000 income tax and $5,000 real estate tax. Colorado DR 0104 line 2 adds back $5,000 of income tax."
+  },
+  {
+    "id": "co-real-estate-tax-itemizing-income-tax-crowd-out",
+    "programId": "co-real-estate-taxes-in-federal-starting-income",
+    "inputs": {
+      "real_estate_taxes": "37000",
+      "adjusted_gross_income": "100000",
+      "deductible_mortgage_interest": "20000"
+    },
+    "expectedValue": 37000,
+    "source": "https://tax.colorado.gov/sites/tax/files/documents/Book104_2025.pdf#page=8",
+    "sourceLocation": "2025 DR 0104 lines 1, 2, 4, 11 and 12, 2025 federal Schedule A lines 5a–5e and 8e, and Colorado's state income tax addback worksheet. Same resident single itemizer with $100,000 wages, $20,000 eligible mortgage interest, and $5,000 qualifying Colorado income tax as the only other tax. The $40,000 combined deduction contains $37,000 of real estate taxes and $3,000 of state income tax under Colorado's line 2 worksheet."
+  },
+  {
+    "id": "co-real-estate-tax-itemizing-property-tax-cap",
+    "programId": "co-real-estate-taxes-in-federal-starting-income",
+    "inputs": {
+      "real_estate_taxes": "45000",
+      "adjusted_gross_income": "100000",
+      "deductible_mortgage_interest": "20000"
+    },
+    "expectedValue": 40000,
+    "source": "https://tax.colorado.gov/sites/tax/files/documents/Book104_2025.pdf#page=8",
+    "sourceLocation": "2025 DR 0104 lines 1, 2, 4, 11 and 12, 2025 federal Schedule A lines 5a–5e and 8e, and Colorado's state income tax addback worksheet. Same resident single itemizer with $100,000 wages, $20,000 eligible mortgage interest, and $5,000 qualifying Colorado income tax as the only other tax. Schedule A line 5e limits the $50,000 total to $40,000. The Colorado line 2 worksheet adds back no income tax when real estate taxes alone exhaust the deduction."
   }
 ]
