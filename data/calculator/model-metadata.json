@@ -170,6 +170,22 @@
         }
       ]
     },
+    "ga_deductions": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ga_deductions",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "home_mortgage_interest": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "home_mortgage_interest",
+      "unit": "currency-USD",
+      "isInputVariable": true
+    },
     "id_itemized_deductions": {
       "entity": "tax_unit",
       "valueType": "float",
@@ -343,6 +359,22 @@
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "mi_household_resources",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "mo_property_tax_credit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "mo_property_tax_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "mo_ptc_net_income": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "mo_ptc_net_income",
       "unit": "currency-USD",
       "isInputVariable": false
     },

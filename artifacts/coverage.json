@@ -333,6 +333,29 @@
       "validated": false
     },
     {
+      "id": "ga-itemized-real-estate-tax-deduction",
+      "state": "GA",
+      "variables": [
+        "ga_deductions"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "ga_deductions": {
+          "file": "gov/states/ga/tax/income/deductions/ga_deductions.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "ga_deductions"
+      ],
+      "validated": false
+    },
+    {
       "id": "hi-low-income-household-renters-credit",
       "state": "HI",
       "variables": [

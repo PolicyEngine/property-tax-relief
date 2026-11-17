@@ -1992,6 +1992,135 @@
           "url": "https://www.revenue.wi.gov/TaxForms2025/2025-Form1-Inst.pdf#page=20"
         }
       ]
+    },
+    {
+      "id": "ga-itemized-real-estate-tax-deduction",
+      "state": "GA",
+      "year": 2025,
+      "modelVariable": "ga_deductions",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "adjusted_gross_income",
+          "label": "2025 federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 60000,
+          "maximum": 200000,
+          "description": "Enter federal Form 1040 line 11a."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Eligible real estate taxes paid in 2025",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "maximum": 5000,
+          "description": "Enter federal Schedule A line 5b."
+        },
+        {
+          "variable": "state_and_local_sales_or_income_tax",
+          "label": "Georgia income taxes deducted on Schedule A",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 0,
+          "maximum": 5000,
+          "description": "Enter federal Schedule A line 5a. Use this estimate if the amount includes only Georgia income taxes."
+        },
+        {
+          "variable": "home_mortgage_interest",
+          "label": "Eligible mortgage interest and points deducted in 2025",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 18000,
+          "maximum": 35000,
+          "description": "Enter the deductible amount from federal Schedule A line 8e. Use the amount after applying any federal mortgage limits."
+        }
+      ],
+      "notes": [
+        "This estimate covers full-year Georgia residents under age 65 who filed a single federal return using Schedule A and claimed only eligible real estate taxes, Georgia income taxes, and eligible mortgage interest and points. It assumes no Georgia adjustment on Form 500 line 12b."
+      ],
+      "resultLabel": "Georgia itemized deduction including real estate taxes",
+      "resultNote": "The amount includes all three expenses you entered and reduces Georgia taxable income. The estimate covers inputs whose combined income and real estate taxes stay within Georgia’s $10,000 limit.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ga/tax/income/deductions/ga_deductions.py",
+        "sha256": "b9cea7143c12c0b7b10d5573df426f1eb8251fd081ab73c43eed6966e8b475f6"
+      },
+      "sources": [
+        {
+          "title": "2025 Georgia IT-511 instructions and Form 500 lines 11–12c",
+          "url": "https://dor.georgia.gov/document/document/2025-it-511-individual-income-tax-booklet/download#page=17"
+        },
+        {
+          "title": "Official Code of Georgia § 48-7-27",
+          "url": "https://www.legis.ga.gov/api/document/docs/default-source/joint-features-document-library/t48-ch7-8-%28v37%29-pdf.pdf#page=19"
+        },
+        {
+          "title": "2025 federal Schedule A",
+          "url": "https://www.irs.gov/pub/irs-prior/f1040sa--2025.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mo-property-tax-credit",
+      "state": "MO",
+      "year": 2025,
+      "modelVariable": "mo_property_tax_credit",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age at the end of 2025",
+          "entity": "person",
+          "kind": "number",
+          "minimum": 65,
+          "maximum": 120
+        },
+        {
+          "variable": "mo_ptc_net_income",
+          "label": "Net household income for the Missouri credit",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 1,
+          "maximum": 14300,
+          "description": "Enter the net household income from 2025 Form MO-PTC, line 8."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Eligible property taxes paid in 2025",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter the qualified property tax you paid for your home. Use the 2025 Form MO-PTC instructions for line 9."
+        }
+      ],
+      "notes": [
+        "This estimate covers Missouri residents age 65 or older who owned and occupied their home throughout 2025.",
+        "Use this calculation for net household income from $1 through $14,300. The Missouri credit chart has a separate calculation for higher income."
+      ],
+      "resultLabel": "Missouri property tax credit",
+      "sources": [
+        {
+          "title": "Missouri Revised Statutes § 135.030",
+          "url": "https://revisor.mo.gov/main/OneSection.aspx?section=135.030&bid=6439"
+        },
+        {
+          "title": "2025 Missouri property tax credit claim",
+          "url": "https://dor.mo.gov/forms/MO-PTC%20Print%20Only_2025.pdf"
+        },
+        {
+          "title": "2025 Missouri property tax credit chart",
+          "url": "https://dor.mo.gov/forms/Property%20Tax%20Claim%20Chart_2025.pdf"
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/mo/tax/income/credits/property_tax/mo_property_tax_credit.py",
+        "sha256": "4f7b00bab0fc204acc8e6d5dc7a5b3d2dff43495c2cb91d347b37c6b27d5eaec"
+      }
     }
   ],
   "heldPrograms": [

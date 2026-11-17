@@ -1217,6 +1217,51 @@
         ],
         "modelVariables": [],
         "paymentMechanism": "taxable-property-value-exemption"
+      },
+      {
+        "id": "ga-itemized-real-estate-tax-deduction",
+        "name": "Real estate taxes in Georgia itemized deductions",
+        "category": "deduction",
+        "scope": "statewide",
+        "tenures": [
+          "owner"
+        ],
+        "refundable": false,
+        "paymentMechanism": "income-tax-deduction",
+        "ageRule": "No age test on this deduction.",
+        "incomeDefinition": "Georgia starts with itemized deductions used on the federal return. Federal modified adjusted gross income can limit deductible state and local taxes.",
+        "incomeLimits": "Georgia imposes no separate income limit on this component. Federal adjusted gross income can affect the combined federal tax deduction.",
+        "maximumBenefit": "The amount of eligible real estate taxes that fits within the combined state and local tax limits. Georgia adds back the portion of the federal deduction that exceeds $10,000, or $5,000 for married taxpayers filing separately.",
+        "formulaSummary": "Taxpayers who itemize on their federal return use federal itemized deductions in Georgia, subject to state adjustments. Eligible property taxes are included in those deductions.",
+        "application": "Attach federal Schedule A to Georgia Form 500 and complete lines 12a through 12c. Follow the instructions for adjustments to your federal amounts.",
+        "eligibilityNotes": [
+          "Use the federal qualified real estate tax amount from Schedule A line 5b."
+        ],
+        "interactions": [
+          "Georgia follows the taxpayer\u2019s federal choice of standard or itemized deductions. The state cap on the combined tax deduction may be lower than the federal cap."
+        ],
+        "programYear": "2025 Georgia income tax return and 2025 federal Schedule A.",
+        "rentProxy": null,
+        "sources": [
+          {
+            "title": "2025 Georgia IT-511 instructions and Form 500 lines 11\u201312c",
+            "url": "https://dor.georgia.gov/document/document/2025-it-511-individual-income-tax-booklet/download#page=17",
+            "kind": "form"
+          },
+          {
+            "title": "Official Code of Georgia \u00a7 48-7-27(a)(1)(A), (b)(3), and (b)(8)",
+            "url": "https://www.legis.ga.gov/api/document/docs/default-source/joint-features-document-library/t48-ch7-8-%28v37%29-pdf.pdf#page=19",
+            "kind": "statute"
+          },
+          {
+            "title": "2025 federal Schedule A",
+            "url": "https://www.irs.gov/pub/irs-prior/f1040sa--2025.pdf",
+            "kind": "form"
+          }
+        ],
+        "modelVariables": [
+          "ga_deductions"
+        ]
       }
     ],
     "researchNotes": [
