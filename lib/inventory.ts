@@ -1,4 +1,22 @@
-import type { Category, Program, StateProfile, Tenure } from "./types";
+import type {
+  Category,
+  PaymentMechanism,
+  Program,
+  StateProfile,
+  Tenure,
+} from "./types";
+
+export const PAYMENT_MECHANISM_LABELS: Record<PaymentMechanism, string> = {
+  "property-tax-bill-reduction": "Property-tax bill reduction",
+  "taxable-property-value-exemption": "Exemption of taxable property value",
+  "income-tax-credit": "Income-tax credit",
+  "cash-rebate": "Cash rebate",
+  "income-tax-deduction": "Deduction from taxable income",
+  "tax-deferral": "Repayable tax deferral",
+  "assessment-or-tax-limit": "Assessment or tax limit",
+  "varies-by-locality": "Varies by locality",
+  "not-established": "Payment mechanism not established in this inventory",
+};
 
 export const STATE_CODES =
   "AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY".split(
@@ -64,7 +82,7 @@ export function filterStates(
 
 function csvCell(value: unknown): string {
   const text = String(value ?? "");
-  const safe = /^[=+@-]/.test(text) ? `'${text}` : text;
+  const safe = /^(?:\s*[=+@-]|[\t\r\n])/.test(text) ? `'${text}` : text;
   return `"${safe.replaceAll('"', '""')}"`;
 }
 
@@ -73,11 +91,13 @@ export function inventoryCsv(states: StateProfile[]): string {
     "state",
     "code",
     "tax_year",
+    "program_id",
     "program",
     "category",
     "scope",
     "tenures",
     "refundable",
+    "payment_mechanism",
     "age_rule",
     "income_definition",
     "income_limits",
@@ -87,6 +107,7 @@ export function inventoryCsv(states: StateProfile[]): string {
     "program_year",
     "source_urls",
     "research_status",
+    "state_research_notes",
   ];
   const rows = states.flatMap((state) => {
     if (!state.programs.length)
@@ -95,6 +116,7 @@ export function inventoryCsv(states: StateProfile[]): string {
           state.name,
           state.code,
           state.taxYear,
+          "",
           "No program recorded",
           "",
           "",
@@ -107,19 +129,23 @@ export function inventoryCsv(states: StateProfile[]): string {
           "",
           "",
           "",
-          state.sources.map((s) => s.url).join(" | "),
+          "",
+          [...new Set(state.sources.map((source) => source.url))].join(" | "),
           state.inventoryStatus,
+          state.researchNotes.join(" | "),
         ],
       ];
     return state.programs.map((p) => [
       state.name,
       state.code,
       state.taxYear,
+      p.id,
       p.name,
       p.category,
       p.scope,
       p.tenures.join(" | "),
-      p.refundable === null ? "Not specified" : String(p.refundable),
+      p.refundable === null ? "" : String(p.refundable),
+      p.paymentMechanism ?? "not-established",
       p.ageRule,
       p.incomeDefinition,
       p.incomeLimits,
@@ -127,8 +153,13 @@ export function inventoryCsv(states: StateProfile[]): string {
       p.formulaSummary,
       p.application,
       p.programYear,
-      p.sources.map((s) => s.url).join(" | "),
+      [
+        ...new Set(
+          [...p.sources, ...state.sources].map((source) => source.url),
+        ),
+      ].join(" | "),
       state.inventoryStatus,
+      state.researchNotes.join(" | "),
     ]);
   });
   return [headings, ...rows]

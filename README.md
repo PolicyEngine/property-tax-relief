@@ -4,15 +4,17 @@ A source-linked research review of selected income-tax credits and deductions, c
 
 ## Scope
 
-The comparison uses program-specific 2025 reference periods, with official sources checked on November 13–14, 2026. A program's income, assessment, tax-payment, filing and benefit-payment years can differ; its `programYear` field records that distinction. Later changes are identified separately. The main comparison includes identified statewide credits, rebates and income-tax deductions. Deductions reduce taxable income; their dollar limits are not cash benefits or tax savings. Selected exemptions, assessment limits, deferrals and local programs provide separate context. The inventory is not exhaustive, and state-return subtractions, itemization rules and federal-state conformity still require a systematic audit. Every jurisdiction appears in the inventory, including those without an identified statewide credit.
+The comparison uses program-specific 2025 reference periods. Its initial source pass ran November 13–14, 2026, with targeted follow-up checks on November 17, 2026. A program's income, assessment, tax-payment, filing and benefit-payment years can differ; its `programYear` field records that distinction. The profiles describe later changes separately. The main comparison includes identified statewide credits, rebates and income-tax deductions. Deductions reduce taxable income; their dollar limits are not cash benefits or tax savings. Selected exemptions, assessment limits, deferrals and local programs provide separate context. The inventory is not exhaustive, and state-return subtractions, itemization rules and federal-state conformity still require a systematic audit. Every jurisdiction appears in the inventory, including those without an identified statewide credit.
 
 `inventoryStatus: researched` records completion of an initial source pass, the label shown in the report. `statewideCreditStatus: identified` records an identified program in its stated reference cycle. These fields do not establish exhaustive coverage, validated calculations or adjudication of transitional claims. South Dakota's historical entry describes its 2025 application cycle; its property-refund repeal took effect July 1, 2026, and accrued-claim and assessment/payable-year questions remain explicit in that profile.
 
-Every numerical household result must come from the PolicyEngine model for that exact scenario. Model coverage and legal coverage are audited separately. Missing implementations must not appear as zero benefits. Publishing this research draft requires independent review and website integration checks. A national household calculator additionally requires a completed scope audit and validated models, scenarios and interactions.
+This report describes program rules and matching model declarations. It provides no household estimates. Declaration presence does not establish that a model implements the recorded program correctly. Household calculations require separate validation of the exact scenario, eligibility rules, timing and interactions; a missing implementation never supplies a zero benefit.
 
 ## Review artifacts
 
 The `artifacts/` directory contains a self-contained interactive (`index.html`), a report (`report.html`), methods (`methods.html`), and the matching JSON/CSV downloads. These local research drafts do not require a running server. They describe program rules; household calculations and independent review remain outstanding. The inventory does not establish exhaustive program coverage or provide a filing determination.
+
+Browser and static CSV downloads use the same serializer and 20-column schema. `program_id` joins each program to the JSON inventory and coverage audit. `payment_mechanism` records the explicit mechanism separately from `refundable`; an unclassified mechanism uses `not-established`. `state_research_notes` carries profile boundaries and omissions on each program row; `source_urls` combines program and state references without duplicates. CSVs use UTF-8 with a byte-order mark, CRLF row endings, quoted cells, lowercase booleans and empty cells for null refundability. The serializer escapes embedded quotes and guards spreadsheet formula prefixes.
 
 ## Reproduce
 
@@ -22,6 +24,8 @@ Use Python 3.13 and Bun 1.3.12:
 uv sync --locked
 bun install --frozen-lockfile
 bun run data:build
+bun run lint
+bun run format:check
 bun run test
 uv run pytest
 bun run artifacts:build
@@ -37,17 +41,17 @@ uv run python scripts/build_inventory.py \
 
 The generator resolves the requested ref to an immutable commit and reads its variable files with `git archive`. Staged, modified and untracked working files cannot change that snapshot. `--canonical-ref` defaults to `HEAD`; select `upstream/main` to exclude an unmerged local branch. The audit records the requested ref, resolved commit and committed-source mode separately from the installed-package audit. Without `--canonical-model`, it records canonical source as not inspected. Fetch the intended canonical ref before running the command when a newer remote snapshot is required.
 
-`bun run dev` serves the Next.js development version at `http://localhost:3075`; after building, `bun run start` serves the static export there. Linux CI exercises the served app and the saved HTML with networking disabled, including search, comparison limits, renter filters, full CSV downloads and mobile layout. Screenshots and the browser result are retained as CI artifacts. The project uses Next App Router, Tailwind and `@policyengine/ui-kit`. Household analysis depends on `policyengine[us]==6.19.0`, whose resolved country-model pin is recorded in the generated coverage audit. No household estimates have been generated by this draft.
+`bun run dev` serves the Next.js development version at `http://localhost:3075`; after building, `bun run start` serves the static export there. Linux CI exercises the served app and the saved HTML with networking disabled, including search, comparison limits, renter filters, full CSV downloads and mobile layout. CI retains screenshots and the browser result as artifacts. The project uses Next App Router, Tailwind and `@policyengine/ui-kit`. The source audit reads the country-model dependency pinned by `policyengine[us]==6.19.0`; the generated audit records its resolved version. It parses declarations without importing country-model code or calculating household amounts.
 
 ## Validation and release boundary
 
-Tests cover all 51 jurisdiction records, unique program IDs, source/year metadata, category separation, filter invariants, downloads, generated-data consistency, and separation of shared chrome from tool-specific provenance. The source-level audit distinguishes available calculation declarations from missing references, input-only variables, and later-starting formulas. Declaration presence does not validate legal correctness.
+Tests cover all 51 jurisdiction records, unique program IDs, source/year metadata, category separation, filter invariants, downloads, generated-data consistency, and separation of shared chrome from tool-specific provenance. The syntactic audit matches undated formulas, formulas starting by 2025, and `adds`/`subtracts` declarations; missing references, input-only variables and later-only formulas enter the gap list. It ignores declaration end dates and does not establish applicability to a 2025 claim or legal correctness.
 
 Run `bun run release:check` to inspect the outstanding national-calculator requirements. Calculator implementation/mapping and calculation-validation gaps remain open. Completing each state's initial source pass does not resolve every transitional claim or establish calculator readiness. Independent review and the website integration must finish before public publication. No validated national household calculator is provided.
 
 ## Coverage benchmarks
 
-This inventory is not a replacement for an exhaustive program register. It is being reconciled against the [Lincoln Institute residential-program database](https://apps.lincolninst.edu/data/significant-features-property-tax/access-database/residential-property-tax-relief-programs), [ITEP’s November 2026 circuit-breaker report](https://itep.org/circuit-breaker-credits-the-best-tools-for-property-tax-affordability/) and [AARP Foundation’s Property Tax-Aide guides](https://my.aarpfoundation.org/property-taxes/programs-by-state/). Their years, grouping and inclusion rules differ; subtracting their record counts does not measure omissions. The [PPI/CLE Maine report](https://legislature.maine.gov/doc/12515) provides a state-focused comparison of credits, exemptions and deferrals. The report page records confirmed omissions and remaining scope gaps.
+The [Lincoln Institute residential-program database](https://apps.lincolninst.edu/data/significant-features-property-tax/access-database/residential-property-tax-relief-programs), [ITEP’s November 2026 circuit-breaker report](https://itep.org/circuit-breaker-credits-the-best-tools-for-property-tax-affordability/) and [AARP Foundation’s Property Tax-Aide guides](https://my.aarpfoundation.org/property-taxes/programs-by-state/) cover different years and group programs differently. Subtracting their record counts does not measure omissions. The [PPI/CLE Maine report](https://legislature.maine.gov/doc/12515) compares credits, exemptions and deferrals within Maine. The report page describes the selected coverage and remaining scope gaps.
 
 ## Website integration
 

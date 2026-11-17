@@ -5,7 +5,7 @@
   "laterChanges": [],
   "code": "AL",
   "name": "Alabama",
-  "overview": "Relief identified in this review operates through homestead exemptions rather than statewide renter or circuit-breaker credits.",
+  "overview": "Alabama provides homestead exemptions, including additional age, disability and blindness provisions.",
   "statewideCreditStatus": "none-identified",
   "programs": [
     {
@@ -35,11 +35,12 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "not-established"
     }
   ],
   "researchNotes": [
-    "No statewide renter or property-tax credit identified in the reviewed state overview; exemptions remain important relief."
+    "Statewide renter and circuit-breaker credit coverage is not established by the linked homestead-exemption page."
   ],
   "sources": [
     {

@@ -41,7 +41,8 @@
           "kind": "statute"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "tax-deferral"
     },
     {
       "id": "nc-elderly-disabled-exclusion",
@@ -69,18 +70,19 @@
           "kind": "form"
         },
         {
-          "title": "G.S. 105-277.1B",
-          "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-277.1B.html",
+          "title": "G.S. 105-277.1: elderly or disabled exclusion",
+          "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-277.1.html",
           "kind": "statute"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "taxable-property-value-exemption"
     }
   ],
   "laterChanges": [],
   "researchNotes": [
-    "The circuit breaker must not be counted as an outright credit or cash transfer.",
-    "No statewide renter credit was identified in the reviewed relief application."
+    "The circuit breaker defers property-tax liabilities, with repayment under the statutory triggers.",
+    "The linked relief application does not establish a statewide renter credit."
   ],
   "sources": [
     {
@@ -91,6 +93,11 @@
     {
       "title": "G.S. 105-277.1B",
       "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-277.1B.html",
+      "kind": "statute"
+    },
+    {
+      "title": "G.S. 105-277.1: elderly or disabled exclusion",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-277.1.html",
       "kind": "statute"
     }
   ]

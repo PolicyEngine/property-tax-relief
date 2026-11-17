@@ -25,7 +25,7 @@
         "Ordinary rental housing generally must be property-tax subject; specific PILOT rules differ for renters and owners."
       ],
       "interactions": [
-        "Senior nonfilers’ unclaimed $50 income-tax property credit may be added to payment; do not count twice.",
+        "An unclaimed $50 income-tax property credit for an eligible senior nonfiler may be included in the ANCHOR payment; it is not an additional separate credit.",
         "Owner benefits coordinate with Senior Freeze, Stay NJ and other covered property relief."
       ],
       "programYear": "2025 circumstances and income; ANCHOR payments begin September 2026.",
@@ -42,7 +42,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["nj_anchor"]
+      "modelVariables": ["nj_anchor"],
+      "paymentMechanism": "cash-rebate"
     },
     {
       "id": "nj-senior-freeze",
@@ -51,14 +52,14 @@
       "scope": "statewide",
       "tenures": ["owner"],
       "refundable": true,
-      "ageRule": "Age 65+ or receiving qualifying Social Security/Railroad Retirement disability by December 31,2025.",
+      "ageRule": "Age 65+ or receiving qualifying Social Security/Railroad Retirement disability by December 31, 2025.",
       "incomeDefinition": "Total annual program income, including specified nontaxable Social Security, retirement and other additions.",
       "incomeLimits": "2024 income ≤ $168,268 and 2025 income ≤ $172,475; limited base-year retention exception applies.",
       "maximumBenefit": "Qualifying property-tax increase above established base-year tax.",
       "formulaSummary": "Reimburse the eligible difference between current and base-year property taxes, subject to eligibility and coordination.",
-      "application": "Combined PAS-1; 2025 application deadline November 2,2026.",
+      "application": "Combined PAS-1; 2025 application deadline November 2, 2026.",
       "eligibilityNotes": [
-        "Own and occupy since December 31,2022 through December 31,2025, with listed exceptions.",
+        "Own and occupy since December 31, 2022 through December 31, 2025, with listed exceptions.",
         "Qualifying mobile-home owners can use 18% of site fees.",
         "Ordinary renters are excluded."
       ],
@@ -80,7 +81,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["nj_senior_freeze", "nj_capped_senior_freeze"]
+      "modelVariables": ["nj_senior_freeze", "nj_capped_senior_freeze"],
+      "paymentMechanism": "cash-rebate"
     },
     {
       "id": "nj-stay-nj",
@@ -92,9 +94,9 @@
       "ageRule": "At least one qualifying spouse age 65+ during 2025.",
       "incomeDefinition": "Senior Freeze total annual income definition.",
       "incomeLimits": "Current 2025-tax-year benefit: income ≤ $200,000 under FY 2027 budget.",
-      "maximumBenefit": "Annualized 2027 caps: $6,500 at income≤ $100,000; $5,000 above $100,000 to $150,000; $4,000 above $150,000 to $200,000. Annualization assumes no FY 2028 change.",
+      "maximumBenefit": "Annualized 2027 caps: $6,500 at income ≤ $100,000; $5,000 above $100,000 to $150,000; $4,000 above $150,000 to $200,000. Annualization assumes no FY 2028 change.",
       "formulaSummary": "Relief targets 50% of qualifying property taxes, subject to income-tier caps and coordination with ANCHOR/Senior Freeze; appropriations control payable installments.",
-      "application": "Combined PAS-1 for 2025, deadline November 2,2026.",
+      "application": "Combined PAS-1 for 2025, deadline November 2, 2026.",
       "eligibilityNotes": [
         "Own and occupy for all 12 months of 2025.",
         "Renters and mobile-home owners excluded; eligible PILOT owners may qualify."
@@ -102,11 +104,11 @@
       "interactions": [
         "Subtract/coordinate existing ANCHOR and Senior Freeze relief under applicable budget and benefit-statement rules."
       ],
-      "programYear": "2025 tax-year benefits paid February and May 2027; do not label the annualized cap a guaranteed 2025 cash payment.",
+      "programYear": "Payments for tax-year-2025 benefits are scheduled for February and May 2027. Annualized caps assume no FY 2028 change.",
       "rentProxy": null,
       "sources": [
         {
-          "title": "Stay NJ — current 2025 tax-year rules, updated November 12,2026",
+          "title": "Stay NJ — current 2025 tax-year rules, updated November 12, 2026",
           "url": "https://www.nj.gov/treasury/taxation/staynj/index.shtml",
           "kind": "agency"
         },
@@ -116,7 +118,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["nj_staynj"]
+      "modelVariables": ["nj_staynj"],
+      "paymentMechanism": "cash-rebate"
     },
     {
       "id": "nj-income-tax-property-tax-credit",
@@ -137,7 +140,7 @@
       "interactions": [
         "Choose credit or deduction.",
         "Senior Freeze applicants use base-year tax rules.",
-        "Do not duplicate a credit incorporated in ANCHOR."
+        "A credit included in ANCHOR is not paid a second time."
       ],
       "programYear": "2025 income-tax return, filed 2026.",
       "rentProxy": 0.18,
@@ -153,7 +156,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["nj_property_tax_credit"]
+      "modelVariables": ["nj_property_tax_credit"],
+      "paymentMechanism": "income-tax-credit"
     },
     {
       "id": "nj-income-tax-property-tax-deduction",
@@ -164,7 +168,7 @@
       "refundable": false,
       "ageRule": "No general age restriction.",
       "incomeDefinition": "New Jersey gross income.",
-      "incomeLimits": "See program rules.",
+      "incomeLimits": "Gross income above $20,000, or above $10,000 for single or married/CU separate filers. At or below those thresholds, eligible older, blind or disabled residents may claim the credit only.",
       "maximumBenefit": "Deduct up to $15,000 of qualifying property tax; deduction amount is not tax savings.",
       "formulaSummary": "Reduce taxable income by eligible property tax or 18% of rent, subject to cap and split/proration rules.",
       "application": "NJ-1040 Worksheet H selects the better deduction or credit.",
@@ -189,17 +193,18 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["nj_property_tax_deduction"]
+      "modelVariables": ["nj_property_tax_deduction"],
+      "paymentMechanism": "income-tax-deduction"
     }
   ],
   "laterChanges": [
-    "The FY 2027 budget changed Stay NJ 2025-tax-year eligibility and payment caps after earlier handouts described a $500,000 ceiling. Current agency guidance controls this inventory."
+    "The FY 2027 budget sets the current Stay NJ eligibility and payment caps for tax year 2025; earlier handouts described a different $500,000 income ceiling."
   ],
   "researchNotes": [
-    "Tax year, payment season and state fiscal year are distinct. A 2025-season ANCHOR announcement describes a different comparison from 2025-tax-year benefits.",
-    "The 2025 ANCHOR homeowner table currently omits the older $250 senior homeowner add-on; do not copy a prior-year schedule.",
-    "Annualized Stay NJ limits are conditional; exact payable installments need budget-period treatment.",
-    "Variables are identified from canonical PE source, not independently validated calculations."
+    "Tax year, payment season and state fiscal year differ. A 2025-season ANCHOR announcement does not describe the same benefit period as tax-year-2025 benefits.",
+    "The 2025 ANCHOR homeowner table does not include the earlier $250 senior homeowner addition.",
+    "Annualized Stay NJ caps depend on future appropriations; payable installments follow their budget periods.",
+    "No validated household calculation amounts are reported for these programs."
   ],
   "sources": [
     {
@@ -223,7 +228,7 @@
       "kind": "form"
     },
     {
-      "title": "Stay NJ — current 2025 tax-year rules, updated November 12,2026",
+      "title": "Stay NJ — current 2025 tax-year rules, updated November 12, 2026",
       "url": "https://www.nj.gov/treasury/taxation/staynj/index.shtml",
       "kind": "agency"
     },

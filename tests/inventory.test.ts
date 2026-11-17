@@ -3,6 +3,7 @@ import fc from "fast-check";
 import { readFileSync, readdirSync } from "node:fs";
 import {
   CATEGORY_LABELS,
+  PAYMENT_MECHANISM_LABELS,
   filterStates,
   inventoryCsv,
   isComparisonProgram,
@@ -10,6 +11,7 @@ import {
   selectPrograms,
 } from "../lib/inventory";
 import type { StateProfile } from "../lib/types";
+import { canonicalCommitLabel } from "../lib/loadResearch";
 
 const states = readdirSync("data/states")
   .filter((f) => f.endsWith(".json"))
@@ -28,6 +30,10 @@ describe("national source inventory", () => {
       expect(state.overview.length).toBeGreaterThan(15);
       for (const p of state.programs) {
         expect(Object.keys(CATEGORY_LABELS)).toContain(p.category);
+        if (p.paymentMechanism !== undefined)
+          expect(Object.keys(PAYMENT_MECHANISM_LABELS)).toContain(
+            p.paymentMechanism,
+          );
         expect(p.sources.length, p.id).toBeGreaterThan(0);
         expect(p.programYear.trim().length, p.id).toBeGreaterThanOrEqual(4);
         if (isComparisonProgram(p))
@@ -93,9 +99,40 @@ describe("national source inventory", () => {
     );
   });
   it("exports source and year columns and quotes multiline content", () => {
-    const csv = inventoryCsv(states);
+    const nationalCsv = inventoryCsv(states);
+    for (const state of states)
+      expect(nationalCsv).toContain(`"${state.code}"`);
+    const fixture = structuredClone(states[0]);
+    fixture.programs[0].name = 'Quote,\n"line"';
+    fixture.programs[0].refundable = false;
+    fixture.programs[0].paymentMechanism = "property-tax-bill-reduction";
+    const csv = inventoryCsv([fixture]);
     expect(csv).toContain('"source_urls"');
     expect(csv).toContain('"tax_year"');
-    for (const state of states) expect(csv).toContain(`"${state.code}"`);
+    expect(csv).toContain('"program_id"');
+    expect(csv).toContain(`"${fixture.programs[0].id}"`);
+    expect(csv).toContain('"payment_mechanism"');
+    expect(csv).toContain('"state_research_notes"');
+    expect(csv).toContain('"property-tax-bill-reduction"');
+    expect(csv).toContain('"false"');
+    expect(csv).toContain('"Quote,\n""line"""');
+    expect(csv).toContain("\r\n");
+  });
+  it.each(["=x", "+x", "-x", "@x", "\tx", "\rx", "  =x"])(
+    "guards spreadsheet-leading content %j",
+    (value) => {
+      const fixture = structuredClone(states[0]);
+      fixture.programs[0].name = value;
+      expect(inventoryCsv([fixture])).toContain(`"'${value}"`);
+    },
+  );
+  it("preserves the not-inspected sentinel and abbreviates only actual commit IDs", () => {
+    expect(canonicalCommitLabel("not-inspected")).toBe("not-inspected");
+    expect(
+      canonicalCommitLabel("62b668978ccdb79cf4dd8ac88816e7de54e96209"),
+    ).toBe("62b668978ccd");
+    expect(canonicalCommitLabel("unknown-source-version")).toBe(
+      "unknown-source-version",
+    );
   });
 });

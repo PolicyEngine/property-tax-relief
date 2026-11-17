@@ -28,9 +28,10 @@
         "Actual school-district authorization and eligible school-tax amounts must be established; the statewide ceiling is not an automatic award."
       ],
       "interactions": [
-        "County exemptions and disabled-veteran relief require separate review."
+        "Under 14 Del. C. section 1917(d)(4)e, a claimant qualifying for both the disabled-veteran and senior school credits receives the disabled-veteran credit and cannot claim the senior credit.",
+        "The treatment of separate county exemptions is not established."
       ],
-      "programYear": "2025 application cohort: ordinary filing by April 30, 2025 and age/domicile qualification on June 30, 2025 for the upcoming county fiscal year. County bill periods require separate identification.",
+      "programYear": "2025 application cohort: ordinary filing by April 30, 2025 and age/domicile qualification on June 30, 2025 for the upcoming county fiscal year. The corresponding county bill periods are not established.",
       "rentProxy": null,
       "sources": [
         {
@@ -54,13 +55,14 @@
           "kind": "form"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
     }
   ],
   "researchNotes": [
-    "A legislative fiscal note proposing a higher cap is not evidence of enactment; the agency overview states $500.",
-    "Statewide framework describes the governing law, not verified adoption in every district. No complete 2025 district-authorization registry was established by this source review.",
-    "The linked form measures domicile duration before application, while statute uses June 30 before the county fiscal year. This inventory follows the statutory date; district, property and billing facts remain necessary for any calculation."
+    "The agency overview and current statutory framework state a $500 ceiling; a proposal to raise it does not change the enacted amount.",
+    "District-specific authorization for 2025 is not recorded comprehensively. The statewide ceiling does not establish the authorized amount for a particular district.",
+    "The linked form measures domicile duration before application, while the statute uses June 30 before the county fiscal year. The statutory date governs; district, property and billing facts determine a particular claim."
   ],
   "sources": [
     {

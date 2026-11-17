@@ -3,7 +3,7 @@
   "verifiedAt": "2026-11-13",
   "inventoryStatus": "researched",
   "laterChanges": [
-    "For 2025 assessments/pay2026, SEA 1 adds a supplemental homestead credit of the lesser of $300 or 10% of liability, a $150 over-65 credit, and a $125 blind/disabled credit; it changes senior eligibility and deductions."
+    "For 2025 assessments/pay 2026, SEA 1 adds a supplemental homestead credit of the lesser of $300 or 10% of liability, a $150 over-65 credit, and a $125 blind/disabled credit; it changes senior eligibility and deductions."
   ],
   "code": "IN",
   "name": "Indiana",
@@ -13,7 +13,7 @@
     {
       "id": "in-property-tax-cap-credit",
       "name": "Property Tax Cap / Circuit Breaker Credit",
-      "category": "property-tax-credit",
+      "category": "assessment-limit",
       "scope": "statewide",
       "tenures": ["owner"],
       "refundable": false,
@@ -36,7 +36,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "assessment-or-tax-limit"
     },
     {
       "id": "in-over-65-circuit-breaker",
@@ -46,17 +47,17 @@
       "tenures": ["owner"],
       "refundable": false,
       "ageRule": "Qualifying senior homeowner age 65+; surviving-spouse rules apply.",
-      "incomeDefinition": "Federal adjusted gross income from the calendar year two years before taxes are payable.",
-      "incomeLimits": "Indexed limits depend on pay year; use the DLGF historical table for pay 2025.",
+      "incomeDefinition": "The October 2025 DLGF FAQ describes federal AGI from two calendar years before taxes are first due and payable; its explicit example is assessment 2025/pay 2026 using 2024 AGI. The historical pay-2025 reference year remains unverified.",
+      "incomeLimits": "Indexed limits depend on pay year. The supplied DLGF historical pay-2025 row prints $33,563.52 while its formula row prints $33,653.52; the discrepancy remains unresolved.",
       "maximumBenefit": "Qualifying reduction needed to limit annual homestead tax growth to 2%.",
       "formulaSummary": "Uses prior-year liability, age/income tests, and the applicable assessment-year eligibility rules.",
       "application": "Apply through county auditor using senior property-tax benefits form.",
       "eligibilityNotes": [
-        "2024 assessment/pay2025 has a $240,000 assessed-value eligibility limit.",
-        "2025 assessment/pay2026 rules materially differ."
+        "2024 assessment/pay 2025 has a $240,000 assessed-value eligibility limit.",
+        "2025 assessment/pay 2026 rules materially differ."
       ],
       "interactions": [],
-      "programYear": "Pay 2025 baseline; assessment 2024, generally uses 2023 AGI.",
+      "programYear": "Pay 2025 baseline, assessment 2024; the historical income reference year remains unverified.",
       "rentProxy": null,
       "sources": [
         {
@@ -73,9 +74,15 @@
           "title": "DLGF July 2025 auditor presentation",
           "url": "https://www.in.gov/dlgf/files/2025-presentations/250723-Bolser-Presentation-Auditor-Conference.pdf",
           "kind": "agency"
+        },
+        {
+          "title": "DLGF October 29, 2025 FAQ, question 25: income reference-year rule",
+          "url": "https://www.in.gov/dlgf/files/2025-presentations/251029-FAQ-Webinar-Deductions-and-Credits.pdf#page=6",
+          "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
     },
     {
       "id": "in-renters-income-tax-deduction",
@@ -103,7 +110,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["in_renters_deduction"]
+      "modelVariables": ["in_renters_deduction"],
+      "paymentMechanism": "income-tax-deduction"
     },
     {
       "id": "in-homeowner-income-tax-deduction",
@@ -129,13 +137,14 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["in_homeowners_property_tax_deduction"]
+      "modelVariables": ["in_homeowners_property_tax_deduction"],
+      "paymentMechanism": "income-tax-deduction"
     }
   ],
   "researchNotes": [
-    "A value-based cap is not an income-threshold circuit breaker despite the shared statutory name.",
-    "New model variables beginning 2026 must not be applied to pay2025 bills.",
-    "Assessment year versus payable year must remain visible in comparisons."
+    "A value-based cap and an income-threshold circuit breaker follow different rules despite the shared statutory name.",
+    "The 2024 assessment/pay-2025 baseline predates the changes for 2025 assessments/pay 2026.",
+    "Assessment year and payable year identify different periods. The supplied memo prints $33,563.52 in its historical pay-2025 row and $33,653.52 in its formula row; that discrepancy remains unresolved."
   ],
   "sources": [
     {
@@ -171,6 +180,11 @@
     {
       "title": "Renter's deduction, Bulletin 38",
       "url": "https://www.in.gov/dor/files/reference/ib38.pdf",
+      "kind": "agency"
+    },
+    {
+      "title": "DLGF October 29, 2025 FAQ, question 25: income reference-year rule",
+      "url": "https://www.in.gov/dlgf/files/2025-presentations/251029-FAQ-Webinar-Deductions-and-Credits.pdf#page=6",
       "kind": "agency"
     }
   ]

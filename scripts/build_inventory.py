@@ -9,7 +9,6 @@ from __future__ import annotations
 
 import argparse
 import ast
-import csv
 import importlib.metadata
 import io
 import json
@@ -167,6 +166,24 @@ def canonical_variable_index(
     return commit, result
 
 
+def inventory_csv(states: list[dict]) -> bytes:
+    """Use the browser serializer for static CSV columns, values and escaping."""
+    content = subprocess.check_output(
+        [
+            "bun",
+            "-e",
+            (
+                'import { inventoryCsv } from "./lib/inventory.ts";'
+                "process.stdout.write(inventoryCsv(JSON.parse(await Bun.stdin.text())));"
+            ),
+        ],
+        input=json.dumps(states).encode(),
+        cwd=ROOT,
+        timeout=30,
+    )
+    return b"\xef\xbb\xbf" + content
+
+
 def main() -> None:
     """Require national coverage and export the source inventory and audit."""
     parser = argparse.ArgumentParser(description=__doc__)
@@ -273,61 +290,7 @@ def main() -> None:
         ("summary", summary),
     ]:
         (out / f"{name}.json").write_text(json.dumps(content, indent=2) + "\n")
-    stream = io.StringIO(newline="")
-    writer = csv.writer(stream, lineterminator="\n")
-    writer.writerow(
-        [
-            "state",
-            "code",
-            "reference_year",
-            "program",
-            "category",
-            "scope",
-            "tenures",
-            "refundable",
-            "income_limits",
-            "maximum_benefit",
-            "program_year",
-            "sources",
-        ]
-    )
-    for state in states:
-        for p in state["programs"] or [None]:
-            if p is None:
-                writer.writerow(
-                    [
-                        state["name"],
-                        state["code"],
-                        2025,
-                        "No program recorded",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        " | ".join(s["url"] for s in state["sources"]),
-                    ]
-                )
-            else:
-                writer.writerow(
-                    [
-                        state["name"],
-                        state["code"],
-                        2025,
-                        p["name"],
-                        p["category"],
-                        p["scope"],
-                        " | ".join(p["tenures"]),
-                        p["refundable"],
-                        p["incomeLimits"],
-                        p["maximumBenefit"],
-                        p["programYear"],
-                        " | ".join(s["url"] for s in p["sources"]),
-                    ]
-                )
-    (out / "inventory.csv").write_text(stream.getvalue())
+    (out / "inventory.csv").write_bytes(inventory_csv(states))
     print(json.dumps(summary, indent=2))
 
 

@@ -3,8 +3,8 @@ import { Explorer } from "@/components/Explorer";
 import { loadCoverage, loadStates } from "@/lib/loadResearch";
 
 export const metadata = {
-  alternates: { canonical: PUBLIC_TOOL_URL + "" },
-  openGraph: { url: PUBLIC_TOOL_URL + "" },
+  alternates: { canonical: PUBLIC_TOOL_URL + "/" },
+  openGraph: { url: PUBLIC_TOOL_URL + "/" },
 };
 
 export default function Home() {
@@ -35,7 +35,7 @@ export default function Home() {
         <strong>Research draft.</strong> The profiles cover selected provisions;
         the systematic scope audit and validated national household calculations
         remain incomplete.{" "}
-        <a href={appPath("/methods/")}>Read the coverage audit ↗</a>
+        <a href={appPath("/methods/")}>Read the coverage audit</a>
       </div>
       <Explorer states={states} coverage={coverage} />
     </main>

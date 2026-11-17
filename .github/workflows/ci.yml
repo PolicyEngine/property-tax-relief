@@ -14,6 +14,8 @@ jobs:
       - uses: astral-sh/setup-uv@v6
       - run: bun install --frozen-lockfile
       - run: uv sync --locked
+      - run: bun run format:check
+      - run: bun run lint
       - run: bun run typecheck
       - run: bun run test
       - run: uv run pytest

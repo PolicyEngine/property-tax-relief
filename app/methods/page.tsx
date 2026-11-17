@@ -1,10 +1,14 @@
 import { appPath, PUBLIC_TOOL_URL } from "@/lib/paths";
-import { loadCoverage, loadStates } from "@/lib/loadResearch";
+import {
+  canonicalCommitLabel,
+  loadCoverage,
+  loadStates,
+} from "@/lib/loadResearch";
 import { isComparisonProgram } from "@/lib/inventory";
 
 export const metadata = {
-  alternates: { canonical: PUBLIC_TOOL_URL + "/methods" },
-  openGraph: { url: PUBLIC_TOOL_URL + "/methods" },
+  alternates: { canonical: PUBLIC_TOOL_URL + "/methods/" },
+  openGraph: { url: PUBLIC_TOOL_URL + "/methods/" },
 };
 
 export default function Methods() {
@@ -23,15 +27,15 @@ export default function Methods() {
           <div className="eyebrow">Data, provenance and boundaries</div>
           <h1>Sources and methods.</h1>
           <p>
-            The legal inventory and model audit answer different questions: what
-            an official source describes, which implementation exists, and
-            whether a calculation reproduces the rule.
+            The legal inventory describes official program rules. The source
+            audit checks for matching model declarations; it does not determine
+            whether a calculation reproduces those rules.
           </p>
         </section>
         <div className="draft-note">
           <strong>National calculation release remains closed.</strong> The
-          draft reports program rules and source-level implementation presence.
-          It contains no validated national household benefit estimates.
+          draft reports program rules and matching model declarations. It
+          contains no validated national household benefit estimates.
         </div>
         <section>
           <h2>Research scope</h2>
@@ -45,12 +49,13 @@ export default function Methods() {
             options appear as context outside the main comparison.
           </p>
           <p>
-            Each profile records a 2025 program reference and a source-check
-            date; sources were checked on November 13–14, 2026. The program-year
-            field identifies differences among assessment, income, tax-payment,
-            filing and benefit-payment years. The profile includes later changes
-            where research identified them. A source-check date does not
-            establish that every provision has received a legal audit.
+            Each profile records a 2025 program reference and its initial
+            source-pass date, November 13–14, 2026. Targeted follow-up checks on
+            November 17, 2026 supplement that pass. The program-year field
+            identifies differences among assessment, income, tax-payment, filing
+            and benefit-payment years. The profile includes later changes where
+            research identified them. A source-check date does not establish
+            that every provision has received a legal audit.
           </p>
           <p>
             Official agency guidance, forms and statutes supply the program
@@ -92,11 +97,13 @@ export default function Methods() {
           <p>
             The audit reads declared variable classes in the pinned release and
             compares them with the inventory&apos;s model-variable references.
-            It requires a formula or declarative calculation available by 2025;
-            input-only variables and formulas that begin later enter the gap
-            list. It does not execute formulas, establish legal equivalence or
-            verify all eligibility conditions. Newer canonical source presence
-            is recorded separately.
+            It requires an undated formula, a formula starting by 2025, or an
+            adds/subtracts declaration; input-only variables and formulas that
+            begin later enter the gap list. It does not execute formulas,
+            establish legal equivalence or verify all eligibility conditions.
+            Newer canonical source presence is recorded separately. This
+            syntactic check ignores end dates and does not establish that a
+            declaration applies to a claim in 2025.
           </p>
           {coverage && (
             <>
@@ -105,8 +112,11 @@ export default function Methods() {
                 <strong>policyengine {coverage.interfaceVersion}</strong>.
                 Installed country model:{" "}
                 <strong>policyengine-us {coverage.modelVersion}</strong>.
-                Canonical source inspected:{" "}
-                <code>{coverage.canonicalModelCommit.slice(0, 12)}</code>.
+                Canonical source:{" "}
+                <code>
+                  {canonicalCommitLabel(coverage.canonicalModelCommit)}
+                </code>
+                .
               </p>
               <table className="report-table">
                 <thead>
@@ -202,27 +212,23 @@ export default function Methods() {
                 </li>
               ))}
             <li>
-              Complete the systematic inventory of rent and property-tax
-              income-tax credits, deductions, subtractions and itemization
-              conformity for each state.
+              The inventory does not yet enumerate every state-return credit,
+              deduction, subtraction, itemization rule or conformity provision.
             </li>
             <li>
-              Resolve named gaps in the external inventories, including local
-              programs and exemptions, without treating differently defined
-              record counts as directly comparable.
+              Coverage of local programs and exemptions remains selective.
+              External inventories use different program definitions and
+              grouping.
             </li>
             <li>
-              Reconcile retrospective law changes and form revisions with the
-              relevant program year.
+              Some profiles retain unresolved questions about law changes and
+              form versions for their stated reference years.
             </li>
             <li>
-              Verify interactions and parcel or local-levy requirements before
-              combining benefits.
+              The report does not calculate how program interactions, parcel
+              details or local levies affect household amounts.
             </li>
-            <li>
-              Complete legal validation and independent review before publishing
-              national household calculations.
-            </li>
+            <li>National household calculations remain unvalidated.</li>
           </ul>
         </section>
       </div>

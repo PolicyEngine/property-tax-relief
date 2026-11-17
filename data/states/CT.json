@@ -35,7 +35,8 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["ct_property_tax_credit"]
+      "modelVariables": ["ct_property_tax_credit"],
+      "paymentMechanism": "income-tax-credit"
     },
     {
       "id": "ct-homeowner-elderly-disabled-credit",
@@ -76,7 +77,8 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "property-tax-bill-reduction"
     },
     {
       "id": "ct-renters-rebate",
@@ -115,13 +117,12 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": []
+      "modelVariables": [],
+      "paymentMechanism": "cash-rebate"
     }
   ],
   "researchNotes": [
-    "The income-tax credit is only one of three distinct statewide routes. Its model variable cannot establish complete Connecticut coverage.",
-    "A proposed $350 credit in budget materials is not the enacted 2025 $300 instruction amount.",
-    "OPM labels its 2026 homeowner application calendar as the 2025 program year; the Grand List, income year and filing year are identified separately."
+    "Homeowner applications in February–May 2026 cover the October 1, 2025 Grand List and 2025 qualifying income."
   ],
   "sources": [
     {

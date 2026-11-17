@@ -12,7 +12,9 @@
     "release:check": "uv run python scripts/check_release.py",
     "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run --maxWorkers=4",
-    "format": "prettier --write app components lib scripts tests data package.json tsconfig.json next.config.ts postcss.config.mjs vitest.config.ts README.md",
+    "format": "prettier --write app components lib scripts tests data package.json tsconfig.json next.config.ts postcss.config.mjs vitest.config.ts README.md .github/workflows/ci.yml && uv run --no-sync ruff format scripts tests",
+    "format:check": "prettier --check app components lib scripts tests data package.json tsconfig.json next.config.ts postcss.config.mjs vitest.config.ts README.md .github/workflows/ci.yml && uv run --no-sync ruff format --check scripts tests",
+    "lint": "uv run --no-sync ruff check scripts tests",
     "build:zone": "NEXT_PUBLIC_BASE_PATH=/us/rent-and-property-taxes bun run build"
   },
   "dependencies": {
