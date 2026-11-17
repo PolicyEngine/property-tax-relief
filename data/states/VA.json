@@ -66,6 +66,52 @@
       ],
       "modelVariables": [],
       "paymentMechanism": "taxable-property-value-exemption"
+    },
+    {
+      "id": "va-real-estate-tax-itemized-deduction",
+      "name": "Real estate tax itemized deduction",
+      "category": "deduction",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Federal income rules affect the itemized deduction.",
+      "incomeLimits": "Income rules affect larger itemized deductions.",
+      "maximumBenefit": "Claim the qualified amount within the applicable itemized deduction limits.",
+      "formulaSummary": "Include qualified real estate taxes in Virginia itemized deductions. Virginia adds back amounts the federal SALT dollar limit disallows, subject to its overall itemized deductions limitation.",
+      "application": "Claim on Virginia Schedule A if you itemize on your federal return.",
+      "eligibilityNotes": [
+        "Use qualified real estate taxes for the applicable form."
+      ],
+      "interactions": [
+        "The overall Virginia itemized deductions limitation can apply at higher income. Virginia follows your federal choice to itemize."
+      ],
+      "programYear": "Tax year 2025.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Va. Code § 58.1-322.03",
+          "url": "https://law.lis.virginia.gov/vacode/title58.1/chapter3/section58.1-322.03/",
+          "kind": "statute"
+        },
+        {
+          "title": "Virginia HB 1600, Item 4-14",
+          "url": "https://budget.lis.virginia.gov/item/2025/1/HB1600/Enrolled/4/4-14",
+          "kind": "statute"
+        },
+        {
+          "title": "2019 Virginia legislative summary",
+          "url": "https://www.tax.virginia.gov/sites/default/files/inline-files/2019-legislative-summary.pdf",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 Virginia Schedule A instructions",
+          "url": "https://www.tax.virginia.gov/sites/default/files/vatax-pdf/2025-sch-a-instructions.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["va_itemized_deductions"],
+      "paymentMechanism": "income-tax-deduction"
     }
   ],
   "laterChanges": [],

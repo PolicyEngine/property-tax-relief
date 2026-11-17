@@ -931,5 +931,317 @@
     "expectedValue": 0,
     "source": "https://files.tax.utah.gov/tax/forms/current/tc-90cb.pdf#page=4",
     "sourceLocation": "2025 Renter Refund Schedule. $44,222 exceeds the $44,221 eligibility limit."
+  },
+  {
+    "id": "ar-real-estate-tax-only-0",
+    "programId": "ar-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000F_and_AR1000NR_Instructions.pdf",
+    "sourceLocation": "Form AR3 line 5. With no qualified real estate taxes paid and no other itemized expenses, the real estate tax component is zero."
+  },
+  {
+    "id": "ar-real-estate-tax-only-3500",
+    "programId": "ar-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "3500"
+    },
+    "expectedValue": 3500,
+    "source": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000F_and_AR1000NR_Instructions.pdf",
+    "sourceLocation": "Form AR3 line 5. The resident enters $3,500 of qualified real estate tax paid on owned nonbusiness property."
+  },
+  {
+    "id": "ar-real-estate-tax-only-45000",
+    "programId": "ar-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "45000"
+    },
+    "expectedValue": 45000,
+    "source": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000F_and_AR1000NR_Instructions.pdf",
+    "sourceLocation": "Form AR3 line 5 allows the qualified real estate taxes actually paid. This line has no federal Schedule A limit, so a $45,000 qualified payment gives a $45,000 component."
+  },
+  {
+    "id": "id-itemized-real-estate-20000-addback-3000",
+    "programId": "id-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "100000",
+      "real_estate_taxes": "20000",
+      "state_and_local_sales_or_income_tax": "3000"
+    },
+    "expectedValue": 20000,
+    "source": "https://tax.idaho.gov/wp-content/uploads/forms/EIN00046/EIN00046_03-02-2026.pdf#page=8",
+    "sourceLocation": "Form 40 line 14 instructions. Idaho subtracts $3,000 of Schedule A line 5a from $23,000 of federal itemized deductions, leaving $20,000 on Form 40 line 15."
+  },
+  {
+    "id": "id-itemized-real-estate-29000-addback-18000",
+    "programId": "id-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "400000",
+      "real_estate_taxes": "29000",
+      "state_and_local_sales_or_income_tax": "18000"
+    },
+    "expectedValue": 29000,
+    "source": "https://tax.idaho.gov/wp-content/uploads/forms/EIN00046/EIN00046_03-02-2026.pdf#page=8",
+    "sourceLocation": "Form 40 line 14 instructions, Schedule A gross total exceeds $40,000. Subtract $29,000 of real estate tax from $40,000 of federal capped taxes, so Idaho removes $11,000 and retains $29,000."
+  },
+  {
+    "id": "id-itemized-real-estate-45000-federal-cap",
+    "programId": "id-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "450000",
+      "real_estate_taxes": "45000",
+      "state_and_local_sales_or_income_tax": "10000"
+    },
+    "expectedValue": 40000,
+    "source": "https://tax.idaho.gov/wp-content/uploads/forms/EIN00046/EIN00046_03-02-2026.pdf#page=8",
+    "sourceLocation": "Form 40 line 14 instructions. $40,000 federal Schedule A taxes less $45,000 of real estate tax yields a zero addback and $40,000 Idaho itemized amount."
+  },
+  {
+    "id": "de-real-estate-itemized-zero",
+    "programId": "de-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "0",
+      "adjusted_gross_income": "100000"
+    },
+    "expectedValue": 0,
+    "source": "https://revenuefiles.delaware.gov/2025/PITForms_Instructions/PIT-RSA_2025-01_PaperInteractiveIPM.pdf",
+    "sourceLocation": "2025 PIT-RSA, lines 5c and 5f. For a resident single filer who itemizes, include $0 of qualifying real estate taxes and zero other taxes subject to the cap. The $40,000 cap applies at $100,000 of federal adjusted gross income with no federal income exclusions."
+  },
+  {
+    "id": "de-real-estate-itemized-below-cap",
+    "programId": "de-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "4000",
+      "adjusted_gross_income": "100000"
+    },
+    "expectedValue": 4000,
+    "source": "https://revenuefiles.delaware.gov/2025/PITForms_Instructions/PIT-RSA_2025-01_PaperInteractiveIPM.pdf",
+    "sourceLocation": "2025 PIT-RSA, lines 5c and 5f. For a resident single filer who itemizes, include $4,000 of qualifying real estate taxes and zero other taxes subject to the cap. The $40,000 cap applies at $100,000 of federal adjusted gross income with no federal income exclusions."
+  },
+  {
+    "id": "de-real-estate-itemized-cap",
+    "programId": "de-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "45000",
+      "adjusted_gross_income": "500000"
+    },
+    "expectedValue": 40000,
+    "source": "https://revenuefiles.delaware.gov/2025/PITForms_Instructions/PIT-RSA_2025-01_PaperInteractiveIPM.pdf",
+    "sourceLocation": "2025 PIT-RSA, lines 5c and 5f. For a resident single filer who itemizes, include $45,000 of qualifying real estate taxes and zero other taxes subject to the cap. The $40,000 cap applies at $500,000 of federal adjusted gross income with no federal income exclusions."
+  },
+  {
+    "id": "or-real-estate-itemized-zero",
+    "programId": "or-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "0",
+      "adjusted_gross_income": "100000"
+    },
+    "expectedValue": 0,
+    "source": "https://www.oregon.gov/dor/forms/FormsPubs/schedule-or-a_101-007_2025.pdf",
+    "sourceLocation": "2025 Schedule OR-A, lines 6 and 9. For a resident single filer who itemizes, include $0 of qualifying real estate taxes and zero other taxes subject to the cap. The $40,000 cap applies at $100,000 of federal adjusted gross income with no federal income exclusions."
+  },
+  {
+    "id": "or-real-estate-itemized-below-cap",
+    "programId": "or-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "4000",
+      "adjusted_gross_income": "100000"
+    },
+    "expectedValue": 4000,
+    "source": "https://www.oregon.gov/dor/forms/FormsPubs/schedule-or-a_101-007_2025.pdf",
+    "sourceLocation": "2025 Schedule OR-A, lines 6 and 9. For a resident single filer who itemizes, include $4,000 of qualifying real estate taxes and zero other taxes subject to the cap. The $40,000 cap applies at $100,000 of federal adjusted gross income with no federal income exclusions."
+  },
+  {
+    "id": "or-real-estate-itemized-cap",
+    "programId": "or-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "45000",
+      "adjusted_gross_income": "500000"
+    },
+    "expectedValue": 40000,
+    "source": "https://www.oregon.gov/dor/forms/FormsPubs/schedule-or-a_101-007_2025.pdf",
+    "sourceLocation": "2025 Schedule OR-A, lines 6 and 9. For a resident single filer who itemizes, include $45,000 of qualifying real estate taxes and zero other taxes subject to the cap. The $40,000 cap applies at $500,000 of federal adjusted gross income with no federal income exclusions."
+  },
+  {
+    "id": "nc-real-estate-itemized-zero",
+    "programId": "nc-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "0",
+      "mortgage_interest": "0",
+      "charitable_deduction": "0",
+      "medical_expense_deduction": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://www.ncdor.gov/taxes-forms/corporate-income-franchise-tax/frequently-asked-questions-and-important-notices/faqs-regarding-recent-session-law-changes",
+    "sourceLocation": "A single filer lists zero qualifying property tax on D-400 Schedule A line 2 and has zero other itemized amounts."
+  },
+  {
+    "id": "nc-real-estate-itemized-post-conformity",
+    "programId": "nc-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "15000",
+      "mortgage_interest": "0",
+      "charitable_deduction": "0",
+      "medical_expense_deduction": "0"
+    },
+    "expectedValue": 15000,
+    "source": "https://www.ncdor.gov/taxes-forms/corporate-income-franchise-tax/frequently-asked-questions-and-important-notices/faqs-regarding-recent-session-law-changes",
+    "sourceLocation": "The October 2026 NCDOR conformity FAQ Q16 applies the post-OBBBA federal limit to 2025. The $15,000 qualified real estate tax amount falls within the unchanged $20,000 combined ceiling."
+  },
+  {
+    "id": "nc-real-estate-itemized-combined-limit",
+    "programId": "nc-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "25000",
+      "mortgage_interest": "0",
+      "charitable_deduction": "0",
+      "medical_expense_deduction": "0"
+    },
+    "expectedValue": 20000,
+    "source": "https://www.ncdor.gov/taxes-forms/corporate-income-franchise-tax/frequently-asked-questions-and-important-notices/faqs-regarding-recent-session-law-changes",
+    "sourceLocation": "G.S. §105-153.5 limits combined mortgage interest and real estate taxes to $20,000. Under 2026 Session Law 31, a 2025 filer may have a pre-state-limit amount of $25,000 on line 2."
+  },
+  {
+    "id": "va-real-estate-itemized-below-federal-cap",
+    "programId": "va-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "20000",
+      "adjusted_gross_income": "100000",
+      "itemized_deductions_less_salt": "0",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 20000,
+    "source": "https://www.tax.virginia.gov/sites/default/files/vatax-pdf/2025-sch-a-instructions.pdf",
+    "sourceLocation": "2025 Virginia Schedule A line 5b allows $20,000 of qualified real estate taxes. No other Schedule A amounts apply. Federal AGI is within the single-filer limit for unreduced Virginia itemized deductions."
+  },
+  {
+    "id": "va-real-estate-itemized-above-federal-cap",
+    "programId": "va-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "45000",
+      "adjusted_gross_income": "100000",
+      "itemized_deductions_less_salt": "0",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 45000,
+    "source": "https://www.tax.virginia.gov/sites/default/files/vatax-pdf/2025-sch-a-instructions.pdf",
+    "sourceLocation": "2025 Virginia Schedule A lines 5b and 5c and HB1600 Item 4-14 preserve all $45,000 of Virginia real estate taxes for this itemizer, including $5,000 disallowed solely by the federal SALT limit."
+  },
+  {
+    "id": "va-real-estate-itemized-itemized-limitation-threshold",
+    "programId": "va-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "20000",
+      "adjusted_gross_income": "332700",
+      "itemized_deductions_less_salt": "0",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 20000,
+    "source": "https://www.tax.virginia.gov/sites/default/files/vatax-pdf/2025-sch-a-instructions.pdf",
+    "sourceLocation": "The 2025 Virginia Schedule A worksheet applies the limited-itemized-deduction calculation when single federal AGI exceeds $332,700. At the threshold the full $20,000 line 5b amount counts."
+  },
+  {
+    "id": "ne-real-estate-itemized-zero",
+    "programId": "ne-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "0",
+      "adjusted_gross_income": "100000"
+    },
+    "expectedValue": 0,
+    "source": "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_Individual_Income_Tax_Booklet.pdf",
+    "sourceLocation": "Nebraska 1040N lines 7–9 begin with federal itemized deductions. A federal itemizer with no real estate taxes has zero real estate tax component."
+  },
+  {
+    "id": "ne-real-estate-itemized-below-cap",
+    "programId": "ne-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "4000",
+      "adjusted_gross_income": "100000"
+    },
+    "expectedValue": 4000,
+    "source": "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_Individual_Income_Tax_Booklet.pdf",
+    "sourceLocation": "Federal Schedule A line 5b supplies $4,000 of qualifying taxes and no other SALT amounts. Federal limits permit all $4,000 and Form 1040N lines 7–9 retain it within itemized deductions."
+  },
+  {
+    "id": "ne-real-estate-itemized-federal-cap",
+    "programId": "ne-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "45000",
+      "adjusted_gross_income": "500000"
+    },
+    "expectedValue": 40000,
+    "source": "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_Individual_Income_Tax_Booklet.pdf",
+    "sourceLocation": "Federal Schedule A applies the $40,000 cap at $500,000 of federal adjusted gross income without exclusions. Nebraska Form 1040N lines 7–9 retain the $40,000 property-tax component."
+  },
+  {
+    "id": "me-nonveteran-owner-paid-1200",
+    "programId": "me-property-tax-fairness-credit",
+    "inputs": {
+      "age": "40",
+      "me_sales_and_property_tax_fairness_credit_income": "10000",
+      "real_estate_taxes": "1200",
+      "rent": "0"
+    },
+    "expectedValue": 800,
+    "source": "https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/25_1040me_sch_ptfc_fillable.pdf",
+    "sourceLocation": "Independent case ME01. Lines 8–16. $1,200 qualifying paid tax falls under the $2,550 benefit base. Subtract 4% of $10,000, yielding an $800 ordinary credit."
+  },
+  {
+    "id": "me-nonveteran-renter-paid-12000",
+    "programId": "me-property-tax-fairness-credit",
+    "inputs": {
+      "age": "40",
+      "me_sales_and_property_tax_fairness_credit_income": "20000",
+      "real_estate_taxes": "0",
+      "rent": "12000"
+    },
+    "expectedValue": 1000,
+    "source": "https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/25_1040me_sch_ptfc_fillable.pdf",
+    "sourceLocation": "Independent case ME02. Lines 5d–16. Maine counts 15% of $12,000 occupancy rent, or $1,800, then subtracts 4% of $20,000 for a $1,000 credit."
+  },
+  {
+    "id": "me-nonveteran-owner-income-63750",
+    "programId": "me-property-tax-fairness-credit",
+    "inputs": {
+      "age": "40",
+      "me_sales_and_property_tax_fairness_credit_income": "63750",
+      "real_estate_taxes": "10000",
+      "rent": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/25_1040me_sch_ptfc_fillable.pdf",
+    "sourceLocation": "Independent case ME04. Lines 9–10a. The 4% income charge equals the $2,550 benefit base, so the homeowner receives no credit."
+  },
+  {
+    "id": "wi-school-statutory-owner-1000",
+    "programId": "wi-school-property-tax-credit",
+    "inputs": {
+      "real_estate_taxes": "1000"
+    },
+    "expectedValue": 120,
+    "source": "https://docs.legis.wisconsin.gov/statutes/statutes/71/i/07/9",
+    "sourceLocation": "§71.07(9)(b)5. With $1,000 in qualified property tax and no rent, the statutory rate of 12% yields $120 before the income tax limit. The department's Form 1 table yields $122."
+  },
+  {
+    "id": "wi-school-statutory-owner-2500",
+    "programId": "wi-school-property-tax-credit",
+    "inputs": {
+      "real_estate_taxes": "2500"
+    },
+    "expectedValue": 300,
+    "source": "https://docs.legis.wisconsin.gov/statutes/statutes/71/i/07/9",
+    "sourceLocation": "§71.07(9)(b)5. The first $2,500 of qualified property tax at 12% gives $300 before the income tax limit."
+  },
+  {
+    "id": "wi-school-statutory-owner-5000",
+    "programId": "wi-school-property-tax-credit",
+    "inputs": {
+      "real_estate_taxes": "5000"
+    },
+    "expectedValue": 300,
+    "source": "https://docs.legis.wisconsin.gov/statutes/statutes/71/i/07/9",
+    "sourceLocation": "§71.07(9)(b)5. Of $5,000 in qualified property tax, the statute counts the first $2,500. The 12% rate gives $300 before the income tax limit."
   }
 ]

@@ -18,6 +18,10 @@ export default function Methods() {
   const coverage = loadCoverage();
   const states = loadStates();
   const contracts = loadCalculatorContracts();
+  const programCount = states.reduce(
+    (count, state) => count + state.programs.length,
+    0,
+  );
   const calculatorJurisdictions = new Set(contracts.map(({ state }) => state))
     .size;
   const comparison =
@@ -134,9 +138,9 @@ export default function Methods() {
             household scenarios.
           </p>
           <p>
-            All 50 states and DC appear in the selector alongside 119 selected
-            program and context records. The selector marks programs that lack
-            household calculations.
+            All 50 states and DC appear in the selector alongside {programCount}{" "}
+            selected program and context records. The selector marks programs
+            that lack household calculations.
           </p>
         </section>
         <section>

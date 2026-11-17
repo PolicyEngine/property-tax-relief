@@ -28,6 +28,14 @@
       "unit": "currency-USD",
       "isInputVariable": false
     },
+    "ar_itemized_deductions_joint": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ar_itemized_deductions_joint",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
     "assessed_property_value": {
       "entity": "person",
       "valueType": "float",
@@ -65,6 +73,22 @@
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "ca_renter_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "capped_property_taxes": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "capped_property_taxes",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "charitable_deduction": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "charitable_deduction",
       "unit": "currency-USD",
       "isInputVariable": false
     },
@@ -108,6 +132,14 @@
       "unit": "currency-USD",
       "isInputVariable": false
     },
+    "de_capped_real_estate_tax": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "de_capped_real_estate_tax",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
     "filing_status": {
       "entity": "tax_unit",
       "valueType": "Enum",
@@ -137,6 +169,14 @@
           "label": "Surviving spouse"
         }
       ]
+    },
+    "id_itemized_deductions": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "id_itemized_deductions",
+      "unit": "currency-USD",
+      "isInputVariable": false
     },
     "il_income_tax_before_non_refundable_credits": {
       "entity": "tax_unit",
@@ -234,6 +274,14 @@
       "unit": null,
       "isInputVariable": false
     },
+    "itemized_deductions_less_salt": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "itemized_deductions_less_salt",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
     "ky_homestead_exemption": {
       "entity": "tax_unit",
       "valueType": "float",
@@ -258,6 +306,30 @@
       "unit": "currency-USD",
       "isInputVariable": false
     },
+    "me_property_tax_fairness_credit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "me_property_tax_fairness_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "me_sales_and_property_tax_fairness_credit_income": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "me_sales_and_property_tax_fairness_credit_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "medical_expense_deduction": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "medical_expense_deduction",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
     "mi_homestead_property_tax_credit": {
       "entity": "tax_unit",
       "valueType": "float",
@@ -271,6 +343,14 @@
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "mi_household_resources",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "mortgage_interest": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "mortgage_interest",
       "unit": "currency-USD",
       "isInputVariable": false
     },
@@ -295,6 +375,14 @@
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "mt_elderly_homeowner_or_renter_credit_gross_household_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "nc_itemized_deductions": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "nc_itemized_deductions",
       "unit": "currency-USD",
       "isInputVariable": false
     },
@@ -423,6 +511,14 @@
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "sc_homestead_exemption",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "state_and_local_sales_or_income_tax": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "state_and_local_sales_or_income_tax",
       "unit": "currency-USD",
       "isInputVariable": false
     },
@@ -709,6 +805,22 @@
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "ut_homeowner_renter_relief_household_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "va_itemized_deductions": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "va_itemized_deductions",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "wi_property_tax_credit_potential": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "wi_property_tax_credit_potential",
       "unit": "currency-USD",
       "isInputVariable": false
     },

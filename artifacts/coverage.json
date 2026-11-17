@@ -74,6 +74,29 @@
       "validated": false
     },
     {
+      "id": "ar-itemized-real-estate-tax-deduction",
+      "state": "AR",
+      "variables": [
+        "ar_itemized_deductions_joint"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "ar_itemized_deductions_joint": {
+          "file": "gov/states/ar/tax/income/deductions/itemized/ar_itemized_deductions_joint.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "ar_itemized_deductions_joint"
+      ],
+      "validated": false
+    },
+    {
       "id": "ca-nonrefundable-renters-credit",
       "state": "CA",
       "variables": [
@@ -183,6 +206,29 @@
       "variableDetails": {},
       "status": "implementation-missing",
       "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "de-real-estate-tax-itemized-deduction",
+      "state": "DE",
+      "variables": [
+        "de_capped_real_estate_tax"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "de_capped_real_estate_tax": {
+          "file": "gov/states/de/tax/income/deductions/itemized/de_capped_real_estate_tax.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "de_capped_real_estate_tax"
+      ],
       "validated": false
     },
     {
@@ -340,6 +386,29 @@
       "variableDetails": {},
       "status": "implementation-missing",
       "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "id-itemized-real-estate-tax-deduction",
+      "state": "ID",
+      "variables": [
+        "id_itemized_deductions"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "id_itemized_deductions": {
+          "file": "gov/states/id/tax/income/deductions/id_itemized_deductions.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "id_itemized_deductions"
+      ],
       "validated": false
     },
     {
@@ -947,6 +1016,29 @@
       "validated": false
     },
     {
+      "id": "ne-real-estate-tax-itemized-deduction",
+      "state": "NE",
+      "variables": [
+        "capped_property_taxes"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "capped_property_taxes": {
+          "file": "gov/irs/income/taxable_income/deductions/capped_property_taxes.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "capped_property_taxes"
+      ],
+      "validated": false
+    },
+    {
       "id": "nv-residential-tax-abatement",
       "state": "NV",
       "variables": [],
@@ -1183,6 +1275,29 @@
       "validated": false
     },
     {
+      "id": "nc-real-estate-tax-itemized-deduction",
+      "state": "NC",
+      "variables": [
+        "nc_itemized_deductions"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "nc_itemized_deductions": {
+          "file": "gov/states/nc/tax/income/deductions/nc_itemized_deductions.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "nc_itemized_deductions"
+      ],
+      "validated": false
+    },
+    {
       "id": "nd-primary-residence-credit",
       "state": "ND",
       "variables": [
@@ -1325,6 +1440,29 @@
       "variableDetails": {},
       "status": "context",
       "canonicalVariables": [],
+      "validated": false
+    },
+    {
+      "id": "or-real-estate-tax-itemized-deduction",
+      "state": "OR",
+      "variables": [
+        "capped_property_taxes"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "capped_property_taxes": {
+          "file": "gov/irs/income/taxable_income/deductions/capped_property_taxes.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "capped_property_taxes"
+      ],
       "validated": false
     },
     {
@@ -1676,6 +1814,29 @@
       "validated": false
     },
     {
+      "id": "va-real-estate-tax-itemized-deduction",
+      "state": "VA",
+      "variables": [
+        "va_itemized_deductions"
+      ],
+      "missingVariables": [],
+      "inputOnlyOrLaterFormula": [],
+      "variableDetails": {
+        "va_itemized_deductions": {
+          "file": "gov/states/va/tax/income/deductions/va_itemized_deductions.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
+        }
+      },
+      "status": "implementation-found",
+      "canonicalVariables": [
+        "va_itemized_deductions"
+      ],
+      "validated": false
+    },
+    {
       "id": "wa-senior-disabled-exemption",
       "state": "WA",
       "variables": [
@@ -1827,7 +1988,8 @@
       "id": "wi-school-property-tax-credit",
       "state": "WI",
       "variables": [
-        "wi_property_tax_credit"
+        "wi_property_tax_credit",
+        "wi_property_tax_credit_potential"
       ],
       "missingVariables": [],
       "inputOnlyOrLaterFormula": [],
@@ -1838,11 +2000,19 @@
             "formula"
           ],
           "computableIn2025": true
+        },
+        "wi_property_tax_credit_potential": {
+          "file": "gov/states/wi/tax/income/credits/property_tax/wi_property_tax_credit_potential.py",
+          "methods": [
+            "formula"
+          ],
+          "computableIn2025": true
         }
       },
       "status": "implementation-found",
       "canonicalVariables": [
-        "wi_property_tax_credit"
+        "wi_property_tax_credit",
+        "wi_property_tax_credit_potential"
       ],
       "validated": false
     },

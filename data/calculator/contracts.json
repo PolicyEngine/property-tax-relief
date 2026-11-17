@@ -1482,6 +1482,516 @@
           "url": "https://le.utah.gov/xcode/Title59/Chapter2A/C59-2a_2026010120250507.pdf#page=11"
         }
       ]
+    },
+    {
+      "id": "ar-itemized-real-estate-tax-deduction",
+      "state": "AR",
+      "year": 2025,
+      "modelVariable": "ar_itemized_deductions_joint",
+      "entity": "person",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "2025 real estate taxes eligible for Arkansas itemization",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Enter the real estate tax you paid on nonbusiness property you own. Exclude special assessments and levy taxes. See Form AR3 line 5."
+        }
+      ],
+      "notes": [
+        "This estimate uses Form AR3 for a full-year Arkansas resident with real estate taxes as their sole itemized expense. Compare the amount with your standard deduction before filing."
+      ],
+      "resultLabel": "Real estate taxes allowed under Arkansas itemization",
+      "resultNote": "The amount reduces Arkansas taxable income when you itemize. Your choice of deduction and tax rate affect your tax savings.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ar/tax/income/deductions/itemized/ar_itemized_deductions_joint.py",
+        "sha256": "46a11e19fca7bc0b61f60f61ac5ae790a42130164b3ba6667b55e88e7ab7c582"
+      },
+      "sources": [
+        {
+          "title": "2025 Arkansas Form AR3 itemized deductions",
+          "url": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR3_ItemizedDeduction.pdf"
+        },
+        {
+          "title": "2025 Arkansas Form AR3 instructions, line 5",
+          "url": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000F_and_AR1000NR_Instructions.pdf"
+        }
+      ]
+    },
+    {
+      "id": "id-itemized-real-estate-tax-deduction",
+      "state": "ID",
+      "year": 2025,
+      "modelVariable": "id_itemized_deductions",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "adjusted_gross_income",
+          "label": "2025 federal adjusted gross income",
+          "entity": "tax_unit",
+          "minimum": 0,
+          "maximum": 500000,
+          "kind": "money",
+          "description": "Enter line 11a of your 2025 federal Form 1040. This estimate assumes you have no adjustments for foreign or territorial income when applying the federal limit on state and local tax deductions."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "2025 eligible real estate taxes",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Enter the amount from federal Schedule A line 5b, before applying the combined federal limit."
+        },
+        {
+          "variable": "state_and_local_sales_or_income_tax",
+          "label": "2025 state and local income or general sales taxes",
+          "entity": "tax_unit",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Enter federal Schedule A line 5a. Use the income tax or the sales tax amount that you chose for Schedule A."
+        }
+      ],
+      "notes": [
+        "This estimate covers full-year Idaho residents who use federal Schedule A and list state and local taxes from lines 5a and 5b as their sole itemized deductions."
+      ],
+      "resultLabel": "Real estate taxes allowed under Idaho itemization",
+      "resultNote": "Idaho removes state and local income or general sales taxes from your federal itemized deductions. Compare the remaining deduction with your Idaho standard deduction before filing.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/id/tax/income/deductions/id_itemized_deductions.py",
+        "sha256": "bd6b070835ba04e2f30dbac047827008e80f258bf037f04065185fd2a6410bb4"
+      },
+      "sources": [
+        {
+          "title": "2025 Idaho Form 40 lines 13–17",
+          "url": "https://tax.idaho.gov/wp-content/uploads/forms/EFO00089/EFO00089_03-02-2026.pdf#page=2"
+        },
+        {
+          "title": "2025 Idaho Form 40 instructions for itemized deductions",
+          "url": "https://tax.idaho.gov/wp-content/uploads/forms/EIN00046/EIN00046_03-02-2026.pdf#page=8"
+        },
+        {
+          "title": "2025 federal Schedule A and state and local tax deduction",
+          "url": "https://www.irs.gov/instructions/i1040sca"
+        }
+      ]
+    },
+    {
+      "id": "de-real-estate-tax-itemized-deduction",
+      "state": "DE",
+      "modelVariable": "de_capped_real_estate_tax",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/de/tax/income/deductions/itemized/de_capped_real_estate_tax.py",
+        "sha256": "878602ff49b9706988eaa012f846a32486d0b1633ab6f64c123fc1bd24c0a421"
+      },
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualifying real estate taxes paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter the amount from 2025 PIT-RSA, line 5c.",
+          "minimum": 0
+        },
+        {
+          "variable": "adjusted_gross_income",
+          "label": "Federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "For this estimate, enter federal adjusted gross income of $500,000 or less and assume you have no income exclusions for the federal deduction limit.",
+          "maximum": 500000
+        }
+      ],
+      "notes": [
+        "Use this estimate if you itemize deductions on your Delaware resident return.",
+        "The estimate assumes the other tax entries on PIT-RSA lines 5a, 5b and 5d equal zero."
+      ],
+      "resultLabel": "Real estate taxes within itemized deductions",
+      "resultNote": "This amount contributes to itemized deductions from taxable income.",
+      "sources": [
+        {
+          "title": "2025 PIT-RSA resident Schedule A",
+          "url": "https://revenuefiles.delaware.gov/2025/PITForms_Instructions/PIT-RSA_2025-01_PaperInteractiveIPM.pdf"
+        },
+        {
+          "title": "2025 PIT-RSW state and local tax deduction worksheet",
+          "url": "https://revenuefiles.delaware.gov/2025/PITForms_Instructions/PIT-RSW_2025-01_PaperInteractive.pdf"
+        },
+        {
+          "title": "30 Del. C. § 1109",
+          "url": "https://delcode.delaware.gov/title30/c011/sc02/index.html#1109"
+        }
+      ]
+    },
+    {
+      "id": "or-real-estate-tax-itemized-deduction",
+      "state": "OR",
+      "modelVariable": "capped_property_taxes",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/irs/income/taxable_income/deductions/capped_property_taxes.py",
+        "sha256": "e7839784523664b0a9f773f77c770dfcc1b1e61d77c167809649c0ef5c095ac9"
+      },
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualifying real estate taxes paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter the amount from 2025 Schedule OR-A, line 6.",
+          "minimum": 0
+        },
+        {
+          "variable": "adjusted_gross_income",
+          "label": "Federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "For this estimate, enter federal adjusted gross income of $500,000 or less and assume you have no income exclusions for the federal deduction limit.",
+          "maximum": 500000
+        }
+      ],
+      "notes": [
+        "Use this estimate if you itemize deductions on your Oregon resident return.",
+        "The estimate assumes the income and personal property tax entries on Schedule OR-A lines 5 and 7 equal zero."
+      ],
+      "resultLabel": "Real estate taxes within itemized deductions",
+      "resultNote": "This amount contributes to itemized deductions from taxable income.",
+      "sources": [
+        {
+          "title": "2025 Oregon Schedule OR-A",
+          "url": "https://www.oregon.gov/dor/forms/FormsPubs/schedule-or-a_101-007_2025.pdf"
+        },
+        {
+          "title": "2025 Schedule OR-A instructions",
+          "url": "https://www.oregon.gov/dor/forms/FormsPubs/schedule-or-a-inst_101-007-1_2025.pdf"
+        },
+        {
+          "title": "ORS 316.695",
+          "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors316.html#316.695"
+        }
+      ]
+    },
+    {
+      "id": "nc-real-estate-tax-itemized-deduction",
+      "state": "NC",
+      "modelVariable": "nc_itemized_deductions",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/nc/tax/income/deductions/nc_itemized_deductions.py",
+        "sha256": "98bc852667e811b744af410e31199b860b6b4c6c0d4547649d1411af3c0a5fad"
+      },
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualified real estate taxes",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter the allowable real estate taxes for 2025 D-400 Schedule A, line 2, before the North Carolina combined cap. See the conformity update for the federal limit.",
+          "minimum": 0
+        },
+        {
+          "variable": "mortgage_interest",
+          "label": "Qualified mortgage interest",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter zero for this real estate tax scenario.",
+          "minimum": 0,
+          "maximum": 0
+        },
+        {
+          "variable": "charitable_deduction",
+          "label": "Charitable contribution deduction",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter zero for this real estate tax scenario.",
+          "minimum": 0,
+          "maximum": 0
+        },
+        {
+          "variable": "medical_expense_deduction",
+          "label": "Medical expense deduction",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter zero for this real estate tax scenario.",
+          "minimum": 0,
+          "maximum": 0
+        }
+      ],
+      "notes": [
+        "Use this estimate if your North Carolina Schedule A includes real estate tax and no other itemized deductions."
+      ],
+      "resultLabel": "Real estate taxes within itemized deductions",
+      "resultNote": "This amount contributes to itemized deductions from taxable income.",
+      "sources": [
+        {
+          "title": "N.C. Gen. Stat. § 105-153.5(a)(2)(b)",
+          "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-153.5.html"
+        },
+        {
+          "title": "2026 N.C. Session Law 31, section 12",
+          "url": "https://www.ncleg.gov/EnactedLegislation/SessionLaws/HTML/2025-2026/SL2026-31.html"
+        },
+        {
+          "title": "N.C. Department of Revenue, conformity update question 16",
+          "url": "https://www.ncdor.gov/taxes-forms/corporate-income-franchise-tax/frequently-asked-questions-and-important-notices/faqs-regarding-recent-session-law-changes"
+        },
+        {
+          "title": "2025 D-400 Schedule A",
+          "url": "https://www.ncdor.gov/2025-d-400-schedule-web-fill-version/open"
+        }
+      ]
+    },
+    {
+      "id": "va-real-estate-tax-itemized-deduction",
+      "state": "VA",
+      "modelVariable": "va_itemized_deductions",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/va/tax/income/deductions/va_itemized_deductions.py",
+        "sha256": "f45cf783ba4901821f7f22d975fb84a0b7954b585c6987e44c95b1d82b4e8099"
+      },
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualifying real estate taxes paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter the Virginia Schedule A line 5b amount, before any overall itemized deduction limitation.",
+          "minimum": 0
+        },
+        {
+          "variable": "adjusted_gross_income",
+          "label": "Federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter the amount from 2025 Virginia Form 760, line 1. Use this estimate for income up to $332,700.",
+          "maximum": 332700
+        },
+        {
+          "variable": "itemized_deductions_less_salt",
+          "label": "Other itemized deductions",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter zero for this real estate tax scenario.",
+          "minimum": 0,
+          "maximum": 0
+        },
+        {
+          "variable": "state_and_local_sales_or_income_tax",
+          "label": "State and local income or sales tax deduction",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter zero for this real estate tax scenario.",
+          "minimum": 0,
+          "maximum": 0
+        }
+      ],
+      "notes": [
+        "Use this estimate if you itemize on your federal return and qualifying real estate taxes are the sole deduction on your Virginia Schedule A."
+      ],
+      "resultLabel": "Real estate taxes within itemized deductions",
+      "resultNote": "This amount contributes to itemized deductions from taxable income.",
+      "sources": [
+        {
+          "title": "Va. Code § 58.1-322.03",
+          "url": "https://law.lis.virginia.gov/vacode/title58.1/chapter3/section58.1-322.03/"
+        },
+        {
+          "title": "Virginia HB 1600, Item 4-14",
+          "url": "https://budget.lis.virginia.gov/item/2025/1/HB1600/Enrolled/4/4-14"
+        },
+        {
+          "title": "2019 Virginia legislative summary",
+          "url": "https://www.tax.virginia.gov/sites/default/files/inline-files/2019-legislative-summary.pdf"
+        },
+        {
+          "title": "2025 Virginia Schedule A instructions",
+          "url": "https://www.tax.virginia.gov/sites/default/files/vatax-pdf/2025-sch-a-instructions.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ne-real-estate-tax-itemized-deduction",
+      "state": "NE",
+      "modelVariable": "capped_property_taxes",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/irs/income/taxable_income/deductions/capped_property_taxes.py",
+        "sha256": "e7839784523664b0a9f773f77c770dfcc1b1e61d77c167809649c0ef5c095ac9"
+      },
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualifying real estate taxes paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter the amount from 2025 federal Schedule A, line 5b, before applying the combined tax limit.",
+          "minimum": 0
+        },
+        {
+          "variable": "adjusted_gross_income",
+          "label": "Federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter federal adjusted gross income of $500,000 or less. Use this estimate if you have no excluded foreign or U.S. territory income.",
+          "maximum": 500000
+        }
+      ],
+      "notes": [
+        "Use this estimate if you itemize deductions on your federal and Nebraska returns, and your only entry on federal Schedule A lines 5a through 5c is qualifying real estate taxes."
+      ],
+      "resultLabel": "Real estate taxes within itemized deductions",
+      "resultNote": "This amount contributes to itemized deductions from taxable income.",
+      "sources": [
+        {
+          "title": "Neb. Rev. Stat. § 77-2716.01(3)",
+          "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=77-2716.01"
+        },
+        {
+          "title": "2025 Form 1040N and instructions",
+          "url": "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_Individual_Income_Tax_Booklet.pdf"
+        },
+        {
+          "title": "2025 federal Schedule A instructions",
+          "url": "https://www.irs.gov/pub/irs-prior/i1040sca--2025.pdf"
+        }
+      ]
+    },
+    {
+      "id": "me-property-tax-fairness-credit",
+      "state": "ME",
+      "year": 2025,
+      "modelVariable": "me_property_tax_fairness_credit",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age at the end of 2025",
+          "entity": "person",
+          "minimum": 18,
+          "maximum": 64,
+          "kind": "number"
+        },
+        {
+          "variable": "me_sales_and_property_tax_fairness_credit_income",
+          "label": "2025 total income for the Maine credit",
+          "entity": "tax_unit",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Use total income from 2025 Schedule PTFC/STFC line 3. Check the schedule for the income sources Maine includes."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualified property tax paid for your Maine home",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Use the qualifying property tax from Schedule PTFC/STFC line 4. Enter 0 if you rented your home."
+        },
+        {
+          "variable": "rent",
+          "label": "Qualified occupancy rent paid for your Maine home",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Use the qualifying occupancy rent from Schedule PTFC/STFC line 5d. Enter 0 if you owned your home."
+        }
+      ],
+      "notes": [
+        "This estimate covers nonveterans under 65 who lived in Maine all year and paid qualifying property tax or rent on their Maine primary home.",
+        "Maine calculates separate amounts for adults aged 65 and older and veterans with a qualifying disability. See the schedule for those rules."
+      ],
+      "resultLabel": "Refundable Maine Property Tax Fairness Credit",
+      "resultNote": "Maine allows the credit against your income tax and can refund any credit above your tax liability.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/me/tax/income/credits/fairness/property_tax_fairness_credit/me_property_tax_fairness_credit.py",
+        "sha256": "7cd2fd9883b012ffe7205a7dd4cd0d6f0d68c4fe6118de6931210942ac55de7d"
+      },
+      "sources": [
+        {
+          "title": "2025 Maine Schedule PTFC/STFC",
+          "url": "https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/25_1040me_sch_ptfc_fillable.pdf"
+        },
+        {
+          "title": "Maine Revised Statutes title 36 §5219-KK",
+          "url": "https://legislature.maine.gov/statutes/36/title36sec5219-KK.html"
+        }
+      ]
+    },
+    {
+      "id": "wi-school-property-tax-credit",
+      "state": "WI",
+      "year": 2025,
+      "modelVariable": "wi_property_tax_credit_potential",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualified property tax paid on your Wisconsin home in 2025",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Use the tax you paid for your primary home after property tax refunds. Exclude assessments, delinquent charges, service fees and business taxes."
+        }
+      ],
+      "notes": [
+        "This estimate covers Wisconsin residents who owned and occupied their primary home throughout 2025. Use the homeowner calculation if you do not claim the veterans and surviving spouses property tax credit.",
+        "We apply the statutory 12% rate. For example, $1,000 of eligible tax gives $120 at that rate and $122 in Wisconsin's Form 1 table."
+      ],
+      "resultLabel": "Statutory credit before the income tax limit",
+      "resultNote": "Use the Form 1 table and credit ordering to determine the amount on your return. The credit cannot exceed your remaining Wisconsin income tax.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/wi/tax/income/credits/property_tax/wi_property_tax_credit_potential.py",
+        "sha256": "c4ec0980490c38cb215115f40e8654beaace64294cd258e3e4836fd81e81f75f"
+      },
+      "sources": [
+        {
+          "title": "Wisconsin Statutes §71.07(9)(b)5 school property tax credit",
+          "url": "https://docs.legis.wisconsin.gov/statutes/statutes/71/i/07/9"
+        },
+        {
+          "title": "2025 Wisconsin Form 1 line 16b instructions and table",
+          "url": "https://www.revenue.wi.gov/TaxForms2025/2025-Form1-Inst.pdf#page=20"
+        }
+      ]
     }
   ],
   "heldPrograms": [

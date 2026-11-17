@@ -16,7 +16,9 @@ The `artifacts/` directory contains a self-contained interactive (`index.html`),
 
 ## Household calculator preview
 
-The `/calculator/` page calculates 2025 scenarios for one adult filing as single, with no spouse or dependents. Its selector includes all 50 states and DC and 119 selected program and context records. The [calculator contracts](data/calculator/contracts.json) list the calculations, inputs and qualifying scenarios. Assessed value exemption results show the portion of the property's value that the jurisdiction removes from the tax base. The tax bill also depends on which levies the exemption covers and the applicable rates.
+The `/calculator/` page calculates 2025 scenarios for one adult filing as single, with no spouse or dependents. Its selector includes all 50 states and DC. The [calculator contracts](data/calculator/contracts.json) list the calculations, inputs and qualifying scenarios. Assessed value exemptions show the portion of the property's value that the jurisdiction removes from the tax base. The tax bill also depends on which levies the exemption covers and the applicable rates.
+
+Itemized deduction results use the scenario each program describes. For example, North Carolina's estimate answers how much of a homeowner's property taxes enter their itemized deductions when they have no mortgage interest or other itemized expenses. The state return applies the household's deduction choice and any other adjustments.
 
 Other records show why calculations remain unavailable. Users supply qualified expenses and specified tax-form inputs; the estimate assumes the remaining qualification requirements hold. Connecticut covers primary-residence taxes and uses CT-1040, line 10, as its tax-liability limit; motor-vehicle tax claims require the full Schedule 3. Michigan and Pennsylvania calculations cover renters; Pennsylvania's preview excludes mixed owner-renter claims. Oklahoma calculations cover homestead owners. New Jersey selects one provision, so a zero deduction can accompany a credit or vice versa. Deduction amounts and California's credit before its liability limit do not measure tax savings on a completed return.
 

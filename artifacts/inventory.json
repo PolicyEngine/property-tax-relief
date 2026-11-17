@@ -266,6 +266,46 @@
         ],
         "modelVariables": [],
         "paymentMechanism": "property-tax-bill-reduction"
+      },
+      {
+        "id": "ar-itemized-real-estate-tax-deduction",
+        "name": "Real estate taxes in Arkansas itemized deductions",
+        "category": "deduction",
+        "scope": "statewide",
+        "tenures": [
+          "owner"
+        ],
+        "refundable": false,
+        "paymentMechanism": "income-tax-deduction",
+        "ageRule": "No age test on this deduction.",
+        "incomeDefinition": "Arkansas itemizers deduct eligible real estate taxes from Arkansas adjusted gross income as part of total itemized deductions.",
+        "incomeLimits": "No income limit on eligible real estate taxes for this deduction.",
+        "maximumBenefit": "Eligible real estate taxes paid. The deduction reduces taxable income.",
+        "formulaSummary": "Arkansas includes eligible real estate taxes paid on owned nonbusiness property in itemized deductions without applying the federal combined state and local tax cap.",
+        "application": "Enter eligible taxes on Form AR3 line 5 and use Form AR3 to calculate the total itemized deductions on Form AR1000F.",
+        "eligibilityNotes": [
+          "Exclude special assessments, levy taxes and property you use for business."
+        ],
+        "interactions": [
+          "Arkansas lets filers choose itemized deductions separately from their federal deduction. The standard deduction or low-income tax table can affect the final benefit."
+        ],
+        "programYear": "2025 Arkansas income-tax return, based on taxes paid in 2025.",
+        "rentProxy": null,
+        "sources": [
+          {
+            "title": "2025 Arkansas Form AR3 itemized deductions",
+            "url": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR3_ItemizedDeduction.pdf",
+            "kind": "form"
+          },
+          {
+            "title": "2025 Arkansas Form AR3 instructions, line 5",
+            "url": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000F_and_AR1000NR_Instructions.pdf",
+            "kind": "form"
+          }
+        ],
+        "modelVariables": [
+          "ar_itemized_deductions_joint"
+        ]
       }
     ],
     "researchNotes": [
@@ -748,6 +788,51 @@
         ],
         "modelVariables": [],
         "paymentMechanism": "property-tax-bill-reduction"
+      },
+      {
+        "id": "de-real-estate-tax-itemized-deduction",
+        "name": "Real estate tax itemized deduction",
+        "category": "deduction",
+        "scope": "statewide",
+        "tenures": [
+          "owner"
+        ],
+        "refundable": null,
+        "ageRule": "No general age restriction.",
+        "incomeDefinition": "Federal income rules govern the applicable tax deduction limit.",
+        "incomeLimits": "Federal rules can lower the combined limit at higher income.",
+        "maximumBenefit": "Taxes count toward a combined itemized deduction limit.",
+        "formulaSummary": "Include qualified real estate taxes on PIT-RSA, line 5c. The combined limit applies on line 5f.",
+        "application": "File PIT-RSA with the 2025 resident income tax return if you itemize deductions.",
+        "eligibilityNotes": [
+          "Claim qualifying real estate taxes you paid during the tax year."
+        ],
+        "interactions": [
+          "Other deductible taxes can use part of the combined limit."
+        ],
+        "programYear": "Tax year 2025.",
+        "rentProxy": null,
+        "sources": [
+          {
+            "title": "2025 PIT-RSA resident Schedule A",
+            "url": "https://revenuefiles.delaware.gov/2025/PITForms_Instructions/PIT-RSA_2025-01_PaperInteractiveIPM.pdf",
+            "kind": "form"
+          },
+          {
+            "title": "2025 PIT-RSW state and local tax deduction worksheet",
+            "url": "https://revenuefiles.delaware.gov/2025/PITForms_Instructions/PIT-RSW_2025-01_PaperInteractive.pdf",
+            "kind": "form"
+          },
+          {
+            "title": "30 Del. C. \u00a7 1109",
+            "url": "https://delcode.delaware.gov/title30/c011/sc02/index.html#1109",
+            "kind": "statute"
+          }
+        ],
+        "modelVariables": [
+          "de_capped_real_estate_tax"
+        ],
+        "paymentMechanism": "income-tax-deduction"
       }
     ],
     "researchNotes": [
@@ -1344,6 +1429,51 @@
         ],
         "modelVariables": [],
         "paymentMechanism": "property-tax-bill-reduction"
+      },
+      {
+        "id": "id-itemized-real-estate-tax-deduction",
+        "name": "Real estate taxes in Idaho itemized deductions",
+        "category": "deduction",
+        "scope": "statewide",
+        "tenures": [
+          "owner"
+        ],
+        "refundable": false,
+        "paymentMechanism": "income-tax-deduction",
+        "ageRule": "No age test on this deduction.",
+        "incomeDefinition": "Idaho starts with federal itemized deductions. Federal modified adjusted gross income can reduce the combined federal deduction for state and local taxes.",
+        "incomeLimits": "Idaho imposes no separate income limit on this component. The federal combined limit can fall for single filers with federal modified adjusted gross income above $500,000 in 2025.",
+        "maximumBenefit": "Qualified real estate taxes within the federal combined state and local tax limit. The deduction reduces taxable income.",
+        "formulaSummary": "Idaho subtracts the Schedule A deduction for state and local income or general sales taxes and retains eligible real estate taxes within the federal limit.",
+        "application": "Use federal Schedule A to complete Idaho Form 40 lines 13 through 15. Compare the result with the standard deduction on line 16.",
+        "eligibilityNotes": [
+          "Use the federal qualified real estate tax amount on Schedule A line 5b."
+        ],
+        "interactions": [
+          "Idaho applies the larger of the state itemized deduction and standard deduction. Federal Schedule A and the federal combined state and local tax limit determine the starting amount."
+        ],
+        "programYear": "2025 Idaho income-tax return, based on the 2025 federal Schedule A.",
+        "rentProxy": null,
+        "sources": [
+          {
+            "title": "2025 Idaho Form 40 lines 13\u201317",
+            "url": "https://tax.idaho.gov/wp-content/uploads/forms/EFO00089/EFO00089_03-02-2026.pdf#page=2",
+            "kind": "form"
+          },
+          {
+            "title": "2025 Idaho Form 40 instructions for itemized deductions",
+            "url": "https://tax.idaho.gov/wp-content/uploads/forms/EIN00046/EIN00046_03-02-2026.pdf#page=8",
+            "kind": "form"
+          },
+          {
+            "title": "2025 federal Schedule A instructions",
+            "url": "https://www.irs.gov/pub/irs-prior/i1040sca--2025.pdf",
+            "kind": "form"
+          }
+        ],
+        "modelVariables": [
+          "id_itemized_deductions"
+        ]
       }
     ],
     "researchNotes": [
@@ -3506,6 +3636,51 @@
         ],
         "modelVariables": [],
         "paymentMechanism": "property-tax-bill-reduction"
+      },
+      {
+        "id": "ne-real-estate-tax-itemized-deduction",
+        "name": "Real estate tax itemized deduction",
+        "category": "deduction",
+        "scope": "statewide",
+        "tenures": [
+          "owner"
+        ],
+        "refundable": null,
+        "ageRule": "No general age restriction.",
+        "incomeDefinition": "Federal income rules affect the itemized deduction.",
+        "incomeLimits": "Income rules affect larger itemized deductions.",
+        "maximumBenefit": "Claim the qualified amount within the applicable itemized deduction limits.",
+        "formulaSummary": "Nebraska starts with federal itemized deductions and removes state and local income taxes. Qualified real estate taxes remain subject to the federal combined limit.",
+        "application": "Include federal itemized deductions on Form 1040N, line 7. Calculate the Nebraska itemized deduction on line 9.",
+        "eligibilityNotes": [
+          "Use qualified real estate taxes for the applicable form."
+        ],
+        "interactions": [
+          "Federal limits apply to the combined deduction. Nebraska excludes state and local income tax from itemized deductions."
+        ],
+        "programYear": "Tax year 2025.",
+        "rentProxy": null,
+        "sources": [
+          {
+            "title": "Neb. Rev. Stat. \u00a7 77-2716.01(3)",
+            "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=77-2716.01",
+            "kind": "statute"
+          },
+          {
+            "title": "2025 Form 1040N and instructions",
+            "url": "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_Individual_Income_Tax_Booklet.pdf",
+            "kind": "form"
+          },
+          {
+            "title": "2025 federal Schedule A instructions",
+            "url": "https://www.irs.gov/pub/irs-prior/i1040sca--2025.pdf",
+            "kind": "form"
+          }
+        ],
+        "modelVariables": [
+          "capped_property_taxes"
+        ],
+        "paymentMechanism": "income-tax-deduction"
       }
     ],
     "laterChanges": [],
@@ -4294,6 +4469,56 @@
         ],
         "modelVariables": [],
         "paymentMechanism": "taxable-property-value-exemption"
+      },
+      {
+        "id": "nc-real-estate-tax-itemized-deduction",
+        "name": "Real estate tax itemized deduction",
+        "category": "deduction",
+        "scope": "statewide",
+        "tenures": [
+          "owner"
+        ],
+        "refundable": null,
+        "ageRule": "No general age restriction.",
+        "incomeDefinition": "Federal income rules affect the itemized deduction.",
+        "incomeLimits": "Income rules affect larger itemized deductions.",
+        "maximumBenefit": "Claim the qualified amount within the applicable itemized deduction limits.",
+        "formulaSummary": "Add qualifying mortgage interest and real estate taxes after the federal limits. Apply the $20,000 North Carolina combined limit.",
+        "application": "Claim on D-400 Schedule A when you itemize on your North Carolina return.",
+        "eligibilityNotes": [
+          "Use qualified real estate taxes for the applicable form."
+        ],
+        "interactions": [
+          "The $20,000 limit applies to the combined qualified mortgage interest and real estate tax deduction."
+        ],
+        "programYear": "Tax year 2025.",
+        "rentProxy": null,
+        "sources": [
+          {
+            "title": "N.C. Gen. Stat. \u00a7 105-153.5(a)(2)(b)",
+            "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-153.5.html",
+            "kind": "statute"
+          },
+          {
+            "title": "2026 N.C. Session Law 31, section 12",
+            "url": "https://www.ncleg.gov/EnactedLegislation/SessionLaws/HTML/2025-2026/SL2026-31.html",
+            "kind": "statute"
+          },
+          {
+            "title": "N.C. Department of Revenue, conformity update question 16",
+            "url": "https://www.ncdor.gov/taxes-forms/corporate-income-franchise-tax/frequently-asked-questions-and-important-notices/faqs-regarding-recent-session-law-changes",
+            "kind": "agency"
+          },
+          {
+            "title": "2025 D-400 Schedule A",
+            "url": "https://www.ncdor.gov/2025-d-400-schedule-web-fill-version/open",
+            "kind": "form"
+          }
+        ],
+        "modelVariables": [
+          "nc_itemized_deductions"
+        ],
+        "paymentMechanism": "income-tax-deduction"
       }
     ],
     "laterChanges": [],
@@ -4721,6 +4946,51 @@
         ],
         "modelVariables": [],
         "paymentMechanism": "tax-deferral"
+      },
+      {
+        "id": "or-real-estate-tax-itemized-deduction",
+        "name": "Real estate tax itemized deduction",
+        "category": "deduction",
+        "scope": "statewide",
+        "tenures": [
+          "owner"
+        ],
+        "refundable": null,
+        "ageRule": "No general age restriction.",
+        "incomeDefinition": "Federal income rules govern the applicable tax deduction limit.",
+        "incomeLimits": "Federal rules can lower the combined limit at higher income.",
+        "maximumBenefit": "Taxes count toward a combined itemized deduction limit.",
+        "formulaSummary": "Include qualified real estate taxes on Schedule OR-A, line 6. The combined limit applies on line 9.",
+        "application": "File Schedule OR-A with the 2025 resident income tax return if you itemize deductions.",
+        "eligibilityNotes": [
+          "Claim qualifying real estate taxes you paid during the tax year."
+        ],
+        "interactions": [
+          "Other deductible taxes can use part of the combined limit."
+        ],
+        "programYear": "Tax year 2025.",
+        "rentProxy": null,
+        "sources": [
+          {
+            "title": "2025 Oregon Schedule OR-A",
+            "url": "https://www.oregon.gov/dor/forms/FormsPubs/schedule-or-a_101-007_2025.pdf",
+            "kind": "form"
+          },
+          {
+            "title": "2025 Schedule OR-A instructions",
+            "url": "https://www.oregon.gov/dor/forms/FormsPubs/schedule-or-a-inst_101-007-1_2025.pdf",
+            "kind": "form"
+          },
+          {
+            "title": "ORS 316.695",
+            "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors316.html#316.695",
+            "kind": "statute"
+          }
+        ],
+        "modelVariables": [
+          "capped_property_taxes"
+        ],
+        "paymentMechanism": "income-tax-deduction"
       }
     ],
     "laterChanges": [
@@ -5881,6 +6151,56 @@
         ],
         "modelVariables": [],
         "paymentMechanism": "taxable-property-value-exemption"
+      },
+      {
+        "id": "va-real-estate-tax-itemized-deduction",
+        "name": "Real estate tax itemized deduction",
+        "category": "deduction",
+        "scope": "statewide",
+        "tenures": [
+          "owner"
+        ],
+        "refundable": null,
+        "ageRule": "No general age restriction.",
+        "incomeDefinition": "Federal income rules affect the itemized deduction.",
+        "incomeLimits": "Income rules affect larger itemized deductions.",
+        "maximumBenefit": "Claim the qualified amount within the applicable itemized deduction limits.",
+        "formulaSummary": "Include qualified real estate taxes in Virginia itemized deductions. Virginia adds back amounts the federal SALT dollar limit disallows, subject to its overall itemized deductions limitation.",
+        "application": "Claim on Virginia Schedule A if you itemize on your federal return.",
+        "eligibilityNotes": [
+          "Use qualified real estate taxes for the applicable form."
+        ],
+        "interactions": [
+          "The overall Virginia itemized deductions limitation can apply at higher income. Virginia follows your federal choice to itemize."
+        ],
+        "programYear": "Tax year 2025.",
+        "rentProxy": null,
+        "sources": [
+          {
+            "title": "Va. Code \u00a7 58.1-322.03",
+            "url": "https://law.lis.virginia.gov/vacode/title58.1/chapter3/section58.1-322.03/",
+            "kind": "statute"
+          },
+          {
+            "title": "Virginia HB 1600, Item 4-14",
+            "url": "https://budget.lis.virginia.gov/item/2025/1/HB1600/Enrolled/4/4-14",
+            "kind": "statute"
+          },
+          {
+            "title": "2019 Virginia legislative summary",
+            "url": "https://www.tax.virginia.gov/sites/default/files/inline-files/2019-legislative-summary.pdf",
+            "kind": "agency"
+          },
+          {
+            "title": "2025 Virginia Schedule A instructions",
+            "url": "https://www.tax.virginia.gov/sites/default/files/vatax-pdf/2025-sch-a-instructions.pdf",
+            "kind": "form"
+          }
+        ],
+        "modelVariables": [
+          "va_itemized_deductions"
+        ],
+        "paymentMechanism": "income-tax-deduction"
       }
     ],
     "laterChanges": [],
@@ -6354,7 +6674,8 @@
           }
         ],
         "modelVariables": [
-          "wi_property_tax_credit"
+          "wi_property_tax_credit",
+          "wi_property_tax_credit_potential"
         ],
         "paymentMechanism": "income-tax-credit"
       },

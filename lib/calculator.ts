@@ -108,9 +108,7 @@ export function calculatorInputError(
   )
     return `${input.label}: enter a plain decimal number.`;
   if (input.minimum !== undefined && input.minimum === input.maximum)
-    return input.minimum === 0
-      ? `${input.label}: enter 0 in this renter scenario.`
-      : `${input.label}: enter ${input.minimum}.`;
+    return `${input.label}: enter ${input.minimum} for this scenario.`;
   if (input.minimum !== undefined && Number(value) < input.minimum)
     return `${input.label}: enter ${input.minimum} or more.`;
   if (input.maximum !== undefined && Number(value) > input.maximum)

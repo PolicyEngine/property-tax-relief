@@ -141,6 +141,47 @@
       ],
       "modelVariables": [],
       "paymentMechanism": "property-tax-bill-reduction"
+    },
+    {
+      "id": "ne-real-estate-tax-itemized-deduction",
+      "name": "Real estate tax itemized deduction",
+      "category": "deduction",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Federal income rules affect the itemized deduction.",
+      "incomeLimits": "Income rules affect larger itemized deductions.",
+      "maximumBenefit": "Claim the qualified amount within the applicable itemized deduction limits.",
+      "formulaSummary": "Nebraska starts with federal itemized deductions and removes state and local income taxes. Qualified real estate taxes remain subject to the federal combined limit.",
+      "application": "Include federal itemized deductions on Form 1040N, line 7. Calculate the Nebraska itemized deduction on line 9.",
+      "eligibilityNotes": [
+        "Use qualified real estate taxes for the applicable form."
+      ],
+      "interactions": [
+        "Federal limits apply to the combined deduction. Nebraska excludes state and local income tax from itemized deductions."
+      ],
+      "programYear": "Tax year 2025.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "Neb. Rev. Stat. § 77-2716.01(3)",
+          "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=77-2716.01",
+          "kind": "statute"
+        },
+        {
+          "title": "2025 Form 1040N and instructions",
+          "url": "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_Individual_Income_Tax_Booklet.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "2025 federal Schedule A instructions",
+          "url": "https://www.irs.gov/pub/irs-prior/i1040sca--2025.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["capped_property_taxes"],
+      "paymentMechanism": "income-tax-deduction"
     }
   ],
   "laterChanges": [],
