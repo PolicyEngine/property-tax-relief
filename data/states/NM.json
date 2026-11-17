@@ -77,6 +77,47 @@
       ],
       "modelVariables": [],
       "paymentMechanism": "cash-rebate"
+    },
+    {
+      "id": "nm-itemized-real-estate-tax-deduction",
+      "name": "Real estate taxes in New Mexico itemized deductions",
+      "category": "deduction",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "paymentMechanism": "income-tax-deduction",
+      "ageRule": "No separate age test applies to this deduction.",
+      "incomeDefinition": "New Mexico uses federal itemized deductions. Federal modified adjusted gross income can reduce the combined deduction for state and local taxes.",
+      "incomeLimits": "The federal combined limit starts to phase down for a 2025 single filer with modified adjusted gross income over $500,000.",
+      "maximumBenefit": "Eligible property taxes within the federal combined limit for state and local taxes.",
+      "formulaSummary": "PIT-1 line 12 carries the allowed federal itemized deduction. With no income or sales taxes on Schedule A line 5a, the line 10 add-back is zero.",
+      "application": "Enter the federal itemized deduction on PIT-1 line 12, mark 12a and complete the line 10 worksheet when there is an add-back.",
+      "eligibilityNotes": [
+        "Use eligible real estate taxes paid on owned nonbusiness property from federal Schedule A line 5b."
+      ],
+      "interactions": [
+        "The federal filing election determines whether the state computation starts with the federal standard deduction or federal itemized deductions."
+      ],
+      "programYear": "2025 New Mexico income-tax return, using taxes paid in 2025 and the 2025 federal Schedule A.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 New Mexico PIT-1 instructions, line 12",
+          "url": "https://realfile.tax.newmexico.gov/2025pit-1-ins.pdf#page=25",
+          "kind": "form"
+        },
+        {
+          "title": "2025 New Mexico PIT-1 instructions, line 10 worksheet",
+          "url": "https://realfile.tax.newmexico.gov/2025pit-1-ins.pdf#page=24",
+          "kind": "form"
+        },
+        {
+          "title": "2025 federal Schedule A, lines 5a–5e",
+          "url": "https://www.irs.gov/pub/irs-prior/f1040sa--2025.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["nm_itemized_deductions"]
     }
   ],
   "laterChanges": [],

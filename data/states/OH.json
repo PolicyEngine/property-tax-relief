@@ -104,7 +104,10 @@
           "kind": "statute"
         }
       ],
-      "modelVariables": ["oh_homestead_property_tax_reduction"],
+      "modelVariables": [
+        "oh_homestead_property_tax_reduction",
+        "oh_homestead_exemption"
+      ],
       "paymentMechanism": "taxable-property-value-exemption"
     }
   ],

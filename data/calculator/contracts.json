@@ -1,7 +1,7 @@
 {
   "referenceYear": 2025,
-  "metadataVersion": "2.2.1",
-  "metadataSha256": "670b553ff1eb2307bcb7edf529a03f40826c7beb1b8b057a1fc4e92b53b8de92",
+  "metadataVersion": "2.2.2",
+  "metadataSha256": "8f8b944c3d91a84a891a01274282688fb80f1113a55ce09931ba83f42e25091e",
   "contracts": [
     {
       "id": "in-renters-income-tax-deduction",
@@ -24,7 +24,7 @@
         "The estimate assumes you meet the residence and property-qualification requirements. Mobile-home rent can qualify. Payments by members of cooperative housing projects do not qualify."
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/in/tax/income/deductions/in_renters_deduction.py",
         "sha256": "599db50ba3d574efea7a7f3db261b6cbd9954aa50e1390a3ae9b11a68596ba4d"
       },
@@ -58,7 +58,7 @@
         "This preview excludes claims that use the Lake County residential income-tax credit on 2025 Schedule 5, line 7."
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/in/tax/income/deductions/in_homeowners_property_tax_deduction.py",
         "sha256": "86ade95cda55b23f4350c6d7ea5f3681200dd1a4e23636363cd16695656f75db"
       },
@@ -99,7 +99,7 @@
         "Enter California adjusted gross income from your 2025 Form 540, line 17. Gross wages and total household income can differ from this amount."
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/ca/tax/income/credits/ca_renter_credit.py",
         "sha256": "c41613f4aaff3a9279c2043429daf63ddae32c8cec82cc8ca679635cb88a0eb6"
       },
@@ -176,7 +176,7 @@
         }
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/mi/tax/income/credits/homestead_property_tax/mi_homestead_property_tax_credit.py",
         "sha256": "051ee8226e01c5e008146bb1490cc97e1380d9bc98d212f907b8412911f37483"
       },
@@ -276,7 +276,7 @@
         }
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/nj/tax/income/credits/property_tax_credit/nj_property_tax_credit.py",
         "sha256": "186c50b1ec1bf3fa017d0af18c12cb42d5a37d2b9c52d7ea23750e6795162cfa"
       },
@@ -370,7 +370,7 @@
         }
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/nj/tax/income/property_tax/nj_property_tax_deduction.py",
         "sha256": "4104b635d417670da1e548f255d49c50b485427600fcd8ad038226300cfbf765"
       },
@@ -451,7 +451,7 @@
         }
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/il/tax/income/credits/il_property_tax_credit.py",
         "sha256": "f238adef000461757781ac140469ee1d0580d23a93c78cb10f4b59f505ede945"
       },
@@ -533,7 +533,7 @@
         }
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/pa/tax/property/property_tax_or_rent_rebate/pa_property_tax_or_rent_rebate.py",
         "sha256": "249d361846b79f08fdd43691d1fd6204c9d804f28ac0b310aa4646870aa3678f"
       }
@@ -596,7 +596,7 @@
         }
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/ok/tax/income/credits/ok_ptc.py",
         "sha256": "caba65e52d8d4b9e68cbb9a36799c01783c884d77ac7e4b182318963b7932a14"
       }
@@ -664,10 +664,1794 @@
         }
       ],
       "sourceEvidence": {
-        "packageVersion": "2.2.1",
+        "packageVersion": "2.2.2",
         "file": "variables/gov/states/ct/tax/income/credits/property_tax/ct_property_tax_credit.py",
         "sha256": "666607b961917d36c205baf5ec17ba8b1713f8f2c335885ebd85917138202b15"
       }
+    },
+    {
+      "id": "az-property-tax-credit",
+      "state": "AZ",
+      "year": 2025,
+      "modelVariable": "az_property_tax_credit",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age at the end of 2025",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 65,
+          "maximum": 120
+        },
+        {
+          "variable": "az_property_tax_credit_income",
+          "label": "Income for the Arizona property tax credit",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter income from all sources as defined in the Form 140PTC instructions. Enter the whole-dollar amount for someone who lived alone."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualified property taxes paid in 2025",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Include only taxes you paid on the Arizona home you owned and occupied as your primary residence."
+        }
+      ],
+      "notes": [
+        "This estimate covers homeowners age 65 or older who lived alone and were Arizona residents throughout 2025. Use the Form 140PTC instructions to check the remaining requirements."
+      ],
+      "resultLabel": "Arizona property tax credit",
+      "sources": [
+        {
+          "title": "Arizona Revised Statutes § 43-1072",
+          "url": "https://www.azleg.gov/ars/43/01072.htm"
+        },
+        {
+          "title": "Arizona Department of Revenue, Form 140PTC",
+          "url": "https://azdor.gov/forms/tax-credits-forms/property-tax-refund-credit-claim-form-fillable"
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/az/tax/income/credits/property_tax_credit/az_property_tax_credit.py",
+        "sha256": "7417342c9549aa449c64fe046f604b568a598595fdcef77afa7d0a75fb2ad944"
+      }
+    },
+    {
+      "id": "nd-primary-residence-credit",
+      "state": "ND",
+      "year": 2025,
+      "modelVariable": "nd_primary_residence_credit",
+      "entity": "tax_unit",
+      "kind": "bill-reduction",
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "2025 property tax due before the Primary Residence Credit",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Enter the tax due on your North Dakota primary home before this credit. Exclude special assessments."
+        }
+      ],
+      "notes": [
+        "This estimate covers sole owners who occupy a qualifying North Dakota primary home that the county taxes as real estate. It assumes the state approved your application and you receive no other Chapter 57 property tax credits."
+      ],
+      "resultLabel": "Credit against your property tax bill",
+      "resultNote": "The county applies the credit against the tax due on your primary home.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/nd/tax/property/primary_residence_credit/nd_primary_residence_credit.py",
+        "sha256": "4e1a2f32abc485c0618dbfb1456ad2f225f22b1bbbe0170ba92eacd612f7f370"
+      },
+      "sources": [
+        {
+          "title": "North Dakota 2025 House Bill 1176, section 10",
+          "url": "https://ndlegis.gov/assembly/69-2025/regular/documents/25-1003-06000.pdf#page=11"
+        },
+        {
+          "title": "North Dakota 2025 House Bill 1176, section 12",
+          "url": "https://ndlegis.gov/assembly/69-2025/regular/documents/25-1003-06000.pdf#page=17"
+        },
+        {
+          "title": "North Dakota Office of State Tax Commissioner Primary Residence Credit",
+          "url": "https://www.tax.nd.gov/prc"
+        }
+      ]
+    },
+    {
+      "id": "ky-homestead-exemption",
+      "state": "KY",
+      "year": 2025,
+      "modelVariable": "ky_homestead_exemption",
+      "entity": "tax_unit",
+      "kind": "assessed-value-exemption",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age at the end of 2025",
+          "entity": "person",
+          "minimum": 65,
+          "kind": "number"
+        },
+        {
+          "variable": "assessed_property_value",
+          "label": "Assessed value of your home before the exemption",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Use the 2025 assessed value from your Kentucky property valuation administrator."
+        }
+      ],
+      "notes": [
+        "Use this estimate if you reached age 65 by the end of 2025 and owned and occupied your Kentucky primary home on January 1, 2025.",
+        "Apply through the property valuation administrator for your county. The Department of Revenue also lists a separate disability qualification."
+      ],
+      "resultLabel": "Assessed home value exempt from property tax",
+      "resultNote": "Kentucky subtracts this amount from the assessed value of your home before applying local property tax rates.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ky/tax/property/homestead_exemption/ky_homestead_exemption.py",
+        "sha256": "41eb7f7eea5ca7cf391cdaefd75ebccebdb8da7ed7e3b4b5d082889bcc8dd96c"
+      },
+      "sources": [
+        {
+          "title": "Kentucky Department of Revenue homestead exemption for 2025 and 2026",
+          "url": "https://revenue.ky.gov/News/Pages/DOR-Sets-2025-2026-Homestead-Exemption.aspx"
+        },
+        {
+          "title": "Kentucky Revised Statutes §132.810",
+          "url": "https://apps.legislature.ky.gov/law/Statutes/statute.aspx?id=39641"
+        },
+        {
+          "title": "Kentucky Department of Revenue homestead exemption application guidance",
+          "url": "https://revenue.ky.gov/Property/Residential-Farm-Commercial-Property/Pages/Homestead-Exemption.aspx"
+        }
+      ]
+    },
+    {
+      "id": "tx-school-homestead",
+      "state": "TX",
+      "year": 2025,
+      "modelVariable": "tx_school_district_homestead_exemption",
+      "entity": "tax_unit",
+      "kind": "assessed-value-exemption",
+      "inputs": [
+        {
+          "variable": "assessed_property_value",
+          "label": "Appraised home value before exemptions",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Use the 2025 appraised value from your appraisal district after any appraisal cap and before exemptions."
+        }
+      ],
+      "notes": [
+        "Use this estimate if you owned and occupied your qualifying Texas primary home throughout 2025.",
+        "Apply with your local appraisal district. The district checks whether you qualify for this and any additional exemptions."
+      ],
+      "resultLabel": "Home value exempt from school district tax",
+      "resultNote": "Your school district calculates tax on the appraised value after exemptions. Your bill depends on the district tax rate and any additional exemptions.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/tx/tax/property/school_district_homestead_exemption/tx_school_district_homestead_exemption.py",
+        "sha256": "a9a426fff3c1219562775d1761229bce19fe99b2ced019e81af7e69e7a2892a0"
+      },
+      "sources": [
+        {
+          "title": "Texas Comptroller 2025 residential homestead exemptions",
+          "url": "https://comptroller.texas.gov/taxes/property-tax/docs/98-1070.pdf"
+        },
+        {
+          "title": "Texas Comptroller 2025 property tax law changes",
+          "url": "https://comptroller.texas.gov/taxes/property-tax/docs/96-669.pdf"
+        },
+        {
+          "title": "Texas Comptroller appraisal and tax limitations",
+          "url": "https://comptroller.texas.gov/taxes/property-tax/appraisal-tax-limitations.php"
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "entity": "tax_unit",
+      "id": "sc-homestead-exemption",
+      "state": "SC",
+      "modelVariable": "sc_homestead_exemption",
+      "kind": "assessed-value-exemption",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age on December 31, 2024",
+          "entity": "person",
+          "kind": "number",
+          "minimum": 18,
+          "maximum": 120
+        },
+        {
+          "variable": "assessed_property_value",
+          "label": "Assessed value before the homestead exemption",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 100,
+          "description": "Enter the assessed value of the home from your 2025 property assessment. Use the value based on South Carolina’s 4% legal residence assessment ratio."
+        }
+      ],
+      "notes": [
+        "This calculation covers the age-based exemption for the sole owner of a qualifying legal residence who lived in South Carolina for at least one year by December 31, 2024. It assumes you applied and meet the other ownership and residence requirements.",
+        "The 2025 exemption covers the first $50,000 of fair market value. South Carolina assesses a qualifying legal residence at 4% of fair market value."
+      ],
+      "resultLabel": "Assessed value exempt from property tax",
+      "resultNote": "The exemption reduces the assessed value subject to property tax. Your tax savings depend on the levies that apply to your home.",
+      "sources": [
+        {
+          "title": "South Carolina Code § 12-37-250, Homestead exemption",
+          "url": "https://www.scstatehouse.gov/code/t12c037.php"
+        },
+        {
+          "title": "South Carolina Code § 12-43-220(c), Legal residence assessment ratio",
+          "url": "https://www.scstatehouse.gov/code/t12c043.php"
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/sc/tax/property/homestead_exemption/sc_homestead_exemption.py",
+        "sha256": "cd3d36acc5b20f50d9b83a0aa65822d91f33d81dbd0762ab201a008b40216ab8"
+      }
+    },
+    {
+      "year": 2025,
+      "entity": "tax_unit",
+      "id": "ms-age-disability-homestead-exemption",
+      "state": "MS",
+      "modelVariable": "ms_age_disability_homestead_exemption",
+      "kind": "assessed-value-exemption",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age on January 1, 2025",
+          "entity": "person",
+          "kind": "number",
+          "minimum": 18,
+          "maximum": 120
+        },
+        {
+          "variable": "assessed_property_value",
+          "label": "Assessed value before the homestead exemption",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter the assessed value of your qualifying home before exemptions, as shown on the 2025 property assessment."
+        }
+      ],
+      "notes": [
+        "This calculation covers the base age-based exemption for a qualifying homeowner. It assumes you own and occupy the home as your primary residence and meet the other requirements.",
+        "If you qualify for an additional exemption for increases in assessed value, military service, disability or surviving-spouse status, contact your county tax assessor for the applicable amount."
+      ],
+      "resultLabel": "Base assessed value exempt from property tax",
+      "resultNote": "The exemption reduces the assessed value subject to property tax. Your tax savings depend on your local tax rates and any additional exemptions.",
+      "sources": [
+        {
+          "title": "Mississippi Department of Revenue, Homestead exemption tier 2",
+          "url": "https://www.dor.ms.gov/county-services/homestead-exemption"
+        },
+        {
+          "title": "2025 Mississippi HB 812, § 27-33-75(2)(a)–(c)",
+          "url": "https://billstatus.ls.state.ms.us/documents/2025/html/HB/0800-0899/HB0812SG.htm"
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ms/tax/property/age_disability_homestead_exemption/ms_age_disability_homestead_exemption.py",
+        "sha256": "f5d9a0c5dfbf6cc6068f5575dfbed59bc7745ca057bab43c62047401e891e1db"
+      }
+    },
+    {
+      "year": 2025,
+      "entity": "tax_unit",
+      "id": "al-homestead-exemptions",
+      "state": "AL",
+      "modelVariable": "al_senior_homestead_exemption",
+      "kind": "bill-reduction",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age on October 1, 2025",
+          "entity": "person",
+          "kind": "number",
+          "minimum": 18,
+          "maximum": 120
+        },
+        {
+          "variable": "assessed_property_value",
+          "label": "Assessed value before the homestead exemption",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter the assessed value for the eligible home and land from your assessment for the 2025–26 property tax year."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Property tax before exemptions",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter the combined state and local property tax on the same home and land before exemptions. Exclude penalties, fees and taxes on other property. Ask your county assessing official for the amount if your bill only shows tax after exemptions."
+        }
+      ],
+      "notes": [
+        "This calculation covers the state property tax levy for a qualifying Alabama resident age 65 or older who owns and occupies the homestead. It assumes you meet the acreage and application requirements.",
+        "Alabama exempts qualifying seniors from the state levy. Your county can apply separate exemptions to local property taxes."
+      ],
+      "resultLabel": "State property tax exempted",
+      "resultNote": "This amount measures the state portion before any exemption. For your county, municipal and school taxes, check with your county assessing official.",
+      "sources": [
+        {
+          "title": "Alabama Administrative Code r. 810-4-1-.23(2), (3) and (8), Homestead exemptions",
+          "url": "https://admincode.legislature.state.al.us/administrative-code/810-4-1-.23"
+        },
+        {
+          "title": "Alabama Department of Revenue, State property tax rate",
+          "url": "https://www.revenue.alabama.gov/tax-types/property-ad-valorem-tax/"
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/al/tax/property/senior_homestead_exemption/al_senior_homestead_exemption.py",
+        "sha256": "4ccdcd67aad3dbe60942257ffd984932be740e2ab611caafb8f4ef9c8c37f0e9"
+      }
+    },
+    {
+      "id": "dc-schedule-h",
+      "state": "DC",
+      "modelVariable": "dc_ptc",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/dc/tax/income/credits/dc_ptc.py",
+        "sha256": "163e7c0b89aa6bf92a4b9430e55918ff2880dcbb72470d4eb9bfe642d770ce96"
+      },
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age on December 31, 2025",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 70,
+          "description": "This estimate covers the Schedule H rules for renters age 70 or older."
+        },
+        {
+          "variable": "adjusted_gross_income",
+          "label": "Federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter the amount from Schedule H, Section A, line 1."
+        },
+        {
+          "variable": "rent",
+          "label": "Qualifying annual rent paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter the qualifying rent you paid before multiplying by 20% on Schedule H, Section A, line 2."
+        }
+      ],
+      "notes": [
+        "Use this estimate if you rented your main home in D.C. throughout 2025 and received no rental subsidy. Check the remaining Schedule H eligibility requirements before filing."
+      ],
+      "resultNote": "Schedule H rounds the credit to the nearest whole dollar.",
+      "sources": [
+        {
+          "title": "2025 Schedule H and instructions",
+          "url": "https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_Schedule_H_021226.pdf"
+        },
+        {
+          "title": "D.C. Code § 47-1806.06",
+          "url": "https://code.dccouncil.gov/us/dc/council/code/sections/47-1806.06"
+        }
+      ]
+    },
+    {
+      "id": "ny-real-property-tax-credit",
+      "state": "NY",
+      "modelVariable": "ny_real_property_tax_credit",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ny/tax/income/credits/ny_real_property_tax_credit.py",
+        "sha256": "10ec76405eef5d499939f38e9447c974b8679a7325607da7f0253287d373be42"
+      },
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age on December 31, 2025",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 18,
+          "description": "Use your age at the end of the tax year."
+        },
+        {
+          "variable": "adjusted_gross_income",
+          "label": "Federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter Form IT-214, line 8. Enter zero if that amount falls below zero."
+        },
+        {
+          "variable": "rent",
+          "label": "Adjusted annual rent",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter Form IT-214, line 12. Use the form to adjust rent for included utilities, furnishings or board."
+        }
+      ],
+      "notes": [
+        "Use this estimate if you rented and occupied the same taxable New York home for all 12 months of 2025 and owned no real property. Check the remaining Form IT-214 eligibility requirements before filing."
+      ],
+      "sources": [
+        {
+          "title": "2025 Form IT-214",
+          "url": "https://www.tax.ny.gov/pdf/current_forms/it/it214_fill_in.pdf"
+        },
+        {
+          "title": "2025 Form IT-214 instructions",
+          "url": "https://www.tax.ny.gov/pdf/2025/inc/it214i_2025.pdf"
+        },
+        {
+          "title": "New York Tax Law § 606(e)",
+          "url": "https://www.nysenate.gov/legislation/laws/TAX/606"
+        }
+      ]
+    },
+    {
+      "id": "oh-homestead-exemption",
+      "state": "OH",
+      "year": 2025,
+      "modelVariable": "oh_homestead_exemption",
+      "entity": "tax_unit",
+      "kind": "assessed-value-exemption",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age at the end of 2025",
+          "entity": "person",
+          "minimum": 65,
+          "kind": "number"
+        },
+        {
+          "variable": "oh_homestead_exemption_total_income",
+          "label": "2024 Ohio modified adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "description": "Use line 3 of your 2024 Ohio IT 1040 and add the business income deduction from line 13 of the Ohio Schedule of Adjustments."
+        },
+        {
+          "variable": "assessed_property_value",
+          "label": "Assessed home value before this exemption",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Enter the 2025 taxable value from your county auditor before this exemption. Ohio assesses homes at 35% of appraised value."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "2025 property tax before this exemption",
+          "entity": "person",
+          "minimum": 0.01,
+          "kind": "money",
+          "description": "Enter the positive tax on your home before the homestead exemption. The model uses this field to identify owner-occupied homes."
+        }
+      ],
+      "notes": [
+        "This estimate covers the standard senior exemption for an Ohio home you owned and occupied on January 1, 2025. It uses the 2025 real-property tax year and a 2025 application.",
+        "Your county auditor can explain the separate disability, surviving spouse, veteran, manufactured home and grandfathered routes."
+      ],
+      "resultLabel": "Assessed home value exempt from property tax",
+      "resultNote": "The exemption removes up to $10,150 of assessed value from the calculation for eligible homeowners. Your county auditor calculates the bill using the rules for your taxing district.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/oh/tax/property/homestead_exemption/oh_homestead_exemption.py",
+        "sha256": "829d7ef98fe290d1ddb78cd9c42548055c820a61bad1f418234e40ef9986046e"
+      },
+      "sources": [
+        {
+          "title": "Ohio Department of Taxation 2025 annual report on real property tax",
+          "url": "https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/communications/publications/annual_reports/2025annualreport.pdf"
+        },
+        {
+          "title": "Ohio Department of Taxation homestead means testing",
+          "url": "https://tax.ohio.gov/help-center/faqs/real-property-tax-homestead-means-testing"
+        },
+        {
+          "title": "Ohio 2025 homestead exemption certification",
+          "url": "https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/government/newdocs/25-09-0346-HomesteadIncomeThreshold2026.pdf"
+        },
+        {
+          "title": "Fulton County auditor 2025 homestead income instructions",
+          "url": "https://www.fultoncountyoh.com/147/Homestead-Exemption"
+        },
+        {
+          "title": "Ohio Revised Code §323.151",
+          "url": "https://codes.ohio.gov/ohio-revised-code/section-323.151"
+        }
+      ]
+    },
+    {
+      "id": "wv-homestead-exemption",
+      "state": "WV",
+      "year": 2025,
+      "modelVariable": "wv_homestead_exemption",
+      "entity": "tax_unit",
+      "kind": "assessed-value-exemption",
+      "inputs": [
+        {
+          "variable": "assessed_property_value",
+          "label": "Assessed home value before the exemption",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Enter the assessed value from your county for the 2025 property tax year, which uses the July 1, 2024 assessment date."
+        }
+      ],
+      "notes": [
+        "Use this estimate if you turned 65 by June 30, 2025 and owned and occupied your qualifying West Virginia primary home on July 1, 2024.",
+        "Your county assessor can confirm your age, residency and ownership requirements and explain the separate disability route."
+      ],
+      "resultLabel": "Assessed home value exempt from property tax",
+      "resultNote": "Your county subtracts this amount from the assessed value used to calculate your property taxes.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/wv/tax/income/exemptions/homestead_exemption/wv_homestead_exemption.py",
+        "sha256": "46a54a2ae4860886219db1f9da501b2e61efd4c5f0887216795f97fe4fb951ea"
+      },
+      "sources": [
+        {
+          "title": "West Virginia Code §11-6B-3 homestead exemption",
+          "url": "https://code.wvlegislature.gov/11-6B-3/"
+        },
+        {
+          "title": "West Virginia Code §11-6B-7 taxable assessed value and no-tax rule",
+          "url": "https://code.wvlegislature.gov/11-6B-7/"
+        },
+        {
+          "title": "West Virginia Code §11-6B-2 homestead exemption definitions",
+          "url": "https://code.wvlegislature.gov/11-6B-2/"
+        },
+        {
+          "title": "Ohio County, West Virginia assessor assessment and tax years",
+          "url": "https://ohio.wvassessor.com/GeneralInfo.aspx"
+        }
+      ]
+    },
+    {
+      "id": "tn-elderly-disabled-relief",
+      "state": "TN",
+      "year": 2025,
+      "modelVariable": "tn_elderly_property_tax_relief",
+      "entity": "tax_unit",
+      "kind": "rebate",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age at the end of 2025",
+          "entity": "person",
+          "minimum": 65,
+          "kind": "number"
+        },
+        {
+          "variable": "tn_elderly_property_tax_relief_income",
+          "label": "2024 income for Tennessee Property Tax Relief",
+          "entity": "tax_unit",
+          "kind": "money",
+          "description": "Use your 2024 income from all sources under the program rules. Ask your county trustee which amounts to include."
+        },
+        {
+          "variable": "primary_residence_value",
+          "label": "Full market value of your home for 2025",
+          "entity": "person",
+          "minimum": 0.01,
+          "kind": "money",
+          "description": "Ask your county trustee for the full market value it uses for this program. Tennessee adjusts the county's appraised value using the official appraisal ratio."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "2025 property tax on your home before this payment",
+          "entity": "person",
+          "minimum": 0.01,
+          "kind": "money",
+          "description": "Enter the tax for one qualified residential bill, before any payment or credit from this program. Exclude penalties, interest and separate fees."
+        }
+      ],
+      "notes": [
+        "This estimate covers sole owners who qualify by age and use the property as their Tennessee primary home. Use a bill without a tax freeze or other local adjustments to the home value or tax.",
+        "Apply through the county trustee or city collecting official. The trustee can confirm which property value and tax amounts qualify."
+      ],
+      "resultLabel": "Estimated state property tax payment before adjustments",
+      "resultNote": "Tennessee can reimburse you or pay the collecting official. State funding adjustments, prior credits and local supplements can change the amount you receive.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/tn/tax/property/elderly_property_tax_relief/tn_elderly_property_tax_relief.py",
+        "sha256": "2e5b591137f5df2835dd556ac42d1a90a47e2b526d75833dcd2acd1f95c13947"
+      },
+      "sources": [
+        {
+          "title": "2025 Tennessee Property Tax Relief brochure",
+          "url": "https://www.weakleycountytn.gov/uploads/1/0/7/5/107537459/2025_property_ttax_relief_program.pdf#page=2"
+        },
+        {
+          "title": "Tennessee Code §67-5-702 elderly low-income homeowners",
+          "url": "https://comptroller.tn.gov/content/dam/cot/pa/documents/tax-relief/TCA%2067-5-701%20through%2067-5-704.pdf#page=3"
+        },
+        {
+          "title": "Tennessee Code §67-5-701 payment and administration",
+          "url": "https://comptroller.tn.gov/content/dam/cot/pa/documents/tax-relief/TCA%2067-5-701%20through%2067-5-704.pdf#page=1"
+        },
+        {
+          "title": "Tennessee Comptroller tax relief applications and payment guidance",
+          "url": "https://comptroller.tn.gov/office-functions/pa/property-taxes/property-tax-programs/tax-relief.html"
+        }
+      ]
+    },
+    {
+      "id": "mt-elderly-homeowner-renter-credit",
+      "state": "MT",
+      "modelVariable": "mt_elderly_homeowner_or_renter_credit",
+      "entity": "person",
+      "kind": "credit",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/mt/tax/income/credits/mt_elderly_homeowner_or_renter/mt_elderly_homeowner_or_renter_credit.py",
+        "sha256": "3f43adeab5b47d241053e66f01695c5ea55349f2cc8602b9bd5baf19d3c4ee6a"
+      },
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age on December 31, 2025",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 18
+        },
+        {
+          "variable": "mt_elderly_homeowner_or_renter_credit_gross_household_income",
+          "label": "Gross household income",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter the amount from 2025 Schedule 2EC, line 18."
+        },
+        {
+          "variable": "rent",
+          "label": "Qualifying annual rent paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter the amount from 2025 Schedule 2EC, line 24."
+        }
+      ],
+      "notes": [
+        "Use this estimate if you rented and occupied your main home in Montana throughout 2025. Check the remaining Schedule 2EC eligibility requirements before filing."
+      ],
+      "sources": [
+        {
+          "title": "2025 Schedule 2EC",
+          "url": "https://revenue.mt.gov/files/Forms/Montana-Individual-Income-Tax-Return-Form-2/Form_2_2025_Schedule_2EC.pdf"
+        },
+        {
+          "title": "2025 Form 2 instructions",
+          "url": "https://revenue.mt.gov/files/forms/Montana-Individual-Income-Tax-Return-Form-2-Instructions/2025_Montana_Individual_Income_Tax_Return_Form_2_Instructions.pdf"
+        },
+        {
+          "title": "Montana Code § 15-30-2340",
+          "url": "https://mca.legmt.gov/bills/mca/title_0150/chapter_0300/part_0230/section_0400/0150-0300-0230-0400.html"
+        }
+      ]
+    },
+    {
+      "id": "ma-senior-circuit-breaker",
+      "state": "MA",
+      "modelVariable": "ma_senior_circuit_breaker",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ma/tax/income/credits/senior_circuit_breaker/ma_senior_circuit_breaker.py",
+        "sha256": "35c5d5bf94cdbd38451654165a5c4b972837cc38eed94c4df7d1b906be490c27"
+      },
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age on December 31, 2025",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 18
+        },
+        {
+          "variable": "ma_scb_total_income",
+          "label": "Qualifying income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter the amount from 2025 Schedule CB, line 9."
+        },
+        {
+          "variable": "rent",
+          "label": "Qualifying annual rent paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter rent from 2025 Schedule CB, line 18a, before dividing by four."
+        }
+      ],
+      "notes": [
+        "Use this estimate if you rented your main home in Massachusetts throughout 2025 from a landlord who pays property tax. Check the remaining Schedule CB eligibility requirements, including the rules for rental subsidies."
+      ],
+      "sources": [
+        {
+          "title": "2025 Schedule CB",
+          "url": "https://www.mass.gov/doc/2025-schedule-cb-circuit-breaker-credit/download"
+        },
+        {
+          "title": "Massachusetts General Laws, chapter 62, section 6(k)",
+          "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIX/Chapter62/Section6"
+        }
+      ]
+    },
+    {
+      "id": "ut-renter-refund",
+      "state": "UT",
+      "modelVariable": "ut_homeowner_renter_relief",
+      "entity": "tax_unit",
+      "kind": "rebate",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ut/tax/property/homeowner_renter_relief/ut_homeowner_renter_relief.py",
+        "sha256": "7f1391f0274553c57c504ef0d6605b68accc8e2284ecd3a90ad9be2d2c543c4e"
+      },
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age on December 31, 2025",
+          "entity": "person",
+          "kind": "number",
+          "period": 2025,
+          "minimum": 18
+        },
+        {
+          "variable": "ut_homeowner_renter_relief_household_income",
+          "label": "Total household income",
+          "entity": "household",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter total income from Form TC-90CB, line 10, for the 2025 rent year."
+        },
+        {
+          "variable": "rent",
+          "label": "Qualifying annual rent paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "minimum": 0,
+          "description": "Enter your out-of-pocket rent from Form TC-90CB, section 3. Use this estimate for rent that excludes gas and electricity."
+        }
+      ],
+      "notes": [
+        "Use this estimate if you rented your main home and lived in Utah throughout 2025, supported yourself financially, and meet the remaining Form TC-90CB requirements."
+      ],
+      "sources": [
+        {
+          "title": "Form TC-90CB for the 2025 rent year",
+          "url": "https://files.tax.utah.gov/tax/forms/current/tc-90cb.pdf"
+        },
+        {
+          "title": "Utah State Tax Commission Renter’s Credit",
+          "url": "https://tax.utah.gov/relief/renter-refund/"
+        },
+        {
+          "title": "Utah Code § 59-2a-205",
+          "url": "https://le.utah.gov/xcode/Title59/Chapter2A/C59-2a_2026010120250507.pdf#page=11"
+        }
+      ]
+    },
+    {
+      "id": "ar-itemized-real-estate-tax-deduction",
+      "state": "AR",
+      "year": 2025,
+      "modelVariable": "ar_itemized_deductions_joint",
+      "entity": "person",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "2025 real estate taxes eligible for Arkansas itemization",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Enter the real estate tax you paid on nonbusiness property you own. Exclude special assessments and levy taxes. See Form AR3 line 5."
+        }
+      ],
+      "notes": [
+        "This estimate uses Form AR3 for a full-year Arkansas resident with real estate taxes as their sole itemized expense. Compare the amount with your standard deduction before filing."
+      ],
+      "resultLabel": "Real estate taxes allowed under Arkansas itemization",
+      "resultNote": "The amount reduces Arkansas taxable income when you itemize. Your choice of deduction and tax rate affect your tax savings.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ar/tax/income/deductions/itemized/ar_itemized_deductions_joint.py",
+        "sha256": "46a11e19fca7bc0b61f60f61ac5ae790a42130164b3ba6667b55e88e7ab7c582"
+      },
+      "sources": [
+        {
+          "title": "2025 Arkansas Form AR3 itemized deductions",
+          "url": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR3_ItemizedDeduction.pdf"
+        },
+        {
+          "title": "2025 Arkansas Form AR3 instructions, line 5",
+          "url": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000F_and_AR1000NR_Instructions.pdf"
+        }
+      ]
+    },
+    {
+      "id": "id-itemized-real-estate-tax-deduction",
+      "state": "ID",
+      "year": 2025,
+      "modelVariable": "id_itemized_deductions",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "adjusted_gross_income",
+          "label": "2025 federal adjusted gross income",
+          "entity": "tax_unit",
+          "minimum": 0,
+          "maximum": 500000,
+          "kind": "money",
+          "description": "Enter line 11a of your 2025 federal Form 1040. This estimate assumes you have no adjustments for foreign or territorial income when applying the federal limit on state and local tax deductions."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "2025 eligible real estate taxes",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Enter the amount from federal Schedule A line 5b, before applying the combined federal limit."
+        },
+        {
+          "variable": "state_and_local_sales_or_income_tax",
+          "label": "2025 state and local income or general sales taxes",
+          "entity": "tax_unit",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Enter federal Schedule A line 5a. Use the income tax or the sales tax amount that you chose for Schedule A."
+        }
+      ],
+      "notes": [
+        "This estimate covers full-year Idaho residents who use federal Schedule A and list state and local taxes from lines 5a and 5b as their sole itemized deductions."
+      ],
+      "resultLabel": "Real estate taxes allowed under Idaho itemization",
+      "resultNote": "Idaho removes state and local income or general sales taxes from your federal itemized deductions. Compare the remaining deduction with your Idaho standard deduction before filing.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/id/tax/income/deductions/id_itemized_deductions.py",
+        "sha256": "bd6b070835ba04e2f30dbac047827008e80f258bf037f04065185fd2a6410bb4"
+      },
+      "sources": [
+        {
+          "title": "2025 Idaho Form 40 lines 13–17",
+          "url": "https://tax.idaho.gov/wp-content/uploads/forms/EFO00089/EFO00089_03-02-2026.pdf#page=2"
+        },
+        {
+          "title": "2025 Idaho Form 40 instructions for itemized deductions",
+          "url": "https://tax.idaho.gov/wp-content/uploads/forms/EIN00046/EIN00046_03-02-2026.pdf#page=8"
+        },
+        {
+          "title": "2025 federal Schedule A and state and local tax deduction",
+          "url": "https://www.irs.gov/instructions/i1040sca"
+        }
+      ]
+    },
+    {
+      "id": "de-real-estate-tax-itemized-deduction",
+      "state": "DE",
+      "modelVariable": "de_capped_real_estate_tax",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/de/tax/income/deductions/itemized/de_capped_real_estate_tax.py",
+        "sha256": "878602ff49b9706988eaa012f846a32486d0b1633ab6f64c123fc1bd24c0a421"
+      },
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualifying real estate taxes paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter the amount from 2025 PIT-RSA, line 5c.",
+          "minimum": 0
+        },
+        {
+          "variable": "adjusted_gross_income",
+          "label": "Federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "For this estimate, enter federal adjusted gross income of $500,000 or less and assume you have no income exclusions for the federal deduction limit.",
+          "maximum": 500000
+        }
+      ],
+      "notes": [
+        "Use this estimate if you itemize deductions on your Delaware resident return.",
+        "The estimate assumes the other tax entries on PIT-RSA lines 5a, 5b and 5d equal zero."
+      ],
+      "resultLabel": "Real estate taxes within itemized deductions",
+      "resultNote": "This amount contributes to itemized deductions from taxable income.",
+      "sources": [
+        {
+          "title": "2025 PIT-RSA resident Schedule A",
+          "url": "https://revenuefiles.delaware.gov/2025/PITForms_Instructions/PIT-RSA_2025-01_PaperInteractiveIPM.pdf"
+        },
+        {
+          "title": "2025 PIT-RSW state and local tax deduction worksheet",
+          "url": "https://revenuefiles.delaware.gov/2025/PITForms_Instructions/PIT-RSW_2025-01_PaperInteractive.pdf"
+        },
+        {
+          "title": "30 Del. C. § 1109",
+          "url": "https://delcode.delaware.gov/title30/c011/sc02/index.html#1109"
+        }
+      ]
+    },
+    {
+      "id": "or-real-estate-tax-itemized-deduction",
+      "state": "OR",
+      "modelVariable": "capped_property_taxes",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/irs/income/taxable_income/deductions/capped_property_taxes.py",
+        "sha256": "e7839784523664b0a9f773f77c770dfcc1b1e61d77c167809649c0ef5c095ac9"
+      },
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualifying real estate taxes paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter the amount from 2025 Schedule OR-A, line 6.",
+          "minimum": 0
+        },
+        {
+          "variable": "adjusted_gross_income",
+          "label": "Federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "For this estimate, enter federal adjusted gross income of $500,000 or less and assume you have no income exclusions for the federal deduction limit.",
+          "maximum": 500000
+        }
+      ],
+      "notes": [
+        "Use this estimate if you itemize deductions on your Oregon resident return.",
+        "The estimate assumes the income and personal property tax entries on Schedule OR-A lines 5 and 7 equal zero."
+      ],
+      "resultLabel": "Real estate taxes within itemized deductions",
+      "resultNote": "This amount contributes to itemized deductions from taxable income.",
+      "sources": [
+        {
+          "title": "2025 Oregon Schedule OR-A",
+          "url": "https://www.oregon.gov/dor/forms/FormsPubs/schedule-or-a_101-007_2025.pdf"
+        },
+        {
+          "title": "2025 Schedule OR-A instructions",
+          "url": "https://www.oregon.gov/dor/forms/FormsPubs/schedule-or-a-inst_101-007-1_2025.pdf"
+        },
+        {
+          "title": "ORS 316.695",
+          "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors316.html#316.695"
+        }
+      ]
+    },
+    {
+      "id": "nc-real-estate-tax-itemized-deduction",
+      "state": "NC",
+      "modelVariable": "nc_itemized_deductions",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/nc/tax/income/deductions/nc_itemized_deductions.py",
+        "sha256": "98bc852667e811b744af410e31199b860b6b4c6c0d4547649d1411af3c0a5fad"
+      },
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualified real estate taxes",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter the allowable real estate taxes for 2025 D-400 Schedule A, line 2, before the North Carolina combined cap. See the conformity update for the federal limit.",
+          "minimum": 0
+        },
+        {
+          "variable": "mortgage_interest",
+          "label": "Qualified mortgage interest",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter zero for this real estate tax scenario.",
+          "minimum": 0,
+          "maximum": 0
+        },
+        {
+          "variable": "charitable_deduction",
+          "label": "Charitable contribution deduction",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter zero for this real estate tax scenario.",
+          "minimum": 0,
+          "maximum": 0
+        },
+        {
+          "variable": "medical_expense_deduction",
+          "label": "Medical expense deduction",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter zero for this real estate tax scenario.",
+          "minimum": 0,
+          "maximum": 0
+        }
+      ],
+      "notes": [
+        "Use this estimate if your North Carolina Schedule A includes real estate tax and no other itemized deductions."
+      ],
+      "resultLabel": "Real estate taxes within itemized deductions",
+      "resultNote": "This amount contributes to itemized deductions from taxable income.",
+      "sources": [
+        {
+          "title": "N.C. Gen. Stat. § 105-153.5(a)(2)(b)",
+          "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-153.5.html"
+        },
+        {
+          "title": "2026 N.C. Session Law 31, section 12",
+          "url": "https://www.ncleg.gov/EnactedLegislation/SessionLaws/HTML/2025-2026/SL2026-31.html"
+        },
+        {
+          "title": "N.C. Department of Revenue, conformity update question 16",
+          "url": "https://www.ncdor.gov/taxes-forms/corporate-income-franchise-tax/frequently-asked-questions-and-important-notices/faqs-regarding-recent-session-law-changes"
+        },
+        {
+          "title": "2025 D-400 Schedule A",
+          "url": "https://www.ncdor.gov/2025-d-400-schedule-web-fill-version/open"
+        }
+      ]
+    },
+    {
+      "id": "va-real-estate-tax-itemized-deduction",
+      "state": "VA",
+      "modelVariable": "va_itemized_deductions",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/va/tax/income/deductions/va_itemized_deductions.py",
+        "sha256": "f45cf783ba4901821f7f22d975fb84a0b7954b585c6987e44c95b1d82b4e8099"
+      },
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualifying real estate taxes paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter the Virginia Schedule A line 5b amount, before any overall itemized deduction limitation.",
+          "minimum": 0
+        },
+        {
+          "variable": "adjusted_gross_income",
+          "label": "Federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter the amount from 2025 Virginia Form 760, line 1. Use this estimate for income up to $332,700.",
+          "maximum": 332700
+        },
+        {
+          "variable": "itemized_deductions_less_salt",
+          "label": "Other itemized deductions",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter zero for this real estate tax scenario.",
+          "minimum": 0,
+          "maximum": 0
+        },
+        {
+          "variable": "state_and_local_sales_or_income_tax",
+          "label": "State and local income or sales tax deduction",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter zero for this real estate tax scenario.",
+          "minimum": 0,
+          "maximum": 0
+        }
+      ],
+      "notes": [
+        "Use this estimate if you itemize on your federal return and qualifying real estate taxes are the sole deduction on your Virginia Schedule A."
+      ],
+      "resultLabel": "Real estate taxes within itemized deductions",
+      "resultNote": "This amount contributes to itemized deductions from taxable income.",
+      "sources": [
+        {
+          "title": "Va. Code § 58.1-322.03",
+          "url": "https://law.lis.virginia.gov/vacode/title58.1/chapter3/section58.1-322.03/"
+        },
+        {
+          "title": "Virginia HB 1600, Item 4-14",
+          "url": "https://budget.lis.virginia.gov/item/2025/1/HB1600/Enrolled/4/4-14"
+        },
+        {
+          "title": "2019 Virginia legislative summary",
+          "url": "https://www.tax.virginia.gov/sites/default/files/inline-files/2019-legislative-summary.pdf"
+        },
+        {
+          "title": "2025 Virginia Schedule A instructions",
+          "url": "https://www.tax.virginia.gov/sites/default/files/vatax-pdf/2025-sch-a-instructions.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ne-real-estate-tax-itemized-deduction",
+      "state": "NE",
+      "modelVariable": "capped_property_taxes",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/irs/income/taxable_income/deductions/capped_property_taxes.py",
+        "sha256": "e7839784523664b0a9f773f77c770dfcc1b1e61d77c167809649c0ef5c095ac9"
+      },
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualifying real estate taxes paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter the amount from 2025 federal Schedule A, line 5b, before applying the combined tax limit.",
+          "minimum": 0
+        },
+        {
+          "variable": "adjusted_gross_income",
+          "label": "Federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter federal adjusted gross income of $500,000 or less. Use this estimate if you have no excluded foreign or U.S. territory income.",
+          "maximum": 500000
+        }
+      ],
+      "notes": [
+        "Use this estimate if you itemize deductions on your federal and Nebraska returns, and your only entry on federal Schedule A lines 5a through 5c is qualifying real estate taxes."
+      ],
+      "resultLabel": "Real estate taxes within itemized deductions",
+      "resultNote": "This amount contributes to itemized deductions from taxable income.",
+      "sources": [
+        {
+          "title": "Neb. Rev. Stat. § 77-2716.01(3)",
+          "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=77-2716.01"
+        },
+        {
+          "title": "2025 Form 1040N and instructions",
+          "url": "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_Individual_Income_Tax_Booklet.pdf"
+        },
+        {
+          "title": "2025 federal Schedule A instructions",
+          "url": "https://www.irs.gov/pub/irs-prior/i1040sca--2025.pdf"
+        }
+      ]
+    },
+    {
+      "id": "me-property-tax-fairness-credit",
+      "state": "ME",
+      "year": 2025,
+      "modelVariable": "me_property_tax_fairness_credit",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age at the end of 2025",
+          "entity": "person",
+          "minimum": 18,
+          "maximum": 64,
+          "kind": "number"
+        },
+        {
+          "variable": "me_sales_and_property_tax_fairness_credit_income",
+          "label": "2025 total income for the Maine credit",
+          "entity": "tax_unit",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Use total income from 2025 Schedule PTFC/STFC line 3. Check the schedule for the income sources Maine includes."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualified property tax paid for your Maine home",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Use the qualifying property tax from Schedule PTFC/STFC line 4. Enter 0 if you rented your home."
+        },
+        {
+          "variable": "rent",
+          "label": "Qualified occupancy rent paid for your Maine home",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Use the qualifying occupancy rent from Schedule PTFC/STFC line 5d. Enter 0 if you owned your home."
+        }
+      ],
+      "notes": [
+        "This estimate covers nonveterans under 65 who lived in Maine all year and paid qualifying property tax or rent on their Maine primary home.",
+        "Maine calculates separate amounts for adults aged 65 and older and veterans with a qualifying disability. See the schedule for those rules."
+      ],
+      "resultLabel": "Refundable Maine Property Tax Fairness Credit",
+      "resultNote": "Maine allows the credit against your income tax and can refund any credit above your tax liability.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/me/tax/income/credits/fairness/property_tax_fairness_credit/me_property_tax_fairness_credit.py",
+        "sha256": "7cd2fd9883b012ffe7205a7dd4cd0d6f0d68c4fe6118de6931210942ac55de7d"
+      },
+      "sources": [
+        {
+          "title": "2025 Maine Schedule PTFC/STFC",
+          "url": "https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/25_1040me_sch_ptfc_fillable.pdf"
+        },
+        {
+          "title": "Maine Revised Statutes title 36 §5219-KK",
+          "url": "https://legislature.maine.gov/statutes/36/title36sec5219-KK.html"
+        }
+      ]
+    },
+    {
+      "id": "wi-school-property-tax-credit",
+      "state": "WI",
+      "year": 2025,
+      "modelVariable": "wi_property_tax_credit_potential",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualified property tax paid on your Wisconsin home in 2025",
+          "entity": "person",
+          "minimum": 0,
+          "kind": "money",
+          "description": "Use the tax you paid for your primary home after property tax refunds. Exclude assessments, delinquent charges, service fees and business taxes."
+        }
+      ],
+      "notes": [
+        "This estimate covers Wisconsin residents who owned and occupied their primary home throughout 2025. Use the homeowner calculation if you do not claim the veterans and surviving spouses property tax credit.",
+        "We apply the statutory 12% rate. For example, $1,000 of eligible tax gives $120 at that rate and $122 in Wisconsin's Form 1 table."
+      ],
+      "resultLabel": "Statutory credit before the income tax limit",
+      "resultNote": "Use the Form 1 table and credit ordering to determine the amount on your return. The credit cannot exceed your remaining Wisconsin income tax.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/wi/tax/income/credits/property_tax/wi_property_tax_credit_potential.py",
+        "sha256": "c4ec0980490c38cb215115f40e8654beaace64294cd258e3e4836fd81e81f75f"
+      },
+      "sources": [
+        {
+          "title": "Wisconsin Statutes §71.07(9)(b)5 school property tax credit",
+          "url": "https://docs.legis.wisconsin.gov/statutes/statutes/71/i/07/9"
+        },
+        {
+          "title": "2025 Wisconsin Form 1 line 16b instructions and table",
+          "url": "https://www.revenue.wi.gov/TaxForms2025/2025-Form1-Inst.pdf#page=20"
+        }
+      ]
+    },
+    {
+      "id": "ga-itemized-real-estate-tax-deduction",
+      "state": "GA",
+      "year": 2025,
+      "modelVariable": "ga_deductions",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "adjusted_gross_income",
+          "label": "2025 federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 60000,
+          "maximum": 200000,
+          "description": "Enter federal Form 1040 line 11a."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Eligible real estate taxes paid in 2025",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "maximum": 5000,
+          "description": "Enter federal Schedule A line 5b."
+        },
+        {
+          "variable": "state_and_local_sales_or_income_tax",
+          "label": "Georgia income taxes deducted on Schedule A",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 0,
+          "maximum": 5000,
+          "description": "Enter federal Schedule A line 5a. Use this estimate if the amount includes only Georgia income taxes."
+        },
+        {
+          "variable": "home_mortgage_interest",
+          "label": "Eligible mortgage interest and points deducted in 2025",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 18000,
+          "maximum": 35000,
+          "description": "Enter the deductible amount from federal Schedule A line 8e. Use the amount after applying any federal mortgage limits."
+        }
+      ],
+      "notes": [
+        "This estimate covers full-year Georgia residents under age 65 who filed a single federal return using Schedule A and claimed only eligible real estate taxes, Georgia income taxes, and eligible mortgage interest and points. It assumes no Georgia adjustment on Form 500 line 12b."
+      ],
+      "resultLabel": "Georgia itemized deduction including real estate taxes",
+      "resultNote": "The amount includes all three expenses you entered and reduces Georgia taxable income. The estimate covers inputs whose combined income and real estate taxes stay within Georgia’s $10,000 limit.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ga/tax/income/deductions/ga_deductions.py",
+        "sha256": "b9cea7143c12c0b7b10d5573df426f1eb8251fd081ab73c43eed6966e8b475f6"
+      },
+      "sources": [
+        {
+          "title": "2025 Georgia IT-511 instructions and Form 500 lines 11–12c",
+          "url": "https://dor.georgia.gov/document/document/2025-it-511-individual-income-tax-booklet/download#page=17"
+        },
+        {
+          "title": "Official Code of Georgia § 48-7-27",
+          "url": "https://www.legis.ga.gov/api/document/docs/default-source/joint-features-document-library/t48-ch7-8-%28v37%29-pdf.pdf#page=19"
+        },
+        {
+          "title": "2025 federal Schedule A",
+          "url": "https://www.irs.gov/pub/irs-prior/f1040sa--2025.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mo-property-tax-credit",
+      "state": "MO",
+      "year": 2025,
+      "modelVariable": "mo_property_tax_credit",
+      "entity": "tax_unit",
+      "kind": "credit",
+      "inputs": [
+        {
+          "variable": "age",
+          "label": "Age at the end of 2025",
+          "entity": "person",
+          "kind": "number",
+          "minimum": 65,
+          "maximum": 120
+        },
+        {
+          "variable": "mo_ptc_net_income",
+          "label": "Net household income for the Missouri credit",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 1,
+          "maximum": 14300,
+          "description": "Enter the net household income from 2025 Form MO-PTC, line 8."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Eligible property taxes paid in 2025",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter the qualified property tax you paid for your home. Use the 2025 Form MO-PTC instructions for line 9."
+        }
+      ],
+      "notes": [
+        "This estimate covers Missouri residents age 65 or older who owned and occupied their home throughout 2025.",
+        "Use this calculation for net household income from $1 through $14,300. The Missouri credit chart has a separate calculation for higher income."
+      ],
+      "resultLabel": "Missouri property tax credit",
+      "sources": [
+        {
+          "title": "Missouri Revised Statutes § 135.030",
+          "url": "https://revisor.mo.gov/main/OneSection.aspx?section=135.030&bid=6439"
+        },
+        {
+          "title": "2025 Missouri property tax credit claim",
+          "url": "https://dor.mo.gov/forms/MO-PTC%20Print%20Only_2025.pdf"
+        },
+        {
+          "title": "2025 Missouri property tax credit chart",
+          "url": "https://dor.mo.gov/forms/Property%20Tax%20Claim%20Chart_2025.pdf"
+        }
+      ],
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/mo/tax/income/credits/property_tax/mo_property_tax_credit.py",
+        "sha256": "4f7b00bab0fc204acc8e6d5dc7a5b3d2dff43495c2cb91d347b37c6b27d5eaec"
+      }
+    },
+    {
+      "id": "ks-itemized-real-estate-tax-deduction",
+      "state": "KS",
+      "year": 2025,
+      "modelVariable": "ks_itemized_deductions",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Eligible real estate taxes paid in 2025",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter the qualifying state and local real estate taxes from Kansas Schedule A line 5. Use taxes you paid on your own home."
+        }
+      ],
+      "notes": [
+        "This estimate covers a full-year Kansas resident filing singly with eligible real estate taxes on one home as the only Kansas itemized deduction."
+      ],
+      "resultLabel": "Real estate taxes allowed under Kansas itemization",
+      "resultNote": "Compare this amount with your Kansas standard deduction. Kansas allows its own itemization election and does not apply the federal limit on state and local tax deductions to these taxes.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ks/tax/income/deductions/ks_itemized_deductions.py",
+        "sha256": "eb030cf04cf90dd581153cfc6dd1459d80768ef8c865cb909c290f93889b9f82"
+      },
+      "sources": [
+        {
+          "title": "2025 Kansas Schedule A, lines 5, 7 and 14",
+          "url": "https://www.ksrevenue.gov/pdf/scha25.pdf"
+        },
+        {
+          "title": "2025 Kansas income-tax and Schedule A instructions",
+          "url": "https://www.ksrevenue.gov/incomebook25.html"
+        }
+      ]
+    },
+    {
+      "id": "hi-itemized-real-estate-tax-deduction",
+      "state": "HI",
+      "year": 2025,
+      "modelVariable": "hi_salt_deduction",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Eligible real estate taxes paid in 2025",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter Worksheet A-2 line 6. For escrowed taxes, use what the lender paid to the taxing authority in 2025."
+        },
+        {
+          "variable": "state_and_local_sales_or_income_tax",
+          "label": "Income or sales tax deduction on Worksheet A-2",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 0,
+          "maximum": 0,
+          "description": "Enter zero if Worksheet A-2 line 5 is blank or zero. This estimate covers real estate taxes alone."
+        }
+      ],
+      "notes": [
+        "This estimate covers full-year Hawaii residents filing singly who enter only eligible real estate taxes on Worksheet A-2 for one nonbusiness home. Use the Hawaii instructions to determine whether you qualify for itemized deductions."
+      ],
+      "resultLabel": "Real estate taxes in Hawaii’s itemized tax deduction",
+      "resultNote": "The result is the real estate tax component on Form N-11 line 21b. Hawaii applies any overall limit on itemized deductions later.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/hi/tax/income/deductions/itemized/hi_salt_deduction.py",
+        "sha256": "c8a99f0cbc5650e10dc2120631590ea74be8998ca6afb2f2771956bfdd53a4e3"
+      },
+      "sources": [
+        {
+          "title": "2025 Hawaii Form N-11 instructions for line 21b",
+          "url": "https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=16"
+        },
+        {
+          "title": "2025 Hawaii Worksheet A-2, lines 5–9",
+          "url": "https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=34"
+        }
+      ]
+    },
+    {
+      "id": "md-itemized-real-estate-tax-deduction",
+      "state": "MD",
+      "year": 2025,
+      "modelVariable": "md_itemized_deductions",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "adjusted_gross_income",
+          "label": "2025 federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 0,
+          "maximum": 500000,
+          "description": "Enter federal adjusted gross income from Maryland Form 502 line 1. This estimate assumes you have no foreign or territorial income adjustments for the federal tax deduction limit."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "Eligible real estate taxes paid in 2025",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter federal Schedule A line 5b before the combined deduction limit."
+        }
+      ],
+      "notes": [
+        "This estimate covers full-year Maryland residents filing singly who itemized federally and listed only eligible real estate taxes on their home. It assumes no amount on Maryland Form 502 line 17b."
+      ],
+      "resultLabel": "Real estate taxes allowed under Maryland itemization",
+      "resultNote": "This amount includes Maryland’s income-based reduction of itemized deductions. Compare it with your Maryland standard deduction before choosing how to file.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/md/tax/income/deductions/md_itemized_deductions.py",
+        "sha256": "ec386ac11f471643d863ba2b757aedb28888681b4419abc57af923c1f03ee17a"
+      },
+      "sources": [
+        {
+          "title": "2025 Maryland Form 502 lines 17a through 17c",
+          "url": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/forms/2025/502.pdf#page=2"
+        },
+        {
+          "title": "2025 Maryland resident instructions, Worksheet 14A",
+          "url": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/instructions/2025/resident-booklet.pdf#page=20"
+        },
+        {
+          "title": "Maryland Tax–General § 10–218",
+          "url": "https://www.mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gtg&enactments=false&section=10-218"
+        },
+        {
+          "title": "2025 federal Schedule A",
+          "url": "https://www.irs.gov/pub/irs-prior/f1040sa--2025.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ia-itemized-real-estate-tax-deduction",
+      "state": "IA",
+      "year": 2025,
+      "modelVariable": "ia_itemized_deductions_unit",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "adjusted_gross_income",
+          "label": "2025 federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 50000,
+          "maximum": 500000,
+          "description": "Enter 2025 federal Form 1040 line 11a. This scenario covers incomes from $50,000 to $500,000 and assumes you have no modifications for foreign or territorial income."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "2025 eligible real estate taxes paid",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter qualifying real estate taxes you paid on nonbusiness property you own, as shown on federal Schedule A line 5b before the combined limit."
+        },
+        {
+          "variable": "state_and_local_sales_or_income_tax",
+          "label": "2025 state or local income or general sales taxes deducted",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 0,
+          "maximum": 0,
+          "description": "Enter 0 when your federal Schedule A line 5a is zero. This scenario also requires zero personal property tax on line 5c."
+        }
+      ],
+      "notes": [
+        "This estimate covers a full-year Iowa resident filing single who chooses to itemize on their federal return and has qualifying real estate taxes as their sole federal itemized deduction.",
+        "The result is the amount included in itemized deductions. Your filing choices and tax rate affect any change in your tax liability."
+      ],
+      "resultLabel": "Real estate taxes included in Iowa itemized deductions",
+      "resultNote": "Line 1d carries the allowed federal itemized deduction from Form 1040 line 12e. The deduction is already reflected in federal taxable income on line 2.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/ia/tax/income/including_married_filing_separately/deductions/ia_itemized_deductions_unit.py",
+        "sha256": "f6bb031129831c55669571c1895d1c72cd7e593bda91aabe771ddc2dfff8950f"
+      },
+      "sources": [
+        {
+          "title": "2025 IA 1040 instructions, line 1d",
+          "url": "https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/1040-expanded-instructions/federal-total-income"
+        },
+        {
+          "title": "2025 IA 1040 instructions, line 2",
+          "url": "https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/1040-expanded-instructions/federal-taxable-income"
+        },
+        {
+          "title": "2025 federal Schedule A, lines 5a–5e",
+          "url": "https://www.irs.gov/pub/irs-prior/f1040sa--2025.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nm-itemized-real-estate-tax-deduction",
+      "state": "NM",
+      "year": 2025,
+      "modelVariable": "nm_itemized_deductions",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "inputs": [
+        {
+          "variable": "adjusted_gross_income",
+          "label": "2025 federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 50000,
+          "maximum": 500000,
+          "description": "Enter 2025 federal Form 1040 line 11a. This scenario covers incomes from $50,000 to $500,000 and assumes you have no modifications for foreign or territorial income."
+        },
+        {
+          "variable": "real_estate_taxes",
+          "label": "2025 eligible real estate taxes paid",
+          "entity": "person",
+          "kind": "money",
+          "minimum": 0,
+          "description": "Enter qualifying real estate taxes you paid on nonbusiness property you own, as shown on federal Schedule A line 5b before the combined limit."
+        },
+        {
+          "variable": "state_and_local_sales_or_income_tax",
+          "label": "2025 state or local income or general sales taxes deducted",
+          "entity": "tax_unit",
+          "kind": "money",
+          "minimum": 0,
+          "maximum": 0,
+          "description": "Enter 0 when your federal Schedule A line 5a is zero. This scenario also requires zero personal property tax on line 5c."
+        }
+      ],
+      "notes": [
+        "This estimate covers a full-year New Mexico resident filing single who chooses to itemize on their federal return and has qualifying real estate taxes as their sole federal itemized deduction.",
+        "The result is the amount included in itemized deductions. Your filing choices and tax rate affect any change in your tax liability."
+      ],
+      "resultLabel": "Real estate taxes included in New Mexico itemized deductions",
+      "resultNote": "PIT-1 line 12 carries the allowed federal itemized deduction. With no income or sales taxes on Schedule A line 5a, the line 10 add-back is zero.",
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/states/nm/tax/income/deductions/nm_itemized_deductions.py",
+        "sha256": "bd16339b651cdcd13b4f5ef89579f40244aa54891b87df84a7c6b397956fd8e5"
+      },
+      "sources": [
+        {
+          "title": "2025 New Mexico PIT-1 instructions, line 12",
+          "url": "https://realfile.tax.newmexico.gov/2025pit-1-ins.pdf#page=25"
+        },
+        {
+          "title": "2025 New Mexico PIT-1 instructions, line 10 worksheet",
+          "url": "https://realfile.tax.newmexico.gov/2025pit-1-ins.pdf#page=24"
+        },
+        {
+          "title": "2025 federal Schedule A, lines 5a–5e",
+          "url": "https://www.irs.gov/pub/irs-prior/f1040sa--2025.pdf"
+        }
+      ]
+    },
+    {
+      "id": "co-real-estate-taxes-in-federal-starting-income",
+      "state": "CO",
+      "modelVariable": "capped_property_taxes",
+      "entity": "tax_unit",
+      "kind": "deduction",
+      "year": 2025,
+      "sourceEvidence": {
+        "packageVersion": "2.2.2",
+        "file": "variables/gov/irs/income/taxable_income/deductions/capped_property_taxes.py",
+        "sha256": "e7839784523664b0a9f773f77c770dfcc1b1e61d77c167809649c0ef5c095ac9"
+      },
+      "inputs": [
+        {
+          "variable": "real_estate_taxes",
+          "label": "Qualifying real estate taxes paid",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter the qualified 2025 federal Schedule A line 5b amount before the combined federal limit.",
+          "minimum": 0
+        },
+        {
+          "variable": "adjusted_gross_income",
+          "label": "Federal adjusted gross income",
+          "entity": "tax_unit",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter wages-only adjusted gross income from 2025 Form 1040 line 11a. The estimate covers $70,000 to $100,000.",
+          "minimum": 70000,
+          "maximum": 100000
+        },
+        {
+          "variable": "deductible_mortgage_interest",
+          "label": "Qualifying mortgage interest",
+          "entity": "person",
+          "kind": "money",
+          "period": 2025,
+          "description": "Enter the amount eligible on 2025 federal Schedule A line 8e. This estimate covers $20,000 to $25,000 so both calculations use itemized deductions.",
+          "minimum": 20000,
+          "maximum": 25000
+        }
+      ],
+      "notes": [
+        "Use this estimate if you are a full-year Colorado resident filing singly who elected federal itemization for 2025.",
+        "The estimate assumes wages are your only income, Schedule A includes only Colorado income taxes, qualifying real estate taxes and qualified mortgage interest, and you have no other income additions or subtractions.",
+        "Colorado adds back the state income tax included in your federal deduction using its worksheet. The estimate includes the remaining real estate tax deduction within the federal limit."
+      ],
+      "resultLabel": "Real estate taxes in the federal deduction used by Colorado",
+      "resultNote": "Colorado starts with federal taxable income. This amount is the real estate tax portion of the itemized deduction used to compute that starting amount.",
+      "sources": [
+        {
+          "title": "2025 Colorado DR 0104 and DR 0104AD instructions",
+          "url": "https://tax.colorado.gov/sites/tax/files/documents/Book104_2025.pdf#page=8"
+        },
+        {
+          "title": "Colorado DOR state income tax addback worksheet",
+          "url": "https://tax.colorado.gov/income-tax-topics-state-income-tax-addback"
+        },
+        {
+          "title": "2025 federal Schedule A",
+          "url": "https://www.irs.gov/pub/irs-prior/i1040sca--2025.pdf"
+        },
+        {
+          "title": "Colorado Revised Statutes §39-22-104",
+          "url": "https://olls.info/crs/crs2025-title-39.pdf#page=382"
+        }
+      ]
     }
   ],
   "heldPrograms": [

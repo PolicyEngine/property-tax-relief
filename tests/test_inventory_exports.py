@@ -188,7 +188,7 @@ def test_csv_preserves_program_eligibility_and_interactions():
     content = load_builder().inventory_csv(states)
     reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig"), newline=""))
     rows = list(reader)
-    assert len(rows) == len(programs) == 119
+    assert len(rows) == len(programs) == 133
     assert len(reader.fieldnames) == 22
     assert reader.fieldnames[15:19] == [
         "application",

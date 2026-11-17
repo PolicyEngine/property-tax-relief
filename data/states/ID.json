@@ -118,6 +118,47 @@
       ],
       "modelVariables": [],
       "paymentMechanism": "property-tax-bill-reduction"
+    },
+    {
+      "id": "id-itemized-real-estate-tax-deduction",
+      "name": "Real estate taxes in Idaho itemized deductions",
+      "category": "deduction",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "paymentMechanism": "income-tax-deduction",
+      "ageRule": "No age test on this deduction.",
+      "incomeDefinition": "Idaho starts with federal itemized deductions. Federal modified adjusted gross income can reduce the combined federal deduction for state and local taxes.",
+      "incomeLimits": "Idaho imposes no separate income limit on this component. The federal combined limit can fall for single filers with federal modified adjusted gross income above $500,000 in 2025.",
+      "maximumBenefit": "Qualified real estate taxes within the federal combined state and local tax limit. The deduction reduces taxable income.",
+      "formulaSummary": "Idaho subtracts the Schedule A deduction for state and local income or general sales taxes and retains eligible real estate taxes within the federal limit.",
+      "application": "Use federal Schedule A to complete Idaho Form 40 lines 13 through 15. Compare the result with the standard deduction on line 16.",
+      "eligibilityNotes": [
+        "Use the federal qualified real estate tax amount on Schedule A line 5b."
+      ],
+      "interactions": [
+        "Idaho applies the larger of the state itemized deduction and standard deduction. Federal Schedule A and the federal combined state and local tax limit determine the starting amount."
+      ],
+      "programYear": "2025 Idaho income-tax return, based on the 2025 federal Schedule A.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Idaho Form 40 lines 13–17",
+          "url": "https://tax.idaho.gov/wp-content/uploads/forms/EFO00089/EFO00089_03-02-2026.pdf#page=2",
+          "kind": "form"
+        },
+        {
+          "title": "2025 Idaho Form 40 instructions for itemized deductions",
+          "url": "https://tax.idaho.gov/wp-content/uploads/forms/EIN00046/EIN00046_03-02-2026.pdf#page=8",
+          "kind": "form"
+        },
+        {
+          "title": "2025 federal Schedule A instructions",
+          "url": "https://www.irs.gov/pub/irs-prior/i1040sca--2025.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["id_itemized_deductions"]
     }
   ],
   "researchNotes": [

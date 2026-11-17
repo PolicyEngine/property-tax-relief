@@ -77,6 +77,52 @@
       ],
       "modelVariables": [],
       "paymentMechanism": "taxable-property-value-exemption"
+    },
+    {
+      "id": "nc-real-estate-tax-itemized-deduction",
+      "name": "Real estate tax itemized deduction",
+      "category": "deduction",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Federal income rules affect the itemized deduction.",
+      "incomeLimits": "Income rules affect larger itemized deductions.",
+      "maximumBenefit": "Claim the qualified amount within the applicable itemized deduction limits.",
+      "formulaSummary": "Add qualifying mortgage interest and real estate taxes after the federal limits. Apply the $20,000 North Carolina combined limit.",
+      "application": "Claim on D-400 Schedule A when you itemize on your North Carolina return.",
+      "eligibilityNotes": [
+        "Use qualified real estate taxes for the applicable form."
+      ],
+      "interactions": [
+        "The $20,000 limit applies to the combined qualified mortgage interest and real estate tax deduction."
+      ],
+      "programYear": "Tax year 2025.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "N.C. Gen. Stat. § 105-153.5(a)(2)(b)",
+          "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-153.5.html",
+          "kind": "statute"
+        },
+        {
+          "title": "2026 N.C. Session Law 31, section 12",
+          "url": "https://www.ncleg.gov/EnactedLegislation/SessionLaws/HTML/2025-2026/SL2026-31.html",
+          "kind": "statute"
+        },
+        {
+          "title": "N.C. Department of Revenue, conformity update question 16",
+          "url": "https://www.ncdor.gov/taxes-forms/corporate-income-franchise-tax/frequently-asked-questions-and-important-notices/faqs-regarding-recent-session-law-changes",
+          "kind": "agency"
+        },
+        {
+          "title": "2025 D-400 Schedule A",
+          "url": "https://www.ncdor.gov/2025-d-400-schedule-web-fill-version/open",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["nc_itemized_deductions"],
+      "paymentMechanism": "income-tax-deduction"
     }
   ],
   "laterChanges": [],

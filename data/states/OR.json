@@ -41,6 +41,47 @@
       ],
       "modelVariables": [],
       "paymentMechanism": "tax-deferral"
+    },
+    {
+      "id": "or-real-estate-tax-itemized-deduction",
+      "name": "Real estate tax itemized deduction",
+      "category": "deduction",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": null,
+      "ageRule": "No general age restriction.",
+      "incomeDefinition": "Federal income rules govern the applicable tax deduction limit.",
+      "incomeLimits": "Federal rules can lower the combined limit at higher income.",
+      "maximumBenefit": "Taxes count toward a combined itemized deduction limit.",
+      "formulaSummary": "Include qualified real estate taxes on Schedule OR-A, line 6. The combined limit applies on line 9.",
+      "application": "File Schedule OR-A with the 2025 resident income tax return if you itemize deductions.",
+      "eligibilityNotes": [
+        "Claim qualifying real estate taxes you paid during the tax year."
+      ],
+      "interactions": [
+        "Other deductible taxes can use part of the combined limit."
+      ],
+      "programYear": "Tax year 2025.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Oregon Schedule OR-A",
+          "url": "https://www.oregon.gov/dor/forms/FormsPubs/schedule-or-a_101-007_2025.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "2025 Schedule OR-A instructions",
+          "url": "https://www.oregon.gov/dor/forms/FormsPubs/schedule-or-a-inst_101-007-1_2025.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "ORS 316.695",
+          "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors316.html#316.695",
+          "kind": "statute"
+        }
+      ],
+      "modelVariables": ["capped_property_taxes"],
+      "paymentMechanism": "income-tax-deduction"
     }
   ],
   "laterChanges": [

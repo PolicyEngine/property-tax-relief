@@ -43,6 +43,42 @@
       ],
       "modelVariables": ["hi_tax_credit_for_low_income_household_renters"],
       "paymentMechanism": "income-tax-credit"
+    },
+    {
+      "id": "hi-itemized-real-estate-tax-deduction",
+      "name": "Real estate taxes in Hawaii itemized deductions",
+      "category": "deduction",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "paymentMechanism": "income-tax-deduction",
+      "ageRule": "No age test applies to the real estate tax component.",
+      "incomeDefinition": "Hawaii adjusted gross income can affect the overall itemized deduction. The federal adjusted gross income test in Worksheet A-2 controls its separate income or sales tax component.",
+      "incomeLimits": "Hawaii applies no separate income limit to eligible real estate taxes on Worksheet A-2. An overall itemized deduction limit can apply.",
+      "maximumBenefit": "The full qualifying amount of real estate taxes enters Form N-11 line 21b before the overall itemized deduction limit.",
+      "formulaSummary": "Worksheet A-2 includes eligible real estate taxes paid. Hawaii does not apply the federal state-and-local tax deduction cap to the state worksheet.",
+      "application": "Enter eligible real estate taxes on Worksheet A-2 line 6 and carry the total from line 9 to Form N-11 line 21b if itemizing.",
+      "eligibilityNotes": [
+        "Use eligible taxes paid on owned nonbusiness real estate, including amounts the lender paid to the taxing authority from escrow in 2025."
+      ],
+      "interactions": [
+        "Form N-11 applies any overall limit after adding itemized components. Compare the resulting total with the Hawaii standard deduction."
+      ],
+      "programYear": "2025 Hawaii income-tax return",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Hawaii Form N-11 instructions for line 21b",
+          "url": "https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=16",
+          "kind": "form"
+        },
+        {
+          "title": "2025 Hawaii Worksheet A-2",
+          "url": "https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=34",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["hi_salt_deduction"]
     }
   ],
   "researchNotes": [

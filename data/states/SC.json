@@ -41,7 +41,10 @@
           "kind": "agency"
         }
       ],
-      "modelVariables": ["sc_homestead_property_tax_reduction"],
+      "modelVariables": [
+        "sc_homestead_property_tax_reduction",
+        "sc_homestead_exemption"
+      ],
       "paymentMechanism": "taxable-property-value-exemption"
     },
     {

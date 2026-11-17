@@ -74,6 +74,42 @@
       ],
       "modelVariables": [],
       "paymentMechanism": "property-tax-bill-reduction"
+    },
+    {
+      "id": "ar-itemized-real-estate-tax-deduction",
+      "name": "Real estate taxes in Arkansas itemized deductions",
+      "category": "deduction",
+      "scope": "statewide",
+      "tenures": ["owner"],
+      "refundable": false,
+      "paymentMechanism": "income-tax-deduction",
+      "ageRule": "No age test on this deduction.",
+      "incomeDefinition": "Arkansas itemizers deduct eligible real estate taxes from Arkansas adjusted gross income as part of total itemized deductions.",
+      "incomeLimits": "No income limit on eligible real estate taxes for this deduction.",
+      "maximumBenefit": "Eligible real estate taxes paid. The deduction reduces taxable income.",
+      "formulaSummary": "Arkansas includes eligible real estate taxes paid on owned nonbusiness property in itemized deductions without applying the federal combined state and local tax cap.",
+      "application": "Enter eligible taxes on Form AR3 line 5 and use Form AR3 to calculate the total itemized deductions on Form AR1000F.",
+      "eligibilityNotes": [
+        "Exclude special assessments, levy taxes and property you use for business."
+      ],
+      "interactions": [
+        "Arkansas lets filers choose itemized deductions separately from their federal deduction. The standard deduction or low-income tax table can affect the final benefit."
+      ],
+      "programYear": "2025 Arkansas income-tax return, based on taxes paid in 2025.",
+      "rentProxy": null,
+      "sources": [
+        {
+          "title": "2025 Arkansas Form AR3 itemized deductions",
+          "url": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR3_ItemizedDeduction.pdf",
+          "kind": "form"
+        },
+        {
+          "title": "2025 Arkansas Form AR3 instructions, line 5",
+          "url": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000F_and_AR1000NR_Instructions.pdf",
+          "kind": "form"
+        }
+      ],
+      "modelVariables": ["ar_itemized_deductions_joint"]
     }
   ],
   "researchNotes": [

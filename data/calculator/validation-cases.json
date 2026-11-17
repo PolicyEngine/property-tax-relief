@@ -400,5 +400,1139 @@
     "expectedValue": 0,
     "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf",
     "sourceLocation": "Instructions page 2 directs a filer with CT-1040 line 10 tax of zero to skip the property tax credit. The allowed nonrefundable credit is $0. Assume a qualified full-year resident, single filer, no spouse or dependents, and no motor-vehicle tax claim."
+  },
+  {
+    "id": "az-owner-zero-income",
+    "programId": "az-property-tax-credit",
+    "inputs": {
+      "age": "65",
+      "az_property_tax_credit_income": "0",
+      "real_estate_taxes": "1000"
+    },
+    "expectedValue": 502,
+    "source": "https://www.azleg.gov/ars/43/01072.htm",
+    "sourceLocation": "Subsection B(1), $0–$1,750 bracket. $502 is below the $1,000 paid."
+  },
+  {
+    "id": "az-owner-payment-limits-credit",
+    "programId": "az-property-tax-credit",
+    "inputs": {
+      "age": "65",
+      "az_property_tax_credit_income": "1500",
+      "real_estate_taxes": "120"
+    },
+    "expectedValue": 120,
+    "source": "https://www.azleg.gov/ars/43/01072.htm",
+    "sourceLocation": "Subsection B limits the credit to the $120 paid when the table gives $502."
+  },
+  {
+    "id": "az-owner-next-band-start",
+    "programId": "az-property-tax-credit",
+    "inputs": {
+      "age": "65",
+      "az_property_tax_credit_income": "1751",
+      "real_estate_taxes": "1000"
+    },
+    "expectedValue": 479,
+    "source": "https://www.azleg.gov/ars/43/01072.htm",
+    "sourceLocation": "Subsection B(1), $1,751–$1,850 bracket. The $479 table amount controls."
+  },
+  {
+    "id": "az-owner-income-exceeds-limit",
+    "programId": "az-property-tax-credit",
+    "inputs": {
+      "age": "65",
+      "az_property_tax_credit_income": "3751",
+      "real_estate_taxes": "1000"
+    },
+    "expectedValue": 0,
+    "source": "https://www.azleg.gov/ars/43/01072.htm",
+    "sourceLocation": "Subsection A(3)(a) requires income below $3,751 for someone who lived alone."
+  },
+  {
+    "id": "nd-primary-credit-tax-due-1500",
+    "programId": "nd-primary-residence-credit",
+    "inputs": {
+      "real_estate_taxes": "1500"
+    },
+    "expectedValue": 1500,
+    "source": "https://ndlegis.gov/assembly/69-2025/regular/documents/25-1003-06000.pdf#page=11",
+    "sourceLocation": "Section 10, §57-02-08.9(1)(a)–(d), 2025 property tax year. An approved applicant with $1,500 of eligible tax due receives $1,500 because the credit cannot exceed the tax due."
+  },
+  {
+    "id": "nd-primary-credit-tax-due-1600",
+    "programId": "nd-primary-residence-credit",
+    "inputs": {
+      "real_estate_taxes": "1600"
+    },
+    "expectedValue": 1600,
+    "source": "https://ndlegis.gov/assembly/69-2025/regular/documents/25-1003-06000.pdf#page=11",
+    "sourceLocation": "Section 10, §57-02-08.9(1)(a)–(d), 2025 property tax year. The eligible tax due and maximum credit each equal $1,600."
+  },
+  {
+    "id": "nd-primary-credit-tax-due-2500",
+    "programId": "nd-primary-residence-credit",
+    "inputs": {
+      "real_estate_taxes": "2500"
+    },
+    "expectedValue": 1600,
+    "source": "https://ndlegis.gov/assembly/69-2025/regular/documents/25-1003-06000.pdf#page=11",
+    "sourceLocation": "Section 10, §57-02-08.9(1)(a)–(d), 2025 property tax year. The $1,600 statutory maximum limits the credit on $2,500 of eligible tax due."
+  },
+  {
+    "id": "ky-homestead-age-65-assessment-200000",
+    "programId": "ky-homestead-exemption",
+    "inputs": {
+      "age": "65",
+      "assessed_property_value": "200000"
+    },
+    "expectedValue": 49100,
+    "source": "https://revenue.ky.gov/Property/Residential-Farm-Commercial-Property/Pages/Homestead-Exemption.aspx",
+    "sourceLocation": "Kentucky DOR's 2025–2026 example exempts $49,100 of a $200,000 assessment. §132.810(2)(a) permits applicants who reach age 65 during 2025."
+  },
+  {
+    "id": "ky-homestead-assessment-49100",
+    "programId": "ky-homestead-exemption",
+    "inputs": {
+      "age": "70",
+      "assessed_property_value": "49100"
+    },
+    "expectedValue": 49100,
+    "source": "https://revenue.ky.gov/News/Pages/DOR-Sets-2025-2026-Homestead-Exemption.aspx",
+    "sourceLocation": "2025–2026 maximum exemption. The assessed value and exemption limit each equal $49,100."
+  },
+  {
+    "id": "ky-homestead-assessment-40000",
+    "programId": "ky-homestead-exemption",
+    "inputs": {
+      "age": "80",
+      "assessed_property_value": "40000"
+    },
+    "expectedValue": 40000,
+    "source": "https://revenue.ky.gov/Property/Residential-Farm-Commercial-Property/Pages/Homestead-Exemption.aspx",
+    "sourceLocation": "The $49,100 exemption applies to the assessed value. It exempts the full $40,000 assessment of this eligible home."
+  },
+  {
+    "id": "tx-school-homestead-appraisal-300000",
+    "programId": "tx-school-homestead",
+    "inputs": {
+      "assessed_property_value": "300000"
+    },
+    "expectedValue": 140000,
+    "source": "https://comptroller.texas.gov/taxes/property-tax/docs/98-1070.pdf",
+    "sourceLocation": "2025 School District Exemptions Example. The general mandatory component exempts $140,000 of the $300,000 appraised value."
+  },
+  {
+    "id": "tx-school-homestead-appraisal-140000",
+    "programId": "tx-school-homestead",
+    "inputs": {
+      "assessed_property_value": "140000"
+    },
+    "expectedValue": 140000,
+    "source": "https://comptroller.texas.gov/taxes/property-tax/docs/98-1070.pdf",
+    "sourceLocation": "General mandatory school district exemption. The qualifying appraised value and exemption amount each equal $140,000."
+  },
+  {
+    "id": "tx-school-homestead-appraisal-60000",
+    "programId": "tx-school-homestead",
+    "inputs": {
+      "assessed_property_value": "60000"
+    },
+    "expectedValue": 60000,
+    "source": "https://comptroller.texas.gov/taxes/property-tax/docs/98-1070.pdf",
+    "sourceLocation": "General mandatory school district exemption. The exemption removes the entire $60,000 appraised value, which falls under the $140,000 limit."
+  },
+  {
+    "id": "sc-senior-homestead-assessed-cap",
+    "programId": "sc-homestead-exemption",
+    "inputs": {
+      "age": "65",
+      "assessed_property_value": "3200"
+    },
+    "expectedValue": 2000,
+    "source": "https://www.scstatehouse.gov/code/t12c037.php",
+    "sourceLocation": "§ 12-37-250(A)(1)(i) exempts the first $50,000 in fair market value. § 12-43-220(c) applies the 4% assessment ratio. For an eligible $80,000 legal residence, $2,000 of the $3,200 assessed value is exempt."
+  },
+  {
+    "id": "sc-senior-homestead-assessed-below-cap",
+    "programId": "sc-homestead-exemption",
+    "inputs": {
+      "age": "70",
+      "assessed_property_value": "1200"
+    },
+    "expectedValue": 1200,
+    "source": "https://www.scstatehouse.gov/code/t12c037.php",
+    "sourceLocation": "§ 12-37-250(A)(1) and § 12-43-220(c). An eligible $30,000 residence lies below the $50,000 fair-market-value exemption cap. At 4% the entire $1,200 assessment is exempt."
+  },
+  {
+    "id": "sc-senior-homestead-age-ineligible",
+    "programId": "sc-homestead-exemption",
+    "inputs": {
+      "age": "64",
+      "assessed_property_value": "3200"
+    },
+    "expectedValue": 0,
+    "source": "https://www.scstatehouse.gov/code/t12c037.php",
+    "sourceLocation": "§ 12-37-250(A)(1)(i), (A)(2). An applicant age 64 on December 31, 2024, without other qualifying status misses the 2025 age-based exemption."
+  },
+  {
+    "id": "ms-senior-homestead-assessed-cap",
+    "programId": "ms-age-disability-homestead-exemption",
+    "inputs": {
+      "age": "65",
+      "assessed_property_value": "15000"
+    },
+    "expectedValue": 7500,
+    "source": "https://billstatus.ls.state.ms.us/documents/2025/html/HB/0800-0899/HB0812SG.htm",
+    "sourceLocation": "§ 27-33-75(2)(a), and Department of Revenue Homestead Exemption tier 2. Age 65 on January 1, 2025 and qualifying $15,000 assessment. The base exemption is the first $7,500 of assessed value."
+  },
+  {
+    "id": "ms-senior-homestead-assessed-below-cap",
+    "programId": "ms-age-disability-homestead-exemption",
+    "inputs": {
+      "age": "70",
+      "assessed_property_value": "6000"
+    },
+    "expectedValue": 6000,
+    "source": "https://billstatus.ls.state.ms.us/documents/2025/html/HB/0800-0899/HB0812SG.htm",
+    "sourceLocation": "§ 27-33-75(2)(a). Entire $6,000 qualifying assessed value falls within the base $7,500 exemption."
+  },
+  {
+    "id": "ms-senior-homestead-age-ineligible",
+    "programId": "ms-age-disability-homestead-exemption",
+    "inputs": {
+      "age": "64",
+      "assessed_property_value": "15000"
+    },
+    "expectedValue": 0,
+    "source": "https://www.dor.ms.gov/county-services/homestead-exemption",
+    "sourceLocation": "Tier 2. An applicant age 64 on January 1, 2025 without disability or other qualifying status has no age-based exemption. Tier 1 is a separate provision."
+  },
+  {
+    "id": "al-senior-homestead-state-levy",
+    "programId": "al-homestead-exemptions",
+    "inputs": {
+      "age": "65",
+      "assessed_property_value": "10000",
+      "real_estate_taxes": "390"
+    },
+    "expectedValue": 65,
+    "source": "https://admincode.legislature.state.al.us/administrative-code/810-4-1-.23",
+    "sourceLocation": "Rule 810-4-1-.23(3)(b) exempts all state-levied property taxes at age 65. At the Department of Revenue’s 6.5 mills, $10,000 of assessed value carries a state levy of $65 before exemptions."
+  },
+  {
+    "id": "al-senior-homestead-larger-state-levy",
+    "programId": "al-homestead-exemptions",
+    "inputs": {
+      "age": "70",
+      "assessed_property_value": "32000",
+      "real_estate_taxes": "1250"
+    },
+    "expectedValue": 208,
+    "source": "https://admincode.legislature.state.al.us/administrative-code/810-4-1-.23",
+    "sourceLocation": "Rule 810-4-1-.23(3)(b) and Department of Revenue state tax rate. At 6.5 mills, $32,000 of assessed value carries a state levy of $208 before exemptions."
+  },
+  {
+    "id": "al-senior-homestead-age-ineligible",
+    "programId": "al-homestead-exemptions",
+    "inputs": {
+      "age": "64",
+      "assessed_property_value": "32000",
+      "real_estate_taxes": "1250"
+    },
+    "expectedValue": 0,
+    "source": "https://admincode.legislature.state.al.us/administrative-code/810-4-1-.23",
+    "sourceLocation": "Rule 810-4-1-.23(3)(a)–(b). The age-65 state levy exemption does not apply at age 64 with no other qualifying status. The ordinary exemption is a separate provision."
+  },
+  {
+    "id": "dc-senior-renter-cap",
+    "programId": "dc-schedule-h",
+    "inputs": {
+      "age": "70",
+      "adjusted_gross_income": "20000",
+      "rent": "12000"
+    },
+    "expectedValue": 1425,
+    "source": "https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_Schedule_H_021226.pdf#page=3",
+    "sourceLocation": "2025 Schedule H worksheet, lines 2–6: 20% × $12,000 − 3% × $20,000 = $1,800. The $1,425 limit applies."
+  },
+  {
+    "id": "dc-senior-renter-income-ceiling",
+    "programId": "dc-schedule-h",
+    "inputs": {
+      "age": "70",
+      "adjusted_gross_income": "90000",
+      "rent": "16000"
+    },
+    "expectedValue": 500,
+    "source": "https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_Schedule_H_021226.pdf#page=3",
+    "sourceLocation": "2025 Schedule H worksheet, lines 2–6: income of $90,000 qualifies for the senior rate. 20% × $16,000 − 3% × $90,000 = $500."
+  },
+  {
+    "id": "dc-senior-renter-over-ceiling",
+    "programId": "dc-schedule-h",
+    "inputs": {
+      "age": "70",
+      "adjusted_gross_income": "90001",
+      "rent": "16000"
+    },
+    "expectedValue": 0,
+    "source": "https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_Schedule_H_021226.pdf#page=3",
+    "sourceLocation": "2025 Schedule H worksheet, age 70 or older income band: $90,001 exceeds the $90,000 ceiling."
+  },
+  {
+    "id": "ny-it214-renter-senior-band-top",
+    "programId": "ny-real-property-tax-credit",
+    "inputs": {
+      "age": "65",
+      "adjusted_gross_income": "3000",
+      "rent": "1200"
+    },
+    "expectedValue": 375,
+    "source": "https://www.tax.ny.gov/pdf/current_forms/it/it214_fill_in.pdf#page=3",
+    "sourceLocation": "2025 IT-214 lines 10, 14, and 18–20, Tables 1 and A: 25% × $1,200 = $300 exceeds 3.5% × $3,000 = $105. Table A pays $375 at $3,000."
+  },
+  {
+    "id": "ny-it214-renter-nonsenior-income-ceiling",
+    "programId": "ny-real-property-tax-credit",
+    "inputs": {
+      "age": "64",
+      "adjusted_gross_income": "18000",
+      "rent": "5400"
+    },
+    "expectedValue": 50,
+    "source": "https://www.tax.ny.gov/pdf/current_forms/it/it214_fill_in.pdf#page=3",
+    "sourceLocation": "2025 IT-214 lines 8–14 and 18–20, Tables 1 and B: $18,000 income and $450 average monthly rent meet the limits. 25% × $5,400 = $1,350 exceeds 6.5% × $18,000 = $1,170. Table B pays $50."
+  },
+  {
+    "id": "ny-it214-renter-equal-excess",
+    "programId": "ny-real-property-tax-credit",
+    "inputs": {
+      "age": "65",
+      "adjusted_gross_income": "3000",
+      "rent": "420"
+    },
+    "expectedValue": 0,
+    "source": "https://www.tax.ny.gov/pdf/current_forms/it/it214_fill_in.pdf#page=2",
+    "sourceLocation": "2025 IT-214 lines 14 and 18–20: 25% × $420 equals 3.5% × $3,000 at $105. Line 19 requires strict excess."
+  },
+  {
+    "id": "oh-homestead-2024-magi-40000",
+    "programId": "oh-homestead-exemption",
+    "inputs": {
+      "age": "65",
+      "oh_homestead_exemption_total_income": "40000",
+      "assessed_property_value": "35000",
+      "real_estate_taxes": "1000"
+    },
+    "expectedValue": 10150,
+    "source": "https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/communications/publications/annual_reports/2025annualreport.pdf",
+    "sourceLocation": "Real property tax, homestead exemption section. At age 65 and 2024 MAGI of $40,000, the standard exemption covers $10,150 of assessed value. The Ohio means testing FAQ and Fulton County confirm eligibility at the $40,000 income limit."
+  },
+  {
+    "id": "oh-homestead-2024-magi-40001",
+    "programId": "oh-homestead-exemption",
+    "inputs": {
+      "age": "65",
+      "oh_homestead_exemption_total_income": "40001",
+      "assessed_property_value": "35000",
+      "real_estate_taxes": "1000"
+    },
+    "expectedValue": 0,
+    "source": "https://www.fultoncountyoh.com/147/Homestead-Exemption",
+    "sourceLocation": "2025 real-property applicants who do not qualify for grandfathering cannot exceed $40,000 in 2024 Ohio modified adjusted gross income. The homeowner exceeds the threshold by $1."
+  },
+  {
+    "id": "oh-homestead-assessment-8750",
+    "programId": "oh-homestead-exemption",
+    "inputs": {
+      "age": "70",
+      "oh_homestead_exemption_total_income": "30000",
+      "assessed_property_value": "8750",
+      "real_estate_taxes": "250"
+    },
+    "expectedValue": 8750,
+    "source": "https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/communications/publications/annual_reports/2025annualreport.pdf",
+    "sourceLocation": "Real property tax, homestead exemption section. The $10,150 assessed-value limit covers the eligible home's entire $8,750 assessed value."
+  },
+  {
+    "id": "wv-homestead-assessment-60000",
+    "programId": "wv-homestead-exemption",
+    "inputs": {
+      "assessed_property_value": "60000"
+    },
+    "expectedValue": 20000,
+    "source": "https://code.wvlegislature.gov/11-6B-3/",
+    "sourceLocation": "§11-6B-3(a). The county exempts the first $20,000 of the qualifying home's $60,000 assessed value."
+  },
+  {
+    "id": "wv-homestead-assessment-20000",
+    "programId": "wv-homestead-exemption",
+    "inputs": {
+      "assessed_property_value": "20000"
+    },
+    "expectedValue": 20000,
+    "source": "https://code.wvlegislature.gov/11-6B-3/",
+    "sourceLocation": "§11-6B-3(a). The exemption removes the whole eligible assessment when it equals the $20,000 limit."
+  },
+  {
+    "id": "wv-homestead-assessment-12500",
+    "programId": "wv-homestead-exemption",
+    "inputs": {
+      "assessed_property_value": "12500"
+    },
+    "expectedValue": 12500,
+    "source": "https://code.wvlegislature.gov/11-6B-7/",
+    "sourceLocation": "§11-6B-7(b). When the $20,000 exemption exceeds the $12,500 assessment, the entire assessment falls within the exemption and the county levies no tax."
+  },
+  {
+    "id": "tn-elderly-relief-equalized-value-250000",
+    "programId": "tn-elderly-disabled-relief",
+    "inputs": {
+      "age": "65",
+      "tn_elderly_property_tax_relief_income": "37530",
+      "primary_residence_value": "250000",
+      "real_estate_taxes": "1000"
+    },
+    "expectedValue": 130.8,
+    "source": "https://comptroller.tn.gov/content/dam/cot/pa/documents/tax-relief/TCA%2067-5-701%20through%2067-5-704.pdf#page=3",
+    "sourceLocation": "§67-5-702(b), with 2025 brochure cap $32,700 and income maximum $37,530. Hypothetical county appraisal $200,000, appraisal ratio 0.8 and nominal 2% rate produce $1,000 tax. State amount before adjustments is $32,700 × 25% × 2% × 0.8 = $130.80."
+  },
+  {
+    "id": "tn-elderly-relief-income-37531",
+    "programId": "tn-elderly-disabled-relief",
+    "inputs": {
+      "age": "65",
+      "tn_elderly_property_tax_relief_income": "37531",
+      "primary_residence_value": "250000",
+      "real_estate_taxes": "1000"
+    },
+    "expectedValue": 0,
+    "source": "https://www.weakleycountytn.gov/uploads/1/0/7/5/107537459/2025_property_ttax_relief_program.pdf#page=2",
+    "sourceLocation": "2025 eligibility requirements, elderly route. The $37,531 of prior-year income exceeds the $37,530 maximum."
+  },
+  {
+    "id": "tn-elderly-relief-value-30000",
+    "programId": "tn-elderly-disabled-relief",
+    "inputs": {
+      "age": "74",
+      "tn_elderly_property_tax_relief_income": "25000",
+      "primary_residence_value": "30000",
+      "real_estate_taxes": "150"
+    },
+    "expectedValue": 150,
+    "source": "https://comptroller.tn.gov/content/dam/cot/pa/documents/tax-relief/TCA%2067-5-701%20through%2067-5-704.pdf#page=3",
+    "sourceLocation": "§67-5-702(b) with 2025 brochure cap $32,700. A qualifying $30,000 full market value falls below the cap. With a 1.0 appraisal ratio and 2% tax rate, the state amount before adjustments covers the $150 tax."
+  },
+  {
+    "id": "mt-2ec-renter-age-threshold",
+    "programId": "mt-elderly-homeowner-renter-credit",
+    "inputs": {
+      "age": "62",
+      "mt_elderly_homeowner_or_renter_credit_gross_household_income": "10000",
+      "rent": "6000"
+    },
+    "expectedValue": 900,
+    "source": "https://revenue.mt.gov/files/Forms/Montana-Individual-Income-Tax-Return-Form-2/Form_2_2025_Schedule_2EC.pdf",
+    "sourceLocation": "2025 Schedule 2EC attestation and lines 18–30. Age 62 qualifies, the standard exclusion reduces $10,000 to zero, and 15% of $6,000 is $900."
+  },
+  {
+    "id": "mt-2ec-renter-multiplier-boundary",
+    "programId": "mt-elderly-homeowner-renter-credit",
+    "inputs": {
+      "age": "62",
+      "mt_elderly_homeowner_or_renter_credit_gross_household_income": "35000",
+      "rent": "16000"
+    },
+    "expectedValue": 460,
+    "source": "https://revenue.mt.gov/files/Forms/Montana-Individual-Income-Tax-Return-Form-2/Form_2_2025_Schedule_2EC.pdf",
+    "sourceLocation": "2025 Schedule 2EC lines 18–30 and Instructions Credit Multiplier Table. $2,400 rent equivalent minus 5% × ($35,000 − $12,600) leaves $1,280. Line 28 uses the $1,150 cap, and line 30 multiplies it by 40%."
+  },
+  {
+    "id": "mt-2ec-renter-income-limit",
+    "programId": "mt-elderly-homeowner-renter-credit",
+    "inputs": {
+      "age": "62",
+      "mt_elderly_homeowner_or_renter_credit_gross_household_income": "45000",
+      "rent": "16000"
+    },
+    "expectedValue": 0,
+    "source": "https://revenue.mt.gov/files/Forms/Montana-Individual-Income-Tax-Return-Form-2/Form_2_2025_Schedule_2EC.pdf",
+    "sourceLocation": "2025 Schedule 2EC attestation requires gross household income below $45,000."
+  },
+  {
+    "id": "ma-cb-renter-cap",
+    "programId": "ma-senior-circuit-breaker",
+    "inputs": {
+      "age": "65",
+      "ma_scb_total_income": "30000",
+      "rent": "30000"
+    },
+    "expectedValue": 2820,
+    "source": "https://www.mass.gov/doc/2025-schedule-cb-circuit-breaker-credit/download",
+    "sourceLocation": "2025 Schedule CB lines 18–21. 25% × $30,000 rent minus 10% × $30,000 qualifying income gives $4,500. Line 21 caps the credit at $2,820."
+  },
+  {
+    "id": "ma-cb-renter-income-ceiling",
+    "programId": "ma-senior-circuit-breaker",
+    "inputs": {
+      "age": "65",
+      "ma_scb_total_income": "75000",
+      "rent": "36000"
+    },
+    "expectedValue": 1500,
+    "source": "https://www.mass.gov/doc/2025-schedule-cb-circuit-breaker-credit/download",
+    "sourceLocation": "2025 Schedule CB line 9 and lines 18–21. A single filer with $75,000 qualifies. 25% × $36,000 rent minus 10% × $75,000 is $1,500."
+  },
+  {
+    "id": "ma-cb-renter-over-income-ceiling",
+    "programId": "ma-senior-circuit-breaker",
+    "inputs": {
+      "age": "65",
+      "ma_scb_total_income": "75001",
+      "rent": "36000"
+    },
+    "expectedValue": 0,
+    "source": "https://www.mass.gov/doc/2025-schedule-cb-circuit-breaker-credit/download",
+    "sourceLocation": "2025 Schedule CB line 9. $75,001 exceeds the $75,000 single-filer limit."
+  },
+  {
+    "id": "ut-tc90cb-renter-rate-break",
+    "programId": "ut-renter-refund",
+    "inputs": {
+      "age": "66",
+      "ut_homeowner_renter_relief_household_income": "15034",
+      "rent": "10000"
+    },
+    "expectedValue": 850,
+    "source": "https://files.tax.utah.gov/tax/forms/current/tc-90cb.pdf#page=4",
+    "sourceLocation": "2025 Renter Refund Schedule. An applicant with $15,034 household income uses the 8.5% rate, yielding $850 on $10,000 rent below the $1,245 cap."
+  },
+  {
+    "id": "ut-tc90cb-renter-income-ceiling",
+    "programId": "ut-renter-refund",
+    "inputs": {
+      "age": "66",
+      "ut_homeowner_renter_relief_household_income": "44221",
+      "rent": "12000"
+    },
+    "expectedValue": 262,
+    "source": "https://files.tax.utah.gov/tax/forms/current/tc-90cb.pdf#page=4",
+    "sourceLocation": "2025 Renter Refund Schedule. $44,221 falls in the 2.5% band. $300 exceeds the $262 cap, so the credit equals $262."
+  },
+  {
+    "id": "ut-tc90cb-renter-over-income-ceiling",
+    "programId": "ut-renter-refund",
+    "inputs": {
+      "age": "66",
+      "ut_homeowner_renter_relief_household_income": "44222",
+      "rent": "12000"
+    },
+    "expectedValue": 0,
+    "source": "https://files.tax.utah.gov/tax/forms/current/tc-90cb.pdf#page=4",
+    "sourceLocation": "2025 Renter Refund Schedule. $44,222 exceeds the $44,221 eligibility limit."
+  },
+  {
+    "id": "ar-real-estate-tax-only-0",
+    "programId": "ar-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000F_and_AR1000NR_Instructions.pdf",
+    "sourceLocation": "Form AR3 line 5. With no qualified real estate taxes paid and no other itemized expenses, the real estate tax component is zero."
+  },
+  {
+    "id": "ar-real-estate-tax-only-3500",
+    "programId": "ar-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "3500"
+    },
+    "expectedValue": 3500,
+    "source": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000F_and_AR1000NR_Instructions.pdf",
+    "sourceLocation": "Form AR3 line 5. The resident enters $3,500 of qualified real estate tax paid on owned nonbusiness property."
+  },
+  {
+    "id": "ar-real-estate-tax-only-45000",
+    "programId": "ar-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "45000"
+    },
+    "expectedValue": 45000,
+    "source": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000F_and_AR1000NR_Instructions.pdf",
+    "sourceLocation": "Form AR3 line 5 allows the qualified real estate taxes actually paid. This line has no federal Schedule A limit, so a $45,000 qualified payment gives a $45,000 component."
+  },
+  {
+    "id": "id-itemized-real-estate-20000-addback-3000",
+    "programId": "id-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "100000",
+      "real_estate_taxes": "20000",
+      "state_and_local_sales_or_income_tax": "3000"
+    },
+    "expectedValue": 20000,
+    "source": "https://tax.idaho.gov/wp-content/uploads/forms/EIN00046/EIN00046_03-02-2026.pdf#page=8",
+    "sourceLocation": "Form 40 line 14 instructions. Idaho subtracts $3,000 of Schedule A line 5a from $23,000 of federal itemized deductions, leaving $20,000 on Form 40 line 15."
+  },
+  {
+    "id": "id-itemized-real-estate-29000-addback-18000",
+    "programId": "id-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "400000",
+      "real_estate_taxes": "29000",
+      "state_and_local_sales_or_income_tax": "18000"
+    },
+    "expectedValue": 29000,
+    "source": "https://tax.idaho.gov/wp-content/uploads/forms/EIN00046/EIN00046_03-02-2026.pdf#page=8",
+    "sourceLocation": "Form 40 line 14 instructions, Schedule A gross total exceeds $40,000. Subtract $29,000 of real estate tax from $40,000 of federal capped taxes, so Idaho removes $11,000 and retains $29,000."
+  },
+  {
+    "id": "id-itemized-real-estate-45000-federal-cap",
+    "programId": "id-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "450000",
+      "real_estate_taxes": "45000",
+      "state_and_local_sales_or_income_tax": "10000"
+    },
+    "expectedValue": 40000,
+    "source": "https://tax.idaho.gov/wp-content/uploads/forms/EIN00046/EIN00046_03-02-2026.pdf#page=8",
+    "sourceLocation": "Form 40 line 14 instructions. $40,000 federal Schedule A taxes less $45,000 of real estate tax yields a zero addback and $40,000 Idaho itemized amount."
+  },
+  {
+    "id": "de-real-estate-itemized-zero",
+    "programId": "de-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "0",
+      "adjusted_gross_income": "100000"
+    },
+    "expectedValue": 0,
+    "source": "https://revenuefiles.delaware.gov/2025/PITForms_Instructions/PIT-RSA_2025-01_PaperInteractiveIPM.pdf",
+    "sourceLocation": "2025 PIT-RSA, lines 5c and 5f. For a resident single filer who itemizes, include $0 of qualifying real estate taxes and zero other taxes subject to the cap. The $40,000 cap applies at $100,000 of federal adjusted gross income with no federal income exclusions."
+  },
+  {
+    "id": "de-real-estate-itemized-below-cap",
+    "programId": "de-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "4000",
+      "adjusted_gross_income": "100000"
+    },
+    "expectedValue": 4000,
+    "source": "https://revenuefiles.delaware.gov/2025/PITForms_Instructions/PIT-RSA_2025-01_PaperInteractiveIPM.pdf",
+    "sourceLocation": "2025 PIT-RSA, lines 5c and 5f. For a resident single filer who itemizes, include $4,000 of qualifying real estate taxes and zero other taxes subject to the cap. The $40,000 cap applies at $100,000 of federal adjusted gross income with no federal income exclusions."
+  },
+  {
+    "id": "de-real-estate-itemized-cap",
+    "programId": "de-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "45000",
+      "adjusted_gross_income": "500000"
+    },
+    "expectedValue": 40000,
+    "source": "https://revenuefiles.delaware.gov/2025/PITForms_Instructions/PIT-RSA_2025-01_PaperInteractiveIPM.pdf",
+    "sourceLocation": "2025 PIT-RSA, lines 5c and 5f. For a resident single filer who itemizes, include $45,000 of qualifying real estate taxes and zero other taxes subject to the cap. The $40,000 cap applies at $500,000 of federal adjusted gross income with no federal income exclusions."
+  },
+  {
+    "id": "or-real-estate-itemized-zero",
+    "programId": "or-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "0",
+      "adjusted_gross_income": "100000"
+    },
+    "expectedValue": 0,
+    "source": "https://www.oregon.gov/dor/forms/FormsPubs/schedule-or-a_101-007_2025.pdf",
+    "sourceLocation": "2025 Schedule OR-A, lines 6 and 9. For a resident single filer who itemizes, include $0 of qualifying real estate taxes and zero other taxes subject to the cap. The $40,000 cap applies at $100,000 of federal adjusted gross income with no federal income exclusions."
+  },
+  {
+    "id": "or-real-estate-itemized-below-cap",
+    "programId": "or-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "4000",
+      "adjusted_gross_income": "100000"
+    },
+    "expectedValue": 4000,
+    "source": "https://www.oregon.gov/dor/forms/FormsPubs/schedule-or-a_101-007_2025.pdf",
+    "sourceLocation": "2025 Schedule OR-A, lines 6 and 9. For a resident single filer who itemizes, include $4,000 of qualifying real estate taxes and zero other taxes subject to the cap. The $40,000 cap applies at $100,000 of federal adjusted gross income with no federal income exclusions."
+  },
+  {
+    "id": "or-real-estate-itemized-cap",
+    "programId": "or-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "45000",
+      "adjusted_gross_income": "500000"
+    },
+    "expectedValue": 40000,
+    "source": "https://www.oregon.gov/dor/forms/FormsPubs/schedule-or-a_101-007_2025.pdf",
+    "sourceLocation": "2025 Schedule OR-A, lines 6 and 9. For a resident single filer who itemizes, include $45,000 of qualifying real estate taxes and zero other taxes subject to the cap. The $40,000 cap applies at $500,000 of federal adjusted gross income with no federal income exclusions."
+  },
+  {
+    "id": "nc-real-estate-itemized-zero",
+    "programId": "nc-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "0",
+      "mortgage_interest": "0",
+      "charitable_deduction": "0",
+      "medical_expense_deduction": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://www.ncdor.gov/taxes-forms/corporate-income-franchise-tax/frequently-asked-questions-and-important-notices/faqs-regarding-recent-session-law-changes",
+    "sourceLocation": "A single filer lists zero qualifying property tax on D-400 Schedule A line 2 and has zero other itemized amounts."
+  },
+  {
+    "id": "nc-real-estate-itemized-post-conformity",
+    "programId": "nc-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "15000",
+      "mortgage_interest": "0",
+      "charitable_deduction": "0",
+      "medical_expense_deduction": "0"
+    },
+    "expectedValue": 15000,
+    "source": "https://www.ncdor.gov/taxes-forms/corporate-income-franchise-tax/frequently-asked-questions-and-important-notices/faqs-regarding-recent-session-law-changes",
+    "sourceLocation": "The October 2026 NCDOR conformity FAQ Q16 applies the post-OBBBA federal limit to 2025. The $15,000 qualified real estate tax amount falls within the unchanged $20,000 combined ceiling."
+  },
+  {
+    "id": "nc-real-estate-itemized-combined-limit",
+    "programId": "nc-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "25000",
+      "mortgage_interest": "0",
+      "charitable_deduction": "0",
+      "medical_expense_deduction": "0"
+    },
+    "expectedValue": 20000,
+    "source": "https://www.ncdor.gov/taxes-forms/corporate-income-franchise-tax/frequently-asked-questions-and-important-notices/faqs-regarding-recent-session-law-changes",
+    "sourceLocation": "G.S. §105-153.5 limits combined mortgage interest and real estate taxes to $20,000. Under 2026 Session Law 31, a 2025 filer may have a pre-state-limit amount of $25,000 on line 2."
+  },
+  {
+    "id": "va-real-estate-itemized-below-federal-cap",
+    "programId": "va-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "20000",
+      "adjusted_gross_income": "100000",
+      "itemized_deductions_less_salt": "0",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 20000,
+    "source": "https://www.tax.virginia.gov/sites/default/files/vatax-pdf/2025-sch-a-instructions.pdf",
+    "sourceLocation": "2025 Virginia Schedule A line 5b allows $20,000 of qualified real estate taxes. No other Schedule A amounts apply. Federal AGI is within the single-filer limit for unreduced Virginia itemized deductions."
+  },
+  {
+    "id": "va-real-estate-itemized-above-federal-cap",
+    "programId": "va-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "45000",
+      "adjusted_gross_income": "100000",
+      "itemized_deductions_less_salt": "0",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 45000,
+    "source": "https://www.tax.virginia.gov/sites/default/files/vatax-pdf/2025-sch-a-instructions.pdf",
+    "sourceLocation": "2025 Virginia Schedule A lines 5b and 5c and HB1600 Item 4-14 preserve all $45,000 of Virginia real estate taxes for this itemizer, including $5,000 disallowed solely by the federal SALT limit."
+  },
+  {
+    "id": "va-real-estate-itemized-itemized-limitation-threshold",
+    "programId": "va-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "20000",
+      "adjusted_gross_income": "332700",
+      "itemized_deductions_less_salt": "0",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 20000,
+    "source": "https://www.tax.virginia.gov/sites/default/files/vatax-pdf/2025-sch-a-instructions.pdf",
+    "sourceLocation": "The 2025 Virginia Schedule A worksheet applies the limited-itemized-deduction calculation when single federal AGI exceeds $332,700. At the threshold the full $20,000 line 5b amount counts."
+  },
+  {
+    "id": "ne-real-estate-itemized-zero",
+    "programId": "ne-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "0",
+      "adjusted_gross_income": "100000"
+    },
+    "expectedValue": 0,
+    "source": "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_Individual_Income_Tax_Booklet.pdf",
+    "sourceLocation": "Nebraska 1040N lines 7–9 begin with federal itemized deductions. A federal itemizer with no real estate taxes has zero real estate tax component."
+  },
+  {
+    "id": "ne-real-estate-itemized-below-cap",
+    "programId": "ne-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "4000",
+      "adjusted_gross_income": "100000"
+    },
+    "expectedValue": 4000,
+    "source": "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_Individual_Income_Tax_Booklet.pdf",
+    "sourceLocation": "Federal Schedule A line 5b supplies $4,000 of qualifying taxes and no other SALT amounts. Federal limits permit all $4,000 and Form 1040N lines 7–9 retain it within itemized deductions."
+  },
+  {
+    "id": "ne-real-estate-itemized-federal-cap",
+    "programId": "ne-real-estate-tax-itemized-deduction",
+    "inputs": {
+      "real_estate_taxes": "45000",
+      "adjusted_gross_income": "500000"
+    },
+    "expectedValue": 40000,
+    "source": "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_Individual_Income_Tax_Booklet.pdf",
+    "sourceLocation": "Federal Schedule A applies the $40,000 cap at $500,000 of federal adjusted gross income without exclusions. Nebraska Form 1040N lines 7–9 retain the $40,000 property-tax component."
+  },
+  {
+    "id": "me-nonveteran-owner-paid-1200",
+    "programId": "me-property-tax-fairness-credit",
+    "inputs": {
+      "age": "40",
+      "me_sales_and_property_tax_fairness_credit_income": "10000",
+      "real_estate_taxes": "1200",
+      "rent": "0"
+    },
+    "expectedValue": 800,
+    "source": "https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/25_1040me_sch_ptfc_fillable.pdf",
+    "sourceLocation": "Independent case ME01. Lines 8–16. $1,200 qualifying paid tax falls under the $2,550 benefit base. Subtract 4% of $10,000, yielding an $800 ordinary credit."
+  },
+  {
+    "id": "me-nonveteran-renter-paid-12000",
+    "programId": "me-property-tax-fairness-credit",
+    "inputs": {
+      "age": "40",
+      "me_sales_and_property_tax_fairness_credit_income": "20000",
+      "real_estate_taxes": "0",
+      "rent": "12000"
+    },
+    "expectedValue": 1000,
+    "source": "https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/25_1040me_sch_ptfc_fillable.pdf",
+    "sourceLocation": "Independent case ME02. Lines 5d–16. Maine counts 15% of $12,000 occupancy rent, or $1,800, then subtracts 4% of $20,000 for a $1,000 credit."
+  },
+  {
+    "id": "me-nonveteran-owner-income-63750",
+    "programId": "me-property-tax-fairness-credit",
+    "inputs": {
+      "age": "40",
+      "me_sales_and_property_tax_fairness_credit_income": "63750",
+      "real_estate_taxes": "10000",
+      "rent": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/25_1040me_sch_ptfc_fillable.pdf",
+    "sourceLocation": "Independent case ME04. Lines 9–10a. The 4% income charge equals the $2,550 benefit base, so the homeowner receives no credit."
+  },
+  {
+    "id": "wi-school-statutory-owner-1000",
+    "programId": "wi-school-property-tax-credit",
+    "inputs": {
+      "real_estate_taxes": "1000"
+    },
+    "expectedValue": 120,
+    "source": "https://docs.legis.wisconsin.gov/statutes/statutes/71/i/07/9",
+    "sourceLocation": "§71.07(9)(b)5. With $1,000 in qualified property tax and no rent, the statutory rate of 12% yields $120 before the income tax limit. The department's Form 1 table yields $122."
+  },
+  {
+    "id": "wi-school-statutory-owner-2500",
+    "programId": "wi-school-property-tax-credit",
+    "inputs": {
+      "real_estate_taxes": "2500"
+    },
+    "expectedValue": 300,
+    "source": "https://docs.legis.wisconsin.gov/statutes/statutes/71/i/07/9",
+    "sourceLocation": "§71.07(9)(b)5. The first $2,500 of qualified property tax at 12% gives $300 before the income tax limit."
+  },
+  {
+    "id": "wi-school-statutory-owner-5000",
+    "programId": "wi-school-property-tax-credit",
+    "inputs": {
+      "real_estate_taxes": "5000"
+    },
+    "expectedValue": 300,
+    "source": "https://docs.legis.wisconsin.gov/statutes/statutes/71/i/07/9",
+    "sourceLocation": "§71.07(9)(b)5. Of $5,000 in qualified property tax, the statute counts the first $2,500. The 12% rate gives $300 before the income tax limit."
+  },
+  {
+    "id": "ga-itemized-2000-real-estate",
+    "programId": "ga-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "75000",
+      "real_estate_taxes": "2000",
+      "state_and_local_sales_or_income_tax": "3000",
+      "home_mortgage_interest": "18000"
+    },
+    "expectedValue": 23000,
+    "source": "https://dor.georgia.gov/document/document/2025-it-511-individual-income-tax-booklet/download#page=17",
+    "sourceLocation": "2025 IT-511 pp. 15–16, Form 500 lines 11–12c. Federal Schedule A lines 5a and 5b total $5,000. Add $18,000 from line 8e and enter $23,000. Georgia line 12b is zero."
+  },
+  {
+    "id": "ga-itemized-5000-real-estate-at-georgia-salt-cap",
+    "programId": "ga-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "150000",
+      "real_estate_taxes": "5000",
+      "state_and_local_sales_or_income_tax": "5000",
+      "home_mortgage_interest": "18000"
+    },
+    "expectedValue": 28000,
+    "source": "https://www.legis.ga.gov/api/document/docs/default-source/joint-features-document-library/t48-ch7-8-%28v37%29-pdf.pdf#page=19",
+    "sourceLocation": "O.C.G.A. § 48-7-27(a)(1)(A), (b)(3)(A) and Form 500 lines 12a–12c. $10,000 from federal Schedule A lines 5a–5b reaches the Georgia limit. Adding $18,000 of qualified mortgage interest gives $28,000."
+  },
+  {
+    "id": "ga-itemized-4000-real-estate-35000-mortgage",
+    "programId": "ga-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "180000",
+      "real_estate_taxes": "4000",
+      "state_and_local_sales_or_income_tax": "3800",
+      "home_mortgage_interest": "35000"
+    },
+    "expectedValue": 42800,
+    "source": "https://dor.georgia.gov/document/document/2025-it-511-individual-income-tax-booklet/download#page=17",
+    "sourceLocation": "2025 IT-511 pp. 15–16, Form 500 lines 11–12c. Federal Schedule A lines 5a and 5b total $7,800. Add $35,000 from line 8e. Georgia line 12b is zero, leaving $42,800."
+  },
+  {
+    "id": "mo-homeowner-base-band-payment",
+    "programId": "mo-property-tax-credit",
+    "inputs": {
+      "age": "65",
+      "mo_ptc_net_income": "14300",
+      "real_estate_taxes": "1000"
+    },
+    "expectedValue": 1000,
+    "source": "https://dor.mo.gov/forms/Property%20Tax%20Claim%20Chart_2025.pdf",
+    "sourceLocation": "2025 chart first income row $1–$14,300: the refund equals the eligible property tax paid up to $1,100."
+  },
+  {
+    "id": "mo-homeowner-base-band-capped",
+    "programId": "mo-property-tax-credit",
+    "inputs": {
+      "age": "70",
+      "mo_ptc_net_income": "8000",
+      "real_estate_taxes": "1500"
+    },
+    "expectedValue": 1100,
+    "source": "https://dor.mo.gov/forms/Property%20Tax%20Claim%20Chart_2025.pdf",
+    "sourceLocation": "2025 chart first income row $1–$14,300: the $1,100 cap limits a claim with $1,500 in eligible taxes."
+  },
+  {
+    "id": "mo-homeowner-base-band-no-tax-paid",
+    "programId": "mo-property-tax-credit",
+    "inputs": {
+      "age": "70",
+      "mo_ptc_net_income": "8000",
+      "real_estate_taxes": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://revisor.mo.gov/main/OneSection.aspx?section=135.030&bid=6439",
+    "sourceLocation": "RSMo §135.030.2 allows no credit without property tax or rent attributable to tax. With no eligible tax and no rent, the amount is $0."
+  },
+  {
+    "id": "ks-itemized-property-no-paid-taxes",
+    "programId": "ks-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://www.ksrevenue.gov/pdf/scha25.pdf",
+    "sourceLocation": "Kansas Schedule A lines 5, 7 and 14. With no eligible property tax or other itemized expense, the itemized component is $0."
+  },
+  {
+    "id": "ks-itemized-property-5000",
+    "programId": "ks-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "5000"
+    },
+    "expectedValue": 5000,
+    "source": "https://www.ksrevenue.gov/pdf/scha25.pdf",
+    "sourceLocation": "Kansas Schedule A line 5 takes $5,000 of eligible real estate tax. With other lines at zero, $5,000 flows through lines 7 and 14."
+  },
+  {
+    "id": "ks-itemized-property-above-federal-cap",
+    "programId": "ks-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "45000"
+    },
+    "expectedValue": 45000,
+    "source": "https://www.ksrevenue.gov/incomebook25.html",
+    "sourceLocation": "2025 Schedule A instructions, Taxes You Paid, line 5. Kansas leaves $45,000 of eligible property tax uncapped when computing the state itemized amount."
+  },
+  {
+    "id": "hi-itemized-property-no-paid-taxes",
+    "programId": "hi-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "0",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=34",
+    "sourceLocation": "Worksheet A-2 lines 5–9. A zero real estate amount with every other line at zero gives a $0 line 9 component, before choosing itemization."
+  },
+  {
+    "id": "hi-itemized-property-6800",
+    "programId": "hi-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "6800",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 6800,
+    "source": "https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=34",
+    "sourceLocation": "Worksheet A-2 lines 6 and 9. Qualified real estate tax of $6,800 flows to Form N-11 line 21b when all other taxes are zero."
+  },
+  {
+    "id": "hi-itemized-property-above-federal-cap",
+    "programId": "hi-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "45000",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 45000,
+    "source": "https://files.hawaii.gov/tax/forms/2025/n11ins.pdf#page=16",
+    "sourceLocation": "2025 Form N-11 line 21b instructions and Worksheet A-2 lines 6 and 9. Hawaii's state and local tax calculation does not apply the federal cap, so the component is $45,000 before any overall itemized-deduction limit."
+  },
+  {
+    "id": "md-itemized-property-20000",
+    "programId": "md-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "100000",
+      "real_estate_taxes": "20000"
+    },
+    "expectedValue": 20000,
+    "source": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/forms/2025/502.pdf#page=2",
+    "sourceLocation": "Form 502 lines 17a–17c. $20,000 in federal Schedule A real estate taxes carries through with a zero addback and no Maryland phaseout."
+  },
+  {
+    "id": "md-itemized-property-federal-cap",
+    "programId": "md-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "180000",
+      "real_estate_taxes": "50000"
+    },
+    "expectedValue": 40000,
+    "source": "https://www.irs.gov/pub/irs-prior/f1040sa--2025.pdf",
+    "sourceLocation": "Federal Schedule A lines 5b–5e limit $50,000 in sole real estate taxes to $40,000. That amount carries through Maryland Form 502 lines 17a–17c with no phaseout."
+  },
+  {
+    "id": "md-itemized-property-phaseout-to-zero",
+    "programId": "md-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "480000",
+      "real_estate_taxes": "21000"
+    },
+    "expectedValue": 0,
+    "source": "https://www.mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gtg&enactments=false&section=10-218",
+    "sourceLocation": "Md. Tax–General § 10–218(c)(3) and Worksheet 14A. Federal itemized deductions are $21,000. Subtract 7.5% of the $280,000 federal AGI excess, or $21,000. Maryland itemized deductions are $0."
+  },
+  {
+    "id": "ia-property-tax-itemization-20000",
+    "programId": "ia-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "100000",
+      "real_estate_taxes": "20000",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 20000,
+    "source": "https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/1040-expanded-instructions/federal-total-income",
+    "sourceLocation": "The single homeowner has $20,000 on Schedule A line 5b and no other itemized deductions. The $40,000 combined limit does not bind. Line 1d carries the allowed federal itemized deduction from Form 1040 line 12e. The deduction is already reflected in federal taxable income on line 2."
+  },
+  {
+    "id": "ia-property-tax-itemization-40000",
+    "programId": "ia-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "250000",
+      "real_estate_taxes": "40000",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 40000,
+    "source": "https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/1040-expanded-instructions/federal-total-income",
+    "sourceLocation": "The homeowner's sole federal itemized expense equals the $40,000 combined limit for a single filer. Line 1d carries the allowed federal itemized deduction from Form 1040 line 12e. The deduction is already reflected in federal taxable income on line 2."
+  },
+  {
+    "id": "ia-property-tax-itemization-45000",
+    "programId": "ia-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "500000",
+      "real_estate_taxes": "45000",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 40000,
+    "source": "https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/1040-expanded-instructions/federal-total-income",
+    "sourceLocation": "At $500,000 of federal adjusted gross income with no foreign or territorial modifications, the 2025 federal limit remains $40,000. The owner reports $45,000 before the limit. Line 1d carries the allowed federal itemized deduction from Form 1040 line 12e. The deduction is already reflected in federal taxable income on line 2."
+  },
+  {
+    "id": "nm-property-tax-itemization-20000",
+    "programId": "nm-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "100000",
+      "real_estate_taxes": "20000",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 20000,
+    "source": "https://realfile.tax.newmexico.gov/2025pit-1-ins.pdf#page=25",
+    "sourceLocation": "The single homeowner has $20,000 on Schedule A line 5b and no other itemized deductions. The $40,000 combined limit does not bind. PIT-1 line 12 carries the allowed federal itemized deduction. With no income or sales taxes on Schedule A line 5a, the line 10 add-back is zero."
+  },
+  {
+    "id": "nm-property-tax-itemization-40000",
+    "programId": "nm-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "250000",
+      "real_estate_taxes": "40000",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 40000,
+    "source": "https://realfile.tax.newmexico.gov/2025pit-1-ins.pdf#page=25",
+    "sourceLocation": "The homeowner's sole federal itemized expense equals the $40,000 combined limit for a single filer. PIT-1 line 12 carries the allowed federal itemized deduction. With no income or sales taxes on Schedule A line 5a, the line 10 add-back is zero."
+  },
+  {
+    "id": "nm-property-tax-itemization-45000",
+    "programId": "nm-itemized-real-estate-tax-deduction",
+    "inputs": {
+      "adjusted_gross_income": "500000",
+      "real_estate_taxes": "45000",
+      "state_and_local_sales_or_income_tax": "0"
+    },
+    "expectedValue": 40000,
+    "source": "https://realfile.tax.newmexico.gov/2025pit-1-ins.pdf#page=25",
+    "sourceLocation": "At $500,000 of federal adjusted gross income with no foreign or territorial modifications, the 2025 federal limit remains $40,000. The owner reports $45,000 before the limit. PIT-1 line 12 carries the allowed federal itemized deduction. With no income or sales taxes on Schedule A line 5a, the line 10 add-back is zero."
+  },
+  {
+    "id": "co-real-estate-tax-itemizing-zero",
+    "programId": "co-real-estate-taxes-in-federal-starting-income",
+    "inputs": {
+      "real_estate_taxes": "0",
+      "adjusted_gross_income": "100000",
+      "deductible_mortgage_interest": "20000"
+    },
+    "expectedValue": 0,
+    "source": "https://tax.colorado.gov/sites/tax/files/documents/Book104_2025.pdf#page=8",
+    "sourceLocation": "2025 DR 0104 lines 1, 2, 4, 11 and 12, 2025 federal Schedule A lines 5a–5e and 8e, and Colorado's state income tax addback worksheet. Same resident single itemizer with $100,000 wages, $20,000 eligible mortgage interest, and $5,000 qualifying Colorado income tax as the only other tax. The real estate tax line is zero, so no real estate taxes are included."
+  },
+  {
+    "id": "co-real-estate-tax-itemizing-ordinary",
+    "programId": "co-real-estate-taxes-in-federal-starting-income",
+    "inputs": {
+      "real_estate_taxes": "5000",
+      "adjusted_gross_income": "100000",
+      "deductible_mortgage_interest": "20000"
+    },
+    "expectedValue": 5000,
+    "source": "https://tax.colorado.gov/sites/tax/files/documents/Book104_2025.pdf#page=8",
+    "sourceLocation": "2025 DR 0104 lines 1, 2, 4, 11 and 12, 2025 federal Schedule A lines 5a–5e and 8e, and Colorado's state income tax addback worksheet. Same resident single itemizer with $100,000 wages, $20,000 eligible mortgage interest, and $5,000 qualifying Colorado income tax as the only other tax. Schedule A line 5e includes $5,000 income tax and $5,000 real estate tax. Colorado DR 0104 line 2 adds back $5,000 of income tax."
+  },
+  {
+    "id": "co-real-estate-tax-itemizing-income-tax-crowd-out",
+    "programId": "co-real-estate-taxes-in-federal-starting-income",
+    "inputs": {
+      "real_estate_taxes": "37000",
+      "adjusted_gross_income": "100000",
+      "deductible_mortgage_interest": "20000"
+    },
+    "expectedValue": 37000,
+    "source": "https://tax.colorado.gov/sites/tax/files/documents/Book104_2025.pdf#page=8",
+    "sourceLocation": "2025 DR 0104 lines 1, 2, 4, 11 and 12, 2025 federal Schedule A lines 5a–5e and 8e, and Colorado's state income tax addback worksheet. Same resident single itemizer with $100,000 wages, $20,000 eligible mortgage interest, and $5,000 qualifying Colorado income tax as the only other tax. The $40,000 combined deduction contains $37,000 of real estate taxes and $3,000 of state income tax under Colorado's line 2 worksheet."
+  },
+  {
+    "id": "co-real-estate-tax-itemizing-property-tax-cap",
+    "programId": "co-real-estate-taxes-in-federal-starting-income",
+    "inputs": {
+      "real_estate_taxes": "45000",
+      "adjusted_gross_income": "100000",
+      "deductible_mortgage_interest": "20000"
+    },
+    "expectedValue": 40000,
+    "source": "https://tax.colorado.gov/sites/tax/files/documents/Book104_2025.pdf#page=8",
+    "sourceLocation": "2025 DR 0104 lines 1, 2, 4, 11 and 12, 2025 federal Schedule A lines 5a–5e and 8e, and Colorado's state income tax addback worksheet. Same resident single itemizer with $100,000 wages, $20,000 eligible mortgage interest, and $5,000 qualifying Colorado income tax as the only other tax. Schedule A line 5e limits the $50,000 total to $40,000. The Colorado line 2 worksheet adds back no income tax when real estate taxes alone exhaust the deduction."
   }
 ]

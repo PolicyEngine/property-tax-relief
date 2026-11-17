@@ -5,6 +5,9 @@ import {
   loadStates,
 } from "@/lib/loadResearch";
 import { isComparisonProgram } from "@/lib/inventory";
+import { loadCalculatorContracts } from "@/lib/calculatorData";
+import calculatorMetadata from "@/data/calculator/model-metadata.json";
+import calculationCases from "@/data/calculator/validation-cases.json";
 
 export const metadata = {
   alternates: { canonical: PUBLIC_TOOL_URL + "/methods/" },
@@ -14,6 +17,13 @@ export const metadata = {
 export default function Methods() {
   const coverage = loadCoverage();
   const states = loadStates();
+  const contracts = loadCalculatorContracts();
+  const programCount = states.reduce(
+    (count, state) => count + state.programs.length,
+    0,
+  );
+  const calculatorJurisdictions = new Set(contracts.map(({ state }) => state))
+    .size;
   const comparison =
     coverage?.programs.filter((p) => p.status !== "context") ?? [];
   const found = comparison.filter((p) => p.status === "implementation-found");
@@ -71,14 +81,13 @@ export default function Methods() {
           <h2>Household calculations</h2>
           <p>
             The calculator supports 2025 scenarios for one adult filing as
-            single, with no spouse or dependents. Ten programs support
-            calculations in California, Connecticut, Illinois, Indiana,
-            Michigan, New Jersey, Oklahoma, and Pennsylvania. Users supply
-            qualified expenses and the specified tax-form inputs; the estimate
-            assumes the remaining qualification requirements hold. Deduction
-            results measure reductions in taxable income. The California credit
-            result precedes the limit from available income-tax liability. These
-            results do not measure tax savings on a completed return.
+            single, with no spouse or dependents. It calculates{" "}
+            {contracts.length} programs across {calculatorJurisdictions}{" "}
+            jurisdictions. Enter qualified expenses and any requested tax-form
+            amounts. Each program lists the other qualifications it assumes.
+            Income tax deductions reduce taxable income. Assessed value
+            exemptions reduce the value subject to property tax. California’s
+            renter credit estimate precedes the income tax liability limit.
           </p>
           <p>
             Connecticut calculations cover qualified primary-residence taxes
@@ -116,32 +125,22 @@ export default function Methods() {
             null, and nonnumeric outputs remain unavailable.
           </p>
           <p>
-            The November 15, 2026 metadata snapshot reported PolicyEngine US
-            2.2.1. All 31 saved response bodies record{" "}
-            <code>spm_provenance.runtime_versions</code> labels for PolicyEngine
-            US 2.2.2 and the <code>policyengine</code> wrapper 6.20.0 in the{" "}
-            <a href="https://github.com/PolicyEngine/property-tax-relief/blob/ea011237f5a2b51c71ad01db9371fe0c66ae1a14/data/calculator/validation-receipt.json">
-              validation receipt
-            </a>
-            . The receipt also records <code>runtimeModelVersion: null</code>;
-            its raw response bodies preserve those labels. Requests do not pin a
-            model version, and the recorded labels do not independently
-            establish the runtime that produced each answer.
+            PolicyEngine US {calculatorMetadata.modelVersion} supplies the
+            calculator’s input and output metadata. Each request uses the model
+            that PolicyEngine serves at the time of calculation.
           </p>
           <p>
             Saved API responses match the expected amounts in{" "}
-            <a href="https://github.com/PolicyEngine/property-tax-relief/blob/ea011237f5a2b51c71ad01db9371fe0c66ae1a14/data/calculator/validation-cases.json">
-              31 source-derived cases
+            <a href="https://github.com/PolicyEngine/property-tax-relief/blob/162324da25d515fba89021d8d364320b42d45848/data/calculator/validation-cases.json">
+              {calculationCases.length} source-derived cases
             </a>{" "}
             for the enabled calculations. Those cases do not validate other
             household scenarios.
           </p>
           <p>
-            All 50 states and DC appear in the selector alongside 119 selected
-            program and context records. Ten programs currently support
-            calculations; the other records remain visible with their
-            availability status. This inventory does not establish exhaustive
-            program coverage or a validated national calculator.
+            All 50 states and DC appear in the selector alongside {programCount}{" "}
+            selected program and context records. The selector marks programs
+            that lack household calculations.
           </p>
         </section>
         <section>

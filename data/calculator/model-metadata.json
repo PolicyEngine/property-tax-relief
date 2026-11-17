@@ -1,8 +1,8 @@
 {
   "source": "https://www.policyengine.org/api/metadata/us",
-  "checkedAt": "2026-11-15T15:41:05.213853Z",
-  "modelVersion": "2.2.1",
-  "sourceSha256": "670b553ff1eb2307bcb7edf529a03f40826c7beb1b8b057a1fc4e92b53b8de92",
+  "checkedAt": "2026-11-17T19:11:24Z",
+  "modelVersion": "2.2.2",
+  "sourceSha256": "8f8b944c3d91a84a891a01274282688fb80f1113a55ce09931ba83f42e25091e",
   "variables": {
     "adjusted_gross_income": {
       "entity": "tax_unit",
@@ -20,11 +20,43 @@
       "unit": null,
       "isInputVariable": true
     },
+    "al_senior_homestead_exemption": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "al_senior_homestead_exemption",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ar_itemized_deductions_joint": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ar_itemized_deductions_joint",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
     "assessed_property_value": {
       "entity": "person",
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "assessed_property_value",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "az_property_tax_credit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "az_property_tax_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "az_property_tax_credit_income": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "az_property_tax_credit_income",
       "unit": "currency-USD",
       "isInputVariable": false
     },
@@ -41,6 +73,22 @@
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "ca_renter_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "capped_property_taxes": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "capped_property_taxes",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "charitable_deduction": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "charitable_deduction",
       "unit": "currency-USD",
       "isInputVariable": false
     },
@@ -76,6 +124,30 @@
       "unit": "currency-USD",
       "isInputVariable": false
     },
+    "dc_ptc": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "dc_ptc",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "de_capped_real_estate_tax": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "de_capped_real_estate_tax",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "deductible_mortgage_interest": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "deductible_mortgage_interest",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
     "filing_status": {
       "entity": "tax_unit",
       "valueType": "Enum",
@@ -105,6 +177,46 @@
           "label": "Surviving spouse"
         }
       ]
+    },
+    "ga_deductions": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ga_deductions",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "hi_salt_deduction": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "hi_salt_deduction",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "home_mortgage_interest": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "home_mortgage_interest",
+      "unit": "currency-USD",
+      "isInputVariable": true
+    },
+    "ia_itemized_deductions_unit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ia_itemized_deductions_unit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "id_itemized_deductions": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "id_itemized_deductions",
+      "unit": "currency-USD",
+      "isInputVariable": false
     },
     "il_income_tax_before_non_refundable_credits": {
       "entity": "tax_unit",
@@ -202,6 +314,78 @@
       "unit": null,
       "isInputVariable": false
     },
+    "itemized_deductions_less_salt": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "itemized_deductions_less_salt",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ks_itemized_deductions": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ks_itemized_deductions",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ky_homestead_exemption": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ky_homestead_exemption",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ma_scb_total_income": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ma_scb_total_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ma_senior_circuit_breaker": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ma_senior_circuit_breaker",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "md_itemized_deductions": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "md_itemized_deductions",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "me_property_tax_fairness_credit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "me_property_tax_fairness_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "me_sales_and_property_tax_fairness_credit_income": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "me_sales_and_property_tax_fairness_credit_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "medical_expense_deduction": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "medical_expense_deduction",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
     "mi_homestead_property_tax_credit": {
       "entity": "tax_unit",
       "valueType": "float",
@@ -215,6 +399,70 @@
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "mi_household_resources",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "mo_property_tax_credit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "mo_property_tax_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "mo_ptc_net_income": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "mo_ptc_net_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "mortgage_interest": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "mortgage_interest",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ms_age_disability_homestead_exemption": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ms_age_disability_homestead_exemption",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "mt_elderly_homeowner_or_renter_credit": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "mt_elderly_homeowner_or_renter_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "mt_elderly_homeowner_or_renter_credit_gross_household_income": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "mt_elderly_homeowner_or_renter_credit_gross_household_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "nc_itemized_deductions": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "nc_itemized_deductions",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "nd_primary_residence_credit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "nd_primary_residence_credit",
       "unit": "currency-USD",
       "isInputVariable": false
     },
@@ -250,6 +498,38 @@
       "unit": "currency-USD",
       "isInputVariable": false
     },
+    "nm_itemized_deductions": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "nm_itemized_deductions",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ny_real_property_tax_credit": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ny_real_property_tax_credit",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "oh_homestead_exemption": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "oh_homestead_exemption",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "oh_homestead_exemption_total_income": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "oh_homestead_exemption_total_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
     "ok_gross_income": {
       "entity": "tax_unit",
       "valueType": "float",
@@ -282,6 +562,14 @@
       "unit": "currency-USD",
       "isInputVariable": false
     },
+    "primary_residence_value": {
+      "entity": "person",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "primary_residence_value",
+      "unit": "currency-USD",
+      "isInputVariable": true
+    },
     "real_estate_taxes": {
       "entity": "person",
       "valueType": "float",
@@ -295,6 +583,22 @@
       "valueType": "float",
       "definitionPeriod": "year",
       "name": "rent",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "sc_homestead_exemption": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "sc_homestead_exemption",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "state_and_local_sales_or_income_tax": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "state_and_local_sales_or_income_tax",
       "unit": "currency-USD",
       "isInputVariable": false
     },
@@ -543,6 +847,70 @@
           "label": "AP"
         }
       ]
+    },
+    "tn_elderly_property_tax_relief": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "tn_elderly_property_tax_relief",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "tn_elderly_property_tax_relief_income": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "tn_elderly_property_tax_relief_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "tx_school_district_homestead_exemption": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "tx_school_district_homestead_exemption",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ut_homeowner_renter_relief": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ut_homeowner_renter_relief",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "ut_homeowner_renter_relief_household_income": {
+      "entity": "household",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "ut_homeowner_renter_relief_household_income",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "va_itemized_deductions": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "va_itemized_deductions",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "wi_property_tax_credit_potential": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "wi_property_tax_credit_potential",
+      "unit": "currency-USD",
+      "isInputVariable": false
+    },
+    "wv_homestead_exemption": {
+      "entity": "tax_unit",
+      "valueType": "float",
+      "definitionPeriod": "year",
+      "name": "wv_homestead_exemption",
+      "unit": "currency-USD",
+      "isInputVariable": false
     }
   }
 }

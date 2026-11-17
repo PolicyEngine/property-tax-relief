@@ -74,7 +74,10 @@
           "kind": "form"
         }
       ],
-      "modelVariables": ["wi_property_tax_credit"],
+      "modelVariables": [
+        "wi_property_tax_credit",
+        "wi_property_tax_credit_potential"
+      ],
       "paymentMechanism": "income-tax-credit"
     },
     {

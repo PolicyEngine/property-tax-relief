@@ -16,16 +16,9 @@ The `artifacts/` directory contains a self-contained interactive (`index.html`),
 
 ## Household calculator preview
 
-The `/calculator/` page calculates 2025 scenarios for one adult filing as single, with no spouse or dependents. Its selector includes all 50 states and DC and 119 selected program and context records. Ten programs support calculations across eight states:
+The `/calculator/` page calculates 2025 scenarios for one adult filing as single, with no spouse or dependents. Its selector includes all 50 states and DC. The [calculator contracts](data/calculator/contracts.json) list the calculations, inputs and qualifying scenarios. Assessed value exemptions show the portion of the property's value that the jurisdiction removes from the tax base. The tax bill also depends on which levies the exemption covers and the applicable rates.
 
-- California: nonrefundable renter credit before its tax-liability limit.
-- Connecticut: nonrefundable credit for qualified primary-residence property taxes.
-- Illinois: property-tax credit after its income-tax limit.
-- Indiana: renter and homeowner income-tax deductions.
-- Michigan: homestead property-tax credit for renters.
-- New Jersey: property-tax deduction or credit, as PolicyEngine selects.
-- Oklahoma: property-tax credit or refund for homestead owners.
-- Pennsylvania: property-tax/rent rebate for renters.
+Itemized deduction results use the scenario each program describes. For example, North Carolina's estimate answers how much of a homeowner's property taxes enter their itemized deductions when they have no mortgage interest or other itemized expenses. The state return applies the household's deduction choice and any other adjustments.
 
 Other records show why calculations remain unavailable. Users supply qualified expenses and specified tax-form inputs; the estimate assumes the remaining qualification requirements hold. Connecticut covers primary-residence taxes and uses CT-1040, line 10, as its tax-liability limit; motor-vehicle tax claims require the full Schedule 3. Michigan and Pennsylvania calculations cover renters; Pennsylvania's preview excludes mixed owner-renter claims. Oklahoma calculations cover homestead owners. New Jersey selects one provision, so a zero deduction can accompany a credit or vice versa. Deduction amounts and California's credit before its liability limit do not measure tax savings on a completed return.
 
@@ -35,9 +28,9 @@ Hawaii excludes taxpayers whom another taxpayer could claim as a dependent, even
 
 The browser uses `@policyengine/api-client` to send entered scenarios to the website's household-calculation API. Calculations require a network connection and use the shared API's capacity. The app adds no calculation backend or frontend benefit formulas. The adapter rejects missing or invalid outputs, preserves finite returned numbers, cancels obsolete requests, reuses unchanged requests, and caps new requests at 15 per minute per page.
 
-`data/calculator/contracts.json` records input mappings and source evidence. The November 15, 2026 metadata snapshot reported PolicyEngine US 2.2.1. All 31 saved response bodies record `spm_provenance.runtime_versions` labels for PolicyEngine US 2.2.2 and the `policyengine` wrapper 6.20.0 in the [validation receipt](https://github.com/PolicyEngine/property-tax-relief/blob/ea011237f5a2b51c71ad01db9371fe0c66ae1a14/data/calculator/validation-receipt.json). The receipt also records `runtimeModelVersion: null`; its raw response bodies preserve those labels. Requests do not pin a model version, and the recorded labels do not independently establish the runtime that produced each answer.
+`data/calculator/model-metadata.json` records the PolicyEngine US version and variable metadata used to map inputs and outputs. Requests use the model that PolicyEngine serves at calculation time.
 
-`data/calculator/validation-cases.json` contains 31 source-derived cases for enabled programs. Saved API responses match their expected values; `scripts/calculator_live_qa.ts` can rerun those checks. The offline unit suite sends no live requests.
+The [validation receipt](data/calculator/validation-receipt.json) preserves each API response and its match to a [source-derived case](data/calculator/validation-cases.json). Rerun the live cases with `scripts/calculator_live_qa.ts`. The offline unit suite sends no live requests.
 
 The preview does not establish exhaustive coverage or national-calculator readiness.
 

@@ -611,7 +611,7 @@ describe("calculator field messages", () => {
           },
           value,
         ),
-      ).toBe("Annual rent: enter 0 in this renter scenario.");
+      ).toBe("Annual rent: enter 0 for this scenario.");
     },
   );
 

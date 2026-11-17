@@ -1,8 +1,8 @@
 {
   "jurisdictions": 51,
-  "programRecords": 119,
-  "comparisonPrograms": 76,
-  "implementationFound": 37,
+  "programRecords": 133,
+  "comparisonPrograms": 90,
+  "implementationFound": 51,
   "implementationMissing": 39,
   "partialProfiles": 0
 }
