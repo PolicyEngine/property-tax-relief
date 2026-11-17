@@ -93,8 +93,8 @@ function buildCalculatorFixture() {
     [
       "build",
       entry,
-      "--outfile",
-      js,
+      "--outdir",
+      directory,
       "--target",
       "browser",
       "--env=NEXT_PUBLIC_*",
