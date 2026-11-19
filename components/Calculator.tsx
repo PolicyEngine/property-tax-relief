@@ -30,6 +30,11 @@ const dollars = new Intl.NumberFormat("en-US", {
   currency: "USD",
   maximumFractionDigits: 2,
 });
+const wholeDollars = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  maximumFractionDigits: 0,
+});
 
 function scenarioSignature(
   program: CalculatorProgram,
@@ -118,6 +123,14 @@ export function Calculator({ programs, states }: CalculatorProps) {
     ? scenarioSignature(selectedProgram, values)
     : "";
   const displayedEstimate = estimate?.programId === programId ? estimate : null;
+  const roundAssessedValue =
+    selectedProgram?.runtime === "candidate" &&
+    selectedProgram.kind === "assessed-value-exemption";
+  const displayedAmount = displayedEstimate
+    ? (roundAssessedValue ? wholeDollars : dollars).format(
+        displayedEstimate.result.value,
+      )
+    : "";
   const stale = Boolean(
     displayedEstimate && displayedEstimate.signature !== currentSignature,
   );
@@ -271,7 +284,7 @@ export function Calculator({ programs, states }: CalculatorProps) {
                   placeholder="Choose a program"
                   options={statePrograms.map((program) => ({
                     value: program.id,
-                    label: `${program.name}${program.unavailableReason ? " — unavailable" : ""}`,
+                    label: `${program.name}${program.unavailableReason ? " — unavailable" : program.runtime === "candidate" ? " — candidate model" : ""}`,
                   }))}
                   className={styles.select}
                 />
@@ -368,7 +381,7 @@ export function Calculator({ programs, states }: CalculatorProps) {
                           inputMode={
                             input.kind === "money" ? "decimal" : "numeric"
                           }
-                          step="any"
+                          step={input.kind === "integer" ? 1 : "any"}
                           min={input.minimum}
                           max={input.maximum}
                           required
@@ -459,7 +472,7 @@ export function Calculator({ programs, states }: CalculatorProps) {
               : stale
                 ? "Inputs changed"
                 : displayedEstimate
-                  ? `Calculated: ${dollars.format(displayedEstimate.result.value)}`
+                  ? `Calculated: ${displayedAmount}`
                   : "No estimate yet"}
           </span>
         </div>
@@ -472,9 +485,7 @@ export function Calculator({ programs, states }: CalculatorProps) {
                   Previous estimate. Calculate again to use your current inputs.
                 </p>
               )}
-              <p className={styles.amount}>
-                {dollars.format(displayedEstimate.result.value)}
-              </p>
+              <p className={styles.amount}>{displayedAmount}</p>
               <p className={styles.resultLabel}>
                 {selectedProgram.resultLabel ??
                   (selectedProgram.kind === "deduction"
@@ -486,6 +497,18 @@ export function Calculator({ programs, states }: CalculatorProps) {
                         : "Credit amount")}
               </p>
               <p className={styles.programName}>{selectedProgram.name}</p>
+              {roundAssessedValue && (
+                <p className={styles.resultNote}>
+                  Assessed value shown to the nearest dollar.
+                </p>
+              )}
+              {displayedEstimate.result.supplemental?.map(
+                ({ label, value }) => (
+                  <p className={styles.resultNote} key={label}>
+                    <strong>{label}</strong> {value.toLocaleString("en-US")}
+                  </p>
+                ),
+              )}
               {selectedProgram.resultNote ? (
                 <p className={styles.resultNote}>
                   {selectedProgram.resultNote}
@@ -511,6 +534,12 @@ export function Calculator({ programs, states }: CalculatorProps) {
                     <dt>Model variable</dt>
                     <dd>{displayedEstimate.result.modelVariable}</dd>
                   </div>
+                  {selectedProgram.runtime === "candidate" && (
+                    <div>
+                      <dt>Model source</dt>
+                      <dd>Local candidate model</dd>
+                    </div>
+                  )}
                   <div>
                     <dt>Calculated</dt>
                     <dd>

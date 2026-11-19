@@ -6,14 +6,14 @@
   "qualificationScope": "Source-qualified single-adult scenarios; validation covers only the listed cases.",
   "validationIdentity": {
     "contractsSha256": "3ef3e5cfe7d545cd4fc9adeaeac16cbc72d4c978346a0db70095a3ae86bff35e",
-    "adapterSha256": "97f30ce535510c279828c038e72bed2a92e4c856c3b753b0939ceb20deeeded3",
+    "adapterSha256": "73964058d6980b6bffb4525791aec1c78d938006dc3d965fa8d941f2f1fc3077",
     "casesSha256": "63157082c6f5c8a519f4f2fe24cb85b1573252795e7185740dabfb00447c237c",
     "metadataFileSha256": "b30b7b8c648d9311f90009b0468e546522149407763c1cb7c6403bc4fc13e55f",
     "harnessSha256": "704a7838755e2ac35e33fba41604b08240c4abba8c36dad6e49d6a47b190954c",
     "helperSha256": "77cbac21987fc49c7f82e4ee8a2f619ddad90ec0308daaec4de3644a03449678",
     "apiClientSha256": "dbf0856939219da0752788c3c13b42d0e98f8dea61560f1bae92ca5615678660"
   },
-  "manifestSha256": "0737ca3edf16791b79912f31e83cd12b768c4225ba617c78fa0a0939d7d60b64",
+  "manifestSha256": "0e539840123895fa6905a744cd90d8b7be9104986b3e661485bec3c9725e512a",
   "runtimeModelVersion": null,
   "results": [
     {

@@ -52,11 +52,40 @@ const TRANSPORT_VALUES: CalculatorValues = {
   tenure_type: "RENTED",
 };
 
+const INTEGER_INPUT = {
+  variable: "reported_age",
+  label: "Reported age",
+  entity: "person",
+  kind: "integer",
+  minimum: 0,
+  maximum: 120,
+} as const;
+
+const SUPPLEMENTAL_PROGRAM: CalculatorProgram = {
+  ...TRANSPORT_PROGRAM,
+  supplementalOutputs: [
+    { variable: "fixture_tier", entity: "tax_unit", label: "Tier" },
+    { variable: "fixture_status", entity: "person", label: "Status" },
+  ],
+};
+
 function fixtureResult(value: unknown) {
   return {
     tax_units: {
       tax_unit: { in_renters_deduction: { 2025: value } },
     },
+  };
+}
+
+function supplementalResult(tier: unknown) {
+  return {
+    tax_units: {
+      tax_unit: {
+        in_renters_deduction: { 2025: 123.45 },
+        fixture_tier: { 2025: tier },
+      },
+    },
+    people: { claimant: { fixture_status: { 2025: 2 } } },
   };
 }
 
@@ -146,6 +175,36 @@ describe("household input transport", () => {
     expect(household.tax_units.tax_unit.in_renters_deduction).toEqual({
       2025: null,
     });
+  });
+
+  it("sends integer inputs as numbers and selected FIPS values as exact strings", () => {
+    const program: CalculatorProgram = {
+      ...TRANSPORT_PROGRAM,
+      inputs: [
+        { ...INTEGER_INPUT, period: 2024 },
+        {
+          variable: "county_fips",
+          label: "County",
+          entity: "household",
+          kind: "select",
+          options: [{ value: "06037", label: "Los Angeles County" }],
+        },
+      ],
+    };
+    const household = adapter.buildHousehold(program, {
+      reported_age: " 65 ",
+      county_fips: "06037",
+    });
+    expect(household.people.claimant.reported_age).toEqual({ 2024: 65 });
+    expect(household.households.household.county_fips).toEqual({
+      2025: "06037",
+    });
+    expect(
+      adapter.validateInputs(program, {
+        reported_age: "65",
+        county_fips: "6037",
+      }),
+    ).toEqual(["county_fips"]);
   });
 
   it("preserves explicit zero and false rather than treating them as missing", () => {
@@ -245,6 +304,39 @@ describe("calculation result integrity", () => {
     });
   });
 
+  it("keeps the original result shape when the supplemental list is empty", () => {
+    const program = { ...TRANSPORT_PROGRAM, supplementalOutputs: [] };
+    expect(adapter.readModelResult(program, fixtureResult(0))).toEqual(
+      adapter.readModelResult(TRANSPORT_PROGRAM, fixtureResult(0)),
+    );
+  });
+
+  it.each([
+    undefined,
+    null,
+    "0",
+    1.25,
+    NaN,
+    Infinity,
+    Number.MAX_SAFE_INTEGER + 1,
+  ])("rejects an invalid supplemental value %j", (tier) => {
+    expect(() =>
+      adapter.readModelResult(SUPPLEMENTAL_PROGRAM, supplementalResult(tier)),
+    ).toThrow("invalid-model-result");
+  });
+
+  it("requires every supplemental output on the requested entity and year", () => {
+    expect(() =>
+      adapter.readModelResult(SUPPLEMENTAL_PROGRAM, fixtureResult(123.45)),
+    ).toThrow("invalid-model-result");
+    expect(() =>
+      adapter.readModelResult(SUPPLEMENTAL_PROGRAM, {
+        ...supplementalResult(1),
+        people: { claimant: { fixture_status: { 2024: 2 } } },
+      }),
+    ).toThrow("invalid-model-result");
+  });
+
   it("preserves every finite returned amount exactly, without applying a tax rate or other benefit arithmetic", () => {
     fc.assert(
       fc.property(
@@ -287,6 +379,31 @@ describe("official dashboard API transport", () => {
       household: adapter.buildHousehold(TRANSPORT_PROGRAM, TRANSPORT_VALUES),
     });
     expect(options?.signal).toBeInstanceOf(AbortSignal);
+  });
+
+  it("requests and returns the exact supplemental results alongside the primary amount", async () => {
+    fetchMock.mockResolvedValueOnce(
+      Response.json({ status: "ok", result: supplementalResult(0) }),
+    );
+    await expect(
+      adapter.calculateProgram(SUPPLEMENTAL_PROGRAM, TRANSPORT_VALUES),
+    ).resolves.toEqual({
+      value: 123.45,
+      modelVariable: "in_renters_deduction",
+      calculatedAt: "2026-11-15T12:00:00.000Z",
+      supplemental: [
+        { label: "Tier", value: 0 },
+        { label: "Status", value: 2 },
+      ],
+    });
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    const [, options] = fetchMock.mock.calls[0];
+    const { household } = JSON.parse(options?.body as string);
+    expect(household.tax_units.tax_unit.in_renters_deduction).toEqual({
+      2025: null,
+    });
+    expect(household.tax_units.tax_unit.fixture_tier).toEqual({ 2025: null });
+    expect(household.people.claimant.fixture_status).toEqual({ 2025: null });
   });
 
   it("never calls the API for unavailable programs or invalid inputs", async () => {
@@ -580,6 +697,39 @@ describe("calculation cancellation without AbortSignal.any", () => {
 });
 
 describe("calculator field messages", () => {
+  it.each(["65.0", "65.5", "6e1", "0x41", "9007199254740992"])(
+    "explains invalid whole-number input %j before a request",
+    (value) => {
+      expect(adapter.calculatorInputError(INTEGER_INPUT, value)).toBe(
+        "Reported age: enter a whole number.",
+      );
+      expect(
+        adapter.validateInputs(
+          { ...TRANSPORT_PROGRAM, inputs: [INTEGER_INPUT] },
+          { reported_age: value },
+        ),
+      ).toEqual(["reported_age"]);
+      expect(fetchMock).not.toHaveBeenCalled();
+    },
+  );
+
+  it("applies bounds to valid integers and accepts the largest safe integer without an upper bound", () => {
+    expect(adapter.calculatorInputError(INTEGER_INPUT, "0")).toBeNull();
+    expect(adapter.calculatorInputError(INTEGER_INPUT, "120")).toBeNull();
+    expect(adapter.calculatorInputError(INTEGER_INPUT, "121")).toBe(
+      "Reported age: enter 120 or less.",
+    );
+    expect(adapter.calculatorInputError(INTEGER_INPUT, "-1")).toBe(
+      "Reported age: enter 0 or more.",
+    );
+    expect(
+      adapter.calculatorInputError(
+        { ...INTEGER_INPUT, maximum: undefined },
+        String(Number.MAX_SAFE_INTEGER),
+      ),
+    ).toBeNull();
+  });
+
   it.each(["1e4", "0x10", "Infinity", "NaN", "12,000"])(
     "explains unsupported numeric notation %j before a request",
     (value) => {
@@ -645,7 +795,7 @@ describe("calculator field messages", () => {
           fc.double({ noNaN: true, noDefaultInfinity: true }).map(String),
         ),
         (value) => {
-          for (const input of TRANSPORT_PROGRAM.inputs) {
+          for (const input of [...TRANSPORT_PROGRAM.inputs, INTEGER_INPUT]) {
             const program = { ...TRANSPORT_PROGRAM, inputs: [input] };
             expect(adapter.calculatorInputError(input, value) === null).toBe(
               adapter.validateInputs(program, { [input.variable]: value })

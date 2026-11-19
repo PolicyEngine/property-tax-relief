@@ -1,0 +1,477 @@
+[
+  {
+    "id": "mn-m1sa-real-estate-tax-deduction",
+    "state": "MN",
+    "name": "Real estate taxes in Minnesota itemized deductions",
+    "year": 2025,
+    "modelVariable": "mn_property_tax_deduction",
+    "entity": "tax_unit",
+    "kind": "deduction",
+    "inputs": [
+      {
+        "variable": "real_estate_taxes",
+        "label": "Eligible 2025 real estate taxes paid",
+        "entity": "person",
+        "kind": "money",
+        "minimum": 0,
+        "maximum": 9007199254740991,
+        "description": "Use the qualifying real estate taxes for one home from 2025 Schedule M1SA line 5."
+      },
+      {
+        "variable": "mn_personal_property_taxes",
+        "label": "Eligible 2025 personal property taxes",
+        "entity": "person",
+        "kind": "money",
+        "minimum": 0,
+        "maximum": 0,
+        "description": "Enter $0 for this real-estate-only estimate. This is Schedule M1SA line 6."
+      }
+    ],
+    "notes": [
+      "This estimate covers one Minnesota homeowner filing singly in 2025, with zero eligible personal property taxes."
+    ],
+    "resultLabel": "Real estate taxes allowed under Minnesota itemization",
+    "resultNote": "This is Schedule M1SA line 8. It is one part of Minnesota itemized deductions, before any limitation on total itemized deductions.",
+    "sourceEvidence": {
+      "packageVersion": "2.145.3+preview.d1e89b3.a7d375c.c817a3f.af67c29",
+      "file": "variables/gov/states/mn/tax/income/deductions/mn_property_tax_deduction.py",
+      "sha256": "a0c7e8fbf078414effda87a08599dfe41485ab1a22eea80873bbe5a39dff7c63"
+    },
+    "sources": [
+      {
+        "title": "2025 Minnesota Schedule M1SA, lines 5 through 8",
+        "url": "https://www.revenue.state.mn.us/sites/default/files/2025-12/m1sa-25_0.pdf"
+      },
+      {
+        "title": "Minnesota Statutes § 290.0122, subdivision 3",
+        "url": "https://www.revisor.mn.gov/statutes/2025/cite/290.0122#stat.290.0122.3"
+      }
+    ]
+  },
+  {
+    "id": "ri-property-tax-relief",
+    "state": "RI",
+    "name": "Property Tax Relief Claim (RI-1040H)",
+    "year": 2025,
+    "modelVariable": "ri_property_tax_credit",
+    "entity": "tax_unit",
+    "kind": "credit",
+    "inputs": [
+      {
+        "variable": "age",
+        "label": "Age on December 31, 2025",
+        "entity": "person",
+        "kind": "number",
+        "minimum": 65,
+        "maximum": 120
+      },
+      {
+        "variable": "ri_property_tax_household_income",
+        "label": "2025 household income from RI-1040H line 32",
+        "entity": "tax_unit",
+        "kind": "money",
+        "minimum": 0,
+        "maximum": 9007199254740991,
+        "description": "Use line 32 of Form RI-1040H. Include all sources that the form counts."
+      },
+      {
+        "variable": "real_estate_taxes",
+        "label": "2025 qualifying tax on your main home",
+        "entity": "person",
+        "kind": "money",
+        "minimum": 0,
+        "maximum": 9007199254740991,
+        "description": "Use Form RI-1040H line 2. Exclude any tax paid with public assistance."
+      },
+      {
+        "variable": "rent",
+        "label": "2025 rent for your main home or its land",
+        "entity": "person",
+        "kind": "money",
+        "minimum": 0,
+        "maximum": 0,
+        "description": "Enter $0 for this homeowner estimate, which covers a home and land you own."
+      }
+    ],
+    "notes": [
+      "This estimate covers one homeowner age 65 or older who lived alone and was domiciled in Rhode Island throughout 2025. It covers a taxable primary home and current payments for 2025 and prior years."
+    ],
+    "resultLabel": "Rhode Island homeowner property tax credit",
+    "resultNote": "This is the homeowner amount from RI-1040H line 6, which flows to line 13 and may increase your refund.",
+    "sourceEvidence": {
+      "packageVersion": "2.145.3+preview.d1e89b3.a7d375c.c817a3f.af67c29",
+      "file": "variables/gov/states/ri/tax/income/credits/property_tax/ri_property_tax_credit.py",
+      "sha256": "aa59b2aca4902ac8e33a6869b660d7f462d9a6300bb11fac9101900e5dd1d7ed"
+    },
+    "sources": [
+      {
+        "title": "2025 RI-1040H and instructions",
+        "url": "https://tax.ri.gov/sites/g/files/xkgbur541/files/2026-01/2025%201040H_w.pdf"
+      }
+    ]
+  },
+  {
+    "id": "vt-renter-credit",
+    "state": "VT",
+    "name": "Renter Credit",
+    "year": 2025,
+    "modelVariable": "vt_renter_credit",
+    "entity": "tax_unit",
+    "kind": "credit",
+    "inputs": [
+      {
+        "variable": "county",
+        "label": "County of your Vermont rental",
+        "entity": "household",
+        "kind": "select",
+        "options": [
+          {
+            "value": "ADDISON_COUNTY_VT",
+            "label": "Addison County"
+          },
+          {
+            "value": "CHITTENDEN_COUNTY_VT",
+            "label": "Chittenden County"
+          }
+        ],
+        "description": "Use the county where you rented at the end of 2025, or the last county where you rented in 2025."
+      },
+      {
+        "variable": "vt_renter_credit_domicile_status",
+        "label": "Did you live in Vermont as your permanent home all year?",
+        "entity": "tax_unit",
+        "kind": "select",
+        "options": [
+          {
+            "value": "FULL_YEAR",
+            "label": "Yes"
+          },
+          {
+            "value": "NOT_FULL_YEAR",
+            "label": "No"
+          }
+        ],
+        "description": "Use your answer to RCC-146 line 2 for all of calendar year 2025."
+      },
+      {
+        "variable": "vt_renter_credit_months_rented",
+        "label": "Qualifying months rented in Vermont in 2025",
+        "entity": "tax_unit",
+        "kind": "integer",
+        "minimum": 0,
+        "maximum": 12,
+        "description": "Use the number of distinct calendar months from RCC-146 line 7. The months can be nonconsecutive."
+      },
+      {
+        "variable": "claimed_as_dependent_on_another_return",
+        "label": "Did another taxpayer claim you as a dependent for 2025?",
+        "entity": "person",
+        "kind": "boolean",
+        "description": "Use your answer to RCC-146 line 3."
+      },
+      {
+        "variable": "vt_renter_credit_income",
+        "label": "2025 countable income from RCC-146 line 14",
+        "entity": "tax_unit",
+        "kind": "money",
+        "minimum": 0,
+        "maximum": 9007199254740991,
+        "description": "Use total countable income from the Vermont form."
+      },
+      {
+        "variable": "rent",
+        "label": "Eligible 2025 rent you paid",
+        "entity": "person",
+        "kind": "money",
+        "minimum": 0,
+        "maximum": 9007199254740991,
+        "description": "Enter rent you paid for the qualifying Vermont dwelling."
+      },
+      {
+        "variable": "housing_assistance",
+        "label": "2025 rental housing assistance received",
+        "entity": "spm_unit",
+        "kind": "money",
+        "minimum": 0,
+        "maximum": 0,
+        "description": "Enter $0 for this unsubsidized renter estimate."
+      }
+    ],
+    "notes": [
+      "This preview covers a single adult renting an unsubsidized, unshared home in Addison or Chittenden County. It covers a taxable dwelling without business-use proration or another state’s homestead credit.",
+      "Positive estimates apply to renters who are eligible for their own personal exemption. The model also checks the actual dependent claim recorded on RCC-146."
+    ],
+    "resultLabel": "Vermont renter credit",
+    "resultNote": "The model uses the county’s one-bedroom fair market rent and the reported rental months and income.",
+    "sourceEvidence": {
+      "packageVersion": "2.145.3+preview.d1e89b3.a7d375c.c817a3f.af67c29",
+      "file": "variables/gov/states/vt/tax/income/credits/renter/vt_renter_credit.py",
+      "sha256": "fedb0ef8cec11cc54b2baf55cc03256dbdd2e1fcefa982447f37313c1abf0001"
+    },
+    "sources": [
+      {
+        "title": "2025 Vermont RCC-146 renter credit claim",
+        "url": "https://tax.vermont.gov/sites/tax/files/documents/RCC-146-2025.pdf"
+      },
+      {
+        "title": "32 V.S.A. § 6066(b) and (c)",
+        "url": "https://legislature.vermont.gov/statutes/section/32/154/06066"
+      },
+      {
+        "title": "2025 Vermont renter credit amounts",
+        "url": "https://tax.vermont.gov/individuals/renter-credit/calculator-and-credit-amounts"
+      },
+      {
+        "title": "2025 Vermont income booklet county limits",
+        "url": "https://tax.vermont.gov/sites/tax/files/documents/Income-Booklet-2025.pdf#page=37"
+      }
+    ]
+  },
+  {
+    "id": "wa-senior-disabled-exemption",
+    "state": "WA",
+    "name": "Senior Citizen and Disabled Persons Property Tax Exemption",
+    "year": 2025,
+    "modelVariable": "wa_pte_additional_regular_tax_exempt_assessed_value",
+    "entity": "tax_unit",
+    "kind": "assessed-value-exemption",
+    "inputs": [
+      {
+        "variable": "county_fips",
+        "label": "Washington county of your home",
+        "entity": "household",
+        "kind": "select",
+        "options": [
+          {
+            "value": "53001",
+            "label": "Adams County"
+          },
+          {
+            "value": "53003",
+            "label": "Asotin County"
+          },
+          {
+            "value": "53005",
+            "label": "Benton County"
+          },
+          {
+            "value": "53007",
+            "label": "Chelan County"
+          },
+          {
+            "value": "53009",
+            "label": "Clallam County"
+          },
+          {
+            "value": "53011",
+            "label": "Clark County"
+          },
+          {
+            "value": "53013",
+            "label": "Columbia County"
+          },
+          {
+            "value": "53015",
+            "label": "Cowlitz County"
+          },
+          {
+            "value": "53017",
+            "label": "Douglas County"
+          },
+          {
+            "value": "53019",
+            "label": "Ferry County"
+          },
+          {
+            "value": "53021",
+            "label": "Franklin County"
+          },
+          {
+            "value": "53023",
+            "label": "Garfield County"
+          },
+          {
+            "value": "53025",
+            "label": "Grant County"
+          },
+          {
+            "value": "53027",
+            "label": "Grays Harbor County"
+          },
+          {
+            "value": "53029",
+            "label": "Island County"
+          },
+          {
+            "value": "53031",
+            "label": "Jefferson County"
+          },
+          {
+            "value": "53033",
+            "label": "King County"
+          },
+          {
+            "value": "53035",
+            "label": "Kitsap County"
+          },
+          {
+            "value": "53037",
+            "label": "Kittitas County"
+          },
+          {
+            "value": "53039",
+            "label": "Klickitat County"
+          },
+          {
+            "value": "53041",
+            "label": "Lewis County"
+          },
+          {
+            "value": "53043",
+            "label": "Lincoln County"
+          },
+          {
+            "value": "53045",
+            "label": "Mason County"
+          },
+          {
+            "value": "53047",
+            "label": "Okanogan County"
+          },
+          {
+            "value": "53049",
+            "label": "Pacific County"
+          },
+          {
+            "value": "53051",
+            "label": "Pend Oreille County"
+          },
+          {
+            "value": "53053",
+            "label": "Pierce County"
+          },
+          {
+            "value": "53055",
+            "label": "San Juan County"
+          },
+          {
+            "value": "53057",
+            "label": "Skagit County"
+          },
+          {
+            "value": "53059",
+            "label": "Skamania County"
+          },
+          {
+            "value": "53061",
+            "label": "Snohomish County"
+          },
+          {
+            "value": "53063",
+            "label": "Spokane County"
+          },
+          {
+            "value": "53065",
+            "label": "Stevens County"
+          },
+          {
+            "value": "53067",
+            "label": "Thurston County"
+          },
+          {
+            "value": "53069",
+            "label": "Wahkiakum County"
+          },
+          {
+            "value": "53071",
+            "label": "Walla Walla County"
+          },
+          {
+            "value": "53073",
+            "label": "Whatcom County"
+          },
+          {
+            "value": "53075",
+            "label": "Whitman County"
+          },
+          {
+            "value": "53077",
+            "label": "Yakima County"
+          }
+        ]
+      },
+      {
+        "variable": "wa_pte_assessment_year_age",
+        "label": "Age on December 31, 2024",
+        "entity": "person",
+        "kind": "number",
+        "minimum": 18,
+        "maximum": 120
+      },
+      {
+        "variable": "wa_pte_owner_occupant",
+        "label": "Did you own and occupy the entire eligible home throughout 2024?",
+        "entity": "tax_unit",
+        "kind": "boolean",
+        "description": "Use your ownership and principal residence facts for the assessment year."
+      },
+      {
+        "variable": "wa_pte_reported_combined_disposable_income",
+        "label": "2024 combined disposable income",
+        "entity": "tax_unit",
+        "kind": "money",
+        "minimum": -9007199254740991,
+        "maximum": 9007199254740991,
+        "description": "Use the signed amount from the 2024 Washington combined disposable income worksheet for taxes collected in 2025. Enter a negative amount if applicable."
+      },
+      {
+        "variable": "wa_pte_assessor_approved_value",
+        "label": "Assessor-approved value for 2025 taxes",
+        "entity": "tax_unit",
+        "kind": "money",
+        "minimum": 0,
+        "maximum": 9007199254740991,
+        "description": "Use the county’s eligible assessed value after any applicable valuation freeze, before subtracting this additional exemption."
+      }
+    ],
+    "notes": [
+      "This preview covers one senior owner who is the sole occupant of an eligible principal home for the 2025 collection year."
+    ],
+    "resultLabel": "Assessed home value exempt from remaining regular levies",
+    "resultNote": "The amount is assessed value. Tier 3 can produce $0 here and still qualify for separate levy exemptions and a valuation freeze. Tier 0 means this household falls outside the modeled eligibility tiers.",
+    "sourceEvidence": {
+      "packageVersion": "2.145.3+preview.d1e89b3.a7d375c.c817a3f.af67c29",
+      "file": "variables/gov/states/wa/dor/property_tax_exemption/senior_disabled/wa_pte_additional_regular_tax_exempt_assessed_value.py",
+      "sha256": "09813e313097113ea6b31e2a90bb373378ca91ab3f6927df21da08103b2bc58d"
+    },
+    "sources": [
+      {
+        "title": "Washington 2023 chapter 147, section 1",
+        "url": "https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/House/1355-S.SL.htm"
+      },
+      {
+        "title": "Washington county income thresholds, 2024–2026",
+        "url": "https://dor.wa.gov/sites/default/files/2023-08/Income_ThreshTY24-26.pdf"
+      },
+      {
+        "title": "Washington senior exemption application, Form 64 0002",
+        "url": "https://dor.wa.gov/sites/default/files/2022-02/64-0002.pdf"
+      },
+      {
+        "title": "WAC 458-16A-140 assessed value",
+        "url": "https://app.leg.wa.gov/WAC/default.aspx?cite=458-16A-140"
+      },
+      {
+        "title": "WAC 458-16A-120 combined disposable income",
+        "url": "https://app.leg.wa.gov/WAC/default.aspx?cite=458-16A-120"
+      }
+    ],
+    "supplementalOutputs": [
+      {
+        "variable": "wa_pte_reported_tier",
+        "entity": "tax_unit",
+        "label": "Income tier"
+      }
+    ]
+  }
+]

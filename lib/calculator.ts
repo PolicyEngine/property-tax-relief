@@ -9,7 +9,7 @@ export interface CalculatorInput {
   variable: string;
   label: string;
   entity: string;
-  kind: "number" | "money" | "boolean" | "select";
+  kind: "number" | "money" | "integer" | "boolean" | "select";
   options?: { value: string; label: string }[];
   description?: string;
   minimum?: number;
@@ -31,6 +31,8 @@ export interface CalculatorProgram {
     | "assessed-value-exemption";
   resultLabel?: string;
   resultNote?: string;
+  runtime?: "candidate";
+  supplementalOutputs?: { variable: string; entity: string; label: string }[];
   inputs: CalculatorInput[];
   notes: string[];
   unavailableReason: string | null;
@@ -43,6 +45,7 @@ export interface CalculatorResponse {
   value: number;
   modelVariable: string;
   calculatedAt: string;
+  supplemental?: { label: string; value: number }[];
 }
 
 type Value = string | boolean | number | null;
@@ -64,6 +67,16 @@ function entityAddress(entity: string) {
   return ENTITIES[entity as keyof typeof ENTITIES];
 }
 
+function parseNumericInput(kind: CalculatorInput["kind"], raw: string) {
+  const integer = kind === "integer";
+  // Number() also accepts hex and Infinity; the form accepts plain decimal input.
+  const notation = integer ? /^-?\d+$/ : /^-?(?:\d+(?:\.\d*)?|\.\d+)$/;
+  if (!notation.test(raw.trim())) return null;
+  const value = Number(raw);
+  const valid = integer ? Number.isSafeInteger(value) : Number.isFinite(value);
+  return valid ? value : null;
+}
+
 function parseInput(field: CalculatorInput, raw: string | undefined): Value {
   if (raw === undefined || raw.trim() === "")
     throw new Error("incomplete-inputs");
@@ -76,12 +89,9 @@ function parseInput(field: CalculatorInput, raw: string | undefined): Value {
       throw new Error("incomplete-inputs");
     return raw;
   }
-  // Number() also accepts hex and Infinity; the form accepts plain decimal input.
-  if (!/^-?(?:\d+(?:\.\d*)?|\.\d+)$/.test(raw.trim()))
-    throw new Error("incomplete-inputs");
-  const value = Number(raw);
+  const value = parseNumericInput(field.kind, raw);
   if (
-    !Number.isFinite(value) ||
+    value === null ||
     (field.minimum !== undefined && value < field.minimum) ||
     (field.maximum !== undefined && value > field.maximum)
   )
@@ -102,18 +112,17 @@ export function calculatorInputError(
   if (input.kind === "boolean") return "Choose Yes or No.";
   if (input.kind === "select") return `${input.label}: choose an option.`;
   if (!value.trim()) return `${input.label}: enter a value.`;
-  if (
-    !/^-?(?:\d+(?:\.\d*)?|\.\d+)$/.test(value.trim()) ||
-    !Number.isFinite(Number(value))
-  )
-    return `${input.label}: enter a plain decimal number.`;
+  const numericValue = parseNumericInput(input.kind, value);
+  const notationError =
+    input.kind === "integer" ? "a whole number" : "a plain decimal number";
+  if (numericValue === null) return `${input.label}: enter ${notationError}.`;
   if (input.minimum !== undefined && input.minimum === input.maximum)
     return `${input.label}: enter ${input.minimum} for this scenario.`;
-  if (input.minimum !== undefined && Number(value) < input.minimum)
+  if (input.minimum !== undefined && numericValue < input.minimum)
     return `${input.label}: enter ${input.minimum} or more.`;
-  if (input.maximum !== undefined && Number(value) > input.maximum)
+  if (input.maximum !== undefined && numericValue > input.maximum)
     return `${input.label}: enter ${input.maximum} or less.`;
-  return `${input.label}: enter a plain decimal number.`;
+  return `${input.label}: enter ${notationError}.`;
 }
 
 export function validateInputs(
@@ -170,25 +179,20 @@ export function buildHousehold(
       ),
     };
   }
-  const [plural, id] = entityAddress(program.entity);
-  household[plural][id][program.modelVariable] = { [CALCULATOR_YEAR]: null };
+  for (const output of [
+    { variable: program.modelVariable, entity: program.entity },
+    ...(program.supplementalOutputs ?? []),
+  ]) {
+    const [plural, id] = entityAddress(output.entity);
+    household[plural][id][output.variable] = { [CALCULATOR_YEAR]: null };
+  }
   return household;
 }
 
-export function readModelResult(
-  program: CalculatorProgram,
-  result: unknown,
-): CalculatorResponse {
-  if (!program.modelVariable || !program.entity)
-    throw new Error("unsupported-program");
-  const [plural, id] = entityAddress(program.entity);
+function readNumericOutput(result: unknown, entity: string, variable: string) {
+  const [plural, id] = entityAddress(entity);
   let value: unknown = result;
-  for (const key of [
-    plural,
-    id,
-    program.modelVariable,
-    String(CALCULATOR_YEAR),
-  ]) {
+  for (const key of [plural, id, variable, String(CALCULATOR_YEAR)]) {
     if (
       typeof value !== "object" ||
       value === null ||
@@ -201,14 +205,34 @@ export function readModelResult(
   // A missing variable, null, string or array is not a modelled zero.
   if (typeof value !== "number" || !Number.isFinite(value))
     throw new Error("invalid-model-result");
-  return {
-    value,
+  return value;
+}
+
+export function readModelResult(
+  program: CalculatorProgram,
+  result: unknown,
+): CalculatorResponse {
+  if (!program.modelVariable || !program.entity)
+    throw new Error("unsupported-program");
+  const response: CalculatorResponse = {
+    value: readNumericOutput(result, program.entity, program.modelVariable),
     modelVariable: program.modelVariable,
     calculatedAt: new Date().toISOString(),
   };
+  if (program.supplementalOutputs?.length) {
+    response.supplemental = program.supplementalOutputs.map((output) => {
+      const value = readNumericOutput(result, output.entity, output.variable);
+      if (!Number.isSafeInteger(value)) throw new Error("invalid-model-result");
+      return { label: output.label, value };
+    });
+  }
+  return response;
 }
 
 const client = createPolicyEngineApiClient();
+const candidateClient = createPolicyEngineApiClient({
+  baseUrl: "/__candidate",
+});
 const answers = new Map<string, CalculatorResponse>();
 let requestedAt: number[] = [];
 let retryAfter = 0;
@@ -247,8 +271,22 @@ export async function calculateProgram(
   signal?: AbortSignal,
 ): Promise<CalculatorResponse> {
   const household = buildHousehold(program, values);
+  const candidate = program.runtime === "candidate";
+  if (
+    candidate &&
+    (typeof window === "undefined" ||
+      window.location.protocol !== "http:" ||
+      !["localhost", "127.0.0.1"].includes(window.location.hostname))
+  )
+    throw new Error("unsupported-program");
   if (signal?.aborted) throw new Error("cancelled");
-  const key = JSON.stringify(household);
+  const key = JSON.stringify([
+    program.runtime ?? "dashboard",
+    household,
+    program.modelVariable,
+    program.entity,
+    program.supplementalOutputs ?? [],
+  ]);
   const cached = answers.get(key);
   if (cached) return cached;
   const now = Date.now();
@@ -259,7 +297,9 @@ export async function calculateProgram(
   // One call per explicit action, no automatic retries or per-keystroke requests.
   const request = calculationSignal(signal);
   try {
-    const result = await client.calculateHousehold(
+    const result = await (
+      candidate ? candidateClient : client
+    ).calculateHousehold(
       { country: "us", household },
       { signal: request.signal },
     );

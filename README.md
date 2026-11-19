@@ -34,6 +34,29 @@ The [validation receipt](data/calculator/validation-receipt.json) preserves each
 
 The preview does not establish exhaustive coverage or national-calculator readiness.
 
+### Local candidate model preview
+
+An optional loopback preview adds candidate calculations for Minnesota, Rhode Island, Vermont, and Washington. It checks the calculator contracts against the loaded PolicyEngine US declarations. Washington's result shows assessed value to the nearest dollar and includes the income tier.
+
+Use a PolicyEngine US checkout containing the commits in `scripts/candidate_model/assemble_model.py` and its model environment with PolicyEngine Core 3.36.0 and SPM Calculator 1.1.0. From this repository, assemble the source and start the model service:
+
+```sh
+export PROPERTY_TAX_CANDIDATE_DIR=/absolute/path/to/candidate-preview
+mkdir -p "$PROPERTY_TAX_CANDIDATE_DIR"
+cp data/calculator/candidates/contracts.json "$PROPERTY_TAX_CANDIDATE_DIR/"
+/path/to/model-venv/bin/python scripts/candidate_model/assemble_model.py /path/to/policyengine-us
+/path/to/model-venv/bin/python scripts/candidate_model/candidate_runtime.py
+```
+
+With the same environment variable in a second terminal, build and serve the preview:
+
+```sh
+bun run build
+uv run --no-sync python scripts/serve_candidate_preview.py out
+```
+
+Open [the local calculator](http://localhost:3085/calculator/). With both services running, use `bun scripts/candidate_preview_qa.ts` to replay the source cases through the calculator's request adapter. Run an ordinary build without `PROPERTY_TAX_CANDIDATE_DIR` to produce the standard export. Vercel and website-zone builds reject candidate mode.
+
 Browser and static CSV downloads use the same serializer and 22-column schema. `program_id` joins each program to the JSON inventory and model-presence audit. `payment_mechanism` records the explicit mechanism separately from `refundable`; an unclassified mechanism uses `not-established`. `eligibility_notes` and `interactions` retain each program’s condition and coordination notes, joining each source array with `|`. These columns follow `application` and precede `program_year`. `state_research_notes` carries profile boundaries and omissions on each program row; `source_urls` combines program and state references without duplicates. CSVs use UTF-8 with a byte-order mark, CRLF row endings, quoted cells, lowercase booleans and empty cells for null refundability. The serializer escapes embedded quotes and guards spreadsheet formula prefixes. For income-tax credits, `refundable` indicates whether the credit can exceed income-tax liability. For an unclassified mechanism, it carries the recorded flag without identifying how the program pays. The CSV leaves this cell empty for other mechanisms; the JSON retains the recorded flag.
 
 ## Reproduce

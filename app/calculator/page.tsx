@@ -14,7 +14,13 @@ export const metadata: Metadata = {
 
 export default function CalculatorPage() {
   const states = loadStates().map(({ code, name }) => ({ code, name }));
-  const programs = loadCalculatorPrograms();
+  const programs = loadCalculatorPrograms({ includeCandidates: true });
+  const candidatePrograms = programs.filter(
+    ({ runtime }) => runtime === "candidate",
+  );
+  const candidateStates = states
+    .filter(({ code }) => candidatePrograms.some(({ state }) => state === code))
+    .map(({ name }) => name);
 
   return (
     <main className="page-width">
@@ -29,7 +35,18 @@ export default function CalculatorPage() {
         </div>
       </section>
       <div className="draft-note">
-        <strong>Calculator preview.</strong> Model coverage varies by program.
+        {candidateStates.length > 0 ? (
+          <>
+            <strong>Local model preview.</strong> Programs marked “candidate
+            model” use PolicyEngine rules running on this computer. Try{" "}
+            {new Intl.ListFormat("en-US").format(candidateStates)}.
+          </>
+        ) : (
+          <>
+            <strong>Calculator preview.</strong> Model coverage varies by
+            program.
+          </>
+        )}
       </div>
       <Calculator programs={programs} states={states} />
     </main>
