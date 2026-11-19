@@ -1,0 +1,439 @@
+[
+  {
+    "id": "mn-m1sa-no-property-taxes",
+    "programId": "mn-m1sa-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "0",
+      "mn_personal_property_taxes": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://www.revenue.state.mn.us/sites/default/files/2025-12/m1sa-25_0.pdf#page=1",
+    "sourceLocation": "Schedule M1SA lines 5–8. Lines 5 and 6 both zero gives $0 on line 8."
+  },
+  {
+    "id": "mn-m1sa-below-cap",
+    "programId": "mn-m1sa-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "9999",
+      "mn_personal_property_taxes": "0"
+    },
+    "expectedValue": 9999,
+    "source": "https://www.revenue.state.mn.us/sites/default/files/2025-12/m1sa-25_0.pdf#page=1",
+    "sourceLocation": "Schedule M1SA lines 5–8. Line 7 is $9,999, below the $10,000 single limit."
+  },
+  {
+    "id": "mn-m1sa-at-cap",
+    "programId": "mn-m1sa-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "10000",
+      "mn_personal_property_taxes": "0"
+    },
+    "expectedValue": 10000,
+    "source": "https://www.revenue.state.mn.us/sites/default/files/2025-12/m1sa-25_0.pdf#page=1",
+    "sourceLocation": "Schedule M1SA lines 5–8. Line 8 equals the $10,000 single limit."
+  },
+  {
+    "id": "mn-m1sa-above-cap",
+    "programId": "mn-m1sa-real-estate-tax-deduction",
+    "inputs": {
+      "real_estate_taxes": "12000",
+      "mn_personal_property_taxes": "0"
+    },
+    "expectedValue": 10000,
+    "source": "https://www.revenue.state.mn.us/sites/default/files/2025-12/m1sa-25_0.pdf#page=1",
+    "sourceLocation": "Schedule M1SA lines 5–8. Line 8 is the lesser of $12,000 and the $10,000 single limit."
+  },
+  {
+    "id": "ri-senior-owner-below-cap-partial",
+    "programId": "ri-property-tax-relief",
+    "inputs": {
+      "age": "65",
+      "ri_property_tax_household_income": "20000",
+      "real_estate_taxes": "1400",
+      "rent": "0"
+    },
+    "expectedValue": 200,
+    "source": "https://tax.ri.gov/sites/g/files/xkgbur541/files/2026-01/2025%201040H_w.pdf",
+    "sourceLocation": "Page 3 one-person rate is 6%. Page 1 lines 2–6 leave $1,400 minus $1,200, or $200."
+  },
+  {
+    "id": "ri-senior-owner-qualifying-taxes-less-than-income-share",
+    "programId": "ri-property-tax-relief",
+    "inputs": {
+      "age": "65",
+      "ri_property_tax_household_income": "20000",
+      "real_estate_taxes": "1199",
+      "rent": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://tax.ri.gov/sites/g/files/xkgbur541/files/2026-01/2025%201040H_w.pdf",
+    "sourceLocation": "Page 1 line 5 enters zero if $1,199 eligible taxes fall below the $1,200 income share."
+  },
+  {
+    "id": "ri-senior-owner-at-ceiling",
+    "programId": "ri-property-tax-relief",
+    "inputs": {
+      "age": "65",
+      "ri_property_tax_household_income": "40730",
+      "real_estate_taxes": "4000",
+      "rent": "0"
+    },
+    "expectedValue": 700,
+    "source": "https://tax.ri.gov/sites/g/files/xkgbur541/files/2026-01/2025%201040H_w.pdf",
+    "sourceLocation": "Page 1 Part 1E includes $40,730. Six percent is $2,443.80. Line 6 caps the remaining amount at $700."
+  },
+  {
+    "id": "ri-senior-owner-one-cent-over-ceiling",
+    "programId": "ri-property-tax-relief",
+    "inputs": {
+      "age": "65",
+      "ri_property_tax_household_income": "40730.01",
+      "real_estate_taxes": "4000",
+      "rent": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://tax.ri.gov/sites/g/files/xkgbur541/files/2026-01/2025%201040H_w.pdf",
+    "sourceLocation": "Page 1 Part 1E and page 3 limit household income to $40,730.00. Exact line-32 amount $40,730.01 exceeds it."
+  },
+  {
+    "id": "ri-senior-owner-one-dollar-over-ceiling",
+    "programId": "ri-property-tax-relief",
+    "inputs": {
+      "age": "65",
+      "ri_property_tax_household_income": "40731",
+      "real_estate_taxes": "4000",
+      "rent": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://tax.ri.gov/sites/g/files/xkgbur541/files/2026-01/2025%201040H_w.pdf",
+    "sourceLocation": "Page 1 Part 1E excludes household income above $40,730 before line 6."
+  },
+  {
+    "id": "vt-ordinary-renter-five-months",
+    "programId": "vt-renter-credit",
+    "inputs": {
+      "county": "ADDISON_COUNTY_VT",
+      "vt_renter_credit_domicile_status": "FULL_YEAR",
+      "vt_renter_credit_months_rented": "5",
+      "claimed_as_dependent_on_another_return": "false",
+      "vt_renter_credit_income": "0",
+      "rent": "6000",
+      "housing_assistance": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://tax.vermont.gov/sites/tax/files/documents/RCC-146-2025.pdf#page=1",
+    "sourceLocation": "RCC-146 lines 4 and 7 require at least six qualifying months."
+  },
+  {
+    "id": "vt-ordinary-renter-six-months",
+    "programId": "vt-renter-credit",
+    "inputs": {
+      "county": "ADDISON_COUNTY_VT",
+      "vt_renter_credit_domicile_status": "FULL_YEAR",
+      "vt_renter_credit_months_rented": "6",
+      "claimed_as_dependent_on_another_return": "false",
+      "vt_renter_credit_income": "0",
+      "rent": "6000",
+      "housing_assistance": "0"
+    },
+    "expectedValue": 662,
+    "source": "https://legislature.vermont.gov/statutes/section/32/154/06066",
+    "sourceLocation": "Section 6066(b)(1)(E) prorates the published Addison one-bedroom $1,324 maximum. Six months produces $662."
+  },
+  {
+    "id": "vt-ordinary-renter-nine-months",
+    "programId": "vt-renter-credit",
+    "inputs": {
+      "county": "ADDISON_COUNTY_VT",
+      "vt_renter_credit_domicile_status": "FULL_YEAR",
+      "vt_renter_credit_months_rented": "9",
+      "claimed_as_dependent_on_another_return": "false",
+      "vt_renter_credit_income": "0",
+      "rent": "6000",
+      "housing_assistance": "0"
+    },
+    "expectedValue": 993,
+    "source": "https://legislature.vermont.gov/statutes/section/32/154/06066",
+    "sourceLocation": "Section 6066(b)(1)(E) prorates the published Addison one-bedroom $1,324 maximum. Nine months produces $993."
+  },
+  {
+    "id": "vt-ordinary-renter-addison-mid-income",
+    "programId": "vt-renter-credit",
+    "inputs": {
+      "county": "ADDISON_COUNTY_VT",
+      "vt_renter_credit_domicile_status": "FULL_YEAR",
+      "vt_renter_credit_months_rented": "6",
+      "claimed_as_dependent_on_another_return": "false",
+      "vt_renter_credit_income": "38625",
+      "rent": "6000",
+      "housing_assistance": "0"
+    },
+    "expectedValue": 331,
+    "source": "https://tax.vermont.gov/sites/tax/files/documents/Income-Booklet-2025.pdf#page=37",
+    "sourceLocation": "The one-person Addison thresholds are $24,400 and $52,850. Line 14 income $38,625 lies halfway between them. Half of the half-year $662 base is $331."
+  },
+  {
+    "id": "vt-ordinary-renter-addison-rounding-33000",
+    "programId": "vt-renter-credit",
+    "inputs": {
+      "county": "ADDISON_COUNTY_VT",
+      "vt_renter_credit_domicile_status": "FULL_YEAR",
+      "vt_renter_credit_months_rented": "12",
+      "claimed_as_dependent_on_another_return": "false",
+      "vt_renter_credit_income": "33000",
+      "rent": "6000",
+      "housing_assistance": "0"
+    },
+    "expectedValue": 924,
+    "source": "https://tax.vermont.gov/sites/tax/files/documents/2025%20Renter%20Credit%20Website%20Calculator.xlsx",
+    "sourceLocation": "Use the Addison base $1,324 and its one-person limits $24,400 and $52,850. Calculator!G17 rounds the full-year amount at $33,000 income to $924."
+  },
+  {
+    "id": "vt-ordinary-renter-chittenden-full-year",
+    "programId": "vt-renter-credit",
+    "inputs": {
+      "county": "CHITTENDEN_COUNTY_VT",
+      "vt_renter_credit_domicile_status": "FULL_YEAR",
+      "vt_renter_credit_months_rented": "12",
+      "claimed_as_dependent_on_another_return": "false",
+      "vt_renter_credit_income": "0",
+      "rent": "6000",
+      "housing_assistance": "0"
+    },
+    "expectedValue": 1771,
+    "source": "https://tax.vermont.gov/individuals/renter-credit/calculator-and-credit-amounts",
+    "sourceLocation": "Table 1 gives an annual $1,771 one-bedroom Chittenden amount at qualifying zero income."
+  },
+  {
+    "id": "vt-ordinary-renter-not-full-year-domicile",
+    "programId": "vt-renter-credit",
+    "inputs": {
+      "county": "ADDISON_COUNTY_VT",
+      "vt_renter_credit_domicile_status": "NOT_FULL_YEAR",
+      "vt_renter_credit_months_rented": "9",
+      "claimed_as_dependent_on_another_return": "false",
+      "vt_renter_credit_income": "0",
+      "rent": "6000",
+      "housing_assistance": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://tax.vermont.gov/sites/tax/files/documents/RCC-146-2025.pdf#page=1",
+    "sourceLocation": "RCC-146 line 2 bars a claim when Vermont was the claimant’s domicile for less than the full year."
+  },
+  {
+    "id": "vt-ordinary-renter-claimed-dependent",
+    "programId": "vt-renter-credit",
+    "inputs": {
+      "county": "ADDISON_COUNTY_VT",
+      "vt_renter_credit_domicile_status": "FULL_YEAR",
+      "vt_renter_credit_months_rented": "9",
+      "claimed_as_dependent_on_another_return": "true",
+      "vt_renter_credit_income": "0",
+      "rent": "6000",
+      "housing_assistance": "0"
+    },
+    "expectedValue": 0,
+    "source": "https://tax.vermont.gov/sites/tax/files/documents/RCC-146-2025.pdf#page=1",
+    "sourceLocation": "RCC-146 line 3 and 32 V.S.A. § 6066(c)(2) disqualify a renter claimed as a dependent."
+  },
+  {
+    "id": "wa-reported-senior-owner-king-tier-one-income-edge",
+    "programId": "wa-senior-disabled-exemption",
+    "inputs": {
+      "county_fips": "53033",
+      "wa_pte_assessment_year_age": "61",
+      "wa_pte_owner_occupant": "true",
+      "wa_pte_reported_combined_disposable_income": "60000",
+      "wa_pte_assessor_approved_value": "200000"
+    },
+    "expectedValue": 120000,
+    "source": "https://dor.wa.gov/sites/default/files/2023-08/Income_ThreshTY24-26.pdf",
+    "sourceLocation": "King includes $60,000 in tier 1. Former RCW 84.36.381(6) exempts the greater of $60,000 or 60% of $200,000.",
+    "expectedSupplemental": [
+      {
+        "label": "Income tier",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "wa-reported-senior-owner-king-tier-two-income-edge",
+    "programId": "wa-senior-disabled-exemption",
+    "inputs": {
+      "county_fips": "53033",
+      "wa_pte_assessment_year_age": "61",
+      "wa_pte_owner_occupant": "true",
+      "wa_pte_reported_combined_disposable_income": "60001",
+      "wa_pte_assessor_approved_value": "160000"
+    },
+    "expectedValue": 56000,
+    "source": "https://dor.wa.gov/sites/default/files/2023-08/Income_ThreshTY24-26.pdf",
+    "sourceLocation": "King moves to tier 2 at $60,001. Former RCW 84.36.381(5) places 35% of $160,000 between the $50,000 floor and $70,000 cap.",
+    "expectedSupplemental": [
+      {
+        "label": "Income tier",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "wa-reported-senior-owner-king-tier-two-assessment-cap",
+    "programId": "wa-senior-disabled-exemption",
+    "inputs": {
+      "county_fips": "53033",
+      "wa_pte_assessment_year_age": "61",
+      "wa_pte_owner_occupant": "true",
+      "wa_pte_reported_combined_disposable_income": "60001",
+      "wa_pte_assessor_approved_value": "300000"
+    },
+    "expectedValue": 70000,
+    "source": "https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/House/1355-S.SL.htm",
+    "sourceLocation": "Former RCW 84.36.381(5) caps the tier 2 assessment exclusion at $70,000. Thirty-five percent of $300,000 exceeds it.",
+    "expectedSupplemental": [
+      {
+        "label": "Income tier",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "wa-reported-senior-owner-king-tier-three-zero-regular",
+    "programId": "wa-senior-disabled-exemption",
+    "inputs": {
+      "county_fips": "53033",
+      "wa_pte_assessment_year_age": "61",
+      "wa_pte_owner_occupant": "true",
+      "wa_pte_reported_combined_disposable_income": "72001",
+      "wa_pte_assessor_approved_value": "200000"
+    },
+    "expectedValue": 0,
+    "source": "https://dor.wa.gov/sites/default/files/2023-08/Income_ThreshTY24-26.pdf",
+    "sourceLocation": "King moves to tier 3 above $72,000. Former RCW 84.36.381(5) and (6) provide this regular assessment exclusion only in tiers 1 and 2.",
+    "expectedSupplemental": [
+      {
+        "label": "Income tier",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "id": "wa-reported-senior-owner-king-above-final-cutoff",
+    "programId": "wa-senior-disabled-exemption",
+    "inputs": {
+      "county_fips": "53033",
+      "wa_pte_assessment_year_age": "61",
+      "wa_pte_owner_occupant": "true",
+      "wa_pte_reported_combined_disposable_income": "84001",
+      "wa_pte_assessor_approved_value": "200000"
+    },
+    "expectedValue": 0,
+    "source": "https://dor.wa.gov/sites/default/files/2023-08/Income_ThreshTY24-26.pdf",
+    "sourceLocation": "King's tier 3 limit is $84,000 for 2025. $84,001 is outside all three income tiers.",
+    "expectedSupplemental": [
+      {
+        "label": "Income tier",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "id": "wa-reported-senior-owner-king-high-income",
+    "programId": "wa-senior-disabled-exemption",
+    "inputs": {
+      "county_fips": "53033",
+      "wa_pte_assessment_year_age": "61",
+      "wa_pte_owner_occupant": "true",
+      "wa_pte_reported_combined_disposable_income": "1000001",
+      "wa_pte_assessor_approved_value": "200000"
+    },
+    "expectedValue": 0,
+    "source": "https://dor.wa.gov/sites/default/files/2023-08/Income_ThreshTY24-26.pdf",
+    "sourceLocation": "King's tier 3 limit is $84,000 for 2025. Income of $1,000,001 is outside all three income tiers.",
+    "expectedSupplemental": [
+      {
+        "label": "Income tier",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "id": "wa-reported-senior-owner-adams-at-final-cutoff",
+    "programId": "wa-senior-disabled-exemption",
+    "inputs": {
+      "county_fips": "53001",
+      "wa_pte_assessment_year_age": "61",
+      "wa_pte_owner_occupant": "true",
+      "wa_pte_reported_combined_disposable_income": "41000",
+      "wa_pte_assessor_approved_value": "200000"
+    },
+    "expectedValue": 0,
+    "source": "https://dor.wa.gov/sites/default/files/2023-08/Income_ThreshTY24-26.pdf",
+    "sourceLocation": "Adams includes $41,000 in tier 3. This tier has no additional regular assessment exclusion.",
+    "expectedSupplemental": [
+      {
+        "label": "Income tier",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "id": "wa-reported-senior-owner-assessment-age-sixty",
+    "programId": "wa-senior-disabled-exemption",
+    "inputs": {
+      "county_fips": "53033",
+      "wa_pte_assessment_year_age": "60",
+      "wa_pte_owner_occupant": "true",
+      "wa_pte_reported_combined_disposable_income": "60000",
+      "wa_pte_assessor_approved_value": "200000"
+    },
+    "expectedValue": 0,
+    "source": "https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/House/1355-S.SL.htm",
+    "sourceLocation": "Former RCW 84.36.381(2) requires age 61 by December 31 of the assessment year for this ordinary senior-owner route.",
+    "expectedSupplemental": [
+      {
+        "label": "Income tier",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "id": "wa-reported-senior-owner-signed-income-loss",
+    "programId": "wa-senior-disabled-exemption",
+    "inputs": {
+      "county_fips": "53033",
+      "wa_pte_assessment_year_age": "61",
+      "wa_pte_owner_occupant": "true",
+      "wa_pte_reported_combined_disposable_income": "-1",
+      "wa_pte_assessor_approved_value": "200000"
+    },
+    "expectedValue": 120000,
+    "source": "https://app.leg.wa.gov/WAC/default.aspx?cite=458-16A-120",
+    "sourceLocation": "WAC 458-16A-120(3) subtracts allowable amounts without a zero floor. King tier 1 includes a reported $1 loss. The regular exemption is 60% of $200,000.",
+    "expectedSupplemental": [
+      {
+        "label": "Income tier",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "wa-reported-senior-owner-no-owner-occupancy",
+    "programId": "wa-senior-disabled-exemption",
+    "inputs": {
+      "county_fips": "53033",
+      "wa_pte_assessment_year_age": "61",
+      "wa_pte_owner_occupant": "false",
+      "wa_pte_reported_combined_disposable_income": "60000",
+      "wa_pte_assessor_approved_value": "200000"
+    },
+    "expectedValue": 0,
+    "source": "https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/House/1355-S.SL.htm",
+    "sourceLocation": "The senior owner route requires ownership and principal residence in the qualifying dwelling.",
+    "expectedSupplemental": [
+      {
+        "label": "Income tier",
+        "value": 0
+      }
+    ]
+  }
+]
